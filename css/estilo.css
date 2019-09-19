@@ -1,0 +1,30 @@
+body {
+  font-family: "Montserat";
+}
+.navbar .nav-item {
+  font-size: 1.4rem;
+}
+.navbar .nav-item .nav-link:hover {
+  color: #66a4ac;
+}
+.navbar .nav-item .btn-outline-light:hover {
+  background-color: #66a4ac;
+}
+.bg-printalo {
+  background-color: #065758;
+}
+#showcase {
+  position: relative;
+  background: url('../img/principal2x.png');
+  min-height: 520px;
+  
+}
+#showcase  .primary-overlay{
+	position: absolute;
+	background: rgba(63, 63, 63, 0.4);
+	top: 0;
+	left:0;
+	width:100%;
+	height:100%;
+	
+  }

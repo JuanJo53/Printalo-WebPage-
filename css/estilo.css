@@ -1,5 +1,6 @@
 body {
   font-family: "Montserat";
+  margin-top: 102px;
 }
 .navbar .nav-item {
   font-size: 1.4rem;
@@ -15,16 +16,18 @@ body {
 }
 #showcase {
   position: relative;
-  background: url('../img/principal2x.png');
-  min-height: 520px;
-  
+  background: url("../img/principal2x.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 720px;
 }
-#showcase  .primary-overlay{
-	position: absolute;
-	background: rgba(63, 63, 63, 0.4);
-	top: 0;
-	left:0;
-	width:100%;
-	height:100%;
-	
-  }
+#showcase .primary-overlay {
+  position: absolute;
+  background: rgba(63, 63, 63, 0.4);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+

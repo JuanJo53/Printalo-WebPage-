@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-printalo navbar-dark py-3 fixed-top">
+    <nav class="navbar navbar-expand-sm bg-printalo-nav navbar-dark py-3 fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#home">
                 <img width="60" height="60" src="img/printer.png" alt="">
@@ -25,16 +25,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#home" class="nav-link active ">Inicio</a>
+                        <a href="#home" class="nav-link text-light">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="btn btn-outline-light text-light nav-link m-1">Ingresar</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-button" data-toggle="modal"
+                            data-target="#ingresarModal">Ingresar</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="btn btn-outline-light text-light nav-link m-1">Registrarse</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button">Registrarse</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="btn btn-outline-light text-light nav-link m-1">Empresas</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button">Empresas</a>
                     </li>
                 </ul>
             </div>
@@ -55,7 +56,7 @@
             </div>
         </div>
     </section>
-    <footer id="main-footer" class="bg-printalo text-white py-4">
+    <footer id="main-footer" class="bg-printalo-footer text-white py-4">
         <div class="container text-white">
             <div class="row text-center">
                 <div class="col-lg-5 ml-auto">
@@ -75,6 +76,52 @@
 
         </div>
     </footer>
+    <!--ingresar Modal-->
+    <div class="modal fade text-dark" id="ingresarModal">
+        <div class="modal-dialog modal-lg">
+            <div class="row py-3">
+                <div class="col-lg-6 nopadding d-none d-lg-block bg-printalo-blueDetail">
+                    <div class="bg-printalo-blueDetail ">
+                        <div class="center">
+                            <div class="text-center">
+                                <img width="100" height="100" src="img/printer.png" alt="" class="img-fluid ">
+                            </div>
+                            <h3 class="text-center text-light">Printalo</h3>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6 nopadding">
+                    <div class="modal-content">
+                        <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
+                        <div class="container">
+                            <h2 class="text-center">Ingreso</h2>
+                            <form action="" class="p-5">
+                                <div class="form-group">
+                                    <label for="name">Email:</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Constraseña:</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                            </form>
+                            <div class="buttongroup text-center py-3"><a
+                                    class="btn btn-outline-light bg-printalo-button text-light">Ingresar</a><br>
+                                <br>
+                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

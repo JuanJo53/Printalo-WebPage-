@@ -19,7 +19,7 @@ body {
 .color-printalo-blueDetail {
   color: #364c68;
 }
-.bg-printalo-footer {
+.bg-printalo-greenDetail {
   background-color: #24c4a6;
 }
 .bg-printalo-button {
@@ -30,12 +30,27 @@ body {
   background: url("../img/principal2x.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 720px;
+  min-height: 650px;
+}
+#showcaseNeg {
+  position: relative;
+  background: url("../img/fotocopias.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px;
 }
 #showcase .primary-overlay {
   position: absolute;
-  background: rgba(63, 63, 63, 0.4);
+  background: rgba(63, 63, 63, 0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#showcaseNeg .primary-overlay {
+  position: absolute;
+  background: rgba(63, 63, 63, 0.5);
   top: 0;
   left: 0;
   width: 100%;
@@ -81,4 +96,11 @@ a {
 }
 li{
   text-align: center;
+}
+
+#posibilidades .fa{
+background: #24c4a6;
+color: white;
+padding:5px;
+border-radius: 5px;
 }

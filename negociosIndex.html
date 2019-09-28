@@ -8,7 +8,8 @@
     <meta name="author" content="Colque Herrera Ariel">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/estiloNegocios.css">
+    <link rel="stylesheet" href="css/negocio/negociogeneral.css">
+    <link rel="stylesheet" href="css/negocio/estiloNegocios.css">
 
     <title>Principal</title>
 </head>
@@ -20,12 +21,17 @@
                 <img width="60" height="60" src="img/printer.png" alt="">
                 <h3 class="d-inline align-middle">Printalo</h3>
             </a>
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+            <div class="navbar-item order-lg-last order-xl-last order-md-middle">
+                <div class="d-inline pull-right circle bg-printalo-greenDetail">
+                    A
+                </div>
+            </div>
+            <button class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#home" class="nav-link text-light">Inicio</a>
+                        <a href="#home" class="nav-link text-light active">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a href="#home" class="nav-link text-light">Registros</a>
@@ -39,8 +45,10 @@
                     <li class="nav-item">
                         <a href="#home" class="nav-link text-light">Personalizar Negocio</a>
                     </li>
+
                 </ul>
             </div>
+
         </div>
     </nav>
 
@@ -59,10 +67,8 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
+            <button class="btn circletoggle m-3" id="menu-toggle">></button>
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
-            </nav>
         </div>
         <!-- /#wrapper -->
 

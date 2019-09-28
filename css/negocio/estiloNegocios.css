@@ -3,9 +3,13 @@ body {
   overflow-x: hidden;
 }
 .navbar .nav-item {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
-.navbar .nav-item .nav-link:hover {
+/*.navbar .nav-item .nav-link:hover {
+  font-weight: bold;
+  color: white !important;
+}*/
+.active{
   font-weight: bold;
   color: white !important;
 }
@@ -35,9 +39,6 @@ a {
   font-weight: bold;
   color: white;
 }
-.modal-dialog {
-  padding-top: 10%;
-}
 .nopadding {
   padding: 0 !important;
   margin: 0 !important;
@@ -47,11 +48,39 @@ a {
   padding: 30px;
   font-size: 1.1rem;
 }
-
-
-
-
-
+.circle{
+  float: right;
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border-color: #24c4a6;
+  background-color: #24c4a6;
+  color :white;
+  text-align: center;
+  line-height: 50px;
+  position: relative;
+}
+.circletoggle{
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border-color: #24c4a6;
+  background-color: #24c4a6;
+  color :white;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+}
+.circletoggle:hover {
+  font-weight: bold;
+  color: white;
+}
 #sidebar-wrapper {
   min-height: 100vh;
   margin-left: -12rem;

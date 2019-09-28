@@ -1,9 +1,8 @@
 body {
   font-family: "Montserat";
-  margin-top: 102px;
 }
 .navbar .nav-item {
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 .navbar .nav-item .nav-link:hover {
   color: #24c4a6 !important;
@@ -78,5 +77,8 @@ a {
   text-decoration: none !important;
 }
 .modal-dialog {
-  padding-top: 10%;
+  padding-top: 6%;
+}
+li{
+  text-align: center;
 }

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML,CSS,bootstrap">
+    <meta name="author" content="Colque Herrera Ariel">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estiloNegocios.css">
+
+    <title>Principal</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark py-1">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img width="60" height="60" src="img/printer.png" alt="">
+                <h3 class="d-inline align-middle">Printalo</h3>
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link text-light">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link text-light">Registros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link text-light">Graficos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link text-light">Publicaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link text-light">Personalizar Negocio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="bg-printalo-greenDetail" id="sidebar-wrapper">
+            <div class="list-group list-group-flush text-center mt-5">
+                <a href="#" class="list-group-item bg-printalo-greenDetail">Pendientes</a>
+                <a href="#" class="list-group-item bg-printalo-greenDetail">Realizados</a>
+                <a href="#" class="list-group-item bg-printalo-greenDetail">Entregados</a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+            </nav>
+        </div>
+        <!-- /#wrapper -->
+
+        <!--ingresar Modal-->
+        <div class="modal fade text-dark" id="ingresarModal">
+            <div class="modal-dialog modal-lg">
+                <div class="row py-3">
+                    <div class="col-lg-6 nopadding d-none d-lg-block bg-printalo-blueDetail">
+
+                        <div class="center">
+                            <div class="text-center">
+                                <img width="100" height="100" src="img/printer.png" alt="" class="img-fluid ">
+                            </div>
+                            <h3 class="text-center text-light">Printalo</h3>
+                        </div>
+
+
+                    </div>
+                    <div class="col-lg-6 nopadding">
+                        <div class="modal-content">
+                            <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
+                            <div class="container">
+                                <h2 class="text-center">Ingreso</h2>
+                                <form action="" class="p-5">
+                                    <div class="form-group">
+                                        <label for="name">Email:</label>
+                                        <input type="text" class="form-control">
+                                        <label for="name">Constraseña:</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+
+                                </form>
+                                <div class="buttongroup text-center py-3"><a
+                                        class="btn btn-outline-light bg-printalo-button text-light">Ingresar</a><br>
+                                    <br>
+                                    <a href="" class="text-center"><u
+                                            class="color-printalo-blueDetail">Registrarse</u></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+</body>
+
+</html>

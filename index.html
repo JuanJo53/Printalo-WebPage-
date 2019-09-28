@@ -32,10 +32,11 @@
                             data-target="#ingresarModal">Ingresar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button">Registrarse</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button" data-toggle="modal"
+                            data-target="#registrarseModal">Registrarse</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button">Empresas</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button" href="negociosIndex.html">Negocios</a>
                     </li>
                 </ul>
             </div>
@@ -81,14 +82,14 @@
         <div class="modal-dialog modal-lg">
             <div class="row py-3">
                 <div class="col-lg-6 nopadding d-none d-lg-block bg-printalo-blueDetail">
-                    <div class="bg-printalo-blueDetail ">
-                        <div class="center">
-                            <div class="text-center">
-                                <img width="100" height="100" src="img/printer.png" alt="" class="img-fluid ">
-                            </div>
-                            <h3 class="text-center text-light">Printalo</h3>
+
+                    <div class="center">
+                        <div class="text-center">
+                            <img width="100" height="100" src="img/printer.png" alt="" class="img-fluid ">
                         </div>
+                        <h3 class="text-center text-light">Printalo</h3>
                     </div>
+
 
                 </div>
                 <div class="col-lg-6 nopadding">
@@ -100,26 +101,61 @@
                                 <div class="form-group">
                                     <label for="name">Email:</label>
                                     <input type="text" class="form-control">
-                                </div>
-                                <div class="form-group">
                                     <label for="name">Constraseña:</label>
                                     <input type="password" class="form-control">
                                 </div>
+
                             </form>
                             <div class="buttongroup text-center py-3"><a
                                     class="btn btn-outline-light bg-printalo-button text-light">Ingresar</a><br>
                                 <br>
                                 <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
                             </div>
-
                         </div>
-
-
                     </div>
                 </div>
-
             </div>
+        </div>
+    </div>
 
+    <!--Registrarse Modal-->
+    <div class="modal fade text-dark" id="registrarseModal">
+
+        <div class="modal-dialog modal-lg">
+
+            <div class="row py-3">
+                <div class="col-lg-6 nopadding">
+                    <div class="modal-content">
+                        <div class="container">
+                            <h2 class="text-center pt-5">Registrarse</h2>
+                            <form action="" class="p-5">
+                                <div class="form-group">
+                                    <label for="username">Nombre de usuario:</label>
+                                    <input type="password" class="form-control">
+                                    <label for="name">Email:</label>
+                                    <input type="text" class="form-control">
+                                    <label for="password">Constraseña:</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                            </form>
+                            <div class="buttongroup text-center py-3"><a
+                                    class="btn btn-outline-light bg-printalo-button text-light">Registrarse</a><br>
+                                <br>
+                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 nopadding d-none d-lg-block bg-printalo-blueDetail">
+                    <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
+                    <div class="center">
+                        <div class="text-center">
+                            <img width="100" height="100" src="img/printer.png" alt="" class="img-fluid ">
+                        </div>
+                        <h3 class="text-center text-light">Printalo</h3>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

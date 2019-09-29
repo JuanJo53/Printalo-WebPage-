@@ -7,19 +7,19 @@
     <meta name="keywords" content="HTML,CSS,bootstrap">
     <meta name="author" content="Colque Herrera Ariel">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="../../css/modals.css">
-
     <link rel="stylesheet" href="../../css/detalles.css">
-
-    <link rel="stylesheet" href="../../css/negocio/estiloNegocios.css">
-    <link rel="stylesheet" href="../../css/negocio/negociogeneral.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/usuario/estiloUsuario.css">
+    <link rel="stylesheet" href="../../css/usuario/usuarioGeneral.css">
+    <link rel="stylesheet" href="../../css/fab.css">
 
     <title>Principal</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark py-1">
+    <nav class="navbar navbar-expand-sm bg-printalo-nav navbar-dark py-1">
         <div class="container">
             <a class="navbar-brand" href="#home">
                 <img width="60" height="60" src="../../img/printer.png" alt="">
@@ -27,7 +27,7 @@
             </a>
             <div class="navbar-item order-lg-last order-xl-last order-md-middle">
                 <div class="d-inline pull-right circle bg-printalo-greenDetail">
-                    A
+                    J
                 </div>
             </div>
             <button class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#navbarNav">
@@ -35,38 +35,38 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#home" class="nav-link text-light active">Inicio</a>
+                        <a href="#home" class="nav-link text-light active">Documentos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#home" class="nav-link text-light">Registros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link text-light">Graficos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link text-light">Publicaciones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link text-light">Personalizar Negocio</a>
+                        <a href="#home" class="nav-link text-light">Puestos</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="d-flex" id="wrapper">
-        <div class="bg-printalo-greenDetail" id="sidebar-wrapper">
-            <div class="list-group list-group-flush text-center mt-5">
-                <a href="#" class="list-group-item bg-printalo-greenDetail">Pendientes</a>
-                <a href="#" class="list-group-item bg-printalo-greenDetail">Realizados</a>
-                <a href="#" class="list-group-item bg-printalo-greenDetail">Entregados</a>
-            </div>
-        </div>
-        <div id="page-content-wrapper">
-            <button class="btn circletoggle m-3" id="menu-toggle">></button>
 
+    <ul class="nav nav-pills nav-justified bg-printalo-greenDetail">
+        <li class="nav-item"><a class="nav-link active" href="#porEnviar" data-toggle="tab">Por enviar</a></li>
+        <li class="nav-item"><a class="nav-link" href="#enviados" data-toggle="tab">Enviados</a></li>
+        <li class="nav-item"><a class="nav-link" href="#realizados" data-toggle="tab">Realizados</a></li>
+    </ul>
+    <div class="tab-content active">
+        <div class="tab-pane" id="porEnviar">
+            <p>First paragraph</p>
+        </div>
+        <div class="tab-pane" id="enviados">
+            <p>2 paragraph</p>
+        </div>
+        <div class="tab-pane" id="realizados">
+            <p>3 paragraph</p>
         </div>
     </div>
-
+    <div class="fab-container">
+        <div class="fab-icon-holder">
+            <i class="fas fa-plus">
+            </i>
+        </div>
+    </div>
 
     <!--ingresar Modal-->
     <div class="modal fade text-dark" id="ingresarModal">

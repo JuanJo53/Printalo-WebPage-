@@ -2,11 +2,17 @@ body {
   font-family: "Montserat";
   overflow-x: hidden;
 }
-
 .navbar .nav-item {
   font-size: 1rem;
 }
-
+/*.navbar .nav-item .nav-link:hover {
+  font-weight: bold;
+  color: white !important;
+}*/
+.active {
+  font-weight: bold;
+  color: white !important;
+}
 .bg-printalo-nav {
   background-color: #253449;
 }
@@ -39,24 +45,9 @@ a {
   padding: 30px;
   font-size: 1.1rem;
 }
-.circle {
-  float: right;
-  cursor: pointer;
-  display: block;
-  box-sizing: border-box;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  border-color: #24c4a6;
-  background-color: #24c4a6;
-  color: white;
-  text-align: center;
-  line-height: 50px;
-  position: relative;
-}
 
 #sidebar-wrapper {
-  min-height: 100vh;
+  min-height: 93vh;
   margin-left: -12rem;
   -webkit-transition: margin 0.25s ease-out;
   -moz-transition: margin 0.25s ease-out;
@@ -91,7 +82,21 @@ a {
     margin-left: -12rem;
   }
 }
-
+.circle {
+  float: right;
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border-color: #24c4a6;
+  background-color: #24c4a6;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  position: relative;
+}
 .circletoggle {
   cursor: pointer;
   display: block;
@@ -111,9 +116,7 @@ a {
   padding: 0 !important;
   margin: 0 !important;
 }
-
-.active {
+.circletoggle:hover {
   font-weight: bold;
-  color: white !important;
+  color: white;
 }
-

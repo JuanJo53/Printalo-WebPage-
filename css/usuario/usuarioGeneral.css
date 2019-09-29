@@ -1,0 +1,71 @@
+body {
+  font-family: "Montserat";
+  overflow-x: hidden;
+}
+.navbar .nav-item {
+  font-size: 1rem;
+}
+/*.navbar .nav-item .nav-link:hover {
+  font-weight: bold;
+  color: white !important;
+}*/
+.navbar .active {
+  font-weight: bold;
+  color: white !important;
+}
+.bg-printalo-nav {
+  background-color: #253449;
+}
+.bg-printalo-blueDetail {
+  background-color: #364c68;
+}
+.color-printalo-blueDetail {
+  color: #364c68;
+}
+.bg-printalo-greenDetail {
+  background-color: #24c4a6;
+}
+.bg-printalo-button {
+  background-color: #24c4a6;
+}
+.navbar a {
+  text-decoration: none !important;
+  color: white;
+}
+
+.modal-dialog {
+  padding-top: 10%;
+}
+.circle {
+  float: right;
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border-color: #24c4a6;
+  background-color: #24c4a6;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  position: relative;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.nav li {
+  color:#ffffff !important;
+}
+.nav-pills .nav-link.active{ 
+  background-color: #24c4a6;
+  border-radius: 0px;
+  color: #ffffff !important;
+  font-weight: bold;
+}
+.nav-pills .nav-link{
+  padding:10px; 
+  color: white;
+}

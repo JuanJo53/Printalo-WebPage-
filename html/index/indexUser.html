@@ -7,8 +7,11 @@
     <meta name="keywords" content="HTML,CSS,bootstrap">
     <meta name="author" content="Colque Herrera Ariel">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/estilo.css">
+    
+    <link rel="stylesheet" href="../../css/index/estilo.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/modals.css">
+    <link rel="stylesheet" href="../../css/detalles.css">
 
     <title>Principal Usuarios</title>
 </head>
@@ -17,7 +20,7 @@
     <nav class="navbar navbar-expand-sm bg-printalo-nav navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#home">
-                <img width="60" height="60" src="img/printer.png" alt="">
+                <img width="60" height="60" src="../../img/printer.png" alt="">
                 <h5 class="d-inline align-middle">Printalo</h5>
             </a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
@@ -82,16 +85,17 @@
     <div class="modal fade text-dark" id="ingresarModal">
         <div class="modal-dialog modal-lg">
             <div class="row py-3">
-                <div class="col-lg-6 nopadding d-none d-lg-block bg-printalo-blueDetail">
-
-                    <div class="center">
-                        <div class="text-center">
-                            <img width="100" height="100" src="img/printer.png" alt="" class="img-fluid ">
+                <div class="col-lg-6 nopadding d-none d-lg-block ">
+                    <div class="modal-content bg-printalo-blueDetail">
+                        <div class="container center">
+                            <div class="modal-body">
+                                <div class="text-center">
+                                    <img width="100" height="100" src="../../img/printer.png" alt="" class="img-fluid ">
+                                </div>
+                                <h3 class="text-center text-light">Printalo</h3>
+                            </div>
                         </div>
-                        <h3 class="text-center text-light">Printalo</h3>
                     </div>
-
-
                 </div>
                 <div class="col-lg-6 nopadding">
                     <div class="modal-content">
@@ -100,7 +104,7 @@
                             <h2 class="text-center">Ingreso</h2>
                             <form action="" class="p-5">
                                 <div class="form-group">
-                                    <label for="name">Email:</label>
+                                    <label for="name">E-mail:</label>
                                     <input type="text" class="form-control">
                                     <label for="name">Constraseña:</label>
                                     <input type="password" class="form-control">
@@ -121,9 +125,7 @@
 
     <!--Registrarse Modal-->
     <div class="modal fade text-dark" id="registrarseModal">
-
         <div class="modal-dialog modal-lg">
-
             <div class="row py-3">
                 <div class="col-lg-6 nopadding">
                     <div class="modal-content">
@@ -133,7 +135,7 @@
                                 <div class="form-group">
                                     <label for="username">Nombre de usuario:</label>
                                     <input type="password" class="form-control">
-                                    <label for="name">Email:</label>
+                                    <label for="name">E-mail:</label>
                                     <input type="text" class="form-control">
                                     <label for="password">Constraseña:</label>
                                     <input type="password" class="form-control">
@@ -147,13 +149,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 nopadding d-none d-lg-block bg-printalo-blueDetail">
-                    <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
-                    <div class="center">
-                        <div class="text-center">
-                            <img width="100" height="100" src="img/printer.png" alt="" class="img-fluid ">
+                <div class="col-lg-6 nopadding d-none d-lg-block ">
+                    <div class="modal-content bg-printalo-blueDetail">
+                        <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
+                        <div class="container center">
+                            <div class="modal-body">
+                                <div class="text-center">
+                                    <img width="100" height="100" src="../../img/printer.png" alt="" class="img-fluid ">
+                                </div>
+                                <h3 class="text-center text-light">Printalo</h3>
+                            </div>
                         </div>
-                        <h3 class="text-center text-light">Printalo</h3>
                     </div>
                 </div>
             </div>
@@ -163,7 +169,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
     <script>
         $('#year').text(new Date().getFullYear());
     </script>

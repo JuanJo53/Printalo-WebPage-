@@ -37,6 +37,13 @@
   padding: 5px;
   border-radius: 5px;
 }
+
+#posibilidadesUsuarios .fa {
+  background: #24c4a6;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
 .nav-item .active {
   font-weight: bold;
 }

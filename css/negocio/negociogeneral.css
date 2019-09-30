@@ -4,6 +4,7 @@ body {
 }
 .navbar .nav-item {
   font-size: 1rem;
+  text-align: left;
 }
 /*.navbar .nav-item .nav-link:hover {
   font-weight: bold;
@@ -119,4 +120,11 @@ a {
 .circletoggle:hover {
   font-weight: bold;
   color: white;
+}
+.navbar .container .navbar-toggler {
+  float: left;
+}
+.navbar .container .navbar-header {
+  float: left;
+  width:auto !important;
 }

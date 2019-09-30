@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML,CSS,bootstrap">
+    <meta name="author" content="Colque Herrera Ariel">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="../../../css/index/estilo.css">
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/modals.css">
+    <link rel="stylesheet" href="../../../css/detalles.css">
+
+    <title>Principal Negocios</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-xl bg-printalo-nav navbar-dark py-2">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img width="60" height="60" src="../../../img/printer.png" alt="">
+                <h5 class="d-inline align-middle">Printalo Negocios</h5>
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="indexNeg.html" class="nav-link text-light ">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="prodServNeg.html" class="nav-link text-light active">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="negoAsocNeg.html" class="nav-link text-light">Negocios asociados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="indexContactosNeg.html" class="nav-link text-light">Contactos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-button" data-toggle="modal"
+                            data-target="#ingresarModal">Iniciar Sesion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button" data-toggle="modal"
+                            data-target="#registrarseModal">Registrarse</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
+                            href="../usuario/indexUser.html">Usuarios</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="servicios-section" class=" bg-printalo-greenDetail">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center text-light py-5 ">
+                    <h3>Con nuestro servicio usted podra tener:</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="servicios-boxes" class="bg-printalo-blueDetail py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 p-3">
+                    <div class="card-text-center bg-printalo-greenDetail">
+                        <div class="card-body text-light">
+                            <h5 class="text-center">Registros</h5>
+                            <div class="text-center">
+                                <i class="far fa-clipboard fa-5x"></i>
+                            </div>
+                            <p class="text-justify mt-2">Usted podra tener un registro de los pedidos que le llegan
+                                ,esto le
+                                posibilitara tener un registros de estas tambien</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="card-text-center bg-printalo-greenDetail">
+                        <div class="card-text-center bg-printalo-greenDetail">
+                            <div class="card-body text-light">
+                                <h5 class="text-center">Graficos</h5>
+                                <div class="text-center">
+                                    <i class="fas fa-chart-line fa-5x"></i>
+                                </div>
+                                <p class="text-justify mt-2">Gracias a los registros ,podra tener graficos de las ventas
+                                    que
+                                    realiza y podra verlas por un rango de tiempo</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="card-text-center bg-printalo-greenDetail">
+                        <div class="card-text-center bg-printalo-greenDetail">
+                            <div class="card-body text-light">
+                                <h5 class="text-center">Listas</h5>
+                                <div class="text-center">
+                                    <i class="fas fa-list-ol fa-5x"></i>
+                                </div>
+                                <p class="text-justify mt-2">Usted podra tener lista de los pedidos que le llegan,esto
+                                    le
+                                    posibilitara tener un registros de estas tambien</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="card-text-center bg-printalo-greenDetail">
+                        <div class="card-text-center bg-printalo-greenDetail">
+                            <div class="card-body text-light">
+                                <h5 class="text-center">Personalizar</h5>
+                                <div class="text-center">
+                                    <i class="fas fa-tools fa-5x"></i>
+                                </div>
+                                <p class="text-justify mt-2">Las configuraciones seran completamente personalizadas para
+                                    usted y su negocio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="servicios-dispositivos" class="py-3 bg-printalo-greenDetail text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 p-3 text-center">
+                    <h3>Podra usar la aplicacion del negocio en diversos dispositivos , sin ser forzosamente una
+                        computadora</h3>
+                </div>
+                <div class="col-md-6 p-3">
+                    <div class="text-center"><img src="../../../img/responsive.jpg" alt="" class="im-fluid"></div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios-publicidad" class="py-3 bg-printalo-blueDetail text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 p-3">
+                    <div class="text-center"><img src="../../../img/marketing.jpg" alt="" class="im-fluid"></div>
+                </div>
+                <div class="col-md-6 p-3 text-center">
+                    <h3>Tendra un perfil de su negocio el cual todas las personas que utilizan la aplicacion podran
+                        obervar y utilizar sus servicios</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="main-footer" class="bg-printalo-greenDetail text-white py-3">
+        <div class="container text-white">
+            <div class="row text-center">
+                <div class="col-lg-5 ml-auto">
+                    <p>Contactos : 76743310</p>
+                    <p>arielcolque@gmail.com</p>
+                </div>
+                <div class="col-lg-5 ml-auto">
+                    <p>Servicios : Fotocopias a pedido</p>
+                    <p>Impresiones a pedido</p>
+                </div>
+                <div class="col-lg-2 ml-auto">
+                    <p class="lead ">
+                        <p>Copyright &copy;<span id="year"></span></p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--ingresar Modal-->
+    <div class="modal fade text-dark" id="ingresarModal">
+        <div class="modal-dialog modal-lg">
+            <div class="row py-3">
+                <div class="col-lg-6 nopadding d-none d-lg-block ">
+                    <div class="modal-content bg-printalo-blueDetail">
+                        <div class="container center">
+                            <div class="modal-body">
+                                <div class="text-center">
+                                    <img width="100" height="100" src="../../../img/printer.png" alt="" class="img-fluid ">
+                                </div>
+                                <h3 class="text-center text-light">Printalo</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 nopadding">
+                    <div class="modal-content">
+                        <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
+                        <div class="container">
+                            <h2 class="text-center">Ingreso Negocios</h2>
+                            <form action="" class="p-5">
+                                <div class="form-group">
+                                    <label for="name">Email:</label>
+                                    <input type="text" class="form-control">
+                                    <label for="name">Constraseña:</label>
+                                    <input type="password" class="form-control">
+                                </div>
+
+                            </form>
+                            <div class="buttongroup text-center py-3"><a
+                                    class="btn btn-outline-light bg-printalo-button text-light"
+                                    href="../../negocio/inicioNeg.html">Ingresar</a><br>
+                                <br>
+                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Registrarse Modal-->
+    <div class="modal fade text-dark" id="registrarseModal">
+
+        <div class="modal-dialog modal-lg">
+
+            <div class="row py-3">
+                <div class="col-lg-6 nopadding">
+                    <div class="modal-content">
+                        <div class="container">
+                            <h2 class="text-center pt-5">Registrar Negocio</h2>
+                            <form action="" class="p-3">
+                                <div class="form-group">
+                                    <label for="username">E-mail : </label>
+                                    <input type="text" class="form-control">
+                                    <label for="name">Nombre del negocio:</label>
+                                    <input type="text" class="form-control">
+                                    <label for="password">Localizacion:</label>
+                                    <input type="text" class="form-control">
+                                    <label for="password">Numero de referencia:</label>
+                                    <input type="text" class="form-control">
+                                    <label for="password">Contraseña:</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </form>
+                            <div class="buttongroup text-center py-3"><a
+                                    class="btn btn-outline-light bg-printalo-button text-light">Registrar</a><br>
+                                <br>
+                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 nopadding d-none d-lg-block ">
+                    <div class="modal-content bg-printalo-blueDetail">
+                        <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
+                        <div class="container center">
+                            <div class="modal-body">
+                                <div class="text-center">
+                                    <img width="100" height="100" src="../../../img/printer.png" alt="" class="img-fluid ">
+                                </div>
+                                <h3 class="text-center text-light">Printalo</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
+    <script>
+        $('#year').text(new Date().getFullYear());
+    </script>
+</body>
+
+</html>

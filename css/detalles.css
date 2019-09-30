@@ -25,3 +25,7 @@ body {
 .bg-printalo-button {
   background-color: #24c4a6;
 }
+.active {
+  font-weight: bold;
+  color: white !important;
+}

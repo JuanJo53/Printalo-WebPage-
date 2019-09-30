@@ -42,6 +42,10 @@
   input[type="text"],input[type="password"], textarea{
     background: #c3dee5;
   }
+
+  .form-control{
+    background: #c3dee5;
+  }
   label{
     font-weight: bold;
     padding-top:7px;

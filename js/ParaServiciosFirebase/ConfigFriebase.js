@@ -1,3 +1,4 @@
+//NO TOCAR ESTOS ARCHIVOS SE REQUIEREN MODIFICACIONES DEBIDO A CAMBIOS EN ARCHIVOS DE FRONTEND
 const varConfig = {
     apiKey: "AIzaSyAEFS51wASyzXFPRgosvru8FHm-zvaMzAI",
     authDomain: "printalo-ef2bc.firebaseapp.com",

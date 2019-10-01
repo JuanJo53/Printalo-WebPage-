@@ -1,0 +1,31 @@
+body {
+  font-family: "Montserat";
+}
+.navbar .nav-item {
+  font-size: 1rem;
+}
+.navbar .nav-item .nav-link:hover {
+  color: #24c4a6 !important;
+}
+.btn-outline-light:hover {
+  background-color: #253449;
+}
+.bg-printalo-nav {
+  background-color: #253449;
+}
+.bg-printalo-blueDetail {
+  background-color: #364c68;
+}
+.color-printalo-blueDetail {
+  color: #364c68;
+}
+.bg-printalo-greenDetail {
+  background-color: #24c4a6;
+}
+.bg-printalo-button {
+  background-color: #24c4a6;
+}
+.active {
+  font-weight: bold;
+  color: white !important;
+}

@@ -69,3 +69,6 @@ body {
   padding:10px; 
   color: white;
 }
+li {
+  text-align: center;
+}

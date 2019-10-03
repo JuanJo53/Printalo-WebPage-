@@ -121,10 +121,14 @@ a {
   font-weight: bold;
   color: white;
 }
-.navbar .container .navbar-toggler {
-  float: left;
-}
+
 .navbar .container .navbar-header {
   float: left;
-  width:auto !important;
+  width: auto !important;
+}
+.nav li {
+  color: #ffffff !important;
+}
+li {
+  text-align: center!important;
 }

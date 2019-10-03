@@ -20,8 +20,7 @@
     <nav class="navbar navbar-expand-md bg-printalo-nav navbar-dark">
         <div class="container">
             <div class="navbar-header">
-                <button class="navbar-toggler mx-1" data-toggle="collapse"
-                    data-target="#navbarNav">
+                <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span></button>
                 <a class="navbar-brand mx-1" href="#home">
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
@@ -171,7 +170,7 @@
                                     <input type="password" class="form-control">
                                 </div>
                             </form>
-                            <div class="buttongroup text-center py-3"><a
+                            <div class="modalbutton text-center py-3"><a
                                     class="btn btn-outline-light bg-printalo-button text-light"
                                     href="../../usuario/inicioUsuario.html">Ingresar</a><br>
                                 <br>
@@ -193,18 +192,23 @@
                 <div class="col-lg-6 nopadding">
                     <div class="modal-content">
                         <div class="container">
+                            <a href="" class="close-icon text-center ml-auto m-3 d-none d-block d-sm-block d-md-block d-lg-none" data-dismiss="modal"></a>
                             <h2 class="text-center pt-5">Registrarse</h2>
                             <form action="" class="p-5">
                                 <div class="form-group">
-                                    <label for="username">Nombre de usuario:</label>
-                                    <input type="password" class="form-control">
+                                    <label for="username">Nombre:</label>
+                                    <input type="text" class="form-control">
+                                    <label for="username">Apellido:</label>
+                                    <input type="text" class="form-control">
+                                    <label for="username">Numero de telefono:</label>
+                                    <input type="text" class="form-control">
                                     <label for="name">E-mail:</label>
                                     <input type="text" class="form-control">
                                     <label for="password">Constraseña:</label>
                                     <input type="password" class="form-control">
                                 </div>
                             </form>
-                            <div class="buttongroup text-center py-3"><a
+                            <div class="modalbutton text-center py-3"><a
                                     class="btn btn-outline-light bg-printalo-button text-light">Registrar</a><br>
                                 <br>
                                 <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
@@ -229,6 +233,7 @@
             </div>
         </div>
     </div>
+    <!--Fin modals-->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

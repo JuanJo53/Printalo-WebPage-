@@ -130,5 +130,10 @@ a {
   color: #ffffff !important;
 }
 li {
-  text-align: center!important;
+  text-align: center !important;
+}
+.list-group-item.active {
+  color: #fff;
+  /*background-color:rgba(0,0,0,0.075);*/
+  background-color: #24c4a6;
 }

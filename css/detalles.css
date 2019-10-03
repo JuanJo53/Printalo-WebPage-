@@ -29,3 +29,9 @@ body {
   font-weight: bold;
   color: white !important;
 }
+.modalbutton a:hover {
+  color: #24c4a6 !important;
+}
+.modalbutton a u:hover {
+  color: #24c4a6 !important;
+}

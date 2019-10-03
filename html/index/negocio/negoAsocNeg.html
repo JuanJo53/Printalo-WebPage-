@@ -176,9 +176,8 @@
                                     <label for="name">Constraseña:</label>
                                     <input type="password" class="form-control">
                                 </div>
-
                             </form>
-                            <div class="buttongroup text-center py-3"><a
+                            <div class="modalbutton text-center py-3"><a
                                     class="btn btn-outline-light bg-printalo-button text-light"
                                     href="../../negocio/inicioNeg.html">Ingresar</a><br>
                                 <br>
@@ -193,29 +192,34 @@
 
     <!--Registrarse Modal-->
     <div class="modal fade text-dark" id="registrarseModal">
-
         <div class="modal-dialog modal-lg">
-
             <div class="row py-3">
                 <div class="col-lg-6 nopadding">
                     <div class="modal-content">
                         <div class="container">
+                            <a href=""
+                                class="close-icon text-center ml-auto m-3 d-none d-block d-sm-block d-md-block d-lg-none"
+                                data-dismiss="modal"></a>
                             <h2 class="text-center pt-5">Registrar Negocio</h2>
                             <form action="" class="p-3">
                                 <div class="form-group">
-                                    <label for="username">E-mail : </label>
+                                    <label for="username">Nombre Dueño: </label>
+                                    <input type="text" class="form-control">
+                                    <label for="username">Apellido Dueño : </label>
                                     <input type="text" class="form-control">
                                     <label for="name">Nombre del negocio:</label>
                                     <input type="text" class="form-control">
-                                    <label for="password">Localizacion:</label>
+                                    <label for="password">Direccion:</label>
                                     <input type="text" class="form-control">
                                     <label for="password">Numero de referencia:</label>
+                                    <input type="text" class="form-control">
+                                    <label for="username">E-mail : </label>
                                     <input type="text" class="form-control">
                                     <label for="password">Contraseña:</label>
                                     <input type="text" class="form-control">
                                 </div>
                             </form>
-                            <div class="buttongroup text-center py-3"><a
+                            <div class="modalbutton text-center py-3"><a
                                     class="btn btn-outline-light bg-printalo-button text-light">Registrar</a><br>
                                 <br>
                                 <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
@@ -240,6 +244,7 @@
             </div>
         </div>
     </div>
+    <!--Fin de Modals-->
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

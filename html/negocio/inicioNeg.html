@@ -7,11 +7,9 @@
     <meta name="keywords" content="HTML,CSS,bootstrap">
     <meta name="author" content="Colque Herrera Ariel">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/modals.css">
 
     <link rel="stylesheet" href="../../css/detalles.css">
-
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/negocio/estiloNegocios.css">
     <link rel="stylesheet" href="../../css/negocio/negociogeneral.css">
 
@@ -21,24 +19,23 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark py-1">
         <div class="container">
-            <a class="navbar-brand" href="#home">
-                <img width="60" height="60" src="../../img/printer.png" alt="">
-                <h3 class="d-inline align-middle">Printalo</h3>
-            </a>
-            <div class="navbar-item order-lg-last">
+            <div class="navbar-header">
+                <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span></button>
+                <a class="navbar-brand mx-1" href="#home">
+                    <img width="60" height="60" src="../../img/printer.png" alt="">
+                    <h5 class="d-inline align-middle mx-1">Printalo</h5>
+                </a>
+            </div>
+            <div class="navbar-item order-lg-last  order-sx-last mx-1">
                 <div class="d-inline circle bg-printalo-greenDetail">
-                    A
+                    J
                 </div>
             </div>
-            <div class="navbar-header">
-                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span></button>
-            </div>
-
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#home" class="nav-link text-light active">Inicio</a>
+                        <a href="#home" class="nav-link text-light active">Pedidos</a>
                     </li>
                     <li class="nav-item">
                         <a href="#home" class="nav-link text-light">Registros</a>
@@ -50,17 +47,18 @@
                         <a href="#home" class="nav-link text-light">Publicaciones</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#home" class="nav-link text-light">Personalizar Negocio</a>
+                        <a href="#home" class="nav-link text-light">Personalizar</a>
                     </li>
                 </ul>
-
             </div>
+
+
         </div>
     </nav>
     <div class="d-flex" id="wrapper">
         <div class="bg-printalo-greenDetail" id="sidebar-wrapper">
             <div class="list-group list-group-flush text-center mt-5">
-                <a href="#" class="list-group-item bg-printalo-greenDetail">Pendientes</a>
+                <a href="#" class="list-group-item bg-printalo-greenDetail active">Pendientes</a>
                 <a href="#" class="list-group-item bg-printalo-greenDetail">Realizados</a>
                 <a href="#" class="list-group-item bg-printalo-greenDetail">Entregados</a>
             </div>

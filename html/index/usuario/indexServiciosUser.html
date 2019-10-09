@@ -17,30 +17,26 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-xl bg-printalo-nav navbar-dark py-2">
+    <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark">
         <div class="container">
             <div class="navbar-header">
                 <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span></button>
-                <!--Link ir a index Neg-->
-                <a class="navbar-brand mx-1" href="indexNeg.html">
+                <!--Link ir a index user-->
+                <a class="navbar-brand mx-1" href="indexUser.html">
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
-                    <h5 class="d-inline align-middle mx-1">Printalo Negocios</h5>
+                    <h5 class="d-inline align-middle mx-1">Printalo</h5>
                 </a>
             </div>
-            <div class="collapse navbar-collapse " id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <!--Link Servicios-->
                     <li class="nav-item">
-                        <a href="servNeg.html" class="nav-link text-light center">Servicios</a>
-                    </li>
-                    <!--Link Negocios Asociados-->
-                    <li class="nav-item">
-                        <a href="negoAsocNeg.html" class="nav-link text-light center">Negocios asociados</a>
+                        <a href="indexServiciosUser.html" class="nav-link text-light center  active">Servicios</a>
                     </li>
                     <!--Link Contactos-->
                     <li class="nav-item">
-                        <a href="indexContactosNeg.html" class="nav-link text-light center active">Contactos</a>
+                        <a href="indexContactosUser.html" class="nav-link text-light center  ">Contactos</a>
                     </li>
                     <!--Btn Iniciar Sesion-->
                     <li class="nav-item">
@@ -52,61 +48,63 @@
                         <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button" data-toggle="modal"
                             data-target="#registrarseModal">Registrarse</a>
                     </li>
-                    <!--Btn Ir a seccion de Usuarios-->
+                    <!--Btn Ir a seccion Negocios-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
-                            href="../usuario/indexUser.html">Usuarios</a>
+                            href="../negocio/indexNeg.html">Negocios</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container">
-        <!--section 1-->
-        <section id="formsection" class="my-4 py-4">
+        <!--Section 1-->
+        <section id="servicessection" class="bg-printalo-blueDetail py-4 my-4">
             <div class="text-center">
-                <h2>Contactanos</h2>
-                <h4>Si tiene alguna duda,llene el formualrio y con gusto lo atenderemos</h4>
+                <h3>Servicios que brindamos con la</h3>
+                <h3>Aplicacion : </h3>
             </div>
-            <div class="row">
-                <div class="col d-none d-sm-block"></div>
-                <div class="col-md-5">
-                    <div class="center">
-                        <div class="text-center">
-                            <i class="far fa-clipboard fa-8x circlebase"></i>
+            <table class="ml-auto mr-auto">
+                <tr>
+                    <!--Primera seccion-->
+                    <td><i class="fas fa-search fa-2x circlebase2 m-3"></i></td>
+                    <td>
+                        <div class="p-3 align-self-end align-self-center justify-text">
+                            Descubre los servicios que los negocios te ofrecen
                         </div>
-
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="card bg-printalo-greenDetail text-center card-form m-1 text-light">
-                        <div class="card-body p-4">
-                            <h3>Contactanos</h3>
-                            <form action="" class="form-group">
-                                <label class="float-left" for="name">E-mail:</label>
-                                <input type="text" class="form-control">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label class="float-left" for="message">Comentario : </label><br>
-                                            <textarea cols="80" rows="5" name="msg" class="form-control"></textarea><br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modalbutton"><a
-                                        class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button "
-                                        href="#">Enviar</a></div>
-                            </form>
+                    </td>
+                </tr>
+                <tr>
+                    <!--segunda seccion-->
+                    <td> <i class="fas fa-paper-plane fa-2x circlebase2 m-3"></i></td>
+                    <td>
+                        <div class="p-3 align-self-end align-self-center justify-text">
+                            Envia documentos y ve a recogerlos cuando quieras
                         </div>
-                    </div>
-                </div>
-                <div class="col d-none d-sm-block"></div>
-            </div>
+                    </td>
+                </tr>
+                <tr>
+                    <!--tercera seccion-->
+                    <td> <i class="fas fa-hand-point-up fa-2x circlebase2 m-3"></td>
+                    <td>
+                        <div class="p-3 align-self-end align-self-center justify-text">
+                            Escoge el negocio que quieras que realice tu pedido
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <!--Cuarta seccion-->
+                    <td><i class="far fa-credit-card fa-2x circlebase2 m-3"></i></td>
+                    <td>
+                        <div class="p-3 align-self-end align-self-center justify-text">
+                            Paga tu pedido de forma tradicional o via internet
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </section>
-        <!--section 1-->
-
+        <!--Section 1-->
     </div>
-
     <footer id="main-footer" class="bg-printalo-greenDetail text-white py-3">
         <div class="container text-white">
             <div class="row text-center">
@@ -178,32 +176,24 @@
                     <div class="modal-content">
                         <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
                         <div class="container">
-                            <h2 class="text-center">Ingreso Negocios</h2>
+                            <h2 class="text-center">Ingreso</h2>
                             <form action="" class="p-5">
                                 <div class="form-group">
-                                    <!--nombre del negocio-->
-                                    <label for="name">Nombre del Negocio:</label>
-                                    <input type="text" class="form-control">
-                                    <!--//-->
-                                    <!--email-->
                                     <label for="name">E-mail:</label>
                                     <input type="text" class="form-control">
-                                    <!--//-->
-                                    <!--contrasenia-->
                                     <label for="name">Constraseña:</label>
                                     <input type="password" class="form-control">
-                                    <!--//-->
                                 </div>
                             </form>
                             <div class="modalbutton text-center py-3">
-                                <!--Btn Ingresar Negocios-->
+                                <!--btn ingresar usuario normal-->
                                 <a class="btn btn-outline-light bg-printalo-button text-light"
-                                    href="../../negocio/inicioNeg.html">Ingresar</a>
-                                <!--//--><br>
-                                <br>
-                                <!--Link Registrarse-->
-                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
+                                    href="../../usuario/inicioUsuario.html">Ingresar</a>
                                 <!--//-->
+                                <br>
+                                <br>
+                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
+
                             </div>
                         </div>
                     </div>
@@ -211,6 +201,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!--Registrarse Modal-->
     <div class="modal fade text-dark" id="registrarseModal">
@@ -222,48 +214,28 @@
                             <a href=""
                                 class="close-icon text-center ml-auto m-3 d-none d-block d-sm-block d-md-block d-lg-none"
                                 data-dismiss="modal"></a>
-                            <h2 class="text-center pt-5">Registrar Negocio</h2>
-                            <form action="" class="p-3">
+                            <h2 class="text-center pt-5">Registrarse</h2>
+                            <form action="" class="p-5">
                                 <div class="form-group">
-                                    <!--Nombre del duenio-->
-                                    <label for="username">Nombre del Dueño: </label>
+                                    <label for="username">Nombre:</label>
                                     <input type="text" class="form-control">
-                                    <!--//-->
-                                    <!--apellido del duenio-->
-                                    <label for="username">Apellido del Dueño : </label>
+                                    <label for="username">Apellido:</label>
                                     <input type="text" class="form-control">
-                                    <!--//-->
-                                    <!--nombre del negocio-->
-                                    <label for="name">Nombre del Negocio:</label>
+                                    <label for="username">Numero de telefono:</label>
                                     <input type="text" class="form-control">
-                                    <!--//-->
-                                    <!--direccion-->
-                                    <label for="password">Direccion:</label>
+                                    <label for="name">E-mail:</label>
                                     <input type="text" class="form-control">
-                                    <!--//-->
-                                    <!--numero de referencia-->
-                                    <label for="text">Numero de referencia:</label>
-                                    <input type="text" class="form-control">
-                                    <!--//-->
-                                    <!--Email-->
-                                    <label for="username">E-mail : </label>
-                                    <input type="text" class="form-control">
-                                    <!--//-->
-                                    <!--Contrasenia-->
-                                    <label for="password">Contraseña:</label>
+                                    <label for="password">Constraseña:</label>
                                     <input type="password" class="form-control">
-                                    <!--//-->
                                 </div>
                             </form>
                             <div class="modalbutton text-center py-3">
-                                <!--Btn Registrar Negocios-->
+                                <!--btn ingresar usuario normal-->
                                 <a class="btn btn-outline-light bg-printalo-button text-light">Registrar</a>
                                 <!--//-->
                                 <br>
                                 <br>
-                                <!--Link Ir a ingresar-->
                                 <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
-                                <!--//-->
                             </div>
                         </div>
                     </div>
@@ -285,6 +257,8 @@
             </div>
         </div>
     </div>
+    <!--Fin modals-->
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

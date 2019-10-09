@@ -17,32 +17,38 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md bg-printalo-nav navbar-dark">
+    <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark">
         <div class="container">
             <div class="navbar-header">
                 <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span></button>
-                <a class="navbar-brand mx-1" href="#home">
+                <!--Link ir a index user-->
+                <a class="navbar-brand mx-1" href="indexUser.html">
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
                     <h5 class="d-inline align-middle mx-1">Printalo</h5>
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
+                    <!--Link Servicios-->
                     <li class="nav-item">
-                        <a href="indexUser.html" class="nav-link text-light active">Inicio</a>
+                        <a href="indexServiciosUser.html" class="nav-link text-light center ">Servicios</a>
                     </li>
+                    <!--Link Contactos-->
                     <li class="nav-item">
-                        <a href="indexContactosUser.html" class="nav-link text-light">Contactos</a>
+                        <a href="indexContactosUser.html" class="nav-link text-light center ">Contactos</a>
                     </li>
+                    <!--Btn Iniciar Sesion-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-button" data-toggle="modal"
                             data-target="#ingresarModal">Iniciar Sesion</a>
                     </li>
+                    <!--Btn Registrarse-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button" data-toggle="modal"
                             data-target="#registrarseModal">Registrarse</a>
                     </li>
+                    <!--Btn Ir a seccion Negocios-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
                             href="../negocio/indexNeg.html">Negocios</a>
@@ -51,86 +57,94 @@
             </div>
         </div>
     </nav>
-    <section id="showcase">
-        <div class="primary-overlay text-white">
+    <div class="container">
+        <!--Section 1-->
+        <section id="showcase" class="my-4">
+            <div class="primary-overlay text-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="text-center text-white">
+                            <div class="center2 display-4 ">
+                                Una nueva forma de ofrecerte un servicio
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Section 1-->
+
+        <!--Section 2-->
+
+        <section id="posibilidadesUsuarios" class="my-4 p-4">
             <div class="container">
+                <div class="text-center">
+                    <h2>Una aplicacion</h2>
+                    <h2>que te facilitara las cosas</h2>
+                </div>
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 text-center text-white">
-                        <h1 class="display-4 mt-5 pt-5">
-                            Una nueva forma de ofrecerte un servicio
-                        </h1>
+                    <div class="col-md-4 text-center">
+                        <div class="center">
+                            <img src="../../../img/appmovil.jpg" alt="" class="img-fluid rounded-circle">
+                        </div>
+
                     </div>
                     <div class="col">
+                        <div class="center text-center">
+                            <h5>Envia documentos que deseas imprimir a los negocios mas cercanos</h5>
+                        </div>
                     </div>
+
                 </div>
             </div>
-        </div>
+    </div>
     </section>
 
-    <section id="posibilidadesUsuarios" class="bg-printalo-blueDetail py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <img src="../../../img/appmovil.jpg" alt="" class="img-fluid mb-3 rounded-circle">
-                </div>
-                <div class="col-md-6 text-light">
-                    <h1 class="text-center ">Posibilidades</h1>
-                    <h5 class="mx-3">Podras :</h5>
-                    <div class="d-flex">
-                        <div class="p-3 align-self-start">
-                            <i class="fa fa-check fa-2x"></i>
-                        </div>
-                        <div class="p-3 align-self-end">
-                            <p>Buscar negocios cerca de ti</p>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <div class="p-3 align-self-start">
-                            <i class="fa fa-check fa-2x"></i>
-                        </div>
-                        <div class="p-3 align-self-end">
-                            <p>Enviar pedidos de manera online</p>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <div class="p-3 align-self-start">
-                            <i class="fa fa-check fa-2x"></i>
-                        </div>
-                        <div class="p-3 align-self-end">
-                            <p>Solicitar pedidos en los negocios mas cercanos a ti</p>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <div class="p-3 align-self-start">
-                            <i class="fa fa-check fa-2x"></i>
-                        </div>
-                        <div class="p-3 align-self-end">
-                            <p>Personalizar tus pedidos como quieras</p>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <div class="p-3 align-self-start">
-                            <i class="fa fa-check fa-2x"></i>
-                        </div>
-                        <div class="p-3 align-self-end">
-                            <p>Pagar de manera online</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!--Section 2-->
+    </div>
 
     <footer id="main-footer" class="bg-printalo-greenDetail text-white py-3">
         <div class="container text-white">
             <div class="row text-center">
-                <div class="col-lg-5 ml-auto">
-                    <p>Contactos : 76743310</p>
-                    <p>arielcolque@gmail.com</p>
+                <div class="col-lg-5">
+                    <table class="center">
+                        <tr>
+                            <td>
+                                Contactos :
+                            </td>
+                            <td class="text-center">
+                                77777777
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                E-mail :
+                            </td>
+                            <td class="text-center">
+                                printalo@gmail.com
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="col-lg-5 ml-auto">
-                    <p>Servicios : Fotocopias a pedido</p>
-                    <p>Impresiones a pedido</p>
+                    <table class="center">
+                        <tr>
+                            <td>
+                                Servicios :
+                            </td>
+                            <td class="text-center">
+                                Fotocopias a pedidos
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td class="text-center">
+                                Impresiones
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="col-lg-2 ml-auto">
                     <p class="lead ">
@@ -170,11 +184,15 @@
                                     <input type="password" class="form-control">
                                 </div>
                             </form>
-                            <div class="modalbutton text-center py-3"><a
-                                    class="btn btn-outline-light bg-printalo-button text-light"
-                                    href="../../usuario/inicioUsuario.html">Ingresar</a><br>
+                            <div class="modalbutton text-center py-3">
+                                <!--btn ingresar usuario normal-->
+                                <a class="btn btn-outline-light bg-printalo-button text-light"
+                                    href="../../usuario/inicioUsuario.html">Ingresar</a>
+                                <!--//-->
+                                <br>
                                 <br>
                                 <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
+
                             </div>
                         </div>
                     </div>
@@ -192,7 +210,9 @@
                 <div class="col-lg-6 nopadding">
                     <div class="modal-content">
                         <div class="container">
-                            <a href="" class="close-icon text-center ml-auto m-3 d-none d-block d-sm-block d-md-block d-lg-none" data-dismiss="modal"></a>
+                            <a href=""
+                                class="close-icon text-center ml-auto m-3 d-none d-block d-sm-block d-md-block d-lg-none"
+                                data-dismiss="modal"></a>
                             <h2 class="text-center pt-5">Registrarse</h2>
                             <form action="" class="p-5">
                                 <div class="form-group">
@@ -208,8 +228,11 @@
                                     <input type="password" class="form-control">
                                 </div>
                             </form>
-                            <div class="modalbutton text-center py-3"><a
-                                    class="btn btn-outline-light bg-printalo-button text-light">Registrar</a><br>
+                            <div class="modalbutton text-center py-3">
+                                <!--btn ingresar usuario normal-->
+                                <a class="btn btn-outline-light bg-printalo-button text-light">Registrar</a>
+                                <!--//-->
+                                <br>
                                 <br>
                                 <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
                             </div>

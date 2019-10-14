@@ -7,7 +7,7 @@
     <meta name="keywords" content="HTML,CSS,bootstrap">
     <meta name="author" content="Colque Herrera Ariel">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="../../../css/index/estilo.css">
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/modals.css">
@@ -17,32 +17,38 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md bg-printalo-nav navbar-dark">
+    <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark">
         <div class="container">
             <div class="navbar-header">
                 <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span></button>
-                <a class="navbar-brand mx-1" href="#home">
+                <!--Link ir a index user-->
+                <a class="navbar-brand mx-1" href="indexUser.html">
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
                     <h5 class="d-inline align-middle mx-1">Printalo</h5>
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
+                    <!--Link Servicios-->
                     <li class="nav-item">
-                        <a href="indexUser.html" class="nav-link text-light">Inicio</a>
+                        <a href="indexServiciosUser.html" class="nav-link text-light center  ">Servicios</a>
                     </li>
+                    <!--Link Contactos-->
                     <li class="nav-item">
-                        <a href="indexContactosUser.html" class="nav-link text-light active">Contactos</a>
+                        <a href="indexContactosUser.html" class="nav-link text-light center active ">Contactos</a>
                     </li>
+                    <!--Btn Iniciar Sesion-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-button" data-toggle="modal"
                             data-target="#ingresarModal">Iniciar Sesion</a>
                     </li>
+                    <!--Btn Registrarse-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button" data-toggle="modal"
                             data-target="#registrarseModal">Registrarse</a>
                     </li>
+                    <!--Btn Ir a seccion Negocios-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
                             href="../negocio/indexNeg.html">Negocios</a>
@@ -51,55 +57,92 @@
             </div>
         </div>
     </nav>
+    <div class="container">
+        <!--section 1-->
+        <section id="formsection" class="my-4 py-4">
+            <div class="text-center">
+                <h2>Contactanos</h2>
+                <h4>Si tiene alguna duda,llene el formualrio y con gusto lo atenderemos</h4>
+            </div>
+            <div class="row">
+                    <div class="col d-none d-sm-block"></div>
+                <div class="col-md-5">
+                    <div class="center">
+                        <div class="text-center">
+                            <i class="far fa-clipboard fa-8x circlebase"></i>
+                        </div>
 
-    <section id="showcase">
-        <div class="primary-overlay text-white">
-            <div class="container my-3">
-                <div class="row">
-                    <div class="col-md-6 d-none d-md-block text-center text-white">
-                        <h1 class="display-4 mt-5 pt-5">
-                            Si tiene consultas , nosotros le ayudaremos!
-                        </h1>
                     </div>
-                    <div class="col-md-6 my-5  text-center text-white">
-                        <div class="card bg-printalo-greenDetail text-center card-form">
-                            <div class="card-body">
-                                <h3>Contactanos</h3>
-                                <p>Por favor , llenar lo datos y nosotros nos contactaremos</p>
-                                <form action="" class="form-group">
-                                    <label class="float-left" for="name">Correo Electronico:</label>
-                                    <input type="text" class="form-control">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label class="float-left" for="message">Mensaje : </label><br>
-                                                <textarea cols="80" rows="5" name="msg"
-                                                    class="form-control"></textarea><br>
-                                            </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card bg-printalo-greenDetail text-center card-form m-1 text-light">
+                        <div class="card-body p-4">
+                            <h3>Contactanos</h3>
+                            <form action="" class="form-group">
+                                <label class="float-left" for="name">E-mail:</label>
+                                <input type="text" class="form-control">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="float-left" for="message">Comentario : </label><br>
+                                            <textarea cols="80" rows="5" name="msg" class="form-control"></textarea><br>
                                         </div>
                                     </div>
-                                    <div class="modalbutton"><a
-                                            class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button "
-                                            href="#">Enviar</a></div>
-                                </form>
-                            </div>
+                                </div>
+                                <div class="modalbutton"><a
+                                        class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button "
+                                        href="#">Enviar</a></div>
+                            </form>
                         </div>
                     </div>
                 </div>
+                <div class="col d-none d-sm-block"></div>
             </div>
-        </div>
-    </section>
+        </section>
+        <!--section 1-->
 
+    </div>
     <footer id="main-footer" class="bg-printalo-greenDetail text-white py-3">
         <div class="container text-white">
             <div class="row text-center">
-                <div class="col-lg-5 ml-auto">
-                    <p>Contactos : 76743310</p>
-                    <p>arielcolque@gmail.com</p>
+                <div class="col-lg-5">
+                    <table class="center">
+                        <tr>
+                            <td>
+                                Contactos :
+                            </td>
+                            <td class="text-center">
+                                77777777
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                E-mail :
+                            </td>
+                            <td class="text-center">
+                                printalo@gmail.com
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="col-lg-5 ml-auto">
-                    <p>Servicios : Fotocopias a pedido</p>
-                    <p>Impresiones a pedido</p>
+                    <table class="center">
+                        <tr>
+                            <td>
+                                Servicios :
+                            </td>
+                            <td class="text-center">
+                                Fotocopias a pedidos
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td class="text-center">
+                                Impresiones
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="col-lg-2 ml-auto">
                     <p class="lead ">
@@ -107,7 +150,6 @@
                     </p>
                 </div>
             </div>
-
         </div>
     </footer>
     <!--ingresar Modal-->
@@ -140,11 +182,15 @@
                                     <input type="password" class="form-control">
                                 </div>
                             </form>
-                            <div class="modalbutton text-center py-3"><a
-                                    class="btn btn-outline-light bg-printalo-button text-light"
-                                    href="../../usuario/inicioUsuario.html">Ingresar</a><br>
+                            <div class="modalbutton text-center py-3">
+                                <!--btn ingresar usuario normal-->
+                                <a class="btn btn-outline-light bg-printalo-button text-light"
+                                    href="../../usuario/inicioUsuario.html">Ingresar</a>
+                                <!--//-->
+                                <br>
                                 <br>
                                 <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
+
                             </div>
                         </div>
                     </div>
@@ -180,8 +226,11 @@
                                     <input type="password" class="form-control">
                                 </div>
                             </form>
-                            <div class="modalbutton text-center py-3"><a
-                                    class="btn btn-outline-light bg-printalo-button text-light">Registrar</a><br>
+                            <div class="modalbutton text-center py-3">
+                                <!--btn ingresar usuario normal-->
+                                <a class="btn btn-outline-light bg-printalo-button text-light">Registrar</a>
+                                <!--//-->
+                                <br>
                                 <br>
                                 <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
                             </div>

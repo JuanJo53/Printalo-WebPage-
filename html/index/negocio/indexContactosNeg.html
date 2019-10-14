@@ -7,7 +7,7 @@
     <meta name="keywords" content="HTML,CSS,bootstrap">
     <meta name="author" content="Colque Herrera Ariel">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="../../../css/index/estilo.css">
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/modals.css">
@@ -22,33 +22,37 @@
             <div class="navbar-header">
                 <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span></button>
-                <a class="navbar-brand mx-1" href="#home">
+                <!--Link ir a index Neg-->
+                <a class="navbar-brand mx-1" href="indexNeg.html">
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
-                    <h5 class="d-inline align-middle mx-1">Printalo</h5>
+                    <h5 class="d-inline align-middle mx-1">Printalo Negocios</h5>
                 </a>
             </div>
             <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav ml-auto">
+                    <!--Link Servicios-->
                     <li class="nav-item">
-                        <a href="indexNeg.html" class="nav-link text-light">Inicio</a>
+                        <a href="servNeg.html" class="nav-link text-light center">Servicios</a>
                     </li>
+                    <!--Link Negocios Asociados-->
                     <li class="nav-item">
-                        <a href="prodServNeg.html" class="nav-link text-light">Servicios</a>
+                        <a href="negoAsocNeg.html" class="nav-link text-light center">Negocios asociados</a>
                     </li>
+                    <!--Link Contactos-->
                     <li class="nav-item">
-                        <a href="negoAsocNeg.html" class="nav-link text-light">Negocios asociados</a>
+                        <a href="indexContactosNeg.html" class="nav-link text-light center active">Contactos</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="indexContactosNeg.html" class="nav-link text-light active">Contactos</a>
-                    </li>
+                    <!--Btn Iniciar Sesion-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-button" data-toggle="modal"
                             data-target="#ingresarModal">Iniciar Sesion</a>
                     </li>
+                    <!--Btn Registrarse-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button" data-toggle="modal"
                             data-target="#registrarseModal">Registrarse</a>
                     </li>
+                    <!--Btn Ir a seccion de Usuarios-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
                             href="../usuario/indexUser.html">Usuarios</a>
@@ -57,56 +61,93 @@
             </div>
         </div>
     </nav>
-    <section id="showcaseNeg">
-        <div class="primary-overlay text-white">
-            <div class="container my-3">
-                <div class="row">
-                    <div class="col-md-6 d-none d-md-block text-center text-white">
-                        <h1 class="display-4 mt-5 pt-5">
-                            Si tiene consultas , nosotros le ayudaremos!
-                        </h1>
+    <div class="container">
+        <!--section 1-->
+        <section id="formsection" class="my-4 py-4">
+            <div class="text-center">
+                <h2>Contactanos</h2>
+                <h4>Si tiene alguna duda,llene el formualrio y con gusto lo atenderemos</h4>
+            </div>
+            <div class="row">
+                <div class="col d-none d-sm-block"></div>
+                <div class="col-md-5">
+                    <div class="center">
+                        <div class="text-center">
+                            <i class="far fa-clipboard fa-8x circlebase"></i>
+                        </div>
+
                     </div>
-                    <div class="col-md-6 text-center text-white">
-                        <div class="card bg-printalo-greenDetail text-center card-form">
-                            <div class="card-body">
-                                <h3>Contactanos</h3>
-                                <p>Por favor , llenar lo datos y nosotros nos contactaremos</p>
-                                <form action="" class="form-group">
-                                    <label class="float-left" for="name">Correo Electronico:</label>
-                                    <input type="text" class="form-control">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label class="float-left" for="message">Mensaje : </label><br>
-                                                <textarea cols="80" rows="10" name="msg"
-                                                    class="form-control"></textarea><br>
-                                            </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card bg-printalo-greenDetail text-center card-form m-1 text-light">
+                        <div class="card-body p-4">
+                            <h3>Contactanos</h3>
+                            <form action="" class="form-group">
+                                <label class="float-left" for="name">E-mail:</label>
+                                <input type="text" class="form-control">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="float-left" for="message">Comentario : </label><br>
+                                            <textarea cols="80" rows="5" name="msg" class="form-control"></textarea><br>
                                         </div>
                                     </div>
-                                    <div class="modalbutton">
-                                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
-                                            href="#">Enviar</a>
-                                    </div>
-
-                                </form>
-                            </div>
+                                </div>
+                                <div class="modalbutton"><a
+                                        class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button "
+                                        href="#">Enviar</a></div>
+                            </form>
                         </div>
                     </div>
                 </div>
+                <div class="col d-none d-sm-block"></div>
             </div>
-        </div>
-    </section>
+        </section>
+        <!--section 1-->
+
+    </div>
 
     <footer id="main-footer" class="bg-printalo-greenDetail text-white py-3">
         <div class="container text-white">
             <div class="row text-center">
-                <div class="col-lg-5 ml-auto">
-                    <p>Contactos : 76743310</p>
-                    <p>arielcolque@gmail.com</p>
+                <div class="col-lg-5">
+                    <table class="center">
+                        <tr>
+                            <td>
+                                Contactos :
+                            </td>
+                            <td class="text-center">
+                                77777777
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                E-mail :
+                            </td>
+                            <td class="text-center">
+                                printalo@gmail.com
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="col-lg-5 ml-auto">
-                    <p>Servicios : Fotocopias a pedido</p>
-                    <p>Impresiones a pedido</p>
+                    <table class="center">
+                        <tr>
+                            <td>
+                                Servicios :
+                            </td>
+                            <td class="text-center">
+                                Fotocopias a pedidos
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td class="text-center">
+                                Impresiones
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="col-lg-2 ml-auto">
                     <p class="lead ">
@@ -114,7 +155,6 @@
                     </p>
                 </div>
             </div>
-
         </div>
     </footer>
     <!--ingresar Modal-->
@@ -141,17 +181,29 @@
                             <h2 class="text-center">Ingreso Negocios</h2>
                             <form action="" class="p-5">
                                 <div class="form-group">
-                                    <label for="name">Email:</label>
+                                    <!--nombre del negocio-->
+                                    <label for="name">Nombre del Negocio:</label>
                                     <input type="text" class="form-control">
+                                    <!--//-->
+                                    <!--email-->
+                                    <label for="name">E-mail:</label>
+                                    <input type="text" class="form-control">
+                                    <!--//-->
+                                    <!--contrasenia-->
                                     <label for="name">Constraseña:</label>
                                     <input type="password" class="form-control">
+                                    <!--//-->
                                 </div>
                             </form>
-                            <div class="modalbutton text-center py-3"><a
-                                    class="btn btn-outline-light bg-printalo-button text-light"
-                                    href="../../negocio/inicioNeg.html">Ingresar</a><br>
+                            <div class="modalbutton text-center py-3">
+                                <!--Btn Ingresar Negocios-->
+                                <a class="btn btn-outline-light bg-printalo-button text-light"
+                                    href="../../negocio/inicioNeg.html">Ingresar</a>
+                                <!--//--><br>
                                 <br>
+                                <!--Link Registrarse-->
                                 <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
+                                <!--//-->
                             </div>
                         </div>
                     </div>
@@ -173,26 +225,45 @@
                             <h2 class="text-center pt-5">Registrar Negocio</h2>
                             <form action="" class="p-3">
                                 <div class="form-group">
-                                    <label for="username">Nombre Dueño: </label>
+                                    <!--Nombre del duenio-->
+                                    <label for="username">Nombre del Dueño: </label>
                                     <input type="text" class="form-control">
-                                    <label for="username">Apellido Dueño : </label>
+                                    <!--//-->
+                                    <!--apellido del duenio-->
+                                    <label for="username">Apellido del Dueño : </label>
                                     <input type="text" class="form-control">
-                                    <label for="name">Nombre del negocio:</label>
+                                    <!--//-->
+                                    <!--nombre del negocio-->
+                                    <label for="name">Nombre del Negocio:</label>
                                     <input type="text" class="form-control">
+                                    <!--//-->
+                                    <!--direccion-->
                                     <label for="password">Direccion:</label>
                                     <input type="text" class="form-control">
-                                    <label for="password">Numero de referencia:</label>
+                                    <!--//-->
+                                    <!--numero de referencia-->
+                                    <label for="text">Numero de referencia:</label>
                                     <input type="text" class="form-control">
+                                    <!--//-->
+                                    <!--Email-->
                                     <label for="username">E-mail : </label>
                                     <input type="text" class="form-control">
+                                    <!--//-->
+                                    <!--Contrasenia-->
                                     <label for="password">Contraseña:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="password" class="form-control">
+                                    <!--//-->
                                 </div>
                             </form>
-                            <div class="modalbutton text-center py-3"><a
-                                    class="btn btn-outline-light bg-printalo-button text-light">Registrar</a><br>
+                            <div class="modalbutton text-center py-3">
+                                <!--Btn Registrar Negocios-->
+                                <a class="btn btn-outline-light bg-printalo-button text-light">Registrar</a>
+                                <!--//-->
                                 <br>
+                                <br>
+                                <!--Link Ir a ingresar-->
                                 <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
+                                <!--//-->
                             </div>
                         </div>
                     </div>
@@ -214,8 +285,6 @@
             </div>
         </div>
     </div>
-    <!--Fin de Modals-->
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

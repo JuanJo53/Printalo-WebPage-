@@ -18,9 +18,11 @@ body {
 }
 .bg-printalo-blueDetail {
   background-color: #364c68;
+  border-color: #364c68;
 }
 .color-printalo-blueDetail {
   color: #364c68;
+
 }
 .bg-printalo-greenDetail {
   background-color: #24c4a6;
@@ -36,6 +38,15 @@ body {
 .modal-dialog {
   padding-top: 10%;
 }
+.modalbuttonalert .btn.positive:hover {
+  background-color: #5de6cc !important;
+  color: rgb(255, 255, 255) !important;
+}
+.modalbuttonalert .btn.negative:hover {
+  background-color: #101d2e !important;
+  color: rgb(255, 255, 255) !important;
+}
+
 .circle {
   float: right;
   cursor: pointer;

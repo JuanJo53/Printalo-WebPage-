@@ -121,10 +121,19 @@ a {
   font-weight: bold;
   color: white;
 }
-.navbar .container .navbar-toggler {
-  float: left;
-}
+
 .navbar .container .navbar-header {
   float: left;
-  width:auto !important;
+  width: auto !important;
+}
+.nav li {
+  color: #ffffff !important;
+}
+li {
+  text-align: center !important;
+}
+.list-group-item.active {
+  color: #fff;
+  /*background-color:rgba(0,0,0,0.075);*/
+  background-color: #24c4a6;
 }

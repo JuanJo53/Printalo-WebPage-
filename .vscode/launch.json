@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
@@ -17,4 +18,25 @@
             "mainClass": "LISTAS_SIMPLES"
         }
     ]
+=======
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LISTAS_SIMPLES",
+            "request": "launch",
+            "mainClass": "LISTAS_SIMPLES"
+        }
+    ]
+>>>>>>> 7169154353b0794f737e8fa3551194870f5636eb
 }

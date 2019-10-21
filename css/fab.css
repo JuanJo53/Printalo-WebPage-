@@ -15,7 +15,7 @@
 .fab-icon-holder{
     opacity: 0.8;
 }
-.fab-icon-holder i {
+.fab-icon-holder a i {
     display: flex;
     align-items: center;
     justify-content: center;

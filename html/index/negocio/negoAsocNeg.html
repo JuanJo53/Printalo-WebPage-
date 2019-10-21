@@ -19,34 +19,40 @@
 <body>
     <nav class="navbar navbar-expand-xl bg-printalo-nav navbar-dark py-2">
         <div class="container">
-            <a class="navbar-brand" href="#home">
-                <img width="60" height="60" src="../../../img/printer.png" alt="">
-                <h5 class="d-inline align-middle">Printalo Negocios</h5>
-            </a>
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span></button>
+            <div class="navbar-header">
+                <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span></button>
+                <!--Link ir a index Neg-->
+                <a class="navbar-brand mx-1" href="indexNeg.html">
+                    <img width="60" height="60" src="../../../img/printer.png" alt="">
+                    <h5 class="d-inline align-middle mx-1">Printalo Negocios</h5>
+                </a>
+            </div>
             <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav ml-auto">
+                    <!--Link Servicios-->
                     <li class="nav-item">
-                        <a href="indexNeg.html" class="nav-link text-light ">Inicio</a>
+                        <a href="servNeg.html" class="nav-link text-light center">Servicios</a>
                     </li>
+                    <!--Link Negocios Asociados-->
                     <li class="nav-item">
-                        <a href="prodServNeg.html" class="nav-link text-light ">Servicios</a>
+                        <a href="negoAsocNeg.html" class="nav-link text-light center active">Negocios asociados</a>
                     </li>
+                    <!--Link Contactos-->
                     <li class="nav-item">
-                        <a href="negoAsocNeg.html" class="nav-link text-light active">Negocios asociados</a>
+                        <a href="indexContactosNeg.html" class="nav-link text-light center">Contactos</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="indexContactosNeg.html" class="nav-link text-light">Contactos</a>
-                    </li>
+                    <!--Btn Iniciar Sesion-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-button" data-toggle="modal"
                             data-target="#ingresarModal">Iniciar Sesion</a>
                     </li>
+                    <!--Btn Registrarse-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button" data-toggle="modal"
                             data-target="#registrarseModal">Registrarse</a>
                     </li>
+                    <!--Btn Ir a seccion de Usuarios-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
                             href="../usuario/indexUser.html">Usuarios</a>
@@ -55,87 +61,101 @@
             </div>
         </div>
     </nav>
-    <section id="servicios-section" class=" bg-printalo-greenDetail">
-        <div class="container">
-            <div class="row">
-                <div class="col text-center text-light py-5 ">
-                    <h3>Negocios que confian en nosotros : </h3>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="sliderNegocios">
-        <div id="slider4" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li class="active" data-target="#slider4" data-slide-to="0"></li>
-                <li data-target="#slider4" data-slide-to="1"></li>
-                <li data-target="#slider4" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item carousel-image-1 active">
-                    <div class="dark-overlay">
-                        <div class="container">
-                            <div class="carousel-caption d-none d-sm-block">
-                                <h3>Fotocopias e Internet Charly 1</h3>
-                                <p>Con nosotros desde hace un mes</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item carousel-image-2">
-                    <div class="dark-overlay">
-                        <div class="container">
-                            <div class="carousel-caption d-none d-sm-block">
-                                <h3>Fotocopias Universitaria</h3>
-                                <p>Con nosotros desde hace un mes</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item carousel-image-3">
-                    <div class="dark-overlay">
-                        <div class="container">
-                            <div class="carousel-caption d-none d-sm-block">
-                                <h3>Fotocopias PCS</h3>
-                                <p>Con nosotros desde hace dos meses</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#slider4" class="carousel-control-prev" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a href="#slider4" class="carousel-control-next" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <section id="servicios-dispositivos" class="text-light py-3 bg-printalo-blueDetail">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 p-3 text-center">
-                    <h3>Localizaciones de los negocios que confiaron en nosotros</h3>
-                </div>
-                <div class="col-md-6 ">
-                    <div class="text-center"><img src="../../../img/croquis.jpg" alt="" class="img-fluid"></div>
+    <div class="container">
+        <!--Section 1-->
+        <section id="sliderNegocios" class="py-4">
 
+            <div id="slider4" class="carousel slide" data-ride="carousel">
+                <div class="carousel-caption top">
+                    <h3>Negocios que confian en nosotros :</h3>
+                </div>
+                <ol class="carousel-indicators">
+                    <li class="active" data-target="#slider4" data-slide-to="0"></li>
+                    <li data-target="#slider4" data-slide-to="1"></li>
+                    <li data-target="#slider4" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item carousel-image-1 active">
+                        <div class="dark-overlay">
+                            <div class="container">
+                                <div class="carousel-caption d-none d-sm-block">
+                                    <h4>Fotocopias Charly 1</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item carousel-image-2">
+                        <div class="dark-overlay">
+                            <div class="container">
+                                <div class="carousel-caption d-none d-sm-block">
+                                    <h4>Fotocopias Universitaria</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item carousel-image-3">
+                        <div class="dark-overlay">
+                            <div class="container">
+                                <div class="carousel-caption d-none d-sm-block">
+                                    <h4>Fotocopias PCS</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#slider4" class="carousel-control-prev" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a href="#slider4" class="carousel-control-next" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <!--Section 1-->
+    </div>
 
     <footer id="main-footer" class="bg-printalo-greenDetail text-white py-3">
         <div class="container text-white">
             <div class="row text-center">
-                <div class="col-lg-5 ml-auto">
-                    <p>Contactos : 76743310</p>
-                    <p>arielcolque@gmail.com</p>
+                <div class="col-lg-5">
+                    <table class="center">
+                        <tr>
+                            <td>
+                                Contactos :
+                            </td>
+                            <td class="text-center">
+                                77777777
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                E-mail :
+                            </td>
+                            <td class="text-center">
+                                printalo@gmail.com
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="col-lg-5 ml-auto">
-                    <p>Servicios : Fotocopias a pedido</p>
-                    <p>Impresiones a pedido</p>
+                    <table class="center">
+                        <tr>
+                            <td>
+                                Servicios :
+                            </td>
+                            <td class="text-center">
+                                Fotocopias a pedidos
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td class="text-center">
+                                Impresiones
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="col-lg-2 ml-auto">
                     <p class="lead ">
@@ -154,7 +174,8 @@
                         <div class="container center">
                             <div class="modal-body">
                                 <div class="text-center">
-                                    <img width="100" height="100" src="../../../img/printer.png" alt="" class="img-fluid ">
+                                    <img width="100" height="100" src="../../../img/printer.png" alt=""
+                                        class="img-fluid ">
                                 </div>
                                 <h3 class="text-center text-light">Printalo</h3>
                             </div>
@@ -168,18 +189,29 @@
                             <h2 class="text-center">Ingreso Negocios</h2>
                             <form action="" class="p-5">
                                 <div class="form-group">
-                                    <label for="name">Email:</label>
+                                    <!--nombre del negocio-->
+                                    <label for="name">Nombre del Negocio:</label>
                                     <input type="text" class="form-control">
+                                    <!--//-->
+                                    <!--email-->
+                                    <label for="name">E-mail:</label>
+                                    <input type="text" class="form-control">
+                                    <!--//-->
+                                    <!--contrasenia-->
                                     <label for="name">Constraseña:</label>
                                     <input type="password" class="form-control">
+                                    <!--//-->
                                 </div>
-
                             </form>
-                            <div class="buttongroup text-center py-3"><a
-                                    class="btn btn-outline-light bg-printalo-button text-light"
-                                    href="../../negocio/inicioNeg.html">Ingresar</a><br>
+                            <div class="modalbutton text-center py-3">
+                                <!--Btn Ingresar Negocios-->
+                                <a class="btn btn-outline-light bg-printalo-button text-light"
+                                    href="../../negocio/inicioNeg.html">Ingresar</a>
+                                <!--//--><br>
                                 <br>
+                                <!--Link Registrarse-->
                                 <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
+                                <!--//-->
                             </div>
                         </div>
                     </div>
@@ -188,34 +220,59 @@
         </div>
     </div>
 
+
     <!--Registrarse Modal-->
     <div class="modal fade text-dark" id="registrarseModal">
-
         <div class="modal-dialog modal-lg">
-
             <div class="row py-3">
                 <div class="col-lg-6 nopadding">
                     <div class="modal-content">
                         <div class="container">
+                            <a href=""
+                                class="close-icon text-center ml-auto m-3 d-none d-block d-sm-block d-md-block d-lg-none"
+                                data-dismiss="modal"></a>
                             <h2 class="text-center pt-5">Registrar Negocio</h2>
                             <form action="" class="p-3">
                                 <div class="form-group">
+                                    <!--Nombre del duenio-->
+                                    <label for="username">Nombre del Dueño: </label>
+                                    <input type="text" class="form-control">
+                                    <!--//-->
+                                    <!--apellido del duenio-->
+                                    <label for="username">Apellido del Dueño : </label>
+                                    <input type="text" class="form-control">
+                                    <!--//-->
+                                    <!--nombre del negocio-->
+                                    <label for="name">Nombre del Negocio:</label>
+                                    <input type="text" class="form-control">
+                                    <!--//-->
+                                    <!--direccion-->
+                                    <label for="password">Direccion:</label>
+                                    <input type="text" class="form-control">
+                                    <!--//-->
+                                    <!--numero de referencia-->
+                                    <label for="text">Numero de referencia:</label>
+                                    <input type="text" class="form-control">
+                                    <!--//-->
+                                    <!--Email-->
                                     <label for="username">E-mail : </label>
                                     <input type="text" class="form-control">
-                                    <label for="name">Nombre del negocio:</label>
-                                    <input type="text" class="form-control">
-                                    <label for="password">Localizacion:</label>
-                                    <input type="text" class="form-control">
-                                    <label for="password">Numero de referencia:</label>
-                                    <input type="text" class="form-control">
+                                    <!--//-->
+                                    <!--Contrasenia-->
                                     <label for="password">Contraseña:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="password" class="form-control">
+                                    <!--//-->
                                 </div>
                             </form>
-                            <div class="buttongroup text-center py-3"><a
-                                    class="btn btn-outline-light bg-printalo-button text-light">Registrar</a><br>
+                            <div class="modalbutton text-center py-3">
+                                <!--Btn Registrar Negocios-->
+                                <a class="btn btn-outline-light bg-printalo-button text-light">Registrar</a>
+                                <!--//-->
                                 <br>
+                                <br>
+                                <!--Link Ir a ingresar-->
                                 <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
+                                <!--//-->
                             </div>
                         </div>
                     </div>
@@ -226,7 +283,8 @@
                         <div class="container center">
                             <div class="modal-body">
                                 <div class="text-center">
-                                    <img width="100" height="100" src="../../../img/printer.png" alt="" class="img-fluid ">
+                                    <img width="100" height="100" src="../../../img/printer.png" alt=""
+                                        class="img-fluid ">
                                 </div>
                                 <h3 class="text-center text-light">Printalo</h3>
                             </div>
@@ -236,7 +294,6 @@
             </div>
         </div>
     </div>
-
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

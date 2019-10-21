@@ -15,6 +15,7 @@ body {
 }
 .bg-printalo-blueDetail {
   background-color: #364c68;
+
 }
 .color-printalo-blueDetail {
   color: #364c68;
@@ -22,6 +23,7 @@ body {
 .bg-printalo-greenDetail {
   background-color: #24c4a6;
 }
+
 .bg-printalo-button {
   background-color: #24c4a6;
 }
@@ -29,3 +31,24 @@ body {
   font-weight: bold;
   color: white !important;
 }
+.modalbutton a:hover {
+  color: #24c4a6 !important;
+}
+.modalbutton a u:hover {
+  color: #24c4a6 !important;
+}
+.center{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.center2{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+

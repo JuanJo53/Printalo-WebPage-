@@ -7,7 +7,7 @@
     <meta name="keywords" content="HTML,CSS,bootstrap">
     <meta name="author" content="Colque Herrera Ariel">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="../../../css/index/estilo.css">
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/modals.css">
@@ -28,11 +28,11 @@
                     <h5 class="d-inline align-middle mx-1">Printalo Negocios</h5>
                 </a>
             </div>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <!--Link Servicios-->
                     <li class="nav-item">
-                        <a href="servNeg.html" class="nav-link text-light center">Servicios</a>
+                        <a href="servNeg.html" class="nav-link text-light center active">Servicios</a>
                     </li>
                     <!--Link Negocios Asociados-->
                     <li class="nav-item">
@@ -62,48 +62,53 @@
         </div>
     </nav>
     <div class="container">
+
         <!--Section 1-->
-        <section id="showcaseNeg" class="my-4">
-            <div class="primary-overlay text-white">
-                <div class="container">
-                    <div class="text-center text-white">
-                        <div class="center2 display-4 ">
-                            Ofrece tus servicios de una forma distinta
-                        </div>
-                    </div>
-                </div>
+        <section id="servicessection" class="bg-printalo-blueDetail py-4 my-4">
+            <div class="text-center">
+                <h3>Servicios que brindamos con la</h3>
+                <h3>Aplicacion : </h3>
             </div>
+            <table class="ml-auto mr-auto">
+                <tr>
+                    <!--Primera seccion-->
+                    <td><i class="fas fa-clipboard fa-2x circlebase2 m-3"></i></td>
+                    <td>
+                        <div class="p-3 align-self-end align-self-center justify-text">
+                            Registro de los clientes que realizaron sus pedidos
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <!--segunda seccion-->
+                    <td> <i class="fas fa-chart-bar fa-2x circlebase2 m-3"></i></td>
+                    <td>
+                        <div class="p-3 align-self-end align-self-center justify-text">
+                            Graficos estadisticos de las transacciones realizadas
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <!--tercera seccion-->
+                    <td> <i class="fas fa-list-ul fa-2x circlebase2 m-3"></i></td>
+                    <td>
+                        <div class="p-3 align-self-end align-self-center justify-text">
+                            Lista de pedidos para su posterior realizacion
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <!--Cuarta seccion-->
+                    <td><i class="fas fa-wrench fa-2x circlebase2 m-3"></i></td>
+                    <td>
+                        <div class="p-3 align-self-end align-self-center justify-text">
+                            Personalizacion de precios del negocio
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </section>
         <!--Section 1-->
-
-        <!--Section 2-->
-
-        <section id="posibilidadesUsuarios" class="my-4 p-4">
-            <div class="container">
-                <div class="text-center">
-                    <h2>Una aplicacion</h2>
-                    <h2>que te facilitara las cosas</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 text-center">
-                        <div class="center">
-                            <img src="../../../img/marketing.jpg" alt="" class="img-fluid rounded-circle">
-                        </div>
-
-                    </div>
-                    <div class="col">
-                        <div class="center text-center">
-                            <h5>Recibe los pedidos de tus clientes mediante una aplicacion</h5>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-    </div>
-    </section>
-
-    <!--Section 2-->
-
     </div>
     <footer id="main-footer" class="bg-printalo-greenDetail text-white py-3">
         <div class="container text-white">
@@ -239,7 +244,9 @@
                                     <!--direccion-->
                                     <label for="password">Direccion:</label>
                                     <input type="text" class="form-control">
-                                    <label for="NroRef">Numero de referencia:</label>
+                                    <!--//-->
+                                    <!--numero de referencia-->
+                                    <label for="text">Numero de referencia:</label>
                                     <input type="text" class="form-control">
                                     <!--//-->
                                     <!--Email-->
@@ -282,7 +289,6 @@
             </div>
         </div>
     </div>
-    <!--Fin de Modals-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

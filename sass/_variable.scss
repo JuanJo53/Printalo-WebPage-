@@ -1,0 +1,33 @@
+// colors
+$black: #333;
+$white: #fff;
+$gray: #e5e5e5;
+$primary-color: #9b59b6;
+
+// font family
+$primary-font: 'Montserrat', sans-serif;
+
+// Body
+$default-text-color: $black  !default;
+$default-background-color: $gray !default;
+$default-font-size: 14px !default;
+$default-line-height: 1.7 !default;
+$default-font-family: $primary-font !default;
+$default-min-width: 320px;
+
+// Links
+$default-link-color: $primary-color;
+
+// Headers
+$h1-font-size: 26px !default;
+$h2-font-size: 24px !default;
+$h3-font-size: 22px !default;
+$h4-font-size: 18px !default;
+$h5-font-size: 17px !default;
+$h6-font-size: 15px !default;
+
+$headings-font-family: $primary-font !default;
+$headings-color: $black !default;
+
+// animation
+$animation-speed: 0.3s; 

@@ -19,17 +19,17 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md bg-printalo-nav navbar-dark py-1">
+    <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark py-1">
         <div class="container">
             <div class="navbar-header">
                 <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span></button>
                 <a class="navbar-brand mx-1" href="#home">
                     <img width="60" height="60" src="../../img/printer.png" alt="">
-                    <h5 class="d-inline align-middle mx-1">Printalo</h5>
+                    <h5 class="d-inline align-middle mx-1 text-light">Printalo Negocios</h5>
                 </a>
             </div>
-            <div class="navbar-item  order-xl-last order-md-last  order-xs-last  mx-1">
+            <div class="navbar-item  order-lg-last   order-xs-last  mx-1">
                 <div class="d-inline circle bg-printalo-greenDetail">
                     J
                 </div>
@@ -58,8 +58,6 @@
                     <!--//-->
                 </ul>
             </div>
-
-
         </div>
     </nav>
     <ul class="nav nav-pills nav-justified bg-printalo-greenDetail">
@@ -90,34 +88,58 @@
     <div class="container">
         <!-- responsive table -->
         <div class="holder">
-            <h2>Pedidos por enviar</h2>
+            <h2 class="my-3">Pedidos por enviar</h2>
             <div class="responsiveTbl">
                 <table>
                     <thead>
-                        <tr>
-                            <th>Tipo</th>
-                            <th>Nombre</th>
-                            <th>Solicitud</th>
-                            <th>Eliminar</th>
+                        <tr><!--th 1-->
+                            <th class="text-center">Tipo</th>
+                            <!--th 2-->
+                            <th class="text-center">Nombre</th>
+                            <!--th 3-->
+                            <th class="text-center">Solicitar</th>
+                            <!--th 4-->
+                            <th class="text-center">Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <!--Fila-->
                         <tr>
-                            <td>1</td>
-                            <td>John Smith</td>
-                            <td><span class="price">£40 / hr</span></td>
-                            <td><a href="#" class="btnsass">Hire me</span></td>
+                            <!--Icono-->
+                            <td class="text-center"><a><i class="far fa-file-pdf fa-3x"></i></a></td>
+                            <!--//-->
+                            <td class="text-center">nombredearchiiiiiiiiiiiiiivo.pdf</td>
+                            <!--Btn Solicitar-->
+                            <td class="text-center"><a
+                                    class="btn positive bg-printalo-greenDetail text-light">Solicitar</a></td>
+                            <!--//-->
+                            <!--Btn Eliminar-->
+                            <td class="text-center"><a
+                                    class="btn negative bg-printalo-blueDetail text-light">Eliminar</a></td>
+                            <!--//-->
                         </tr>
+                        <!--Termina Fila-->
+                        <!--Fila-->
                         <tr>
-                                <td>1</td>
-                                <td>John Smith</td>
-                                <td><span class="price">£40 / hr</span></td>
-                                <td><a href="#" class="btnsass">Hire me</span></td>
-                            </tr>
+                            <!--Icono-->
+                            <td class="text-center"><a><i class="far fa-file-pdf fa-3x"></i></a></td>
+                            <!--//-->
+                            <td class="text-center">nombredearchiiiiiiiiiiiiiivo.pdf</td>
+                            <!--Btn Solicitar-->
+                            <td class="text-center"><a
+                                    class="btn positive bg-printalo-greenDetail text-light">Solicitar</a></td>
+                            <!--//-->
+                            <!--Btn Eliminar-->
+                            <td class="text-center"><a
+                                    class="btn negative bg-printalo-blueDetail text-light">Eliminar</a></td>
+                            <!--//-->
+                        </tr>
+                        <!--Termina Fila-->
                     </tbody>
                 </table>
             </div>
         </div>
+        <!-- // -->
 
     </div>
 

@@ -8,6 +8,7 @@
     <meta name="author" content="Colque Herrera Ariel">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/detalles.css">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/usuario/estiloUsuario.css">
@@ -61,23 +62,65 @@
 
         </div>
     </nav>
-
     <ul class="nav nav-pills nav-justified bg-printalo-greenDetail">
+        <!--Navbar Link Por Enviar-->
         <li class="nav-item"><a class="nav-link active" href="#porEnviar" data-toggle="tab">Por enviar</a></li>
+        <!--//-->
+        <!--Navbar Link Por Enviar-->
         <li class="nav-item"><a class="nav-link" href="#enviados" data-toggle="tab">Enviados</a></li>
+        <!--//-->
+        <!--Navbar Link Por Enviar-->
         <li class="nav-item"><a class="nav-link" href="#realizados" data-toggle="tab">Realizados</a></li>
+        <!--//-->
     </ul>
-    <div class="tab-content active">
-        <div class="tab-pane" id="porEnviar">
-            <p>First paragraph</p>
+    <!--
+    <div class="container">
+        <div class="tab-content active center">
+            <div class="tab-pane" id="porEnviar">
+                <p>First paragraph</p>
+            </div>
+            <div class="tab-pane" id="enviados">
+                <p>2 paragraph</p>
+            </div>
+            <div class="tab-pane" id="realizados">
+                <p>3 paragraph</p>
+            </div>
         </div>
-        <div class="tab-pane" id="enviados">
-            <p>2 paragraph</p>
+    </div>-->
+    <div class="container">
+        <!-- responsive table -->
+        <div class="holder">
+            <h2>Pedidos por enviar</h2>
+            <div class="responsiveTbl">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Nombre</th>
+                            <th>Solicitud</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John Smith</td>
+                            <td><span class="price">£40 / hr</span></td>
+                            <td><a href="#" class="btnsass">Hire me</span></td>
+                        </tr>
+                        <tr>
+                                <td>1</td>
+                                <td>John Smith</td>
+                                <td><span class="price">£40 / hr</span></td>
+                                <td><a href="#" class="btnsass">Hire me</span></td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="tab-pane" id="realizados">
-            <p>3 paragraph</p>
-        </div>
+
     </div>
+
     <div class="fab-container">
         <div class="fab-icon-holder">
             <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-plus "></i></a>
@@ -99,8 +142,10 @@
                 </div>
                 <div class="modal-footer">
                     <div class="modalbuttonalert text-center">
-                        <!--btn Aceptar Subir documento seleccionado-->
+                        <!--btns Aceptar/cancelar Subir un documento seleccionado-->
+                        <!--Boton Cancelar-->
                         <a class="btn negative bg-printalo-blueDetail text-light">Cancelar</a>
+                        <!--Boton Aceptar-->
                         <a class="btn positive bg-printalo-greenDetail text-light">Aceptar</a>
                         <!--//-->
                     </div>
@@ -120,4 +165,5 @@
         });
     </script>
 </body>
+
 </html>

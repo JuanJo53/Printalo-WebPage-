@@ -39,20 +39,20 @@ body {
   padding-top: 10%;
 }
 .modalbuttonalert .btn.positive:hover {
-  background-color: #5de6cc !important;
+  background-color: #30e2c2 !important;
   color: rgb(255, 255, 255) !important;
 }
 .modalbuttonalert .btn.negative:hover {
-  background-color: #101d2e !important;
+  background-color: #253449 !important;
   color: rgb(255, 255, 255) !important;
 }
 
 tbody tr td .btn.positive:hover {
-  background-color: #5de6cc !important;
+  background-color: #30e2c2 !important;
   color: rgb(255, 255, 255) !important;
 }
 tbody tr td .btn.negative:hover {
-  background-color: #101d2e !important;
+  background-color: #253449 !important;
   color: rgb(255, 255, 255) !important;
 }
 

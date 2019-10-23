@@ -49,7 +49,5 @@ body {
   left: 50%;
   transform: translate(-50%,-50%);
 }
-tbody tr:hover{
-  background-color:#b9eee5;
-}
+
 

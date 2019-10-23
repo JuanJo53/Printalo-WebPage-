@@ -8,12 +8,12 @@
     <meta name="author" content="Colque Herrera Ariel">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <link rel="stylesheet" href="../../css/main.css">
-    <link rel="stylesheet" href="../../css/detalles.css">
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/usuario/estiloUsuario.css">
-    <link rel="stylesheet" href="../../css/usuario/usuarioGeneral.css">
-    <link rel="stylesheet" href="../../css/fab.css">
+    <link rel="stylesheet" href="../../../css/main.css">
+    <link rel="stylesheet" href="../../../css/detalles.css">
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/usuario/estiloUsuario.css">
+    <link rel="stylesheet" href="../../../css/usuario/usuarioGeneral.css">
+    <link rel="stylesheet" href="../../../css/fab.css">
 
     <title>Principal</title>
 </head>
@@ -25,7 +25,7 @@
                 <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span></button>
                 <a class="navbar-brand mx-1" href="#home">
-                    <img width="60" height="60" src="../../img/printer.png" alt="">
+                    <img width="60" height="60" src="../../../img/printer.png" alt="">
                     <h5 class="d-inline align-middle mx-1 text-light">Printalo Negocios</h5>
                 </a>
             </div>
@@ -62,13 +62,13 @@
     </nav>
     <ul class="nav nav-pills nav-justified bg-printalo-greenDetail">
         <!--Navbar Link Por Enviar-->
-        <li class="nav-item"><a class="nav-link active" href="#porEnviar" data-toggle="tab">Por enviar</a></li>
+        <li class="nav-item"><a class="nav-link active" href="porEnviar.html">Por enviar</a></li>
         <!--//-->
-        <!--Navbar Link Por Enviar-->
-        <li class="nav-item"><a class="nav-link" href="#enviados" data-toggle="tab">Enviados</a></li>
+        <!--Navbar Link enviasdos-->
+        <li class="nav-item"><a class="nav-link" href="enviados.html">Enviados</a></li>
         <!--//-->
-        <!--Navbar Link Por Enviar-->
-        <li class="nav-item"><a class="nav-link" href="#realizados" data-toggle="tab">Realizados</a></li>
+        <!--Navbar Link realizados-->
+        <li class="nav-item"><a class="nav-link" href="realizados.html">Realizados</a></li>
         <!--//-->
     </ul>
     <!--
@@ -92,7 +92,8 @@
             <div class="responsiveTbl">
                 <table>
                     <thead>
-                        <tr><!--th 1-->
+                        <tr>
+                            <!--th 1-->
                             <th class="text-center">Tipo</th>
                             <!--th 2-->
                             <th class="text-center">Nombre</th>
@@ -160,7 +161,17 @@
                                 data-dismiss="modal"></a>-->
                 </div>
                 <div class="modal-body">
-                    Abrir "NombredelArchivo.pdf"?
+                    <div class="row">
+                        <!--pregunta-->
+                        <div class="col-sm-10 text-center">
+                            Abrir "NombredelArchivo.pdf"?
+                        </div>
+                        <!--icono de documento-->
+                        <div class="col text-center">
+                            <a><i class="far fa-file fa-3x"></i></a>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <div class="modalbuttonalert text-center">
@@ -179,7 +190,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
     <script>
         $("#menu-toggle").click(function (e) {
             e.preventDefault();

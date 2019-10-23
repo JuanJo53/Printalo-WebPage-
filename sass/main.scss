@@ -2,14 +2,8 @@
 @import "mixins";
 @import "reset";
 @import "typography";
-.container {
-  max-width: 1024px;
-  padding: 0 15px;
-  margin: 30px auto;
-}
 
 /* responsive table */
-
 .responsiveTbl table {
   text-align: center;
   width: 100%;
@@ -67,4 +61,57 @@ th {
   }
 }
 
+@media only screen and (max-width: 767px) {
+  thead {
+   display: none;
+  }
+ 
+  tr {
+   margin: 0 0 15px;
+   display: block;
+  }
+ 
+  td {
+   display: block;
+   text-align: left;
+   padding: 10px 20px 10px 160px;
+   position: relative;
+ 
+   &:before {
+    content: 'Tipo';
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+   }
+ 
+   &:nth-of-type(2) {
+    &:before {
+     content: 'Nombre';
+    }
+   }
+ 
+   &:nth-of-type(3) {
+    &:before {
+     content: 'Solicitar';
+    }
+   }
+ 
+   &:nth-of-type(4) {
+    &:before {
+     content: 'Eliminar';
+    }
+   }
+  }
+ 
+  .price,
+  .btn {
+   border: none;
+   padding: 0;
+   min-width: 0;
+   color: $black;
+   background: none;
+  }
+ }
 

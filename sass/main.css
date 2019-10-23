@@ -1,11 +1,13 @@
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 * {
@@ -35,12 +37,13 @@ img {
 
 @media only screen and (min-width: 1025px) {
   a[href^=tel],
-a[href^=skype],
-a[href^=sms] {
+  a[href^=skype],
+  a[href^=sms] {
     cursor: default;
     pointer-events: none;
   }
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -70,7 +73,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -120,13 +123,15 @@ p {
 }
 
 a {
-  color: #9b59b6;
+  color: #253449;
   text-decoration: none;
+  -webkit-transition: color 0.3s linear;
   transition: color 0.3s linear;
 }
+
 a:hover, a:focus {
   text-decoration: none;
-  color: #713b87;
+  color: #0b1016;
 }
 
 .container {
@@ -144,9 +149,11 @@ a:hover, a:focus {
 tr {
   background: #fff;
 }
+
 tr:nth-child(2n) {
   background: #f2f2f2;
 }
+
 tr:hover .msg {
   opacity: 1;
   top: 0;
@@ -157,13 +164,14 @@ td {
   padding: 15px 20px;
   vertical-align: middle;
 }
+
 th:nth-child(2),
 td:nth-child(2) {
   text-align: left;
 }
 
 th {
-  background: #9b59b6;
+  background: #253449;
   color: #fff;
   font-weight: 500;
   text-transform: uppercase;
@@ -172,7 +180,7 @@ th {
 
 .price,
 .btnsass {
-  border: 1px solid #9b59b6;
+  border: 1px solid #253449;
   border-radius: 25px;
   display: inline-block;
   vertical-align: top;
@@ -184,12 +192,58 @@ th {
 .btnsass {
   border: none;
   color: #fff;
-  background-color: #9b59b6;
+  background-color: #253449;
+  -webkit-transition: -webkit-box-shadow 0.3s linear;
+  transition: -webkit-box-shadow 0.3s linear;
   transition: box-shadow 0.3s linear;
+  transition: box-shadow 0.3s linear, -webkit-box-shadow 0.3s linear;
 }
+
 .btnsass:hover {
-  box-shadow: inset 0 0 0 25px #532c64;
+  -webkit-box-shadow: inset 0 0 0 25px black;
+          box-shadow: inset 0 0 0 25px black;
   color: #fff;
 }
 
+@media only screen and (max-width: 767px) {
+  thead {
+    display: none;
+  }
+  tr {
+    margin: 0 0 15px;
+    display: block;
+  }
+  td {
+    display: block;
+    text-align: left;
+    padding: 10px 20px 10px 160px;
+    position: relative;
+  }
+  td:before {
+    content: 'Tipo';
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  td:nth-of-type(2):before {
+    content: 'Nombre';
+  }
+  td:nth-of-type(3):before {
+    content: 'Solicitar';
+  }
+  td:nth-of-type(4):before {
+    content: 'Eliminar';
+  }
+  .price,
+  .btn {
+    border: none;
+    padding: 0;
+    min-width: 0;
+    color: #333;
+    background: none;
+  }
+}
 /*# sourceMappingURL=main.css.map */

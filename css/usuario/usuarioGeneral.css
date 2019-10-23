@@ -47,6 +47,15 @@ body {
   color: rgb(255, 255, 255) !important;
 }
 
+tbody tr td .btn.positive:hover {
+  background-color: #5de6cc !important;
+  color: rgb(255, 255, 255) !important;
+}
+tbody tr td .btn.negative:hover {
+  background-color: #101d2e !important;
+  color: rgb(255, 255, 255) !important;
+}
+
 .circle {
   float: right;
   cursor: pointer;
@@ -82,4 +91,7 @@ body {
 }
 li {
   text-align: center;
+}
+tbody tr:hover{
+  background-color:#b9eee5;
 }

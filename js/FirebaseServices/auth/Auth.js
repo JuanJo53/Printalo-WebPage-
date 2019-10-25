@@ -34,8 +34,5 @@ class Autenticacion{
                 console.error(error)
                 Materialize.toast(error.message, 4000)
             })
-
-                        
-
     }
 }

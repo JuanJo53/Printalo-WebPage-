@@ -181,15 +181,15 @@
                                 <div class="form-group">
                                     <!--nombre del negocio-->
                                     <label for="name">Nombre del Negocio:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="name">
                                     <!--//-->
                                     <!--email-->
                                     <label for="name">E-mail:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="email">
                                     <!--//-->
                                     <!--contrasenia-->
                                     <label for="name">Constraseña:</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" id="password">
                                     <!--//-->
                                 </div>
                             </form>
@@ -226,37 +226,37 @@
                                 <div class="form-group">
                                     <!--Nombre del duenio-->
                                     <label for="username">Nombre del Dueño: </label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="name">
                                     <!--//-->
                                     <!--apellido del duenio-->
                                     <label for="username">Apellido del Dueño : </label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="LastName">
                                     <!--//-->
                                     <!--nombre del negocio-->
                                     <label for="name">Nombre del Negocio:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="NegName">
                                     <!--//-->
                                     <!--direccion-->
                                     <label for="password">Direccion:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="dir">
                                     <!--//-->
                                     <!--numero de referencia-->
                                     <label for="text">Numero de referencia:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="num">
                                     <!--//-->
                                     <!--Email-->
                                     <label for="username">E-mail : </label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="email">
                                     <!--//-->
                                     <!--Contrasenia-->
                                     <label for="password">Contraseña:</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" id="password">
                                     <!--//-->
                                 </div>
                             </form>
                             <div class="modalbutton text-center py-3">
                                 <!--Btn Registrar Negocios-->
-                                <a class="btn btn-outline-light bg-printalo-button text-light">Registrar</a>
+                                <a onclick="enviar()" class="btn btn-outline-light bg-printalo-button text-light">Registrar</a>
                                 <!--//-->
                                 <br>
                                 <br>
@@ -304,9 +304,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
     
     <!-- Configuracion de Proyecto en Firebase -->
-    <script type="text/javascript" src="js/FirebaseServices/ConfigFirebase">
-        firebase.initializeApp(firebaseConfig);
-    </script>
+    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
+    
 </body>
 
 </html>

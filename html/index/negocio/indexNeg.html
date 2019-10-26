@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/modals.css">
     <link rel="stylesheet" href="../../../css/detalles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
 
     <title>Principal Negocios</title>
 </head>
@@ -256,7 +259,7 @@
                             </form>
                             <div class="modalbutton text-center py-3">
                                 <!--Btn Registrar Negocios-->
-                                <a onclick="enviar()" class="btn btn-outline-light bg-printalo-button text-light">Registrar</a>
+                                <a id="btnRegistrarNegocio" class="btn btn-outline-light bg-printalo-button text-light">Registrar</a>
                                 <!--//-->
                                 <br>
                                 <br>
@@ -285,14 +288,12 @@
         </div>
     </div>
     <!--Fin de Modals-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    
     <script src="../../../js/bootstrap.min.js"></script>
     <script>
         $('#year').text(new Date().getFullYear());
     </script>
-    
+   
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
 
@@ -305,6 +306,11 @@
     
     <!-- Configuracion de Proyecto en Firebase -->
     <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
+    
+    <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
+    <script type="text/javascript" src="../../../js/FirebaseServices/auth/AuthController.js"></script>
+    <script type="text/javascript" src="../../../js/FirebaseServices/auth/Auth.js"></script>
+
     
 </body>
 

@@ -9,7 +9,7 @@ var firebaseConfig = {
     appId: "1:917705384239:web:c7bb0ff68990454d84c1da"
 };
 firebase.initializeApp(firebaseConfig);
-
+/*
 function enviar(){
     var email=document.getElementById('email').value;
     var pass=document.getElementById('password').value;
@@ -20,4 +20,4 @@ function enviar(){
         var errorMessage = error.message;
         alert(errorMessage);
     });
-}
+}*/

@@ -1,5 +1,14 @@
-class Autenticacion{
-    autEmailPass (email,paswoord){
+class Auth{
+    crearCuentaEmailPass(email,password, nombres){
+        alert("email: "+email+" pass: "+password);
+        firebase.auth().createUserWithEmailAndPassword(email,password)
+        .catch(function(error){
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(errorMessage);
+        });
+    }
+/*    autEmailPass (email,paswoord){
 
     }
 
@@ -34,5 +43,5 @@ class Autenticacion{
                 console.error(error)
                 Materialize.toast(error.message, 4000)
             })
-    }
+    }*/
 }

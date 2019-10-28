@@ -2,10 +2,10 @@
 
 }*/
 
-var RegistrarNeg = document.getElementById("btnRegistrarNegocio");
-RegistrarNeg.addEventListener("click", RegistrarNeg);
-var IngresarNeg = document.getElementById("btnIngresarNeg");
-IngresarNeg.addEventListener("click", IngresarNeg);
+var Registrar = document.getElementById("btnRegistrarNegocio");
+Registrar.addEventListener("click", RegistrarNeg);
+var Ingresar = document.getElementById("btnIngresarNeg");
+Ingresar.addEventListener("click", IngresarNeg);
 
 function RegistrarNeg(){
     var nombreDueño = document.getElementById("txtNameReg").value;
@@ -17,6 +17,7 @@ function RegistrarNeg(){
     var pass = document.getElementById("txtPasswordReg").value;
     const auth = new Auth();
     auth.crearCuentaEmailPass(email,pass,nombreNeg);
+    ValidarNeg();
 }
 
 function IngresarNeg(){
@@ -24,5 +25,26 @@ function IngresarNeg(){
     var email = document.getElementById("txtEmailIng").value;
     var pass = document.getElementById("txtPasswordIng").value;
     const auth = new Auth();
-    
+    auth.LoginEmailPass(email,pass,nombreNeg);
+    ValidarNeg();
+}
+
+function ValidarNeg(){
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            // User is signed in.
+            var displayName = user.displayName;
+            var email = user.email;
+            var emailVerified = user.emailVerified;
+            var photoURL = user.photoURL;
+            var isAnonymous = user.isAnonymous;
+            var uid = user.uid;
+            var providerData = user.providerData;
+            console.log("Logeado");
+            console.log(user);
+        } else {
+            // User is not signed in.
+            console.log("No Logeado");
+        }
+      });
 }

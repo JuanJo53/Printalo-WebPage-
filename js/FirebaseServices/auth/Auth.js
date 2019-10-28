@@ -1,5 +1,5 @@
 class Auth{
-    crearCuentaEmailPass(email,password, nombres){
+    crearCuentaEmailPass(email,password, nombre){
         alert("email: "+email+" pass: "+password);
         firebase.auth().createUserWithEmailAndPassword(email,password)
         .catch(function(error){
@@ -8,6 +8,25 @@ class Auth{
             alert(errorMessage);
         });
     }
+    LoginEmailPass(email,password, nombre){
+        firebase.auth().signInWithEmailAndPassword(email, password)
+        .catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(errorMessage);
+          });
+    }
+
+    Logout(){
+        firebase.auth().signOut()
+        .then(function(){
+            console.log("Salir");
+        })
+        .catch(function(error){
+            console.log(error);
+        }) 
+    }
+
 /*    autEmailPass (email,paswoord){
 
     }

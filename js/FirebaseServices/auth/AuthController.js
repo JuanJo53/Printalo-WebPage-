@@ -1,9 +1,10 @@
 /*class Negocio{
 
 }*/
-
+// Evento de Boton Registrar
 var Registrar = document.getElementById("btnRegistrarNegocio");
 Registrar.addEventListener("click", RegistrarNeg);
+// Evento de Boton Ingresar
 var Ingresar = document.getElementById("btnIngresarNeg");
 Ingresar.addEventListener("click", IngresarNeg);
 
@@ -18,6 +19,7 @@ function RegistrarNeg(){
     const auth = new Auth();
     auth.crearCuentaEmailPass(email,pass,nombreNeg);
     ValidarNeg();
+    //$('#ingresarModal').modal('close');
 }
 
 function IngresarNeg(){
@@ -42,9 +44,12 @@ function ValidarNeg(){
             var providerData = user.providerData;
             console.log("Logeado");
             console.log(user);
+            return (true);            
         } else {
             // User is not signed in.
             console.log("No Logeado");
+            return (false);
         }
+        
       });
 }

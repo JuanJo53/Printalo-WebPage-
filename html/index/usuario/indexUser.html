@@ -179,15 +179,14 @@
                             <form action="" class="p-5">
                                 <div class="form-group">
                                     <label for="name">E-mail:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtEmailUser" >
                                     <label for="name">Constraseña:</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" id="txtPassUser" >
                                 </div>
                             </form>
                             <div class="modalbutton text-center py-3">
                                 <!--btn ingresar usuario normal-->
-                                <a class="btn btn-outline-light bg-printalo-button text-light"
-                                    href="../../usuario/inicioUsuario.html">Ingresar</a>
+                                <button id="btbIngresarUser" class="btn btn-outline-light bg-printalo-button text-light">Ingresar</button>
                                 <!--//-->
                                 <br>
                                 <br>
@@ -200,8 +199,6 @@
             </div>
         </div>
     </div>
-
-
 
     <!--Registrarse Modal-->
     <div class="modal fade text-dark" id="registrarseModal">
@@ -217,20 +214,20 @@
                             <form action="" class="p-5">
                                 <div class="form-group">
                                     <label for="username">Nombre:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtName">
                                     <label for="username">Apellido:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtLastName">
                                     <label for="username">Numero de telefono:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtNum">
                                     <label for="name">E-mail:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtEmail">
                                     <label for="password">Constraseña:</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" id="txtPass">
                                 </div>
                             </form>
                             <div class="modalbutton text-center py-3">
                                 <!--btn ingresar usuario normal-->
-                                <a class="btn btn-outline-light bg-printalo-button text-light">Registrar</a>
+                                <button id="btnRegistrarUser" class="btn btn-outline-light bg-printalo-button text-light">Registrar</button>
                                 <!--//-->
                                 <br>
                                 <br>

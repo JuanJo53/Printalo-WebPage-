@@ -18,13 +18,14 @@ class Auth{
     }
 
     Logout(){
+        //Copiar des de aqui
         firebase.auth().signOut()
         .then(function(){
             console.log("Salir");
         })
         .catch(function(error){
             console.log(error);
-        }) 
+        }) //Hasta aqui para desloguearse 
     }
     //TODO: Programar la verificacion de las cuentas nuevas
 

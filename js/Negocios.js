@@ -19,7 +19,6 @@ function RegistrarNeg(){
     const auth = new Auth();
     auth.crearCuentaEmailPass(email,pass,nombreNeg);
     ValidarNeg();
-    //$('#ingresarModal').modal('close');
 }
 
 function IngresarNeg(){
@@ -44,7 +43,7 @@ function ValidarNeg(){
             var providerData = user.providerData;
             console.log("Logeado");
             console.log(user);
-            location.href="../../negocio/inicioNeg.html";       
+            location.href="../../pedidos/pedPendientes.html";       
         } else {
             // User is not signed in.
             console.log("No Logeado");

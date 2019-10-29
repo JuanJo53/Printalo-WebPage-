@@ -44,12 +44,10 @@ function ValidarNeg(){
             var providerData = user.providerData;
             console.log("Logeado");
             console.log(user);
-            return (true);            
+            location.href="../../negocio/inicioNeg.html";       
         } else {
             // User is not signed in.
             console.log("No Logeado");
-            return (false);
         }
-        
       });
 }

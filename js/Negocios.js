@@ -43,7 +43,7 @@ function ValidarNeg(){
             var providerData = user.providerData;
             console.log("Logeado");
             console.log(user);
-            location.href="../../pedidos/pedPendientes.html";       
+            location.href="../../../pedPendientes.html";       
         } else {
             // User is not signed in.
             console.log("No Logeado");

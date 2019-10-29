@@ -13,6 +13,8 @@ body {
 .active {
   font-weight: bold;
   color: white !important;
+  
+  
 }
 .bg-printalo-nav {
   background-color: #253449;
@@ -136,4 +138,11 @@ li {
   color: #fff;
   /*background-color:rgba(0,0,0,0.075);*/
   background-color: #24c4a6;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.section-border {
+  position: relative;
+  border-radius: 60px;
+  border: 2px solid #747474;
+  background-color: white;
 }

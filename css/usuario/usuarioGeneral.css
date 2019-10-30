@@ -95,3 +95,63 @@ li {
 tbody tr:hover{
   background-color:#b9eee5;
 }
+.section-border {
+  position: relative;
+  border-radius: 60px;
+  border: 2px solid #747474;
+  background-color: white;
+}
+.fab-icon-holder-modal.off{
+  display: inline-block;
+  width:40px;
+  height: 40px;
+  border-radius: 100%;
+  background: #364c68;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  padding: none;
+}
+.fab-icon-holder-modal.on{
+  display: inline-block;
+  width:40px;
+  height: 40px;
+  border-radius: 100%;
+  background: #24c4a6;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  padding: none;
+}
+.fab-icon-holder-modal a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-style: 25px;
+  color:#ffffff;
+}
+.row-detail.off{
+  display: inline-block;
+  background: #364c68;
+  width: 40px;
+  height: 5px;
+  margin-left:-5px;
+  margin-right:-5px;
+}.row-detail.on{
+  display: inline-block;
+  background: #24c4a6;
+  width: 40px;
+  height: 5px;
+  margin-left:-5px;
+  margin-right:-5px;
+}
+.card.negocioIcon{
+  width: 100%;
+}
+.card.negocioIcon img{
+  height: 160px!important;
+}
+.card.negocioIcon .card-footer{
+  background: #24c4a6;
+}
+.modal-content .container a.btn.negative:hover {
+  background-color: #253449 !important;
+  color: rgb(255, 255, 255) !important;
+}

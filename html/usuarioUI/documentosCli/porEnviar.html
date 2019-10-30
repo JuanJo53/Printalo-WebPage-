@@ -71,20 +71,6 @@
         <li class="nav-item"><a class="nav-link" href="realizados.html">Realizados</a></li>
         <!--//-->
     </ul>
-    <!--
-    <div class="container">
-        <div class="tab-content active center">
-            <div class="tab-pane" id="porEnviar">
-                <p>First paragraph</p>
-            </div>
-            <div class="tab-pane" id="enviados">
-                <p>2 paragraph</p>
-            </div>
-            <div class="tab-pane" id="realizados">
-                <p>3 paragraph</p>
-            </div>
-        </div>
-    </div>-->
     <div class="container">
         <!-- responsive table -->
         <div class="holder">
@@ -111,8 +97,8 @@
                             <!--//-->
                             <td class="text-center">nombredearchiiiiiiiiiiiiiivo.pdf</td>
                             <!--Btn Solicitar-->
-                            <td class="text-center"><a
-                                    class="btn positive bg-printalo-greenDetail text-light">Solicitar</a></td>
+                            <td class="text-center"><a class="btn positive bg-printalo-greenDetail text-light"
+                                    data-toggle="modal" data-target="#escogerLocal">Solicitar</a></td>
                             <!--//-->
                             <!--Btn Eliminar-->
                             <td class="text-center"><a
@@ -150,9 +136,9 @@
             </i>
         </div>
     </div>
-    <!--Modal Subir Documento-->
+    <!--Modal Subir Documento(btn +)-->
     <div class="modal fade text-dark" id="ingresarModal">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header bg-printalo-blueDetail">
                     <h5 class="modal-title text-light">Abrir Archivo</h5>
@@ -161,13 +147,13 @@
                                 data-dismiss="modal"></a>-->
                 </div>
                 <div class="modal-body">
-                    <div class="row">
+                    <div class="row text-center">
                         <!--pregunta-->
-                        <div class="col-sm-10 text-center">
+                        <div class="col my-auto">
                             Abrir "NombredelArchivo.pdf"?
                         </div>
                         <!--icono de documento-->
-                        <div class="col text-center">
+                        <div class="px-4">
                             <a><i class="far fa-file fa-3x"></i></a>
                         </div>
                     </div>
@@ -186,6 +172,92 @@
             </div>
         </div>
     </div>
+    <!--Modal Subir Documento (btn +)-->
+    <!--Escoger local modal(btn siguiente)-->
+    <div class="modal fade text-dark" id="escogerLocal">
+        <div class="modal-dialog modal-md">
+            <!--Progress Modal-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <div class="container">
+                        <section class="px-2 py-4 text-center">
+                            <div class="fab-icon-holder-modal on">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i
+                                        class="far fa-hand-pointer "></i></a>
+                                </i>
+                            </div>
+                            <div class="row-detail off">
+                            </div>
+                            <div class="fab-icon-holder-modal off">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-wrench "></i></a>
+                                </i>
+                            </div>
+                            <div class="row-detail off">
+                            </div>
+                            <div class="fab-icon-holder-modal off">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-clock "></i></a>
+                                </i>
+                            </div>
+                            <div class="row-detail off">
+                            </div>
+                            <div class="fab-icon-holder-modal off">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i
+                                        class="fas fa-dollar-sign "></i></a>
+                                </i>
+                            </div>
+                            <div class="row-detail off">
+                            </div>
+                            <div class="fab-icon-holder-modal off">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i
+                                        class="fas fa-check-circle "></i></a>
+                                </i>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <!--//Progress Modal-->
+            <!--Content Modal-->
+            <div class="col">
+                <div class="modal-content">
+                    <div class="container px-5">
+                        <h5 class="text-center p-3">Escoja un negocio</h5>
+                        <!--charly button-->
+                        <div class="pb-3 text-center ">
+                            <div class="card negocioIcon mx-auto">
+                                <!--img del negocio-->
+                                <img src="../../../img/charly1.jpg" alt="" class="card-img-top">
+                                <div class="card-footer">
+                                    <!--nombre del negocio-->
+                                    <h5 class="my-auto text-light">Charly 1</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//charly button-->
+                        <!--charly button-->
+                        <div class="pb-3 text-center ">
+                                <div class="card negocioIcon mx-auto">
+                                    <!--img del negocio-->
+                                    <img src="../../../img/pcs.jpg" alt="" class="card-img-top">
+                                    <div class="card-footer">
+                                        <!--nombre del negocio-->
+                                        <h5 class="my-auto text-light">PCS</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--//charly button-->
+                        <div class="pb-3">
+                            <!--Btn cancelar-->
+                            <a class="btn btn-block negative bg-printalo-blueDetail text-light ">Cancelar</a>
+                            <!--//Btn cancelar-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Content Modal-->
+        </div>
+    </div>
+    <!--//Escoger local modal(btn siguiente)-->
     <!--Fin modals-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

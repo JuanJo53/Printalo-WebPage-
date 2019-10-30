@@ -102,14 +102,14 @@ p {
   margin: 0 0 20px; }
 
 a {
-  color: #253449;
+  color: #364c68;
   text-decoration: none;
   -webkit-transition: color 0.3s linear;
   -o-transition: color 0.3s linear;
   transition: color 0.3s linear; }
   a:hover, a:focus {
     text-decoration: none;
-    color: #0b1016; }
+    color: #1c2736; }
 
 /* responsive table */
 .responsiveTbl table {
@@ -133,7 +133,7 @@ td {
     text-align: left; }
 
 th {
-  background: #253449;
+  background: #364c68;
   color: #fff;
   font-weight: 500;
   text-transform: uppercase;
@@ -141,7 +141,7 @@ th {
 
 .price,
 .btnsass {
-  border: 1px solid #253449;
+  border: 1px solid #364c68;
   border-radius: 25px;
   display: inline-block;
   vertical-align: top;
@@ -152,15 +152,15 @@ th {
 .btnsass {
   border: none;
   color: #fff;
-  background-color: #253449;
+  background-color: #364c68;
   -webkit-transition: -webkit-box-shadow 0.3s linear;
   transition: -webkit-box-shadow 0.3s linear;
   -o-transition: box-shadow 0.3s linear;
   transition: box-shadow 0.3s linear;
   transition: box-shadow 0.3s linear, -webkit-box-shadow 0.3s linear; }
   .btnsass:hover {
-    -webkit-box-shadow: inset 0 0 0 25px black;
-    box-shadow: inset 0 0 0 25px black;
+    -webkit-box-shadow: inset 0 0 0 25px #0a0f14;
+    box-shadow: inset 0 0 0 25px #0a0f14;
     color: #fff; }
 
 @media only screen and (max-width: 767px) {

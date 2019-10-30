@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../../../css/modals.css">
     <link rel="stylesheet" href="../../../css/detalles.css">
 
-    <title>Principal Negocios</title>
+    <title>Principal Usuarios</title>
 </head>
 
 <body>
@@ -36,11 +36,11 @@
                     </li>
                     <!--Link Negocios Asociados-->
                     <li class="nav-item">
-                        <a href="negoAsocNeg.html" class="nav-link text-light center active">Negocios asociados</a>
+                        <a href="negoAsocNeg.html" class="nav-link text-light center">Negocios asociados</a>
                     </li>
                     <!--Link Contactos-->
                     <li class="nav-item">
-                        <a href="indexContactosNeg.html" class="nav-link text-light center">Contactos</a>
+                        <a href="indexContactosNeg.html" class="nav-link text-light center active">Contactos</a>
                     </li>
                     <!--Btn Iniciar Sesion-->
                     <li class="nav-item">
@@ -61,58 +61,50 @@
             </div>
         </div>
     </nav>
-
     <div class="container">
-        <!--Section 1-->
-        <section id="sliderNegocios" class="py-4">
+        <!--section 1-->
+        <section id="formsection" class="my-4 py-4">
+            <div class="text-center">
+                <h2>Contactanos</h2>
+                <h4>Si tiene alguna duda,llene el formualrio y con gusto lo atenderemos</h4>
+            </div>
+            <div class="row">
+                <div class="col d-none d-sm-block"></div>
+                <div class="col-md-5">
+                    <div class="center">
+                        <div class="text-center">
+                            <i class="far fa-clipboard fa-8x circlebase"></i>
+                        </div>
 
-            <div id="slider4" class="carousel slide" data-ride="carousel">
-                <div class="carousel-caption top">
-                    <h3>Negocios que confian en nosotros :</h3>
+                    </div>
                 </div>
-                <ol class="carousel-indicators">
-                    <li class="active" data-target="#slider4" data-slide-to="0"></li>
-                    <li data-target="#slider4" data-slide-to="1"></li>
-                    <li data-target="#slider4" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item carousel-image-1 active">
-                        <div class="dark-overlay">
-                            <div class="container">
-                                <div class="carousel-caption d-none d-sm-block">
-                                    <h4>Fotocopias Charly 1</h4>
+                <div class="col-md-5">
+                    <div class="card bg-printalo-greenDetail text-center card-form m-1 text-light">
+                        <div class="card-body p-4">
+                            <h3>Contactanos</h3>
+                            <form action="" class="form-group">
+                                <label class="float-left" for="name">E-mail:</label>
+                                <input type="text" class="form-control">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="float-left" for="message">Comentario : </label><br>
+                                            <textarea cols="80" rows="5" name="msg" class="form-control"></textarea><br>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="modalbutton"><a
+                                        class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button "
+                                        href="#">Enviar</a></div>
+                            </form>
                         </div>
                     </div>
-                    <div class="carousel-item carousel-image-2">
-                        <div class="dark-overlay">
-                            <div class="container">
-                                <div class="carousel-caption d-none d-sm-block">
-                                    <h4>Fotocopias Universitario</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item carousel-image-3">
-                        <div class="dark-overlay">
-                            <div class="container">
-                                <div class="carousel-caption d-none d-sm-block">
-                                    <h4>Fotocopias PCS</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#slider4" class="carousel-control-prev" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a href="#slider4" class="carousel-control-next" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
                 </div>
+                <div class="col d-none d-sm-block"></div>
             </div>
         </section>
-        <!--Section 1-->
+        <!--section 1-->
+
     </div>
 
     <footer id="main-footer" class="bg-printalo-greenDetail text-white py-3">
@@ -165,61 +157,61 @@
             </div>
         </div>
     </footer>
-    <!--ingresar Modal-->
-    <div class="modal fade text-dark" id="ingresarModal">
-        <div class="modal-dialog modal-lg">
-            <div class="row py-3">
-                <div class="col-lg-6 nopadding d-none d-lg-block ">
-                    <div class="modal-content bg-printalo-blueDetail">
-                        <div class="container center">
-                            <div class="modal-body">
-                                <div class="text-center">
-                                    <img width="100" height="100" src="../../../img/printer.png" alt=""
-                                        class="img-fluid ">
-                                </div>
-                                <h3 class="text-center text-light">Printalo</h3>
+    
+   <!--ingresar Modal-->
+   <div class="modal fade text-dark" id="ingresarModal">
+    <div class="modal-dialog modal-lg">
+        <div class="row py-3">
+            <div class="col-lg-6 nopadding d-none d-lg-block ">
+                <div class="modal-content bg-printalo-blueDetail">
+                    <div class="container center">
+                        <div class="modal-body">
+                            <div class="text-center">
+                                <img width="100" height="100" src="../../../img/printer.png" alt=""
+                                    class="img-fluid ">
                             </div>
+                            <h3 class="text-center text-light">Printalo</h3>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 nopadding">
-                    <div class="modal-content">
-                        <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
-                        <div class="container">
-                            <h2 class="text-center">Ingreso Negocios</h2>
-                            <form action="" class="p-5">
-                                <div class="form-group">
-                                    <!--nombre del negocio-->
-                                    <label for="name">Nombre del Negocio:</label>
-                                    <input type="text" class="form-control">
-                                    <!--//-->
-                                    <!--email-->
-                                    <label for="name">E-mail:</label>
-                                    <input type="text" class="form-control">
-                                    <!--//-->
-                                    <!--contrasenia-->
-                                    <label for="name">Constraseña:</label>
-                                    <input type="password" class="form-control">
-                                    <!--//-->
-                                </div>
-                            </form>
-                            <div class="modalbutton text-center py-3">
-                                <!--Btn Ingresar Negocios-->
-                                <a class="btn btn-outline-light bg-printalo-button text-light"
-                                    href="../../negocio/inicioNeg.html">Ingresar</a>
-                                <!--//--><br>
-                                <br>
-                                <!--Link Registrarse-->
-                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
+            </div>
+            <div class="col-lg-6 nopadding">
+                <div class="modal-content">
+                    <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
+                    <div class="container">
+                        <h2 class="text-center">Ingreso Negocios</h2>
+                        <form action="" class="p-5">
+                            <div class="form-group">
+                                <!--nombre del negocio-->
+                                <label for="name">Nombre del Negocio:</label>
+                                <input type="text" class="form-control" id="txtNameIng">
+                                <!--//-->
+                                <!--email-->
+                                <label for="name">E-mail:</label>
+                                <input type="text" class="form-control" id="txtEmailIng">
+                                <!--//-->
+                                <!--contrasenia-->
+                                <label for="name">Constraseña:</label>
+                                <input type="password" class="form-control" id="txtPasswordIng">
                                 <!--//-->
                             </div>
+                        </form>
+                        <div class="modalbutton text-center py-3">
+                            <!--Btn Ingresar Negocios-->
+                            <button id="btnIngresarNeg" class="btn btn-outline-light bg-printalo-button text-light">Ingresar</button>
+                            <!--//-->
+                            <br>
+                            <br>
+                            <!--Link Registrarse-->
+                            <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
+                            <!--//-->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+</div>
 
     <!--Registrarse Modal-->
     <div class="modal fade text-dark" id="registrarseModal">
@@ -236,37 +228,37 @@
                                 <div class="form-group">
                                     <!--Nombre del duenio-->
                                     <label for="username">Nombre del Dueño: </label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtNameReg">
                                     <!--//-->
                                     <!--apellido del duenio-->
                                     <label for="username">Apellido del Dueño : </label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtLastNameReg">
                                     <!--//-->
                                     <!--nombre del negocio-->
                                     <label for="name">Nombre del Negocio:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtNegNameReg">
                                     <!--//-->
                                     <!--direccion-->
                                     <label for="password">Direccion:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtDirReg">
                                     <!--//-->
                                     <!--numero de referencia-->
                                     <label for="text">Numero de referencia:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtNumReg">
                                     <!--//-->
                                     <!--Email-->
                                     <label for="username">E-mail : </label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtEmailReg">
                                     <!--//-->
                                     <!--Contrasenia-->
                                     <label for="password">Contraseña:</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" id="txtPasswordReg">
                                     <!--//-->
                                 </div>
                             </form>
                             <div class="modalbutton text-center py-3">
                                 <!--Btn Registrar Negocios-->
-                                <a class="btn btn-outline-light bg-printalo-button text-light">Registrar</a>
+                                <button id="btnRegistrarNegocio" class="btn btn-outline-light bg-printalo-button text-light">Registrar</button>
                                 <!--//-->
                                 <br>
                                 <br>
@@ -294,7 +286,7 @@
             </div>
         </div>
     </div>
-
+    <!--Fin de Modals-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -302,13 +294,23 @@
     <script>
         $('#year').text(new Date().getFullYear());
     </script>
-    <script>
-        $('.carousel').carousel({
-            interval: 2000,
-            keyboard: true,
-            wrap: true
-        });
-    </script>
+    
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+    <!-- Para uso de Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+    <!-- Para Authentication y Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+    
+    <!-- Configuracion de Proyecto en Firebase -->
+    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
+    
+    <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
+    <script type="text/javascript" src="../../../js/Negocios.js"></script>
+    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
 </body>
 
 </html>

@@ -17,7 +17,7 @@ function RegistrarNeg(){
     var email = document.getElementById("txtEmailReg").value;
     var pass = document.getElementById("txtPasswordReg").value;
     const auth = new Auth();
-    auth.crearCuentaEmailPass(email,pass,nombreNeg);
+    auth.crearCuentaEmailPass(email,pass,nombreNeg);  
     ValidarNeg();
 }
 
@@ -27,7 +27,8 @@ function IngresarNeg(){
     var pass = document.getElementById("txtPasswordIng").value;
     const auth = new Auth();
     auth.LoginEmailPass(email,pass,nombreNeg);
-    ValidarNeg();
+    window.location.href="../../pedidos/pedPendientes.html";
+    //ValidarNeg();
 }
 
 function ValidarNeg(){
@@ -43,7 +44,7 @@ function ValidarNeg(){
             var providerData = user.providerData;
             console.log("Logeado");
             console.log(user);
-            location.href="../../../pedPendientes.html";       
+            window.location.href="../../pedidos/pedPendientes.html";
         } else {
             // User is not signed in.
             console.log("No Logeado");

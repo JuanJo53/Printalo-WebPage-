@@ -244,3 +244,11 @@ input[type="text"]{
   border-radius: 50%;
   background: white;
 }
+button.icon-editar:hover {
+  background-color: #30e2c2 !important;
+  color: rgb(255, 255, 255) !important;
+}
+.positive:hover {
+  background-color: #30e2c2 !important;
+  color: rgb(255, 255, 255) !important;
+}

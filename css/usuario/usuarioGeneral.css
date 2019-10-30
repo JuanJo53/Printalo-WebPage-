@@ -142,3 +142,16 @@ tbody tr:hover{
   margin-left:-5px;
   margin-right:-5px;
 }
+.card.negocioIcon{
+  width: 100%;
+}
+.card.negocioIcon img{
+  height: 160px!important;
+}
+.card.negocioIcon .card-footer{
+  background: #24c4a6;
+}
+.modal-content .container a.btn.negative:hover {
+  background-color: #253449 !important;
+  color: rgb(255, 255, 255) !important;
+}

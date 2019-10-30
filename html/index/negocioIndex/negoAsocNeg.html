@@ -191,23 +191,23 @@
                                 <div class="form-group">
                                     <!--nombre del negocio-->
                                     <label for="name">Nombre del Negocio:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtNameIng">
                                     <!--//-->
                                     <!--email-->
                                     <label for="name">E-mail:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtEmailIng">
                                     <!--//-->
                                     <!--contrasenia-->
                                     <label for="name">Constraseña:</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" id="txtPasswordIng">
                                     <!--//-->
                                 </div>
                             </form>
                             <div class="modalbutton text-center py-3">
                                 <!--Btn Ingresar Negocios-->
-                                <a class="btn btn-outline-light bg-printalo-button text-light"
-                                    href="../../negocioUI/">Ingresar</a>
-                                <!--//--><br>
+                                <button id="btnIngresarNeg" class="btn btn-outline-light bg-printalo-button text-light">Ingresar</button>
+                                <!--//-->
+                                <br>
                                 <br>
                                 <!--Link Registrarse-->
                                 <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
@@ -221,8 +221,8 @@
     </div>
 
 
-    <!--Registrarse Modal-->
-    <div class="modal fade text-dark" id="registrarseModal">
+     <!--Registrarse Modal-->
+     <div class="modal fade text-dark" id="registrarseModal">
         <div class="modal-dialog modal-lg">
             <div class="row py-3">
                 <div class="col-lg-6 nopadding">
@@ -236,37 +236,37 @@
                                 <div class="form-group">
                                     <!--Nombre del duenio-->
                                     <label for="username">Nombre del Dueño: </label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtNameReg">
                                     <!--//-->
                                     <!--apellido del duenio-->
                                     <label for="username">Apellido del Dueño : </label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtLastNameReg">
                                     <!--//-->
                                     <!--nombre del negocio-->
                                     <label for="name">Nombre del Negocio:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtNegNameReg">
                                     <!--//-->
                                     <!--direccion-->
                                     <label for="password">Direccion:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtDirReg">
                                     <!--//-->
                                     <!--numero de referencia-->
                                     <label for="text">Numero de referencia:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtNumReg">
                                     <!--//-->
                                     <!--Email-->
                                     <label for="username">E-mail : </label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtEmailReg">
                                     <!--//-->
                                     <!--Contrasenia-->
                                     <label for="password">Contraseña:</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" id="txtPasswordReg">
                                     <!--//-->
                                 </div>
                             </form>
                             <div class="modalbutton text-center py-3">
                                 <!--Btn Registrar Negocios-->
-                                <a class="btn btn-outline-light bg-printalo-button text-light">Registrar</a>
+                                <button id="btnRegistrarNegocio" class="btn btn-outline-light bg-printalo-button text-light">Registrar</button>
                                 <!--//-->
                                 <br>
                                 <br>
@@ -294,6 +294,7 @@
             </div>
         </div>
     </div>
+    <!--Fin de Modals-->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -309,6 +310,22 @@
             wrap: true
         });
     </script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+    <!-- Para uso de Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+    <!-- Para Authentication y Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+    
+    <!-- Configuracion de Proyecto en Firebase -->
+    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
+    
+    <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
+    <script type="text/javascript" src="../../../js/Negocios.js"></script>
+    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
 </body>
 
 </html>

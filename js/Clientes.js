@@ -17,7 +17,6 @@ function RegistrarCli(){
     const auth = new Auth();
     auth.crearCuentaEmailPass(email,pass);
     ValidarNeg();
-    //$('#ingresarModal').modal('close');
 }
 
 function IngresarCli(){

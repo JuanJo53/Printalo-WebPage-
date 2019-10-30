@@ -27,8 +27,7 @@ function IngresarNeg(){
     var pass = document.getElementById("txtPasswordIng").value;
     const auth = new Auth();
     auth.LoginEmailPass(email,pass,nombreNeg);
-    window.location.href="../../pedidos/pedPendientes.html";
-    //ValidarNeg();
+    ValidarNeg();
 }
 
 function ValidarNeg(){
@@ -44,8 +43,8 @@ function ValidarNeg(){
             var providerData = user.providerData;
             console.log("Logeado");
             console.log(user);
-            window.location.href="../../pedidos/pedPendientes.html";
-        } else {
+            location.href="pedPendientes.html";
+        } else {    
             // User is not signed in.
             console.log("No Logeado");
         }

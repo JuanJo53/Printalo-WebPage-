@@ -157,61 +157,64 @@
             </div>
         </div>
     </footer>
-    
-   <!--ingresar Modal-->
-   <div class="modal fade text-dark" id="ingresarModal">
-    <div class="modal-dialog modal-lg">
-        <div class="row py-3">
-            <div class="col-lg-6 nopadding d-none d-lg-block ">
-                <div class="modal-content bg-printalo-blueDetail">
-                    <div class="container center">
-                        <div class="modal-body">
-                            <div class="text-center">
-                                <img width="100" height="100" src="../../../img/printer.png" alt=""
-                                    class="img-fluid ">
+
+    <!--ingresar Modal-->
+    <div class="modal fade text-dark" id="ingresarModal">
+        <div class="modal-dialog modal-lg">
+            <div class="row py-3">
+                <div class="col-lg-6 nopadding d-none d-lg-block ">
+                    <div class="modal-content bg-printalo-blueDetail">
+                        <div class="container center">
+                            <div class="modal-body">
+                                <div class="text-center">
+                                    <img width="100" height="100" src="../../../img/printer.png" alt=""
+                                        class="img-fluid ">
+                                </div>
+                                <h3 class="text-center text-light">Printalo</h3>
                             </div>
-                            <h3 class="text-center text-light">Printalo</h3>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 nopadding">
-                <div class="modal-content">
-                    <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
-                    <div class="container">
-                        <h2 class="text-center">Ingreso Negocios</h2>
-                        <form action="" class="p-5">
-                            <div class="form-group">
-                                <!--nombre del negocio-->
-                                <label for="name">Nombre del Negocio:</label>
-                                <input type="text" class="form-control" id="txtNameIng">
-                                <!--//-->
-                                <!--email-->
-                                <label for="name">E-mail:</label>
-                                <input type="text" class="form-control" id="txtEmailIng">
-                                <!--//-->
-                                <!--contrasenia-->
-                                <label for="name">Constraseña:</label>
-                                <input type="password" class="form-control" id="txtPasswordIng">
-                                <!--//-->
-                            </div>
-                        </form>
-                        <div class="modalbutton text-center py-3">
-                            <!--Btn Ingresar Negocios-->
-                            <button id="btnIngresarNeg" class="btn btn-outline-light bg-printalo-button text-light">Ingresar</button>
-                            <!--//-->
-                            <br>
-                            <br>
-                            <!--Link Registrarse-->
-                            <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
-                            <!--//-->
+                <div class="col-lg-6 nopadding">
+                    <div class="modal-content">
+                        <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
+                        <div class="container">
+                            <h2 class="text-center">Ingreso Negocios</h2>
+                            <form action="" class="p-5">
+                                <div class="form-group">
+                                    <!--nombre del negocio-->
+                                    <label for="name">Nombre del Negocio:</label>
+                                    <input type="text" class="form-control" id="txtNameIng">
+                                    <!--//-->
+                                    <!--email-->
+                                    <label for="name">E-mail:</label>
+                                    <input type="text" class="form-control" id="txtEmailIng">
+                                    <!--//-->
+                                    <!--contrasenia-->
+                                    <label for="name">Constraseña:</label>
+                                    <input type="password" class="form-control" id="txtPasswordIng">
+                                    <!--//-->
+                                </div>
+                                <div class="modalbutton text-center py-3">
+                                    <!--Btn Ingresar Negocios-->
+                                    <button id="btnIngresarNeg"
+                                        class="btn btn-outline-light bg-printalo-button text-light">Ingresar</button>
+                                    <!--//-->
+                                    <br>
+                                    <br>
+                                    <!--Link Registrarse-->
+                                    <a href="" class="text-center"><u
+                                            class="color-printalo-blueDetail">Registrarse</u></a>
+                                    <!--//-->
+                                </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
     <!--Registrarse Modal-->
     <div class="modal fade text-dark" id="registrarseModal">
@@ -255,17 +258,19 @@
                                     <input type="password" class="form-control" id="txtPasswordReg">
                                     <!--//-->
                                 </div>
+                                <div class="modalbutton text-center py-3">
+                                    <!--Btn Registrar Negocios-->
+                                    <button id="btnRegistrarNegocio"
+                                        class="btn btn-outline-light bg-printalo-button text-light">Registrar</button>
+                                    <!--//-->
+                                    <br>
+                                    <br>
+                                    <!--Link Ir a ingresar-->
+                                    <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
+                                    <!--//-->
+                                </div>
                             </form>
-                            <div class="modalbutton text-center py-3">
-                                <!--Btn Registrar Negocios-->
-                                <button id="btnRegistrarNegocio" class="btn btn-outline-light bg-printalo-button text-light">Registrar</button>
-                                <!--//-->
-                                <br>
-                                <br>
-                                <!--Link Ir a ingresar-->
-                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
-                                <!--//-->
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -294,7 +299,7 @@
     <script>
         $('#year').text(new Date().getFullYear());
     </script>
-    
+
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
 
@@ -304,10 +309,10 @@
     <!-- Para Authentication y Firestore -->
     <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
-    
+
     <!-- Configuracion de Proyecto en Firebase -->
     <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
-    
+
     <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
     <script type="text/javascript" src="../../../js/Negocios.js"></script>
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>

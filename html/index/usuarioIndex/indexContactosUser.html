@@ -32,11 +32,11 @@
                 <ul class="navbar-nav ml-auto">
                     <!--Link Servicios-->
                     <li class="nav-item">
-                        <a href="indexServiciosUser.html" class="nav-link text-light center  active">Servicios</a>
+                        <a href="indexServiciosUser.html" class="nav-link text-light center  ">Servicios</a>
                     </li>
                     <!--Link Contactos-->
                     <li class="nav-item">
-                        <a href="indexContactosUser.html" class="nav-link text-light center  ">Contactos</a>
+                        <a href="indexContactosUser.html" class="nav-link text-light center active ">Contactos</a>
                     </li>
                     <!--Btn Iniciar Sesion-->
                     <li class="nav-item">
@@ -51,59 +51,56 @@
                     <!--Btn Ir a seccion Negocios-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
-                            href="../negocio/indexNeg.html">Negocios</a>
+                            href="../negocioIndex/indexNeg.html">Negocios</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container">
-        <!--Section 1-->
-        <section id="servicessection" class="bg-printalo-blueDetail py-4 my-4">
+        <!--section 1-->
+        <section id="formsection" class="my-4 py-4">
             <div class="text-center">
-                <h3>Servicios que brindamos con la</h3>
-                <h3>Aplicacion : </h3>
+                <h2>Contactanos</h2>
+                <h4>Si tiene alguna duda,llene el formualrio y con gusto lo atenderemos</h4>
             </div>
-            <table class="ml-auto mr-auto">
-                <tr>
-                    <!--Primera seccion-->
-                    <td><i class="fas fa-search fa-2x circlebase2 m-3"></i></td>
-                    <td>
-                        <div class="p-3 align-self-end align-self-center justify-text">
-                            Descubre los servicios que los negocios te ofrecen
+            <div class="row">
+                    <div class="col d-none d-sm-block"></div>
+                <div class="col-md-5">
+                    <div class="center">
+                        <div class="text-center">
+                            <i class="far fa-clipboard fa-8x circlebase"></i>
                         </div>
-                    </td>
-                </tr>
-                <tr>
-                    <!--segunda seccion-->
-                    <td> <i class="fas fa-paper-plane fa-2x circlebase2 m-3"></i></td>
-                    <td>
-                        <div class="p-3 align-self-end align-self-center justify-text">
-                            Envia documentos y ve a recogerlos cuando quieras
+
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card bg-printalo-greenDetail text-center card-form m-1 text-light">
+                        <div class="card-body p-4">
+                            <h3>Contactanos</h3>
+                            <form action="" class="form-group">
+                                <label class="float-left" for="name">E-mail:</label>
+                                <input type="text" class="form-control">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="float-left" for="message">Comentario : </label><br>
+                                            <textarea cols="80" rows="5" name="msg" class="form-control"></textarea><br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modalbutton"><a
+                                        class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button "
+                                        href="#">Enviar</a></div>
+                            </form>
                         </div>
-                    </td>
-                </tr>
-                <tr>
-                    <!--tercera seccion-->
-                    <td> <i class="fas fa-hand-point-up fa-2x circlebase2 m-3"></td>
-                    <td>
-                        <div class="p-3 align-self-end align-self-center justify-text">
-                            Escoge el negocio que quieras que realice tu pedido
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <!--Cuarta seccion-->
-                    <td><i class="far fa-credit-card fa-2x circlebase2 m-3"></i></td>
-                    <td>
-                        <div class="p-3 align-self-end align-self-center justify-text">
-                            Paga tu pedido de forma tradicional o via internet
-                        </div>
-                    </td>
-                </tr>
-            </table>
+                    </div>
+                </div>
+                <div class="col d-none d-sm-block"></div>
+            </div>
         </section>
-        <!--Section 1-->
+        <!--section 1-->
+
     </div>
     <footer id="main-footer" class="bg-printalo-greenDetail text-white py-3">
         <div class="container text-white">
@@ -188,7 +185,7 @@
                             <div class="modalbutton text-center py-3">
                                 <!--btn ingresar usuario normal-->
                                 <a class="btn btn-outline-light bg-printalo-button text-light"
-                                    href="../../usuario/inicioUsuario.html">Ingresar</a>
+                                    href="../../usuarioUI/inicioUsuario.html">Ingresar</a>
                                 <!--//-->
                                 <br>
                                 <br>

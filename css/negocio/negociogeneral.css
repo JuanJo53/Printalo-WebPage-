@@ -158,3 +158,25 @@ input[type="text"]{
 .table th{
   vertical-align: middle!important;
 }
+.fab-icon-holder{
+  width:40px;
+  height: 40px;
+  border-radius: 100%;
+  background: #66A4AC;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+.fab-icon-holder{
+  opacity: 0.8;
+}
+.fab-icon-holder a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-style: 25px;
+  color:#ffffff;
+}
+.bcero{
+  border: none;
+}
+

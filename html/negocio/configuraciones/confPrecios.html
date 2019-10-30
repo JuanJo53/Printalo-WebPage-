@@ -65,24 +65,171 @@
         <div id="page-content-wrapper">
             <button class="btn circletoggle m-3" id="menu-toggle">></button>
             <div class="container">
+                <!--Contenido de la pagina-->
                 <div class="row">
                     <div class="col-lg-6">
+                        <!--primera columan-->
                         <section class="my-4 p-4 section-border">
+                            <!--Rango de precios Normal-->
                             <div class="container">
                                 <div class="text-center">
                                     <h3>Rango de Precios</h3>
                                 </div>
                                 <div class="radiobuttons text-center">
+                                    <!-- 2 Radio buttons-->
                                     Tipo :
                                     <label class="radio-inline"><input type="radio" name="optradio"
                                             checked>Rangos</label>
                                     <label class="radio-inline"><input type="radio" name="optradio">Precio
                                         Unico</label>
                                 </div>
+                                <!--//Radio buttons-->
+                                <div class="row">
+                                    <!-- mas/menos Radio buttons-->
+                                    <div class="col">
+                                        <!--Btn Mas-->
+                                        <div class="fab-icon-holder ml-auto">
+                                            <a data-toggle="modal" data-target="#ingresarModal"><i
+                                                    class="fas fa-plus "></i></a>
+                                            </i>
+                                        </div>
+                                    </div>
+                                    <!--//Btn Mas-->
+                                    <div class="col">
+                                        <!--Btn Menos-->
+                                        <div class="fab-icon-holder mr-auto">
+                                            <a data-toggle="modal" data-target="#ingresarModal"><i
+                                                    class="fas fa-minus "></i></a>
+                                            </i>
+                                        </div>
+                                    </div>
+                                    <!--//Btn Menos-->
+                                </div><!-- //mas/menos Radio buttons-->
+                                <div class="col">
+                                    <!--tabla-->
+                                    <table class="table table-borderless">
+                                        <thead>
+                                            <!--table header-->
+                                            <tr class="text-center">
+                                                <th scope="col">Rango</th>
+                                                <th scope="col">Precio por hoja</th>
+                                                <th scope="col">editar</th>
+                                            </tr>
+                                        </thead>
+                                        <!--//table header-->
+                                        <tbody>
+                                            <tr class="text-center">
+                                                <th>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control text-center"
+                                                            placeholder="min">
+                                                        <!--Input min-->
+                                                        <div class="input-group-append ">
+                                                            <!--Detalle - -->
+                                                            <span
+                                                                class="input-group-text bg-printalo-blueDetail text-light bcero">-</span>
+                                                            <!--Detalle - -->
+                                                        </div>
+                                                        <input type="text" class="form-control text-center"
+                                                            placeholder="max">
+                                                        <!--Input max-->
+                                                    </div>
+                                                </th>
+                                                <td>
+                                                    <!--campo precio-->
+                                                    <input type="text" class="form-control text-center"
+                                                        placeholder="Precio">
+                                                    <!--//campo precio-->
+                                                </td>
+                                                <td>
+                                                    <!--icono editar--><button class="btn icon-editar"><i
+                                                            class="fas fa-edit"></i></button>
+                                                    <!--//icono editar-->
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </section>
+                        <!--//Rango de precios Normal-->
                     </div>
+                    <!--//primera columna-->
                     <div class="col-lg-6">
+                        <!--segunda columna-->
+                        <!--tamanio de Hoja-->
+                        <section class="my-4 p-4 section-border">
+                            <div class="container">
+                                <div class="text-center">
+                                    <h3>Tamaño de Hoja</h3>
+                                </div>
+                                <div class="row">
+                                    <table class="table table-borderless">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th scope="col">Tipo</th>
+                                                <th scope="col">Precio</th>
+                                                <th scope="col">Editar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!--Tamanio oficio-->
+                                            <tr class="text-center">
+                                                <th scope="row">
+                                                    Oficio
+                                                </th>
+                                                <td>
+                                                    <!--input precio-->
+                                                    <input type="text" class="form-control text-center"
+                                                        placeholder="Precio">
+                                                    <!--//input precio-->
+                                                </td>
+                                                <td>
+                                                    <!--btn editar-->
+                                                    <button class="btn icon-editar"><i class="fas fa-edit"></i></button>
+                                                    <!--//btn editar-->
+                                                </td>
+                                            </tr>
+                                            <!--Tamanio carta-->
+                                            <tr class="text-center">
+                                                <th scope="row">
+                                                    Carta
+                                                </th>
+                                                <td>
+                                                    <!--input precio-->
+                                                    <input type="text" class="form-control text-center"
+                                                        placeholder="Precio">
+                                                    <!--//input precio-->
+                                                </td>
+                                                <td>
+                                                    <!--btn editar-->
+                                                    <button class="btn icon-editar"><i class="fas fa-edit"></i></button>
+                                                    <!--//btn editar-->
+                                                </td>
+                                            </tr>
+                                            <!--Tamanio A4-->
+                                            <tr class="text-center">
+                                                <th scope="row">
+                                                    A4
+                                                </th>
+                                                <td>
+                                                    <!--input precio--><input type="text"
+                                                        class="form-control text-center" placeholder="Precio">
+                                                    <!--//input precio-->
+                                                </td>
+                                                <td>
+                                                    <!--btn editar-->
+                                                    <button class="btn icon-editar"><i class="fas fa-edit"></i></button>
+                                                    <!--//btn editar-->
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+                        <!--//tamanio de Hoja-->
+                        <!--Tipo de Hoja-->
                         <section class="my-4 p-4 section-border">
                             <div class="container">
                                 <div class="text-center">
@@ -93,36 +240,41 @@
                                         <thead>
                                             <tr class="text-center">
                                                 <th scope="col">Tipo</th>
-                                                <th scope="col">Campo</th>
+                                                <th scope="col">Precio</th>
                                                 <th scope="col">Editar</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr class="text-center">
                                                 <th scope="row">
-                                                    Oficio
+                                                    Normal
                                                 </th>
-                                                <td><input type="text" class="form-control text-center"
-                                                        placeholder="Precio"></td>
-                                                <td><button class="btn icon-editar"><i class="fas fa-edit"></i></button>
+                                                <td>
+                                                    <!--input precio-->
+                                                    <input type="text" class="form-control text-center"
+                                                        placeholder="Precio">
+                                                    <!--//input precio-->
+                                                </td>
+                                                <td>
+                                                    <!--btn editar-->
+                                                    <button class="btn icon-editar"><i class="fas fa-edit"></i></button>
+                                                    <!--btn editar-->
                                                 </td>
                                             </tr>
                                             <tr class="text-center">
                                                 <th scope="row">
-                                                    Carta
+                                                    Reutilizada
                                                 </th>
-                                                <td><input type="text" class="form-control text-center"
-                                                        placeholder="Precio"></td>
-                                                <td><button class="btn icon-editar"><i class="fas fa-edit"></i></button>
+                                                <td>
+                                                    <!--input precio-->
+                                                    <input type="text" class="form-control text-center"
+                                                        placeholder="Precio">
+                                                    <!--input precio-->
                                                 </td>
-                                            </tr>
-                                            <tr class="text-center">
-                                                <th scope="row">
-                                                    A4
-                                                </th>
-                                                <td><input type="text" class="form-control text-center"
-                                                        placeholder="Precio"></td>
-                                                <td><button class="btn icon-editar"><i class="fas fa-edit"></i></button>
+                                                <td>
+                                                    <!--btn editar-->
+                                                    <button class="btn icon-editar"><i class="fas fa-edit"></i></button>
+                                                    <!--//btn editar-->
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -130,10 +282,12 @@
                                 </div>
                             </div>
                         </section>
+                        <!--//Tipo de Hoja-->
                     </div>
+                    <!--//segunda columan-->
                 </div>
             </div>
-
+            <!--//Contenido de la pagina-->
         </div>
     </div>
     <!--ingresar Modal-->

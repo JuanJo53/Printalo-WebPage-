@@ -69,11 +69,99 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <!--primera columan-->
+                        <!--Rango de precios Normal-->
                         <section class="my-4 p-4 section-border">
-                            <!--Rango de precios Normal-->
                             <div class="container">
                                 <div class="text-center">
-                                    <h3>Rango de Precios</h3>
+                                    <h3>Rango de Precios de Blanco/Negro</h3>
+                                </div>
+                                <div class="text-center">
+                                    <!-- 2 Radio buttons-->
+                                    <div class="radiobuttons">Tipo :</div>
+                                    <label class="radiobuttons">Rangos
+                                        <input type="radio" checked="checked" name="radio">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radiobuttons">Precio Unico
+                                        <input type="radio" name="radio">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <!--//Radio buttons-->
+                                <div class="row">
+                                    <!-- mas/menos Radio buttons-->
+                                    <div class="col">
+                                        <!--Btn Mas-->
+                                        <div class="fab-icon-holder ml-auto">
+                                            <a data-toggle="modal" data-target="#ingresarModal"><i
+                                                    class="fas fa-plus "></i></a>
+                                            </i>
+                                        </div>
+                                    </div>
+                                    <!--//Btn Mas-->
+                                    <div class="col">
+                                        <!--Btn Menos-->
+                                        <div class="fab-icon-holder mr-auto">
+                                            <a data-toggle="modal" data-target="#ingresarModal"><i
+                                                    class="fas fa-minus "></i></a>
+                                            </i>
+                                        </div>
+                                    </div>
+                                    <!--//Btn Menos-->
+                                </div><!-- //mas/menos Radio buttons-->
+                                <div class="col">
+                                    <!--tabla-->
+                                    <table class="table table-borderless">
+                                        <thead>
+                                            <!--table header-->
+                                            <tr class="text-center">
+                                                <th scope="col">Rango</th>
+                                                <th scope="col">Precio por hoja</th>
+                                                <th scope="col">editar</th>
+                                            </tr>
+                                        </thead>
+                                        <!--//table header-->
+                                        <tbody>
+                                            <tr class="text-center">
+                                                <th>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control text-center"
+                                                            placeholder="min">
+                                                        <!--Input min-->
+                                                        <div class="input-group-append ">
+                                                            <!--Detalle - -->
+                                                            <span
+                                                                class="input-group-text bg-printalo-blueDetail text-light bcero">-</span>
+                                                            <!--Detalle - -->
+                                                        </div>
+                                                        <input type="text" class="form-control text-center"
+                                                            placeholder="max">
+                                                        <!--Input max-->
+                                                    </div>
+                                                </th>
+                                                <td>
+                                                    <!--campo precio-->
+                                                    <input type="text" class="form-control text-center"
+                                                        placeholder="Precio">
+                                                    <!--//campo precio-->
+                                                </td>
+                                                <td>
+                                                    <!--icono editar--><button class="btn icon-editar"><i
+                                                            class="fas fa-edit"></i></button>
+                                                    <!--//icono editar-->
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+                        <!--//Rango de precios Normal-->
+                        <!--Rango de precios a color-->
+                        <section class="my-4 p-4 section-border">
+                            <div class="container">
+                                <div class="text-center">
+                                    <h3>Rango de Precios a Color</h3>
                                 </div>
                                 <div class="radiobuttons text-center">
                                     <!-- 2 Radio buttons-->
@@ -152,7 +240,7 @@
                                 </div>
                             </div>
                         </section>
-                        <!--//Rango de precios Normal-->
+                        <!--//Rango de precios a color-->
                     </div>
                     <!--//primera columna-->
                     <div class="col-lg-6">

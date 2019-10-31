@@ -101,8 +101,8 @@
                                     data-toggle="modal" data-target="#escogerLocal">Solicitar</a></td>
                             <!--//-->
                             <!--Btn Eliminar-->
-                            <td class="text-center"><a
-                                    class="btn negative bg-printalo-blueDetail text-light">Eliminar</a></td>
+                            <td class="text-center"><a class="btn negative bg-printalo-blueDetail text-light"
+                                    data-toggle="modal" data-target="#configurarPedido">Eliminar</a></td>
                             <!--//-->
                         </tr>
                         <!--Termina Fila-->
@@ -172,7 +172,7 @@
             </div>
         </div>
     </div>
-    <!--Modal Subir Documento (btn +)-->
+    <!--//Modal Subir Documento (btn +)-->
     <!--Escoger local modal(btn siguiente)-->
     <div class="modal fade text-dark" id="escogerLocal">
         <div class="modal-dialog modal-md">
@@ -236,16 +236,16 @@
                         <!--//charly button-->
                         <!--charly button-->
                         <div class="pb-3 text-center ">
-                                <div class="card negocioIcon mx-auto">
-                                    <!--img del negocio-->
-                                    <img src="../../../img/pcs.jpg" alt="" class="card-img-top">
-                                    <div class="card-footer">
-                                        <!--nombre del negocio-->
-                                        <h5 class="my-auto text-light">PCS</h5>
-                                    </div>
+                            <div class="card negocioIcon mx-auto">
+                                <!--img del negocio-->
+                                <img src="../../../img/pcs.jpg" alt="" class="card-img-top">
+                                <div class="card-footer">
+                                    <!--nombre del negocio-->
+                                    <h5 class="my-auto text-light">PCS</h5>
                                 </div>
                             </div>
-                            <!--//charly button-->
+                        </div>
+                        <!--//charly button-->
                         <div class="pb-3">
                             <!--Btn cancelar-->
                             <a class="btn btn-block negative bg-printalo-blueDetail text-light ">Cancelar</a>
@@ -258,9 +258,243 @@
         </div>
     </div>
     <!--//Escoger local modal(btn siguiente)-->
+
+    <!--configurar pedido ()-->
+    <div class="modal fade text-dark" id="configurarPedido">
+        <div class="modal-dialog modal-md">
+            <!--Progress Modal-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <div class="container">
+                        <section class="px-2 py-4 text-center">
+                            <div class="fab-icon-holder-modal on">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i
+                                        class="far fa-hand-pointer "></i></a>
+                                </i>
+                            </div>
+                            <div class="row-detail on">
+                            </div>
+                            <div class="fab-icon-holder-modal on">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-wrench "></i></a>
+                                </i>
+                            </div>
+                            <div class="row-detail off">
+                            </div>
+                            <div class="fab-icon-holder-modal off">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-clock "></i></a>
+                                </i>
+                            </div>
+                            <div class="row-detail off">
+                            </div>
+                            <div class="fab-icon-holder-modal off">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i
+                                        class="fas fa-dollar-sign "></i></a>
+                                </i>
+                            </div>
+                            <div class="row-detail off">
+                            </div>
+                            <div class="fab-icon-holder-modal off">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i
+                                        class="fas fa-check-circle "></i></a>
+                                </i>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <!--//Progress Modal-->
+            <!--Content Modal-->
+            <div class="col">
+                <div class="modal-content">
+                    <div class="container px-5">
+                        <h5 class="text-center p-3">Configurar Pedido</h5>
+                        <!--Configuration Block color-->
+                        <div class="config-block py-2">
+                            <p class="color-printalo-blueDetail font-weight-bold">Color</p>
+                            <div class="row-sub">
+                            </div>
+                            <div class="py-1 text-center">
+                                <!-- rbt b/n-->
+                                <label class="radiobuttons my-auto">Blanco/Negro
+                                    <input type="radio" checked="checked" name="radioColor">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- //rbt b/n-->
+                                <!-- rbt color-->
+                                <label class="radiobuttons my-auto">Color
+                                    <input type="radio" name="radioColor">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- //rbt b/color-->
+                            </div>
+                            <!-- //2 Radio buttons rango o unico-->
+                        </div>
+                        <!--//Configuration Block color-->
+                        <!--Configuration Block tamanio de impresion-->
+                        <div class="config-block py-2">
+                            <p class="color-printalo-blueDetail font-weight-bold">Tamaño de impresion</p>
+                            <div class="row-sub">
+                            </div>
+                            <div class="py-1 text-center">
+                                <!-- rbt carta-->
+                                <label class="radiobuttons my-auto">Carta
+                                    <input type="radio" checked="checked" name="radioTamanio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- //rbt carta-->
+                                <!-- rbt oficio-->
+                                <label class="radiobuttons my-auto">Oficio
+                                    <input type="radio" name="radioTamanio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- //rbt oficio-->
+                                <!-- rbt a4-->
+                                <label class="radiobuttons my-auto">A4
+                                    <input type="radio" name="radioTamanio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- //rbt a4-->
+                            </div>
+                            <!-- //2 Radio buttons rango o unico-->
+                        </div>
+                        <!--//Configuration Block tamanio impresion-->
+                        <!--Configuration Block lados-->
+                        <div class="config-block py-2">
+                            <p class="color-printalo-blueDetail font-weight-bold">Lados a Imprimir</p>
+                            <div class="row-sub">
+                            </div>
+                            <div class="py-1 text-center">
+                                <!-- rbt b/n-->
+                                <label class="radiobuttons my-auto">Intercalado
+                                    <input type="radio" checked="checked" name="radioLados">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- //rbt b/n-->
+                                <!-- rbt color-->
+                                <label class="radiobuttons my-auto">Anverso/Reverso
+                                    <input type="radio" name="radioLados">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- //rbt b/color-->
+                            </div>
+                            <!-- //2 Radio buttons rango o unico-->
+                        </div>
+                        <!--//Configuration impresion lados-->
+                        <!--Configuration Block numero de hojas-->
+                        <div class="config-block py-2">
+                            <p class="color-printalo-blueDetail font-weight-bold">Numero de Paginas</p>
+                            <div class="row-sub">
+                            </div>
+                            <div class="py-1 text-center">
+                                <!-- rbt b/n-->
+                                <label class="radiobuttons my-auto">Todo
+                                    <input type="radio" checked="checked" name="radioNumPag">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- //rbt b/n-->
+                                <!-- rbt color-->
+                                <label class="radiobuttons my-auto">Personalizado
+                                    <input type="radio" name="radioNumPag">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- //rbt b/color-->
+                            </div>
+                            <!-- //2 Radio buttons rango o unico-->
+                        </div>
+                        <!--//Configuration block numero de hojas-->
+                        <!--Configuration Block tipo acabado-->
+                        <div class="config-block py-2">
+                            <p class="color-printalo-blueDetail font-weight-bold">Tipo de Acabado</p>
+                            <div class="row-sub">
+                            </div>
+                            <div class="py-1 text-center">
+                                <!-- rbt b/n-->
+                                <label class="radiobuttons my-auto">Engrampado
+                                    <input type="radio" checked="checked" name="radioAcabado">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- //rbt b/n-->
+                                <!-- rbt color-->
+                                <label class="radiobuttons my-auto">Normal
+                                    <input type="radio" name="radioAcabado">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- //rbt b/color-->
+                            </div>
+                            <!-- //2 Radio buttons rango o unico-->
+                        </div>
+                        <!--//Configuration block tipo acabado-->
+                        <!--Configuration Block tipo de hoja-->
+                        <div class="config-block py-2">
+                            <p class="color-printalo-blueDetail font-weight-bold">Tipo de Hojas</p>
+                            <div class="row-sub">
+                            </div>
+                            <div class="py-1 text-center">
+                                <!-- rbt b/n-->
+                                <label class="radiobuttons my-auto">Normal
+                                    <input type="radio" checked="checked" name="radioTipHoja">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- //rbt b/n-->
+                                <!-- rbt color-->
+                                <label class="radiobuttons my-auto">Reutilizada
+                                    <input type="radio" name="radioTipHoja">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- //rbt b/color-->
+                            </div>
+                            <!-- //2 Radio buttons rango o unico-->
+                        </div>
+                        <!--//Configuration block tipo de hoja-->
+                        <!--Configuration Block cantidad impresiones-->
+                        <div class="config-block py-2">
+                            <p class="color-printalo-blueDetail font-weight-bold">Tipo de Hojas</p>
+                            <div class="row-sub">
+                            </div>
+                            <div class="py-1 text-center">
+                                <!-- rbt b/n-->
+                                <div class="my-auto">Numero :
+                                    <div class="block-typenumber">
+                                        <div class='ctrl'>
+                                            <div class='ctrl__button ctrl__button--decrement'>&ndash;</div>
+                                            <div class='ctrl__counter'>
+                                                <input class='ctrl__counter-input' maxlength='10' type='text' value='0'>
+                                                <div class='ctrl__counter-num'>0</div>
+                                            </div>
+                                            <div class='ctrl__button ctrl__button--increment'>+</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- //rbt b/color-->
+                            </div>
+                            <!-- //2 Radio buttons rango o unico-->
+                        </div>
+                        <!--//Configuration block cantidad impresiones-->
+
+
+                        <div class="p-3">
+                            <!--Btn cancelar-->
+                            <a class="btn btn-block negative bg-printalo-blueDetail text-light ">Cancelar</a>
+                            <!--//Btn cancelar-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Content Modal-->
+        </div>
+    </div>
+    <!--//Configurar Pedido()-->
+
     <!--Fin modals-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
     <script src="../../../js/bootstrap.min.js"></script>
     <script>
@@ -269,6 +503,101 @@
             $("#wrapper").toggleClass("toggled");
         });
     </script>
+    <script>
+        (function () {
+            'use strict';
+
+            function ctrls() {
+                var _this = this;
+
+                this.counter = 0;
+                this.els = {
+                    decrement: document.querySelector('.ctrl__button--decrement'),
+                    counter: {
+                        container: document.querySelector('.ctrl__counter'),
+                        num: document.querySelector('.ctrl__counter-num'),
+                        input: document.querySelector('.ctrl__counter-input')
+                    },
+                    increment: document.querySelector('.ctrl__button--increment')
+                };
+
+                this.decrement = function () {
+                    var counter = _this.getCounter();
+                    var nextCounter = (_this.counter > 0) ? --counter : counter;
+                    _this.setCounter(nextCounter);
+                };
+
+                this.increment = function () {
+                    var counter = _this.getCounter();
+                    var nextCounter = (counter < 9999999999) ? ++counter : counter;
+                    _this.setCounter(nextCounter);
+                };
+
+                this.getCounter = function () {
+                    return _this.counter;
+                };
+
+                this.setCounter = function (nextCounter) {
+                    _this.counter = nextCounter;
+                };
+
+                this.debounce = function (callback) {
+                    setTimeout(callback, 100);
+                };
+
+                this.render = function (hideClassName, visibleClassName) {
+                    _this.els.counter.num.classList.add(hideClassName);
+
+                    setTimeout(function () {
+                        _this.els.counter.num.innerText = _this.getCounter();
+                        _this.els.counter.input.value = _this.getCounter();
+                        _this.els.counter.num.classList.add(visibleClassName);
+                    }, 100);
+
+                    setTimeout(function () {
+                        _this.els.counter.num.classList.remove(hideClassName);
+                        _this.els.counter.num.classList.remove(visibleClassName);
+                    }, 200);
+                };
+
+                this.ready = function () {
+                    _this.els.decrement.addEventListener('click', function () {
+                        _this.debounce(function () {
+                            _this.decrement();
+                            _this.render('is-decrement-hide', 'is-decrement-visible');
+                        });
+                    });
+
+                    _this.els.increment.addEventListener('click', function () {
+                        _this.debounce(function () {
+                            _this.increment();
+                            _this.render('is-increment-hide', 'is-increment-visible');
+                        });
+                    });
+
+                    _this.els.counter.input.addEventListener('input', function (e) {
+                        var parseValue = parseInt(e.target.value);
+                        if (!isNaN(parseValue) && parseValue >= 0) {
+                            _this.setCounter(parseValue);
+                            _this.render();
+                        }
+                    });
+
+                    _this.els.counter.input.addEventListener('focus', function (e) {
+                        _this.els.counter.container.classList.add('is-input');
+                    });
+
+                    _this.els.counter.input.addEventListener('blur', function (e) {
+                        _this.els.counter.container.classList.remove('is-input');
+                        _this.render();
+                    });
+                };
+            };
+
+            // init
+            var controls = new ctrls();
+            document.addEventListener('DOMContentLoaded', controls.ready);
+        })();</script>
 </body>
 
 </html>

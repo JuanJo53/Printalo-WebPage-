@@ -101,8 +101,8 @@
                                     data-toggle="modal" data-target="#escogerLocal">Solicitar</a></td>
                             <!--//-->
                             <!--Btn Eliminar-->
-                            <td class="text-center"><a class="btn negative bg-printalo-blueDetail text-light"
-                                    data-toggle="modal" data-target="#configurarPedido">Eliminar</a></td>
+                            <td class="text-center"><a
+                                    class="btn negative bg-printalo-blueDetail text-light">Eliminar</a></td>
                             <!--//-->
                         </tr>
                         <!--Termina Fila-->
@@ -218,12 +218,12 @@
             </div>
             <!--//Progress Modal-->
             <!--Content Modal-->
-            <div class="col">
+            <div class="col pb-3">
                 <div class="modal-content">
                     <div class="container px-5">
                         <h5 class="text-center p-3">Escoja un negocio</h5>
                         <!--charly button-->
-                        <div class="pb-3 text-center ">
+                        <div class="pb-3 text-center " data-toggle="modal" data-target="#configurarPedido">
                             <div class="card negocioIcon mx-auto">
                                 <!--img del negocio-->
                                 <img src="../../../img/charly1.jpg" alt="" class="card-img-top">
@@ -246,7 +246,15 @@
                             </div>
                         </div>
                         <!--//charly button-->
-                        <div class="pb-3">
+                    </div>
+                </div>
+            </div>
+            <!--Content Modal-->
+            <!--btn cancelar-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <div class="container px-5">
+                        <div class="py-3">
                             <!--Btn cancelar-->
                             <a class="btn btn-block negative bg-printalo-blueDetail text-light ">Cancelar</a>
                             <!--//Btn cancelar-->
@@ -254,7 +262,7 @@
                     </div>
                 </div>
             </div>
-            <!--Content Modal-->
+            <!--btn cancelar-->
         </div>
     </div>
     <!--//Escoger local modal(btn siguiente)-->
@@ -304,179 +312,202 @@
             </div>
             <!--//Progress Modal-->
             <!--Content Modal-->
-            <div class="col">
+            <div class="col pb-3">
                 <div class="modal-content">
                     <div class="container px-5">
-                        <h5 class="text-center p-3">Configurar Pedido</h5>
-                        <!--Configuration Block color-->
-                        <div class="config-block py-2">
-                            <p class="color-printalo-blueDetail font-weight-bold">Color</p>
-                            <div class="row-sub">
-                            </div>
-                            <div class="py-1 text-center">
-                                <!-- rbt b/n-->
-                                <label class="radiobuttons my-auto">Blanco/Negro
-                                    <input type="radio" checked="checked" name="radioColor">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <!-- //rbt b/n-->
-                                <!-- rbt color-->
-                                <label class="radiobuttons my-auto">Color
-                                    <input type="radio" name="radioColor">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <!-- //rbt b/color-->
-                            </div>
-                            <!-- //2 Radio buttons rango o unico-->
-                        </div>
-                        <!--//Configuration Block color-->
-                        <!--Configuration Block tamanio de impresion-->
-                        <div class="config-block py-2">
-                            <p class="color-printalo-blueDetail font-weight-bold">Tamaño de impresion</p>
-                            <div class="row-sub">
-                            </div>
-                            <div class="py-1 text-center">
-                                <!-- rbt carta-->
-                                <label class="radiobuttons my-auto">Carta
-                                    <input type="radio" checked="checked" name="radioTamanio">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <!-- //rbt carta-->
-                                <!-- rbt oficio-->
-                                <label class="radiobuttons my-auto">Oficio
-                                    <input type="radio" name="radioTamanio">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <!-- //rbt oficio-->
-                                <!-- rbt a4-->
-                                <label class="radiobuttons my-auto">A4
-                                    <input type="radio" name="radioTamanio">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <!-- //rbt a4-->
-                            </div>
-                            <!-- //2 Radio buttons rango o unico-->
-                        </div>
-                        <!--//Configuration Block tamanio impresion-->
-                        <!--Configuration Block lados-->
-                        <div class="config-block py-2">
-                            <p class="color-printalo-blueDetail font-weight-bold">Lados a Imprimir</p>
-                            <div class="row-sub">
-                            </div>
-                            <div class="py-1 text-center">
-                                <!-- rbt b/n-->
-                                <label class="radiobuttons my-auto">Intercalado
-                                    <input type="radio" checked="checked" name="radioLados">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <!-- //rbt b/n-->
-                                <!-- rbt color-->
-                                <label class="radiobuttons my-auto">Anverso/Reverso
-                                    <input type="radio" name="radioLados">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <!-- //rbt b/color-->
-                            </div>
-                            <!-- //2 Radio buttons rango o unico-->
-                        </div>
-                        <!--//Configuration impresion lados-->
-                        <!--Configuration Block numero de hojas-->
-                        <div class="config-block py-2">
-                            <p class="color-printalo-blueDetail font-weight-bold">Numero de Paginas</p>
-                            <div class="row-sub">
-                            </div>
-                            <div class="py-1 text-center">
-                                <!-- rbt b/n-->
-                                <label class="radiobuttons my-auto">Todo
-                                    <input type="radio" checked="checked" name="radioNumPag">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <!-- //rbt b/n-->
-                                <!-- rbt color-->
-                                <label class="radiobuttons my-auto">Personalizado
-                                    <input type="radio" name="radioNumPag">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <!-- //rbt b/color-->
-                            </div>
-                            <!-- //2 Radio buttons rango o unico-->
-                        </div>
-                        <!--//Configuration block numero de hojas-->
-                        <!--Configuration Block tipo acabado-->
-                        <div class="config-block py-2">
-                            <p class="color-printalo-blueDetail font-weight-bold">Tipo de Acabado</p>
-                            <div class="row-sub">
-                            </div>
-                            <div class="py-1 text-center">
-                                <!-- rbt b/n-->
-                                <label class="radiobuttons my-auto">Engrampado
-                                    <input type="radio" checked="checked" name="radioAcabado">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <!-- //rbt b/n-->
-                                <!-- rbt color-->
-                                <label class="radiobuttons my-auto">Normal
-                                    <input type="radio" name="radioAcabado">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <!-- //rbt b/color-->
-                            </div>
-                            <!-- //2 Radio buttons rango o unico-->
-                        </div>
-                        <!--//Configuration block tipo acabado-->
-                        <!--Configuration Block tipo de hoja-->
-                        <div class="config-block py-2">
-                            <p class="color-printalo-blueDetail font-weight-bold">Tipo de Hojas</p>
-                            <div class="row-sub">
-                            </div>
-                            <div class="py-1 text-center">
-                                <!-- rbt b/n-->
-                                <label class="radiobuttons my-auto">Normal
-                                    <input type="radio" checked="checked" name="radioTipHoja">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <!-- //rbt b/n-->
-                                <!-- rbt color-->
-                                <label class="radiobuttons my-auto">Reutilizada
-                                    <input type="radio" name="radioTipHoja">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <!-- //rbt b/color-->
-                            </div>
-                            <!-- //2 Radio buttons rango o unico-->
-                        </div>
-                        <!--//Configuration block tipo de hoja-->
-                        <!--Configuration Block cantidad impresiones-->
-                        <div class="config-block py-2">
-                            <p class="color-printalo-blueDetail font-weight-bold">Tipo de Hojas</p>
-                            <div class="row-sub">
-                            </div>
-                            <div class="py-1 text-center">
-                                <!-- rbt b/n-->
-                                <div class="my-auto">Numero :
-                                    <div class="block-typenumber">
-                                        <div class='ctrl'>
-                                            <div class='ctrl__button ctrl__button--decrement'>&ndash;</div>
-                                            <div class='ctrl__counter'>
-                                                <input class='ctrl__counter-input' maxlength='10' type='text' value='0'>
-                                                <div class='ctrl__counter-num'>0</div>
-                                            </div>
-                                            <div class='ctrl__button ctrl__button--increment'>+</div>
-                                        </div>
-                                    </div>
-
+                        <h5 class="text-center pt-3">Configurar Pedido</h5>
+                        <div class="blockofblock py-2">
+                            <!--Configuration Block color-->
+                            <div class="config-block py-2">
+                                <p class="color-printalo-blueDetail font-weight-bold">Color</p>
+                                <div class="row-sub">
                                 </div>
-                                <!-- //rbt b/color-->
+                                <div class="py-1 text-center">
+                                    <!-- rbt b/n-->
+                                    <label class="radiobuttons my-auto">Blanco/Negro
+                                        <input type="radio" checked="checked" name="radioColor">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <!-- //rbt b/n-->
+                                    <!-- rbt color-->
+                                    <label class="radiobuttons my-auto">Color
+                                        <input type="radio" name="radioColor">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <!-- //rbt b/color-->
+                                </div>
+                                <!-- //2 Radio buttons rango o unico-->
                             </div>
-                            <!-- //2 Radio buttons rango o unico-->
+                            <!--//Configuration Block color-->
+                            <!--Configuration Block tamanio de impresion-->
+                            <div class="config-block py-2">
+                                <p class="color-printalo-blueDetail font-weight-bold">Tamaño de impresion</p>
+                                <div class="row-sub">
+                                </div>
+                                <div class="py-1 text-center">
+                                    <!-- rbt carta-->
+                                    <label class="radiobuttons my-auto">Carta
+                                        <input type="radio" checked="checked" name="radioTamanio">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <!-- //rbt carta-->
+                                    <!-- rbt oficio-->
+                                    <label class="radiobuttons my-auto">Oficio
+                                        <input type="radio" name="radioTamanio">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <!-- //rbt oficio-->
+                                    <!-- rbt a4-->
+                                    <label class="radiobuttons my-auto">A4
+                                        <input type="radio" name="radioTamanio">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <!-- //rbt a4-->
+                                </div>
+                                <!-- //2 Radio buttons rango o unico-->
+                            </div>
+                            <!--//Configuration Block tamanio impresion-->
+                            <!--Configuration Block lados-->
+                            <div class="config-block py-2">
+                                <p class="color-printalo-blueDetail font-weight-bold">Lados a Imprimir</p>
+                                <div class="row-sub">
+                                </div>
+                                <div class="py-1 text-center">
+                                    <!-- rbt intercalado-->
+                                    <label class="radiobuttons my-auto">Intercalado
+                                        <input type="radio" checked="checked" name="radioLados">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <!-- //rbt intercalado-->
+                                    <!-- rbt anverso/reverso-->
+                                    <label class="radiobuttons my-auto">Anverso/Reverso
+                                        <input type="radio" name="radioLados">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <!-- //rbt anverso/reverso-->
+                                </div>
+                                <!-- //2 Radio buttons rango o unico-->
+                            </div>
+                            <!--//Configuration impresion lados-->
+                            <!--Configuration Block numero de hojas-->
+                            <div class="config-block py-2">
+                                <p class="color-printalo-blueDetail font-weight-bold">Numero de Paginas</p>
+                                <div class="row-sub">
+                                </div>
+                                <div class="py-1 text-center">
+                                    <!-- rbt todo-->
+                                    <label class="radiobuttons my-auto">Todo
+                                        <input type="radio" checked="checked" name="radioNumPag">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <!-- //rbt todo-->
+                                    <!-- rbt personalizado-->
+                                    <label class="radiobuttons my-auto">Personalizado
+                                        <input type="radio" name="radioNumPag">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <!-- //rbt personalizado-->
+                                </div>
+                                <!-- //2 Radio buttons rango o unico-->
+                            </div>
+                            <!--//Configuration block numero de hojas-->
+                            <!--Configuration Block tipo acabado-->
+                            <div class="config-block py-2">
+                                <p class="color-printalo-blueDetail font-weight-bold">Tipo de Acabado</p>
+                                <div class="row-sub">
+                                </div>
+                                <div class="py-1 text-center">
+                                    <!-- rbt engrampado-->
+                                    <label class="radiobuttons my-auto">Engrampado
+                                        <input type="radio" checked="checked" name="radioAcabado">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <!-- //rbt engrampado-->
+                                    <!-- rbt normal-->
+                                    <label class="radiobuttons my-auto">Normal
+                                        <input type="radio" name="radioAcabado">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <!-- //rbt normal-->
+                                </div>
+                                <!-- //2 Radio buttons rango o unico-->
+                            </div>
+                            <!--//Configuration block tipo acabado-->
+                            <!--Configuration Block tipo de hoja-->
+                            <div class="config-block py-2">
+                                <p class="color-printalo-blueDetail font-weight-bold">Tipo de Hojas</p>
+                                <div class="row-sub">
+                                </div>
+                                <div class="py-1 text-center">
+                                    <!-- rbt normal-->
+                                    <label class="radiobuttons my-auto">Normal
+                                        <input type="radio" checked="checked" name="radioTipHoja">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <!-- //rbt normal-->
+                                    <!-- rbt reutilizado-->
+                                    <label class="radiobuttons my-auto">Reutilizada
+                                        <input type="radio" name="radioTipHoja">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <!-- //rbt reutilizado-->
+                                </div>
+                                <!-- //2 Radio buttons rango o unico-->
+                            </div>
+                            <!--//Configuration block tipo de hoja-->
+
+                            <!--Configuration Block cantidad impresiones-->
+                            <div class="config-block py-2">
+                                <p class="color-printalo-blueDetail font-weight-bold">Tipo de Hojas</p>
+                                <div class="row-sub">
+                                </div>
+                                <div class="py-1 text-center">
+                                    <!-- btn mas menos-->
+                                    <div class="my-auto radiobuttons">Numero :
+                                        <div class="block-typenumber">
+                                            <div class='ctrl'>
+                                                <div class='ctrl__button ctrl__button--decrement'>&ndash;</div>
+                                                <div class='ctrl__counter'>
+                                                    <input class='ctrl__counter-input' maxlength='10' type='text'
+                                                        value='0'>
+                                                    <div class='ctrl__counter-num'>0</div>
+                                                </div>
+                                                <div class='ctrl__button ctrl__button--increment'>+</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- //btn mas menos-->
+                                </div>
+                                <!-- //2 Radio buttons rango o unico-->
+                            </div>
+                            <!--//Configuration block cantidad impresiones-->
                         </div>
+                    </div>
+                </div>
+            </div>
+            <!--Content Modal-->
+            <!--Content Modal buttons-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <div class="container px-5">
                         <!--//Configuration block cantidad impresiones-->
-
-
-                        <div class="p-3">
-                            <!--Btn cancelar-->
-                            <a class="btn btn-block negative bg-printalo-blueDetail text-light ">Cancelar</a>
-                            <!--//Btn cancelar-->
+                        <div class="row">
+                            <div class="col">
+                                <div class="py-3">
+                                    <!--Btn cancelar-->
+                                    <a class="btn btn-block negative bg-printalo-blueDetail text-light "
+                                        data-toggle="modal" data-target="#escogerLocal">Cancelar</a>
+                                    <!--//Btn cancelar-->
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="py-3">
+                                    <!--Btn cancelar-->
+                                    <a class="btn btn-block positive bg-printalo-greenDetail text-light ">Aceptar</a>
+                                    <!--//Btn cancelar-->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

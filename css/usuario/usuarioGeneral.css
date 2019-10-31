@@ -155,6 +155,10 @@ tbody tr:hover {
   background-color: #253449 !important;
   color: rgb(255, 255, 255) !important;
 }
+.modal-content .container a.btn.positive:hover {
+  background-color: #30e2c2 !important;
+  color: rgb(255, 255, 255) !important;
+}
 .row-sub {
   background: #364c68;
   width: 100%;
@@ -246,13 +250,13 @@ tbody tr:hover {
   border-bottom: 1px solid #d5dce6;
   background-color: #fff;
   border-radius: 5px;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .ctrl__counter {
   position: relative;
-  width: 70px;
-  height: 41px;
+  width: 50px;
+  height: 25px;
   color: #333c48;
   text-align: center;
   overflow: hidden;
@@ -282,8 +286,8 @@ tbody tr:hover {
   outline: none;
   border: none;
   color: #333c48;
-  font-size: 30px;
-  line-height: 100px;
+  font-size: 20px;
+  line-height: 25px;
   text-align: center;
   visibility: hidden;
   opacity: 0;
@@ -292,8 +296,8 @@ tbody tr:hover {
 }
 
 .ctrl__button {
-  width: 40px;
-  line-height: 40px;
+  width: 25px;
+  line-height: 25px;
   text-align: center;
   color: #fff;
   cursor: pointer;
@@ -327,7 +331,7 @@ tbody tr:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  line-height: 50px;
+  line-height: 30px;
   visibility: visible;
   opacity: 1;
   -webkit-transition: opacity 100ms ease-in;

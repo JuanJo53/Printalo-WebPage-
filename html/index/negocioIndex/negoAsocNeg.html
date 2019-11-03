@@ -7,7 +7,7 @@
     <meta name="keywords" content="HTML,CSS,bootstrap">
     <meta name="author" content="Colque Herrera Ariel">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="../../../css/index/estilo.css">
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/modals.css">
@@ -28,7 +28,7 @@
                     <h5 class="d-inline align-middle mx-1">Printalo Negocios</h5>
                 </a>
             </div>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <!--Link Servicios-->
                     <li class="nav-item">
@@ -36,7 +36,7 @@
                     </li>
                     <!--Link Negocios Asociados-->
                     <li class="nav-item">
-                        <a href="negoAsocNeg.html" class="nav-link text-light center">Negocios asociados</a>
+                        <a href="negoAsocNeg.html" class="nav-link text-light center active">Negocios asociados</a>
                     </li>
                     <!--Link Contactos-->
                     <li class="nav-item">
@@ -55,56 +55,66 @@
                     <!--Btn Ir a seccion de Usuarios-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
-                            href="../usuario/indexUser.html">Usuarios</a>
+                            href="../usuarioIndex/indexUser.html">Usuarios</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <div class="container">
         <!--Section 1-->
-        <section id="showcaseNeg" class="my-4">
-            <div class="primary-overlay text-white">
-                <div class="container">
-                    <div class="text-center text-white">
-                        <div class="center2 display-4 ">
-                            Ofrece tus servicios de una forma distinta
+        <section id="sliderNegocios" class="py-4">
+
+            <div id="slider4" class="carousel slide" data-ride="carousel">
+                <div class="carousel-caption top">
+                    <h3>Negocios que confian en nosotros :</h3>
+                </div>
+                <ol class="carousel-indicators">
+                    <li class="active" data-target="#slider4" data-slide-to="0"></li>
+                    <li data-target="#slider4" data-slide-to="1"></li>
+                    <li data-target="#slider4" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item carousel-image-1 active">
+                        <div class="dark-overlay">
+                            <div class="container">
+                                <div class="carousel-caption d-none d-sm-block">
+                                    <h4>Fotocopias Charly 1</h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="carousel-item carousel-image-2">
+                        <div class="dark-overlay">
+                            <div class="container">
+                                <div class="carousel-caption d-none d-sm-block">
+                                    <h4>Fotocopias Universitario</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item carousel-image-3">
+                        <div class="dark-overlay">
+                            <div class="container">
+                                <div class="carousel-caption d-none d-sm-block">
+                                    <h4>Fotocopias PCS</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#slider4" class="carousel-control-prev" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a href="#slider4" class="carousel-control-next" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
                 </div>
             </div>
         </section>
         <!--Section 1-->
-
-        <!--Section 2-->
-
-        <section id="posibilidadesUsuarios" class="my-4 p-4">
-            <div class="container">
-                <div class="text-center">
-                    <h2>Una aplicacion</h2>
-                    <h2>que te facilitara las cosas</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 text-center">
-                        <div class="center">
-                            <img src="../../../img/marketing.jpg" alt="" class="img-fluid rounded-circle">
-                        </div>
-
-                    </div>
-                    <div class="col">
-                        <div class="center text-center">
-                            <h5>Recibe los pedidos de tus clientes mediante una aplicacion</h5>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
     </div>
-    </section>
 
-    <!--Section 2-->
-
-    </div>
     <footer id="main-footer" class="bg-printalo-greenDetail text-white py-3">
         <div class="container text-white">
             <div class="row text-center">
@@ -181,28 +191,31 @@
                                 <div class="form-group">
                                     <!--nombre del negocio-->
                                     <label for="name">Nombre del Negocio:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtNameIng">
                                     <!--//-->
                                     <!--email-->
                                     <label for="name">E-mail:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtEmailIng">
                                     <!--//-->
                                     <!--contrasenia-->
                                     <label for="name">Constraseña:</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" id="txtPasswordIng">
+                                    <!--//-->
+                                </div>
+                                <div class="modalbutton text-center py-3">
+                                    <!--Btn Ingresar Negocios-->
+                                    <button id="btnIngresarNeg"
+                                        class="btn btn-outline-light bg-printalo-button text-light">Ingresar</button>
+                                    <!--//-->
+                                    <br>
+                                    <br>
+                                    <!--Link Registrarse-->
+                                    <a href="" class="text-center"><u
+                                            class="color-printalo-blueDetail">Registrarse</u></a>
                                     <!--//-->
                                 </div>
                             </form>
-                            <div class="modalbutton text-center py-3">
-                                <!--Btn Ingresar Negocios-->
-                                <a class="btn btn-outline-light bg-printalo-button text-light"
-                                    href="../../negocio/inicioNeg.html">Ingresar</a>
-                                <!--//--><br>
-                                <br>
-                                <!--Link Registrarse-->
-                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
-                                <!--//-->
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -226,42 +239,46 @@
                                 <div class="form-group">
                                     <!--Nombre del duenio-->
                                     <label for="username">Nombre del Dueño: </label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtNameReg">
                                     <!--//-->
                                     <!--apellido del duenio-->
                                     <label for="username">Apellido del Dueño : </label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtLastNameReg">
                                     <!--//-->
                                     <!--nombre del negocio-->
                                     <label for="name">Nombre del Negocio:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtNegNameReg">
                                     <!--//-->
                                     <!--direccion-->
                                     <label for="password">Direccion:</label>
-                                    <input type="text" class="form-control">
-                                    <label for="NroRef">Numero de referencia:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtDirReg">
+                                    <!--//-->
+                                    <!--numero de referencia-->
+                                    <label for="text">Numero de referencia:</label>
+                                    <input type="text" class="form-control" id="txtNumReg">
                                     <!--//-->
                                     <!--Email-->
                                     <label for="username">E-mail : </label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtEmailReg">
                                     <!--//-->
                                     <!--Contrasenia-->
                                     <label for="password">Contraseña:</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" id="txtPasswordReg">
+                                    <!--//-->
+                                </div>
+                                <div class="modalbutton text-center py-3">
+                                    <!--Btn Registrar Negocios-->
+                                    <button id="btnRegistrarNegocio"
+                                        class="btn btn-outline-light bg-printalo-button text-light">Registrar</button>
+                                    <!--//-->
+                                    <br>
+                                    <br>
+                                    <!--Link Ir a ingresar-->
+                                    <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
                                     <!--//-->
                                 </div>
                             </form>
-                            <div class="modalbutton text-center py-3">
-                                <!--Btn Registrar Negocios-->
-                                <a class="btn btn-outline-light bg-printalo-button text-light">Registrar</a>
-                                <!--//-->
-                                <br>
-                                <br>
-                                <!--Link Ir a ingresar-->
-                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
-                                <!--//-->
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -283,6 +300,7 @@
         </div>
     </div>
     <!--Fin de Modals-->
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -290,6 +308,32 @@
     <script>
         $('#year').text(new Date().getFullYear());
     </script>
+    <script>
+        $('.carousel').carousel({
+            interval: 2000,
+            keyboard: true,
+            wrap: true
+        });
+    </script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+    <!-- Para uso de Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+    <!-- Para Authentication y Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+
+    <!-- Configuracion de Proyecto en Firebase -->
+    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
+    <script>
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script> 
+    <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
+    <script type="text/javascript" src="../../../js/Negocios.js"></script>
+    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
 </body>
 
 </html>

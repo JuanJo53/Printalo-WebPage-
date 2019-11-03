@@ -7,11 +7,10 @@
     <meta name="keywords" content="HTML,CSS,bootstrap">
     <meta name="author" content="Colque Herrera Ariel">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="stylesheet" href="../../css/detalles.css">
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/negocio/estiloNegocios.css">
-    <link rel="stylesheet" href="../../css/negocio/negociogeneral.css">
+    <link rel="stylesheet" href="../../../css/detalles.css">
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/negocio/estiloNegocios.css">
+    <link rel="stylesheet" href="../../../css/negocio/negociogeneral.css">
 
     <title>Principal</title>
 </head>
@@ -23,8 +22,8 @@
                 <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span></button>
                 <a class="navbar-brand mx-1" href="#home">
-                    <img width="60" height="60" src="../../img/printer.png" alt="">
-                    <h5 class="d-inline align-middle mx-1">Printalo</h5>
+                    <img width="60" height="60" src="../../../img/printer.png" alt="">
+                    <h5 class="d-inline align-middle mx-1">Printalo Negocios</h5>
                 </a>
             </div>
             <div class="navbar-item order-lg-last  order-sx-last mx-1">
@@ -35,24 +34,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#home" class="nav-link text-light active">Pedidos</a>
+                        <a href="../pedidosNeg/inicioNeg.html" class="nav-link text-light active">Pedidos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#home" class="nav-link text-light">Registros</a>
+                        <a href="../registrosNeg/regBusq.html" class="nav-link text-light">Registros</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#home" class="nav-link text-light">Graficos</a>
+                        <a href="../graficosNeg/grafAnio.html" class="nav-link text-light">Graficos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#home" class="nav-link text-light">Publicaciones</a>
+                        <a href="../publicacionesNeg/pubAgre.html" class="nav-link text-light">Publicaciones</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#home" class="nav-link text-light">Personalizar</a>
+                        <a href="../configurarNeg/confGenerales.html" class="nav-link text-light">Configuraciones</a>
                     </li>
                 </ul>
             </div>
-
-
         </div>
     </nav>
     <div class="d-flex" id="wrapper">
@@ -68,8 +65,6 @@
 
         </div>
     </div>
-
-
     <!--ingresar Modal-->
     <div class="modal fade text-dark" id="ingresarModal">
         <div class="modal-dialog modal-lg">
@@ -78,12 +73,10 @@
 
                     <div class="center">
                         <div class="text-center">
-                            <img width="100" height="100" src="../../img/printer.png" alt="" class="img-fluid ">
+                            <img width="100" height="100" src="../../../img/printer.png" alt="" class="img-fluid ">
                         </div>
                         <h3 class="text-center text-light">Printalo</h3>
                     </div>
-
-
                 </div>
                 <div class="col-lg-6 nopadding">
                     <div class="modal-content">
@@ -97,7 +90,6 @@
                                     <label for="name">Constraseña:</label>
                                     <input type="password" class="form-control">
                                 </div>
-
                             </form>
                             <div class="buttongroup text-center py-3"><a
                                     class="btn btn-outline-light bg-printalo-button text-light">Ingresar</a><br>
@@ -110,17 +102,24 @@
             </div>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
     <script>
         $("#menu-toggle").click(function (e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
         });
     </script>
+
+    <!-- Configuracion de Proyecto en Firebase -->
+    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
+    
+    <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
+    <script type="text/javascript" src="../../../js/Negocios.js"></script>
+    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
+    
 </body>
 
 </html>

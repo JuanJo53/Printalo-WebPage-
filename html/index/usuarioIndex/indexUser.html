@@ -32,11 +32,11 @@
                 <ul class="navbar-nav ml-auto">
                     <!--Link Servicios-->
                     <li class="nav-item">
-                        <a href="indexServiciosUser.html" class="nav-link text-light center  ">Servicios</a>
+                        <a href="indexServiciosUser.html" class="nav-link text-light center ">Servicios</a>
                     </li>
                     <!--Link Contactos-->
                     <li class="nav-item">
-                        <a href="indexContactosUser.html" class="nav-link text-light center active ">Contactos</a>
+                        <a href="indexContactosUser.html" class="nav-link text-light center ">Contactos</a>
                     </li>
                     <!--Btn Iniciar Sesion-->
                     <li class="nav-item">
@@ -51,57 +51,60 @@
                     <!--Btn Ir a seccion Negocios-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
-                            href="../negocio/indexNeg.html">Negocios</a>
+                            href="../negocioIndex/indexNeg.html">Negocios</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container">
-        <!--section 1-->
-        <section id="formsection" class="my-4 py-4">
-            <div class="text-center">
-                <h2>Contactanos</h2>
-                <h4>Si tiene alguna duda,llene el formualrio y con gusto lo atenderemos</h4>
-            </div>
-            <div class="row">
-                    <div class="col d-none d-sm-block"></div>
-                <div class="col-md-5">
-                    <div class="center">
-                        <div class="text-center">
-                            <i class="far fa-clipboard fa-8x circlebase"></i>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="card bg-printalo-greenDetail text-center card-form m-1 text-light">
-                        <div class="card-body p-4">
-                            <h3>Contactanos</h3>
-                            <form action="" class="form-group">
-                                <label class="float-left" for="name">E-mail:</label>
-                                <input type="text" class="form-control">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label class="float-left" for="message">Comentario : </label><br>
-                                            <textarea cols="80" rows="5" name="msg" class="form-control"></textarea><br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modalbutton"><a
-                                        class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button "
-                                        href="#">Enviar</a></div>
-                            </form>
+        <!--Section 1-->
+        <section id="showcase" class="my-4">
+            <div class="primary-overlay text-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="text-center text-white">
+                            <div class="center2 display-4 ">
+                                Una nueva forma de ofrecerte un servicio
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col d-none d-sm-block"></div>
             </div>
         </section>
-        <!--section 1-->
 
+        <!--Section 1-->
+
+        <!--Section 2-->
+
+        <section id="posibilidadesUsuarios" class="my-4 p-4">
+            <div class="container">
+                <div class="text-center">
+                    <h2>Una aplicacion</h2>
+                    <h2>que te facilitara las cosas</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="center">
+                            <img src="../../../img/appmovil.jpg" alt="" class="img-fluid rounded-circle">
+                        </div>
+
+                    </div>
+                    <div class="col">
+                        <div class="center text-center">
+                            <h5>Envia documentos que deseas imprimir a los negocios mas cercanos</h5>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </div>
+
+
+    <!--Section 2-->
+    </div>
+
     <footer id="main-footer" class="bg-printalo-greenDetail text-white py-3">
         <div class="container text-white">
             <div class="row text-center">
@@ -177,29 +180,29 @@
                             <form action="" class="p-5">
                                 <div class="form-group">
                                     <label for="name">E-mail:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtEmailUser">
                                     <label for="name">Constraseña:</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" id="txtPassUser">
+                                </div>
+                                <div class="modalbutton text-center py-3">
+                                    <!--btn ingresar usuario normal-->
+                                    <button id="btbIngresarUser"
+                                        class="btn btn-outline-light bg-printalo-button text-light">Ingresar</button>
+                                    <!--//-->
+                                    <br>
+                                    <br>
+                                    <a href="" class="text-center"><u
+                                            class="color-printalo-blueDetail">Registrarse</u></a>
+
                                 </div>
                             </form>
-                            <div class="modalbutton text-center py-3">
-                                <!--btn ingresar usuario normal-->
-                                <a class="btn btn-outline-light bg-printalo-button text-light"
-                                    href="../../usuario/inicioUsuario.html">Ingresar</a>
-                                <!--//-->
-                                <br>
-                                <br>
-                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
 
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <!--Registrarse Modal-->
     <div class="modal fade text-dark" id="registrarseModal">
@@ -215,25 +218,27 @@
                             <form action="" class="p-5">
                                 <div class="form-group">
                                     <label for="username">Nombre:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtName">
                                     <label for="username">Apellido:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtLastName">
                                     <label for="username">Numero de telefono:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtNum">
                                     <label for="name">E-mail:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtEmail">
                                     <label for="password">Constraseña:</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" id="txtPass">
+                                </div>
+                                <div class="modalbutton text-center py-3">
+                                    <!--btn ingresar usuario normal-->
+                                    <button id="btnRegistrarUser"
+                                        class="btn btn-outline-light bg-printalo-button text-light">Registrar</button>
+                                    <!--//-->
+                                    <br>
+                                    <br>
+                                    <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
                                 </div>
                             </form>
-                            <div class="modalbutton text-center py-3">
-                                <!--btn ingresar usuario normal-->
-                                <a class="btn btn-outline-light bg-printalo-button text-light">Registrar</a>
-                                <!--//-->
-                                <br>
-                                <br>
-                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -263,6 +268,24 @@
     <script>
         $('#year').text(new Date().getFullYear());
     </script>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+    <!-- Para uso de Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+    <!-- Para Authentication y Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+
+    <!-- Configuracion de Proyecto en Firebase -->
+    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
+
+    <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
+    <script type="text/javascript" src="../../../js/Clientes.js"></script>
+    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
+
 </body>
 
 </html>

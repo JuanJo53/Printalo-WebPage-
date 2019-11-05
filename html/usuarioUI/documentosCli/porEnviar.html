@@ -24,10 +24,12 @@
             <div class="navbar-header">
                 <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span></button>
+                <!--Link logo-->
                 <a class="navbar-brand mx-1" href="#home">
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
-                    <h5 class="d-inline align-middle mx-1 text-light">Printalo Negocios</h5>
+                    <h5 class="d-inline align-middle mx-1 text-light">Printalo Usuarios</h5>
                 </a>
+                <!--//Link logo-->
             </div>
             <div class="navbar-item  order-lg-last   order-xs-last  mx-1">
                 <div class="d-inline circle bg-printalo-greenDetail">
@@ -182,9 +184,9 @@
                     <div class="container">
                         <section class="px-2 py-4 text-center">
                             <div class="fab-icon-holder-modal on">
+
                                 <a data-toggle="modal" data-target="#ingresarModal"><i
                                         class="far fa-hand-pointer "></i></a>
-                                </i>
                             </div>
                             <div class="row-detail off">
                             </div>
@@ -223,7 +225,10 @@
                     <div class="container px-5">
                         <h5 class="text-center p-3">Escoja un negocio</h5>
                         <!--charly button-->
-                        <div class="pb-3 text-center " data-toggle="modal" data-target="#configurarPedido">
+                        <!--Btn Imagen de local-->
+                        <div class="pb-3 text-center " data-dismiss="modal" data-toggle="modal"
+                            data-target="#configurarPedido">
+                            <!--//Btn Imagen de local-->
                             <div class="card negocioIcon mx-auto">
                                 <!--img del negocio-->
                                 <img src="../../../img/charly1.jpg" alt="" class="card-img-top">
@@ -497,7 +502,8 @@
                                 <div class="py-3">
                                     <!--Btn cancelar-->
                                     <a class="btn btn-block negative bg-printalo-blueDetail text-light "
-                                        data-toggle="modal" data-target="#escogerLocal">Cancelar</a>
+                                        data-dismiss="modal" data-toggle="modal"
+                                        data-target="#escogerLocal">Cancelar</a>
                                     <!--//Btn cancelar-->
                                 </div>
                             </div>

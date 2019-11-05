@@ -35,7 +35,7 @@ body {
 }
 
 .modal-dialog {
-  padding-top: 10%;
+  padding-top: 1%;
 }
 .modalbuttonalert .btn.positive:hover {
   background-color: #30e2c2 !important;
@@ -437,3 +437,6 @@ increment-next {  from {
 .block-typenumber{
   display: inline-block;
 }
+
+/*Allows modals to go from one to another*/
+.modal { overflow-y: auto }

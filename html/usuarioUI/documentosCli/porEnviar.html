@@ -103,8 +103,8 @@
                                     data-toggle="modal" data-target="#escogerLocal">Solicitar</a></td>
                             <!--//-->
                             <!--Btn Eliminar-->
-                            <td class="text-center"><a
-                                    class="btn negative bg-printalo-blueDetail text-light">Eliminar</a></td>
+                            <td class="text-center"><a class="btn negative bg-printalo-blueDetail text-light"
+                                    data-toggle="modal" data-target="#configurarTiempo">Eliminar</a></td>
                             <!--//-->
                         </tr>
                         <!--Termina Fila-->
@@ -261,7 +261,8 @@
                     <div class="container px-5">
                         <div class="py-3">
                             <!--Btn cancelar-->
-                            <a class="btn btn-block negative bg-printalo-blueDetail text-light ">Cancelar</a>
+                            <a class="btn btn-block negative bg-printalo-blueDetail text-light "
+                                data-dismiss="modal">Cancelar</a>
                             <!--//Btn cancelar-->
                         </div>
                     </div>
@@ -510,7 +511,7 @@
                             <div class="col">
                                 <div class="py-3">
                                     <!--Btn cancelar-->
-                                    <a class="btn btn-block positive bg-printalo-greenDetail text-light ">Aceptar</a>
+                                    <a class="btn btn-block positive bg-printalo-greenDetail text-light ">Siguiente</a>
                                     <!--//Btn cancelar-->
                                 </div>
                             </div>
@@ -518,10 +519,141 @@
                     </div>
                 </div>
             </div>
-            <!--Content Modal-->
+            <!--//Content Modal buttons-->
         </div>
     </div>
     <!--//Configurar Pedido()-->
+
+
+    <!--configurar tiempo-->
+    <div class="modal fade text-dark" id="configurarTiempo">
+        <div class="modal-dialog modal-md">
+            <!--Progress Modal-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <div class="container">
+                        <section class="px-2 py-4 text-center">
+                            <div class="fab-icon-holder-modal on">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i
+                                        class="far fa-hand-pointer "></i></a>
+                            </div>
+                            <div class="row-detail on">
+                            </div>
+                            <div class="fab-icon-holder-modal on">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-wrench "></i></a>
+                            </div>
+                            <div class="row-detail on">
+                            </div>
+                            <div class="fab-icon-holder-modal on">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-clock "></i></a>
+                            </div>
+                            <div class="row-detail off">
+                            </div>
+                            <div class="fab-icon-holder-modal off">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i
+                                        class="fas fa-dollar-sign "></i></a>
+                            </div>
+                            <div class="row-detail off">
+                            </div>
+                            <div class="fab-icon-holder-modal off">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i
+                                        class="fas fa-check-circle "></i></a>
+                                </i>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <!--//Progress Modal-->
+            <!--Content Modal Price-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <div class="container px-5">
+                        <h5 class="text-center p-3">Precio</h5>
+                        <p>400pag * 0.5Bs/pag = 200Bs</p>
+                        <p><span class="font-weight-bold">Costo total :</span> 200Bs</p>
+                    </div>
+                </div>
+            </div>
+            <!--Content Modal Price-->
+            <!--Content Modal Hora y Fecha-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <div class="container px-5 py-3">
+                        <h5 class="text-center py-3">Hora y Fecha de entrega deseada</h5>
+                        <div class="row">
+                            <!--Columna  fecha-->
+                            <div class="col">
+                                <p class="color-printalo-blueDetail font-weight-bold">Escoger Fecha</p>
+                                <div class="row-sub"></div>
+                                <div class="d-flex p-1">
+                                    <!--onclick button fecha-->
+                                    <div class="fab-icon-holder-square mr-1">
+                                        <a data-toggle="modal" data-target="#ingresarModal">
+                                            <!--icono--><i class="fas fa-calendar-day "></i>
+                                            <!--//icono--></a>
+                                    </div>
+                                    <!--//onclick button fecha-->
+                                    <!--input fecha-->
+                                    <input type="text" class="form-control my-auto" disabled>
+                                    <!--//input fecha-->
+                                </div>
+                            </div>
+                            <!--//Columna  fecha-->
+                            <!--Columna  hora-->
+                            <div class="col">
+                                <p class="color-printalo-blueDetail font-weight-bold">Escoger Hora</p>
+                                <div class="row-sub"></div>
+                                <div class="d-flex p-1">
+                                    <!--onclick button hora-->
+                                    <div class="fab-icon-holder-square mr-1">
+                                        <a data-toggle="modal" data-target="#ingresarModal">
+                                            <!--icono-->
+                                            <i class="far fa-clock "></i>
+                                            <!--//icono--></a>
+                                    </div>
+                                    <!--//onclick button hora-->
+                                    <!--input hora-->
+                                    <input type="text" class="form-control my-auto" disabled>
+                                    <!--//input hora-->
+                                </div>
+                            </div>
+                            <!--//Columna  hora-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Content Modal Hora y Fecha-->
+            <!--Content Modal buttons-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <div class="container px-5">
+                        <!--//Configuration block cantidad impresiones-->
+                        <div class="row">
+                            <div class="col">
+                                <div class="py-3">
+                                    <!--Btn cancelar-->
+                                    <a class="btn btn-block negative bg-printalo-blueDetail text-light "
+                                        data-dismiss="modal" data-toggle="modal"
+                                        data-target="#escogerLocal">Cancelar</a>
+                                    <!--//Btn cancelar-->
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="py-3">
+                                    <!--Btn cancelar-->
+                                    <a class="btn btn-block positive bg-printalo-greenDetail text-light ">Siguiente</a>
+                                    <!--//Btn cancelar-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Content Modal buttons-->
+        </div>
+    </div>
+    <!--//Configurar tiempo-->
 
     <!--Fin modals-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -104,7 +104,7 @@
                             <!--//-->
                             <!--Btn Eliminar-->
                             <td class="text-center"><a class="btn negative bg-printalo-blueDetail text-light"
-                                    data-toggle="modal" data-target="#configurarTiempo">Eliminar</a></td>
+                                    data-toggle="modal" data-target="#configurarPago">Eliminar</a></td>
                             <!--//-->
                         </tr>
                         <!--Termina Fila-->
@@ -503,17 +503,16 @@
                                 <div class="py-3">
                                     <!--Btn cancelar-->
                                     <a class="btn btn-block negative bg-printalo-blueDetail text-light "
-                                        data-dismiss="modal" data-toggle="modal"
-                                        data-target="#escogerLocal">Atras</a>
+                                        data-dismiss="modal" data-toggle="modal" data-target="#escogerLocal">Atras</a>
                                     <!--//Btn cancelar-->
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="py-3">
                                     <!--Btn cancelar-->
-                                    <a class="btn btn-block positive bg-printalo-greenDetail text-light " 
-                                    data-dismiss="modal"
-                                    data-toggle="modal" data-target="#configurarTiempo">Siguiente</a>
+                                    <a class="btn btn-block positive bg-printalo-greenDetail text-light "
+                                        data-dismiss="modal" data-toggle="modal"
+                                        data-target="#configurarTiempo">Siguiente</a>
                                     <!--//Btn cancelar-->
                                 </div>
                             </div>
@@ -657,6 +656,214 @@
     </div>
     <!--//Configurar tiempo-->
 
+
+
+    <!--configurar pago-->
+    <div class="modal fade text-dark" id="configurarPago">
+        <div class="modal-dialog modal-md">
+            <!--Progress Modal-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <div class="container">
+                        <section class="px-2 py-4 text-center">
+                            <div class="fab-icon-holder-modal on">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i
+                                        class="far fa-hand-pointer "></i></a>
+                            </div>
+                            <div class="row-detail on">
+                            </div>
+                            <div class="fab-icon-holder-modal on">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-wrench "></i></a>
+                            </div>
+                            <div class="row-detail on">
+                            </div>
+                            <div class="fab-icon-holder-modal on">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-clock "></i></a>
+                            </div>
+                            <div class="row-detail on">
+                            </div>
+                            <div class="fab-icon-holder-modal on">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i
+                                        class="fas fa-dollar-sign "></i></a>
+                            </div>
+                            <div class="row-detail off">
+                            </div>
+                            <div class="fab-icon-holder-modal off">
+                                <a data-toggle="modal" data-target="#ingresarModal"><i
+                                        class="fas fa-check-circle "></i></a>
+                                </i>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <!--//Progress Modal-->
+            <!--Content Modal Price-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <div class="container px-5">
+                        <h5 class="text-center p-3">Precio</h5>
+                        <p>400pag * 0.5Bs/pag = 200Bs</p>
+                        <p><span class="font-weight-bold">Costo total :</span> 200Bs</p>
+                    </div>
+                </div>
+            </div>
+            <!--Content Modal Price-->
+            <!--Content Modal TipoPago-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <div class="container px-5 py-3">
+                        <!--modal title-->
+                        <h5 class="text-center py-2">Tipo de Pago</h5>
+                        <!--modal title-->
+                        <!--contenido de Block tipo pago-->
+                        <div class="config-block py-2">
+                            <p class="color-printalo-blueDetail font-weight-bold">Tipo</p>
+                            <div class="row-sub">
+                            </div>
+                            <div class="py-1 text-center row">
+                                <!-- rb personal-->
+                                <div class="col ">
+                                    <label class="radiobuttons my-auto">Personal
+                                        <input type="radio" checked="checked" name="radioPago" id="personal">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <!-- //rbt personal-->
+                                <!-- rbt tarjeta-->
+                                <div class="col ">
+                                    <label class="radiobuttons my-auto">Tarjeta
+                                        <input type="radio" name="radioPago" id="tarjeta">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <!-- //rbt tarjeta-->
+                            </div>
+                            <div id="personaldiv">
+                                <h5></h5>
+                            </div>
+                            <!--Block Credit Card invisible-->
+                            <div id="tarjetadiv" style='display:none' class="py-2">
+                                <p class="color-printalo-blueDetail font-weight-bold">Datos de Tarjeta</p>
+                                <div class="row-sub">
+                                </div>
+                                <div class="row py-2">
+                                    <div class="col">
+                                        <!-- Formulario de Tarjeta-->
+                                        <form role="form">
+                                            <!--Block Nombre-->
+                                            <div class="form-group">
+                                                <label for="username"
+                                                    class="color-printalo-blueDetail font-weight-bold">Nombre</label>
+                                                <!--Input de nombre-->
+                                                <input type="text" name="username" placeholder="Ingrese el nombre"
+                                                    required class="form-control">
+                                                <!--//Input de nombre-->
+                                            </div>
+                                            <!--//Block Nombre-->
+                                            <!--Block Numero de tarjeta-->
+                                            <div class="form-group">
+                                                <label for="cardNumber"
+                                                    class="color-printalo-blueDetail font-weight-bold">Numero
+                                                    de tarjeta</label>
+                                                <div class="input-group">
+                                                    <!--Input de numero de cuenta-->
+                                                    <input type="number" name="" placeholder="Numero de tarjeta"
+                                                        class="form-control" required>
+                                                    <!--//Input de numero de cuenta-->
+                                                    <!--Grupo de Iconos-->
+                                                    <div class="input-group-append">
+                                                        <span
+                                                            class="input-group-text text-light bg-printalo-greenDetail">
+                                                            <i class="fab fa-cc-visa mx-1"></i>
+                                                            <i class="fab fa-cc-amex mx-1"></i>
+                                                            <i class="fab fa-cc-mastercard mx-1"></i>
+                                                        </span>
+                                                    </div>
+                                                    <!--//Grupo de Iconos-->
+                                                </div>
+                                            </div>
+                                            <!--//Block Numero de tarjeta-->
+                                            <!--Block Expiracion-->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <!--Block mes y anio-->
+                                                    <div class="form-group">
+                                                        <label
+                                                            class="color-printalo-blueDetail font-weight-bold">Expiracion</label>
+                                                        <div class="input-group">
+                                                            <!--input mes-->
+                                                            <input type="number" placeholder="Mes" name=""
+                                                                class="form-control" >
+                                                            <!--//input mes-->
+                                                            <!--input anio-->
+                                                            <input type="number" placeholder="Año" name=""
+                                                                class="form-control">
+                                                            <!--//input anio-->
+                                                        </div>
+                                                    </div>
+                                                    <!--//Block mes y anio-->
+                                                </div>
+                                                <div class="col">
+                                                    <!--Block cvv-->
+                                                    <div class="form-group mb-4">
+                                                        <label class="color-printalo-blueDetail font-weight-bold">CVV
+                                                            <i class="fa fa-question-circle"></i>
+                                                        </label>
+                                                        <!--Input cvv-->
+                                                        <input type="text" required class="form-control"
+                                                            placeholder="Cvv">
+                                                        <!--//Input cvv-->
+                                                    </div>
+                                                    <!--//Block cvv-->
+                                                </div>
+                                            </div>
+                                            <!--//Block Expiracion-->
+                                        </form>
+                                        <!-- //Formulario de Tarjeta-->
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!--Block Credit Card invisible-->
+                        </div>
+                        <!--//Configuration Block tipo pago-->
+                    </div>
+                </div>
+            </div>
+            <!--Content Modal TipoPago-->
+            <!--Content Modal buttons-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <div class="container px-5">
+                        <!--//Configuration block cantidad impresiones-->
+                        <div class="row">
+                            <div class="col">
+                                <div class="py-3">
+                                    <!--Btn cancelar-->
+                                    <a class="btn btn-block negative bg-printalo-blueDetail text-light "
+                                        data-dismiss="modal" data-toggle="modal"
+                                        data-target="#configurarPedido">Atras</a>
+                                    <!--//Btn cancelar-->
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="py-3">
+                                    <!--Btn cancelar-->
+                                    <a class="btn btn-block positive bg-printalo-greenDetail text-light ">Siguiente</a>
+                                    <!--//Btn cancelar-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Content Modal buttons-->
+        </div>
+    </div>
+    <!--//Configurar pago-->
+
     <!--Fin modals-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -675,100 +882,123 @@
         });
     </script>
     <script>
-        (function () {
-            'use strict';
+        $(document).ready(function () {
+            $("#personal").click(function () {
+                $("#personaldiv:hidden").show('slow');
+                $("#tarjetadiv").hide();
+            });
+            $("#personal").click(function () {
+                if ($("#personal").prop('checked') === false) {
+                    $("#personaldiv").hide();
+                }
+            });
+            $("#tarjeta").click(function () {
+                $("#tarjetadiv:hidden").show('slow');
+                $("#personaldiv").hide();
+            });
+            $("#tarjeta").click(function () {
+                if ($("#tarjeta").prop('checked') === false) {
+                    $("#tarjetadiv").hide();
+                }
+            });
+        })
 
-            function ctrls() {
-                var _this = this;
+    </script>
+    <script>
+            (function () {
+                'use strict';
 
-                this.counter = 0;
-                this.els = {
-                    decrement: document.querySelector('.ctrl__button--decrement'),
-                    counter: {
-                        container: document.querySelector('.ctrl__counter'),
-                        num: document.querySelector('.ctrl__counter-num'),
-                        input: document.querySelector('.ctrl__counter-input')
-                    },
-                    increment: document.querySelector('.ctrl__button--increment')
-                };
+                function ctrls() {
+                    var _this = this;
 
-                this.decrement = function () {
-                    var counter = _this.getCounter();
-                    var nextCounter = (_this.counter > 0) ? --counter : counter;
-                    _this.setCounter(nextCounter);
-                };
+                    this.counter = 0;
+                    this.els = {
+                        decrement: document.querySelector('.ctrl__button--decrement'),
+                        counter: {
+                            container: document.querySelector('.ctrl__counter'),
+                            num: document.querySelector('.ctrl__counter-num'),
+                            input: document.querySelector('.ctrl__counter-input')
+                        },
+                        increment: document.querySelector('.ctrl__button--increment')
+                    };
 
-                this.increment = function () {
-                    var counter = _this.getCounter();
-                    var nextCounter = (counter < 9999999999) ? ++counter : counter;
-                    _this.setCounter(nextCounter);
-                };
+                    this.decrement = function () {
+                        var counter = _this.getCounter();
+                        var nextCounter = (_this.counter > 0) ? --counter : counter;
+                        _this.setCounter(nextCounter);
+                    };
 
-                this.getCounter = function () {
-                    return _this.counter;
-                };
+                    this.increment = function () {
+                        var counter = _this.getCounter();
+                        var nextCounter = (counter < 9999999999) ? ++counter : counter;
+                        _this.setCounter(nextCounter);
+                    };
 
-                this.setCounter = function (nextCounter) {
-                    _this.counter = nextCounter;
-                };
+                    this.getCounter = function () {
+                        return _this.counter;
+                    };
 
-                this.debounce = function (callback) {
-                    setTimeout(callback, 100);
-                };
+                    this.setCounter = function (nextCounter) {
+                        _this.counter = nextCounter;
+                    };
 
-                this.render = function (hideClassName, visibleClassName) {
-                    _this.els.counter.num.classList.add(hideClassName);
+                    this.debounce = function (callback) {
+                        setTimeout(callback, 100);
+                    };
 
-                    setTimeout(function () {
-                        _this.els.counter.num.innerText = _this.getCounter();
-                        _this.els.counter.input.value = _this.getCounter();
-                        _this.els.counter.num.classList.add(visibleClassName);
-                    }, 100);
+                    this.render = function (hideClassName, visibleClassName) {
+                        _this.els.counter.num.classList.add(hideClassName);
 
-                    setTimeout(function () {
-                        _this.els.counter.num.classList.remove(hideClassName);
-                        _this.els.counter.num.classList.remove(visibleClassName);
-                    }, 200);
-                };
+                        setTimeout(function () {
+                            _this.els.counter.num.innerText = _this.getCounter();
+                            _this.els.counter.input.value = _this.getCounter();
+                            _this.els.counter.num.classList.add(visibleClassName);
+                        }, 100);
 
-                this.ready = function () {
-                    _this.els.decrement.addEventListener('click', function () {
-                        _this.debounce(function () {
-                            _this.decrement();
-                            _this.render('is-decrement-hide', 'is-decrement-visible');
+                        setTimeout(function () {
+                            _this.els.counter.num.classList.remove(hideClassName);
+                            _this.els.counter.num.classList.remove(visibleClassName);
+                        }, 200);
+                    };
+
+                    this.ready = function () {
+                        _this.els.decrement.addEventListener('click', function () {
+                            _this.debounce(function () {
+                                _this.decrement();
+                                _this.render('is-decrement-hide', 'is-decrement-visible');
+                            });
                         });
-                    });
 
-                    _this.els.increment.addEventListener('click', function () {
-                        _this.debounce(function () {
-                            _this.increment();
-                            _this.render('is-increment-hide', 'is-increment-visible');
+                        _this.els.increment.addEventListener('click', function () {
+                            _this.debounce(function () {
+                                _this.increment();
+                                _this.render('is-increment-hide', 'is-increment-visible');
+                            });
                         });
-                    });
 
-                    _this.els.counter.input.addEventListener('input', function (e) {
-                        var parseValue = parseInt(e.target.value);
-                        if (!isNaN(parseValue) && parseValue >= 0) {
-                            _this.setCounter(parseValue);
+                        _this.els.counter.input.addEventListener('input', function (e) {
+                            var parseValue = parseInt(e.target.value);
+                            if (!isNaN(parseValue) && parseValue >= 0) {
+                                _this.setCounter(parseValue);
+                                _this.render();
+                            }
+                        });
+
+                        _this.els.counter.input.addEventListener('focus', function (e) {
+                            _this.els.counter.container.classList.add('is-input');
+                        });
+
+                        _this.els.counter.input.addEventListener('blur', function (e) {
+                            _this.els.counter.container.classList.remove('is-input');
                             _this.render();
-                        }
-                    });
-
-                    _this.els.counter.input.addEventListener('focus', function (e) {
-                        _this.els.counter.container.classList.add('is-input');
-                    });
-
-                    _this.els.counter.input.addEventListener('blur', function (e) {
-                        _this.els.counter.container.classList.remove('is-input');
-                        _this.render();
-                    });
+                        });
+                    };
                 };
-            };
 
-            // init
-            var controls = new ctrls();
-            document.addEventListener('DOMContentLoaded', controls.ready);
-        })();</script>
+                // init
+                var controls = new ctrls();
+                document.addEventListener('DOMContentLoaded', controls.ready);
+            })();</script>
 </body>
 
 </html>

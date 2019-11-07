@@ -33,9 +33,12 @@ body {
   text-decoration: none !important;
   color: white;
 }
-
+.modal-content{
+  border-radius: 1rem;
+}
 .modal-dialog {
   padding-top: 1%;
+
 }
 .modalbuttonalert .btn.positive:hover {
   background-color: #30e2c2 !important;

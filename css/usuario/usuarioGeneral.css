@@ -205,6 +205,12 @@ tbody tr:hover {
   border-radius: 50%;
 }
 
+/*radio button disabled*/
+.radiobuttons input:checked[disabled] ~ .checkmark {
+  background-color: #b8e9e0;
+}
+
+
 /* On mouse-over, add a grey background color */
 .radiobuttons:hover abel input ~ .checkmark {
   background-color: #ccc;
@@ -474,3 +480,7 @@ input[type=number] {
 }
 /*//Permite que no mostrar spinner cuando type=number*/
  
+/*disabledButton*/
+.disabledButton{
+  background-color: #b8e9e0!important;
+}

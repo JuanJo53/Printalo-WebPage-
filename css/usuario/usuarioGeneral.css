@@ -177,7 +177,7 @@ tbody tr:hover {
   padding-left: 35px;
   margin-bottom: 10px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -473,3 +473,4 @@ input[type=number] {
   -moz-appearance:textfield; /* Firefox */
 }
 /*//Permite que no mostrar spinner cuando type=number*/
+ 

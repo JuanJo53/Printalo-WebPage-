@@ -33,21 +33,8 @@ body {
   text-decoration: none !important;
   color: white;
 }
-.modal-content{
-  border-radius: 1rem;
-}
-.modal-dialog {
-  padding-top: 1%;
 
-}
-.modalbuttonalert .btn.positive:hover {
-  background-color: #30e2c2 !important;
-  color: rgb(255, 255, 255) !important;
-}
-.modalbuttonalert .btn.negative:hover {
-  background-color: #253449 !important;
-  color: rgb(255, 255, 255) !important;
-}
+
 
 tbody tr td .btn.positive:hover {
   background-color: #30e2c2 !important;
@@ -154,14 +141,7 @@ tbody tr:hover {
 .card.negocioIcon .card-footer {
   background: #24c4a6;
 }
-.modal-content .container a.btn.negative:hover {
-  background-color: #253449 !important;
-  color: rgb(255, 255, 255) !important;
-}
-.modal-content .container a.btn.positive:hover {
-  background-color: #30e2c2 !important;
-  color: rgb(255, 255, 255) !important;
-}
+
 .row-sub {
   background: #364c68;
   width: 100%;

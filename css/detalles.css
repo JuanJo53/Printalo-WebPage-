@@ -20,6 +20,9 @@ body {
 .color-printalo-blueDetail {
   color: #364c68;
 }
+.color-printalo-greenDetail {
+  color: #24c4a6;
+}
 .bg-printalo-greenDetail {
   background-color: #24c4a6;
 }
@@ -31,12 +34,7 @@ body {
   font-weight: bold;
   color: white !important;
 }
-.modalbutton a:hover {
-  color: #24c4a6 !important;
-}
-.modalbutton a u:hover {
-  color: #24c4a6 !important;
-}
+
 .center{
   position: relative;
   top: 50%;
@@ -52,5 +50,6 @@ body {
 .ver-center{
   vertical-align: middle;
 }
+
 
 

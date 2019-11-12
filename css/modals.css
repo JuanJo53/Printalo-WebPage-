@@ -39,7 +39,7 @@
   li {
     text-align: center;
   }
-  input[type="text"],input[type="password"], textarea{
+  input[type="text"],input[type="password"],[type="number"], textarea{
     background: #c3dee5;
   }
 
@@ -119,7 +119,7 @@
   }
 }
 .modal-dialog.mini {
-  padding-top: 15rem;/*margin top of small modals*/
+  padding-top: 13rem;/*margin top of small modals*/
 }
 .square-icon{
   /*background-color:#eee;*/

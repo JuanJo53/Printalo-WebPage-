@@ -12,14 +12,13 @@
     <link rel="stylesheet" href="../../../css/main.css">
     <link rel="stylesheet" href="../../../css/detalles.css">
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/usuario/estiloUsuario.css">
     <link rel="stylesheet" href="../../../css/usuario/usuarioGeneral.css">
     <link rel="stylesheet" href="../../../css/fab.css">
-
     <title>Principal</title>
 </head>
 
 <body>
+    <!--Navbar-->
     <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark py-1">
         <div class="container">
             <div class="navbar-header">
@@ -28,48 +27,56 @@
                 <!--Link logo-->
                 <a class="navbar-brand mx-1" href="#home">
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
+                    <!--Titulo Logo-->
                     <h5 class="d-inline align-middle mx-1 text-light">Printalo Usuarios</h5>
+                    <!--Titulo Logo-->
                 </a>
                 <!--//Link logo-->
             </div>
+            <!--Profile Icon-->
             <div class="navbar-item  order-lg-last   order-xs-last  mx-1" data-dismiss="modal" data-toggle="modal"
                 data-target="#perfiliconusuario">
                 <div class="d-inline circle bg-printalo-greenDetail">
+                    <!--Initial letter-->
                     <div class="center">
                         J
                     </div>
+                    <!--Initial letter-->
                 </div>
             </div>
+            <!--//Profile Icon-->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <!--Link Documentos-->
                     <li class="nav-item">
                         <a href="#home" class="nav-link text-light active">Documentos</a>
                     </li>
-                    <!--//-->
+                    <!--//Link Documentos-->
                     <!--Link Puestos-->
                     <li class="nav-item">
                         <a href="#home" class="nav-link text-light ">Puestos</a>
                     </li>
-                    <!--//-->
+                    <!--//Link Puestos-->
                     <!--Link Notificaciones-->
                     <li class="nav-item">
                         <a href="#home" class="nav-link text-light ">Notificaciones</a>
                     </li>
-                    <!--//-->
+                    <!--//Link Notificaciones-->
                     <!--Link Configuraciones-->
                     <li class="nav-item">
                         <a href="#home" class="nav-link text-light ">Configuraciones</a>
                     </li>
-                    <!--//-->
+                    <!--//Link Configuraciones-->
                 </ul>
             </div>
         </div>
     </nav>
+    <!--//Navbar-->
+    <!--Sub Navbar usuarios-->
     <ul class="nav nav-pills nav-justified bg-printalo-greenDetail">
         <!--Navbar Link Por Enviar-->
         <li class="nav-item"><a class="nav-link active" href="porEnviar.html">Por enviar</a></li>
-        <!--//-->
+        <!--//por enviar-->
         <!--Navbar Link enviasdos-->
         <li class="nav-item"><a class="nav-link" href="enviados.html">Enviados</a></li>
         <!--//-->
@@ -77,12 +84,17 @@
         <li class="nav-item"><a class="nav-link" href="realizados.html">Realizados</a></li>
         <!--//-->
     </ul>
+    <!--//Sub Navbar usuarios-->
     <div class="container">
         <!-- responsive table -->
         <div class="holder">
+            <!--title page-->
             <h2 class="my-3">Pedidos por enviar</h2>
+            <!--//title page-->
             <div class="responsiveTbl">
+                <!--start table-->
                 <table>
+                    <!--column's titles-->
                     <thead>
                         <tr>
                             <!--th 1-->
@@ -95,13 +107,14 @@
                             <th class="text-center">Eliminar</th>
                         </tr>
                     </thead>
+                    <!--//column's titles-->
                     <tbody>
-                        <!--Fila-->
+                        <!--Row-->
                         <tr>
                             <!--Icono-->
                             <td class="text-center"><a><i class="far fa-file-pdf fa-3x"></i></a></td>
                             <!--//-->
-                            <td class="text-center">nombredearchiiiiiiiiiiiiiivo.pdf</td>
+                            <td class="text-center">nombredearchivo.pdf</td>
                             <!--Btn Solicitar-->
                             <td class="text-center"><a class="btn positive bg-printalo-greenDetail text-light"
                                     data-toggle="modal" data-target="#escogerLocal">Solicitar</a></td>
@@ -111,150 +124,167 @@
                                     data-toggle="modal" data-target="#checkAlert">Eliminar</a></td>
                             <!--//-->
                         </tr>
-                        <!--Termina Fila-->
-                        <!--Fila-->
-                        <tr>
-                            <!--Icono-->
-                            <td class="text-center"><a><i class="far fa-file-pdf fa-3x"></i></a></td>
-                            <!--//-->
-                            <td class="text-center">nombredearchiiiiiiiiiiiiiivo.pdf</td>
-                            <!--Btn Solicitar-->
-                            <td class="text-center"><a
-                                    class="btn positive bg-printalo-greenDetail text-light">Solicitar</a></td>
-                            <!--//-->
-                            <!--Btn Eliminar-->
-                            <td class="text-center"><a
-                                    class="btn negative bg-printalo-blueDetail text-light">Eliminar</a></td>
-                            <!--//-->
-                        </tr>
-                        <!--Termina Fila-->
+                        <!--//Row-->
                     </tbody>
                 </table>
+                <!--//start table-->
             </div>
         </div>
         <!-- // -->
-
     </div>
-
+    <!--float action button (+)-->
     <div class="fab-container">
         <div class="fab-icon-holder">
-            <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-plus "></i></a>
-            </i>
+            <a data-toggle="modal" data-target="#ingresarModal">
+                <!--Icon-->
+                <i class="fas fa-plus "></i>
+                <!--//Icon-->
+            </a>
         </div>
     </div>
-    <!--Modal Subir Documento(btn +)-->
+    <!--//float action button (+)-->
+    <!--Modal Subir Documento (+)-->
     <div class="modal fade text-dark" id="ingresarModal">
-        <div class="modal-dialog modal-md">
+        <div class="modal-dialog mini modal-md">
             <div class="modal-content">
+                <!--title modal header-->
                 <div class="modal-header bg-printalo-blueDetail">
                     <h5 class="modal-title text-light">Abrir Archivo</h5>
-                    <!-- <a href=""
-                                class="close-icon text-center ml-auto m-3 d-none d-block d-sm-block d-md-block d-lg-none"
-                                data-dismiss="modal"></a>-->
                 </div>
-                <div class="modal-body">
-                    <div class="row text-center">
-                        <!--pregunta-->
-                        <div class="col my-auto">
-                            Abrir "NombredelArchivo.pdf"?
+                <!--//title modal header-->
+                <!--modal body-->
+                <div class="container px-5 my-4">
+                    <div class="row my-2">
+                        <div class="col-xs-4 text-center">
+                            <div class="square-icon">
+                                <!--icono--><i class="far fa-file fa-3x"></i>
+                                <!--//icono-->
+                            </div>
                         </div>
-                        <!--icono de documento-->
-                        <div class="px-4">
-                            <a><i class="far fa-file fa-3x"></i></a>
+                        <!--Question-->
+                        <div class="col my-auto text-center">
+                            <h5>Abrir "NombredelArchivo.pdf"?</h5>
                         </div>
+                        <!--//Question-->
                     </div>
-
                 </div>
+                <!--//modal body-->
+                <!--modal footer-->
                 <div class="modal-footer">
                     <div class="modalbuttonalert text-center">
-                        <!--btns Aceptar/cancelar Subir un documento seleccionado-->
-                        <!--Boton Cancelar-->
+                        <!--btn Cancelar-->
                         <a class="btn negative bg-printalo-blueDetail text-light">Cancelar</a>
-                        <!--Boton Aceptar-->
+                        <!--btn Cancelar-->
+                        <!--btn Aceptar-->
                         <a class="btn positive bg-printalo-greenDetail text-light">Aceptar</a>
-                        <!--//-->
+                        <!--//btn Aceptar-->
                     </div>
                 </div>
+                <!--//modal footer-->
             </div>
         </div>
     </div>
     <!--//Modal Subir Documento (btn +)-->
-    <!--Escoger local modal(btn siguiente)-->
+    <!--Escoger negocio modal(btn siguiente)-->
     <div class="modal fade text-dark" id="escogerLocal">
         <div class="modal-dialog modal-md">
             <!--Progress Modal-->
             <div class="col pb-3">
+                <!--modal content-->
                 <div class="modal-content">
                     <div class="container">
                         <section class="px-2 py-4 text-center">
+                            <!--circle icon hand pointer on-->
                             <div class="fab-icon-holder-modal on">
-
-                                <a data-toggle="modal" data-target="#ingresarModal"><i
-                                        class="far fa-hand-pointer "></i></a>
-                            </div>
-                            <div class="row-detail off">
-                            </div>
-                            <div class="fab-icon-holder-modal off">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-wrench "></i></a>
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="far fa-hand-pointer "></i>
+                                    <!--//icon--></a>
                                 </i>
                             </div>
+                            <!--//circle icon hand pointer-->
+                            <!--customed row off-->
                             <div class="row-detail off">
                             </div>
+                            <!--//customed row-->
+                            <!--circle icon  config off-->
                             <div class="fab-icon-holder-modal off">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-clock "></i></a>
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-wrench "></i>
+                                    <!--icon--></a>
                                 </i>
                             </div>
+                            <!--//circle icon  config-->
+                            <!--customed row off-->
                             <div class="row-detail off">
                             </div>
+                            <!--//customed row-->
+                            <!--circle icon  clock off-->
                             <div class="fab-icon-holder-modal off">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i
-                                        class="fas fa-dollar-sign "></i></a>
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-clock"></i>
+                                    <!--//icon--></a>
                                 </i>
                             </div>
+                            <!--//circle icon  clock-->
+                            <!--customed row off-->
                             <div class="row-detail off">
                             </div>
+                            <!--//customed row-->
+                            <!--circle icon  payment off-->
                             <div class="fab-icon-holder-modal off">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i
-                                        class="fas fa-check-circle "></i></a>
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-dollar-sign "></i>
+                                    <!--//icon--></a>
                                 </i>
                             </div>
+                            <!--//circle icon  payment-->
+                            <!--customed row off-->
+                            <div class="row-detail off">
+                            </div>
+                            <!--//customed row-->
+                            <!--circle icon  check off-->
+                            <div class="fab-icon-holder-modal off">
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-check-circle "></i>
+                                    <!--icon--></a>
+                                </i>
+                            </div>
+                            <!--circle icon  check-->
                         </section>
                     </div>
                 </div>
+                <!--//modal content-->
             </div>
             <!--//Progress Modal-->
             <!--Content Modal-->
             <div class="col pb-3">
                 <div class="modal-content">
                     <div class="container px-5">
+                        <!--modal title-->
                         <h5 class="text-center p-3">Escoja un negocio</h5>
-                        <!--charly button-->
+                        <!--modal title-->
                         <!--Btn Imagen de local-->
+                        <!--pcs button-->
                         <div class="pb-3 text-center " data-dismiss="modal" data-toggle="modal"
                             data-target="#configurarPedido">
-                            <!--//Btn Imagen de local-->
-                            <div class="card negocioIcon mx-auto">
-                                <!--img del negocio-->
-                                <img src="../../../img/charly1.jpg" alt="" class="card-img-top">
-                                <div class="card-footer">
-                                    <!--nombre del negocio-->
-                                    <h5 class="my-auto text-light">Charly 1</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <!--//charly button-->
-                        <!--charly button-->
-                        <div class="pb-3 text-center ">
                             <div class="card negocioIcon mx-auto">
                                 <!--img del negocio-->
                                 <img src="../../../img/pcs.jpg" alt="" class="card-img-top">
+                                <!--//img del negocio-->
                                 <div class="card-footer">
                                     <!--nombre del negocio-->
-                                    <h5 class="my-auto text-light">PCS</h5>
+                                    <h5 class="my-auto text-light">Charly 1</h5>
+                                    <!--//nombre del negocio-->
                                 </div>
                             </div>
                         </div>
-                        <!--//charly button-->
+                        <!--//pcs button-->
+                        <!--//Btn Imagen de local-->
                     </div>
                 </div>
             </div>
@@ -275,50 +305,81 @@
             <!--btn cancelar-->
         </div>
     </div>
-    <!--//Escoger local modal(btn siguiente)-->
-
-    <!--configurar pedido ()-->
+    <!--//Escoger negocio modal(btn siguiente)-->
+    <!--modal configurar pedido -->
     <div class="modal fade text-dark" id="configurarPedido">
         <div class="modal-dialog modal-md">
             <!--Progress Modal-->
             <div class="col pb-3">
+                <!--modal content-->
                 <div class="modal-content">
                     <div class="container">
                         <section class="px-2 py-4 text-center">
+                            <!--circle icon hand pointer on-->
                             <div class="fab-icon-holder-modal on">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i
-                                        class="far fa-hand-pointer "></i></a>
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="far fa-hand-pointer "></i>
+                                    <!--//icon--></a>
                                 </i>
                             </div>
+                            <!--//circle icon hand pointer-->
+                            <!--customed row on-->
                             <div class="row-detail on">
                             </div>
+                            <!--//customed row-->
+                            <!--circle icon  config on-->
                             <div class="fab-icon-holder-modal on">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-wrench "></i></a>
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-wrench "></i>
+                                    <!--icon--></a>
                                 </i>
                             </div>
+                            <!--//circle icon  config-->
+                            <!--customed row off-->
                             <div class="row-detail off">
                             </div>
+                            <!--//customed row-->
+                            <!--circle icon  clock off-->
                             <div class="fab-icon-holder-modal off">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-clock "></i></a>
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-clock"></i>
+                                    <!--//icon--></a>
                                 </i>
                             </div>
+                            <!--//circle icon  clock-->
+                            <!--customed row off-->
                             <div class="row-detail off">
                             </div>
+                            <!--//customed row-->
+                            <!--circle icon  payment off-->
                             <div class="fab-icon-holder-modal off">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i
-                                        class="fas fa-dollar-sign "></i></a>
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-dollar-sign "></i>
+                                    <!--//icon--></a>
                                 </i>
                             </div>
+                            <!--//circle icon  payment-->
+                            <!--customed row off-->
                             <div class="row-detail off">
                             </div>
+                            <!--//customed row-->
+                            <!--circle icon  check off-->
                             <div class="fab-icon-holder-modal off">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i
-                                        class="fas fa-check-circle "></i></a>
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-check-circle "></i>
+                                    <!--icon--></a>
                                 </i>
                             </div>
+                            <!--circle icon  check-->
                         </section>
                     </div>
                 </div>
+                <!--//modal content-->
             </div>
             <!--//Progress Modal-->
             <!--Content Modal-->
@@ -329,15 +390,21 @@
                         <div class="blockofblock py-2">
                             <!--Configuration Block color-->
                             <div class="config-block py-2">
+                                <!--subtitle-->
                                 <p class="color-printalo-blueDetail font-weight-bold">Color</p>
+                                <!--//subtitle-->
+                                <!--subrow-->
                                 <div class="row-sub">
                                 </div>
+                                <!--//subrow-->
                                 <div class="py-1 ml-auto row">
                                     <!-- rbt b/n-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Blanco/Negro
                                             <input type="radio" checked="checked" name="radioColor">
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt b/n-->
@@ -345,7 +412,9 @@
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Color
                                             <input type="radio" name="radioColor">
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt b/color-->
@@ -355,15 +424,21 @@
                             <!--//Configuration Block color-->
                             <!--Configuration Block tamanio de impresion-->
                             <div class="config-block py-2">
+                                <!--subtitle-->
                                 <p class="color-printalo-blueDetail font-weight-bold">Tamaño de impresion</p>
+                                <!--//subtitle-->
+                                <!--subrow-->
                                 <div class="row-sub">
                                 </div>
+                                <!--//subrow-->
                                 <div class="py-1 text-center row">
                                     <!-- rbt carta-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Carta
                                             <input type="radio" checked="checked" name="radioTamanio">
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt carta-->
@@ -371,7 +446,9 @@
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Oficio
                                             <input type="radio" name="radioTamanio">
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt oficio-->
@@ -379,7 +456,9 @@
                                     <div class="col">
                                         <label class="radiobuttons my-auto">A4
                                             <input type="radio" name="radioTamanio">
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt a4-->
@@ -389,15 +468,21 @@
                             <!--//Configuration Block tamanio impresion-->
                             <!--Configuration Block lados-->
                             <div class="config-block py-2">
-                                <p class="color-printalo-blueDetail font-weight-bold">Lados a Imprimir</p>
+                                <!--subtitle-->
+                                <p class="color-printalo-blueDetail font-weight-bold">Lados a imprimir</p>
+                                <!--//subtitle-->
+                                <!--subrow-->
                                 <div class="row-sub">
                                 </div>
+                                <!--//subrow-->
                                 <div class="py-1 ml-auto row">
                                     <!-- rbt intercalado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Intercalado
                                             <input type="radio" checked="checked" name="radioLados">
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt intercalado-->
@@ -405,7 +490,9 @@
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Anv/Reverso
                                             <input type="radio" name="radioLados">
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt anverso/reverso-->
@@ -415,15 +502,21 @@
                             <!--//Configuration impresion lados-->
                             <!--Configuration Block numero de hojas-->
                             <div class="config-block py-2">
-                                <p class="color-printalo-blueDetail font-weight-bold">Numero de Paginas</p>
+                                <!--subtitle-->
+                                <p class="color-printalo-blueDetail font-weight-bold">Numero de paginas</p>
+                                <!--//subtitle-->
+                                <!--subrow-->
                                 <div class="row-sub">
                                 </div>
+                                <!--//subrow-->
                                 <div class="py-1 ml-auto row">
                                     <!-- rbt todo-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Todo
                                             <input type="radio" checked="checked" name="radioNumPag">
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt todo-->
@@ -431,7 +524,9 @@
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Personalizado
                                             <input type="radio" name="radioNumPag">
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt personalizado-->
@@ -441,15 +536,21 @@
                             <!--//Configuration block numero de hojas-->
                             <!--Configuration Block tipo acabado-->
                             <div class="config-block py-2">
-                                <p class="color-printalo-blueDetail font-weight-bold">Tipo de Acabado</p>
+                                <!--subtitle-->
+                                <p class="color-printalo-blueDetail font-weight-bold">Tipo de acabado</p>
+                                <!--//subtitle-->
+                                <!--subrow-->
                                 <div class="row-sub">
                                 </div>
+                                <!--//subrow-->
                                 <div class="py-1 ml-auto row">
                                     <!-- rbt engrampado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Engrampado
                                             <input type="radio" checked="checked" name="radioAcabado">
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt engrampado-->
@@ -457,7 +558,9 @@
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Normal
                                             <input type="radio" name="radioAcabado">
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt normal-->
@@ -467,23 +570,31 @@
                             <!--//Configuration block tipo acabado-->
                             <!--Configuration Block tipo de hoja-->
                             <div class="config-block py-2">
-                                <p class="color-printalo-blueDetail font-weight-bold">Tipo de Hojas</p>
+                                <!--subtitle-->
+                                <p class="color-printalo-blueDetail font-weight-bold">Tipo de hojas</p>
+                                <!--//subtitle-->
+                                <!--subrow-->
                                 <div class="row-sub">
                                 </div>
+                                <!--//subrow-->
                                 <div class="py-1 ml-auto row">
                                     <!-- rbt normal-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Normal
                                             <input type="radio" checked="checked" name="radioTipHoja">
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt normal-->
                                     <!-- rbt reutilizado-->
                                     <div class="col">
-                                        <label class="radiobuttons my-auto">Reutilizada
+                                        <label class="radiobuttons my-auto">Reutilizado
                                             <input type="radio" name="radioTipHoja">
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt reutilizado-->
@@ -494,21 +605,31 @@
 
                             <!--Configuration Block cantidad impresiones-->
                             <div class="config-block py-2">
+                                <!--subtitle-->
                                 <p class="color-printalo-blueDetail font-weight-bold">Nro Copias</p>
+                                <!--//subtitle-->
+                                <!--subrow-->
                                 <div class="row-sub">
                                 </div>
+                                <!--//subrow-->
                                 <div class="py-2 text-center">
                                     <!-- btn mas menos-->
                                     <div class="my-auto radiobuttons">Numero :
                                         <div class="block-typenumber">
                                             <div class='ctrl'>
+                                                <!--decrement-->
                                                 <div class='ctrl__button ctrl__button--decrement'>&ndash;</div>
+                                                <!--//decrement-->
+                                                <!--input number-->
                                                 <div class='ctrl__counter'>
                                                     <input class='ctrl__counter-input' maxlength='10' type='text'
                                                         value='0'>
                                                     <div class='ctrl__counter-num'>0</div>
                                                 </div>
+                                                <!--//input number-->
+                                                <!--increment-->
                                                 <div class='ctrl__button ctrl__button--increment'>+</div>
+                                                <!--//increment-->
                                             </div>
                                         </div>
                                     </div>
@@ -530,19 +651,19 @@
                         <div class="row">
                             <div class="col">
                                 <div class="py-3">
-                                    <!--Btn cancelar-->
+                                    <!--Btn atras-->
                                     <a class="btn btn-block negative bg-printalo-blueDetail text-light "
                                         data-dismiss="modal" data-toggle="modal" data-target="#escogerLocal">Atras</a>
-                                    <!--//Btn cancelar-->
+                                    <!--//Btn atras-->
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="py-3">
-                                    <!--Btn cancelar-->
+                                    <!--Btn siguiente-->
                                     <a class="btn btn-block positive bg-printalo-greenDetail text-light "
                                         data-dismiss="modal" data-toggle="modal"
                                         data-target="#configurarTiempo">Siguiente</a>
-                                    <!--//Btn cancelar-->
+                                    <!--//Btn siguiente-->
                                 </div>
                             </div>
                         </div>
@@ -552,65 +673,105 @@
             <!--//Content Modal buttons-->
         </div>
     </div>
-    <!--//Configurar Pedido()-->
-
-
+    <!--//Configurar Pedido-->
     <!--configurar tiempo-->
     <div class="modal fade text-dark" id="configurarTiempo">
         <div class="modal-dialog modal-md">
             <!--Progress Modal-->
             <div class="col pb-3">
+                <!--modal content-->
                 <div class="modal-content">
                     <div class="container">
                         <section class="px-2 py-4 text-center">
+                            <!--circle icon hand pointer on-->
                             <div class="fab-icon-holder-modal on">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i
-                                        class="far fa-hand-pointer "></i></a>
-                            </div>
-                            <div class="row-detail on">
-                            </div>
-                            <div class="fab-icon-holder-modal on">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-wrench "></i></a>
-                            </div>
-                            <div class="row-detail on">
-                            </div>
-                            <div class="fab-icon-holder-modal on">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-clock "></i></a>
-                            </div>
-                            <div class="row-detail off">
-                            </div>
-                            <div class="fab-icon-holder-modal off">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i
-                                        class="fas fa-dollar-sign "></i></a>
-                            </div>
-                            <div class="row-detail off">
-                            </div>
-                            <div class="fab-icon-holder-modal off">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i
-                                        class="fas fa-check-circle "></i></a>
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="far fa-hand-pointer "></i>
+                                    <!--//icon--></a>
                                 </i>
                             </div>
+                            <!--//circle icon hand pointer-->
+                            <!--customed row on-->
+                            <div class="row-detail on">
+                            </div>
+                            <!--//customed row-->
+                            <!--circle icon  config on-->
+                            <div class="fab-icon-holder-modal on">
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-wrench "></i>
+                                    <!--icon--></a>
+                                </i>
+                            </div>
+                            <!--//circle icon  config-->
+                            <!--customed row on-->
+                            <div class="row-detail on">
+                            </div>
+                            <!--//customed row-->
+                            <!--circle icon  clock on-->
+                            <div class="fab-icon-holder-modal on">
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-clock"></i>
+                                    <!--//icon--></a>
+                                </i>
+                            </div>
+                            <!--//circle icon  clock-->
+                            <!--customed row off-->
+                            <div class="row-detail off">
+                            </div>
+                            <!--//customed row-->
+                            <!--circle icon  payment off-->
+                            <div class="fab-icon-holder-modal off">
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-dollar-sign "></i>
+                                    <!--//icon--></a>
+                                </i>
+                            </div>
+                            <!--//circle icon  payment-->
+                            <!--customed row off-->
+                            <div class="row-detail off">
+                            </div>
+                            <!--//customed row-->
+                            <!--circle icon  check off-->
+                            <div class="fab-icon-holder-modal off">
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-check-circle "></i>
+                                    <!--icon--></a>
+                                </i>
+                            </div>
+                            <!--circle icon  check-->
                         </section>
                     </div>
                 </div>
+                <!--//modal content-->
             </div>
             <!--//Progress Modal-->
             <!--Content Modal Price-->
             <div class="col pb-3">
                 <div class="modal-content">
                     <div class="container px-5">
+                        <!--modal title-->
                         <h5 class="text-center p-3">Precio</h5>
+                        <!--//modal title-->
+                        <!--details-->
                         <p>400pag * 0.5Bs/pag = 200Bs</p>
                         <p><span class="font-weight-bold">Costo total :</span> 200Bs</p>
+                        <!--details-->
                     </div>
                 </div>
             </div>
-            <!--Content Modal Price-->
+            <!--//Content Modal Price-->
             <!--Content Modal Hora y Fecha-->
             <div class="col pb-3">
                 <div class="modal-content">
                     <div class="container px-5 py-3">
+                        <!--modal title-->
                         <h5 class="text-center py-3">Hora y Fecha de entrega deseada</h5>
+                        <!--//modal title-->
                         <div class="row">
                             <!--Columna  fecha-->
                             <div class="col">
@@ -653,29 +814,28 @@
                     </div>
                 </div>
             </div>
-            <!--Content Modal Hora y Fecha-->
+            <!--//Content Modal Hora y Fecha-->
             <!--Content Modal buttons-->
             <div class="col pb-3">
                 <div class="modal-content">
                     <div class="container px-5">
-                        <!--//Configuration block cantidad impresiones-->
                         <div class="row">
                             <div class="col">
                                 <div class="py-3">
-                                    <!--Btn cancelar-->
+                                    <!--Btn atras-->
                                     <a class="btn btn-block negative bg-printalo-blueDetail text-light "
                                         data-dismiss="modal" data-toggle="modal"
                                         data-target="#configurarPedido">Atras</a>
-                                    <!--//Btn cancelar-->
+                                    <!--//Btn atras-->
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="py-3">
-                                    <!--Btn cancelar-->
+                                    <!--Btn siguiente-->
                                     <a class="btn btn-block positive bg-printalo-greenDetail text-light "
                                         data-dismiss="modal" data-toggle="modal"
                                         data-target="#configurarPago">Siguiente</a>
-                                    <!--//Btn cancelar-->
+                                    <!--//Btn siguiente-->
                                 </div>
                             </div>
                         </div>
@@ -687,55 +847,93 @@
     </div>
     <!--//Configurar tiempo-->
 
-
-
     <!--configurar pago-->
     <div class="modal fade text-dark" id="configurarPago">
         <div class="modal-dialog modal-md">
             <!--Progress Modal-->
             <div class="col pb-3">
+                <!--modal content-->
                 <div class="modal-content">
                     <div class="container">
                         <section class="px-2 py-4 text-center">
+                            <!--circle icon hand pointer on-->
                             <div class="fab-icon-holder-modal on">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i
-                                        class="far fa-hand-pointer "></i></a>
-                            </div>
-                            <div class="row-detail on">
-                            </div>
-                            <div class="fab-icon-holder-modal on">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-wrench "></i></a>
-                            </div>
-                            <div class="row-detail on">
-                            </div>
-                            <div class="fab-icon-holder-modal on">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-clock "></i></a>
-                            </div>
-                            <div class="row-detail on">
-                            </div>
-                            <div class="fab-icon-holder-modal on">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i
-                                        class="fas fa-dollar-sign "></i></a>
-                            </div>
-                            <div class="row-detail off">
-                            </div>
-                            <div class="fab-icon-holder-modal off">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i
-                                        class="fas fa-check-circle "></i></a>
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="far fa-hand-pointer "></i>
+                                    <!--//icon--></a>
                                 </i>
                             </div>
+                            <!--//circle icon hand pointer-->
+                            <!--customed row on-->
+                            <div class="row-detail on">
+                            </div>
+                            <!--//customed row-->
+                            <!--circle icon  config on-->
+                            <div class="fab-icon-holder-modal on">
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-wrench "></i>
+                                    <!--icon--></a>
+                                </i>
+                            </div>
+                            <!--//circle icon  config-->
+                            <!--customed row on-->
+                            <div class="row-detail on">
+                            </div>
+                            <!--//customed row-->
+                            <!--circle icon  clock on-->
+                            <div class="fab-icon-holder-modal on">
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-clock"></i>
+                                    <!--//icon--></a>
+                                </i>
+                            </div>
+                            <!--//circle icon  clock-->
+                            <!--customed row on-->
+                            <div class="row-detail on">
+                            </div>
+                            <!--//customed row-->
+                            <!--circle icon  payment on-->
+                            <div class="fab-icon-holder-modal on">
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-dollar-sign "></i>
+                                    <!--//icon--></a>
+                                </i>
+                            </div>
+                            <!--//circle icon  payment-->
+                            <!--customed row off-->
+                            <div class="row-detail off">
+                            </div>
+                            <!--//customed row-->
+                            <!--circle icon  check off-->
+                            <div class="fab-icon-holder-modal off">
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-check-circle "></i>
+                                    <!--icon--></a>
+                                </i>
+                            </div>
+                            <!--circle icon  check-->
                         </section>
                     </div>
                 </div>
+                <!--//modal content-->
             </div>
             <!--//Progress Modal-->
             <!--Content Modal Price-->
             <div class="col pb-3">
                 <div class="modal-content">
                     <div class="container px-5">
+                        <!--modal title-->
                         <h5 class="text-center p-3">Precio</h5>
+                        <!--//modal title-->
+                        <!--details-->
                         <p>400pag * 0.5Bs/pag = 200Bs</p>
                         <p><span class="font-weight-bold">Costo total :</span> 200Bs</p>
+                        <!--details-->
                     </div>
                 </div>
             </div>
@@ -749,31 +947,45 @@
                         <!--modal title-->
                         <!--contenido de Block tipo pago-->
                         <div class="config-block py-2">
+                            <!--subtitle-->
                             <p class="color-printalo-blueDetail font-weight-bold">Tipo</p>
+                            <!--//subtitle-->
+                            <!--subrow-->
                             <div class="row-sub">
                             </div>
+                            <!--//subrow-->
                             <div class="py-1 ml-auto row">
                                 <!-- rb personal-->
                                 <div class="col ">
                                     <label class="radiobuttons my-auto">Personal
+                                        <!--input-->
                                         <input type="radio" checked="checked" name="radioPago" id="personal">
+                                        <!--//input-->
+                                        <!--for customed purposes-->
                                         <span class="checkmark"></span>
+                                        <!--//for customed purposes-->
                                     </label>
                                 </div>
                                 <!-- //rbt personal-->
                                 <!-- rbt tarjeta-->
                                 <div class="col ">
                                     <label class="radiobuttons my-auto">Tarjeta
+                                        <!--input-->
                                         <input type="radio" name="radioPago" id="tarjeta">
+                                        <!--//input-->
+                                        <!--for customed purposes-->
                                         <span class="checkmark"></span>
+                                        <!--//for customed purposes-->
                                     </label>
                                 </div>
                                 <!-- //rbt tarjeta-->
                             </div>
+                            <!--rbt personal response-->
                             <div id="personaldiv">
                                 <h5></h5>
                             </div>
-                            <!--Block Credit Card invisible-->
+                            <!--//rbt personal response-->
+                            <!--rbt tarjeta response Block Credit Card invisible-->
                             <div id="tarjetadiv" style='display:none' class="py-2">
                                 <p class="color-printalo-blueDetail font-weight-bold">Datos de Tarjeta</p>
                                 <div class="row-sub">
@@ -853,11 +1065,9 @@
                                         </form>
                                         <!-- //Formulario de Tarjeta-->
                                     </div>
-
                                 </div>
-
                             </div>
-                            <!--Block Credit Card invisible-->
+                            <!--rbt tarjeta response Block Credit Card invisible-->
                         </div>
                         <!--//Configuration Block tipo pago-->
                     </div>
@@ -868,24 +1078,23 @@
             <div class="col pb-3">
                 <div class="modal-content">
                     <div class="container px-5">
-                        <!--//Configuration block cantidad impresiones-->
                         <div class="row">
                             <div class="col">
                                 <div class="py-3">
-                                    <!--Btn cancelar-->
+                                    <!--Btn atras-->
                                     <a class="btn btn-block negative bg-printalo-blueDetail text-light "
                                         data-dismiss="modal" data-toggle="modal"
                                         data-target="#configurarTiempo">Atras</a>
-                                    <!--//Btn cancelar-->
+                                    <!--//Btn atras-->
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="py-3">
-                                    <!--Btn cancelar-->
+                                    <!--Btn siguiente-->
                                     <a class="btn btn-block positive bg-printalo-greenDetail text-light "
                                         data-dismiss="modal" data-toggle="modal"
                                         data-target="#revisarPedido">Siguiente</a>
-                                    <!--//Btn cancelar-->
+                                    <!--//Btn siguiente-->
                                 </div>
                             </div>
                         </div>
@@ -897,70 +1106,105 @@
     </div>
     <!--//Configurar pago-->
 
-
-
-
     <!-- Revisar pedido  botones con disabled en cada input radio button y clases!!!!!-->
     <div class="modal fade text-dark" id="revisarPedido">
         <div class="modal-dialog modal-md">
             <!--Progress Modal-->
             <div class="col pb-3">
+                <!--modal content-->
                 <div class="modal-content">
                     <div class="container">
                         <section class="px-2 py-4 text-center">
+                            <!--circle icon hand pointer on-->
                             <div class="fab-icon-holder-modal on">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i
-                                        class="far fa-hand-pointer "></i></a>
-
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="far fa-hand-pointer "></i>
+                                    <!--//icon--></a>
+                                </i>
                             </div>
+                            <!--//circle icon hand pointer-->
+                            <!--customed row on-->
                             <div class="row-detail on">
                             </div>
+                            <!--//customed row-->
+                            <!--circle icon  config on-->
                             <div class="fab-icon-holder-modal on">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-wrench "></i></a>
-
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-wrench "></i>
+                                    <!--icon--></a>
+                                </i>
                             </div>
+                            <!--//circle icon  config-->
+                            <!--customed row on-->
                             <div class="row-detail on">
                             </div>
+                            <!--//customed row-->
+                            <!--circle icon  clock on-->
                             <div class="fab-icon-holder-modal on">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i class="fas fa-clock "></i></a>
-
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-clock"></i>
+                                    <!--//icon--></a>
+                                </i>
                             </div>
+                            <!--//circle icon  clock-->
+                            <!--customed row on-->
                             <div class="row-detail on">
                             </div>
+                            <!--//customed row-->
+                            <!--circle icon  payment on-->
                             <div class="fab-icon-holder-modal on">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i
-                                        class="fas fa-dollar-sign "></i></a>
-
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-dollar-sign "></i>
+                                    <!--//icon--></a>
+                                </i>
                             </div>
+                            <!--//circle icon  payment-->
+                            <!--customed row on-->
                             <div class="row-detail on">
                             </div>
+                            <!--//customed row-->
+                            <!--circle icon  check on-->
                             <div class="fab-icon-holder-modal on">
-                                <a data-toggle="modal" data-target="#ingresarModal"><i
-                                        class="fas fa-check-circle "></i></a>
-
+                                <a data-toggle="modal" data-target="#ingresarModal">
+                                    <!--icon-->
+                                    <i class="fas fa-check-circle "></i>
+                                    <!--icon--></a>
+                                </i>
                             </div>
+                            <!--circle icon  check-->
                         </section>
                     </div>
                 </div>
+                <!--//modal content-->
             </div>
             <!--//Progress Modal-->
-            <!--Content Modal-->
+            <!--Content Modal configuracion-->
             <div class="col pb-3">
                 <div class="modal-content">
                     <div class="container px-5">
-                        <h5 class="text-center pt-3">Revisar Pedido</h5>
+                        <h5 class="text-center pt-3">Configurar Pedido</h5>
                         <div class="blockofblock py-2">
                             <!--Configuration Block color-->
                             <div class="config-block py-2">
+                                <!--subtitle-->
                                 <p class="color-printalo-blueDetail font-weight-bold">Color</p>
+                                <!--//subtitle-->
+                                <!--subrow-->
                                 <div class="row-sub">
                                 </div>
+                                <!--//subrow-->
                                 <div class="py-1 ml-auto row">
                                     <!-- rbt b/n-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Blanco/Negro
                                             <input type="radio" checked="checked" name="radioColorR" disabled>
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt b/n-->
@@ -968,7 +1212,9 @@
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Color
                                             <input type="radio" name="radioColorR" disabled>
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt b/color-->
@@ -978,15 +1224,21 @@
                             <!--//Configuration Block color-->
                             <!--Configuration Block tamanio de impresion-->
                             <div class="config-block py-2">
+                                <!--subtitle-->
                                 <p class="color-printalo-blueDetail font-weight-bold">Tamaño de impresion</p>
+                                <!--//subtitle-->
+                                <!--subrow-->
                                 <div class="row-sub">
                                 </div>
+                                <!--//subrow-->
                                 <div class="py-1 text-center row">
                                     <!-- rbt carta-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Carta
                                             <input type="radio" checked="checked" name="radioTamanioR" disabled>
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt carta-->
@@ -994,7 +1246,9 @@
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Oficio
                                             <input type="radio" name="radioTamanioR" disabled>
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt oficio-->
@@ -1002,7 +1256,9 @@
                                     <div class="col">
                                         <label class="radiobuttons my-auto">A4
                                             <input type="radio" name="radioTamanioR" disabled>
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt a4-->
@@ -1012,15 +1268,21 @@
                             <!--//Configuration Block tamanio impresion-->
                             <!--Configuration Block lados-->
                             <div class="config-block py-2">
-                                <p class="color-printalo-blueDetail font-weight-bold">Lados a Imprimir</p>
+                                <!--subtitle-->
+                                <p class="color-printalo-blueDetail font-weight-bold">Lados a imprimir</p>
+                                <!--//subtitle-->
+                                <!--subrow-->
                                 <div class="row-sub">
                                 </div>
+                                <!--//subrow-->
                                 <div class="py-1 ml-auto row">
                                     <!-- rbt intercalado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Intercalado
                                             <input type="radio" checked="checked" name="radioLadosR" disabled>
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt intercalado-->
@@ -1028,7 +1290,9 @@
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Anv/Reverso
                                             <input type="radio" name="radioLadosR" disabled>
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt anverso/reverso-->
@@ -1038,15 +1302,21 @@
                             <!--//Configuration impresion lados-->
                             <!--Configuration Block numero de hojas-->
                             <div class="config-block py-2">
-                                <p class="color-printalo-blueDetail font-weight-bold">Numero de Paginas</p>
+                                <!--subtitle-->
+                                <p class="color-printalo-blueDetail font-weight-bold">Numero de paginas</p>
+                                <!--//subtitle-->
+                                <!--subrow-->
                                 <div class="row-sub">
                                 </div>
+                                <!--//subrow-->
                                 <div class="py-1 ml-auto row">
                                     <!-- rbt todo-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Todo
                                             <input type="radio" checked="checked" name="radioNumPagR" disabled>
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt todo-->
@@ -1054,7 +1324,9 @@
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Personalizado
                                             <input type="radio" name="radioNumPagR" disabled>
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt personalizado-->
@@ -1064,15 +1336,21 @@
                             <!--//Configuration block numero de hojas-->
                             <!--Configuration Block tipo acabado-->
                             <div class="config-block py-2">
-                                <p class="color-printalo-blueDetail font-weight-bold">Tipo de Acabado</p>
+                                <!--subtitle-->
+                                <p class="color-printalo-blueDetail font-weight-bold">Tipo de acabado</p>
+                                <!--//subtitle-->
+                                <!--subrow-->
                                 <div class="row-sub">
                                 </div>
+                                <!--//subrow-->
                                 <div class="py-1 ml-auto row">
                                     <!-- rbt engrampado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Engrampado
                                             <input type="radio" checked="checked" name="radioAcabadoR" disabled>
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt engrampado-->
@@ -1080,7 +1358,9 @@
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Normal
                                             <input type="radio" name="radioAcabadoR" disabled>
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt normal-->
@@ -1090,23 +1370,31 @@
                             <!--//Configuration block tipo acabado-->
                             <!--Configuration Block tipo de hoja-->
                             <div class="config-block py-2">
-                                <p class="color-printalo-blueDetail font-weight-bold">Tipo de Hojas</p>
+                                <!--subtitle-->
+                                <p class="color-printalo-blueDetail font-weight-bold">Tipo de hojas</p>
+                                <!--//subtitle-->
+                                <!--subrow-->
                                 <div class="row-sub">
                                 </div>
+                                <!--//subrow-->
                                 <div class="py-1 ml-auto row">
                                     <!-- rbt normal-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Normal
                                             <input type="radio" checked="checked" name="radioTipHojaR" disabled>
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt normal-->
                                     <!-- rbt reutilizado-->
                                     <div class="col">
-                                        <label class="radiobuttons my-auto">Reutilizada
+                                        <label class="radiobuttons my-auto">Reutilizado
                                             <input type="radio" name="radioTipHojaR" disabled>
+                                            <!--for customed purposes-->
                                             <span class="checkmark"></span>
+                                            <!--//for customed purposes-->
                                         </label>
                                     </div>
                                     <!-- //rbt reutilizado-->
@@ -1117,22 +1405,32 @@
 
                             <!--Configuration Block cantidad impresiones-->
                             <div class="config-block py-2">
+                                <!--subtitle-->
                                 <p class="color-printalo-blueDetail font-weight-bold">Nro Copias</p>
+                                <!--//subtitle-->
+                                <!--subrow-->
                                 <div class="row-sub">
                                 </div>
+                                <!--//subrow-->
                                 <div class="py-2 text-center">
                                     <!-- btn mas menos-->
                                     <div class="my-auto radiobuttons">Numero :
                                         <div class="block-typenumber">
                                             <div class='ctrl'>
+                                                <!--decrement-->
                                                 <div class='ctrl__button ctrl__button--decrement disabledButton'>&ndash;
                                                 </div>
+                                                <!--//decrement-->
+                                                <!--input number-->
                                                 <div class='ctrl__counter'>
                                                     <input class='ctrl__counter-input' maxlength='10' type='text'
                                                         value='0' disabled>
                                                     <div class='ctrl__counter-num'>0</div>
                                                 </div>
+                                                <!--//input number-->
+                                                <!--increment-->
                                                 <div class='ctrl__button ctrl__button--increment disabledButton'>+</div>
+                                                <!--//increment-->
                                             </div>
                                         </div>
                                     </div>
@@ -1145,13 +1443,15 @@
                     </div>
                 </div>
             </div>
-            <!--//Content Modal configuracion-->
+            <!--Content Modal-->
 
             <!--Content Modal Hora y Fecha-->
             <div class="col pb-3">
                 <div class="modal-content">
                     <div class="container px-5 py-3">
+                        <!--modal title-->
                         <h5 class="text-center py-3">Hora y Fecha de entrega deseada</h5>
+                        <!--//modal title-->
                         <div class="row">
                             <!--Columna  fecha-->
                             <div class="col">
@@ -1194,7 +1494,7 @@
                     </div>
                 </div>
             </div>
-            <!--Content Modal Hora y Fecha-->
+            <!--//Content Modal Hora y Fecha-->
 
             <!--Content Modal TipoPago-->
             <div class="col pb-3">
@@ -1205,31 +1505,45 @@
                         <!--modal title-->
                         <!--contenido de Block tipo pago-->
                         <div class="config-block py-2">
+                            <!--subtitle-->
                             <p class="color-printalo-blueDetail font-weight-bold">Tipo</p>
+                            <!--//subtitle-->
+                            <!--subrow-->
                             <div class="row-sub">
                             </div>
+                            <!--//subrow-->
                             <div class="py-1 ml-auto row">
                                 <!-- rb personal-->
                                 <div class="col ">
                                     <label class="radiobuttons my-auto">Personal
+                                        <!--input-->
                                         <input type="radio" checked="checked" name="radioPagoR" id="personal" disabled>
+                                        <!--//input-->
+                                        <!--for customed purposes-->
                                         <span class="checkmark"></span>
+                                        <!--//for customed purposes-->
                                     </label>
                                 </div>
                                 <!-- //rbt personal-->
                                 <!-- rbt tarjeta-->
                                 <div class="col ">
                                     <label class="radiobuttons my-auto">Tarjeta
+                                        <!--input-->
                                         <input type="radio" name="radioPagoR" id="tarjeta" disabled>
+                                        <!--//input-->
+                                        <!--for customed purposes-->
                                         <span class="checkmark"></span>
+                                        <!--//for customed purposes-->
                                     </label>
                                 </div>
                                 <!-- //rbt tarjeta-->
                             </div>
+                            <!--rbt personal response-->
                             <div id="personaldiv">
                                 <h5></h5>
                             </div>
-                            <!--Block Credit Card invisible-->
+                            <!--//rbt personal response-->
+                            <!--rbt tarjeta response Block Credit Card invisible-->
                             <div id="tarjetadiv" style='display:none' class="py-2">
                                 <p class="color-printalo-blueDetail font-weight-bold">Datos de Tarjeta</p>
                                 <div class="row-sub">
@@ -1244,7 +1558,7 @@
                                                     class="color-printalo-blueDetail font-weight-bold">Nombre</label>
                                                 <!--Input de nombre-->
                                                 <input type="text" name="username" placeholder="Ingrese el nombre"
-                                                    required class="form-control">
+                                                    required class="form-control" disabled>
                                                 <!--//Input de nombre-->
                                             </div>
                                             <!--//Block Nombre-->
@@ -1256,7 +1570,7 @@
                                                 <div class="input-group">
                                                     <!--Input de numero de cuenta-->
                                                     <input type="number" name="" placeholder="Numero de tarjeta"
-                                                        class="form-control" required>
+                                                        class="form-control" required disabled>
                                                     <!--//Input de numero de cuenta-->
                                                     <!--Grupo de Iconos-->
                                                     <div class="input-group-append">
@@ -1281,11 +1595,11 @@
                                                         <div class="input-group">
                                                             <!--input mes-->
                                                             <input type="number" placeholder="Mes" name=""
-                                                                class="form-control">
+                                                                class="form-control" disabled>
                                                             <!--//input mes-->
                                                             <!--input anio-->
                                                             <input type="number" placeholder="Año" name=""
-                                                                class="form-control">
+                                                                class="form-control" disabled>
                                                             <!--//input anio-->
                                                         </div>
                                                     </div>
@@ -1299,7 +1613,7 @@
                                                         </label>
                                                         <!--Input cvv-->
                                                         <input type="text" required class="form-control"
-                                                            placeholder="Cvv">
+                                                            placeholder="Cvv" disabled>
                                                         <!--//Input cvv-->
                                                     </div>
                                                     <!--//Block cvv-->
@@ -1309,18 +1623,15 @@
                                         </form>
                                         <!-- //Formulario de Tarjeta-->
                                     </div>
-
                                 </div>
-
                             </div>
-                            <!--Block Credit Card invisible-->
+                            <!--rbt tarjeta response Block Credit Card invisible-->
                         </div>
                         <!--//Configuration Block tipo pago-->
                     </div>
                 </div>
             </div>
             <!--//Content Modal TipoPago-->
-
 
             <!--Content Modal buttons-->
             <div class="col pb-3">
@@ -1330,18 +1641,18 @@
                         <div class="row">
                             <div class="col">
                                 <div class="py-3">
-                                    <!--Btn cancelar-->
+                                    <!--Btn Atras-->
                                     <a class="btn btn-block negative bg-printalo-blueDetail text-light "
                                         data-dismiss="modal" data-toggle="modal" data-target="#configurarPago">Atras</a>
-                                    <!--//Btn cancelar-->
+                                    <!--//Btn Atras-->
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="py-3">
-                                    <!--Btn cancelar-->
+                                    <!--Btn realizar pedido-->
                                     <a class="btn btn-block positive bg-printalo-greenDetail text-light "
                                         data-dismiss="modal" data-toggle="modal" data-target="#">Realizar Pedido</a>
-                                    <!--//Btn cancelar-->
+                                    <!--//Btn realizar pedido-->
                                 </div>
                             </div>
                         </div>
@@ -1353,7 +1664,7 @@
     </div>
     <!--//Revisar Pedido-->
     <!--Fin modals-->
-    <!--Spinners Loaders JUNK CHECK-->
+    <!--SPINNERS LOADERS JUNK CHECK-->
     <!--SPINNER-->
     <div class="modal fade text-dark" id="spinnerAlert">
         <div class="modal-dialog mini modal-md">
@@ -1361,19 +1672,25 @@
             <div class="col pb-3">
                 <div class="modal-content">
                     <div class="container px-5 my-2">
+                         <!--title-->
                         <div class="row my-2">
                             <div class="mr-auto ">
                                 <h4 class="font-weight-bold">Por favor espere...</h4>
                             </div>
                         </div>
+                        <!--//title-->
                         <div class="row my-2">
+                            <!--spinner-->
                             <div class="col-xs-4">
                                 <div class="spinner">
                                 </div>
                             </div>
+                            <!--//spinner-->
+                            <!--text-->
                             <div class="col my-auto">
                                 <h5 class="text-center">Consultando precio del pedido...</h5>
                             </div>
+                            <!--//text-->
                         </div>
                     </div>
                 </div>
@@ -1389,11 +1706,13 @@
             <div class="col pb-3">
                 <div class="modal-content">
                     <div class="container px-5 my-4">
+                        <!--Title-->
                         <div class="row my-2">
                             <div class="mr-auto ">
-                                <h4 class="font-weight-bold">Solicitud Realizado</h4>
+                                <h4 class="font-weight-bold">Solicitud Realizada</h4>
                             </div>
                         </div>
+                        <!--//Title-->
                         <div class="row my-2">
                             <div class="col-xs-4 text-center">
                                 <div class="square-icon">
@@ -1401,11 +1720,12 @@
                                     <!--//icono-->
                                 </div>
                             </div>
+                            <!--text-->
                             <div class="col my-auto text-center">
                                 <h5>Su solicitud ha sido exitosamente realizada</h5>
                             </div>
+                            <!--//text-->
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -1423,32 +1743,43 @@
                 <div class="modal-content">
                     <div class="container px-5 my-4">
                         <div class="row my-3">
+                            <!--circle icon-->
                             <div class="circle max bg-printalo-greenDetail mx-auto">
                                 <div class="center">
                                     J
                                 </div>
                             </div>
+                            <!--//circle icon-->
                         </div>
+                        <!--nombre de usuario-->
                         <div class="row my-4">
                             <h4 class="font-weight-bold mx-auto">Juan Jose Fernandez</h4>
                         </div>
+                        <!--//nombre de usuario-->
+                        <!--telefono-->
                         <div class="text-center">
                             <p><span class="font-weight-bold">Telefono :</span>
                                 7777777</p>
                         </div>
+                        <!--//telefono-->
+                        <!--correo-->
                         <div class="text-center">
                             <p><span class="font-weight-bold">Correo :</span>
                                 juanjofer@gmail.com</p>
                         </div>
+                        <!--//correo-->
+                        <!--btn editar-->
                         <div class="row mx-auto my-2">
                             <a class="btn btn-block positive bg-printalo-greenDetail text-light" data-toggle="modal"
                                 data-target="#escogerLocal">Editar</a>
                         </div>
+                        <!--//btn editar-->
+                        <!--btn cerrar sesion-->
                         <div class="row mx-auto my-2">
                             <a class="btn btn-block negative bg-printalo-blueDetail text-light " data-dismiss="modal"
                                 data-target="#escogerLocal">Cerrar Sesion</a>
                         </div>
-
+                        <!--//btn cerrar sesion-->
                     </div>
                 </div>
             </div>
@@ -1457,12 +1788,7 @@
     </div>
     </div>
     <!--//perfiliconUsuario-->
-
-
-
-
-
-    <!--//Spinners Loaders and Junk-->
+    <!--//SPINNERS LOADERS JUNK CHECK-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -1472,131 +1798,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
         integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
-    <script src="../../../js/bootstrap.min.js"></script>
     <script>
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
     </script>
-    <script>
-        $(document).ready(function () {
-            $("#personal").click(function () {
-                $("#personaldiv:hidden").show('slow');
-                $("#tarjetadiv").hide();
-            });
-            $("#personal").click(function () {
-                if ($("#personal").prop('checked') === false) {
-                    $("#personaldiv").hide();
-                }
-            });
-            $("#tarjeta").click(function () {
-                $("#tarjetadiv:hidden").show('slow');
-                $("#personaldiv").hide();
-            });
-            $("#tarjeta").click(function () {
-                if ($("#tarjeta").prop('checked') === false) {
-                    $("#tarjetadiv").hide();
-                }
-            });
-        })
-
-    </script>
-    <script>
-            (function () {
-                'use strict';
-
-                function ctrls() {
-                    var _this = this;
-
-                    this.counter = 0;
-                    this.els = {
-                        decrement: document.querySelector('.ctrl__button--decrement'),
-                        counter: {
-                            container: document.querySelector('.ctrl__counter'),
-                            num: document.querySelector('.ctrl__counter-num'),
-                            input: document.querySelector('.ctrl__counter-input')
-                        },
-                        increment: document.querySelector('.ctrl__button--increment')
-                    };
-
-                    this.decrement = function () {
-                        var counter = _this.getCounter();
-                        var nextCounter = (_this.counter > 0) ? --counter : counter;
-                        _this.setCounter(nextCounter);
-                    };
-
-                    this.increment = function () {
-                        var counter = _this.getCounter();
-                        var nextCounter = (counter < 9999999999) ? ++counter : counter;
-                        _this.setCounter(nextCounter);
-                    };
-
-                    this.getCounter = function () {
-                        return _this.counter;
-                    };
-
-                    this.setCounter = function (nextCounter) {
-                        _this.counter = nextCounter;
-                    };
-
-                    this.debounce = function (callback) {
-                        setTimeout(callback, 100);
-                    };
-
-                    this.render = function (hideClassName, visibleClassName) {
-                        _this.els.counter.num.classList.add(hideClassName);
-
-                        setTimeout(function () {
-                            _this.els.counter.num.innerText = _this.getCounter();
-                            _this.els.counter.input.value = _this.getCounter();
-                            _this.els.counter.num.classList.add(visibleClassName);
-                        }, 100);
-
-                        setTimeout(function () {
-                            _this.els.counter.num.classList.remove(hideClassName);
-                            _this.els.counter.num.classList.remove(visibleClassName);
-                        }, 200);
-                    };
-
-                    this.ready = function () {
-                        _this.els.decrement.addEventListener('click', function () {
-                            _this.debounce(function () {
-                                _this.decrement();
-                                _this.render('is-decrement-hide', 'is-decrement-visible');
-                            });
-                        });
-
-                        _this.els.increment.addEventListener('click', function () {
-                            _this.debounce(function () {
-                                _this.increment();
-                                _this.render('is-increment-hide', 'is-increment-visible');
-                            });
-                        });
-
-                        _this.els.counter.input.addEventListener('input', function (e) {
-                            var parseValue = parseInt(e.target.value);
-                            if (!isNaN(parseValue) && parseValue >= 0) {
-                                _this.setCounter(parseValue);
-                                _this.render();
-                            }
-                        });
-
-                        _this.els.counter.input.addEventListener('focus', function (e) {
-                            _this.els.counter.container.classList.add('is-input');
-                        });
-
-                        _this.els.counter.input.addEventListener('blur', function (e) {
-                            _this.els.counter.container.classList.remove('is-input');
-                            _this.render();
-                        });
-                    };
-                };
-
-                // init
-                var controls = new ctrls();
-                document.addEventListener('DOMContentLoaded', controls.ready);
-            })();</script>
+    <script src="../../../js/designjs/radiobtn.js"></script>
+    <script src="../../../js/designjs/spinner.js"></script>
 </body>
-
 </html>

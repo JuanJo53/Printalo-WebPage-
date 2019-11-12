@@ -45,21 +45,6 @@ tbody tr td .btn.negative:hover {
   color: rgb(255, 255, 255) !important;
 }
 
-.circle {
-  float: right;
-  cursor: pointer;
-  display: block;
-  box-sizing: border-box;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  border-color: #24c4a6;
-  background-color: #24c4a6;
-  color: white;
-  text-align: center;
-  line-height: 50px;
-  position: relative;
-}
 
 .nopadding {
   padding: 0 !important;
@@ -177,7 +162,7 @@ tbody tr:hover {
 /* Create a custom radio button */
 .checkmark {
   position: absolute;
-  top: 0;
+  top: 2;/*size of radio button(complete) from top*/
   left: 0;
   height: 25px;
   width: 25px;

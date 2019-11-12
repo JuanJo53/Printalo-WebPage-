@@ -1,7 +1,4 @@
-body {
-  font-family: "Montserat";
-  overflow-x: hidden;
-}
+
 .navbar .nav-item {
   font-size: 1rem;
 }
@@ -33,9 +30,6 @@ body {
   text-decoration: none !important;
   color: white;
 }
-
-
-
 tbody tr td .btn.positive:hover {
   background-color: #30e2c2 !important;
   color: rgb(255, 255, 255) !important;
@@ -44,8 +38,6 @@ tbody tr td .btn.negative:hover {
   background-color: #253449 !important;
   color: rgb(255, 255, 255) !important;
 }
-
-
 .nopadding {
   padding: 0 !important;
   margin: 0 !important;

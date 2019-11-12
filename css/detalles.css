@@ -1,5 +1,10 @@
 body {
   font-family: "Montserat";
+  padding-right:0!important;
+  overflow-x: hidden;
+}
+label{
+  font-weight: normal!important;
 }
 .navbar .nav-item {
   font-size: 1rem;
@@ -51,5 +56,22 @@ body {
   vertical-align: middle;
 }
 
+/*time date pickers*/
+.timepicker .btn{
+  color: white!important;
+  background-color: #24c4a6!important;
+}
+.timepicker div {
+  color: #24c4a6!important;
+}
+.gj-timepicker .input-group-append,.gj-datepicker .input-group-append{
+  background-color: #24c4a6!important;
+}
+.gj-icon{
+  color: white!important;
+}
 
-
+.gj-timepicker .input-group-append button:hover,.gj-datepicker .input-group-append button:hover{
+  background-color: #30e2c2!important;
+}
+/*//time date pickers*/

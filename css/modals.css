@@ -1,3 +1,4 @@
+
 .close-icon {
     float: right;
     cursor: pointer;
@@ -39,8 +40,11 @@
   li {
     text-align: center;
   }
-  input[type="text"],input[type="password"],[type="number"], textarea{
+  input[type="text"],input[type="password"], textarea{
     background: #c3dee5;
+  }
+  .tarjeta-modal input[type="text"],input[type="password"], textarea{
+    background: #ffffff!important;
   }
 
   .form-control{

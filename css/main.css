@@ -116,65 +116,41 @@ a {
   text-align: center;
   width: 100%; }
 
-tr {
+.responsiveTbl table tr {
   background: #fff; }
-  tr:nth-child(2n) {
+  .responsiveTbl table tr:nth-child(2n) {
     background: #f2f2f2; }
-  tr:hover .msg {
+  .responsiveTbl table tr:hover .msg {
     opacity: 1;
     top: 0; }
 
-th,
+.responsiveTbl table th,
 td {
   padding: 15px 20px;
   vertical-align: middle; }
-  th:nth-child(2),
+  .responsiveTbl table th:nth-child(2),
   td:nth-child(2) {
     text-align: left; }
 
-th {
+.responsiveTbl table th {
   background: #364c68;
   color: #fff;
   font-weight: 500;
   text-transform: uppercase;
   padding: 25px 20px; }
 
-.price,
-.btnsass {
-  border: 1px solid #364c68;
-  border-radius: 25px;
-  display: inline-block;
-  vertical-align: top;
-  padding: 8px;
-  min-width: 100px;
-  text-align: center; }
-
-.btnsass {
-  border: none;
-  color: #fff;
-  background-color: #364c68;
-  -webkit-transition: -webkit-box-shadow 0.3s linear;
-  transition: -webkit-box-shadow 0.3s linear;
-  -o-transition: box-shadow 0.3s linear;
-  transition: box-shadow 0.3s linear;
-  transition: box-shadow 0.3s linear, -webkit-box-shadow 0.3s linear; }
-  .btnsass:hover {
-    -webkit-box-shadow: inset 0 0 0 25px #0a0f14;
-    box-shadow: inset 0 0 0 25px #0a0f14;
-    color: #fff; }
-
 @media only screen and (max-width: 767px) {
-  thead {
+  .responsiveTbl table thead {
     display: none; }
-  tr {
+  .responsiveTbl table tr {
     margin: 0 0 15px;
     display: block; }
-  td {
+  .responsiveTbl table td {
     display: block;
     text-align: left;
     padding: 10px 20px 10px 160px;
     position: relative; }
-    td:before {
+    .responsiveTbl table td:before {
       content: 'Tipo';
       font-weight: 500;
       position: absolute;
@@ -183,16 +159,19 @@ th {
       -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       transform: translateY(-50%); }
-    td:nth-of-type(2):before {
+    .responsiveTbl table td:nth-of-type(2):before {
       content: 'Nombre'; }
-    td:nth-of-type(3):before {
+    .responsiveTbl table td:nth-of-type(3):before {
       content: 'Solicitar'; }
-    td:nth-of-type(4):before {
-      content: 'Eliminar'; }
-  .price,
-  .btn {
-    border: none;
-    padding: 0;
-    min-width: 0;
-    color: #333;
-    background: none; } }
+    .responsiveTbl table td:nth-of-type(4):before {
+      content: 'Eliminar'; } }
+
+@media only screen and (max-width: 767px) {
+  table thead {
+    display: none; }
+  tr {
+    margin: 0 0 15px; }
+  td {
+    text-align: right;
+    padding: 5px 10px 5px 10px;
+    position: relative; } }

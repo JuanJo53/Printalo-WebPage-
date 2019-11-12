@@ -35,8 +35,7 @@
                 <!--//Link logo-->
             </div>
             <!--Profile Icon-->
-            <div class="navbar-item  order-lg-last   order-xs-last  mx-1" data-dismiss="modal" data-toggle="modal"
-                data-target="#perfiliconusuario">
+            <a href="../../acrosspages/perfiliconusuario.html" class="navbar-item  order-lg-last   order-xs-last  mx-1 icon-user">
                 <div class="d-inline circle bg-printalo-greenDetail">
                     <!--Initial letter-->
                     <div class="center">
@@ -44,7 +43,7 @@
                     </div>
                     <!--Initial letter-->
                 </div>
-            </div>
+            </a>
             <!--//Profile Icon-->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
@@ -132,18 +131,18 @@
             </div>
         </div>
         <!-- // -->
-    </div>
-    <!--float action button (+)-->
-    <div class="fab-container">
-        <div class="fab-icon-holder">
-            <a data-toggle="modal" data-target="#ingresarModal">
-                <!--Icon-->
-                <i class="fas fa-plus "></i>
-                <!--//Icon-->
-            </a>
+        <!--float action button (+)-->
+        <div class="fab-container">
+            <div class="fab-icon-holder">
+                <a data-toggle="modal" data-target="#ingresarModal">
+                    <!--Icon-->
+                    <i class="fas fa-plus "></i>
+                    <!--//Icon-->
+                </a>
+            </div>
         </div>
+        <!--//float action button (+)-->
     </div>
-    <!--//float action button (+)-->
     <!--Modal Subir Documento (+)-->
     <div class="modal fade text-dark" id="ingresarModal">
         <div class="modal-dialog mini modal-md">
@@ -1722,62 +1721,17 @@
             <!--Content Modal-->
             <div class="col pb-3">
                 <div class="modal-content">
-                    <div class="container px-5 my-4">
-                        <div class="row my-3">
-                            <!--circle icon-->
-                            <div class="circle max bg-printalo-greenDetail mx-auto">
-                                <div class="center">
-                                    J
-                                </div>
-                            </div>
-                            <!--//circle icon-->
-                        </div>
-                        <!--nombre de usuario-->
-                        <div class="row my-4">
-                            <h4 class="font-weight-bold mx-auto">Juan Jose Fernandez</h4>
-                        </div>
-                        <!--//nombre de usuario-->
-                        <!--telefono-->
-                        <div class="text-center">
-                            <p><span class="font-weight-bold">Telefono :</span>
-                                7777777</p>
-                        </div>
-                        <!--//telefono-->
-                        <!--correo-->
-                        <div class="text-center">
-                            <p><span class="font-weight-bold">Correo :</span>
-                                juanjofer@gmail.com</p>
-                        </div>
-                        <!--//correo-->
-                        <!--btn editar-->
-                        <div class="row mx-auto my-2">
-                            <a class="btn btn-block positive bg-printalo-greenDetail text-light" data-toggle="modal"
-                                data-target="#escogerLocal">Editar</a>
-                        </div>
-                        <!--//btn editar-->
-                        <!--btn cerrar sesion-->
-                        <div class="row mx-auto my-2">
-                            <a class="btn btn-block negative bg-printalo-blueDetail text-light " data-dismiss="modal"
-                                data-target="#escogerLocal">Cerrar Sesion</a>
-                        </div>
-                        <!--//btn cerrar sesion-->
-                    </div>
                 </div>
             </div>
         </div>
         <!--Content Modal-->
     </div>
-    </div>
     <!--//perfiliconUsuario-->
     <!--//SPINNERS LOADERS JUNK CHECK-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <script src="../../../js/designjs/radiobtn.js"></script>
@@ -1790,6 +1744,12 @@
     <script>
         $('#timepicker').timepicker({
             uiLibrary: 'bootstrap4'
+        });
+    </script>
+    <script>
+        $('.icon-user').on('click',function(e){
+            e.preventDefault();
+            $('#perfiliconusuario').modal('show').find('.modal-content').load($(this).attr('href'));
         });
     </script>
 </body>

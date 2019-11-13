@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +59,7 @@
                     <!--Btn Ir a seccion de Usuarios-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
-                            href="../usuarioIndex/indexUser.html">Usuarios</a>
+                            href="../usuario/indexUser.html">Usuarios</a>
                     </li>
                 </ul>
             </div>
@@ -78,6 +79,8 @@
             </div>
         </section>
         <!--Section 1-->
+
+        <!--Section 2-->
 
         <section id="posibilidadesUsuarios" class="my-4 p-4">
             <div class="container">
@@ -186,26 +189,24 @@
                                     <!--//-->
                                     <!--email-->
                                     <label for="name">E-mail:</label>
-                                    <input id="txtEmailIng" type="text" class="form-control" >
+                                    <input type="text" class="form-control" id="txtEmailIng">
                                     <!--//-->
                                     <!--contrasenia-->
                                     <label for="name">Constraseña:</label>
-                                    <input id="txtPasswordIng" type="password" class="form-control" >
-                                    <!--//-->
-                                </div>
-                                <div class="modalbutton text-center py-3">
-                                    <!--Btn Ingresar Negocios-->
-                                    <button onclick="login()" class="btn btn-outline-light bg-printalo-button text-light">Ingresar</button>
-                                    <!--//-->
-                                    <br>
-                                    <br>
-                                    <!--Link Registrarse-->
-                                    <a href="" class="text-center"><u
-                                            class="color-printalo-blueDetail">Registrarse</u></a>
+                                    <input type="password" class="form-control" id="txtPasswordIng">
                                     <!--//-->
                                 </div>
                             </form>
-
+                            <div class="modalbutton text-center py-3">
+                                <!--Btn Ingresar Negocios-->
+                                <button id="btnIngresarNeg" class="btn btn-outline-light bg-printalo-button text-light">Ingresar</button>
+                                <!--//-->
+                                <br>
+                                <br>
+                                <!--Link Registrarse-->
+                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
+                                <!--//-->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -256,19 +257,17 @@
                                     <input type="password" class="form-control" id="txtPasswordReg">
                                     <!--//-->
                                 </div>
-                                <div class="modalbutton text-center py-3">
-                                    <!--Btn Registrar Negocios-->
-                                    <button id="btnRegistrarNegocio"
-                                        class="btn btn-outline-light bg-printalo-button text-light">Registrar</button>
-                                    <!--//-->
-                                    <br>
-                                    <br>
-                                    <!--Link Ir a ingresar-->
-                                    <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
-                                    <!--//-->
-                                </div>
                             </form>
-
+                            <div class="modalbutton text-center py-3">
+                                <!--Btn Registrar Negocios-->
+                                <button id="btnRegistrarNegocio" class="btn btn-outline-light bg-printalo-button text-light">Registrar</button>
+                                <!--//-->
+                                <br>
+                                <br>
+                                <!--Link Ir a ingresar-->
+                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
+                                <!--//-->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -290,28 +289,29 @@
         </div>
     </div>
     <!--Fin de Modals-->
-
+    
     <script src="../../../js/bootstrap.min.js"></script>
     <script>
         $('#year').text(new Date().getFullYear());
     </script>
-
+   
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
 
     <!-- Para uso de Analytics -->
     <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
 
     <!-- Para Authentication y Firestore -->
-    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+    
     <!-- Configuracion de Proyecto en Firebase -->
-    <script src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
- 
+    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
+    
     <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
-    <script src="../../../js/MainIndexNeg.js"></script>
-
+    <script type="text/javascript" src="../../../js/Negocios.js"></script>
+    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
+    
 </body>
 
 </html>

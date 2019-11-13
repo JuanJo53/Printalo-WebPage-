@@ -38,3 +38,45 @@ $(document).ready(function () {
         }
     });
 });
+
+$(document).ready(function () {
+    $("#rangos").click(function () {
+        $("#rangodiv").show('slow');
+        $("#preciounicodiv").hide();
+    });
+    $("#rangos").click(function () {
+        if ($("#rangos").prop('checked') === false) {
+            $("#rangodiv").hide();
+        }
+    });
+    $("#preciounico").click(function () {
+        $("#preciounicodiv").show('slow');
+        $("#rangodiv").hide();
+    });
+    $("#preciounico").click(function () {
+        if ($("#preciounico").prop('checked') === false) {
+            $("#preciounicodiv").hide();
+        }
+    });
+});
+
+$(document).ready(function () {
+    $("#rangosColor").click(function () {
+        $("#rangodivcolor").show('slow');
+        $("#preciounicodivcolor").hide();
+    });
+    $("#rangosColor").click(function () {
+        if ($("#rangosColor").prop('checked') === false) {
+            $("#rangodivcolor").hide();
+        }
+    });
+    $("#preciounicoColor").click(function () {
+        $("#preciounicodivcolor").show('slow');
+        $("#rangodivcolor").hide();
+    });
+    $("#preciounicoColor").click(function () {
+        if ($("#preciounicocolor").prop('checked') === false) {
+            $("#preciounicodivcolor").hide();
+        }
+    });
+});

@@ -1,5 +1,5 @@
 //NO TOCAR ESTOS ARCHIVOS SE REQUIEREN MODIFICACIONES DEBIDO A CAMBIOS EN ARCHIVOS DE FRONTEND
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyAEFS51wASyzXFPRgosvru8FHm-zvaMzAI",
     authDomain: "printalo-ef2bc.firebaseapp.com",
     databaseURL: "https://printalo-ef2bc.firebaseio.com",

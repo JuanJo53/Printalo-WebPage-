@@ -1,6 +1,6 @@
 class Auth{
     crearCuentaEmailPass(email,password){
-        alert("email: "+email+" pass: "+password);
+        alert("email:"+email+" pass: "+password);
         firebase.auth().createUserWithEmailAndPassword(email,password)
         .catch(function(error){
             var errorCode = error.code;
@@ -9,16 +9,17 @@ class Auth{
         });
     }
     LoginEmailPass(email,password){
+        alert("email:"+email+" pass: "+password);
         firebase.auth().signInWithEmailAndPassword(email, password)
         .catch(function(error) {
             var errorCode = error.code;
             var errorMessage = error.message;
             alert(errorMessage);
-          });
+          });       
     }
 
     Logout(){
-        //Copiar des de aqui
+        //Copiar desde aqui
         firebase.auth().signOut()
         .then(function(){
             console.log("Salir");
@@ -27,6 +28,6 @@ class Auth{
             console.log(error);
         }) //Hasta aqui para desloguearse 
     }
-    //TODO: Programar la verificacion de las cuentas nuevas
 
+    //TODO: Programar la verificacion de las cuentas nuevas
 }

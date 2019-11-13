@@ -155,54 +155,54 @@
             </div>
         </div>
     </footer>
-    <!--ingresar Modal-->
-    <div class="modal fade text-dark" id="ingresarModal">
-        <div class="modal-dialog modal-lg">
-            <div class="row py-3">
-                <div class="col-lg-6 nopadding d-none d-lg-block ">
-                    <div class="modal-content bg-printalo-blueDetail">
-                        <div class="container center">
-                            <div class="modal-body">
-                                <div class="text-center">
-                                    <img width="100" height="100" src="../../../img/printer.png" alt=""
-                                        class="img-fluid ">
-                                </div>
-                                <h3 class="text-center text-light">Printalo</h3>
+   <!--ingresar Modal-->
+   <div class="modal fade text-dark" id="ingresarModal">
+    <div class="modal-dialog modal-lg">
+        <div class="row py-3">
+            <div class="col-lg-6 nopadding d-none d-lg-block ">
+                <div class="modal-content bg-printalo-blueDetail">
+                    <div class="container center">
+                        <div class="modal-body">
+                            <div class="text-center">
+                                <img width="100" height="100" src="../../../img/printer.png" alt=""
+                                    class="img-fluid ">
                             </div>
+                            <h3 class="text-center text-light">Printalo</h3>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 nopadding">
-                    <div class="modal-content">
-                        <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
-                        <div class="container">
-                            <h2 class="text-center">Ingreso</h2>
-                            <form action="" class="p-5">
-                                <div class="form-group">
-                                    <label for="name">E-mail:</label>
-                                    <input type="text" class="form-control">
+            </div>
+            <div class="col-lg-6 nopadding">
+                <div class="modal-content">
+                    <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
+                    <div class="container">
+                        <h2 class="text-center">Ingreso</h2>
+                        <form action="" class="p-5">
+                            <div class="form-group">
+                                <label for="name">E-mail:</label>
+                                    <input type="text" class="form-control" id="txtEmailUser">
                                     <label for="name">Constraseña:</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" id="txtPassUser">
                                 </div>
                                 <div class="modalbutton text-center py-3">
                                     <!--btn ingresar usuario normal-->
-                                    <a class="btn btn-outline-light bg-printalo-button text-light"
-                                        href="../../usuarioUI/inicioUsuario.html">Ingresar</a>
+                                    <button id="btbIngresarUser"
+                                        class="btn btn-outline-light bg-printalo-button text-light">Ingresar</button>
                                     <!--//-->
                                     <br>
                                     <br>
                                     <a href="" class="text-center"><u
                                             class="color-printalo-blueDetail">Registrarse</u></a>
+
                                 </div>
                             </form>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <!--Registrarse Modal-->
     <div class="modal fade text-dark" id="registrarseModal">
@@ -218,19 +218,20 @@
                             <form action="" class="p-5">
                                 <div class="form-group">
                                     <label for="username">Nombre:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtName">
                                     <label for="username">Apellido:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtLastName">
                                     <label for="username">Numero de telefono:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtNum">
                                     <label for="name">E-mail:</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="txtEmail">
                                     <label for="password">Constraseña:</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" id="txtPass">
                                 </div>
                                 <div class="modalbutton text-center py-3">
                                     <!--btn ingresar usuario normal-->
-                                    <a class="btn btn-outline-light bg-printalo-button text-light">Registrar</a>
+                                    <button id="btnRegistrarUser"
+                                        class="btn btn-outline-light bg-printalo-button text-light">Registrar</button>
                                     <!--//-->
                                     <br>
                                     <br>
@@ -256,7 +257,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+         </div>
     </div>
     <!--Fin modals-->
 
@@ -267,6 +268,26 @@
     <script>
         $('#year').text(new Date().getFullYear());
     </script>
+    
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+    <!-- Para uso de Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+    <!-- Para Authentication y Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+
+    <!-- Configuracion de Proyecto en Firebase -->
+    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
+    <script>
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script> 
+    <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
+    <script type="text/javascript" src="../../../js/Clientes.js"></script>
+    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
 </body>
 
 </html>

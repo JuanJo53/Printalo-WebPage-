@@ -1,52 +1,46 @@
-/*class Negocio{
+class Negocio{
+    constructor(nombreDueño, apellidoDueño, nombreNeg, dir, num, email , pass){
+        this.nombreDueño = nombreDueño;
+        this.apellidoDueño = apellidoDueño;
+        this.nombreNeg = nombreNeg;
+        this.dir = dir;
+        this.num = num;
+        this.email = email;
+        this.pass = pass;
+    }    
 
-}*/
-// Evento de Boton Registrar
-var Registrar = document.getElementById("btnRegistrarNegocio");
-Registrar.addEventListener("click", RegistrarNeg);
-// Evento de Boton Ingresar
-var Ingresar = document.getElementById("btnIngresarNeg");
-Ingresar.addEventListener("click", IngresarNeg);
+    RegistrarNeg(){
+        var auth = new Auth();
+        auth.crearCuentaEmailPass(`${this.email}`, `${this.pass}`);  
+        ValidarNeg();
+    }
 
-function RegistrarNeg(){
-    var nombreDueño = document.getElementById("txtNameReg").value;
-    var apellidoDueño = document.getElementById("txtLastNameReg").value;
-    var nombreNeg = document.getElementById("txtNegNameReg").value;
-    var dir = document.getElementById("txtDirReg").value;
-    var num = document.getElementById("txtNumReg").value;
-    var email = document.getElementById("txtEmailReg").value;
-    var pass = document.getElementById("txtPasswordReg").value;
-    const auth = new Auth();
-    auth.crearCuentaEmailPass(email,pass,nombreNeg);  
-    ValidarNeg();
+    IngresarNeg(){
+        var mail = this.email;
+        var password = this.pass;
+        var auth = new Auth();
+        auth.LoginEmailPass(mail, password);
+        ValidarNeg();
+    }
 }
-
-function IngresarNeg(){
-    var nombreNeg = document.getElementById("txtNameIng").value;
-    var email = document.getElementById("txtEmailIng").value;
-    var pass = document.getElementById("txtPasswordIng").value;
-    const auth = new Auth();
-    auth.LoginEmailPass(email,pass,nombreNeg);
-    ValidarNeg();
-}
-
 function ValidarNeg(){
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            // User is signed in.
-            var displayName = user.displayName;
-            var email = user.email;
-            var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
-            var isAnonymous = user.isAnonymous;
-            var uid = user.uid;
-            var providerData = user.providerData;
-            console.log("Logeado");
-            console.log(user);
-            location.href="/html/negocioUI/pedidosNeg/pedPendientes.html";
-        } else {    
-            // User is not signed in.
-            console.log("No Logeado");
-        }
-      });
+    firebase.auth().onAuthStateChanged(function (user){
+    if (user) {
+        // User is signed in.
+        var displayName = user.displayName;
+        var email = user.email;
+        var emailVerified = user.emailVerified;
+        var photoURL = user.photoURL;
+        var isAnonymous = user.isAnonymous;
+        var uid = user.uid;
+        var providerData = user.providerData;
+        alert("Logeado");
+        console.log("user: "+firebase.auth().currentUser);
+        location.href="/html/negocioUI/pedidosNeg/pedPendientes.html";            
+    } else {    
+        // User is not signed in.
+        console.log("user: "+firebase.auth().currentUser);
+        alert("No Logeado");
+    }
+});
 }

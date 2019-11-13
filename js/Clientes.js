@@ -16,18 +16,18 @@ function RegistrarCli(){
     var pass = document.getElementById("txtPass").value;
     const auth = new Auth();
     auth.crearCuentaEmailPass(email,pass);
-    ValidarNeg();
+    ValidarCli();
 }
 
 function IngresarCli(){
     var email = document.getElementById("txtEmailUser").value;
     var pass = document.getElementById("txtPassUser").value;
-    const auth = new Auth();
+    var auth = new Auth();
     auth.LoginEmailPass(email,pass);
-    ValidarNeg();
+    ValidarCli();
 }
 
-function ValidarNeg(){
+function ValidarCli(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
@@ -38,14 +38,11 @@ function ValidarNeg(){
             var isAnonymous = user.isAnonymous;
             var uid = user.uid;
             var providerData = user.providerData;
-            console.log("Logeado");
-            console.log(user);
-            return (true);            
+            console.log("Logeado"); 
+            location.href="/html/usuarioUI/documentosCli/porEnviar.html"
         } else {
             // User is not signed in.
             console.log("No Logeado");
-            return (false);
         }
-        
       });
 }

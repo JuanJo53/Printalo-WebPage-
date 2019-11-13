@@ -12,35 +12,34 @@ class Negocio{
     RegistrarNeg(){
         var auth = new Auth();
         auth.crearCuentaEmailPass(`${this.email}`, `${this.pass}`);  
-        ValidarNeg();
+        this.ValidarNeg();
     }
 
     IngresarNeg(){
-        var mail = this.email;
-        var password = this.pass;
-        var auth = new Auth();
-        auth.LoginEmailPass(mail, password);
-        ValidarNeg();
+        const auth = new Auth();
+        auth.LoginEmailPass(`${this.email}`, `${this.pass}`);
+        this.ValidarNeg();  
     }
-}
-function ValidarNeg(){
-    firebase.auth().onAuthStateChanged(function (user){
-    if (user) {
-        // User is signed in.
-        var displayName = user.displayName;
-        var email = user.email;
-        var emailVerified = user.emailVerified;
-        var photoURL = user.photoURL;
-        var isAnonymous = user.isAnonymous;
-        var uid = user.uid;
-        var providerData = user.providerData;
-        alert("Logeado");
-        console.log("user: "+firebase.auth().currentUser);
-        location.href="/html/negocioUI/pedidosNeg/pedPendientes.html";            
-    } else {    
-        // User is not signed in.
-        console.log("user: "+firebase.auth().currentUser);
-        alert("No Logeado");
+    
+    ValidarNeg(){
+        firebase.auth().onAuthStateChanged(firebaseUser=>{
+        if (firebaseUser) {
+            // User is signed in.
+            var displayName = firebaseUser.displayName;
+            var email = firebaseUser.email;
+            var emailVerified = firebaseUser.emailVerified;
+            var photoURL = firebaseUser.photoURL;
+            var isAnonymous = firebaseUser.isAnonymous;
+            var uid = firebaseUser.uid;
+            var providerData = firebaseUser.providerData;
+            alert("Logeado");
+            console.log("user: "+firebase.auth().currentUser);
+            location.href="/html/negocioUI/pedidosNeg/pedPendientes.html";            
+        } else {    
+            // User is not signed in.
+            console.log("user: "+firebase.auth().currentUser);
+            alert("No Logeado");
+        }
+        });
     }
-});
 }

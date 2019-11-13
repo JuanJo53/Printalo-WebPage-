@@ -5,7 +5,7 @@ class Auth{
         .catch(function(error){
             var errorCode = error.code;
             var errorMessage = error.message;
-            alert(errorMessage);
+            alert(errorMessage)
         });
     }
     LoginEmailPass(email,password){
@@ -14,7 +14,7 @@ class Auth{
         .catch(function(error) {
             var errorCode = error.code;
             var errorMessage = error.message;
-            alert(errorMessage);
+            alert(errorMessage)
           });       
     }
 

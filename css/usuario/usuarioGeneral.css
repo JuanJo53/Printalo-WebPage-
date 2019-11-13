@@ -1,7 +1,4 @@
-body {
-  font-family: "Montserat";
-  overflow-x: hidden;
-}
+
 .navbar .nav-item {
   font-size: 1rem;
 }
@@ -33,19 +30,6 @@ body {
   text-decoration: none !important;
   color: white;
 }
-
-.modal-dialog {
-  padding-top: 10%;
-}
-.modalbuttonalert .btn.positive:hover {
-  background-color: #30e2c2 !important;
-  color: rgb(255, 255, 255) !important;
-}
-.modalbuttonalert .btn.negative:hover {
-  background-color: #253449 !important;
-  color: rgb(255, 255, 255) !important;
-}
-
 tbody tr td .btn.positive:hover {
   background-color: #30e2c2 !important;
   color: rgb(255, 255, 255) !important;
@@ -54,23 +38,6 @@ tbody tr td .btn.negative:hover {
   background-color: #253449 !important;
   color: rgb(255, 255, 255) !important;
 }
-
-.circle {
-  float: right;
-  cursor: pointer;
-  display: block;
-  box-sizing: border-box;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  border-color: #24c4a6;
-  background-color: #24c4a6;
-  color: white;
-  text-align: center;
-  line-height: 50px;
-  position: relative;
-}
-
 .nopadding {
   padding: 0 !important;
   margin: 0 !important;
@@ -151,14 +118,7 @@ tbody tr:hover {
 .card.negocioIcon .card-footer {
   background: #24c4a6;
 }
-.modal-content .container a.btn.negative:hover {
-  background-color: #253449 !important;
-  color: rgb(255, 255, 255) !important;
-}
-.modal-content .container a.btn.positive:hover {
-  background-color: #30e2c2 !important;
-  color: rgb(255, 255, 255) !important;
-}
+
 .row-sub {
   background: #364c68;
   width: 100%;
@@ -174,7 +134,7 @@ tbody tr:hover {
   padding-left: 35px;
   margin-bottom: 10px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -194,13 +154,19 @@ tbody tr:hover {
 /* Create a custom radio button */
 .checkmark {
   position: absolute;
-  top: 0;
+  top: 2;/*size of radio button(complete) from top*/
   left: 0;
   height: 25px;
   width: 25px;
   background-color: #eee;
   border-radius: 50%;
 }
+
+/*radio button disabled*/
+.radiobuttons input:checked[disabled] ~ .checkmark {
+  background-color: #b8e9e0;
+}
+
 
 /* On mouse-over, add a grey background color */
 .radiobuttons:hover abel input ~ .checkmark {
@@ -436,4 +402,42 @@ increment-next {  from {
 /*////input number*/
 .block-typenumber{
   display: inline-block;
+}
+
+/*Allows modals to go from one to another*/
+.modal { overflow-y: auto }
+
+.fab-icon-holder-square {
+  width: 40px;
+  height:38px;
+  border-radius: 20%;
+  background: #24c4a6;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  padding: none;
+}
+.fab-icon-holder-square a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-style: 25px;
+  color: #ffffff;
+}
+
+/*Permite que no mostrar spinner cuando type=number*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+  -moz-appearance:textfield; /* Firefox */
+}
+/*//Permite que no mostrar spinner cuando type=number*/
+ 
+/*disabledButton*/
+.disabledButton{
+  background-color: #b8e9e0!important;
 }

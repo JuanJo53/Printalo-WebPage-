@@ -9,7 +9,7 @@
   width: 100%;
 }
 
-tr {
+.responsiveTbl table tr {
   background: $white;
   &:nth-child(2n) {
     background: darken($white, 5%);
@@ -22,7 +22,7 @@ tr {
   }
 }
 
-th,
+.responsiveTbl table th,
 td {
   padding: 15px 20px;
   vertical-align: middle;
@@ -31,7 +31,7 @@ td {
   }
 }
 
-th {
+.responsiveTbl table th {
   background: $primary-color;
   color: $white;
   font-weight: 500;
@@ -39,39 +39,19 @@ th {
   padding: 25px 20px;
 }
 
-.price,
-.btnsass {
-  border: 1px solid $primary-color;
-  border-radius: 25px;
-  display: inline-block;
-  vertical-align: top;
-  padding: 8px;
-  min-width: 100px;
-  text-align: center;
-}
 
-.btnsass {
-  border: none;
-  color: $white;
-  background-color: $primary-color;
-  transition: box-shadow 0.3s linear;
-  &:hover {
-    box-shadow: inset 0 0 0 25px darken($primary-color, 25%);
-    color: $white;
-  }
-}
 
 @media only screen and (max-width: 767px) {
-  thead {
+  .responsiveTbl table thead {
    display: none;
   }
  
-  tr {
+  .responsiveTbl table tr {
    margin: 0 0 15px;
    display: block;
   }
  
-  td {
+  .responsiveTbl table td {
    display: block;
    text-align: left;
    padding: 10px 20px 10px 160px;
@@ -104,14 +84,17 @@ th {
     }
    }
   }
- 
-  .price,
-  .btn {
-   border: none;
-   padding: 0;
-   min-width: 0;
-   color: $black;
-   background: none;
-  }
  }
-
+ @media only screen and (max-width: 767px) {
+  table thead {
+   display: none;
+  }
+  tr {
+   margin: 0 0 15px;
+  }
+  td {
+   text-align: right;
+   padding: 5px 10px 5px 10px;
+   position: relative;
+  }
+}

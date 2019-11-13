@@ -1,3 +1,4 @@
+
 .close-icon {
     float: right;
     cursor: pointer;
@@ -42,6 +43,9 @@
   input[type="text"],input[type="password"], textarea{
     background: #c3dee5;
   }
+  .tarjeta-modal input[type="text"],input[type="password"], textarea{
+    background: #ffffff!important;
+  }
 
   .form-control{
     background: #c3dee5;
@@ -55,3 +59,74 @@
     border-radius: 0px !important;
     border: 0px !important;
   }
+  .modalbutton a:hover {
+    color: #24c4a6 !important;
+  }
+  .modalbutton a u:hover {
+    color: #24c4a6 !important;
+  }
+
+  .modalbuttonalert .btn.positive:hover {
+    background-color: #30e2c2 !important;
+    color: rgb(255, 255, 255) !important;
+  }
+  .modalbuttonalert .btn.negative:hover {
+    background-color: #253449 !important;
+    color: rgb(255, 255, 255) !important;
+  }
+
+  .modal-content .container a.btn.negative:hover {
+    background-color: #253449 !important;
+    color: rgb(255, 255, 255) !important;
+  }
+  .modal-content .container a.btn.positive:hover {
+    background-color: #30e2c2 !important;
+    color: rgb(255, 255, 255) !important;
+  }
+/*SPINNER LOEADER JUNK*/
+.spinner{
+  border-radius: 50%;
+  /*background-color:#eee;*/
+  width: 70px;
+  height:70px;
+  border:5px solid lightgray;
+  border-top-color:#24c4a6;
+  animation: spinner 0.7s linear infinite;
+}
+@keyframes spinner{
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+
+.modal-content{
+  border-radius: 1rem!important;
+}
+.modal-dialog {
+  padding-top: 1%;
+
+}
+/*SPINNER LOEADER JUNK*/
+.spinner{
+  border-radius: 50%;
+  /*background-color:#eee;*/
+  width: 70px;
+  height:70px;
+  border:5px solid lightgray;
+  border-top-color:#24c4a6;
+  animation: spinner 0.7s linear infinite;
+}
+@keyframes spinner{
+  to{
+    transform: rotate(360deg);
+  }
+}
+.modal-dialog.mini {
+  padding-top: 13rem;/*margin top of small modals*/
+}
+.square-icon{
+  /*background-color:#eee;*/
+  width: 80px;
+  height:70px;
+}

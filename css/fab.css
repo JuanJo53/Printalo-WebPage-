@@ -23,3 +23,36 @@
     font-style: 25px;
     color:#ffffff;
 }
+
+.circle {
+    float: right;
+    cursor: pointer;
+    display: block;
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border-color: #24c4a6;
+    background-color: #24c4a6;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    position: relative;
+  }
+
+  .circle.max{
+    float: right;
+    cursor: pointer;
+    display: block;
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    border-color: #24c4a6;
+    background-color: #24c4a6;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    position: relative;
+  }
+  

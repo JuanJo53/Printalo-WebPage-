@@ -1,0 +1,100 @@
+@import "variable";
+@import "mixins";
+@import "reset";
+@import "typography";
+
+/* responsive table */
+.responsiveTbl table {
+  text-align: center;
+  width: 100%;
+}
+
+.responsiveTbl table tr {
+  background: $white;
+  &:nth-child(2n) {
+    background: darken($white, 5%);
+  }
+  &:hover {
+    .msg {
+      opacity: 1;
+      top: 0;
+    }
+  }
+}
+
+.responsiveTbl table th,
+td {
+  padding: 15px 20px;
+  vertical-align: middle;
+  &:nth-child(2) {
+    text-align: left;
+  }
+}
+
+.responsiveTbl table th {
+  background: $primary-color;
+  color: $white;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 25px 20px;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+  .responsiveTbl table thead {
+   display: none;
+  }
+ 
+  .responsiveTbl table tr {
+   margin: 0 0 15px;
+   display: block;
+  }
+ 
+  .responsiveTbl table td {
+   display: block;
+   text-align: left;
+   padding: 10px 20px 10px 160px;
+   position: relative;
+ 
+   &:before {
+    content: 'Tipo';
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+   }
+ 
+   &:nth-of-type(2) {
+    &:before {
+     content: 'Nombre';
+    }
+   }
+ 
+   &:nth-of-type(3) {
+    &:before {
+     content: 'Detalles';
+    }
+   }
+ 
+   &:nth-of-type(4) {
+    &:before {
+     content: 'Eliminar';
+    }
+   }
+  }
+ }
+ @media only screen and (max-width: 767px) {
+  table thead {
+   display: none;
+  }
+  tr {
+   margin: 0 0 15px;
+  }
+  td {
+   text-align: right;
+   padding: 5px 10px 5px 10px;
+   position: relative;
+  }
+}

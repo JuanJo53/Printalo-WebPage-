@@ -59,7 +59,7 @@ li {
   text-align: center;
 }
 tbody tr:hover {
-  background-color: #b9eee5;
+  background-color: #b9eee5!important;
 }
 .section-border {
   position: relative;

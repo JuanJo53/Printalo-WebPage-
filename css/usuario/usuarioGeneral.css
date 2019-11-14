@@ -441,3 +441,9 @@ input[type=number] {
 .disabledButton{
   background-color: #b8e9e0!important;
 }
+.notification .title.accepted{
+  color:#24c4a6;
+}
+.notification .title.denied{
+  color:#364c68;
+}

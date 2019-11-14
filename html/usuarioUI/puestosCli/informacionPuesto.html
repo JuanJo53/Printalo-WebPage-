@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML,CSS,bootstrap">
+    <meta name="author" content="Colque Herrera Ariel">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="../../../css/modals.css">
+    <link rel="stylesheet" href="../../../css/tablehorarios.css">
+    <link rel="stylesheet" href="../../../css/detalles.css">
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/usuario/usuarioGeneral.css">
+    <link rel="stylesheet" href="../../../css/fab.css">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <title>Lista de Negocio</title>
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark py-1">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span></button>
+                <!--Link logo-->
+                <a class="navbar-brand mx-1" href="#home">
+                    <img width="60" height="60" src="../../../img/printer.png" alt="">
+                    <!--Titulo Logo-->
+                    <h5 class="d-inline align-middle mx-1 text-light">Printalo Usuarios</h5>
+                    <!--Titulo Logo-->
+                </a>
+                <!--//Link logo-->
+            </div>
+            <!--Profile Icon-->
+            <a href="../../acrosspages/perfiliconusuario.html"
+                class="navbar-item  order-lg-last   order-xs-last  mx-1 icon-user">
+                <div class="d-inline circle bg-printalo-greenDetail">
+                    <!--Initial letter-->
+                    <div class="center">
+                        J
+                    </div>
+                    <!--Initial letter-->
+                </div>
+            </a>
+            <!--//Profile Icon-->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <!--Link Documentos-->
+                    <li class="nav-item">
+                        <a href="../documentosCli/porEnviar.html" class="nav-link text-light ">Documentos</a>
+                    </li>
+                    <!--//Link Documentos-->
+                    <!--Link Puestos-->
+                    <li class="nav-item">
+                        <a href="../puestosCli/verPuestos.html" class="nav-link text-light active">Puestos</a>
+                    </li>
+                    <!--//Link Puestos-->
+                    <!--Link Notificaciones-->
+                    <li class="nav-item">
+                        <a href="../notificacionesCli/verNotificaciones.html"
+                            class="nav-link text-light ">Notificaciones</a>
+                    </li>
+                    <!--//Link Notificaciones-->
+                    <!--Link Configuraciones-->
+                    <li class="nav-item">
+                        <a href="../configuracionesCli/confPerfil.html" class="nav-link text-light ">Configuraciones</a>
+                    </li>
+                    <!--//Link Configuraciones-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--//Navbar-->
+    <!--Sub Navbar usuarios-->
+    <ul class="nav nav-pills nav-justified bg-printalo-greenDetail">
+        <!--Navbar Link listas-->
+        <li class="nav-item"><a class="nav-link " href="listasPuesto.html">Listas</a></li>
+        <!--//-->
+        <!--Navbar Link informacion-->
+        <li class="nav-item"><a class="nav-link active" href="informacionPuesto.html">Informacion</a></li>
+        <!--//-->
+    </ul>
+    <!--//Sub Navbar usuarios-->
+    <div class="container">
+        <!--title page-->
+        <h2 class="my-3">Informacion de PCS</h2>
+        <!--//title page-->
+        <!--row-->
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <!--contacto section-->
+                <section class="my-3 py-3 section-border">
+                    <!--title wrapper-->
+                    <div class="text-center">
+                        <h4>Contactos</h4>
+                    </div>
+                    <!--//title wrapper-->
+                    <!--Content info-->
+                    <div class="col pb-3">
+                        <div class="modal-content">
+                            <div class="container px-3">
+                                <!--subrow-->
+                                <div class="row-sub my-2">
+                                </div>
+                                <!--//subrow-->
+                                <div class="text-center">
+                                    <!--details-->
+                                    <p><span class="font-weight-bold">Calle : </span>Calle 2 de obrajes</p>
+                                    <p><span class="font-weight-bold">Telefono : </span> 2222222</p>
+                                    <!--details-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//Content info-->
+                </section>
+                <!--contacto section-->
+                <!--horarios section-->
+                <section class="my-3 py-3 section-border">
+                    <!--title wrapper-->
+                    <div class="text-center">
+                        <h4>Horarios de Atencion</h4>
+                    </div>
+                    <!--//title wrapper-->
+                    <!--Content info-->
+                    <div class="col pb-3">
+                        <div class="modal-content">
+                            <div class="container px-3">
+                                <!--subrow-->
+                                <div class="row-sub my-2">
+                                </div>
+                                <!--//subrow-->
+                                <div class="responsiveTbl">
+                                    <!--start table-->
+                                    <table>
+                                        <!--column's titles-->
+                                        <thead>
+                                            <tr>
+                                                <!--th 1-->
+                                                <th class="text-center">Dia</th>
+                                                <!--th 2-->
+                                                <th class="text-center">Entrada</th>
+                                                <!--th 3-->
+                                                <th class="text-center">Salida</th>
+                                            </tr>
+                                        </thead>
+                                        <!--//column's titles-->
+                                        <tbody>
+                                            <!--Row-->
+                                            <tr>
+                                                <!--Icono-->
+                                                <td class="text-center">Lunes</td>
+                                                <!--//-->
+                                                <td class="text-center">8:00</td>
+                                                <!--Btn Solicitar-->
+                                                <td class="text-center">21:00</td>
+                                                <!--//-->
+                                            </tr>
+                                            <!--//Row-->
+                                        </tbody>
+                                    </table>
+                                    <!--//start table-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//Content info-->
+                </section>
+                <!--horarios section-->
+
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <!--correo section-->
+                <section class="my-3 py-3 section-border">
+                    <!--title wrapper-->
+                    <div class="text-center">
+                        <h4>Correo</h4>
+                    </div>
+                    <!--//title wrapper-->
+                    <!--Content info-->
+                    <div class="col pb-3">
+                        <div class="modal-content">
+                            <div class="container px-3">
+                                <!--subrow-->
+                                <div class="row-sub my-2">
+                                </div>
+                                <!--//subrow-->
+                                <div class="text-center">
+                                    <!--details-->
+                                    <p><span class="font-weight-bold">E-mail : </span>pcs@gmail.com</p>
+                                    <!--details-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//Content info-->
+                </section>
+                <!--correo section-->
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <!--Servicios section-->
+                <section class="my-3 py-3 section-border">
+                    <!--title wrapper-->
+                    <div class="text-center">
+                        <h4>Servicios</h4>
+                    </div>
+                    <!--//title wrapper-->
+                    <!--Content info-->
+                    <div class="col pb-3">
+                        <div class="modal-content">
+                            <div class="container px-3">
+                                <!--subrow-->
+                                <div class="row-sub my-2">
+                                </div>
+                                <!--//subrow-->
+                                <div class="text-center">
+                                    <!--details-->
+                                    <label>Impresiones a blanco y negro</label><br>
+                                    <label>Pago con tarjeta</label><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//Content info-->
+                </section>
+                <!--Servicios section-->
+
+            </div>
+        </div>
+
+        <!--Fin modals-->
+        <!--SPINNERS LOADERS JUNK CHECK-->
+        <!--SPINNER-->
+        <div class="modal fade text-dark" id="spinnerAlert">
+            <div class="modal-dialog mini modal-md">
+                <!--Content Modal-->
+                <div class="col pb-3">
+                    <div class="modal-content">
+                        <div class="container px-5 my-2">
+                            <!--title-->
+                            <div class="row my-2">
+                                <div class="mr-auto ">
+                                    <h4 class="font-weight-bold">Por favor espere...</h4>
+                                </div>
+                            </div>
+                            <!--//title-->
+                            <div class="row my-2">
+                                <!--spinner-->
+                                <div class="col-xs-4">
+                                    <div class="spinner">
+                                    </div>
+                                </div>
+                                <!--//spinner-->
+                                <!--text-->
+                                <div class="col my-auto">
+                                    <h5 class="text-center">Consultando precio del pedido...</h5>
+                                </div>
+                                <!--//text-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Content Modal-->
+            </div>
+        </div>
+        <!--//SPINNER-->
+        <!--CHECK-->
+        <div class="modal fade text-dark" id="checkAlert">
+            <div class="modal-dialog mini modal-md">
+                <!--Content Modal-->
+                <div class="col pb-3">
+                    <div class="modal-content">
+                        <div class="container px-5 my-4">
+                            <!--Title-->
+                            <div class="row my-2">
+                                <div class="mr-auto ">
+                                    <h4 class="font-weight-bold">Solicitud Realizada</h4>
+                                </div>
+                            </div>
+                            <!--//Title-->
+                            <div class="row my-2">
+                                <div class="col-xs-4 text-center">
+                                    <div class="square-icon">
+                                        <!--icono--><i class="far fa-check-square fa-4x color-printalo-greenDetail"></i>
+                                        <!--//icono-->
+                                    </div>
+                                </div>
+                                <!--text-->
+                                <div class="col my-auto text-center">
+                                    <h5>Su solicitud ha sido exitosamente realizada</h5>
+                                </div>
+                                <!--//text-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Content Modal-->
+        </div>
+    </div>
+    <!--//CHECK-->
+    <!--perfiliconUsuario-->
+    <div class="modal fade text-dark" id="perfiliconusuario">
+        <div class="modal-dialog">
+            <!--Content Modal-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                </div>
+            </div>
+        </div>
+        <!--Content Modal-->
+    </div>
+    <!--//perfiliconUsuario-->
+    <!--//SPINNERS LOADERS JUNK CHECK-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <script src="../../../js/designjs/radiobtn.js"></script>
+    <script src="../../../js/designjs/spinner.js"></script>
+    <script src="../../../js/designjs/perfiliconuser.js"></script>
+    <script src="../../../js/designjs/timeanddate.js"></script>
+</body>
+
+</html>

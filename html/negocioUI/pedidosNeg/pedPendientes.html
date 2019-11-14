@@ -26,18 +26,12 @@
                     <h5 class="d-inline align-middle mx-1">Printalo Negocios</h5>
                 </a>
             </div>
-            <!--Profile Icon-->
-            <a href="../../acrosspages/perfiliconusuario.html"
-                class="navbar-item  order-lg-last order-xs-last  mx-1 icon-user">
+            <div class="navbar-item order-lg-last  order-sx-last mx-1" data-toggle="modal"
+                data-target="#perfiliconusuario">
                 <div class="d-inline circle bg-printalo-greenDetail">
-                    <!--Initial letter-->
-                    <div class="center">
-                        J
-                    </div>
-                    <!--Initial letter-->
+                    J
                 </div>
-            </a>
-            <!--//Profile Icon-->
+            </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -109,31 +103,70 @@
             </div>
         </div>
     </div>
-    <!--//modals-->
+    <!--modals-->
+
     <!--perfiliconUsuario-->
     <div class="modal fade text-dark" id="perfiliconusuario">
         <div class="modal-dialog">
             <!--Content Modal-->
             <div class="col pb-3">
                 <div class="modal-content">
+                    <div class="container px-5 my-4">
+                        <div class="row my-3">
+                            <!--circle icon-->
+                            <div class="circle max bg-printalo-greenDetail mx-auto">
+                                <div class="center">
+                                    J
+                                </div>
+                            </div>
+                            <!--//circle icon-->
+                        </div>
+                        <!--nombre de usuario-->
+                        <div class="row my-4">
+                            <h4 class="font-weight-bold mx-auto">Juan Jose Fernandez</h4>
+                        </div>
+                        <!--//nombre de usuario-->
+                        <!--telefono-->
+                        <div class="text-center">
+                            <p><span class="font-weight-bold">Telefono :</span>
+                                7777777</p>
+                        </div>
+                        <!--//telefono-->
+                        <!--correo-->
+                        <div class="text-center">
+                            <p><span class="font-weight-bold">Correo :</span>
+                                juanjofer@gmail.com</p>
+                        </div>
+                        <!--//correo-->
+                        <!--btn editar-->
+                        <div class="row mx-auto my-2">
+                            <a class="btn btn-block positive bg-printalo-greenDetail text-light" data-toggle="modal"
+                                data-target="#escogerLocal">Editar</a>
+                        </div>
+                        <!--//btn editar-->
+                        <!--btn cerrar sesion-->
+                        <div class="row mx-auto my-2">
+                            <a class="btn btn-block negative bg-printalo-blueDetail text-light " data-dismiss="modal"
+                                data-target="#escogerLocal">Cerrar Sesion</a>
+                        </div>
+                        <!--//btn cerrar sesion-->
+                    </div>
                 </div>
             </div>
         </div>
         <!--Content Modal-->
     </div>
     <!--//perfiliconUsuario-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
     <script>
         $("#menu-toggle").click(function (e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
         });
     </script>
-    <script src="../../../js/designjs/perfiliconuser.js"></script>
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 

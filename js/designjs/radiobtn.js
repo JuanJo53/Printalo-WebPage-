@@ -80,3 +80,26 @@ $(document).ready(function () {
         }
     });
 });
+
+//radio button's choice todo-personalizado
+$(document).ready(function () {
+    $("#todo").click(function () {
+        $("#tododiv:hidden").show('slow');
+        $("#personalizadodiv").hide();
+    });
+    $("#todo").click(function () {
+        if ($("#todo").prop('checked') === false) {
+            $("#tododiv").hide();
+        }
+    });
+    $("#personalizado").click(function () {
+        $("#personalizadodiv:hidden").show('slow');
+        $("#tododiv").hide();
+    });
+    $("#personalizado").click(function () {
+        if ($("#personalizado").prop('checked') === false) {
+            $("#personalizadodiv").hide();
+        }
+    });
+});
+//radio button's choice todo-personalizado

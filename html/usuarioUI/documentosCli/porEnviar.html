@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="../../../css/modals.css">
-    <link rel="stylesheet" href="../../../css/main.css">
+    <link rel="stylesheet" href="../../../css/tableporEnviar.css">
     <link rel="stylesheet" href="../../../css/detalles.css">
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/usuario/usuarioGeneral.css">
@@ -27,7 +27,9 @@
                     <span class="navbar-toggler-icon"></span></button>
                 <!--Link logo-->
                 <a class="navbar-brand mx-1" href="#home">
+                    <!--image logo-->
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
+                    <!--//image logo-->
                     <!--Titulo Logo-->
                     <h5 class="d-inline align-middle mx-1 text-light">Printalo Usuarios</h5>
                     <!--Titulo Logo-->
@@ -78,15 +80,16 @@
     <ul class="nav nav-pills nav-justified bg-printalo-greenDetail">
         <!--Navbar Link Por Enviar-->
         <li class="nav-item"><a class="nav-link active" href="porEnviar.html">Por enviar</a></li>
-        <!--//por enviar-->
-        <!--Navbar Link enviasdos-->
+        <!--//Navbar Link Por Enviar-->
+        <!--Navbar Link enviados-->
         <li class="nav-item"><a class="nav-link" href="enviados.html">Enviados</a></li>
-        <!--//-->
+        <!--//Navbar Link enviados-->
         <!--Navbar Link realizados-->
         <li class="nav-item"><a class="nav-link" href="realizados.html">Realizados</a></li>
-        <!--//-->
+        <!--//Navbar Link realizados-->
     </ul>
     <!--//Sub Navbar usuarios-->
+    <!--container-->
     <div class="container">
         <!-- responsive table -->
         <div class="holder">
@@ -98,6 +101,7 @@
                 <table>
                     <!--column's titles-->
                     <thead>
+                        <!--row-->
                         <tr>
                             <!--th 1-->
                             <th class="text-center">Tipo</th>
@@ -108,6 +112,7 @@
                             <!--th 4-->
                             <th class="text-center">Eliminar</th>
                         </tr>
+                        <!--//row-->
                     </thead>
                     <!--//column's titles-->
                     <tbody>
@@ -136,7 +141,9 @@
         <!--float action button (+)-->
         <div class="fab-container">
             <div class="fab-icon-holder">
+                <!--modal target-->
                 <a data-toggle="modal" data-target="#ingresarModal">
+                    <!--//modal target-->
                     <!--Icon-->
                     <i class="fas fa-plus "></i>
                     <!--//Icon-->
@@ -145,6 +152,7 @@
         </div>
         <!--//float action button (+)-->
     </div>
+    <!--//container-->
     <!--Modal Subir Documento (+)-->
     <div class="modal fade text-dark" id="ingresarModal">
         <div class="modal-dialog mini modal-md">
@@ -272,8 +280,10 @@
                         <!--modal title-->
                         <!--Btn Imagen de local-->
                         <!--pcs button-->
+                        <!--modal target-->
                         <div class="pb-3 text-center " data-dismiss="modal" data-toggle="modal"
                             data-target="#configurarPedido">
+                            <!--//modal target-->
                             <div class="card negocioIcon mx-auto">
                                 <!--img del negocio-->
                                 <img src="../../../img/pcs.jpg" alt="" class="card-img-top">
@@ -384,11 +394,11 @@
                 <!--//modal content-->
             </div>
             <!--//Progress Modal-->
-            <!--Content Modal-->
+            <!--Content Modal configurar pedido-->
             <div class="col pb-3">
                 <div class="modal-content">
                     <div class="container px-5">
-                        <h5 class="text-center pt-3">Configurar Pedido</h5>
+                        <h5 class="text-center pt-4">Configurar Pedido</h5>
                         <div class="blockofblock py-2">
                             <!--Configuration Block color-->
                             <div class="config-block py-2">
@@ -399,6 +409,7 @@
                                 <div class="row-sub">
                                 </div>
                                 <!--//subrow-->
+                                <!--2 Radio buttons bn o color-->
                                 <div class="py-1 ml-auto row">
                                     <!-- rbt b/n-->
                                     <div class="col">
@@ -421,7 +432,7 @@
                                     </div>
                                     <!-- //rbt b/color-->
                                 </div>
-                                <!-- //2 Radio buttons rango o unico-->
+                                <!-- //2 Radio buttons bn o color-->
                             </div>
                             <!--//Configuration Block color-->
                             <!--Configuration Block tamanio de impresion-->
@@ -433,6 +444,7 @@
                                 <div class="row-sub">
                                 </div>
                                 <!--//subrow-->
+                                <!-- 3 Radio buttons carta oficio o a4-->
                                 <div class="py-1 text-center row">
                                     <!-- rbt carta-->
                                     <div class="col">
@@ -465,7 +477,7 @@
                                     </div>
                                     <!-- //rbt a4-->
                                 </div>
-                                <!-- //2 Radio buttons rango o unico-->
+                                <!-- //3 Radio buttons carta oficio o a4-->
                             </div>
                             <!--//Configuration Block tamanio impresion-->
                             <!--Configuration Block lados-->
@@ -477,6 +489,7 @@
                                 <div class="row-sub">
                                 </div>
                                 <!--//subrow-->
+                                <!-- 2 Radio buttons intercalado o anv/rev-->
                                 <div class="py-1 ml-auto row">
                                     <!-- rbt intercalado-->
                                     <div class="col">
@@ -499,7 +512,7 @@
                                     </div>
                                     <!-- //rbt anverso/reverso-->
                                 </div>
-                                <!-- //2 Radio buttons rango o unico-->
+                                <!--//2 Radio buttons intercalado o anv/rev-->
                             </div>
                             <!--//Configuration impresion lados-->
                             <!--Configuration Block numero de hojas-->
@@ -515,7 +528,7 @@
                                     <!-- rbt todo-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Todo
-                                            <input type="radio" checked="checked" name="radioNumPag">
+                                            <input type="radio" checked="checked" name="radioNumPag" id="todo">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -525,7 +538,7 @@
                                     <!-- rbt personalizado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Personalizado
-                                            <input type="radio" name="radioNumPag">
+                                            <input type="radio" name="radioNumPag" id="personalizado">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -534,6 +547,43 @@
                                     <!-- //rbt personalizado-->
                                 </div>
                                 <!-- //2 Radio buttons rango o unico-->
+                                <!--rbt todo response-->
+                                <div id="tododiv">
+                                    <h5></h5>
+                                </div>
+                                <!--//rbt personal response-->
+                                <!--rbt personalizado response Block inputs invisible-->
+                                <div id="personalizadodiv" style='display:none' class="pt-2 tarjeta-modal">
+                                    <!--row-->
+                                    <div class="row pt-2">
+                                        <div class="col">
+                                            <!--subtitle-->
+                                            <p class="color-printalo-blueDetail font-weight-bold">Pagina Inicial</p>
+                                            <!--//subtitle-->
+                                            <!--row-->
+                                            <div class="row-sub">
+                                            </div>
+                                            <!--//row-->
+                                            <!--input pag inicial-->
+                                            <input type="text" class="form-control my-2">
+                                            <!--//input pag inicial-->
+                                        </div>
+                                        <div class="col">
+                                            <!--subtitle-->
+                                            <p class="color-printalo-blueDetail font-weight-bold">Pagina Final</p>
+                                            <!--//subtitle-->
+                                            <!--row-->
+                                            <div class="row-sub">
+                                            </div>
+                                            <!--//row-->
+                                            <!--input pag final-->
+                                            <input type="text" class="form-control my-2">
+                                            <!--//input pag final-->
+                                        </div>
+                                    </div>
+                                    <!--//row-->
+                                </div>
+                                <!--//rbt personalizado response Block inputs invisible-->
                             </div>
                             <!--//Configuration block numero de hojas-->
                             <!--Configuration Block tipo acabado-->
@@ -644,7 +694,7 @@
                     </div>
                 </div>
             </div>
-            <!--Content Modal-->
+            <!--Content Modal configurar pedido-->
             <!--Content Modal buttons-->
             <div class="col pb-3">
                 <div class="modal-content">
@@ -780,7 +830,9 @@
                                 <p class="color-printalo-blueDetail font-weight-bold">Escoger Fecha</p>
                                 <div class="row-sub"></div>
                                 <div class="mt-2">
+                                    <!--input date-->
                                     <input id="datepicker" />
+                                    <!--//input date-->
                                 </div>
                             </div>
                             <!--//Columna  fecha-->
@@ -789,9 +841,10 @@
                                 <p class="color-printalo-blueDetail font-weight-bold">Escoger Hora</p>
                                 <div class="row-sub"></div>
                                 <div class="mt-2">
+                                    <!--input time-->
                                     <input id="timepicker" />
+                                    <!--//input time-->
                                 </div>
-
                             </div>
                             <!--//Columna  hora-->
                         </div>
@@ -1297,7 +1350,7 @@
                                     <!-- rbt todo-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Todo
-                                            <input type="radio" checked="checked" name="radioNumPagR" disabled>
+                                            <input type="radio" checked="checked" name="radioNumPagR" id="todo" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -1307,7 +1360,7 @@
                                     <!-- rbt personalizado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Personalizado
-                                            <input type="radio" name="radioNumPagR" disabled>
+                                            <input type="radio" name="radioNumPagR" id="personalizado" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -1316,6 +1369,43 @@
                                     <!-- //rbt personalizado-->
                                 </div>
                                 <!-- //2 Radio buttons rango o unico-->
+                                <!--rbt todo response-->
+                                <div id="tododiv">
+                                    <h5></h5>
+                                </div>
+                                <!--//rbt personal response-->
+                                <!--rbt personalizado response Block inputs invisible-->
+                                <div id="personalizadodiv" style='display:none' class="pt-2 tarjeta-modal">
+                                    <!--row-->
+                                    <div class="row pt-2">
+                                        <div class="col">
+                                            <!--subtitle-->
+                                            <p class="color-printalo-blueDetail font-weight-bold">Pagina Inicial</p>
+                                            <!--//subtitle-->
+                                            <!--row-->
+                                            <div class="row-sub">
+                                            </div>
+                                            <!--//row-->
+                                            <!--input pag inicial-->
+                                            <input type="text" class="form-control my-2" disabled>
+                                            <!--//input pag inicial-->
+                                        </div>
+                                        <div class="col">
+                                            <!--subtitle-->
+                                            <p class="color-printalo-blueDetail font-weight-bold">Pagina Final</p>
+                                            <!--//subtitle-->
+                                            <!--row-->
+                                            <div class="row-sub">
+                                            </div>
+                                            <!--//row-->
+                                            <!--input pag final-->
+                                            <input type="text" class="form-control my-2" disabled>
+                                            <!--//input pag final-->
+                                        </div>
+                                    </div>
+                                    <!--//row-->
+                                </div>
+                                <!--//rbt personalizado response Block inputs invisible-->
                             </div>
                             <!--//Configuration block numero de hojas-->
                             <!--Configuration Block tipo acabado-->

@@ -103,9 +103,12 @@
 .modal-content{
   border-radius: 1rem!important;
 }
+.modal-header{
+  border-top-left-radius: 1rem!important;
+  border-top-right-radius: 1rem!important;
+}
 .modal-dialog {
   padding-top: 1%;
-
 }
 /*SPINNER LOEADER JUNK*/
 .spinner{

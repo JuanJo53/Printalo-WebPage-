@@ -545,7 +545,7 @@
                                     <div class="col ">
                                         <label class="radiobuttons my-auto">Personal
                                             <!--input-->
-                                            <input type="radio" checked="checked" name="radioPagoR" id="personal"
+                                            <input type="radio" checked="checked" name="radioPagoR" id=""
                                                 disabled>
                                             <!--//input-->
                                             <!--for customed purposes-->
@@ -558,7 +558,7 @@
                                     <div class="col ">
                                         <label class="radiobuttons my-auto">Tarjeta
                                             <!--input-->
-                                            <input type="radio" name="radioPagoR" id="tarjeta" disabled>
+                                            <input type="radio" name="radioPagoR" id="" disabled>
                                             <!--//input-->
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
@@ -568,12 +568,12 @@
                                     <!-- //rbt tarjeta-->
                                 </div>
                                 <!--rbt personal response-->
-                                <div id="personaldiv">
+                                <div id="">
                                     <h5></h5>
                                 </div>
                                 <!--//rbt personal response-->
                                 <!--rbt tarjeta response Block Credit Card invisible-->
-                                <div id="tarjetadiv" style='display:none' class="py-2">
+                                <div id="" style='display:none' class="py-2">
                                     <p class="color-printalo-blueDetail font-weight-bold">Datos de Tarjeta</p>
                                     <div class="row-sub">
                                     </div>
@@ -877,7 +877,7 @@
                                 <!-- //2 Radio buttons rango o unico-->
                             </div>
                             <!--//Configuration impresion lados-->
-                            <!--Configuration Block numero de hojas-->
+                            <!--Configuration Block numero de hojas habilitado-->
                             <div class="config-block py-2">
                                 <!--subtitle-->
                                 <p class="color-printalo-blueDetail font-weight-bold">Numero de paginas</p>
@@ -890,7 +890,7 @@
                                     <!-- rbt todo-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Todo
-                                            <input type="radio" checked="checked" name="radioNumPag">
+                                            <input type="radio" checked="checked" name="radioNumPag" id="todoe">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -900,7 +900,7 @@
                                     <!-- rbt personalizado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Personalizado
-                                            <input type="radio" name="radioNumPag">
+                                            <input type="radio" name="radioNumPag" id="personalizadoe">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -908,7 +908,44 @@
                                     </div>
                                     <!-- //rbt personalizado-->
                                 </div>
-                                <!-- //2 Radio buttons rango o unico-->
+                                <!-- //2 Radio buttons todo o personalizado-->
+                                <!--rbt todo response-->
+                                <div id="todoediv">
+                                    <h5></h5>
+                                </div>
+                                <!--//rbt personal response-->
+                                <!--rbt personalizado response Block inputs invisible-->
+                                <div id="personalizadoediv" style='display:none' class="pt-2 tarjeta-modal">
+                                    <!--row-->
+                                    <div class="row pt-2">
+                                        <div class="col">
+                                            <!--subtitle-->
+                                            <p class="color-printalo-blueDetail font-weight-bold">Pagina Inicial</p>
+                                            <!--//subtitle-->
+                                            <!--row-->
+                                            <div class="row-sub">
+                                            </div>
+                                            <!--//row-->
+                                            <!--input pag inicial-->
+                                            <input type="text" class="form-control my-2">
+                                            <!--//input pag inicial-->
+                                        </div>
+                                        <div class="col">
+                                            <!--subtitle-->
+                                            <p class="color-printalo-blueDetail font-weight-bold">Pagina Final</p>
+                                            <!--//subtitle-->
+                                            <!--row-->
+                                            <div class="row-sub">
+                                            </div>
+                                            <!--//row-->
+                                            <!--input pag final-->
+                                            <input type="text" class="form-control my-2">
+                                            <!--//input pag final-->
+                                        </div>
+                                    </div>
+                                    <!--//row-->
+                                </div>
+                                <!--//rbt personalizado response Block inputs invisible-->
                             </div>
                             <!--//Configuration block numero de hojas-->
                             <!--Configuration Block tipo acabado-->
@@ -1487,7 +1524,7 @@
                                 <!-- //2 Radio buttons rango o unico-->
                             </div>
                             <!--//Configuration impresion lados-->
-                            <!--Configuration Block numero de hojas-->
+                            <!--Configuration Block numero de hojas disabled-->
                             <div class="config-block py-2">
                                 <!--subtitle-->
                                 <p class="color-printalo-blueDetail font-weight-bold">Numero de paginas</p>
@@ -1500,7 +1537,8 @@
                                     <!-- rbt todo-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Todo
-                                            <input type="radio" checked="checked" name="radioNumPagRE" disabled>
+                                            <input type="radio" checked="checked" name="radioNumPagRE" id="todo"
+                                                disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -1510,7 +1548,7 @@
                                     <!-- rbt personalizado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Personalizado
-                                            <input type="radio" name="radioNumPagRE" disabled>
+                                            <input type="radio" name="radioNumPagRE" id="personalizado" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -1519,6 +1557,43 @@
                                     <!-- //rbt personalizado-->
                                 </div>
                                 <!-- //2 Radio buttons rango o unico-->
+                                <!--rbt todo response-->
+                                <div id="tododiv">
+                                    <h5></h5>
+                                </div>
+                                <!--//rbt personal response-->
+                                <!--rbt personalizado response Block inputs invisible-->
+                                <div id="personalizadodiv" style='display:none' class="pt-2 tarjeta-modal">
+                                    <!--row-->
+                                    <div class="row pt-2">
+                                        <div class="col">
+                                            <!--subtitle-->
+                                            <p class="color-printalo-blueDetail font-weight-bold">Pagina Inicial</p>
+                                            <!--//subtitle-->
+                                            <!--row-->
+                                            <div class="row-sub">
+                                            </div>
+                                            <!--//row-->
+                                            <!--input pag inicial-->
+                                            <input type="text" class="form-control my-2" disabled>
+                                            <!--//input pag inicial-->
+                                        </div>
+                                        <div class="col">
+                                            <!--subtitle-->
+                                            <p class="color-printalo-blueDetail font-weight-bold">Pagina Final</p>
+                                            <!--//subtitle-->
+                                            <!--row-->
+                                            <div class="row-sub">
+                                            </div>
+                                            <!--//row-->
+                                            <!--input pag final-->
+                                            <input type="text" class="form-control my-2" disabled>
+                                            <!--//input pag final-->
+                                        </div>
+                                    </div>
+                                    <!--//row-->
+                                </div>
+                                <!--//rbt personalizado response Block inputs invisible-->
                             </div>
                             <!--//Configuration block numero de hojas-->
                             <!--Configuration Block tipo acabado-->

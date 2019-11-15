@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="../../../css/modals.css">
-    <link rel="stylesheet" href="../../../css/tableporEnviar.css">
+    <link rel="stylesheet" href="../../../css/tables/tableporEnviar.css">
     <link rel="stylesheet" href="../../../css/detalles.css">
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/usuario/usuarioGeneral.css">
@@ -197,7 +197,7 @@
     <!--//Modal Subir Documento (btn +)-->
     <!--Escoger negocio modal(btn siguiente)-->
     <div class="modal fade text-dark" id="escogerLocal">
-        <div class="modal-dialog modal-md">
+        <div class="modal-dialog">
             <!--Progress Modal-->
             <div class="col pb-3">
                 <!--modal content-->
@@ -655,7 +655,7 @@
                             </div>
                             <!--//Configuration block tipo de hoja-->
 
-                            <!--Configuration Block cantidad impresiones-->
+                            <!--Configuration Block cantidad impresiones on!!!-->
                             <div class="config-block py-2">
                                 <!--subtitle-->
                                 <p class="color-printalo-blueDetail font-weight-bold">Nro Copias</p>
@@ -670,17 +670,17 @@
                                         <div class="block-typenumber">
                                             <div class='ctrl'>
                                                 <!--decrement-->
-                                                <div class='ctrl__button ctrl__button--decrement'>&ndash;</div>
+                                                <div class='ctrl__button ctrl__button--decrement on'>&ndash;</div>
                                                 <!--//decrement-->
                                                 <!--input number-->
-                                                <div class='ctrl__counter'>
-                                                    <input class='ctrl__counter-input' maxlength='10' type='text'
+                                                <div class='ctrl__counter on'>
+                                                    <input class='ctrl__counter-input on' maxlength='10' type='text'
                                                         value='0'>
-                                                    <div class='ctrl__counter-num'>0</div>
+                                                    <div class='ctrl__counter-num on'>0</div>
                                                 </div>
                                                 <!--//input number-->
                                                 <!--increment-->
-                                                <div class='ctrl__button ctrl__button--increment'>+</div>
+                                                <div class='ctrl__button ctrl__button--increment on'>+</div>
                                                 <!--//increment-->
                                             </div>
                                         </div>
@@ -1337,7 +1337,7 @@
                                 <!-- //2 Radio buttons rango o unico-->
                             </div>
                             <!--//Configuration impresion lados-->
-                            <!--Configuration Block numero de hojas-->
+                            <!--Configuration Block numero de hojas disabled-->
                             <div class="config-block py-2">
                                 <!--subtitle-->
                                 <p class="color-printalo-blueDetail font-weight-bold">Numero de paginas</p>
@@ -1492,7 +1492,7 @@
                                         <div class="block-typenumber">
                                             <div class='ctrl'>
                                                 <!--decrement-->
-                                                <div class='ctrl__button ctrl__button--decrement disabledButton'>&ndash;
+                                                <div class='ctrl__button ctrl__button--decrement disabledButton on'>&ndash;
                                                 </div>
                                                 <!--//decrement-->
                                                 <!--input number-->
@@ -1503,7 +1503,7 @@
                                                 </div>
                                                 <!--//input number-->
                                                 <!--increment-->
-                                                <div class='ctrl__button ctrl__button--increment disabledButton'>+</div>
+                                                <div class='ctrl__button ctrl__button--increment disabledButton on'>+</div>
                                                 <!--//increment-->
                                             </div>
                                         </div>

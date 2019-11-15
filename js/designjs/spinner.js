@@ -7,13 +7,13 @@
 
                     this.counter = 0;
                     this.els = {
-                        decrement: document.querySelector('.ctrl__button--decrement'),
+                        decrement: document.querySelector('.ctrl__button--decrement.on'),
                         counter: {
-                            container: document.querySelector('.ctrl__counter'),
-                            num: document.querySelector('.ctrl__counter-num'),
-                            input: document.querySelector('.ctrl__counter-input')
+                            container: document.querySelector('.ctrl__counter.on'),
+                            num: document.querySelector('.ctrl__counter-num.on'),
+                            input: document.querySelector('.ctrl__counter-input.on')
                         },
-                        increment: document.querySelector('.ctrl__button--increment')
+                        increment: document.querySelector('.ctrl__button--increment.on')
                     };
 
                     this.decrement = function () {

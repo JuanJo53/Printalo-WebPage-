@@ -75,3 +75,17 @@ label{
   background-color: #30e2c2!important;
 }
 /*//time date pickers*/
+/*btn save changes in hole system*/
+.btnsavechanges:hover{
+  background-color: #30e2c2;
+  color: white;
+}
+/*//btn save changes in hole system*/
+/*btn peusto in hole system*/
+.puesto .card:hover .card-footer{
+  background-color: #30e2c2!important;
+}
+.puesto .card:hover .img-puesto{
+  opacity:0.9!important;
+}
+/*//btn peusto in hole system*/

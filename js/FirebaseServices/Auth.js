@@ -15,7 +15,7 @@ class Auth{
             var errorCode = error.code;
             var errorMessage = error.message;
             alert(errorMessage)
-          });       
+        });       
     }
 
     Logout(){

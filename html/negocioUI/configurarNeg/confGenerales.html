@@ -28,11 +28,18 @@
                 </a>
                 <!--//Link Principal-->
             </div>
-            <div class="navbar-item order-lg-last  order-sx-last mx-1">
+            <!--Profile Icon-->
+            <a id="btnUser" href="../../acrosspages/perfiliconusuario.html"
+                class="navbar-item  order-lg-last   order-xs-last  mx-1 icon-user">
                 <div class="d-inline circle bg-printalo-greenDetail">
-                    J
+                    <!--Initial letter-->
+                    <div class="center">
+                        J
+                    </div>
+                    <!--Initial letter-->
                 </div>
-            </div>
+            </a>
+            <!--//Profile Icon-->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <!--Link Pedidos-->
@@ -89,47 +96,29 @@
 
 
 
-    <!--ingresar Modal-->
-    <div class="modal fade text-dark" id="ingresarModal">
-        <div class="modal-dialog modal-lg">
-            <div class="row py-3">
-                <div class="col-lg-6 nopadding d-none d-lg-block bg-printalo-blueDetail">
 
-                    <div class="center">
-                        <div class="text-center">
-                            <img width="100" height="100" src="../../../img/printer.png" alt="" class="img-fluid ">
-                        </div>
-                        <h3 class="text-center text-light">Printalo</h3>
-                    </div>
-                </div>
-                <div class="col-lg-6 nopadding">
-                    <div class="modal-content">
-                        <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
-                        <div class="container">
-                            <h2 class="text-center">Ingreso</h2>
-                            <form action="" class="p-5">
-                                <div class="form-group">
-                                    <label for="name">Email:</label>
-                                    <input type="text" class="form-control">
-                                    <label for="name">Constraseña:</label>
-                                    <input type="password" class="form-control">
-                                </div>
-                            </form>
-                            <div class="buttongroup text-center py-3"><a
-                                    class="btn btn-outline-light bg-printalo-button text-light">Ingresar</a><br>
-                                <br>
-                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
-                            </div>
-                        </div>
-                    </div>
+    <!--perfiliconUsuario-->
+    <div class="modal fade text-dark" id="perfiliconusuario">
+        <div class="modal-dialog">
+            <!--Content Modal-->
+            <div class="col pb-3">
+                <div class="modal-content">
                 </div>
             </div>
         </div>
+        <!--Content Modal-->
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <!--//perfiliconUsuario-->
+    <!--boostrap jquery popper libraries-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-    <script src="../../../js/bootstrap.min.js"></script>
+    <!--//boostrap jquery popper libraries-->
+    <!--iconuserpefil script-->
+    <script src="../../../js/designjs/perfiliconuser.js"></script>
+    <!--//iconuserpefil script-->
     <script>
         $("#menu-toggle").click(function (e) {
             e.preventDefault();

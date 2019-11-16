@@ -1,9 +1,13 @@
+/*icon (+)*/
 .fab-container{
     position: fixed;
     bottom: 50px;
     right: 50px;
     z-index: 999;
     cursor: pointer;
+}
+.fab-icon-holder:hover{
+    background-color:#30e2c2;
 }
 .fab-icon-holder{
     width:50px;
@@ -23,7 +27,8 @@
     font-style: 25px;
     color:#ffffff;
 }
-
+/*//icon (+)*/
+/*perfiliconuser*/
 .circle {
     float: right;
     cursor: pointer;
@@ -39,7 +44,10 @@
     line-height: 50px;
     position: relative;
   }
-
+  .circle:hover{
+      background-color: #30e2c2;
+  }
+  /*//perfiliconuser*/
   .circle.max{
     float: right;
     cursor: pointer;

@@ -7,10 +7,15 @@
     <meta name="keywords" content="HTML,CSS,bootstrap">
     <meta name="author" content="Colque Herrera Ariel">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../css/tables/tableNegocios.css">
     <link rel="stylesheet" href="../../../css/detalles.css">
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/negocio/estiloNegocios.css">
     <link rel="stylesheet" href="../../../css/negocio/negociogeneral.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.css" />
+
+
 
     <title>Principal</title>
 </head>
@@ -62,7 +67,60 @@
             </div>
         </div>
         <div id="page-content-wrapper">
-            <button class="btn circletoggle m-3" id="menu-toggle">></button>
+            <div class="container">
+                <!--toogle button sidebar-->
+                <button class="btn circletoggle m-3" id="menu-toggle">></button>
+                <!--//toogle button sidebar-->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table id="example" class="table table-striped text-center" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>#Solicitud</th>
+                                        <th>Nombre Usuario</th>
+                                        <th>Precio</th>
+                                        <th>Cantidad</th>
+                                        <th>Tipo Pago</th>
+                                        <th>Fecha Entrega</th>
+                                        <th>Hora Entrega</th>
+                                        <th>Detalles</th>
+                                        <th>Rechazar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Ariel</td>
+                                        <td>3Bs</td>
+                                        <td>1</td>
+                                        <td>Online</td>
+                                        <td>10/10/2019</td>
+                                        <td>20:30</td>
+                                        <td><a href="" class="btn bg-printalo-greenDetail positive">Detalles</a></td>
+                                        <td><a href="" class="btn bg-printalo-blueDetail negative">Rechazar</a></td>
+
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>#Solicitud</th>
+                                        <th>Nombre Usuario</th>
+                                        <th>Precio</th>
+                                        <th>Cantidad</th>
+                                        <th>Tipo Pago</th>
+                                        <th>Fecha Entrega</th>
+                                        <th>Hora Entrega</th>
+                                        <th>Detalles</th>
+                                        <th>Rechazar</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     </div>
@@ -183,6 +241,8 @@
     <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
     <script type="text/javascript" src="../../../js/Negocios.js"></script>
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
+    <script type="text/javascript" src="../../../js/designjs/datatables.js"></script>
 
 </body>
 

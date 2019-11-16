@@ -30,14 +30,18 @@
   text-decoration: none !important;
   color: white;
 }
+/*btn inside table*/
 tbody tr td .btn.positive:hover {
   background-color: #30e2c2 !important;
   color: rgb(255, 255, 255) !important;
+  cursor: pointer;
 }
 tbody tr td .btn.negative:hover {
   background-color: #253449 !important;
   color: rgb(255, 255, 255) !important;
+  cursor: pointer;
 }
+/*btn inside table*/
 .nopadding {
   padding: 0 !important;
   margin: 0 !important;

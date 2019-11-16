@@ -103,3 +103,26 @@ $(document).ready(function () {
     });
 });
 //radio button's choice todo-personalizado
+
+//radio button's choice todo-personalizado en seccion enviados
+$(document).ready(function () {
+    $("#todoe").click(function () {
+        $("#todoediv:hidden").show('slow');
+        $("#personalizadoediv").hide();
+    });
+    $("#todoe").click(function () {
+        if ($("#todoe").prop('checked') === false) {
+            $("#todoediv").hide();
+        }
+    });
+    $("#personalizadoe").click(function () {
+        $("#personalizadoediv:hidden").show('slow');
+        $("#todoediv").hide();
+    });
+    $("#personalizadoe").click(function () {
+        if ($("#personalizadoe").prop('checked') === false) {
+            $("#personalizadoediv").hide();
+        }
+    });
+});
+//radio button's choice todo-personalizado en seccion enviados

@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="../../../css/modals.css">
-    <link rel="stylesheet" href="../../../css/tablehorarios.css">
+    <link rel="stylesheet" href="../../../css/tables/tablehorarios.css">
     <link rel="stylesheet" href="../../../css/detalles.css">
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/usuario/usuarioGeneral.css">
@@ -27,7 +27,9 @@
                     <span class="navbar-toggler-icon"></span></button>
                 <!--Link logo-->
                 <a class="navbar-brand mx-1" href="#home">
+                    <!--logo image-->
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
+                    <!--//logo image-->
                     <!--Titulo Logo-->
                     <h5 class="d-inline align-middle mx-1 text-light">Printalo Usuarios</h5>
                     <!--Titulo Logo-->
@@ -78,10 +80,10 @@
     <ul class="nav nav-pills nav-justified bg-printalo-greenDetail">
         <!--Navbar Link listas-->
         <li class="nav-item"><a class="nav-link " href="listasPuesto.html">Listas</a></li>
-        <!--//-->
+        <!--//Navbar Link listas-->
         <!--Navbar Link informacion-->
         <li class="nav-item"><a class="nav-link active" href="informacionPuesto.html">Informacion</a></li>
-        <!--//-->
+        <!--//Navbar Link informacion-->
     </ul>
     <!--//Sub Navbar usuarios-->
     <div class="container">
@@ -91,7 +93,7 @@
         <!--row-->
         <div class="row">
             <div class="col-md-4 col-sm-6">
-                <!--contacto section-->
+                <!--contactos section-->
                 <section class="my-3 py-3 section-border">
                     <!--title wrapper-->
                     <div class="text-center">
@@ -117,7 +119,7 @@
                     </div>
                     <!--//Content info-->
                 </section>
-                <!--contacto section-->
+                <!--contactos section-->
                 <!--horarios section-->
                 <section class="my-3 py-3 section-border">
                     <!--title wrapper-->
@@ -138,6 +140,7 @@
                                     <table>
                                         <!--column's titles-->
                                         <thead>
+                                            <!--row-->
                                             <tr>
                                                 <!--th 1-->
                                                 <th class="text-center">Dia</th>
@@ -146,6 +149,7 @@
                                                 <!--th 3-->
                                                 <th class="text-center">Salida</th>
                                             </tr>
+                                            <!--//row-->
                                         </thead>
                                         <!--//column's titles-->
                                         <tbody>
@@ -170,7 +174,6 @@
                     <!--//Content info-->
                 </section>
                 <!--horarios section-->
-
             </div>
             <div class="col-md-4 col-sm-6">
                 <!--correo section-->
@@ -198,7 +201,7 @@
                     </div>
                     <!--//Content info-->
                 </section>
-                <!--correo section-->
+                <!--//correo section-->
             </div>
             <div class="col-md-4 col-sm-6">
                 <!--Servicios section-->
@@ -226,82 +229,79 @@
                     </div>
                     <!--//Content info-->
                 </section>
-                <!--Servicios section-->
-
+                <!--//Servicios section-->
             </div>
         </div>
-
-
-
-        <!--Fin modals-->
-        <!--SPINNERS LOADERS JUNK CHECK-->
-        <!--SPINNER-->
-        <div class="modal fade text-dark" id="spinnerAlert">
-            <div class="modal-dialog mini modal-md">
-                <!--Content Modal-->
-                <div class="col pb-3">
-                    <div class="modal-content">
-                        <div class="container px-5 my-2">
-                            <!--title-->
-                            <div class="row my-2">
-                                <div class="mr-auto ">
-                                    <h4 class="font-weight-bold">Por favor espere...</h4>
-                                </div>
-                            </div>
-                            <!--//title-->
-                            <div class="row my-2">
-                                <!--spinner-->
-                                <div class="col-xs-4">
-                                    <div class="spinner">
-                                    </div>
-                                </div>
-                                <!--//spinner-->
-                                <!--text-->
-                                <div class="col my-auto">
-                                    <h5 class="text-center">Consultando precio del pedido...</h5>
-                                </div>
-                                <!--//text-->
+        <!--//row-->
+    </div>
+    <!--//container-->
+    <!--SPINNERS LOADERS JUNK CHECK-->
+    <!--SPINNER-->
+    <div class="modal fade text-dark" id="spinnerAlert">
+        <div class="modal-dialog mini modal-md">
+            <!--Content Modal-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <div class="container px-5 my-2">
+                        <!--title-->
+                        <div class="row my-2">
+                            <div class="mr-auto ">
+                                <h4 class="font-weight-bold">Por favor espere...</h4>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!--Content Modal-->
-            </div>
-        </div>
-        <!--//SPINNER-->
-        <!--CHECK-->
-        <div class="modal fade text-dark" id="checkAlert">
-            <div class="modal-dialog mini modal-md">
-                <!--Content Modal-->
-                <div class="col pb-3">
-                    <div class="modal-content">
-                        <div class="container px-5 my-4">
-                            <!--Title-->
-                            <div class="row my-2">
-                                <div class="mr-auto ">
-                                    <h4 class="font-weight-bold">Solicitud Realizada</h4>
+                        <!--//title-->
+                        <div class="row my-2">
+                            <!--spinner-->
+                            <div class="col-xs-4">
+                                <div class="spinner">
                                 </div>
                             </div>
-                            <!--//Title-->
-                            <div class="row my-2">
-                                <div class="col-xs-4 text-center">
-                                    <div class="square-icon">
-                                        <!--icono--><i class="far fa-check-square fa-4x color-printalo-greenDetail"></i>
-                                        <!--//icono-->
-                                    </div>
-                                </div>
-                                <!--text-->
-                                <div class="col my-auto text-center">
-                                    <h5>Su solicitud ha sido exitosamente realizada</h5>
-                                </div>
-                                <!--//text-->
+                            <!--//spinner-->
+                            <!--text-->
+                            <div class="col my-auto">
+                                <h5 class="text-center">Consultando precio del pedido...</h5>
                             </div>
+                            <!--//text-->
                         </div>
                     </div>
                 </div>
             </div>
             <!--Content Modal-->
         </div>
+    </div>
+    <!--//SPINNER-->
+    <!--CHECK-->
+    <div class="modal fade text-dark" id="checkAlert">
+        <div class="modal-dialog mini modal-md">
+            <!--Content Modal-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <div class="container px-5 my-4">
+                        <!--Title-->
+                        <div class="row my-2">
+                            <div class="mr-auto ">
+                                <h4 class="font-weight-bold">Solicitud Realizada</h4>
+                            </div>
+                        </div>
+                        <!--//Title-->
+                        <div class="row my-2">
+                            <div class="col-xs-4 text-center">
+                                <div class="square-icon">
+                                    <!--icono--><i class="far fa-check-square fa-4x color-printalo-greenDetail"></i>
+                                    <!--//icono-->
+                                </div>
+                            </div>
+                            <!--text-->
+                            <div class="col my-auto text-center">
+                                <h5>Su solicitud ha sido exitosamente realizada</h5>
+                            </div>
+                            <!--//text-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Content Modal-->
     </div>
     <!--//CHECK-->
     <!--perfiliconUsuario-->

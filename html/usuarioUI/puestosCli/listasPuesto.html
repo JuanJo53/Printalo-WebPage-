@@ -8,8 +8,8 @@
     <meta name="author" content="Colque Herrera Ariel">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="../../../css/tables/tablelistaCliente.css">
     <link rel="stylesheet" href="../../../css/modals.css">
-    <link rel="stylesheet" href="../../../css/main.css">
     <link rel="stylesheet" href="../../../css/detalles.css">
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/usuario/usuarioGeneral.css">
@@ -84,6 +84,7 @@
         <!--//-->
     </ul>
     <!--//Sub Navbar usuarios-->
+    <!--container-->
     <div class="container">
         <!-- responsive table -->
         <div class="holder">
@@ -110,14 +111,15 @@
                     <tbody>
                         <!--Row-->
                         <tr>
-                            <!--Icono-->
+                            <!--Nro lista-->
                             <td class="text-center">000001</td>
                             <!--//-->
+                            <!--Materia-->
                             <td class="text-center">Calculo 1</td>
-                            <!--Btn Solicitar-->
+                            <!--titulo-->
                             <td class="text-center">Practica 1</td>
                             <!--//-->
-                            <!--Btn Eliminar-->
+                            <!--Btn Solicitar-->
                             <td class="text-center"><a class="btn positive bg-printalo-greenDetail text-light"
                                     data-toggle="modal" data-target="#solicitardelista">Solicitar</a></td>
                             <!--//-->
@@ -128,8 +130,9 @@
                 <!--//start table-->
             </div>
         </div>
-        <!-- // -->
+        <!-- //responsive table -->
     </div>
+    <!--//container-->
     <!--modal solicitar de doc de lista -->
     <div class="modal fade text-dark" id="solicitardelista">
         <div class="modal-dialog modal-md">
@@ -414,7 +417,7 @@
                             </div>
                             <!--//Configuration block tipo de hoja-->
 
-                            <!--Configuration Block cantidad impresiones-->
+                            <!--Configuration Block cantidad impresiones on !!!-->
                             <div class="config-block py-2">
                                 <!--subtitle-->
                                 <p class="color-printalo-blueDetail font-weight-bold">Nro Copias</p>
@@ -429,18 +432,18 @@
                                         <div class="block-typenumber">
                                             <div class='ctrl'>
                                                 <!--decrement-->
-                                                <div class='ctrl__button ctrl__button--decrement disabledButton'>&ndash;
+                                                <div class='ctrl__button ctrl__button--decrement on '>&ndash;
                                                 </div>
                                                 <!--//decrement-->
                                                 <!--input number-->
-                                                <div class='ctrl__counter'>
-                                                    <input class='ctrl__counter-input' maxlength='10' type='text'
-                                                        value='1' disabled>
-                                                    <div class='ctrl__counter-num'>0</div>
+                                                <div class='ctrl__counter on'>
+                                                    <input class='ctrl__counter-input on' maxlength='10' type='text'
+                                                        value='0'>
+                                                    <div class='ctrl__counter-num on'>0</div>
                                                 </div>
                                                 <!--//input number-->
                                                 <!--increment-->
-                                                <div class='ctrl__button ctrl__button--increment disabledButton'>+</div>
+                                                <div class='ctrl__button ctrl__button--increment on '>+</div>
                                                 <!--//increment-->
                                             </div>
                                         </div>
@@ -455,21 +458,6 @@
                 </div>
             </div>
             <!--Content Modal-->
-            <!--Content Modal Price-->
-            <div class="col pb-3">
-                <div class="modal-content">
-                    <div class="container px-5">
-                        <!--modal title-->
-                        <h5 class="text-center p-3">Precio</h5>
-                        <!--//modal title-->
-                        <!--details-->
-                        <p>400pag * 0.5Bs/pag = 200Bs</p>
-                        <p><span class="font-weight-bold">Costo total :</span> 200Bs</p>
-                        <!--details-->
-                    </div>
-                </div>
-            </div>
-            <!--//Content Modal Price-->
             <!--Content document owner-->
             <div class="col pb-3">
                 <div class="modal-content">

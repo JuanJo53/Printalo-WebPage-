@@ -1,0 +1,74 @@
+.table th{
+    background-color: #364c68!important;
+    color: #fff!important;
+}
+/*btn row positive*/
+.btn.positive{
+    color: #fff!important;
+}
+/*//btn row positive*/
+/*btn row negative*/
+.btn.negative{
+    color: #fff!important;
+}
+/*//btn row negative*/
+/*btn row positive*/
+.btn.positive:hover{
+    background-color: #30e2c2;
+    color: #fff!important;
+}
+/*//btn row positive*/
+/*btn row negative*/
+.btn.negative:hover{
+    background-color: #253449;
+    color: #fff!important;
+}
+/*//btn row negative*/
+/*positive next*/
+.table-responsive .paginate_button.next a {
+    background-color: #24c4a6!important;
+    color: #fff!important;
+}
+/*//positive next*/
+/*positive previous*/
+.table-responsive .paginate_button.previous a {
+    background-color: #364c68!important;
+    color: #fff!important;
+}
+/*//positive previous*/
+/*btn hover positive*/
+.table-responsive .paginate_button.next a:hover {
+    background-color: #30e2c2!important;
+    color: #fff!important;
+}
+/*//btn hover positive*/
+/*btn hover negative*/
+.table-responsive .paginate_button.previous a:hover {
+    background-color: #253449!important;
+    color: #fff!important;
+}
+/*//btn hover negative*/
+.table-responsive .paginate_button.active a {
+    background-color: #fff!important;
+    color: #000!important;
+    border: none;
+    
+}
+.table-responsive .paginate_button a {
+    background-color: #fff!important;
+    color: #000!important;
+    border: none;
+    
+}
+
+/*ess circle*/
+table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child::before {
+    background-color: #364c68!important;
+}
+/*less circle*/
+/*add circle*/
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before{
+    content: '+';
+    background-color: #24c4a6!important;
+}
+/*add circle*/

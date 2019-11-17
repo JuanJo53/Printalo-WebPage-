@@ -1,6 +1,5 @@
 // Evento de Boton Registrar
-var Registrar = document.getElementById("btnRegistrarNegocio");
-Registrar.addEventListener("click", e=>{
+function Registrar(){
     var nombreDueño = document.getElementById("txtNameReg").value;
     var apellidoDueño = document.getElementById("txtLastNameReg").value;
     var nombreNeg = document.getElementById("txtNegNameReg").value;
@@ -8,16 +7,15 @@ Registrar.addEventListener("click", e=>{
     var num = document.getElementById("txtNumReg").value;
     var email = document.getElementById("txtEmailReg").value;
     var pass = document.getElementById("txtPasswordReg").value;
-    const negocio = new Negocio();
-    negocio.RegistrarNeg(email,pass);
+    const negocio = new Negocio(email,pass,nombreDueño,apellidoDueño,num,nombreNeg,dir);
+    negocio.RegistrarNeg();
     ValidarNeg();
-});
+};
 // Evento de Boton Ingresar
-var Ingresar = document.getElementById("btnIngresarNeg");
-Ingresar.addEventListener("click", e=>{
-    var nombreNeg = document.getElementById("txtNameIng").value;
+function Ingresar(){
     var email = document.getElementById("txtEmailIng").value;
     var pass = document.getElementById("txtPasswordIng").value;
+<<<<<<< HEAD
 <<<<<<< HEAD:js/Negocios.js
     var auth = new Auth();
     auth.LoginEmailPass(email,pass);
@@ -25,8 +23,12 @@ Ingresar.addEventListener("click", e=>{
     const negocio = new Negocio();
     negocio.IngresarNeg(email,pass);
 >>>>>>> 99bd30ef7ec1d7550c6602461bde55f11982f0d2:js/Negocio/IndexNeg.js
+=======
+    const negocio = new Negocio(email,pass,"","","","","");
+    negocio.IngresarNeg();
+>>>>>>> b0870a63748b1c2939c3a45d2841b003d3d62323
     ValidarNeg();
-});
+}
 
 // Esta funcion ejecuta el observador de firebase
 function ValidarNeg(){

@@ -25,8 +25,8 @@ function IngresarNeg(){
     var nombreNeg = document.getElementById("txtNameIng").value;
     var email = document.getElementById("txtEmailIng").value;
     var pass = document.getElementById("txtPasswordIng").value;
-    const auth = new Auth();
-    auth.LoginEmailPass(email,pass,nombreNeg);
+    var auth = new Auth();
+    auth.LoginEmailPass(email,pass);
     ValidarNeg();
 }
 

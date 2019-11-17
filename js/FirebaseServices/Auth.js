@@ -9,6 +9,7 @@ class Auth{
         });
     }
     LoginEmailPass(email,password){
+        alert("email: "+email+" pass: "+password);
         firebase.auth().signInWithEmailAndPassword(email, password)
         .catch(function(error) {
             var errorCode = error.code;

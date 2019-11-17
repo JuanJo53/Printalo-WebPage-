@@ -1,13 +1,20 @@
 class Cliente{
+    constructor(email, password, nombre, apellido, telefono){
+        this.email = email;
+        this.password = password;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+    }
     // Esta funcion pasa el email y su password a la clase Auth para registrar un nuevo usuario en firebase
-    RegistrarCli(e,p){        
+    RegistrarCli(){        
         var auth = new Auth();
-        auth.crearCuentaEmailPass(e,p);
+        auth.crearCuentaEmailPass(this.email, this.password);
     }
     // Esta funcion pasa el email y su password a la clase Auth para login con firebase
-    IngresarCli(e,p){
+    IngresarCli(){
         var auth = new Auth();
-        auth.LoginEmailPass(e,p);
+        auth.LoginEmailPass(this.email, this.password);
     }
     // Esta funcion pasa el email y su password a la clase Auth para logout con firebase
     CerrarSecionCli(){

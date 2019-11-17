@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../../../css/detalles.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.css" />
-    <title>Pedidos Pendientes</title>
+    <title>Realizados Pagados</title>
 </head>
 
 <body>
@@ -53,7 +53,7 @@
                 <ul class="navbar-nav ml-auto">
                     <!--link pedidos-->
                     <li class="nav-item">
-                        <a href="../pedidosNeg/pedSolicitudes.html" class="nav-link text-light  active">Pedidos</a>
+                        <a href="../pedidosNeg/pedSolicitudes.html" class="nav-link text-light active">Pedidos</a>
                     </li>
                     <!--//link pedidos-->
                     <!--link registros-->
@@ -93,14 +93,14 @@
                 <a href="pedSolicitudes.html" class="list-group-item bg-printalo-greenDetail link">Solicitudes</a>
                 <!--//link solicitudes-->
                 <!--link pendientes-->
-                <a href="pedPendientes.html" class="list-group-item bg-printalo-greenDetail link active">Pendientes</a>
+                <a href="pedPendientes.html" class="list-group-item bg-printalo-greenDetail link ">Pendientes</a>
                 <!--//link pendientes-->
                 <!--link realizados-->
-                <a href="pedRealizadosPagados.html" class="list-group-item bg-printalo-greenDetail link">Realizados</a>
+                <a href="pedRealizadosPagados.html" class="list-group-item bg-printalo-greenDetail link active">Realizados</a>
                 <!--//link realizados-->
                 <!--sublink realizados pagados-->
                 <a href="pedRealizadosPagados.html"
-                    class="list-group-item bg-printalo-greenDetail sublink-sidebar">Pagados</a>
+                    class="list-group-item bg-printalo-greenDetail sublink-sidebar active">Pagados</a>
                 <!--//sublink realizados pagados-->
                 <!--sublink realizados por pagar-->
                 <a href="pedRealizadosPorPagar.html" class="list-group-item bg-printalo-greenDetail sublink-sidebar">Por
@@ -117,7 +117,7 @@
                 <button class="btn circletoggle m-3" id="menu-toggle">></button>
                 <!--//toogle button sidebar-->
                 <!--title page-->
-                <h2 class="my-3">Pedidos Pendientes</h2>
+                <h2 class="my-3">Pedidos Realizados Pagados</h2>
                 <!--//title page-->
                 <div class="row">
                     <div class="col-lg-12">
@@ -136,6 +136,7 @@
                                         <th>Hora Entrega</th>
                                         <th>Estado</th>
                                         <th>Detalles</th>
+                                        <th>Entregar</th>
                                     </tr>
                                 </thead>
                                 <!--//head-->
@@ -149,8 +150,9 @@
                                         <td>Online</td>
                                         <td>10/10/2019</td>
                                         <td>20:30</td>
-                                        <td><div class="color-printalo-greenDetail"><i class="far fa-square fa-2x"></i></div></td>
+                                        <td><div class="color-printalo-greenDetail"><i class="far fa-check-square fa-2x"></i></div></td>
                                         <td><a href="" class="btn bg-printalo-greenDetail positive">Detalles</a></td>
+                                        <td><a href="" class="btn bg-printalo-greenDetail positive">Entregar</a></td>
                                     </tr>
                                 </tbody>
                                 <!--tbody-->

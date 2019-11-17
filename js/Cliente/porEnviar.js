@@ -6,6 +6,8 @@ close.addEventListener("click", e =>{
     ValidarCli();
 });
 
+
+
 // Esta funcion ejecuta el observador de firebase
 function ValidarCli(){
     firebase.auth().onAuthStateChanged(function(user) {

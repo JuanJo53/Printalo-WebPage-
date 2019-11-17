@@ -44,14 +44,14 @@
                     </li>
                     <!--Btn Iniciar Sesion-->
                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-button" data-toggle="modal"
-                            data-target="#ingresarModal">Iniciar Sesion</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-button modal-neg"  href="../../acrosspages/modalloginNeg.html">Iniciar Sesion</a>
                     </li>
+                    <!--//btn iniciar sesion-->
                     <!--Btn Registrarse-->
                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button" data-toggle="modal"
-                            data-target="#registrarseModal">Registrarse</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button modal-register-neg" href="../../acrosspages/modalRegisterNeg.html">Registrarse</a>
                     </li>
+                    <!--//btn registrarse-->
                     <!--Btn Ir a seccion de Usuarios-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
@@ -157,142 +157,29 @@
             </div>
         </div>
     </footer>
-
-    <!--ingresar Modal-->
-    <div class="modal fade text-dark" id="ingresarModal">
+    <!--ingresar Modal neg-->
+    <div class="modal fade text-dark" id="modalNegocio">
         <div class="modal-dialog modal-lg">
-            <div class="row py-3">
-                <div class="col-lg-6 nopadding d-none d-lg-block ">
-                    <div class="modal-content bg-printalo-blueDetail">
-                        <div class="container center">
-                            <div class="modal-body">
-                                <div class="text-center">
-                                    <img width="100" height="100" src="../../../img/printer.png" alt=""
-                                        class="img-fluid ">
-                                </div>
-                                <h3 class="text-center text-light">Printalo</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 nopadding">
-                    <div class="modal-content">
-                        <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
-                        <div class="container">
-                            <h2 class="text-center">Ingreso Negocios</h2>
-                            <form action="" class="p-5">
-                                <div class="form-group">
-                                    <!--nombre del negocio-->
-                                    <label for="name">Nombre del Negocio:</label>
-                                    <input type="text" class="form-control" id="txtNameIng">
-                                    <!--//-->
-                                    <!--email-->
-                                    <label for="name">E-mail:</label>
-                                    <input type="text" class="form-control" id="txtEmailIng">
-                                    <!--//-->
-                                    <!--contrasenia-->
-                                    <label for="name">Constraseña:</label>
-                                    <input type="password" class="form-control" id="txtPasswordIng">
-                                    <!--//-->
-                                </div>
-                            </form>
-                                <div class="modalbutton text-center py-3">
-                                <!--Btn Ingresar Negocios-->
-                                <button id="btnIngresarNeg"
-                                    class="btn btn-outline-light bg-printalo-button text-light">Ingresar</button>
-                                <!--//-->
-                                <br>
-                                <br>
-                                <!--Link Registrarse-->
-                                <a href="" class="text-center"><u
-                                        class="color-printalo-blueDetail">Registrarse</u></a>
-                                <!--//-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-
-    <!--Registrarse Modal-->
-    <div class="modal fade text-dark" id="registrarseModal">
+    <!--//ingresar modal neg-->
+    <!--Registrarse Modal neg-->
+    <div class="modal fade text-dark" id="modalRegisterNegocio">
         <div class="modal-dialog modal-lg">
-            <div class="row py-3">
-                <div class="col-lg-6 nopadding">
-                    <div class="modal-content">
-                        <div class="container">
-                            <a href=""
-                                class="close-icon text-center ml-auto m-3 d-none d-block d-sm-block d-md-block d-lg-none"
-                                data-dismiss="modal"></a>
-                            <h2 class="text-center pt-5">Registrar Negocio</h2>
-                            <form action="" class="p-3">                                <div class="form-group">
-                                <!--Nombre del duenio-->
-                                <label for="username">Nombre del Dueño: </label>
-                                <input type="text" class="form-control" id="txtNameReg">
-                                <!--//-->
-                                <!--apellido del duenio-->
-                                <label for="username">Apellido del Dueño : </label>
-                                <input type="text" class="form-control" id="txtLastNameReg">
-                                <!--//-->
-                                <!--nombre del negocio-->
-                                <label for="name">Nombre del Negocio:</label>
-                                <input type="text" class="form-control" id="txtNegNameReg">
-                                <!--//-->
-                                <!--direccion-->
-                                <label for="password">Direccion:</label>
-                                <input type="text" class="form-control" id="txtDirReg">
-                                <!--//-->
-                                <!--numero de referencia-->
-                                <label for="text">Numero de referencia:</label>
-                                <input type="text" class="form-control" id="txtNumReg">
-                                <!--//-->
-                                <!--Email-->
-                                <label for="username">E-mail : </label>
-                                <input type="text" class="form-control" id="txtEmailReg">
-                                <!--//-->
-                                <!--Contrasenia-->
-                                <label for="password">Contraseña:</label>
-                                <input type="password" class="form-control" id="txtPasswordReg">
-                                <!--//-->
-                            </div>
-                            </form>
-                                <div class="modalbutton text-center py-3">
-                                <!--Btn Registrar Negocios-->
-                                <button id="btnRegistrarNegocio"
-                                    class="btn btn-outline-light bg-printalo-button text-light">Registrar</button>
-                                <!--//-->
-                                <br>
-                                <br>
-                                <!--Link Ir a ingresar-->
-                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
-                                <!--//-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 nopadding d-none d-lg-block ">
-                    <div class="modal-content bg-printalo-blueDetail">
-                        <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
-                        <div class="container center">
-                            <div class="modal-body">
-                                <div class="text-center">
-                                    <img width="100" height="100" src="../../../img/printer.png" alt=""
-                                        class="img-fluid ">
-                                </div>
-                                <h3 class="text-center text-light">Printalo</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
+    <!--registrarse modal neg-->
     <!--Fin de Modals-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <!--boostrap jquery popper libraries-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-    <script src="../../../js/bootstrap.min.js"></script>
+    <!--//boostrap jquery popper libraries-->
+    <!--iconuserpefil script-->
+    <script src="../../../js/designjs/loginmodals.js"></script>
+    <!--//iconuserpefil script-->
     <script>
         $('#year').text(new Date().getFullYear());
     </script>

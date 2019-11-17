@@ -2,6 +2,10 @@
     background-color: #364c68!important;
     color: #fff!important;
 }
+.table td{
+    vertical-align: middle !important;
+}
+
 /*btn row positive*/
 .btn.positive{
     color: #fff!important;
@@ -40,12 +44,14 @@
 .table-responsive .paginate_button.next a:hover {
     background-color: #30e2c2!important;
     color: #fff!important;
+    cursor: pointer;
 }
 /*//btn hover positive*/
 /*btn hover negative*/
 .table-responsive .paginate_button.previous a:hover {
     background-color: #253449!important;
     color: #fff!important;
+    cursor: pointer;
 }
 /*//btn hover negative*/
 .table-responsive .paginate_button.active a {
@@ -70,5 +76,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child::befor
 table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before{
     content: '+';
     background-color: #24c4a6!important;
+    vertical-align: middle!important;
 }
 /*add circle*/

@@ -34,19 +34,12 @@ a {
   text-decoration: none !important;
   color: white;
 }
-.list-group-item:hover {
-  font-weight: bold;
-  color: white;
-}
+
 .modal-dialog {
   padding-top: 10%;
 }
 
-.list-group-item {
-  border: none;
-  padding: 30px;
-  font-size: 1.1rem;
-}
+
 
 #sidebar-wrapper {
   min-height: 93vh;
@@ -99,20 +92,7 @@ a {
   line-height: 50px;
   position: relative;
 }
-.circletoggle {
-  cursor: pointer;
-  display: block;
-  box-sizing: border-box;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  border-color: #24c4a6;
-  background-color: #24c4a6;
-  color: white;
-  text-align: center;
-  line-height: 40px;
-  position: relative;
-}
+
 
 .nopadding {
   padding: 0 !important;
@@ -133,11 +113,28 @@ a {
 li {
   text-align: center !important;
 }
-.list-group-item.active {
+/*sidebar links*/
+.list-group-item.link.active {
   color: #fff;
   /*background-color:rgba(0,0,0,0.075);*/
-  background-color: #24c4a6;
   background-color: rgba(255, 255, 255, 0.5);
+}
+/*//sidebar links*/
+/*sidebar sublinks*/
+.list-group-item.sublink-sidebar.active {
+  color: #fff;
+  font-weight: bold;
+  background-color: #24c4a6;
+}
+/*//sidebar sublinks*/
+.list-group-item {
+  border: none;
+  padding: 30px;
+  font-size: 1.1rem;
+}
+.list-group-item:hover {
+  font-weight: bold;
+  color: white;
 }
 .section-border {
   position: relative;
@@ -150,10 +147,6 @@ input[type="text"]{
   border-radius: .25rem;
   border: 1px solid #ced4da;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-.icon-editar{
-  background:#24c4a6;
-  color:white;
 }
 .table th{
   vertical-align: middle!important;
@@ -245,10 +238,7 @@ input[type="text"]{
   border-radius: 50%;
   background: white;
 }
-button.icon-editar:hover {
-  background-color: #30e2c2 !important;
-  color: rgb(255, 255, 255) !important;
-}
+
 .positive:hover {
   background-color: #30e2c2 !important;
   color: rgb(255, 255, 255) !important;

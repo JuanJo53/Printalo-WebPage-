@@ -38,16 +38,16 @@
                     <li class="nav-item">
                         <a href="indexContactosUser.html" class="nav-link text-light center active ">Contactos</a>
                     </li>
-                    <!--Btn Iniciar Sesion-->
-                    <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-button" data-toggle="modal"
-                            data-target="#ingresarModal">Iniciar Sesion</a>
+                     <!--Btn Iniciar Sesion-->
+                     <li class="nav-item">
+                        <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-button modal-login-usu"  href="../../acrosspages/modalloginUsu.html">Iniciar Sesion</a>
                     </li>
+                    <!--//btn iniciar sesion-->
                     <!--Btn Registrarse-->
                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button" data-toggle="modal"
-                            data-target="#registrarseModal">Registrarse</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button modal-register-usu" href="../../acrosspages/modalRegisterUsu.html">Registrarse</a>
                     </li>
+                    <!--//btn registrarse-->
                     <!--Btn Ir a seccion Negocios-->
                     <li class="nav-item">
                         <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
@@ -152,119 +152,50 @@
             </div>
         </div>
     </footer>
-    <!--ingresar Modal-->
-    <div class="modal fade text-dark" id="ingresarModal">
+    <!--ingresar Modal usuario-->
+    <div class="modal fade text-dark" id="modalLoginUsuario">
         <div class="modal-dialog modal-lg">
-            <div class="row py-3">
-                <div class="col-lg-6 nopadding d-none d-lg-block ">
-                    <div class="modal-content bg-printalo-blueDetail">
-                        <div class="container center">
-                            <div class="modal-body">
-                                <div class="text-center">
-                                    <img width="100" height="100" src="../../../img/printer.png" alt=""
-                                        class="img-fluid ">
-                                </div>
-                                <h3 class="text-center text-light">Printalo</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 nopadding">
-                    <div class="modal-content">
-                        <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
-                        <div class="container">
-                            <h2 class="text-center">Ingreso</h2>
-                            <form action="" class="p-5">
-                                <div class="form-group">
-                                    <label for="name">E-mail:</label>
-                                    <input type="text" class="form-control">
-                                    <label for="name">Constraseña:</label>
-                                    <input type="password" class="form-control">
-                                </div>
-                                <div class="modalbutton text-center py-3">
-                                    <!--btn ingresar usuario normal-->
-                                    <a class="btn btn-outline-light bg-printalo-button text-light"
-                                        href="../../usuarioUI/inicioUsuario.html">Ingresar</a>
-                                    <!--//-->
-                                    <br>
-                                    <br>
-                                    <a href="" class="text-center"><u
-                                            class="color-printalo-blueDetail">Registrarse</u></a>
-                                </div>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-
-
-
-    <!--Registrarse Modal-->
-    <div class="modal fade text-dark" id="registrarseModal">
+    <!--//Ingresar modal usuario-->
+    <!--Registrarse Modal usuario-->
+    <div class="modal fade text-dark" id="modalRegisterUsuario">
         <div class="modal-dialog modal-lg">
-            <div class="row py-3">
-                <div class="col-lg-6 nopadding">
-                    <div class="modal-content">
-                        <div class="container">
-                            <a href=""
-                                class="close-icon text-center ml-auto m-3 d-none d-block d-sm-block d-md-block d-lg-none"
-                                data-dismiss="modal"></a>
-                            <h2 class="text-center pt-5">Registrarse</h2>
-                            <form action="" class="p-5">
-                                <div class="form-group">
-                                    <label for="username">Nombre:</label>
-                                    <input type="text" class="form-control">
-                                    <label for="username">Apellido:</label>
-                                    <input type="text" class="form-control">
-                                    <label for="username">Numero de telefono:</label>
-                                    <input type="text" class="form-control">
-                                    <label for="name">E-mail:</label>
-                                    <input type="text" class="form-control">
-                                    <label for="password">Constraseña:</label>
-                                    <input type="password" class="form-control">
-                                </div>
-                                <div class="modalbutton text-center py-3">
-                                    <!--btn ingresar usuario normal-->
-                                    <a class="btn btn-outline-light bg-printalo-button text-light">Registrar</a>
-                                    <!--//-->
-                                    <br>
-                                    <br>
-                                    <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
-                                </div>
-                            </form>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 nopadding d-none d-lg-block ">
-                    <div class="modal-content bg-printalo-blueDetail">
-                        <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
-                        <div class="container center">
-                            <div class="modal-body">
-                                <div class="text-center">
-                                    <img width="100" height="100" src="../../../img/printer.png" alt=""
-                                        class="img-fluid ">
-                                </div>
-                                <h3 class="text-center text-light">Printalo</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
+    <!--//Registrarse Modal usuario-->
     <!--Fin modals-->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <!--boostrap jquery popper libraries-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-    <script src="../../../js/bootstrap.min.js"></script>
+    <!--//boostrap jquery popper libraries-->
+    <!--iconuserpefil script-->
+    <script src="../../../js/designjs/loginmodals.js"></script>
+    <!--//iconuserpefil script-->
     <script>
         $('#year').text(new Date().getFullYear());
     </script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+    <!-- Para uso de Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+
+    <!-- Para Authentication y Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+
+    <!-- Configuracion de Proyecto en Firebase -->
+    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
+
+    <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
+    <script type="text/javascript" src="../../../js/Cliente/Clientes.js"></script>
+    <script type="text/javascript" src="../../../js/Cliente/IndexCli.js"></script>
+    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
 </body>
 
 </html>

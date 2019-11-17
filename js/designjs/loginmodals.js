@@ -1,0 +1,19 @@
+$('.modal-neg').on('click',function(e){
+    e.preventDefault();
+    $('#modalNegocio').modal('show').find('.modal-dialog').load($(this).attr('href'));
+});
+
+$('.modal-register-neg').on('click',function(e){
+    e.preventDefault();
+    $('#modalRegisterNegocio').modal('show').find('.modal-dialog').load($(this).attr('href'));
+});
+//User
+$('.modal-login-usu').on('click',function(e){
+    e.preventDefault();
+    $('#modalLoginUsuario').modal('show').find('.modal-dialog').load($(this).attr('href'));
+});
+$('.modal-register-usu').on('click',function(e){
+    e.preventDefault();
+    $('#modalRegisterUsuario').modal('show').find('.modal-dialog').load($(this).attr('href'));
+});
+//--User

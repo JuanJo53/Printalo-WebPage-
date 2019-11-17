@@ -8,14 +8,14 @@
     <meta name="author" content="Colque Herrera Ariel">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="../../../css/tables/tablelistaCliente.css">
     <link rel="stylesheet" href="../../../css/modals.css">
-    <link rel="stylesheet" href="../../../css/tables/tableporEnviar.css">
     <link rel="stylesheet" href="../../../css/detalles.css">
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/usuario/usuarioGeneral.css">
     <link rel="stylesheet" href="../../../css/fab.css">
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-    <title>Por enviar</title>
+    <title>Lista de Negocio</title>
 </head>
 
 <body>
@@ -27,9 +27,7 @@
                     <span class="navbar-toggler-icon"></span></button>
                 <!--Link logo-->
                 <a class="navbar-brand mx-1" href="#home">
-                    <!--image logo-->
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
-                    <!--//image logo-->
                     <!--Titulo Logo-->
                     <h5 class="d-inline align-middle mx-1 text-light">Printalo Usuarios</h5>
                     <!--Titulo Logo-->
@@ -37,7 +35,7 @@
                 <!--//Link logo-->
             </div>
             <!--Profile Icon-->
-            <a id="btnUser" href="../../acrosspages/perfiliconusuario.html"
+            <a href="../../acrosspages/perfiliconusuario.html"
                 class="navbar-item  order-lg-last   order-xs-last  mx-1 icon-user">
                 <div class="d-inline circle bg-printalo-greenDetail">
                     <!--Initial letter-->
@@ -52,12 +50,12 @@
                 <ul class="navbar-nav ml-auto">
                     <!--Link Documentos-->
                     <li class="nav-item">
-                        <a href="../documentosCli/porEnviar.html" class="nav-link text-light active">Documentos</a>
+                        <a href="../documentosCli/porEnviar.html" class="nav-link text-light ">Documentos</a>
                     </li>
                     <!--//Link Documentos-->
                     <!--Link Puestos-->
                     <li class="nav-item">
-                        <a href="../puestosCli/verPuestos.html" class="nav-link text-light ">Puestos</a>
+                        <a href="../puestosCli/verPuestos.html" class="nav-link text-light active">Puestos</a>
                     </li>
                     <!--//Link Puestos-->
                     <!--Link Notificaciones-->
@@ -78,15 +76,12 @@
     <!--//Navbar-->
     <!--Sub Navbar usuarios-->
     <ul class="nav nav-pills nav-justified bg-printalo-greenDetail">
-        <!--Navbar Link Por Enviar-->
-        <li class="nav-item"><a class="nav-link active" href="porEnviar.html">Por enviar</a></li>
-        <!--//Navbar Link Por Enviar-->
-        <!--Navbar Link enviados-->
-        <li class="nav-item"><a class="nav-link" href="enviados.html">Enviados</a></li>
-        <!--//Navbar Link enviados-->
-        <!--Navbar Link realizados-->
-        <li class="nav-item"><a class="nav-link" href="realizados.html">Realizados</a></li>
-        <!--//Navbar Link realizados-->
+        <!--Navbar Link listas-->
+        <li class="nav-item"><a class="nav-link active" href="listasPuesto.html">Listas</a></li>
+        <!--//-->
+        <!--Navbar Link informacion-->
+        <li class="nav-item"><a class="nav-link" href="informacionPuesto.html">Informacion</a></li>
+        <!--//-->
     </ul>
     <!--//Sub Navbar usuarios-->
     <!--container-->
@@ -94,41 +89,39 @@
         <!-- responsive table -->
         <div class="holder">
             <!--title page-->
-            <h2 class="my-3">Pedidos por enviar</h2>
+            <h2 class="my-3">Lista de Negocio de PCS</h2>
             <!--//title page-->
             <div class="responsiveTbl">
                 <!--start table-->
                 <table>
                     <!--column's titles-->
                     <thead>
-                        <!--row-->
                         <tr>
                             <!--th 1-->
-                            <th class="text-center">Tipo</th>
+                            <th class="text-center">#Lista</th>
                             <!--th 2-->
-                            <th class="text-center">Nombre</th>
+                            <th class="text-center">Materia</th>
                             <!--th 3-->
-                            <th class="text-center">Solicitar</th>
+                            <th class="text-center">Titulo</th>
                             <!--th 4-->
-                            <th class="text-center">Eliminar</th>
+                            <th class="text-center">Solicitar</th>
                         </tr>
-                        <!--//row-->
                     </thead>
                     <!--//column's titles-->
                     <tbody>
                         <!--Row-->
                         <tr>
-                            <!--Icono-->
-                            <td class="text-center"><a><i class="far fa-file-pdf fa-3x"></i></a></td>
+                            <!--Nro lista-->
+                            <td class="text-center">000001</td>
                             <!--//-->
-                            <td class="text-center">nombredearchivo.pdf</td>
+                            <!--Materia-->
+                            <td class="text-center">Calculo 1</td>
+                            <!--titulo-->
+                            <td class="text-center">Practica 1</td>
+                            <!--//-->
                             <!--Btn Solicitar-->
                             <td class="text-center"><a class="btn positive bg-printalo-greenDetail text-light"
-                                    data-toggle="modal" data-target="#escogerLocal">Solicitar</a></td>
-                            <!--//-->
-                            <!--Btn Eliminar-->
-                            <td class="text-center"><a class="btn negative bg-printalo-blueDetail text-light"
-                                    data-toggle="modal" data-target="#checkAlert">Eliminar</a></td>
+                                    data-toggle="modal" data-target="#solicitardelista">Solicitar</a></td>
                             <!--//-->
                         </tr>
                         <!--//Row-->
@@ -137,191 +130,11 @@
                 <!--//start table-->
             </div>
         </div>
-        <!-- // -->
-        <!--float action button (+)-->
-        <div class="fab-container">
-            <div class="fab-icon-holder">
-                <!--modal target-->
-                <a data-toggle="modal" data-target="#ingresarModal">
-                    <!--//modal target-->
-                    <!--Icon-->
-                    <i class="fas fa-plus "></i>
-                    <!--//Icon-->
-                </a>
-            </div>
-        </div>
-        <!--//float action button (+)-->
+        <!-- //responsive table -->
     </div>
     <!--//container-->
-    <!--Modal Subir Documento (+)-->
-    <div class="modal fade text-dark" id="ingresarModal">
-        <div class="modal-dialog mini modal-md">
-            <div class="modal-content">
-                <!--title modal header-->
-                <div class="modal-header bg-printalo-blueDetail">
-                    <h5 class="modal-title text-light">Abrir Archivo</h5>
-                </div>
-                <!--//title modal header-->
-                <!--modal body-->
-                <div class="container px-5 my-4">
-                    <div class="row my-2">
-                        <div class="col-xs-4 text-center">
-                            <div class="square-icon">
-                                <!--icono--><i class="far fa-file fa-3x"></i>
-                                <!--//icono-->
-                            </div>
-                        </div>
-                        <!--Question-->
-                        <div class="col my-auto text-center">
-                            <h5>Abrir "NombredelArchivo.pdf"?</h5>
-                        </div>
-                        <!--//Question-->
-                    </div>
-                </div>
-                <!--//modal body-->
-                <!--modal footer-->
-                <div class="modal-footer">
-                    <div class="modalbuttonalert text-center">
-                        <!--btn Cancelar-->
-                        <a class="btn negative bg-printalo-blueDetail text-light">Cancelar</a>
-                        <!--btn Cancelar-->
-                        <!--btn Aceptar-->
-                        <a class="btn positive bg-printalo-greenDetail text-light">Aceptar</a>
-                        <!--//btn Aceptar-->
-                    </div>
-                </div>
-                <!--//modal footer-->
-            </div>
-        </div>
-    </div>
-    <!--//Modal Subir Documento (btn +)-->
-    <!--Escoger negocio modal(btn siguiente)-->
-    <div class="modal fade text-dark" id="escogerLocal">
-        <div class="modal-dialog">
-            <!--Progress Modal-->
-            <div class="col pb-3">
-                <!--modal content-->
-                <div class="modal-content">
-                    <div class="container">
-                        <section class="px-2 py-4 text-center">
-                            <!--circle icon hand pointer on-->
-                            <div class="fab-icon-holder-modal on">
-                                <a>
-                                    <!--icon-->
-                                    <i class="far fa-hand-pointer "></i>
-                                    <!--//icon--></a>
-                                </i>
-                            </div>
-                            <!--//circle icon hand pointer-->
-                            <!--customed row off-->
-                            <div class="row-detail off">
-                            </div>
-                            <!--//customed row-->
-                            <!--circle icon  config off-->
-                            <div class="fab-icon-holder-modal off">
-                                <a>
-                                    <!--icon-->
-                                    <i class="fas fa-wrench "></i>
-                                    <!--icon--></a>
-                                </i>
-                            </div>
-                            <!--//circle icon  config-->
-                            <!--customed row off-->
-                            <div class="row-detail off">
-                            </div>
-                            <!--//customed row-->
-                            <!--circle icon  clock off-->
-                            <div class="fab-icon-holder-modal off">
-                                <a>
-                                    <!--icon-->
-                                    <i class="fas fa-clock"></i>
-                                    <!--//icon--></a>
-                                </i>
-                            </div>
-                            <!--//circle icon  clock-->
-                            <!--customed row off-->
-                            <div class="row-detail off">
-                            </div>
-                            <!--//customed row-->
-                            <!--circle icon  payment off-->
-                            <div class="fab-icon-holder-modal off">
-                                <a>
-                                    <!--icon-->
-                                    <i class="fas fa-dollar-sign "></i>
-                                    <!--//icon--></a>
-                                </i>
-                            </div>
-                            <!--//circle icon  payment-->
-                            <!--customed row off-->
-                            <div class="row-detail off">
-                            </div>
-                            <!--//customed row-->
-                            <!--circle icon  check off-->
-                            <div class="fab-icon-holder-modal off">
-                                <a>
-                                    <!--icon-->
-                                    <i class="fas fa-check-circle "></i>
-                                    <!--icon--></a>
-                                </i>
-                            </div>
-                            <!--circle icon  check-->
-                        </section>
-                    </div>
-                </div>
-                <!--//modal content-->
-            </div>
-            <!--//Progress Modal-->
-            <!--Content Modal-->
-            <div class="col pb-3">
-                <div class="modal-content">
-                    <div class="container px-5">
-                        <!--modal title-->
-                        <h5 class="text-center p-3">Escoja un negocio</h5>
-                        <!--modal title-->
-                        <!--Btn Imagen de local-->
-                        <!--pcs button-->
-                        <!--modal target-->
-                        <div class="pb-3 text-center puesto" data-dismiss="modal" data-toggle="modal"
-                            data-target="#configurarPedido">
-                            <!--//modal target-->
-                            <div class="card negocioIcon mx-auto">
-                                <div class="img-puesto">
-                                    <!--img del negocio-->
-                                    <img src="../../../img/pcs.jpg" alt="" class="card-img-top">
-                                </div>
-                                <!--//img del negocio-->
-                                <div class="card-footer">
-                                    <!--nombre del negocio-->
-                                    <h5 class="my-auto text-light">PCS</h5>
-                                    <!--//nombre del negocio-->
-                                </div>
-                            </div>
-                        </div>
-                        <!--//pcs button-->
-                        <!--//Btn Imagen de local-->
-                    </div>
-                </div>
-            </div>
-            <!--Content Modal-->
-            <!--btn cancelar-->
-            <div class="col pb-3">
-                <div class="modal-content">
-                    <div class="container px-5">
-                        <div class="py-3">
-                            <!--Btn cancelar-->
-                            <a class="btn btn-block negative bg-printalo-blueDetail text-light "
-                                data-dismiss="modal">Cancelar</a>
-                            <!--//Btn cancelar-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--btn cancelar-->
-        </div>
-    </div>
-    <!--//Escoger negocio modal(btn siguiente)-->
-    <!--modal configurar pedido -->
-    <div class="modal fade text-dark" id="configurarPedido">
+    <!--modal solicitar de doc de lista -->
+    <div class="modal fade text-dark" id="solicitardelista">
         <div class="modal-dialog modal-md">
             <!--Progress Modal-->
             <div class="col pb-3">
@@ -329,19 +142,6 @@
                 <div class="modal-content">
                     <div class="container">
                         <section class="px-2 py-4 text-center">
-                            <!--circle icon hand pointer on-->
-                            <div class="fab-icon-holder-modal on">
-                                <a>
-                                    <!--icon-->
-                                    <i class="far fa-hand-pointer "></i>
-                                    <!--//icon--></a>
-                                </i>
-                            </div>
-                            <!--//circle icon hand pointer-->
-                            <!--customed row on-->
-                            <div class="row-detail on">
-                            </div>
-                            <!--//customed row-->
                             <!--circle icon  config on-->
                             <div class="fab-icon-holder-modal on">
                                 <a>
@@ -396,11 +196,11 @@
                 <!--//modal content-->
             </div>
             <!--//Progress Modal-->
-            <!--Content Modal configurar pedido-->
+            <!--Content Modal-->
             <div class="col pb-3">
                 <div class="modal-content">
                     <div class="container px-5">
-                        <h5 class="text-center pt-4">Configurar Pedido</h5>
+                        <h5 class="text-center pt-3">Configurar Pedido</h5>
                         <div class="blockofblock py-2">
                             <!--Configuration Block color-->
                             <div class="config-block py-2">
@@ -411,12 +211,11 @@
                                 <div class="row-sub">
                                 </div>
                                 <!--//subrow-->
-                                <!--2 Radio buttons bn o color-->
                                 <div class="py-1 ml-auto row">
                                     <!-- rbt b/n-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Blanco/Negro
-                                            <input type="radio" checked="checked" name="radioColor">
+                                            <input type="radio" checked="checked" name="radioColor" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -426,7 +225,7 @@
                                     <!-- rbt color-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Color
-                                            <input type="radio" name="radioColor">
+                                            <input type="radio" name="radioColor" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -434,7 +233,7 @@
                                     </div>
                                     <!-- //rbt b/color-->
                                 </div>
-                                <!-- //2 Radio buttons bn o color-->
+                                <!-- //2 Radio buttons rango o unico-->
                             </div>
                             <!--//Configuration Block color-->
                             <!--Configuration Block tamanio de impresion-->
@@ -446,12 +245,11 @@
                                 <div class="row-sub">
                                 </div>
                                 <!--//subrow-->
-                                <!-- 3 Radio buttons carta oficio o a4-->
                                 <div class="py-1 text-center row">
                                     <!-- rbt carta-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Carta
-                                            <input type="radio" checked="checked" name="radioTamanio">
+                                            <input type="radio" checked="checked" name="radioTamanio" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -461,7 +259,7 @@
                                     <!-- rbt oficio-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Oficio
-                                            <input type="radio" name="radioTamanio">
+                                            <input type="radio" name="radioTamanio" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -471,7 +269,7 @@
                                     <!-- rbt a4-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">A4
-                                            <input type="radio" name="radioTamanio">
+                                            <input type="radio" name="radioTamanio" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -479,7 +277,7 @@
                                     </div>
                                     <!-- //rbt a4-->
                                 </div>
-                                <!-- //3 Radio buttons carta oficio o a4-->
+                                <!-- //2 Radio buttons rango o unico-->
                             </div>
                             <!--//Configuration Block tamanio impresion-->
                             <!--Configuration Block lados-->
@@ -491,12 +289,11 @@
                                 <div class="row-sub">
                                 </div>
                                 <!--//subrow-->
-                                <!-- 2 Radio buttons intercalado o anv/rev-->
                                 <div class="py-1 ml-auto row">
                                     <!-- rbt intercalado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Intercalado
-                                            <input type="radio" checked="checked" name="radioLados">
+                                            <input type="radio" checked="checked" name="radioLados" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -506,7 +303,7 @@
                                     <!-- rbt anverso/reverso-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Anv/Reverso
-                                            <input type="radio" name="radioLados">
+                                            <input type="radio" name="radioLados" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -514,7 +311,7 @@
                                     </div>
                                     <!-- //rbt anverso/reverso-->
                                 </div>
-                                <!--//2 Radio buttons intercalado o anv/rev-->
+                                <!-- //2 Radio buttons rango o unico-->
                             </div>
                             <!--//Configuration impresion lados-->
                             <!--Configuration Block numero de hojas-->
@@ -530,7 +327,7 @@
                                     <!-- rbt todo-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Todo
-                                            <input type="radio" checked="checked" name="radioNumPag" id="todo">
+                                            <input type="radio" checked="checked" name="radioNumPag" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -540,7 +337,7 @@
                                     <!-- rbt personalizado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Personalizado
-                                            <input type="radio" name="radioNumPag" id="personalizado">
+                                            <input type="radio" name="radioNumPag" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -549,43 +346,6 @@
                                     <!-- //rbt personalizado-->
                                 </div>
                                 <!-- //2 Radio buttons rango o unico-->
-                                <!--rbt todo response-->
-                                <div id="tododiv">
-                                    <h5></h5>
-                                </div>
-                                <!--//rbt personal response-->
-                                <!--rbt personalizado response Block inputs invisible-->
-                                <div id="personalizadodiv" style='display:none' class="pt-2 tarjeta-modal">
-                                    <!--row-->
-                                    <div class="row pt-2">
-                                        <div class="col">
-                                            <!--subtitle-->
-                                            <p class="color-printalo-blueDetail font-weight-bold">Pagina Inicial</p>
-                                            <!--//subtitle-->
-                                            <!--row-->
-                                            <div class="row-sub">
-                                            </div>
-                                            <!--//row-->
-                                            <!--input pag inicial-->
-                                            <input type="text" class="form-control my-2">
-                                            <!--//input pag inicial-->
-                                        </div>
-                                        <div class="col">
-                                            <!--subtitle-->
-                                            <p class="color-printalo-blueDetail font-weight-bold">Pagina Final</p>
-                                            <!--//subtitle-->
-                                            <!--row-->
-                                            <div class="row-sub">
-                                            </div>
-                                            <!--//row-->
-                                            <!--input pag final-->
-                                            <input type="text" class="form-control my-2">
-                                            <!--//input pag final-->
-                                        </div>
-                                    </div>
-                                    <!--//row-->
-                                </div>
-                                <!--//rbt personalizado response Block inputs invisible-->
                             </div>
                             <!--//Configuration block numero de hojas-->
                             <!--Configuration Block tipo acabado-->
@@ -601,7 +361,7 @@
                                     <!-- rbt engrampado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Engrampado
-                                            <input type="radio" checked="checked" name="radioAcabado">
+                                            <input type="radio" checked="checked" name="radioAcabado" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -611,7 +371,7 @@
                                     <!-- rbt normal-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Normal
-                                            <input type="radio" name="radioAcabado">
+                                            <input type="radio" name="radioAcabado" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -635,7 +395,7 @@
                                     <!-- rbt normal-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Normal
-                                            <input type="radio" checked="checked" name="radioTipHoja">
+                                            <input type="radio" checked="checked" name="radioTipHoja" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -645,7 +405,7 @@
                                     <!-- rbt reutilizado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Reutilizado
-                                            <input type="radio" name="radioTipHoja">
+                                            <input type="radio" name="radioTipHoja" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -657,7 +417,7 @@
                             </div>
                             <!--//Configuration block tipo de hoja-->
 
-                            <!--Configuration Block cantidad impresiones on!!!-->
+                            <!--Configuration Block cantidad impresiones on !!!-->
                             <div class="config-block py-2">
                                 <!--subtitle-->
                                 <p class="color-printalo-blueDetail font-weight-bold">Nro Copias</p>
@@ -672,7 +432,8 @@
                                         <div class="block-typenumber">
                                             <div class='ctrl'>
                                                 <!--decrement-->
-                                                <div class='ctrl__button ctrl__button--decrement on'>&ndash;</div>
+                                                <div class='ctrl__button ctrl__button--decrement on '>&ndash;
+                                                </div>
                                                 <!--//decrement-->
                                                 <!--input number-->
                                                 <div class='ctrl__counter on'>
@@ -682,7 +443,7 @@
                                                 </div>
                                                 <!--//input number-->
                                                 <!--increment-->
-                                                <div class='ctrl__button ctrl__button--increment on'>+</div>
+                                                <div class='ctrl__button ctrl__button--increment on '>+</div>
                                                 <!--//increment-->
                                             </div>
                                         </div>
@@ -696,7 +457,29 @@
                     </div>
                 </div>
             </div>
-            <!--Content Modal configurar pedido-->
+            <!--Content Modal-->
+            <!--Content document owner-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <div class="container px-5">
+                        <!--modal title-->
+                        <h5 class="text-center p-3">Dueño</h5>
+                        <!--//modal title-->
+                        <!--subtitle-->
+                        <p class="color-printalo-blueDetail font-weight-bold">Informacion</p>
+                        <!--//subtitle-->
+                        <!--subrow-->
+                        <div class="row-sub">
+                        </div>
+                        <!--details-->
+                        <p><span class="font-weight-bold">Nombre :</span>Andres Mejia</p>
+                        <p><span class="font-weight-bold">Fecha de recepcion :</span> 10/10/2019</p>
+                        <p><span class="font-weight-bold">Hora de recepcion :</span> 10:00 am</p>
+                        <!--details-->
+                    </div>
+                </div>
+            </div>
+            <!--//Content document owner-->
             <!--Content Modal buttons-->
             <div class="col pb-3">
                 <div class="modal-content">
@@ -707,7 +490,7 @@
                                 <div class="py-3">
                                     <!--Btn atras-->
                                     <a class="btn btn-block negative bg-printalo-blueDetail text-light "
-                                        data-dismiss="modal" data-toggle="modal" data-target="#escogerLocal">Atras</a>
+                                        data-dismiss="modal" data-toggle="modal">Atras</a>
                                     <!--//Btn atras-->
                                 </div>
                             </div>
@@ -727,7 +510,10 @@
             <!--//Content Modal buttons-->
         </div>
     </div>
-    <!--//Configurar Pedido-->
+    <!--//solicitar de doc de lista-->
+
+
+
     <!--configurar tiempo-->
     <div class="modal fade text-dark" id="configurarTiempo">
         <div class="modal-dialog modal-md">
@@ -737,19 +523,6 @@
                 <div class="modal-content">
                     <div class="container">
                         <section class="px-2 py-4 text-center">
-                            <!--circle icon hand pointer on-->
-                            <div class="fab-icon-holder-modal on">
-                                <a>
-                                    <!--icon-->
-                                    <i class="far fa-hand-pointer "></i>
-                                    <!--//icon--></a>
-                                </i>
-                            </div>
-                            <!--//circle icon hand pointer-->
-                            <!--customed row on-->
-                            <div class="row-detail on">
-                            </div>
-                            <!--//customed row-->
                             <!--circle icon  config on-->
                             <div class="fab-icon-holder-modal on">
                                 <a>
@@ -832,9 +605,7 @@
                                 <p class="color-printalo-blueDetail font-weight-bold">Escoger Fecha</p>
                                 <div class="row-sub"></div>
                                 <div class="mt-2">
-                                    <!--input date-->
                                     <input id="datepicker" />
-                                    <!--//input date-->
                                 </div>
                             </div>
                             <!--//Columna  fecha-->
@@ -843,10 +614,9 @@
                                 <p class="color-printalo-blueDetail font-weight-bold">Escoger Hora</p>
                                 <div class="row-sub"></div>
                                 <div class="mt-2">
-                                    <!--input time-->
                                     <input id="timepicker" />
-                                    <!--//input time-->
                                 </div>
+
                             </div>
                             <!--//Columna  hora-->
                         </div>
@@ -864,7 +634,7 @@
                                     <!--Btn atras-->
                                     <a class="btn btn-block negative bg-printalo-blueDetail text-light "
                                         data-dismiss="modal" data-toggle="modal"
-                                        data-target="#configurarPedido">Atras</a>
+                                        data-target="#solicitardelista">Atras</a>
                                     <!--//Btn atras-->
                                 </div>
                             </div>
@@ -895,19 +665,6 @@
                 <div class="modal-content">
                     <div class="container">
                         <section class="px-2 py-4 text-center">
-                            <!--circle icon hand pointer on-->
-                            <div class="fab-icon-holder-modal on">
-                                <a>
-                                    <!--icon-->
-                                    <i class="far fa-hand-pointer "></i>
-                                    <!--//icon--></a>
-                                </i>
-                            </div>
-                            <!--//circle icon hand pointer-->
-                            <!--customed row on-->
-                            <div class="row-detail on">
-                            </div>
-                            <!--//customed row-->
                             <!--circle icon  config on-->
                             <div class="fab-icon-holder-modal on">
                                 <a>
@@ -1154,19 +911,6 @@
                 <div class="modal-content">
                     <div class="container">
                         <section class="px-2 py-4 text-center">
-                            <!--circle icon hand pointer on-->
-                            <div class="fab-icon-holder-modal on">
-                                <a>
-                                    <!--icon-->
-                                    <i class="far fa-hand-pointer "></i>
-                                    <!--//icon--></a>
-                                </i>
-                            </div>
-                            <!--//circle icon hand pointer-->
-                            <!--customed row on-->
-                            <div class="row-detail on">
-                            </div>
-                            <!--//customed row-->
                             <!--circle icon  config on-->
                             <div class="fab-icon-holder-modal on">
                                 <a>
@@ -1339,7 +1083,7 @@
                                 <!-- //2 Radio buttons rango o unico-->
                             </div>
                             <!--//Configuration impresion lados-->
-                            <!--Configuration Block numero de hojas disabled-->
+                            <!--Configuration Block numero de hojas-->
                             <div class="config-block py-2">
                                 <!--subtitle-->
                                 <p class="color-printalo-blueDetail font-weight-bold">Numero de paginas</p>
@@ -1352,8 +1096,7 @@
                                     <!-- rbt todo-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Todo
-                                            <input type="radio" checked="checked" name="radioNumPagR" id="todo"
-                                                disabled>
+                                            <input type="radio" checked="checked" name="radioNumPagR" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -1363,7 +1106,7 @@
                                     <!-- rbt personalizado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Personalizado
-                                            <input type="radio" name="radioNumPagR" id="personalizado" disabled>
+                                            <input type="radio" name="radioNumPagR" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -1372,43 +1115,6 @@
                                     <!-- //rbt personalizado-->
                                 </div>
                                 <!-- //2 Radio buttons rango o unico-->
-                                <!--rbt todo response-->
-                                <div id="tododiv">
-                                    <h5></h5>
-                                </div>
-                                <!--//rbt personal response-->
-                                <!--rbt personalizado response Block inputs invisible-->
-                                <div id="personalizadodiv" style='display:none' class="pt-2 tarjeta-modal">
-                                    <!--row-->
-                                    <div class="row pt-2">
-                                        <div class="col">
-                                            <!--subtitle-->
-                                            <p class="color-printalo-blueDetail font-weight-bold">Pagina Inicial</p>
-                                            <!--//subtitle-->
-                                            <!--row-->
-                                            <div class="row-sub">
-                                            </div>
-                                            <!--//row-->
-                                            <!--input pag inicial-->
-                                            <input type="text" class="form-control my-2" disabled>
-                                            <!--//input pag inicial-->
-                                        </div>
-                                        <div class="col">
-                                            <!--subtitle-->
-                                            <p class="color-printalo-blueDetail font-weight-bold">Pagina Final</p>
-                                            <!--//subtitle-->
-                                            <!--row-->
-                                            <div class="row-sub">
-                                            </div>
-                                            <!--//row-->
-                                            <!--input pag final-->
-                                            <input type="text" class="form-control my-2" disabled>
-                                            <!--//input pag final-->
-                                        </div>
-                                    </div>
-                                    <!--//row-->
-                                </div>
-                                <!--//rbt personalizado response Block inputs invisible-->
                             </div>
                             <!--//Configuration block numero de hojas-->
                             <!--Configuration Block tipo acabado-->
@@ -1495,8 +1201,7 @@
                                         <div class="block-typenumber">
                                             <div class='ctrl'>
                                                 <!--decrement-->
-                                                <div class='ctrl__button ctrl__button--decrement disabledButton on'>
-                                                    &ndash;
+                                                <div class='ctrl__button ctrl__button--decrement disabledButton'>&ndash;
                                                 </div>
                                                 <!--//decrement-->
                                                 <!--input number-->
@@ -1507,8 +1212,7 @@
                                                 </div>
                                                 <!--//input number-->
                                                 <!--increment-->
-                                                <div class='ctrl__button ctrl__button--increment disabledButton on'>+
-                                                </div>
+                                                <div class='ctrl__button ctrl__button--increment disabledButton'>+</div>
                                                 <!--//increment-->
                                             </div>
                                         </div>
@@ -1725,6 +1429,28 @@
                 </div>
             </div>
             <!--//Content Modal Price-->
+            <!--Content document owner-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <div class="container px-5">
+                        <!--modal title-->
+                        <h5 class="text-center p-3">Dueño</h5>
+                        <!--//modal title-->
+                        <!--subtitle-->
+                        <p class="color-printalo-blueDetail font-weight-bold">Informacion</p>
+                        <!--//subtitle-->
+                        <!--subrow-->
+                        <div class="row-sub">
+                        </div>
+                        <!--details-->
+                        <p><span class="font-weight-bold">Nombre :</span>Andres Mejia</p>
+                        <p><span class="font-weight-bold">Fecha de recepcion :</span> 10/10/2019</p>
+                        <p><span class="font-weight-bold">Hora de recepcion :</span> 10:00 am</p>
+                        <!--details-->
+                    </div>
+                </div>
+            </div>
+            <!--//Content document owner-->
             <!--Content Modal buttons-->
             <div class="col pb-3">
                 <div class="modal-content">
@@ -1848,20 +1574,6 @@
     <script src="../../../js/designjs/spinner.js"></script>
     <script src="../../../js/designjs/perfiliconuser.js"></script>
     <script src="../../../js/designjs/timeanddate.js"></script>
-
-    
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
-
-    <!-- Para uso de Analytics -->
-    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
-
-    <!-- Para Authentication y Firestore -->
-    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
-
-    <!-- Configuracion de Proyecto en Firebase -->
-    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>    
-    
 </body>
+
 </html>

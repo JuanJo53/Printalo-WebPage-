@@ -1,5 +1,10 @@
 body {
   font-family: "Montserat";
+  padding-right:0!important;
+  overflow-x: hidden;
+}
+label{
+  font-weight: normal!important;
 }
 .navbar .nav-item {
   font-size: 1rem;
@@ -20,6 +25,9 @@ body {
 .color-printalo-blueDetail {
   color: #364c68;
 }
+.color-printalo-greenDetail {
+  color: #24c4a6;
+}
 .bg-printalo-greenDetail {
   background-color: #24c4a6;
 }
@@ -31,12 +39,7 @@ body {
   font-weight: bold;
   color: white !important;
 }
-.modalbutton a:hover {
-  color: #24c4a6 !important;
-}
-.modalbutton a u:hover {
-  color: #24c4a6 !important;
-}
+
 .center{
   position: relative;
   top: 50%;
@@ -53,3 +56,71 @@ body {
   vertical-align: middle;
 }
 
+/*time date pickers*/
+.timepicker .btn{
+  color: white!important;
+  background-color: #24c4a6!important;
+}
+.timepicker div {
+  color: #24c4a6!important;
+}
+.gj-timepicker .input-group-append,.gj-datepicker .input-group-append{
+  background-color: #24c4a6!important;
+}
+.gj-icon{
+  color: white!important;
+}
+
+.gj-timepicker .input-group-append button:hover,.gj-datepicker .input-group-append button:hover{
+  background-color: #30e2c2!important;
+}
+/*//time date pickers*/
+/*btn save changes in hole system*/
+.btnsavechanges:hover{
+  background-color: #30e2c2;
+  color: white;
+}
+/*//btn save changes in hole system*/
+/*btn peusto in hole system*/
+.puesto .card:hover .card-footer{
+  background-color: #30e2c2!important;
+}
+.puesto .card:hover .img-puesto{
+  opacity:0.9!important;
+}
+/*//btn peusto in hole system*/
+/*editar btn*/
+.icon-editar{
+  background:#24c4a6;
+  color:white;
+}
+
+button.icon-editar:hover {
+  background-color: #30e2c2 !important;
+  color: rgb(255, 255, 255) !important;
+}
+/*//editar btn*/
+
+/*circle tootgle*/
+.circletoggle {
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #24c4a6;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+}
+.circletoggle:hover{
+  background-color: #30e2c2;
+}
+/*//circle tootgle*/
+/*sublink sidebar*/
+.sublink-sidebar{
+  font-size: 0.9rem;
+}
+/*//sublink sidebar*/

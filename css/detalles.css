@@ -100,3 +100,22 @@ button.icon-editar:hover {
   color: rgb(255, 255, 255) !important;
 }
 /*//editar btn*/
+
+/*circle tootgle*/
+.circletoggle {
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #24c4a6;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+}
+.circletoggle:hover{
+  background-color: #30e2c2;
+}
+/*//circle tootgle*/

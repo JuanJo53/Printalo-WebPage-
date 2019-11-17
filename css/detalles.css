@@ -89,3 +89,14 @@ label{
   opacity:0.9!important;
 }
 /*//btn peusto in hole system*/
+/*editar btn*/
+.icon-editar{
+  background:#24c4a6;
+  color:white;
+}
+
+button.icon-editar:hover {
+  background-color: #30e2c2 !important;
+  color: rgb(255, 255, 255) !important;
+}
+/*//editar btn*/

@@ -151,10 +151,7 @@ input[type="text"]{
   border: 1px solid #ced4da;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-.icon-editar{
-  background:#24c4a6;
-  color:white;
-}
+
 .table th{
   vertical-align: middle!important;
 }

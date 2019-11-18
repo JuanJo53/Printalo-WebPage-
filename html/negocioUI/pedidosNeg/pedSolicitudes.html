@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../../../css/negocio/estiloNegocios.css">
     <link rel="stylesheet" href="../../../css/negocio/negociogeneral.css">
     <link rel="stylesheet" href="../../../css/tables/tableNegocios.css">
+    <link rel="stylesheet" href="../../../css/modals.css">
     <link rel="stylesheet" href="../../../css/fab.css">
     <link rel="stylesheet" href="../../../css/detalles.css">
     <link rel="stylesheet" type="text/css"
@@ -89,7 +90,8 @@
             <!--list sidebar-->
             <div class="list-group list-group-flush text-center">
                 <!--link solicitudes-->
-                <a href="pedSolicitudes.html" class="list-group-item bg-printalo-greenDetail link active">Solicitudes</a>
+                <a href="pedSolicitudes.html"
+                    class="list-group-item bg-printalo-greenDetail link active">Solicitudes</a>
                 <!--//link solicitudes-->
                 <!--link pendientes-->
                 <a href="pedPendientes.html" class="list-group-item link bg-printalo-greenDetail">Pendientes</a>
@@ -148,7 +150,8 @@
                                         <td>Online</td>
                                         <td>10/10/2019</td>
                                         <td>20:30</td>
-                                        <td><a href="" class="btn bg-printalo-greenDetail positive">Aceptar</a></td>
+                                        <td><a href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal" data-target="#modalRegisterNegocio"
+                                        data-toggle="modal">Detalles</a></td>
                                         <td><a href="" class="btn bg-printalo-blueDetail negative">Rechazar</a></td>
                                     </tr>
                                 </tbody>
@@ -175,6 +178,116 @@
         <!--Content Modal-->
     </div>
     <!--//perfiliconUsuario-->
+    <!--Registrarse Modal neg-->
+    <div class="modal fade text-dark" id="modalRegisterNegocio">
+        <div class="modal-dialog modal-lg">
+            <div class="row py-3">
+                <div class="col-lg-6 nopadding">
+                    <div class="modal-content left bg-printalo-blueDetail">
+                        <div class="container">       
+                            <h2 class="text-center pt-5 text-light">Archivo</h2>
+                            <form action="" class="p-3">
+                                <div class="form-group">
+                                    <!--Nombre del duenio-->
+                                    <label for="username">Nombre del Dueño: </label>
+                                    <input type="text" class="form-control" id="txtNameReg">
+                                    <!--//-->
+                                    <!--apellido del duenio-->
+                                    <label for="username">Apellido del Dueño : </label>
+                                    <input type="text" class="form-control" id="txtLastNameReg">
+                                    <!--//-->
+                                    <!--nombre del negocio-->
+                                    <label for="name">Nombre del Negocio:</label>
+                                    <input type="text" class="form-control" id="txtNegNameReg">
+                                    <!--//-->
+                                    <!--direccion-->
+                                    <label for="password">Direccion:</label>
+                                    <input type="text" class="form-control" id="txtDirReg">
+                                    <!--//-->
+                                    <!--numero de referencia-->
+                                    <label for="text">Numero de referencia:</label>
+                                    <input type="text" class="form-control" id="txtNumReg">
+                                    <!--//-->
+                                    <!--Email-->
+                                    <label for="username">E-mail : </label>
+                                    <input type="text" class="form-control" id="txtEmailReg">
+                                    <!--//-->
+                                    <!--Contrasenia-->
+                                    <label for="password">Contraseña:</label>
+                                    <input type="password" class="form-control" id="txtPasswordReg">
+                                    <!--//-->
+                                </div>
+                            </form>
+                            <div class="modalbutton text-center py-3">
+                                <!--Btn Registrar Negocios-->
+                                <button id="btnRegistrarNegocio"
+                                    class="btn btn-outline-light bg-printalo-button text-light">Registrar</button>
+                                <!--//-->
+                                <br>
+                                <br>
+                                <!--Link Ir a ingresar-->
+                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
+                                <!--//-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 nopadding">
+                        <div class="modal-content right">
+                            <div class="container detallesPedido">
+                                <h2 class="text-center pt-5">Pedido</h2>
+                                <form action="" class="p-3">
+                                    <div class="form-group">
+                                        <!--user box-->
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Usuario</span>
+                                            <input type="text" class="form-control" disabled>
+                                        </div>
+                                        <!--//user box-->
+                                        <!--apellido del duenio-->
+                                        <label for="username">Apellido del Dueño : </label>
+                                        <input type="text" class="form-control" id="txtLastNameReg">
+                                        <!--//-->
+                                        <!--nombre del negocio-->
+                                        <label for="name">Nombre del Negocio:</label>
+                                        <input type="text" class="form-control" id="txtNegNameReg">
+                                        <!--//-->
+                                        <!--direccion-->
+                                        <label for="password">Direccion:</label>
+                                        <input type="text" class="form-control" id="txtDirReg">
+                                        <!--//-->
+                                        <!--numero de referencia-->
+                                        <label for="text">Numero de referencia:</label>
+                                        <input type="text" class="form-control" id="txtNumReg">
+                                        <!--//-->
+                                        <!--Email-->
+                                        <label for="username">E-mail : </label>
+                                        <input type="text" class="form-control" id="txtEmailReg">
+                                        <!--//-->
+                                        <!--Contrasenia-->
+                                        <label for="password">Contraseña:</label>
+                                        <input type="password" class="form-control" id="txtPasswordReg">
+                                        <!--//-->
+                                    </div>
+                                </form>
+                                <div class="modalbutton text-center py-3">
+                                    <!--Btn Registrar Negocios-->
+                                    <button id="btnRegistrarNegocio"
+                                        class="btn btn-outline-light bg-printalo-button text-light">Registrar</button>
+                                    <!--//-->
+                                    <br>
+                                    <br>
+                                    <!--Link Ir a ingresar-->
+                                    <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
+                                    <!--//-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!--registrarse modal neg-->
     <!--boostrap jquery popper libraries-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>

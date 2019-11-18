@@ -7,6 +7,7 @@
     <meta name="keywords" content="HTML,CSS,bootstrap">
     <meta name="author" content="Colque Herrera Ariel">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/negocio/estiloNegocios.css">
     <link rel="stylesheet" href="../../../css/negocio/negociogeneral.css">
@@ -185,54 +186,77 @@
             <div class="row py-3">
                 <div class="col-lg-6 nopadding">
                     <div class="modal-content left bg-printalo-blueDetail">
-                        <div class="container">
-                            <h2 class="text-center pt-5 text-light">Archivo</h2>
-                            <form action="" class="p-3">
-                                <div class="form-group">
-                                    <!--Nombre del duenio-->
-                                    <label for="username">Nombre del Dueño: </label>
-                                    <input type="text" class="form-control" id="txtNameReg">
-                                    <!--//-->
-                                    <!--apellido del duenio-->
-                                    <label for="username">Apellido del Dueño : </label>
-                                    <input type="text" class="form-control" id="txtLastNameReg">
-                                    <!--//-->
-                                    <!--nombre del negocio-->
-                                    <label for="name">Nombre del Negocio:</label>
-                                    <input type="text" class="form-control" id="txtNegNameReg">
-                                    <!--//-->
-                                    <!--direccion-->
-                                    <label for="password">Direccion:</label>
-                                    <input type="text" class="form-control" id="txtDirReg">
-                                    <!--//-->
-                                    <!--numero de referencia-->
-                                    <label for="text">Numero de referencia:</label>
-                                    <input type="text" class="form-control" id="txtNumReg">
-                                    <!--//-->
-                                    <!--Email-->
-                                    <label for="username">E-mail : </label>
-                                    <input type="text" class="form-control" id="txtEmailReg">
-                                    <!--//-->
-                                    <!--Contrasenia-->
-                                    <label for="password">Contraseña:</label>
-                                    <input type="password" class="form-control" id="txtPasswordReg">
-                                    <!--//-->
+                        <div class="container detallesPedido">
+                            <h2 class="text-center pt-5 pb-2 text-light">Archivo</h2>
+                            <div class="row mx-3">
+                                <div class="col text-light">
+                                    <div class="square-icon text-center mx-auto ">
+                                        <div class="center">
+                                            <!--icono--><i class="far fa-file-pdf fa-3x"></i>
+                                            <!--//icono-->
+                                        </div>
+                                    </div>
                                 </div>
-                            </form>
-                            <div class="modalbutton text-center py-3">
-                                <!--Btn Registrar Negocios-->
-                                <button id="btnRegistrarNegocio"
-                                    class="btn btn-outline-light bg-printalo-button text-light">Registrar</button>
-                                <!--//-->
-                                <br>
-                                <br>
-                                <!--Link Ir a ingresar-->
-                                <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
-                                <!--//-->
+                                <!--text-->
+                                <div class="col my-auto text-light">
+                                    <p class="my-auto text-center">nombreArchivo.pdf</p>
+                                </div>
+                                <!--//text-->
+                            </div>
+                            <div class="block-boxes px-3">
+                                <!--Color box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Color</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Color box-->
+                                <!--Tamaño box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Tamaño</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Tamaño box-->
+                                <!--Impresion box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Impresion</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Impresion box-->
+                                <!--Orientacion box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Orientacion</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Orientacion box-->
+                                <!--Numero de Paginas box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Numero de Paginas</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Numero de Paginas box-->
+                                <!--Acabado box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Acabado</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Acabado box-->
+                                <!--Tipo de hoja box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Tipo de hoja</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Tipo de hoja box-->
+                                <!--Cantidad box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Cantidad</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Cantidad box-->
                             </div>
                         </div>
                     </div>
                 </div>
+                <!--right side-->
                 <div class="col-lg-6 nopadding">
                     <div class="modal-content right">
                         <div class="container detallesPedido">
@@ -308,6 +332,7 @@
                         </div>
                     </div>
                 </div>
+                <!--//right side-->
             </div>
         </div>
     </div>

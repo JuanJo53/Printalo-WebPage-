@@ -33,8 +33,7 @@ class Cliente{
                 // User is not signed in.
                 alert("No Logeado");
             }
-        });
-        
+        });        
     }
     // Esta funcion pasa el email y su password a la clase Auth para login con firebase
     IngresarCli(){

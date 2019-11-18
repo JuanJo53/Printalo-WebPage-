@@ -7,7 +7,6 @@ function RegCli(){
     var pass = document.getElementById("txtPass").value;
     const cliente = new Cliente(email,pass,nombre,apellido,num);
     cliente.RegistrarCli(apellido,email,nombre,num);
-    //ValidarCli();
 }
 // Evento de Boton Ingresar
 function IngCli(){

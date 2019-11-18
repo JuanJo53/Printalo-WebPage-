@@ -154,5 +154,8 @@
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   background-color: #fff;
-  border-color:#c3dee5;
+  border: 1.5px solid #c3dee5;
+}
+.detallesPedido .box{
+  margin:15px 0px 15px 0;
 }

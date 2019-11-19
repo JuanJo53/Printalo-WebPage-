@@ -158,9 +158,10 @@
                                             <div class="color-printalo-greenDetail"><i
                                                     class="far fa-check-square fa-2x"></i></div>
                                         </td>
-                                        <td><a href="" class="btn bg-printalo-greenDetail positive" ata-dismiss="modal"
+                                        <td><a href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
                                                 data-target="#modalVerDetalles" data-toggle="modal">Detalles</a></td>
-                                        <td><a href="" class="btn bg-printalo-greenDetail positive">Entregar</a></td>
+                                        <td><a href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
+                                                data-target="#entregarPedido" data-toggle="modal">Entregar</a></td>
                                     </tr>
                                 </tbody>
                                 <!--tbody-->
@@ -368,6 +369,103 @@
         <!--modal dialog and size-->
     </div>
     <!--//See details modal-->
+
+    <!--modals alerts!!!-->
+    <!--Modal alert entregar-->
+    <div class="modal fade text-dark" id="entregarPedido">
+        <div class="modal-dialog mini modal-md">
+            <div class="modal-content">
+                <!--title modal header-->
+                <div class="modal-header bg-printalo-blueDetail  px-5">
+                    <h5 class="modal-title text-light">Pago No Realizado</h5>
+                </div>
+                <!--//title modal header-->
+                <!--modal body-->
+                <div class="container  px-5  my-4">
+                    <div class="row my-2">
+                        <!--Question-->
+                        <div class="col my-auto">
+                            <h5>Se debe cobrar por el pedido</h5>
+                        </div>
+                        <!--//Question-->
+                        <div class="col-xs-4 ">
+                            <div class="square-icon text-center color-printalo-blueDetail">
+                                <div class="center">
+                                    <!--icono de pedido-->
+                                    <i class="fas fa-exclamation fa-3x"></i>
+                                    <!--//icono de pedido-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//modal body-->
+                <!--modal footer-->
+                <div class="modal-footer  px-5">
+                    <div class="modalbuttonalert text-center">
+                        <!--btn Cancelar-->
+                        <a class="btn negative bg-printalo-blueDetail text-light" data-dismiss="modal">Cerrar</a>
+                        <!--btn Cancelar-->
+                        <!--btn Aceptar-->
+                        <a class="btn positive bg-printalo-greenDetail text-light" data-dismiss="modal"
+                            data-target="#datosFactura" data-toggle="modal">Imprimir
+                            Factura</a>
+                        <!--//btn Aceptar-->
+                    </div>
+                </div>
+                <!--//modal footer-->
+            </div>
+        </div>
+    </div>
+    <!--//Modal alert entregar-->
+    <!--Modal alert factura-->
+    <div class="modal fade text-dark" id="datosFactura">
+        <div class="modal-dialog mini modal-md">
+            <div class="modal-content">
+                <!--title modal header-->
+                <div class="modal-header bg-printalo-blueDetail  px-5">
+                    <h5 class="modal-title text-light">Datos para la Factura</h5>
+                </div>
+                <!--//title modal header-->
+                <!--modal body-->
+                <div class="container  px-5  my-4">
+                    <!--group nombre-->
+                    <div class="form-group row">
+                        <label class="col-3 text-center color-printalo-blueDetail font-weight-bold">Nombre :</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <!--//group nombre-->
+                    <!--group nit-->
+                    <div class="form-group row">
+                        <label class="col-3 text-center  color-printalo-blueDetail font-weight-bold">Nit :</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <!--//group nit-->
+
+                </div>
+                <!--//modal body-->
+                <!--modal footer-->
+                <div class="modal-footer  px-5">
+                    <div class="modalbuttonalert text-center">
+                        <!--btn Cancelar-->
+                        <a class="btn negative bg-printalo-blueDetail text-light" data-dismiss="modal">Cancelar</a>
+                        <!--btn Cancelar-->
+                        <!--btn Aceptar-->
+                        <a class="btn positive bg-printalo-greenDetail text-light" data-target=""
+                            data-toggle="">Aceptar</a>
+                        <!--//btn Aceptar-->
+                    </div>
+                </div>
+                <!--//modal footer-->
+            </div>
+        </div>
+    </div>
+    <!--//Modal alert factura-->
+    <!--modals alerts!!!-->
     <!--boostrap jquery popper libraries-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>

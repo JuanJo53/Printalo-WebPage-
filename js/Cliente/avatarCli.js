@@ -13,7 +13,6 @@ docRef.get().then(function(doc){
         telef=doc.data().telefono;
         mail=doc.data().email;
         var inicial=nombre.charAt(0);
-        console.log(inicial);
         document.getElementById('mdlCliente').innerHTML  = inicial;
         document.getElementById('avtCliente').innerHTML  = nombre+" "+apellido;
         document.getElementById('avtTelef').innerHTML  = telef;

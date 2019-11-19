@@ -12,7 +12,6 @@ function SetInicial(){
             console.log("Datos de Clientes:", doc.data());
             nombre=doc.data().Nombre;
             var inicial=nombre.charAt(0);
-            console.log(inicial);
             document.getElementById('IncialCliente').innerHTML  = inicial;
         }else{
             console.log("No such document!");

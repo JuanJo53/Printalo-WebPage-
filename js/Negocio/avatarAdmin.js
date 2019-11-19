@@ -2,16 +2,20 @@
 var user = firebase.auth().currentUser;
 var bd=firebase.firestore();
 var userid= user.uid;
-var nombre;
+var nombre,inicial,telef,mail;
 console.log(userid);
 var docRef = bd.collection('Negocios').doc(userid);
 docRef.get().then(function(doc){
     if (doc.exists){
         console.log("Datos de Admin:", doc.data().adminID);
-        /*nombre=doc.data().Nombre;
-        var inicial=nombre.charAt(0);
-        console.log(inicial);
-        document.getElementById('mdlNegocio').innerHTML = inicial;*/
+        nombre=doc.data().nombreNeg;
+        telef=doc.data().fono;
+        mail=doc.data().email;
+        inicial=nombre.charAt(0);
+        document.getElementById('mdlNegocio').innerHTML = inicial;
+        document.getElementById('avtNombNeg').innerHTML = nombre;
+        document.getElementById('avtTelfNeg').innerHTML = telef;
+        document.getElementById('avtMailNeg').innerHTML = mail;
     }else{
         console.log("No such document!");
     }

@@ -1,4 +1,5 @@
 class Auth{
+    
     crearCuentaEmailPass(email,password){
         firebase.auth().createUserWithEmailAndPassword(email,password)
         .catch(function(error){

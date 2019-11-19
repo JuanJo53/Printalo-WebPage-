@@ -40,14 +40,4 @@ class Cliente{
         var auth = new Auth();
         auth.LoginEmailPass(this.email, this.password);
     }
-
-    SetInicial(){
-        var inicial=this.nombre.charAt(0);
-        document.getElementById('IncialUser').innerHTML = inicial;
-    }
-    // Esta funcion pasa el email y su password a la clase Auth para logout con firebase
-    CerrarSecionCli(){
-        var auth = new Auth();
-        auth.Logout();
-    }
 }

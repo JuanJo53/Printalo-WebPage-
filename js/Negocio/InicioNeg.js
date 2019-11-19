@@ -1,7 +1,10 @@
+
+
 // Evento de Boton Cerrar Secion
 function Salir(){
-    const negocio = new Negocio();
-    negocio.CerrarSecionCli();
+    // Esta funcion pasa el email y su password a la clase Auth para logout con firebase
+    var auth = new Auth();
+    auth.Logout();
     ValidarNeg();
 }
 

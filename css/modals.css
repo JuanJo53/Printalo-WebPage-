@@ -103,6 +103,14 @@
 .modal-content{
   border-radius: 1rem!important;
 }
+.modal-content.left{
+  border-top-right-radius: 0!important;
+  border-bottom-right-radius: 0!important;
+}
+.modal-content.right{
+  border-top-left-radius: 0!important;
+  border-bottom-left-radius: 0!important;
+}
 .modal-header{
   border-top-left-radius: 1rem!important;
   border-top-right-radius: 1rem!important;
@@ -132,4 +140,22 @@
   /*background-color:#eee;*/
   width: 80px;
   height:70px;
+}
+.detallesPedido .input-group-text {
+  width: 100%;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  display: block;
+  background-color: #c3dee5;
+  border-style: none;
+  color: #000;
+}
+.detallesPedido .form-control {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background-color: #fff;
+  border: 1.5px solid #c3dee5;
+}
+.detallesPedido .box{
+  margin:15px 0px 15px 0;
 }

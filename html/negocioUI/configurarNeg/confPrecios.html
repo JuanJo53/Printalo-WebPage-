@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../../../css/detalles.css">
     <title>Configuracion de Precios</title>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark py-1">
         <div class="container">
@@ -58,7 +59,8 @@
                     <!--//Link Graficos-->
                     <!--Link Publicaciones-->
                     <li class="nav-item">
-                        <a href="../publicacionesNeg/pubAgregar.html" class="nav-link text-light center">Publicaciones</a>
+                        <a href="../publicacionesNeg/pubAgregar.html"
+                            class="nav-link text-light center">Publicaciones</a>
                     </li>
                     <!--//Link Publicaciones-->
                     <!--Link Configuraciones-->
@@ -121,11 +123,11 @@
                                                 <div class="col">
                                                     <p class="inputmarks center">Precio:</p>
                                                 </div>
-                                                <div class="col nopadding"><input type="text" class="form-control text-center"
-                                                        placeholder="Bs" disabled>
+                                                <div class="col nopadding"><input type="text"
+                                                        class="form-control text-center" placeholder="Bs" disabled>
                                                 </div>
                                                 <div class="col">
-                                                    <p class="inputmarks center">Bs por hoja
+                                                    <p class="inputmarks center">Bs/hoja
                                                     </p>
                                                 </div>
                                             </div>
@@ -239,20 +241,20 @@
                                                 <div class="col">
                                                     <p class="inputmarks center">Precio:</p>
                                                 </div>
-                                                <div class="col nopadding"><input type="text" class="form-control text-center"
-                                                        placeholder="Bs" disabled>
+                                                <div class="col nopadding"><input type="text"
+                                                        class="form-control text-center" placeholder="Bs" disabled>
                                                 </div>
                                                 <div class="col">
-                                                    <p class="inputmarks center">Bs por hoja
+                                                    <p class="inputmarks center">Bs/hoja
                                                     </p>
                                                 </div>
                                             </div>
                                             <!--btn editar-->
                                             <div class="row text-light px-3 my-2">
-                                                    <button class="btn icon-editar ml-auto"><i
-                                                            class="fas fa-edit"></i></button>
-                                                </div>
-                                                <!--//btn editar-->
+                                                <button class="btn icon-editar ml-auto"><i
+                                                        class="fas fa-edit"></i></button>
+                                            </div>
+                                            <!--//btn editar-->
                                         </div>
                                     </div>
                                     <div id="rangodivcolor" style="display: none;">
@@ -338,12 +340,12 @@
                                         <h3>Tamaño de Hoja</h3>
                                     </div>
                                     <div class="row">
-                                        <table class="table table-borderless">
+                                        <table class="table priceconfig table-borderless">
                                             <thead>
                                                 <tr class="text-center">
                                                     <th scope="col">Tipo</th>
                                                     <th scope="col">Precio</th>
-                                                    <th scope="col">Editar</th>
+                                                    <th scope="col">Bs</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -359,10 +361,9 @@
                                                         <!--//input precio-->
                                                     </td>
                                                     <td>
-                                                        <!--btn editar-->
-                                                        <button class="btn icon-editar"><i
-                                                                class="fas fa-edit"></i></button>
-                                                        <!--//btn editar-->
+                                                        <!--btn bs/hoja-->
+                                                        <p class="my-auto">Bs/hoja</p>
+                                                        <!--//btn bs/hoja-->
                                                     </td>
                                                 </tr>
                                                 <!--Tamanio carta-->
@@ -377,10 +378,9 @@
                                                         <!--//input precio-->
                                                     </td>
                                                     <td>
-                                                        <!--btn editar-->
-                                                        <button class="btn icon-editar"><i
-                                                                class="fas fa-edit"></i></button>
-                                                        <!--//btn editar-->
+                                                        <!--btn bs/hoja-->
+                                                        <p class="my-auto">Bs/hoja</p>
+                                                        <!--//btn bs/hoja-->
                                                     </td>
                                                 </tr>
                                                 <!--Tamanio A4-->
@@ -394,15 +394,19 @@
                                                         <!--//input precio-->
                                                     </td>
                                                     <td>
-                                                        <!--btn editar-->
-                                                        <button class="btn icon-editar"><i
-                                                                class="fas fa-edit"></i></button>
-                                                        <!--//btn editar-->
+                                                        <!--btn bs/hoja-->
+                                                        <p class="my-auto">Bs/hoja</p>
+                                                        <!--//btn bs/hoja-->
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
+                                    <!--btn editar-->
+                                    <div class="row text-light px-3 ">
+                                        <button class="btn icon-editar ml-auto"><i class="fas fa-edit"></i></button>
+                                    </div>
+                                    <!--//btn editar-->
                                 </div>
                             </section>
                             <!--//tamanio de Hoja-->
@@ -418,7 +422,7 @@
                                                 <tr class="text-center">
                                                     <th scope="col">Tipo</th>
                                                     <th scope="col">Precio</th>
-                                                    <th scope="col">Editar</th>
+                                                    <th scope="col">Bs</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -433,10 +437,9 @@
                                                         <!--//input precio-->
                                                     </td>
                                                     <td>
-                                                        <!--btn editar-->
-                                                        <button class="btn icon-editar"><i
-                                                                class="fas fa-edit"></i></button>
-                                                        <!--btn editar-->
+                                                        <!--btn bs/hoja-->
+                                                        <p class="my-auto">Bs/hoja</p>
+                                                        <!--//btn bs/hoja-->
                                                     </td>
                                                 </tr>
                                                 <tr class="text-center">
@@ -450,15 +453,19 @@
                                                         <!--input precio-->
                                                     </td>
                                                     <td>
-                                                        <!--btn editar-->
-                                                        <button class="btn icon-editar"><i
-                                                                class="fas fa-edit"></i></button>
-                                                        <!--//btn editar-->
+                                                        <!--btn bs/hoja-->
+                                                        <p class="my-auto">Bs/hoja</p>
+                                                        <!--//btn bs/hoja-->
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
+                                    <!--btn editar-->
+                                    <div class="row text-light px-3 ">
+                                        <button class="btn icon-editar ml-auto"><i class="fas fa-edit"></i></button>
+                                    </div>
+                                    <!--//btn editar-->
                                 </div>
                             </section>
                             <!--//Tipo de Hoja-->
@@ -476,16 +483,16 @@
     </div>
     <!--perfiliconadmi-->
     <div class="modal fade text-dark" id="perfiliconadmi">
-            <div class="modal-dialog">
-                <!--Content Modal-->
-                <div class="col pb-3">
-                    <div class="modal-content">
-                    </div>
+        <div class="modal-dialog">
+            <!--Content Modal-->
+            <div class="col pb-3">
+                <div class="modal-content">
                 </div>
             </div>
-            <!--Content Modal-->
         </div>
-        <!--//perfiliconadmi-->
+        <!--Content Modal-->
+    </div>
+    <!--//perfiliconadmi-->
     <!--boostrap jquery popper libraries-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -502,7 +509,6 @@
     <!--//iconuserpefil script-->
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <script src="../../../js/designjs/radiobtn.js"></script>
-    <script src="../../../js/designjs/spinner.js"></script>
     <script src="../../../js/designjs/perfiliconuser.js"></script>
     <script>
         $("#menu-toggle").click(function (e) {

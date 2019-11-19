@@ -4,20 +4,14 @@ var bd=firebase.firestore();
 var userid= user.uid;
 var nombre;
 console.log(userid);
-var docRef = bd.collection('Clientes').doc(userid);
+var docRef = bd.collection('Negocios').doc(userid);
 docRef.get().then(function(doc){
     if (doc.exists){
-        console.log("Datos de Clientes:", doc.data());
-        nombre=doc.data().Nombre;
-        apellido=doc.data().Apellido;
-        telef=doc.data().telefono;
-        mail=doc.data().email;
+        console.log("Datos de Admin:", doc.data().adminID);
+        /*nombre=doc.data().Nombre;
         var inicial=nombre.charAt(0);
         console.log(inicial);
-        document.getElementById('mdlCliente').innerHTML  = inicial;
-        document.getElementById('avtCliente').innerHTML  = nombre+" "+apellido;
-        document.getElementById('avtTelef').innerHTML  = telef;
-        document.getElementById('avtMail').innerHTML  = mail;
+        document.getElementById('mdlNegocio').innerHTML = inicial;*/
     }else{
         console.log("No such document!");
     }
@@ -34,7 +28,7 @@ function Salir(){
 };
 
 // Esta funcion ejecuta el observador de firebase
-function ValidarCli(){
+function ValidarNeg(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.

@@ -1,6 +1,6 @@
 class Auth{
+    
     crearCuentaEmailPass(email,password){
-        alert("email:"+email+" pass: "+password);
         firebase.auth().createUserWithEmailAndPassword(email,password)
         .catch(function(error){
             var errorCode = error.code;
@@ -9,7 +9,6 @@ class Auth{
         });
     }
     LoginEmailPass(email,password){
-        alert("email:"+email+" pass: "+password);
         firebase.auth().signInWithEmailAndPassword(email, password)
         .catch(function(error) {
             var errorCode = error.code;

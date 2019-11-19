@@ -1,11 +1,24 @@
 //Set inicial en avatar de web
 var user = firebase.auth().currentUser;
+var bd=firebase.firestore();
 var userid= user.uid;
+var nombre;
 console.log(userid);
-//var inicial=this.nombre.charAt(0);
-//document.getElementById('IncialUser').innerHTML = inicial;
-
-
+var docRef = bd.collection('Clientes').doc(userid);
+docRef.get().then(function(doc){
+    if (doc.exists){
+        console.log("Datos de Clientes:", doc.data());
+        nombre=doc.data().Nombre;
+        var inicial=nombre.charAt(0);
+        console.log(inicial);
+        document.getElementById('IncialCliente').innerHTML  = inicial;
+        document.getElementById('mdlCliente').innerHTML  = inicial;
+    }else{
+        console.log("No such document!");
+    }
+}).catch(function(error){
+    console.log("Error al obtener los datos:", error);
+})
 
 // Evento de Boton Cerrar Secion
 function Salir(){

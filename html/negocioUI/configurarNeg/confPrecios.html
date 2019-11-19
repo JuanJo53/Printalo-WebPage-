@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/negocio/estiloNegocios.css">
     <link rel="stylesheet" href="../../../css/negocio/negociogeneral.css">
+    <link rel="stylesheet" href="../../../css/fab.css">
     <link rel="stylesheet" href="../../../css/detalles.css">
-    <title>Principal</title>
+    <title>Configuracion de Precios</title>
 </head>
 
 <body>
@@ -76,13 +77,13 @@
         <div class="bg-printalo-greenDetail" id="sidebar-wrapper">
             <div class="list-group list-group-flush text-center ">
                 <!--Sidebar Link Generales-->
-                <a href="confGenerales.html" class="list-group-item bg-printalo-greenDetail ">Generales</a>
+                <a href="confGenerales.html" class="list-group-item bg-printalo-greenDetail link">Generales</a>
                 <!--//Sidebar Link Generales-->
                 <!--Sidebar Link Precios-->
-                <a href="confPrecios.html" class="list-group-item bg-printalo-greenDetail active">Precios</a>
+                <a href="confPrecios.html" class="list-group-item bg-printalo-greenDetail link active">Precios</a>
                 <!--//Sidebar Link Precios-->
                 <!--Sidebar Link Empleados-->
-                <a href="confEmpleados.html" class="list-group-item bg-printalo-greenDetail">Empleados</a>
+                <a href="confEmpleados.html" class="list-group-item bg-printalo-greenDetail link">Empleados</a>
                 <!--//Sidebar Link Empleados-->
             </div>
         </div>
@@ -102,23 +103,43 @@
                                     </div>
                                     <!-- 2 Radio buttons rango o unico-->
                                     <div class="row mx-auto">
-
                                         <div class="ml-auto">
-                                            <label class="radiobuttons">Rangos
-                                                <input type="radio" name="radiobn" id="rangos" checked="checked">
+                                            <label class="radiobuttons ">Precio Unico
+                                                <input type="radio" name="radiobn" id="preciounico" checked="checked">
                                                 <span class="checkmark"></span>
                                             </label>
                                         </div>
                                         <div class="mr-auto">
-                                            <label class="radiobuttons ml-1">Precio Unico
-                                                <input type="radio" name="radiobn" id="preciounico">
+                                            <label class="radiobuttons ml-1">Rangos
+                                                <input type="radio" name="radiobn" id="rangos">
                                                 <span class="checkmark"></span>
                                             </label>
                                         </div>
                                     </div>
                                     <!-- //2 Radio buttons rango o unico-->
-
-                                    <div id="rangodiv">
+                                    <div id="preciounicodiv" class="preciounico">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p class="inputmarks center">Precio:</p>
+                                                </div>
+                                                <div class="col nopadding"><input type="text" class="form-control text-center"
+                                                        placeholder="Bs" disabled>
+                                                </div>
+                                                <div class="col">
+                                                    <p class="inputmarks center">Bs por hoja
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <!--btn editar-->
+                                            <div class="row text-light px-3 my-2">
+                                                <button class="btn icon-editar ml-auto"><i
+                                                        class="fas fa-edit"></i></button>
+                                            </div>
+                                            <!--//btn editar-->
+                                        </div>
+                                    </div>
+                                    <div id="rangodiv" style="display: none;">
                                         <div class="row">
                                             <!-- mas/menos Radio buttons-->
                                             <div class="col">
@@ -186,22 +207,7 @@
                                             </table>
                                         </div>
                                     </div>
-                                    <div id="preciounicodiv" style="display: none;" class="preciounico">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p class="inputmarks">Precio:</p>
-                                                </div>
-                                                <div class="col nopadding"><input type="text" class="form-control"
-                                                        placeholder="Precio unico">
-                                                </div>
-                                                <div class="col">
-                                                    <p class="inputmarks">Ctvs por hoja
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </section>
                             <!--//Rango de precios Normal-->
@@ -213,23 +219,45 @@
                                     </div>
                                     <!-- 2 Radio buttons rango o unico-->
                                     <div class="row mx-auto">
-
                                         <div class="ml-auto">
-                                            <label class="radiobuttons mr-1">Rangos
-                                                <input type="radio" name="radiobn2" id="rangosColor" checked="checked">
+                                            <label class="radiobuttons ">Precio Unico
+                                                <input type="radio" name="radiobn2" id="preciounicoColor"
+                                                    checked="checked">
                                                 <span class="checkmark"></span>
                                             </label>
                                         </div>
                                         <div class="mr-auto">
-                                            <label class="radiobuttons ml-1">Precio Unico
-                                                <input type="radio" name="radiobn2" id="preciounicoColor">
+                                            <label class="radiobuttons ml-1">Rangos
+                                                <input type="radio" name="radiobn2" id="rangosColor">
                                                 <span class="checkmark"></span>
                                             </label>
                                         </div>
+
                                     </div>
                                     <!-- //2 Radio buttons rango o unico-->
-
-                                    <div id="rangodivcolor">
+                                    <div id="preciounicodivcolor" class="preciounico">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p class="inputmarks center">Precio:</p>
+                                                </div>
+                                                <div class="col nopadding"><input type="text" class="form-control text-center"
+                                                        placeholder="Bs" disabled>
+                                                </div>
+                                                <div class="col">
+                                                    <p class="inputmarks center">Bs por hoja
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <!--btn editar-->
+                                            <div class="row text-light px-3 my-2">
+                                                    <button class="btn icon-editar ml-auto"><i
+                                                            class="fas fa-edit"></i></button>
+                                                </div>
+                                                <!--//btn editar-->
+                                        </div>
+                                    </div>
+                                    <div id="rangodivcolor" style="display: none;">
                                         <div class="row">
                                             <!-- mas/menos Radio buttons-->
                                             <div class="col">
@@ -297,22 +325,7 @@
                                             </table>
                                         </div>
                                     </div>
-                                    <div id="preciounicodivcolor" style="display: none;" class="preciounico">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p class="inputmarks">Precio:</p>
-                                                </div>
-                                                <div class="col nopadding"><input type="text" class="form-control"
-                                                        placeholder="Precio unico">
-                                                </div>
-                                                <div class="col">
-                                                    <p class="inputmarks">Ctvs por hoja
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </section>
                             <!--//Rango de precios a color-->
@@ -344,7 +357,7 @@
                                                     <td>
                                                         <!--input precio-->
                                                         <input type="text" class="form-control text-center"
-                                                            placeholder="Precio">
+                                                            placeholder="Bs" disabled>
                                                         <!--//input precio-->
                                                     </td>
                                                     <td>
@@ -362,7 +375,7 @@
                                                     <td>
                                                         <!--input precio-->
                                                         <input type="text" class="form-control text-center"
-                                                            placeholder="Precio">
+                                                            placeholder="Bs" disabled>
                                                         <!--//input precio-->
                                                     </td>
                                                     <td>
@@ -379,7 +392,7 @@
                                                     </th>
                                                     <td>
                                                         <!--input precio--><input type="text"
-                                                            class="form-control text-center" placeholder="Precio">
+                                                            class="form-control text-center" placeholder="Bs" disabled>
                                                         <!--//input precio-->
                                                     </td>
                                                     <td>
@@ -418,7 +431,7 @@
                                                     <td>
                                                         <!--input precio-->
                                                         <input type="text" class="form-control text-center"
-                                                            placeholder="Precio">
+                                                            placeholder="Bs" disabled>
                                                         <!--//input precio-->
                                                     </td>
                                                     <td>
@@ -435,7 +448,7 @@
                                                     <td>
                                                         <!--input precio-->
                                                         <input type="text" class="form-control text-center"
-                                                            placeholder="Precio">
+                                                            placeholder="Bs" disabled>
                                                         <!--input precio-->
                                                     </td>
                                                     <td>

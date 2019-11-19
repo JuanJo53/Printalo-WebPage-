@@ -9,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/negocio/estiloNegocios.css">
     <link rel="stylesheet" href="../../../css/negocio/negociogeneral.css">
     <link rel="stylesheet" href="../../../css/tables/tableNegocios.css">
     <link rel="stylesheet" href="../../../css/modals.css">
@@ -152,7 +151,7 @@
                                         <td>10/10/2019</td>
                                         <td>20:30</td>
                                         <td><a href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
-                                                data-target="#modalRegisterNegocio" data-toggle="modal">Detalles</a>
+                                                data-target="#modalVerDetalles" data-toggle="modal">Detalles</a>
                                         </td>
                                         <td><a href="" class="btn bg-printalo-blueDetail negative">Rechazar</a></td>
                                     </tr>
@@ -174,26 +173,36 @@
             <!--Content Modal-->
             <div class="col pb-3">
                 <div class="modal-content">
+                    <!--aqui se inserta el codigo del perfiliconadmi-->
                 </div>
             </div>
         </div>
         <!--Content Modal-->
     </div>
     <!--//perfiliconadmi-->
-    <!--Registrarse Modal neg-->
-    <div class="modal fade text-dark" id="modalRegisterNegocio">
+    <!--See details modal-->
+    <div class="modal fade text-dark" id="modalVerDetalles">
+        <!--modal dialog and size-->
         <div class="modal-dialog modal-lg">
+            <!--row-->
             <div class="row py-3">
+                <!--left side-->
                 <div class="col-lg-6 nopadding">
+                    <!--modal content-->
                     <div class="modal-content left bg-printalo-blueDetail">
+                        <!--container left side-->
                         <div class="container detallesPedido">
+                            <!--title left side-->
                             <h2 class="text-center pt-5 pb-2 text-light">Archivo</h2>
+                            <!--//title left side-->
+                            <!--row icon and text-->
                             <div class="row mx-3">
                                 <div class="col text-light">
                                     <div class="square-icon text-center mx-auto ">
                                         <div class="center">
-                                            <!--icono--><i class="far fa-file-pdf fa-3x"></i>
-                                            <!--//icono-->
+                                            <!--icono de pedido-->
+                                            <i class="far fa-file-pdf fa-3x"></i>
+                                            <!--//icono de pedido-->
                                         </div>
                                     </div>
                                 </div>
@@ -203,6 +212,8 @@
                                 </div>
                                 <!--//text-->
                             </div>
+                            <!--//row icon and text-->
+                            <!--block boxes-->
                             <div class="block-boxes px-3">
                                 <!--Color box-->
                                 <div class="input-group-prepend box">
@@ -253,14 +264,23 @@
                                 </div>
                                 <!--//Cantidad box-->
                             </div>
+                            <!--//block boxes-->
                         </div>
+                        <!--//container left side-->
                     </div>
+                    <!--modal content-->
                 </div>
+                <!--//left side-->
                 <!--right side-->
                 <div class="col-lg-6 nopadding">
+                    <!--modal content-->
                     <div class="modal-content right">
+                        <!--container right side-->
                         <div class="container detallesPedido">
+                            <!--right side title-->
                             <h2 class="text-center pt-5 pb-3">Pedido</h2>
+                            <!--//right side title-->
+                            <!--block boxes-->
                             <div class="block-boxes px-3">
                                 <!--user box-->
                                 <div class="input-group-prepend box">
@@ -316,32 +336,44 @@
                                     <input type="text" class="form-control" disabled>
                                 </div>
                                 <!--//Estado box-->
+                                <!--btns-->
                                 <div class="row pb-3 px-3">
+                                    <!--btn block-->
                                     <div class="ml-auto">
                                         <!--Btn aceptar pedido-->
-                                    <a href=""
-                                    class="btn bg-printalo-greenDetail text-light  positive">Aceptar</a>
-                                <!--//Btn aceptar pedido-->
-                                <!--Btn aceptar pedido-->
-                                <a href=""
-                                    class="btn bg-printalo-blueDetail text-light negative ">Rechazar</a>
-                                <!--//Btn aceptar pedido-->
+                                        <a href="" class="btn bg-printalo-greenDetail text-light  positive">Aceptar</a>
+                                        <!--//Btn aceptar pedido-->
+                                        <!--Btn rechaza pedido-->
+                                        <a href="" class="btn bg-printalo-blueDetail text-light negative ">Rechazar</a>
+                                        <!--//Btn rechazar pedido-->
                                     </div>
+                                    <!--//btn block-->
                                 </div>
+                                <!--//btns-->
                             </div>
+                            <!--//block boxes-->
                         </div>
+                        <!--container right side-->
                     </div>
+                    <!--//modal content-->
                 </div>
                 <!--//right side-->
             </div>
+            <!--//row-->
         </div>
+        <!--modal dialog and size-->
     </div>
-    <!--registrarse modal neg-->
+    <!--//See details modal-->
+    
     <!--boostrap jquery popper libraries-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <!--//boostrap jquery popper libraries-->
     <!--iconuserpefil script-->

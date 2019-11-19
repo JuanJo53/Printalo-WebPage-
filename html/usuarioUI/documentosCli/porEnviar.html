@@ -157,29 +157,32 @@
         <div class="modal-dialog mini modal-md">
             <div class="modal-content">
                 <!--title modal header-->
-                <div class="modal-header bg-printalo-blueDetail">
+                <div class="modal-header bg-printalo-blueDetail  px-5">
                     <h5 class="modal-title text-light">Abrir Archivo</h5>
                 </div>
                 <!--//title modal header-->
                 <!--modal body-->
-                <div class="container px-5 my-4">
+                <div class="container  px-5  my-4">
                     <div class="row my-2">
-                        <div class="col-xs-4 text-center">
-                            <div class="square-icon">
-                                <!--icono--><i class="far fa-file fa-3x"></i>
-                                <!--//icono-->
-                            </div>
-                        </div>
                         <!--Question-->
                         <div class="col my-auto text-center">
                             <h5>Abrir "NombredelArchivo.pdf"?</h5>
                         </div>
                         <!--//Question-->
+                        <div class="col-xs-4 ">
+                            <div class="square-icon text-center color-printalo-blueDetail">
+                                <div class="center">
+                                    <!--icono de pedido-->
+                                    <i class="far fa-file-pdf fa-3x"></i>
+                                    <!--//icono de pedido-->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!--//modal body-->
                 <!--modal footer-->
-                <div class="modal-footer">
+                <div class="modal-footer  px-5">
                     <div class="modalbuttonalert text-center">
                         <!--btn Cancelar-->
                         <a class="btn negative bg-printalo-blueDetail text-light">Cancelar</a>
@@ -1848,7 +1851,7 @@
     <script src="../../../js/designjs/perfiliconuser.js"></script>
     <script src="../../../js/designjs/timeanddate.js"></script>
 
-    
+
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 
@@ -1860,14 +1863,15 @@
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
 
     <!-- Configuracion de Proyecto en Firebase -->
-    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>    
+    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
 
     <!-- Clase Clientes -->
-    <script type="text/javascript" src="../../../js/Cliente/Clientes.js"></script>  
+    <script type="text/javascript" src="../../../js/Cliente/Clientes.js"></script>
     <!-- Clase Auth para la autenticacion con firebase -->
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>    
     <!--Script para la pagina actual-->
     <script type="text/javascript" src="../../../js/Cliente/porEnviar.js"></script>
     
 </body>
+
 </html>

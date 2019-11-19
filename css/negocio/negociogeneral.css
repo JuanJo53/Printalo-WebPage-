@@ -248,3 +248,10 @@ input[type="text"]{
   font-size: 17px;
   text-align: center;
 }
+
+
+
+.table.priceconfig td 
+{
+  vertical-align: middle!important;
+}

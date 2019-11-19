@@ -124,3 +124,12 @@ button.icon-editar:hover {
   font-size: 0.9rem;
 }
 /*//sublink sidebar*/
+
+/**/
+.dropdown .dropdown-toggle{
+  background-color:#24c4a6;
+  color: #fff;
+}
+.dropdown .dropdown-item:active{
+  background-color:#30e2c2;
+}

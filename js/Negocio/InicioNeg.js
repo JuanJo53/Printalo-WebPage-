@@ -6,20 +6,18 @@ function SetInicialNeg(){
     var bd=firebase.firestore();
     var userid= user.uid;
     var nombre;
-    console.log(userid);
     var docRef = bd.collection('Negocios').doc(userid);
     docRef.get().then(function(doc){
-    if (doc.exists){
-        console.log("Datos de Admin:", doc.data().adminID);
-        nombre=doc.data().nombreNeg;
-        var inicial=nombre.charAt(0);
-        document.getElementById('avtInicialNeg').innerHTML = inicial;
-    }else{
-        console.log("No such document!");
-    }
-}).catch(function(error){
-    console.log("Error al obtener los datos:", error);
-})
+        if (doc.exists){
+            nombre=doc.data().nombreNeg;
+            var inicial=nombre.charAt(0);
+            document.getElementById('avtInicialNeg').innerHTML = inicial;
+        }else{
+            console.log("No such document!");
+        }
+    }).catch(function(error){
+        console.log("Error al obtener los datos:", error);
+    })
 }
 
 // Esta funcion ejecuta el observador de firebase

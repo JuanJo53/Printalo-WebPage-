@@ -123,8 +123,7 @@
                                                     <p class="inputmarks center">Precio:</p>
                                                 </div>
                                                 <div class="col nopadding">
-                                                    <input id="txtPrecioBN" type="text" class="form-control text-center"
-                                                        placeholder="Bs" disabled>
+                                                    <input id="txtPrecioBN" type="number" class="form-control text-center" placeholder="Bs" disabled>
                                                 </div>
                                                 <div class="col">
                                                     <p class="inputmarks center">Bs/hoja
@@ -241,7 +240,7 @@
                                                 <div class="col">
                                                     <p class="inputmarks center">Precio:</p>
                                                 </div>
-                                                <div class="col nopadding"><input id="txtPrecioColor" type="text" class="form-control text-center"
+                                                <div class="col nopadding"><input id="txtPrecioColor" type="number" class="form-control text-center"
                                                         placeholder="Bs" disabled>
                                                 </div>
                                                 <div class="col">
@@ -356,7 +355,7 @@
                                                     </th>
                                                     <td>
                                                         <!--input precio-->
-                                                        <input type="text" class="form-control text-center"
+                                                        <input id="txtPrecioOficio" type="number" class="form-control text-center"
                                                             placeholder="Bs" disabled>
                                                         <!--//input precio-->
                                                     </td>
@@ -373,7 +372,7 @@
                                                     </th>
                                                     <td>
                                                         <!--input precio-->
-                                                        <input type="text" class="form-control text-center"
+                                                        <input id="txtPrecioCarta" type="number" class="form-control text-center"
                                                             placeholder="Bs" disabled>
                                                         <!--//input precio-->
                                                     </td>
@@ -389,7 +388,7 @@
                                                         A4
                                                     </th>
                                                     <td>
-                                                        <!--input precio--><input type="text"
+                                                        <!--input precio--><input id="txtPrecioA4" type="number"
                                                             class="form-control text-center" placeholder="Bs" disabled>
                                                         <!--//input precio-->
                                                     </td>
@@ -404,7 +403,7 @@
                                     </div>
                                     <!--btn editar-->
                                     <div class="row text-light px-3 ">
-                                        <button class="btn icon-editar ml-auto"><i class="fas fa-edit"></i></button>
+                                        <button onclick="enableTamHoja()" class="btn icon-editar ml-auto"><i class="fas fa-edit"></i></button>
                                     </div>
                                     <!--//btn editar-->
                                 </div>
@@ -431,9 +430,8 @@
                                                         Normal
                                                     </th>
                                                     <td>
-                                                        <!--input precio-->
-                                                        <input type="text" class="form-control text-center"
-                                                            placeholder="Bs" disabled>
+                                                        <!--input precio Hoja Normal-->
+                                                        <input id="txtHojaNorm" type="number" class="form-control text-center" placeholder="Bs" disabled>
                                                         <!--//input precio-->
                                                     </td>
                                                     <td>
@@ -447,8 +445,8 @@
                                                         Reutilizada
                                                     </th>
                                                     <td>
-                                                        <!--input precio-->
-                                                        <input type="text" class="form-control text-center"
+                                                        <!--input precio Hoja Reutilizable-->
+                                                        <input id="txtHojaReu" type="number" class="form-control text-center"
                                                             placeholder="Bs" disabled>
                                                         <!--input precio-->
                                                     </td>
@@ -463,7 +461,7 @@
                                     </div>
                                     <!--btn editar-->
                                     <div class="row text-light px-3 ">
-                                        <button class="btn icon-editar ml-auto"><i class="fas fa-edit"></i></button>
+                                        <button onclick="enableTipHoja()" class="btn icon-editar ml-auto"><i class="fas fa-edit"></i></button>
                                     </div>
                                     <!--//btn editar-->
                                 </div>
@@ -474,7 +472,7 @@
                     </div>
                     <!--Boton guardar cambios-->
                     <div class="row text-light p-4">
-                        <a class="btn positive bg-printalo-greenDetail ml-auto">Guardar Cambios</a>
+                        <a onclick="GuardarCambPrecios()" class="btn bg-printalo-greenDetail positive ml-auto">Guardar Cambios</a>
                     </div>
                 </div>
                 <!--//Contenido de la pagina-->
@@ -509,7 +507,6 @@
     <!--//iconuserpefil script-->
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <script src="../../../js/designjs/radiobtn.js"></script>
-    <script src="../../../js/designjs/perfiliconuser.js"></script>
     <script>
         $("#menu-toggle").click(function (e) {
             e.preventDefault();
@@ -532,11 +529,11 @@
     <!--Script de la clase Negocios-->
     <script type="text/javascript" src="../../../js//Negocio/Negocios.js"></script>  
     <!-- Clase Auth para la autenticacion con firebase -->  
-    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
-    <!--Script para general-->
-    <script type="text/javascript" src="../../../js//Negocio/InicioNeg.js"></script>  
+    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>    
     <!--Script para la pagina actual-->
     <script type="text/javascript" src="../../../js//Negocio/confPrecios.js"></script>
+    <!--Script para general-->
+    <script type="text/javascript" src="../../../js//Negocio/InicioNeg.js"></script>  
 
 </body>
 

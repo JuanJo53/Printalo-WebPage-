@@ -195,6 +195,9 @@ input[type="text"]{
   height: 0;
   width: 0;
 }
+label.radiobuttons   {
+  padding-top: 0px!important;
+}
 
 /* Create a custom radio button */
 .checkmark {
@@ -250,8 +253,9 @@ input[type="text"]{
 }
 
 
-
+/*align middle precinfig*/
 .table.priceconfig td 
 {
   vertical-align: middle!important;
 }
+/*//align middle precinfig*/

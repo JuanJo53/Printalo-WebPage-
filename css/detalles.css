@@ -125,7 +125,8 @@ button.icon-editar:hover {
 }
 /*//sublink sidebar*/
 
-/**/
+/*dropdown menu*/
+
 .dropdown .dropdown-toggle{
   background-color:#24c4a6;
   color: #fff;
@@ -133,3 +134,33 @@ button.icon-editar:hover {
 .dropdown .dropdown-item:active{
   background-color:#30e2c2;
 }
+/*//dropdown menu*/
+
+/*Permite que no mostrar spinner cuando type=number*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+  -moz-appearance:textfield; /* Firefox */
+}
+/*//Permite que no mostrar spinner cuando type=number*/
+
+/*input block bgcolor*/
+input[type="text"]:disabled,input[type="password"]:disabled,input[type="number"]:disabled, textarea{
+  background: #ccc;
+  border-color:#ccc ;
+}
+/*input block bgcolor*/
+
+/*btn disabled bgcolor*/
+.btn:disabled{
+  background: #ccc;
+}
+button.icon-editar:disabled:hover{
+  background-color: #ccc!important;
+}
+/*btn disabled bgcolor*/

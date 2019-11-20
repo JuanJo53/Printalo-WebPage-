@@ -40,9 +40,7 @@
   li {
     text-align: center;
   }
-  input[type="text"],input[type="password"], textarea{
-    background: #c3dee5;
-  }
+  
   .tarjeta-modal input[type="text"],input[type="password"], textarea{
     background: #ffffff!important;
   }

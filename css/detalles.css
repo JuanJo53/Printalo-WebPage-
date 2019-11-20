@@ -201,7 +201,7 @@ button.icon-editar:disabled:hover{
 }
 /*//btn save changes in hole system*/
 
-/*detalles de pedidos inputs*/
+/*configuraciones de negocio general inputs*/
 .configuraciones .input-group-text {
   width: 100%;
   border-top-right-radius: 0px;
@@ -220,4 +220,13 @@ button.icon-editar:disabled:hover{
 .configuraciones .box{
   margin:15px 0px 15px 0;
 }
-/*detalles de pedidos inputs*/
+.configuraciones.horario .input-group-text.dia {
+  width: 40%;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  display: block;
+  background-color: #c3dee5;
+  border-style: none;
+  color: #000;
+}
+/*configuraciones de negocio general inputs*/

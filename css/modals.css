@@ -139,6 +139,7 @@
   width: 80px;
   height:70px;
 }
+/*detalles de pedidos inputs*/
 .detallesPedido .input-group-text {
   width: 100%;
   border-top-right-radius: 0px;
@@ -157,3 +158,4 @@
 .detallesPedido .box{
   margin:15px 0px 15px 0;
 }
+/*detalles de pedidos inputs*/

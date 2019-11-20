@@ -200,3 +200,24 @@ button.icon-editar:disabled:hover{
   font-weight: normal;
 }
 /*//btn save changes in hole system*/
+
+/*detalles de pedidos inputs*/
+.configuraciones .input-group-text {
+  width: 100%;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  display: block;
+  background-color: #c3dee5;
+  border-style: none;
+  color: #000;
+}
+.configuraciones .form-control {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background-color: #fff;
+  border: 1.5px solid #c3dee5;
+}
+.configuraciones .box{
+  margin:15px 0px 15px 0;
+}
+/*detalles de pedidos inputs*/

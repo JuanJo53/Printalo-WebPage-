@@ -75,12 +75,7 @@ label{
   background-color: #30e2c2!important;
 }
 /*//time date pickers*/
-/*btn save changes in hole system*/
-.btnsavechanges:hover{
-  background-color: #30e2c2;
-  color: white;
-}
-/*//btn save changes in hole system*/
+
 /*btn peusto in hole system*/
 .puesto .card:hover .card-footer{
   background-color: #30e2c2!important;
@@ -190,3 +185,18 @@ button.icon-editar:disabled:hover{
   margin-top: -15px;
   padding: none;
 }
+/*btn save changes in hole system*/
+.btnsavechanges.active:hover{
+  background-color: #30e2c2;
+}
+.btnsavechanges.active{
+  background-color: #24c4a6;
+  font-weight: normal;
+  cursor: pointer;
+ ;
+}
+.btnsavechanges.inactive{
+  background-color: #ccc;
+  font-weight: normal;
+}
+/*//btn save changes in hole system*/

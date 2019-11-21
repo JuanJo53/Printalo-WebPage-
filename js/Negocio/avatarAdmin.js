@@ -28,7 +28,7 @@ function Salir(){
     // Esta funcion pasa el email y su password a la clase Auth para logout con firebase
     var auth = new Auth();
     auth.Logout();
-    ValidarCli();
+    ValidarNeg();
 };
 
 // Esta funcion ejecuta el observador de firebase

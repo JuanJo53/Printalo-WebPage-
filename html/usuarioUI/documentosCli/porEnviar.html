@@ -141,14 +141,17 @@
         <div class="fab-container">
             <div class="fab-icon-holder">
                 <!--modal target-->
-                <a data-toggle="modal" data-target="#ingresarModal">
+                <a data-toggle="modal" data-target="#ingresarModal" type="file">
                     <!--//modal target-->
-                    <!--Icon-->
+                    <!--Icon-->                    
                     <i class="fas fa-plus "></i>
+                    
                     <!--//Icon-->
                 </a>
             </div>
         </div>
+        
+        <input id="btnNewFile" value="upload" type="file">
         <!--//float action button (+)-->
     </div>
     <!--//container-->
@@ -1871,7 +1874,8 @@
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>    
     <!--Script para la pagina actual-->
     <script type="text/javascript" src="../../../js/Cliente/porEnviar.js"></script>
-    
+    <!--Script para pedidos-->
+    <script type="text/javascript" src="../../../js/Cliente/nuevoPedido.js"></script>
 </body>
 
 </html>

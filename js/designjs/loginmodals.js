@@ -1,19 +1,19 @@
-  
-//llama a perfil de usuario
-$('.icon-user').on('click',function(e){
+$('.modal-neg').on('click',function(e){
     e.preventDefault();
-    $('#perfiliconusuario').modal('show').find('.modal-content').load($(this).attr('href'));
+    $('#modalNegocio').modal('show').find('.modal-dialog').load($(this).attr('href'));
 });
-//--llama a perfil de usuario
-//llama a perfil de administrador
-$('.icon-user').on('click',function(e){
+
+$('.modal-register-neg').on('click',function(e){
     e.preventDefault();
-    $('#perfiliconadmi').modal('show').find('.modal-content').load($(this).attr('href'));
+    $('#modalRegisterNegocio').modal('show').find('.modal-dialog').load($(this).attr('href'));
 });
-//--llama a perfil de administrador
-//llama a perfil de empleado
-$('.icon-user').on('click',function(e){
+//User
+$('.modal-login-usu').on('click',function(e){
     e.preventDefault();
-    $('#perfiliconemp').modal('show').find('.modal-content').load($(this).attr('href'));
+    $('#modalLoginUsuario').modal('show').find('.modal-dialog').load($(this).attr('href'));
 });
-//--llama a perfil de empleado
+$('.modal-register-usu').on('click',function(e){
+    e.preventDefault();
+    $('#modalRegisterUsuario').modal('show').find('.modal-dialog').load($(this).attr('href'));
+});
+//--User

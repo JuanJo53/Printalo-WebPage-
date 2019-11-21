@@ -9,9 +9,7 @@ label{
 .navbar .nav-item {
   font-size: 1rem;
 }
-.navbar .nav-item .nav-link:hover {
-  color: #24c4a6 !important;
-}
+
 .btn-outline-light:hover {
   background-color: #253449;
 }
@@ -235,3 +233,12 @@ button.icon-editar:disabled:hover{
   color: #fff!important;
 }
 /*//btn row positive*/
+
+.navbarbutton.btn.positive:hover {
+  background-color: #30e2c2 !important;
+  color: rgb(255, 255, 255) !important;
+}
+.navbarbutton.btn.negative:hover {
+  background-color: #253449 !important;
+  color: rgb(255, 255, 255) !important;
+}

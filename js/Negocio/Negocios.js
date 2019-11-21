@@ -36,7 +36,7 @@ class Negocio{
                         alert("Logeado");
                         location.href="/html/negocioUI/pedidosNeg/pedPendientes.html"
                     }).catch(e=>{
-                       console.log(`Error creando cliente: ${error}`);
+                       console.log(`Error creando negocio: ${error}`);
                     })
                 }).catch(e=>{
                    console.log(`Error creando cliente: ${error}`);

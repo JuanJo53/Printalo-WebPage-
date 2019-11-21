@@ -33,8 +33,7 @@
                 class="navbar-item  order-lg-last   order-xs-last  mx-1 icon-user">
                 <div class="d-inline circle bg-printalo-greenDetail">
                     <!--Initial letter-->
-                    <div class="center">
-                        J
+                    <div id="avtInicialNeg" class="center">
                     </div>
                     <!--Initial letter-->
                 </div>
@@ -124,8 +123,8 @@
                                                 <div class="col">
                                                     <p class="inputmarks center">Precio:</p>
                                                 </div>
-                                                <div class="col nopadding"><input type="text"
-                                                        class="form-control text-center" placeholder="Bs" disabled>
+                                                <div class="col nopadding">
+                                                    <input id="txtPrecioBN" type="number" class="form-control text-center" placeholder="Bs" disabled>
                                                 </div>
                                                 <div class="col">
                                                     <p class="inputmarks center">Bs/hoja
@@ -134,7 +133,7 @@
                                             </div>
                                             <!--btn editar-->
                                             <div class="row text-light px-3 my-2">
-                                                <button class="btn icon-editar ml-auto"><i
+                                                <button onclick="enableBN()" class="btn icon-editar ml-auto"><i
                                                         class="fas fa-edit"></i></button>
                                             </div>
                                             <!--//btn editar-->
@@ -242,8 +241,8 @@
                                                 <div class="col">
                                                     <p class="inputmarks center">Precio:</p>
                                                 </div>
-                                                <div class="col nopadding"><input type="text"
-                                                        class="form-control text-center" placeholder="Bs" disabled>
+                                                <div class="col nopadding"><input id="txtPrecioColor" type="number" class="form-control text-center"
+                                                        placeholder="Bs" disabled>
                                                 </div>
                                                 <div class="col">
                                                     <p class="inputmarks center">Bs/hoja
@@ -252,10 +251,10 @@
                                             </div>
                                             <!--btn editar-->
                                             <div class="row text-light px-3 my-2">
-                                                <button class="btn icon-editar ml-auto"><i
-                                                        class="fas fa-edit"></i></button>
-                                            </div>
-                                            <!--//btn editar-->
+                                                    <button onclick="enableColor()" class="btn icon-editar ml-auto"><i
+                                                            class="fas fa-edit"></i></button>
+                                                </div>
+                                                <!--//btn editar-->
                                         </div>
                                     </div>
                                     <div id="rangodivcolor" style="display: none;">
@@ -357,7 +356,7 @@
                                                     </th>
                                                     <td>
                                                         <!--input precio-->
-                                                        <input type="text" class="form-control text-center"
+                                                        <input id="txtPrecioOficio" type="number" class="form-control text-center"
                                                             placeholder="Bs" disabled>
                                                         <!--//input precio-->
                                                     </td>
@@ -374,7 +373,7 @@
                                                     </th>
                                                     <td>
                                                         <!--input precio-->
-                                                        <input type="text" class="form-control text-center"
+                                                        <input id="txtPrecioCarta" type="number" class="form-control text-center"
                                                             placeholder="Bs" disabled>
                                                         <!--//input precio-->
                                                     </td>
@@ -390,7 +389,7 @@
                                                         A4
                                                     </th>
                                                     <td>
-                                                        <!--input precio--><input type="text"
+                                                        <!--input precio--><input id="txtPrecioA4" type="number"
                                                             class="form-control text-center" placeholder="Bs" disabled>
                                                         <!--//input precio-->
                                                     </td>
@@ -405,7 +404,7 @@
                                     </div>
                                     <!--btn editar-->
                                     <div class="row text-light px-3 ">
-                                        <button class="btn icon-editar ml-auto"><i class="fas fa-edit"></i></button>
+                                        <button onclick="enableTamHoja()" class="btn icon-editar ml-auto"><i class="fas fa-edit"></i></button>
                                     </div>
                                     <!--//btn editar-->
                                 </div>
@@ -432,9 +431,8 @@
                                                         Normal
                                                     </th>
                                                     <td>
-                                                        <!--input precio-->
-                                                        <input type="text" class="form-control text-center"
-                                                            placeholder="Bs" disabled>
+                                                        <!--input precio Hoja Normal-->
+                                                        <input id="txtHojaNorm" type="number" class="form-control text-center" placeholder="Bs" disabled>
                                                         <!--//input precio-->
                                                     </td>
                                                     <td>
@@ -448,8 +446,8 @@
                                                         Reutilizada
                                                     </th>
                                                     <td>
-                                                        <!--input precio-->
-                                                        <input type="text" class="form-control text-center"
+                                                        <!--input precio Hoja Reutilizable-->
+                                                        <input id="txtHojaReu" type="number" class="form-control text-center"
                                                             placeholder="Bs" disabled>
                                                         <!--input precio-->
                                                     </td>
@@ -464,7 +462,7 @@
                                     </div>
                                     <!--btn editar-->
                                     <div class="row text-light px-3 ">
-                                        <button class="btn icon-editar ml-auto"><i class="fas fa-edit"></i></button>
+                                        <button onclick="enableTipHoja()" class="btn icon-editar ml-auto"><i class="fas fa-edit"></i></button>
                                     </div>
                                     <!--//btn editar-->
                                 </div>
@@ -475,7 +473,7 @@
                     </div>
                     <!--Boton guardar cambios-->
                     <div class="row text-light p-4">
-                        <a class="btn btnsavechanges inactive ml-auto">Guardar Cambios</a>
+                        <a onclick="GuardarCambPrecios()" class="btn bg-printalo-greenDetail positive ml-auto">Guardar Cambios</a>
                     </div>
                     <!--//Boton guardar cambios-->
                 </div>
@@ -510,13 +508,33 @@
     <!--//iconuserpefil script-->
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <script src="../../../js/designjs/radiobtn.js"></script>
-    <script src="../../../js/designjs/perfiliconuser.js"></script>
     <script>
         $("#menu-toggle").click(function (e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
         });
     </script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+    <!-- Para uso de Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+
+    <!-- Para Authentication y Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+
+    <!-- Configuracion de Proyecto en Firebase -->
+    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
+
+    <!--Script de la clase Negocios-->
+    <script type="text/javascript" src="../../../js//Negocio/Negocios.js"></script>  
+    <!-- Clase Auth para la autenticacion con firebase -->  
+    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>    
+    <!--Script para la pagina actual-->
+    <script type="text/javascript" src="../../../js//Negocio/confPrecios.js"></script>
+    <!--Script para general-->
+    <script type="text/javascript" src="../../../js//Negocio/InicioNeg.js"></script>  
 
 </body>
 

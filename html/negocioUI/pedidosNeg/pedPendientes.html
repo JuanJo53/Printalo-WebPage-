@@ -39,8 +39,7 @@
                 class="navbar-item  order-lg-last   order-xs-last  mx-1 icon-user">
                 <div class="d-inline circle bg-printalo-greenDetail">
                     <!--Initial letter-->
-                    <div class="center">
-                        J
+                    <div id="avtInicialNeg" class="center">
                     </div>
                     <!--Initial letter-->
                 </div>
@@ -395,9 +394,20 @@
     <script type="text/javascript" src="../../../js//Negocio/Negocios.js"></script>
     <!-- Clase Auth para la autenticacion con firebase -->
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
+    <!--Script para la pagina actual-->
+    <script type="text/javascript" src="../../../js//Negocio/InicioNeg.js"></script>  
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
     <script type="text/javascript" src="../../../js/designjs/datatables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js"></script>
+    <script>
+        var myState = {
+            pdf: null,
+            currentPage: 1,
+            zoom: 1
+        }     
+        // more code here
+    </script>
 </body>
 
 </html>

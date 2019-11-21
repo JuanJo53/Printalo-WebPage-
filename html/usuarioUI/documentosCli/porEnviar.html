@@ -139,17 +139,13 @@
         </div>
         <!-- // -->
         <!--float action button (+)-->
-        <div class="fab-container">
-            <div class="fab-icon-holder">
-                <!--modal target-->
-                <a data-toggle="modal" data-target="#ingresarModal">
-                    <!--//modal target-->
-                    <!--Icon-->
-                    <i class="fas fa-plus "></i>
-                    <!--//Icon-->
-                </a>
-            </div>
+        <div class="input-file-container">
+            <input class="input-file" id="my-file" type="file">
+            <label tabindex="0" for="my-file" class="input-file-trigger">
+                <div class="center2"><i class="fas fa-plus"></i></div>
+            </label>
         </div>
+        <p class="file-return"></p>
         <!--//float action button (+)-->
     </div>
     <!--//container-->
@@ -1870,6 +1866,27 @@
     <script type="text/javascript" src="../../../js/Cliente/Clientes.js"></script>
     <!-- Clase Auth para la autenticacion con firebase -->
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
+
+    <script>
+        document.querySelector("html").classList.add('js');
+
+        var fileInput = document.querySelector(".input-file"),
+            button = document.querySelector(".input-file-trigger"),
+            the_return = document.querySelector(".file-return");
+
+        button.addEventListener("keydown", function (event) {
+            if (event.keyCode == 13 || event.keyCode == 32) {
+                fileInput.focus();
+            }
+        });
+        button.addEventListener("click", function (event) {
+            fileInput.focus();
+            return false;
+        });
+        fileInput.addEventListener("change", function (event) {
+            the_return.innerHTML = this.value;
+        });  
+    </script>
 
 </body>
 

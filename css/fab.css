@@ -77,6 +77,7 @@ label .center2 i {
 /*new*/
 .input-file-container label{
   margin-bottom: 0px;
+  
 }
 .input-file-container {
   position: fixed;
@@ -107,6 +108,7 @@ label .center2 i {
 .js .input-file-trigger:focus {
   background: #30e2c2;
   color: #fff;
+  cursor: pointer;
 }
 
 .file-return {

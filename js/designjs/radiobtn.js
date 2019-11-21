@@ -126,3 +126,26 @@ $(document).ready(function () {
     });
 });
 //radio button's choice todo-personalizado en seccion enviados
+
+//radio button's de configuracion pubAgregar documento o fotocopia
+$(document).ready(function () {
+    $("#fotocopia").click(function () {
+        $("#fotocopiadiv:hidden").show('slow');
+        $("#documentodiv").hide();
+    });
+    $("#fotocopia").click(function () {
+        if ($("#fotocopia").prop('checked') === false) {
+            $("#fotocopiadiv").hide();
+        }
+    });
+    $("#documento").click(function () {
+        $("#documentodiv:hidden").show('slow');
+        $("#fotocopiadiv").hide();
+    });
+    $("#documento").click(function () {
+        if ($("#documento").prop('checked') === false) {
+            $("#documentodiv").hide();
+        }
+    });
+});
+//radio button's choice todo-personalizado en seccion enviados

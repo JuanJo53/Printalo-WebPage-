@@ -75,12 +75,7 @@ label{
   background-color: #30e2c2!important;
 }
 /*//time date pickers*/
-/*btn save changes in hole system*/
-.btnsavechanges:hover{
-  background-color: #30e2c2;
-  color: white;
-}
-/*//btn save changes in hole system*/
+
 /*btn peusto in hole system*/
 .puesto .card:hover .card-footer{
   background-color: #30e2c2!important;
@@ -125,7 +120,8 @@ button.icon-editar:hover {
 }
 /*//sublink sidebar*/
 
-/**/
+/*dropdown menu*/
+
 .dropdown .dropdown-toggle{
   background-color:#24c4a6;
   color: #fff;
@@ -133,3 +129,104 @@ button.icon-editar:hover {
 .dropdown .dropdown-item:active{
   background-color:#30e2c2;
 }
+/*//dropdown menu*/
+
+/*Permite que no mostrar spinner cuando type=number*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+  -moz-appearance:textfield; /* Firefox */
+}
+/*//Permite que no mostrar spinner cuando type=number*/
+
+/*input block bgcolor*/
+input[type="text"]:disabled,input[type="password"]:disabled,input[type="number"]:disabled, textarea{
+  background: #ccc;
+  border-color:#ccc ;
+}
+/*input block bgcolor*/
+
+/*btn disabled bgcolor*/
+.btn:disabled{
+  background: #ccc;
+}
+button.icon-editar:disabled:hover{
+  background-color: #ccc!important;
+}
+/*btn disabled bgcolor*/
+
+/*row*/
+.row-detail.off {
+  display: inline-block;
+  background: #364c68;
+  width: 40px;
+  height: 5px;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.row-detail.on {
+  display: inline-block;
+  background: #24c4a6;
+  width: 40px;
+  height: 5px;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.row-sub {
+  background: #364c68;
+  width: 100%;
+  height: 1.5px;
+  margin-top: -15px;
+  padding: none;
+}
+/*btn save changes in hole system*/
+.btnsavechanges.active:hover{
+  background-color: #30e2c2;
+}
+.btnsavechanges.active{
+  background-color: #24c4a6;
+  font-weight: normal;
+  cursor: pointer;
+ ;
+}
+.btnsavechanges.inactive{
+  background-color: #ccc;
+  font-weight: normal;
+}
+/*//btn save changes in hole system*/
+
+/*configuraciones de negocio general inputs*/
+.configuraciones .input-group-text {
+  width: 100%;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  display: block;
+  background-color: #c3dee5;
+  border-style: none;
+  color: #000;
+}
+.configuraciones .form-control {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background-color: #fff;
+  border: 1.5px solid #c3dee5;
+}
+.configuraciones .box{
+  margin:15px 0px 15px 0;
+}
+.configuraciones.horario .input-group-text.dia {
+  width: 40%;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  display: block;
+  background-color: #c3dee5;
+  border-style: none;
+  color: #000;
+}
+/*configuraciones de negocio general inputs*/

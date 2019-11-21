@@ -142,12 +142,13 @@ li {
   border: 2px solid #747474;
   background-color: white;
 }
+/*
 input[type="text"]{
   background: #c3dee5;
   border-radius: .25rem;
   border: 1px solid #ced4da;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
+}*/
 .table th{
   vertical-align: middle!important;
 }

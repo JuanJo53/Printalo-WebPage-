@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../../../css/tables/tableNegocios.css">
     <link rel="stylesheet" href="../../../css/negocio/negociogeneral.css">
     <link rel="stylesheet" href="../../../css/fab.css">
+    <link rel="stylesheet" href="../../../css/modals.css">
     <link rel="stylesheet" href="../../../css/detalles.css">
     <title>Configuraciones Empleados</title>
 </head>
@@ -101,7 +102,7 @@
                 <h2 class="my-3">Empleados</h2>
                 <!--//title page-->
                 <!--btn agregar archivo-->
-                <a href="" class="btn bg-printalo-greenDetail positive " data-target="#agregaraLista"
+                <a href="" class="btn bg-printalo-greenDetail positive " data-target="#modalRegisterEmpleado"
                     data-toggle="modal">Agregar empleado</a>
                 <!--//btn agregar archivo-->
                 <!--row table-->
@@ -116,8 +117,8 @@
                                         <th>Codigo</th>
                                         <th>Nombre</th>
                                         <th>Apellido</th>
-                                        <th>Negocio</th>
-                                        <th>Detalles</th>
+                                        <th>Correo</th>
+                                        <th>Contraseña</th>
                                         <th>Eliminar</th>
                                     </tr>
                                 </thead>
@@ -128,9 +129,8 @@
                                         <td>1</td>
                                         <td>Ariel</td>
                                         <td>Colque</td>
-                                        <td>PCS</td>
-                                        <td><a href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
-                                                data-target="#modalVerDetalles" data-toggle="modal">Detalles</a>
+                                        <td>ariel@gmail.com</td>
+                                        <td>ariel123
                                         </td>
                                         <td><a href="" class="btn bg-printalo-blueDetail negative">Eliminar</a></td>
                                     </tr>
@@ -159,6 +159,58 @@
         <!--Content Modal-->
     </div>
     <!--//perfiliconadmi-->
+    <!--Registrarse Modal usuario-->
+    <div class="modal fade text-dark" id="modalRegisterEmpleado">
+        <div class="modal-dialog modal-lg">
+            <div class="row py-3">
+                <div class="col-lg-6 nopadding">
+                    <div class="modal-content left">
+                        <div class="container">
+                            <a href=""
+                                class="close-icon text-center ml-auto m-3 d-none d-block d-sm-block d-md-block d-lg-none"
+                                data-dismiss="modal"></a>
+                            <h2 class="text-center pt-5">Registrar Empleado</h2>
+                            <form action="" class="p-5">
+                                <div class="form-group">
+                                    <label for="username">Nombre:</label>
+                                    <input type="text" class="form-control" id="txtName">
+                                    <label for="username">Apellido:</label>
+                                    <input type="text" class="form-control" id="txtLastName">
+                                    <label for="username">Numero de telefono:</label>
+                                    <input type="text" class="form-control" id="txtNum">
+                                    <label for="name">E-mail:</label>
+                                    <input type="text" class="form-control" id="txtEmail">
+                                    <label for="password">Constraseña:</label>
+                                    <input type="password" class="form-control" id="txtPass">
+                                </div>
+                            </form>
+                            <div class="modalbutton text-center py-3">
+                                <!--btn ingresar usuario normal-->
+                                <button onclick="RegCli()" id="btnRegistrarUser"
+                                    class="btn btn-outline-light bg-printalo-button text-light">Registrar</button>
+                                <!--//-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 nopadding d-none d-lg-block ">
+                    <div class="modal-content right bg-printalo-blueDetail">
+                        <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
+                        <div class="container my-auto">
+                            <div class="modal-body">
+                                <div class="text-center">
+                                    <img width="100" height="100" src="../../../img/printer.png" alt=""
+                                        class="img-fluid ">
+                                </div>
+                                <h3 class="text-center text-light">Printalo</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//Registrarse Modal usuario-->
     <!--boostrap jquery popper libraries-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

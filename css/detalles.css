@@ -258,3 +258,12 @@ button.icon-editar:disabled:hover{
   border: 0px!important;
 }
 */
+
+/*icon perfil initial letter */
+.iconletter{
+ font-size: 1rem;
+}
+.iconlettermodal{
+  font-size: 1.5rem;
+ }
+ /*icon perfil initial letter */

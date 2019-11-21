@@ -12,7 +12,7 @@ function SetInicial(){
             console.log("Datos de Clientes:", doc.data());
             nombre=doc.data().Nombre;
             var inicial=nombre.charAt(0);
-            document.getElementById('IncialCliente').innerHTML  = inicial;
+            document.getElementById('InicialCliente').innerHTML  = inicial;
         }else{
             console.log("No such document!");
         }

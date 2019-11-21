@@ -12,51 +12,66 @@
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/modals.css">
     <link rel="stylesheet" href="../../../css/detalles.css">
-
     <title>Principal Usuarios</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark">
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark py-1">
         <div class="container">
             <div class="navbar-header">
                 <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span></button>
-                <!--Link ir a index user-->
+                <!--principal link-->
                 <a class="navbar-brand mx-1" href="indexUser.html">
+                    <!--image logo-->
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
+                    <!--//image logo-->
+                    <!--logo title-->
                     <h5 class="d-inline align-middle mx-1">Printalo</h5>
+                    <!--//logo title-->
                 </a>
+                <!--principal link-->
             </div>
+            <!--collapse-->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <!--Link Servicios-->
                     <li class="nav-item">
-                        <a href="indexServiciosUser.html" class="nav-link text-light center ">Servicios</a>
+                        <a href="indexServiciosUser.html" class="nav-link text-light my-auto">Servicios</a>
                     </li>
+                    <!--//Link Servicios-->
                     <!--Link Contactos-->
                     <li class="nav-item">
-                        <a href="indexContactosUser.html" class="nav-link text-light center ">Contactos</a>
+                        <a href="indexContactosUser.html" class="nav-link text-light my-auto ">Contactos</a>
                     </li>
+                    <!--//Link Contactos-->
                     <!--Btn Iniciar Sesion-->
                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-button modal-login-usu"  href="../../acrosspages/modalloginUsu.html">Iniciar Sesion</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-greenDetail modal-login-usu navbarbutton positive"
+                            href="../../acrosspages/modalloginUsu.html">Iniciar Sesion</a>
                     </li>
-                    <!--//btn iniciar sesion-->
+                    <!--//Btn Iniciar Sesion-->
                     <!--Btn Registrarse-->
                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button modal-register-usu" href="../../acrosspages/modalRegisterUsu.html">Registrarse</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-greenDetail modal-register-usu
+                        navbarbutton positive"
+                            href="../../acrosspages/modalRegisterUsu.html">Registrarse</a>
                     </li>
-                    <!--//btn registrarse-->
+                    <!--//Btn registrarse-->
                     <!--Btn Ir a seccion Negocios-->
                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-greenDetail
+                        navbarbutton positive"
                             href="../negocioIndex/indexNeg.html">Negocios</a>
                     </li>
+                    <!--//Btn Ir a seccion Negocios-->
                 </ul>
             </div>
+            <!--//collapse-->
         </div>
     </nav>
+    <!--//navbar-->
     <div class="container">
         <!--Section 1-->
         <section id="showcase" class="my-4">

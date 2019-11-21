@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,75 +11,104 @@
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/modals.css">
     <link rel="stylesheet" href="../../../css/detalles.css">
-
-    <title>Principal Usuarios</title>
+    <title>Contactanos</title>
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark">
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark py-1">
+        <!--container-->
         <div class="container">
             <div class="navbar-header">
                 <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span></button>
-                <!--Link ir a index user-->
+                <!--principal link-->
                 <a class="navbar-brand mx-1" href="indexUser.html">
+                    <!--image logo-->
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
+                    <!--//image logo-->
+                    <!--logo title-->
                     <h5 class="d-inline align-middle mx-1">Printalo</h5>
+                    <!--//logo title-->
                 </a>
+                <!--principal link-->
             </div>
+            <!--collapse-->
             <div class="collapse navbar-collapse" id="navbarNav">
+                <!--navbar nav-->
                 <ul class="navbar-nav ml-auto">
                     <!--Link Servicios-->
-                    <li class="nav-item">
-                        <a href="indexServiciosUser.html" class="nav-link text-light center  ">Servicios</a>
+                    <li class="nav-item link my-auto">
+                        <a href="indexServiciosUser.html" class="nav-link text-light  ">Servicios</a>
                     </li>
+                    <!--//Link Servicios-->
                     <!--Link Contactos-->
+                    <li class="nav-item link my-auto">
+                        <a href="indexContactosUser.html" class="nav-link text-light active ">Contactos</a>
+                    </li>
+                    <!--//Link Contactos-->
+                    <!--Btn Iniciar Sesion-->
                     <li class="nav-item">
-                        <a href="indexContactosUser.html" class="nav-link text-light center active ">Contactos</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-greenDetail modal-login-usu navbarbutton positive"
+                            href="../../acrosspages/modalloginUsu.html">Iniciar Sesion</a>
                     </li>
-                     <!--Btn Iniciar Sesion-->
-                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-button modal-login-usu"  href="../../acrosspages/modalloginUsu.html">Iniciar Sesion</a>
-                    </li>
-                    <!--//btn iniciar sesion-->
+                    <!--//Btn Iniciar Sesion-->
                     <!--Btn Registrarse-->
                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button modal-register-usu" href="../../acrosspages/modalRegisterUsu.html">Registrarse</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-greenDetail modal-register-usu
+                                navbarbutton positive" href="../../acrosspages/modalRegisterUsu.html">Registrarse</a>
                     </li>
-                    <!--//btn registrarse-->
+                    <!--//Btn registrarse-->
                     <!--Btn Ir a seccion Negocios-->
                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
-                            href="../negocioIndex/indexNeg.html">Negocios</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-greenDetail
+                                navbarbutton positive" href="../negocioIndex/indexNeg.html">Negocios</a>
                     </li>
+                    <!--//Btn Ir a seccion Negocios-->
                 </ul>
+                <!--//navbar nav-->
             </div>
+            <!--//collapse-->
         </div>
+        <!--container-->
     </nav>
+    <!--//navbar-->
+    <!--container-->
     <div class="container">
         <!--section 1-->
         <section id="formsection" class="my-4 py-4">
-            <div class="text-center">
+            <!--title-->
+            <div class="text-center px-5">
                 <h2>Contactanos</h2>
                 <h4>Si tiene alguna duda,llene el formualrio y con gusto lo atenderemos</h4>
             </div>
-            <div class="row">
-                <div class="col d-none d-sm-block"></div>
-                <div class="col-md-5">
+            <!--//title-->
+            <!--row-->
+            <div class="row px-5 my-3">
+                <!--icon column-->
+                <div class="col d-none d-md-block">
                     <div class="center">
                         <div class="text-center">
+                            <!--icon-->
                             <i class="far fa-clipboard fa-8x circlebase"></i>
+                            <!--//icon-->
                         </div>
-
                     </div>
                 </div>
-                <div class="col-md-5">
+                <!--//icon column-->
+                <!--form column-->
+                <div class="col-md-7">
+                    <!--card form-->
                     <div class="card bg-printalo-greenDetail text-center card-form m-1 text-light">
+                        <!--card body-->
                         <div class="card-body p-4">
                             <h3>Contactanos</h3>
+                            <!--form-->
                             <form action="" class="form-group">
+                                <!--email box-->
                                 <label class="float-left" for="name">E-mail:</label>
                                 <input type="text" class="form-control">
+                                <!--email box-->
+                                <!--text area-->
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
@@ -89,19 +117,26 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!--//text area-->
+                                <!--btn enviar-->
                                 <div class="modalbutton"><a
-                                        class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button "
+                                        class="btn btn-outline-light nav-link m-1 text-light bg-printalo-greenDetail positive "
                                         href="#">Enviar</a></div>
+                                <!--//btn enviar-->
                             </form>
+                            <!--//form-->
                         </div>
+                        <!--//card body-->
                     </div>
+                    <!--//card form-->
                 </div>
-                <div class="col d-none d-sm-block"></div>
+                <!--//form column-->
             </div>
+            <!--//row-->
         </section>
-        <!--section 1-->
-
+        <!--//section 1-->
     </div>
+    <!--//container-->
     <footer id="main-footer" class="bg-printalo-greenDetail text-white py-3">
         <div class="container text-white">
             <div class="row text-center">
@@ -155,13 +190,14 @@
     <!--ingresar Modal usuario-->
     <div class="modal fade text-dark" id="modalLoginUsuario">
         <div class="modal-dialog modal-lg">
+            <!--insertar aqui-->
         </div>
     </div>
     <!--//Ingresar modal usuario-->
     <!--Registrarse Modal usuario-->
     <div class="modal fade text-dark" id="modalRegisterUsuario">
         <div class="modal-dialog modal-lg">
-
+            <!--insertar aqui-->
         </div>
     </div>
     <!--//Registrarse Modal usuario-->
@@ -197,5 +233,4 @@
     <!--Script de la clase Auth para firebase-->
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
 </body>
-
 </html>

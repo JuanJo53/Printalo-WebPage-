@@ -233,7 +233,7 @@ button.icon-editar:disabled:hover{
   color: #fff!important;
 }
 /*//btn row positive*/
-
+/*btn navbar*/
 .navbarbutton.btn.positive:hover {
   background-color: #30e2c2 !important;
   color: rgb(255, 255, 255) !important;
@@ -241,4 +241,19 @@ button.icon-editar:disabled:hover{
 .navbarbutton.btn.negative:hover {
   background-color: #253449 !important;
   color: rgb(255, 255, 255) !important;
+}
+/*//btn navbar*/
+/*navbar links hovers*/
+.navbar-dark .navbar-nav .link .nav-link:hover{
+  color: rgb(255, 255, 255) !important;
+  font-weight: bold;
+}
+/*navbar links hovers*/
+/*form control border weight*/
+.form-control {
+  border: 3px solid #c3dee5;
+}
+/*//form control border weight*/
+.btn{
+  border: 0px!important;
 }

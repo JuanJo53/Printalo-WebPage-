@@ -1853,6 +1853,8 @@
 
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-storage.js"></script>
 
     <!-- Para uso de Analytics -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
@@ -1870,7 +1872,9 @@
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
     <!--icon perfil user-->
     <script type="text/javascript" src="../../../js/Cliente/porEnviar.js"></script>
-    <!--//icon perfil user-->
+    <!--Para realizar nuevo pedido-->
+    <script type="text/javascript" src="../../../js/Cliente/nuevoPedido.js"></script>
+
     <script>
         document.querySelector("html").classList.add('js');
 
@@ -1886,10 +1890,7 @@
         button.addEventListener("click", function (event) {
             fileInput.focus();
             return false;
-        });
-        fileInput.addEventListener("change", function (event) {
-            the_return.innerHTML = this.value;
-        });  
+        }); 
     </script>
 
 </body>

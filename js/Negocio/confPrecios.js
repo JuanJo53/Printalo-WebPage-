@@ -122,9 +122,9 @@ function cambiarBN(){
         bd.collection('Negocios').doc(user.uid).update({
             costoBN: precio
         }).then(e => {
-            console.log("Datos Guardados Exitosamente");
+            alert("Datos Guardados Exitosamente");
         }).catch(e=>{
-           console.log(`Error Guardando Datos: ${error}`);
+            alert(`Error Guardando Datos: ${error}`);
         })
     }else{        
         alert("Valor invalido");
@@ -139,9 +139,9 @@ function cambiarColor(){
         bd.collection('Negocios').doc(user.uid).update({
             costoColor: precio
         }).then(e => {
-            console.log("Datos Guardados Exitosamente");
+            alert("Datos Guardados Exitosamente");
         }).catch(e=>{
-           console.log(`Error Guardando Datos: ${error}`);
+            alert(`Error Guardando Datos: ${error}`);
         })
     }else{
         alert("Valor invalido");
@@ -163,9 +163,9 @@ function cambiarTamHoja(cambA4,cambOf,cambCart){
                     Oficio: pOficio
                 }                
             }).then(e => {
-                console.log("Datos Guardados Exitosamente");
+                alert("Datos Guardados Exitosamente");
             }).catch(e=>{
-               console.log(`Error Guardando Datos: ${error}`);
+                alert(`Error Guardando Datos: ${error}`);
             })
         }else{
             alert("Valores invalidos");
@@ -177,15 +177,12 @@ function cambiarTamHoja(cambA4,cambOf,cambCart){
         const pOficio=parseFloat(document.getElementById("txtPrecioOficio").value);
         if(pA4>0 && pOficio>0){
             bd.collection('Negocios').doc(user.uid).update({
-                costoTamHoja: {
-                    A4: pA4,
-                    Carta: precioCarta,
-                    Oficio: pOficio
-                }                
+                'costoTamHoja.A4': pA4,
+                'costoTamHoja.Oficio': pOficio
             }).then(e => {
-                console.log("Datos Guardados Exitosamente");
+                alert("Datos Guardados Exitosamente");
             }).catch(e=>{
-               console.log(`Error Guardando Datos: ${error}`);
+                alert(`Error Guardando Datos: ${error}`);
             })
         }else{
             alert("Valores invalidos2");
@@ -196,15 +193,11 @@ function cambiarTamHoja(cambA4,cambOf,cambCart){
         const pA4=parseFloat(document.getElementById("txtPrecioA4").value);
         if(pA4>0){
             bd.collection('Negocios').doc(user.uid).update({
-                costoTamHoja: {
-                    A4: pA4,                    
-                    Carta: precioCarta,
-                    Oficio: precioOficio
-                }                
+                'costoTamHoja.A4': pA4               
             }).then(e => {
-                console.log("Datos Guardados Exitosamente");
+                alert("Datos Guardados Exitosamente");
             }).catch(e=>{
-               console.log(`Error Guardando Datos: ${error}`);
+                alert(`Error Guardando Datos: ${error}`);
             })
         }else{
             alert("Valores invalidos3");
@@ -215,15 +208,11 @@ function cambiarTamHoja(cambA4,cambOf,cambCart){
         const pOficio=parseFloat(document.getElementById("txtPrecioOficio").value);
         if(pOficio>0){
             bd.collection('Negocios').doc(user.uid).update({
-                costoTamHoja: {
-                    A4: precioA4,                    
-                    Carta: precioCarta,
-                    Oficio: pOficio
-                }                
+                'costoTamHoja.Oficio': pOficio             
             }).then(e => {
-                console.log("Datos Guardados Exitosamente");
+                alert("Datos Guardados Exitosamente");
             }).catch(e=>{
-               console.log(`Error Guardando Datos: ${error}`);
+                alert(`Error Guardando Datos: ${error}`);
             })
         }else{
             alert("Valores invalidos3");
@@ -234,15 +223,11 @@ function cambiarTamHoja(cambA4,cambOf,cambCart){
         const pCarta=parseFloat(document.getElementById("txtPrecioCarta").value);
         if(pCarta>0){
             bd.collection('Negocios').doc(user.uid).update({
-                costoTamHoja: {
-                    A4: precioA4,                    
-                    Carta: pCarta,
-                    Oficio: precioOficio
-                }                
+                'costoTamHoja.Carta': pCarta       
             }).then(e => {
-                console.log("Datos Guardados Exitosamente");
+                alert("Datos Guardados Exitosamente");
             }).catch(e=>{
-               console.log(`Error Guardando Datos: ${error}`);
+                alert(`Error Guardando Datos: ${error}`);
             })
         }else{
             alert("Valores invalidos3");
@@ -254,15 +239,12 @@ function cambiarTamHoja(cambA4,cambOf,cambCart){
         const pCarta=parseFloat(document.getElementById("txtPrecioCarta").value);
         if(pA4>0 && pCarta>0){
             bd.collection('Negocios').doc(user.uid).update({
-                costoTamHoja: {
-                    A4: pA4,                    
-                    Carta: pCarta,
-                    Oficio: precioOficio
-                }                
+                'costoTamHoja.A4': pA4,                    
+                'costoTamHoja.Carta': pCarta        
             }).then(e => {
-                console.log("Datos Guardados Exitosamente");
+                alert("Datos Guardados Exitosamente");
             }).catch(e=>{
-               console.log(`Error Guardando Datos: ${error}`);
+                alert(`Error Guardando Datos: ${error}`);
             })
         }else{
             alert("Valores invalidos3");
@@ -274,15 +256,12 @@ function cambiarTamHoja(cambA4,cambOf,cambCart){
         const pCarta=parseFloat(document.getElementById("txtPrecioCarta").value);
         if(pOfi>0 && pCarta>0){
             bd.collection('Negocios').doc(user.uid).update({
-                costoTamHoja: {
-                    A4: precioA4,                    
-                    Carta: pCarta,
-                    Oficio: pOfi
-                }                
+                'costoTamHoja.Carta': pCarta,
+                'costoTamHoja.Oficio': pOfi                
             }).then(e => {
-                console.log("Datos Guardados Exitosamente");
+                alert("Datos Guardados Exitosamente");
             }).catch(e=>{
-               console.log(`Error Guardando Datos: ${error}`);
+                alert(`Error Guardando Datos: ${error}`);
             })
         }else{
             alert("Valores invalidos3");
@@ -305,9 +284,9 @@ function cambiarTipoHoja(normal,reuti){
                     reutilizable: pReu
                 }                
             }).then(e => {
-                console.log("Datos Guardados Exitosamente");
+                alert("Datos Guardados Exitosamente");
             }).catch(e=>{
-               console.log(`Error Guardando Datos: ${error}`);
+                alert(`Error Guardando Datos: ${error}`);
             })
         }else{
             alert("Valores invalidos \n Verifique que los datos ingresados son numeros mayores a 0");
@@ -319,14 +298,11 @@ function cambiarTipoHoja(normal,reuti){
         if(pNorm>0){
             console.log("normal");
             bd.collection('Negocios').doc(user.uid).update({
-                costoTipoHoja: {
-                    normal: pNorm,
-                    reutilizable: precioReu
-                }                
+                'costoTipoHoja.normal': pNorm             
             }).then(e => {
-                console.log("Datos Guardados Exitosamente");
+                alert("Datos Guardados Exitosamente");
             }).catch(e=>{
-               console.log(`Error Guardando Datos: ${error}`);
+                alert(`Error Guardando Datos: ${error}`);
             })
         }else{
             alert("Valores invalidos \n Verifique que los datos ingresados son numeros mayores a 0");
@@ -337,22 +313,18 @@ function cambiarTipoHoja(normal,reuti){
         const pReu=parseFloat(document.getElementById("txtHojaReu").value);
         if(pReu>0){
             bd.collection('Negocios').doc(user.uid).update({
-                costoTipoHoja: {
-                    normal: precioNorm,
-                    reutilizable: pReu
-                }                
+                'costoTipoHoja.reutilizable': pReu               
             }).then(e => {
-                console.log("Datos Guardados Exitosamente");
+                alert("Datos Guardados Exitosamente");
             }).catch(e=>{
-               console.log(`Error Guardando Datos: ${error}`);
+                alert(`Error Guardando Datos: ${error}`);
             })
         }else{
             alert("Valores invalidos \n Verifique que los datos ingresados son numeros mayores a 0");
         }
     }else if(normal===false && reuti===false){
         alert("No hay cambios en los precios por tipo de hoja");
-    }
-    
+    }    
 }
 
 // Esta funcion ejecuta el observador de firebase

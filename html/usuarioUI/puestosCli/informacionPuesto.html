@@ -38,12 +38,11 @@
                 <!--//Link logo-->
             </div>
             <!--Profile Icon-->
-            <a href="../../acrosspages/perfiliconusuario.html"
+            <a id="btnUser" href="../../acrosspages/perfiliconusuario.html"
                 class="navbar-item  order-lg-last   order-xs-last  mx-1 icon-user">
                 <div class="d-inline circle bg-printalo-greenDetail">
                     <!--Initial letter-->
-                    <div class="center">
-                        J
+                    <div id="InicialCliente" class="center iconletter">
                     </div>
                     <!--Initial letter-->
                 </div>
@@ -333,6 +332,30 @@
     <!--JS DESIGN-->
     <script src="../../../js/designjs/perfiliconuser.js"></script>
     <!--JS DESIGN-->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-storage.js"></script>
+
+    <!-- Para uso de Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+
+    <!-- Para Authentication y Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+
+    <!-- Configuracion de Proyecto en Firebase -->
+    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
+
+    <!-- Clase Clientes -->
+    <script type="text/javascript" src="../../../js/Cliente/Clientes.js"></script>
+    <!-- Clase Auth para la autenticacion con firebase -->
+    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
+    <!--icon perfil user JS-->
+    <script type="text/javascript" src="../../../js/Cliente/porEnviar.js"></script>
+    <!--//icon perfil user JS-->
+    <!--Para realizar nuevo pedido-->
+    <script type="text/javascript" src="../../../js/Cliente/nuevoPedido.js"></script>
 </body>
 
 </html>

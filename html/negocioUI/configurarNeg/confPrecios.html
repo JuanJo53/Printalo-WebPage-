@@ -16,11 +16,16 @@
 </head>
 
 <body>
+    <!--navbar-->
     <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark py-1">
+        <!--container-->
         <div class="container">
+            <!--navbar header-->
             <div class="navbar-header">
+                <!--collapse-->
                 <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span></button>
+                <!--//collapse-->
                 <!--Link Principal-->
                 <a class="navbar-brand mx-1" href="#home">
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
@@ -28,6 +33,7 @@
                 </a>
                 <!--//Link Principal-->
             </div>
+            <!--//navbar header-->
             <!--Profile Icon-->
             <a id="btnUser" href="../../acrosspages/perfiliconadmi.html"
                 class="navbar-item  order-lg-last   order-xs-last  mx-1 icon-user">
@@ -39,7 +45,9 @@
                 </div>
             </a>
             <!--//Profile Icon-->
+            <!-- navbar collapse-->
             <div class="collapse navbar-collapse" id="navbarNav">
+                <!--navbar-nav-->
                 <ul class="navbar-nav ml-auto">
                     <!--Link Pedidos-->
                     <li class="nav-item">
@@ -69,9 +77,13 @@
                     </li>
                     <!--//Link Configuraciones-->
                 </ul>
+                <!--//navbar-nav-->
             </div>
+            <!-- //navbar collapse-->
         </div>
+        <!--//container-->
     </nav>
+    <!--//navbar-->
     <!--wrapper-->
     <div class="d-flex" id="wrapper">
         <div class="bg-printalo-greenDetail" id="sidebar-wrapper">
@@ -87,20 +99,26 @@
                 <!--//Sidebar Link Empleados-->
             </div>
         </div>
+        <!--container-->
         <div class="container">
+            <!--wrapper-->
             <div id="page-content-wrapper">
                 <button class="btn circletoggle m-3" id="menu-toggle">></button>
+                <!--container-->
                 <div class="container">
-                    <!--Contenido de la pagina-->
+                    <!--row-->
                     <div class="row">
+                        <!--primera columan-->
                         <div class="col-lg-6">
-                            <!--primera columan-->
                             <!--Rango de precios Normal-->
                             <section class="my-4 p-4 section-border">
+                                <!--container-->
                                 <div class="container">
+                                    <!--title-->
                                     <div class="text-center">
                                         <h3>Impresiones a Blanco/Negro</h3>
                                     </div>
+                                    <!--//title-->
                                     <!-- 2 Radio buttons rango o unico-->
                                     <div class="row mx-auto">
                                         <div class="ml-auto">
@@ -124,7 +142,8 @@
                                                     <p class="inputmarks center">Precio:</p>
                                                 </div>
                                                 <div class="col nopadding">
-                                                    <input id="txtPrecioBN" type="number" class="form-control text-center" placeholder="Bs" disabled>
+                                                    <input id="txtPrecioBN" type="number"
+                                                        class="form-control text-center" placeholder="Bs" disabled>
                                                 </div>
                                                 <div class="col">
                                                     <p class="inputmarks center">Bs/hoja
@@ -139,6 +158,7 @@
                                             <!--//btn editar-->
                                         </div>
                                     </div>
+                                    <!--rango div-->
                                     <div id="rangodiv" style="display: none;">
                                         <div class="row">
                                             <!-- mas/menos Radio buttons-->
@@ -161,6 +181,7 @@
                                             </div>
                                             <!--//Btn Menos-->
                                         </div><!-- //mas/menos Radio buttons-->
+                                        <!--col-->
                                         <div class="col">
                                             <!--tabla-->
                                             <table class="table table-borderless">
@@ -171,25 +192,29 @@
                                                         <th scope="col">Precio por hoja</th>
                                                         <th scope="col">editar</th>
                                                     </tr>
+                                                    <!--//table header-->
                                                 </thead>
-                                                <!--//table header-->
                                                 <tbody>
                                                     <tr class="text-center">
                                                         <th>
+                                                            <!--input group-->
                                                             <div class="input-group">
+                                                                <!--Input min-->
                                                                 <input type="text" class="form-control text-center"
                                                                     placeholder="min">
-                                                                <!--Input min-->
+                                                                <!--//Input min-->
+                                                                <!--Detalle-->
                                                                 <div class="input-group-append ">
-                                                                    <!--Detalle - -->
                                                                     <span
                                                                         class="input-group-text bg-printalo-blueDetail text-light bcero">-</span>
-                                                                    <!--Detalle - -->
                                                                 </div>
+                                                                <!--//Detalle-->
+                                                                <!--Input max-->
                                                                 <input type="text" class="form-control text-center"
                                                                     placeholder="max">
-                                                                <!--Input max-->
+                                                                <!--//Input max-->
                                                             </div>
+                                                            <!--//input group-->
                                                         </th>
                                                         <td>
                                                             <!--campo precio-->
@@ -205,20 +230,27 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
+                                            <!--//tabla-->
                                         </div>
+                                        <!--//col-->
                                     </div>
-
+                                    <!--//rango div-->
                                 </div>
+                                <!--//container-->
                             </section>
                             <!--//Rango de precios Normal-->
                             <!--Rango de precios a color-->
                             <section class="my-4 p-4 section-border">
+                                <!--container-->
                                 <div class="container">
+                                    <!--title section-->
                                     <div class="text-center">
                                         <h3>Impresiones a Color</h3>
                                     </div>
+                                    <!--//title section-->
                                     <!-- 2 Radio buttons rango o unico-->
                                     <div class="row mx-auto">
+                                        <!--precio-->
                                         <div class="ml-auto">
                                             <label class="radiobuttons ">Precio Unico
                                                 <input type="radio" name="radiobn2" id="preciounicoColor"
@@ -226,37 +258,52 @@
                                                 <span class="checkmark"></span>
                                             </label>
                                         </div>
+                                        <!--//precio-->
+                                        <!--rangos-->
                                         <div class="mr-auto">
                                             <label class="radiobuttons ml-1">Rangos
                                                 <input type="radio" name="radiobn2" id="rangosColor">
                                                 <span class="checkmark"></span>
                                             </label>
                                         </div>
-
+                                        <!--//rangos-->
                                     </div>
                                     <!-- //2 Radio buttons rango o unico-->
+                                    <!--precio unico-->
                                     <div id="preciounicodivcolor" class="preciounico">
+                                        <!--container-->
                                         <div class="container">
+                                            <!--row-->
                                             <div class="row">
+                                                <!--col-->
                                                 <div class="col">
                                                     <p class="inputmarks center">Precio:</p>
                                                 </div>
-                                                <div class="col nopadding"><input id="txtPrecioColor" type="number" class="form-control text-center"
-                                                        placeholder="Bs" disabled>
+                                                <!--//col-->
+                                                <!--col-->
+                                                <div class="col nopadding"><input id="txtPrecioColor" type="number"
+                                                        class="form-control text-center" placeholder="Bs" disabled>
                                                 </div>
+                                                <!--//col-->
+                                                <!--col-->
                                                 <div class="col">
                                                     <p class="inputmarks center">Bs/hoja
                                                     </p>
                                                 </div>
+                                                <!--//col-->
                                             </div>
+                                            <!--//row-->
                                             <!--btn editar-->
                                             <div class="row text-light px-3 my-2">
-                                                    <button onclick="enableColor()" class="btn icon-editar ml-auto"><i
-                                                            class="fas fa-edit"></i></button>
-                                                </div>
-                                                <!--//btn editar-->
+                                                <button onclick="enableColor()" class="btn icon-editar ml-auto"><i
+                                                        class="fas fa-edit"></i></button>
+                                            </div>
+                                            <!--//btn editar-->
                                         </div>
+                                        <!--//container-->
                                     </div>
+                                    <!--//precio unico-->
+                                    <!-- rango div color -->
                                     <div id="rangodivcolor" style="display: none;">
                                         <div class="row">
                                             <!-- mas/menos Radio buttons-->
@@ -279,6 +326,7 @@
                                             </div>
                                             <!--//Btn Menos-->
                                         </div><!-- //mas/menos Radio buttons-->
+                                        <!--col-->
                                         <div class="col">
                                             <!--tabla-->
                                             <table class="table table-borderless">
@@ -323,10 +371,13 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
+                                            <!--//tabla-->
                                         </div>
+                                        <!--//col-->
                                     </div>
-
+                                    <!-- //rango div color -->
                                 </div>
+                                <!--//container-->
                             </section>
                             <!--//Rango de precios a color-->
                         </div>
@@ -356,8 +407,8 @@
                                                     </th>
                                                     <td>
                                                         <!--input precio-->
-                                                        <input id="txtPrecioOficio" type="number" class="form-control text-center"
-                                                            placeholder="Bs" disabled>
+                                                        <input id="txtPrecioOficio" type="number"
+                                                            class="form-control text-center" placeholder="Bs" disabled>
                                                         <!--//input precio-->
                                                     </td>
                                                     <td>
@@ -373,8 +424,8 @@
                                                     </th>
                                                     <td>
                                                         <!--input precio-->
-                                                        <input id="txtPrecioCarta" type="number" class="form-control text-center"
-                                                            placeholder="Bs" disabled>
+                                                        <input id="txtPrecioCarta" type="number"
+                                                            class="form-control text-center" placeholder="Bs" disabled>
                                                         <!--//input precio-->
                                                     </td>
                                                     <td>
@@ -404,7 +455,8 @@
                                     </div>
                                     <!--btn editar-->
                                     <div class="row text-light px-3 ">
-                                        <button onclick="enableTamHoja()" class="btn icon-editar ml-auto"><i class="fas fa-edit"></i></button>
+                                        <button onclick="enableTamHoja()" class="btn icon-editar ml-auto"><i
+                                                class="fas fa-edit"></i></button>
                                     </div>
                                     <!--//btn editar-->
                                 </div>
@@ -412,6 +464,7 @@
                             <!--//tamanio de Hoja-->
                             <!--Tipo de Hoja-->
                             <section class="my-4 p-4 section-border">
+                                <!--container-->
                                 <div class="container">
                                     <div class="text-center">
                                         <h3>Tipo de Hoja</h3>
@@ -432,7 +485,8 @@
                                                     </th>
                                                     <td>
                                                         <!--input precio Hoja Normal-->
-                                                        <input id="txtHojaNorm" type="number" class="form-control text-center" placeholder="Bs" disabled>
+                                                        <input id="txtHojaNorm" type="number"
+                                                            class="form-control text-center" placeholder="Bs" disabled>
                                                         <!--//input precio-->
                                                     </td>
                                                     <td>
@@ -447,8 +501,8 @@
                                                     </th>
                                                     <td>
                                                         <!--input precio Hoja Reutilizable-->
-                                                        <input id="txtHojaReu" type="number" class="form-control text-center"
-                                                            placeholder="Bs" disabled>
+                                                        <input id="txtHojaReu" type="number"
+                                                            class="form-control text-center" placeholder="Bs" disabled>
                                                         <!--input precio-->
                                                     </td>
                                                     <td>
@@ -462,24 +516,30 @@
                                     </div>
                                     <!--btn editar-->
                                     <div class="row text-light px-3 ">
-                                        <button onclick="enableTipHoja()" class="btn icon-editar ml-auto"><i class="fas fa-edit"></i></button>
+                                        <button onclick="enableTipHoja()" class="btn icon-editar ml-auto"><i
+                                                class="fas fa-edit"></i></button>
                                     </div>
                                     <!--//btn editar-->
                                 </div>
+                                <!--//container-->
                             </section>
                             <!--//Tipo de Hoja-->
                         </div>
                         <!--//segunda columan-->
                     </div>
+                    <!--//row-->
                     <!--Boton guardar cambios-->
                     <div class="row text-light p-4">
-                        <a onclick="GuardarCambPrecios()" class="btn bg-printalo-greenDetail positive ml-auto">Guardar Cambios</a>
+                        <a onclick="GuardarCambPrecios()" class="btn btnsavechanges inactive ml-auto">Guardar
+                            Cambios</a>
                     </div>
                     <!--//Boton guardar cambios-->
                 </div>
                 <!--//Contenido de la pagina-->
             </div>
+            <!--//wrapper-->
         </div>
+        <!--container-->
     </div>
     <!--//wrapper-->
     <!--perfiliconadmi-->
@@ -488,6 +548,7 @@
             <!--Content Modal-->
             <div class="col pb-3">
                 <div class="modal-content">
+                    <!--insertar aqui row-->
                 </div>
             </div>
         </div>
@@ -503,17 +564,9 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <!--//boostrap jquery popper libraries-->
-    <!--iconuserpefil script-->
-    <script src="../../../js/designjs/perfiliconuser.js"></script>
-    <!--//iconuserpefil script-->
+
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <script src="../../../js/designjs/radiobtn.js"></script>
-    <script>
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-    </script>
+
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 
@@ -528,14 +581,20 @@
     <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
 
     <!--Script de la clase Negocios-->
-    <script type="text/javascript" src="../../../js//Negocio/Negocios.js"></script>  
-    <!-- Clase Auth para la autenticacion con firebase -->  
-    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>    
+    <script type="text/javascript" src="../../../js//Negocio/Negocios.js"></script>
+    <!-- Clase Auth para la autenticacion con firebase -->
+    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
     <!--Script para la pagina actual-->
     <script type="text/javascript" src="../../../js//Negocio/confPrecios.js"></script>
     <!--Script para general-->
-    <script type="text/javascript" src="../../../js//Negocio/InicioNeg.js"></script>  
-
+    <script type="text/javascript" src="../../../js//Negocio/InicioNeg.js"></script>
+    <!--JS DESIGN-->
+    <!--iconuserpefil script-->
+    <script src="../../../js/designjs/perfiliconuser.js"></script>
+    <script type="text/javascript" src="../../../js/designjs/toggle.js"></script>
+    <script src="../../../js/designjs/radiobtn.js"></script>
+    <!--//iconuserpefil script-->
+    <!--//JS DESIGN-->
 </body>
 
 </html>

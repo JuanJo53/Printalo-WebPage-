@@ -35,7 +35,7 @@ function ValidarNeg(){
         if (user) {
             // User is signed in.
             alert("Logeado"); 
-            location.href="/html/negocioUI/pedidosNeg/pedPendientes.html"
+            location.href="/html/negocioUI/pedidosNeg/pedSolicitudes.html"
         } else {
             // User is not signed in.
             alert("No Logeado");

@@ -27,6 +27,7 @@
             <div class="navbar-header">
                 <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span></button>
+                <!--navbar brand-->
                 <a class="navbar-brand mx-1">
                     <!--image logo-->
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
@@ -35,6 +36,7 @@
                     <h5 class="d-inline align-middle mx-1 text-light">Printalo Negocios</h5>
                     <!--//logo title-->
                 </a>
+                <!--//navbar brand-->
             </div>
             <!--Profile Icon-->
             <a id="btnUser" href="../../acrosspages/perfiliconadmi.html"
@@ -102,6 +104,7 @@
         <!--//sidebar-->
         <!--page content wrapper-->
         <div id="page-content-wrapper">
+            <!--container-->
             <div class="container">
                 <!--toogle button sidebar-->
                 <button class="btn circletoggle m-3" id="menu-toggle">></button>
@@ -111,6 +114,7 @@
                 <!--//title page-->
                 <!--row table-->
                 <div class="row">
+                    <!--col-->
                     <div class="col-lg-12">
                         <!--table-->
                         <div class="table-responsive">
@@ -156,10 +160,11 @@
                         </div>
                         <!--table-->
                     </div>
+                    <!--//col-->
                 </div>
                 <!--//row table-->
-
             </div>
+            <!--//container-->
         </div>
         <!--page content wrapper-->
     </div>
@@ -186,15 +191,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <!--//boostrap jquery popper libraries-->
-    <!--iconuserpefil script-->
-    <script src="../../../js/designjs/perfiliconuser.js"></script>
-    <!--//iconuserpefil script-->
-    <script>
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-    </script>
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 
@@ -209,12 +205,20 @@
     <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
 
     <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
-    <script src="../../../js/designjs/radiobtn.js"></script>
+    
     <script type="text/javascript" src="../../../js/Negocios.js"></script>
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
     <script type="text/javascript" src="../../../js/designjs/datatables.js"></script>
     <script type="text/javascript" src="../../../js/designjs/dropdown.js"></script>
+
+    <!--DESIGN JS-->
+    <!--iconuserpefil script-->
+    <script src="../../../js/designjs/perfiliconuser.js"></script>
+    <script type="text/javascript" src="../../../js/designjs/toggle.js"></script>
+    <script src="../../../js/designjs/radiobtn.js"></script>
+    <!--//iconuserpefil script-->
+    <!--//DESIGN JS-->
 </body>
 
 </html>

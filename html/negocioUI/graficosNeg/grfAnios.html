@@ -24,9 +24,11 @@
     <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark py-1">
         <!--container-->
         <div class="container">
+            <!--navbar header-->
             <div class="navbar-header">
                 <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span></button>
+                <!--navbar brand-->
                 <a class="navbar-brand mx-1">
                     <!--image logo-->
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
@@ -35,7 +37,9 @@
                     <h5 class="d-inline align-middle mx-1 text-light">Printalo Negocios</h5>
                     <!--//logo title-->
                 </a>
+                <!--//navbar brand-->
             </div>
+            <!--//navbar header-->
             <!--Profile Icon-->
             <a id="btnUser" href="../../acrosspages/perfiliconadmi.html"
                 class="navbar-item  order-lg-last   order-xs-last  mx-1 icon-user">
@@ -78,7 +82,7 @@
                     <!--//link configuraciones-->
                 </ul>
             </div>
-            <!--collapse-->
+            <!--//collapse-->
         </div>
         <!--container-->
     </nav>
@@ -101,6 +105,7 @@
         <!--//sidebar-->
         <!--page content wrapper-->
         <div id="page-content-wrapper">
+            <!--container-->
             <div class="container">
                 <!--toogle button sidebar-->
                 <button class="btn circletoggle m-3" id="menu-toggle">></button>
@@ -108,21 +113,32 @@
                 <!--title page-->
                 <h2 class="my-3">Graficas de Años</h2>
                 <!--//title page-->
+                <!--row-->
                 <div class="row">
+                    <!--col-->
                     <div class="col-lg-12">
+                        <!--dropdown-->
                         <div class="dropdown">
+                            <!--btn dropwdown-->
                             <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Escoger Opcion
                             </a>
+                            <!--//btn dropwdown-->
+                            <!--btn items-->
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="#">2018</a>
                                 <a class="dropdown-item" href="#">2019</a>
                             </div>
+                            <!--//btn items-->
                         </div>
+                        <!--//dropdown-->
                     </div>
+                    <!--//col-->
                 </div>
+                <!--//row-->
             </div>
+            <!--//container-->
         </div>
         <!--page content wrapper-->
     </div>
@@ -152,12 +168,6 @@
     <!--iconuserpefil script-->
     <script src="../../../js/designjs/perfiliconuser.js"></script>
     <!--//iconuserpefil script-->
-    <script>
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-    </script>
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 
@@ -172,10 +182,12 @@
     <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
 
     <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
-    <script type="text/javascript" src="../../../js/Negocios.js"></script>
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
-    <script type="text/javascript" src="../../../js/designjs/datatables.js"></script>
+    <!--JS DESIGN-->
+    <script type="text/javascript" src="../../../js/Negocios.js"></script>
     <script type="text/javascript" src="../../../js/designjs/dropdown.js"></script>
+    <script src="../../../js/designjs/toggle.js"></script>
+    <!--//JS DESIGN-->
 </body>
+
 </html>

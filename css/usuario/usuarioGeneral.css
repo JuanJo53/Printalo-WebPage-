@@ -6,10 +6,11 @@
   font-weight: bold;
   color: white !important;
 }*/
+/*
 .navbar .active {
   font-weight: bold;
   color: white !important;
-}
+}*/
 .bg-printalo-nav {
   background-color: #253449;
 }
@@ -49,16 +50,7 @@ tbody tr td .btn.negative:hover {
 .nav li {
   color: #ffffff !important;
 }
-.nav-pills .nav-link.active {
-  background-color: #24c4a6;
-  border-radius: 0px;
-  color: #ffffff !important;
-  font-weight: bold;
-}
-.nav-pills .nav-link {
-  padding: 10px;
-  color: white;
-}
+
 li {
   text-align: center;
 }

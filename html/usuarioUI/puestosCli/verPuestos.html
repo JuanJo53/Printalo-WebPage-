@@ -7,14 +7,16 @@
     <meta name="keywords" content="HTML,CSS,bootstrap">
     <meta name="author" content="Colque Herrera Ariel">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="../../../css/modals.css">
     <link rel="stylesheet" href="../../../css/tables/tableRealizados.css">
-    <link rel="stylesheet" href="../../../css/detalles.css">
+
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/usuario/usuarioGeneral.css">
     <link rel="stylesheet" href="../../../css/fab.css">
-    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../../css/detalles.css">
+
     <title>Ver Puestos</title>
 </head>
 
@@ -88,12 +90,14 @@
         <!--title page-->
         <h2 class="my-3">Puestos Disponibles</h2>
         <!--//title page-->
+        <!--row-->
         <div class="row">
             <!--lugar para primer puesto-->
             <div class="col-md-4">
                 <a href="listasPuesto.html">
                     <!--pcs button-->
                     <div class="pb-3 text-center my-3 puesto">
+                        <!--card-->
                         <div class="card negocioIcon mx-auto">
                             <!--img del negocio-->
                             <div class="img-puesto">
@@ -106,6 +110,7 @@
                                 <!--//nombre del negocio-->
                             </div>
                         </div>
+                        <!--//card-->
                     </div>
                     <!--//pcs button-->
                 </a>
@@ -118,11 +123,13 @@
             <div class="col-md-4"></div>
             <!--//lugar para tercer puesto-->
         </div>
+        <!--row-->
     </div>
     <!--//container-->
     <!--SPINNERS LOADERS JUNK CHECK-->
     <!--SPINNER-->
     <div class="modal fade text-dark" id="spinnerAlert">
+        <!--modal dialog-->
         <div class="modal-dialog mini modal-md">
             <!--Content Modal-->
             <div class="col pb-3">
@@ -196,6 +203,7 @@
             <!--Content Modal-->
             <div class="col pb-3">
                 <div class="modal-content">
+                    <!--aqui insertar row-->
                 </div>
             </div>
         </div>
@@ -209,10 +217,9 @@
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <script src="../../../js/designjs/radiobtn.js"></script>
-    <script src="../../../js/designjs/spinner.js"></script>
+    <!--JS DESIGN-->
     <script src="../../../js/designjs/perfiliconuser.js"></script>
-    <script src="../../../js/designjs/timeanddate.js"></script>
+    <!--//JS DESIGN-->
 </body>
 
 </html>

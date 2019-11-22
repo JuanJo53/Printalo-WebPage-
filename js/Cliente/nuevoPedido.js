@@ -1,11 +1,11 @@
-var fileButton = document.getElementById('btnNewFile');
+var fileButton = document.getElementById('my-file');
 fileButton.addEventListener('change',function (e){
-    var storage = firebase.storage().ref();
+    var storage = firebase.storage();
     //Get file
     var file=e.target.files[0];
     console.log('hola');
     //Create a storage ref
-    var storageRef = storage.ref('documentos/'+file.name);
+    var storageRef = storage.ref('documentos/'+file);
 
     //Upload file
     storageRef.put(file);

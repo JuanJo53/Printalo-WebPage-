@@ -12,61 +12,81 @@
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/modals.css">
     <link rel="stylesheet" href="../../../css/detalles.css">
-
     <title>Principal Usuarios</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark">
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark py-1">
+        <!--container-->
         <div class="container">
             <div class="navbar-header">
+                <!--collapse button-->
                 <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span></button>
-                <!--Link ir a index user-->
+                <!--//collapse button-->
+                <!--principal link-->
                 <a class="navbar-brand mx-1" href="indexUser.html">
+                    <!--image logo-->
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
+                    <!--//image logo-->
+                    <!--logo title-->
                     <h5 class="d-inline align-middle mx-1">Printalo</h5>
+                    <!--//logo title-->
                 </a>
+                <!--principal link-->
             </div>
+            <!--collapse-->
             <div class="collapse navbar-collapse" id="navbarNav">
+                <!--navbar nav-->
                 <ul class="navbar-nav ml-auto">
                     <!--Link Servicios-->
-                    <li class="nav-item">
-                        <a href="indexServiciosUser.html" class="nav-link text-light center ">Servicios</a>
+                    <li class="nav-item link my-auto">
+                        <a href="indexServiciosUser.html" class="nav-link text-light ">Servicios</a>
                     </li>
+                    <!--//Link Servicios-->
                     <!--Link Contactos-->
-                    <li class="nav-item">
-                        <a href="indexContactosUser.html" class="nav-link text-light center ">Contactos</a>
+                    <li class="nav-item link my-auto">
+                        <a href="indexContactosUser.html" class="nav-link text-light  ">Contactos</a>
                     </li>
+                    <!--//Link Contactos-->
                     <!--Btn Iniciar Sesion-->
                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-button modal-login-usu"  href="../../acrosspages/modalloginUsu.html">Iniciar Sesion</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-greenDetail modal-login-usu navbarbutton positive"
+                            href="../../acrosspages/modalloginUsu.html">Iniciar Sesion</a>
                     </li>
-                    <!--//btn iniciar sesion-->
+                    <!--//Btn Iniciar Sesion-->
                     <!--Btn Registrarse-->
                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button modal-register-usu" href="../../acrosspages/modalRegisterUsu.html">Registrarse</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-greenDetail modal-register-usu
+                        navbarbutton positive" href="../../acrosspages/modalRegisterUsu.html">Registrarse</a>
                     </li>
-                    <!--//btn registrarse-->
+                    <!--//Btn registrarse-->
                     <!--Btn Ir a seccion Negocios-->
                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
-                            href="../negocioIndex/indexNeg.html">Negocios</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-greenDetail
+                        navbarbutton positive" href="../negocioIndex/indexNeg.html">Ir a Negocios</a>
                     </li>
+                    <!--//Btn Ir a seccion Negocios-->
                 </ul>
+                <!--//navbar nav-->
             </div>
+            <!--//collapse-->
         </div>
+        <!--container-->
     </nav>
+    <!--//navbar-->
+    <!--container-->
     <div class="container">
         <!--Section 1-->
         <section id="showcase" class="my-4">
-            <div class="primary-overlay text-white">
+            <div class="primary-overlay">
                 <div class="container">
                     <div class="row">
                         <div class="text-center text-white">
-                            <div class="center2 display-4 ">
+                            <h2 class="center2">
                                 Una nueva forma de ofrecerte un servicio
-                            </div>
+                            </h2>
                         </div>
                     </div>
                 </div>
@@ -76,32 +96,35 @@
         <!--Section 2-->
         <section id="posibilidadesUsuarios" class="my-4 p-4">
             <div class="container">
-                <div class="text-center">
+                <!--central text-->
+                <div class="text-center my-2">
                     <h2>Una aplicacion</h2>
                     <h2>que te facilitara las cosas</h2>
                 </div>
+                <!--//central text-->
+                <!--row-->
                 <div class="row">
                     <div class="col-md-4 text-center">
+                        <!--image-->
                         <div class="center">
                             <img src="../../../img/appmovil.jpg" alt="" class="img-fluid rounded-circle">
                         </div>
-
+                        <!--image-->
                     </div>
+                    <!--right text-->
                     <div class="col">
-                        <div class="center text-center">
+                        <div class="center text-center my-2">
                             <h5>Envia documentos que deseas imprimir a los negocios mas cercanos</h5>
                         </div>
                     </div>
-
+                    <!--//right text-->
                 </div>
+                <!--//row-->
             </div>
         </section>
+        <!--Section 2-->
     </div>
-
-
-    <!--Section 2-->
-    </div>
-
+    <!--container-->
     <footer id="main-footer" class="bg-printalo-greenDetail text-white py-3">
         <div class="container text-white">
             <div class="row text-center">
@@ -155,13 +178,14 @@
     <!--ingresar Modal usuario-->
     <div class="modal fade text-dark" id="modalLoginUsuario">
         <div class="modal-dialog modal-lg">
+            <!--insertar aqui-->
         </div>
     </div>
     <!--//Ingresar modal usuario-->
     <!--Registrarse Modal usuario-->
     <div class="modal fade text-dark" id="modalRegisterUsuario">
         <div class="modal-dialog modal-lg">
-            
+            <!--insertar aqui-->
         </div>
     </div>
     <!--//Registrarse Modal usuario-->
@@ -193,9 +217,9 @@
     <!-- Configuracion de Proyecto en Firebase -->
     <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
 
-    <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
+    <!--Script de la clase Clientes-->
     <script type="text/javascript" src="../../../js/Cliente/Clientes.js"></script>
-    <script type="text/javascript" src="../../../js/Cliente/IndexCli.js"></script>
+    <!--Script de la clase Auth para firebase-->
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
 
 </body>

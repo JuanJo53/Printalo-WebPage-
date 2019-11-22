@@ -1,66 +1,129 @@
 /*icon (+)*/
-.fab-container{
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    z-index: 999;
-    cursor: pointer;
+.fab-container {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 999;
+  cursor: pointer;
 }
-.fab-icon-holder:hover{
-    background-color:#30e2c2;
+.fab-icon-holder:hover {
+  background-color: #30e2c2;
 }
-.fab-icon-holder{
-    width:50px;
-    height: 50px;
-    border-radius: 100%;
-    background: #24c4a6;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+.fab-icon-holder {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: #24c4a6;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
-.fab-icon-holder{
-    opacity: 0.8;
+.fab-icon-holder {
+  opacity: 0.8;
 }
 .fab-icon-holder a i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    font-style: 25px;
-    color:#ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-style: 25px;
+  color: #ffffff;
 }
 /*//icon (+)*/
 /*perfiliconuser*/
 .circle {
-    float: right;
-    cursor: pointer;
-    display: block;
-    box-sizing: border-box;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    border-color: #24c4a6;
-    background-color: #24c4a6;
-    color: white;
-    text-align: center;
-    line-height: 50px;
-    position: relative;
-  }
-  .circle:hover{
-      background-color: #30e2c2;
-  }
-  /*//perfiliconuser*/
-  .circle.max{
-    float: right;
-    cursor: pointer;
-    display: block;
-    box-sizing: border-box;
-    width: 80px;
-    height: 80px;
-    border-radius: 100%;
-    border-color: #24c4a6;
-    background-color: #24c4a6;
-    color: white;
-    text-align: center;
-    line-height: 50px;
-    position: relative;
-  }
+  float: right;
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border-color: #24c4a6;
+  background-color: #24c4a6;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  position: relative;
+}
+.circle:hover {
+  background-color: #30e2c2;
+}
+/*//perfiliconuser*/
+.circle.max {
+  float: right;
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  border-color: #24c4a6;
+  background-color: #24c4a6;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  position: relative;
+}
+/*.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}*/
+label .center2 i {
+  color: #fff;
+}
+/*new*/
+.input-file-container label{
+  margin-bottom: 0px;
   
+}
+.input-file-container {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 999;
+  cursor: pointer;
+}
+.js .input-file-trigger {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  display: block;
+  background-color: #24c4a6;
+  color: #fff;
+  cursor: pointer;
+}
+.js .input-file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.js .input-file:hover + .input-file-trigger,
+.js .input-file:focus + .input-file-trigger,
+.js .input-file-trigger:hover,
+.js .input-file-trigger:focus {
+  background: #30e2c2;
+  color: #fff;
+  cursor: pointer;
+}
+
+.file-return {
+  margin: 0;
+}
+.file-return:not(:empty) {
+  margin: 1em 0;
+}
+.js .file-return {
+  font-style: italic;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+.js .file-return:not(:empty):before {
+  content: "Selected file: ";
+  font-style: normal;
+  font-weight: normal;
+}

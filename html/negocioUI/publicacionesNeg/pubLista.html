@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,7 @@
     <link rel="stylesheet" href="../../../css/detalles.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.css" />
-    <title>Graficos de Dias</title>
+    <title>Agregar Documentos</title>
 </head>
 
 <body>
@@ -62,12 +63,13 @@
                     <!--//link registros-->
                     <!--link graficos-->
                     <li class="nav-item">
-                        <a href="../graficosNeg/grfDias.html" class="nav-link text-light active">Graficos</a>
+                        <a href="../graficosNeg/grfDias.html" class="nav-link text-light ">Graficos</a>
                     </li>
                     <!--//link graficos-->
                     <!--link publicaciones-->
                     <li class="nav-item">
-                        <a href="../publicacionesNeg/pubAgregar.html" class="nav-link text-light">Publicaciones</a>
+                        <a href="../publicacionesNeg/pubAgregar.html"
+                            class="nav-link text-light active">Publicaciones</a>
                     </li>
                     <!--//link publicaciones-->
                     <!--link configuraciones-->
@@ -88,12 +90,12 @@
         <div class="bg-printalo-greenDetail" id="sidebar-wrapper">
             <!--list sidebar-->
             <div class="list-group list-group-flush text-center">
-                <!--link Dias-->
-                <a href="grfDias.html" class="list-group-item bg-printalo-greenDetail link active">Dias</a>
-                <!--//link Dias-->
-                <!--link Años-->
-                <a href="grfAnios.html" class="list-group-item link bg-printalo-greenDetail">Años</a>
-                <!--//link Años-->
+                <!--link Agregar-->
+                <a href="pubAgregar.html" class="list-group-item bg-printalo-greenDetail link ">Agregar</a>
+                <!--//link Agregar-->
+                <!--link Ver lista-->
+                <a href="pubLista.html" class="list-group-item link bg-printalo-greenDetail active">Ver lista</a>
+                <!--//link Ver lista-->
             </div>
             <!--//list sidebar-->
         </div>
@@ -105,23 +107,58 @@
                 <button class="btn circletoggle m-3" id="menu-toggle">></button>
                 <!--//toogle button sidebar-->
                 <!--title page-->
-                <h2 class="my-3">Graficas de Dias</h2>
+                <h2 class="my-3">Lista de documentos del Negocio</h2>
                 <!--//title page-->
+                <!--row table-->
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="dropdown">
-                            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Escoger Opcion
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="#">Ultimos 7 dias</a>
-                                <a class="dropdown-item" href="#">Ultimos 24 dias</a>
-                                <a class="dropdown-item" href="#">Ultimos 30 dias</a>
-                            </div>
+                        <!--table-->
+                        <div class="table-responsive">
+                            <table id="example" class="table table-striped text-center" style="width:100%">
+                                <!--head-->
+                                <thead>
+                                    <tr>
+                                        <th>#Lista</th>
+                                        <th>Nombre Dueño</th>
+                                        <th>Materia</th>
+                                        <th>Titulo</th>
+                                        <th>Fecha Recepcion</th>
+                                        <th>Precio Bs</th>
+                                        <th>Editar</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <!--//head-->
+                                <!--tbody-->
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Andres Mejia</td>
+                                        <td>Algebra Lineal</td>
+                                        <td>Practica 1</td>
+                                        <td>10/10/2019</td>
+                                        <td>5</td>
+                                        <td>
+                                            <!--btn editar-->
+                                            <a href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
+                                                data-target="#modalVerDetalles" data-toggle="modal">Editar</a>
+                                            <!--btn editar-->
+                                        </td>
+                                        <td>
+                                            <!--btn eliminar-->
+                                            <a href="" class="btn bg-printalo-blueDetail negative">Eliminar</a>
+                                            <!--btn eliminar-->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <!--tbody-->
+                            </table>
                         </div>
+                        <!--table-->
                     </div>
                 </div>
+                <!--//row table-->
+
             </div>
         </div>
         <!--page content wrapper-->
@@ -172,10 +209,12 @@
     <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
 
     <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
+    <script src="../../../js/designjs/radiobtn.js"></script>
     <script type="text/javascript" src="../../../js/Negocios.js"></script>
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
     <script type="text/javascript" src="../../../js/designjs/datatables.js"></script>
     <script type="text/javascript" src="../../../js/designjs/dropdown.js"></script>
 </body>
+
 </html>

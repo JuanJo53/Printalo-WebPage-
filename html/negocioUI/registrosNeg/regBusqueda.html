@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML,CSS,bootstrap">
+    <meta name="author" content="Colque Herrera Ariel">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/negocio/negociogeneral.css">
+    <link rel="stylesheet" href="../../../css/tables/tableNegocios.css">
+    <link rel="stylesheet" href="../../../css/modals.css">
+    <link rel="stylesheet" href="../../../css/fab.css">
+    <link rel="stylesheet" href="../../../css/detalles.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.css" />
+    <title>Busqueda de Registros</title>
+</head>
+
+<body>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg bg-printalo-nav navbar-dark py-1">
+        <!--container-->
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span></button>
+                <a class="navbar-brand mx-1">
+                    <!--image logo-->
+                    <img width="60" height="60" src="../../../img/printer.png" alt="">
+                    <!--//image logo-->
+                    <!--logo title-->
+                    <h5 class="d-inline align-middle mx-1 text-light">Printalo Negocios</h5>
+                    <!--//logo title-->
+                </a>
+            </div>
+            <!--Profile Icon-->
+            <a id="btnUser" href="../../acrosspages/perfiliconadmi.html"
+                class="navbar-item  order-lg-last   order-xs-last  mx-1 icon-user">
+                <div class="d-inline circle bg-printalo-greenDetail">
+                    <!--Initial letter-->
+                    <div class="center">
+                        J
+                    </div>
+                    <!--Initial letter-->
+                </div>
+            </a>
+            <!--//Profile Icon-->
+            <!--collapse-->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <!--link pedidos-->
+                    <li class="nav-item">
+                        <a href="../pedidosNeg/pedSolicitudes.html" class="nav-link text-light ">Pedidos</a>
+                    </li>
+                    <!--//link pedidos-->
+                    <!--link registros-->
+                    <li class="nav-item">
+                        <a href="../registrosNeg/regBusqueda.html" class="nav-link text-light active">Registros</a>
+                    </li>
+                    <!--//link registros-->
+                    <!--link graficos-->
+                    <li class="nav-item">
+                        <a href="../graficosNeg/grfDias.html" class="nav-link text-light">Graficos</a>
+                    </li>
+                    <!--//link graficos-->
+                    <!--link publicaciones-->
+                    <li class="nav-item">
+                        <a href="../publicacionesNeg/pubAgregar.html" class="nav-link text-light">Publicaciones</a>
+                    </li>
+                    <!--//link publicaciones-->
+                    <!--link configuraciones-->
+                    <li class="nav-item">
+                        <a href="../configurarNeg/confGenerales.html" class="nav-link text-light">Configuraciones</a>
+                    </li>
+                    <!--//link configuraciones-->
+                </ul>
+            </div>
+            <!--collapse-->
+        </div>
+        <!--container-->
+    </nav>
+    <!--navbar-->
+    <!--flex-->
+    <div class="d-flex" id="wrapper">
+        <!--sidebar-->
+        <div class="bg-printalo-greenDetail" id="sidebar-wrapper">
+            <!--list sidebar-->
+            <div class="list-group list-group-flush text-center">
+                <!--link solicitudes-->
+                <a href="pedSolicitudes.html" class="list-group-item bg-printalo-greenDetail link active">Busqueda</a>
+                <!--//link solicitudes-->
+            </div>
+            <!--//list sidebar-->
+        </div>
+        <!--//sidebar-->
+        <!--page content wrapper-->
+        <div id="page-content-wrapper">
+            <div class="container">
+                <!--toogle button sidebar-->
+                <button class="btn circletoggle m-3" id="menu-toggle">></button>
+                <!--//toogle button sidebar-->
+                <!--title page-->
+                <h2 class="my-3">Buscar en Ventas</h2>
+                <!--//title page-->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!--table-->
+                        <div class="table-responsive">
+                            <table id="example" class="table table-striped text-center" style="width:100%">
+                                <!--head-->
+                                <thead>
+                                    <tr>
+                                        <th>#Order</th>
+                                        <th>Nombre Usuario</th>
+                                        <th>Precio</th>
+                                        <th>Cantidad</th>
+                                        <th>Tipo Pago</th>
+                                        <th>Fecha Entrega</th>
+                                        <th>Hora Entrega</th>
+                                        <th>Detalles</th>
+                                    </tr>
+                                </thead>
+                                <!--//head-->
+                                <!--tbody-->
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Ariel</td>
+                                        <td>3Bs</td>
+                                        <td>1</td>
+                                        <td>Online</td>
+                                        <td>10/10/2019</td>
+                                        <td>20:30</td>
+                                        <td><a href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
+                                                data-target="#modalVerDetalles" data-toggle="modal">Detalles</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <!--tbody-->
+                            </table>
+                        </div>
+                        <!--table-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--page content wrapper-->
+    </div>
+    <!--flex-->
+    <!--perfiliconadmi-->
+    <div class="modal fade text-dark" id="perfiliconadmi">
+        <div class="modal-dialog">
+            <!--Content Modal-->
+            <div class="col pb-3">
+                <div class="modal-content">
+                    <!--aqui se inserta el codigo del perfiliconadmi-->
+                </div>
+            </div>
+        </div>
+        <!--Content Modal-->
+    </div>
+    <!--//perfiliconadmi-->
+    <!--See details modal-->
+    <div class="modal fade text-dark" id="modalVerDetalles">
+        <!--modal dialog and size-->
+        <div class="modal-dialog modal-lg">
+            <!--row-->
+            <div class="row py-3">
+                <!--left side-->
+                <div class="col-lg-6 nopadding">
+                    <!--modal content-->
+                    <div class="modal-content left bg-printalo-blueDetail">
+                        <!--container left side-->
+                        <div class="container detallesPedido">
+                            <!--title left side-->
+                            <h2 class="text-center pt-5 pb-2 text-light">Archivo</h2>
+                            <!--//title left side-->
+                            <!--row icon and text-->
+                            <div class="row mx-3">
+                                <div class="col text-light">
+                                    <div class="square-icon text-center mx-auto ">
+                                        <div class="center">
+                                            <!--icono de pedido-->
+                                            <i class="far fa-file-pdf fa-3x"></i>
+                                            <!--//icono de pedido-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--text-->
+                                <div class="col my-auto text-light">
+                                    <p class="my-auto text-center">nombreArchivo.pdf</p>
+                                </div>
+                                <!--//text-->
+                            </div>
+                            <!--//row icon and text-->
+                            <!--block boxes-->
+                            <div class="block-boxes px-3">
+                                <!--Color box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Color</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Color box-->
+                                <!--Tamaño box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Tamaño</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Tamaño box-->
+                                <!--Impresion box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Impresion</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Impresion box-->
+                                <!--Orientacion box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Orientacion</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Orientacion box-->
+                                <!--Numero de Paginas box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Numero de Paginas</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Numero de Paginas box-->
+                                <!--Acabado box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Acabado</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Acabado box-->
+                                <!--Tipo de hoja box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Tipo de hoja</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Tipo de hoja box-->
+                                <!--Cantidad box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Cantidad</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Cantidad box-->
+                            </div>
+                            <!--//block boxes-->
+                        </div>
+                        <!--//container left side-->
+                    </div>
+                    <!--modal content-->
+                </div>
+                <!--//left side-->
+                <!--right side-->
+                <div class="col-lg-6 nopadding">
+                    <!--modal content-->
+                    <div class="modal-content right">
+                        <!--container right side-->
+                        <div class="container detallesPedido">
+                            <!--right side title-->
+                            <h2 class="text-center pt-5 pb-3">Pedido</h2>
+                            <!--//right side title-->
+                            <!--block boxes-->
+                            <div class="block-boxes px-3">
+                                <!--user box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Usuario</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//user box-->
+                                <!--Orden box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">#Orden</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Orden box-->
+                                <!--Fecha Pedido box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Fecha Pedido</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Fecha Pedido box-->
+                                <!--Hora Pedido box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Hora Pedido</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Hora Pedido box-->
+                                <!--Fecha Entrega box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Fecha Entrega</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Fecha Entrega box-->
+                                <!--Hora Entrega box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Hora Entrega</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Hora Entrega box-->
+                                <!--Tipo Pago box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Tipo Pago</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Tipo Pago box-->
+                                <!--Precio Bs box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Precio Bs</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Precio Bs box-->
+                                <!--Estado box-->
+                                <div class="input-group-prepend box">
+                                    <span class="input-group-text">Estado</span>
+                                    <input type="text" class="form-control" disabled>
+                                </div>
+                                <!--//Estado box-->
+                                <!--btns-->
+                                <div class="row pb-3 px-3">
+                                    <!--btn block-->
+                                    <div class="ml-auto">
+                                        <!--Btn rechaza pedido-->
+                                        <a href="" class="btn bg-printalo-blueDetail text-light negative">Cerrar</a>
+                                        <!--//Btn rechazar pedido-->
+                                    </div>
+                                    <!--//btn block-->
+                                </div>
+                                <!--//btns-->
+                            </div>
+                            <!--//block boxes-->
+                        </div>
+                        <!--container right side-->
+                    </div>
+                    <!--//modal content-->
+                </div>
+                <!--//right side-->
+            </div>
+            <!--//row-->
+        </div>
+        <!--modal dialog and size-->
+    </div>
+    <!--//See details modal-->
+
+    <!--boostrap jquery popper libraries-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!--//boostrap jquery popper libraries-->
+    <!--iconuserpefil script-->
+    <script src="../../../js/designjs/perfiliconuser.js"></script>
+    <!--//iconuserpefil script-->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+    <!-- Para uso de Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+
+    <!-- Para Authentication y Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+
+    <!-- Configuracion de Proyecto en Firebase -->
+    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
+
+    <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
+    <script type="text/javascript" src="../../../js/Negocios.js"></script>
+    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
+    <script type="text/javascript" src="../../../js/designjs/datatables.js"></script>
+</body>
+
+</html>

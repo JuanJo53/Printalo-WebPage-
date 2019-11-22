@@ -8,8 +8,7 @@ function Registrar(){
     var email = document.getElementById("txtEmailReg").value;
     var pass = document.getElementById("txtPasswordReg").value;
     const negocio = new Negocio(email,pass,nombreDueño,apellidoDueño,num,nombreNeg,dir);
-    negocio.RegistrarNeg();
-    ValidarNeg();
+    negocio.RegistrarNeg(dir,email,num,nombreNeg,apellidoDueño,nombreDueño);
 };
 // Evento de Boton Ingresar
 function Ingresar(){

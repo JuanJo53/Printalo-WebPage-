@@ -1,17 +1,15 @@
 body {
   font-family: "Montserat";
-  padding-right:0!important;
+  padding-right: 0 !important;
   overflow-x: hidden;
 }
-label{
-  font-weight: normal!important;
+label {
+  font-weight: normal !important;
 }
 .navbar .nav-item {
   font-size: 1rem;
 }
-.navbar .nav-item .nav-link:hover {
-  color: #24c4a6 !important;
-}
+
 .btn-outline-light:hover {
   background-color: #253449;
 }
@@ -20,7 +18,6 @@ label{
 }
 .bg-printalo-blueDetail {
   background-color: #364c68;
-
 }
 .color-printalo-blueDetail {
   color: #364c68;
@@ -40,59 +37,56 @@ label{
   color: white !important;
 }
 
-.center{
+.center {
   position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
-.center2{
+.center2 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
-.ver-center{
+.ver-center {
   vertical-align: middle;
 }
 
 /*time date pickers*/
-.timepicker .btn{
-  color: white!important;
-  background-color: #24c4a6!important;
+.timepicker .btn {
+  color: white !important;
+  background-color: #24c4a6 !important;
 }
 .timepicker div {
-  color: #24c4a6!important;
+  color: #24c4a6 !important;
 }
-.gj-timepicker .input-group-append,.gj-datepicker .input-group-append{
-  background-color: #24c4a6!important;
+.gj-timepicker .input-group-append,
+.gj-datepicker .input-group-append {
+  background-color: #24c4a6 !important;
 }
-.gj-icon{
-  color: white!important;
+.gj-icon {
+  color: white !important;
 }
 
-.gj-timepicker .input-group-append button:hover,.gj-datepicker .input-group-append button:hover{
-  background-color: #30e2c2!important;
+.gj-timepicker .input-group-append button:hover,
+.gj-datepicker .input-group-append button:hover {
+  background-color: #30e2c2 !important;
 }
 /*//time date pickers*/
-/*btn save changes in hole system*/
-.btnsavechanges:hover{
-  background-color: #30e2c2;
-  color: white;
-}
-/*//btn save changes in hole system*/
+
 /*btn peusto in hole system*/
-.puesto .card:hover .card-footer{
-  background-color: #30e2c2!important;
+.puesto .card:hover .card-footer {
+  background-color: #30e2c2 !important;
 }
-.puesto .card:hover .img-puesto{
-  opacity:0.9!important;
+.puesto .card:hover .img-puesto {
+  opacity: 0.9 !important;
 }
 /*//btn peusto in hole system*/
 /*editar btn*/
-.icon-editar{
-  background:#24c4a6;
-  color:white;
+.icon-editar {
+  background: #24c4a6;
+  color: white;
 }
 
 button.icon-editar:hover {
@@ -115,12 +109,196 @@ button.icon-editar:hover {
   line-height: 40px;
   position: relative;
 }
-.circletoggle:hover{
+.circletoggle:hover {
   background-color: #30e2c2;
 }
 /*//circle tootgle*/
 /*sublink sidebar*/
-.sublink-sidebar{
+.sublink-sidebar {
   font-size: 0.9rem;
 }
 /*//sublink sidebar*/
+
+/*dropdown menu*/
+
+.dropdown .dropdown-toggle {
+  background-color: #24c4a6;
+  color: #fff;
+}
+.dropdown .dropdown-item:active {
+  background-color: #30e2c2;
+}
+/*//dropdown menu*/
+
+/*Permite que no mostrar spinner cuando type=number*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+/*//Permite que no mostrar spinner cuando type=number*/
+
+/*input block bgcolor*/
+input[type="text"]:disabled,
+input[type="password"]:disabled,
+input[type="number"]:disabled,
+textarea {
+  background: #ccc;
+  border-color: #ccc;
+}
+/*input block bgcolor*/
+
+/*btn disabled bgcolor*/
+.btn:disabled {
+  background: #ccc;
+}
+button.icon-editar:disabled:hover {
+  background-color: #ccc !important;
+}
+/*btn disabled bgcolor*/
+
+/*row*/
+.row-detail.off {
+  display: inline-block;
+  background: #364c68;
+  width: 40px;
+  height: 5px;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.row-detail.on {
+  display: inline-block;
+  background: #24c4a6;
+  width: 40px;
+  height: 5px;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.row-sub {
+  background: #364c68;
+  width: 100%;
+  height: 1.5px;
+  margin-top: -15px;
+  padding: none;
+}
+/*btn save changes in hole system*/
+.btnsavechanges.active:hover {
+  background-color: #30e2c2;
+}
+.btnsavechanges.active {
+  background-color: #24c4a6;
+  font-weight: normal;
+  cursor: pointer;
+}
+.btnsavechanges.inactive {
+  background-color: #ccc;
+  font-weight: normal;
+}
+/*//btn save changes in hole system*/
+
+/*configuraciones de negocio general inputs*/
+.configuraciones .input-group-text {
+  width: 100%;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  display: block;
+  background-color: #c3dee5;
+  border-style: none;
+  color: #000;
+}
+.configuraciones .form-control {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background-color: #fff;
+  border: 1.5px solid #c3dee5;
+}
+.configuraciones .box {
+  margin: 15px 0px 15px 0;
+}
+.configuraciones.horario .input-group-text.dia {
+  width: 40%;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  display: block;
+  background-color: #c3dee5;
+  border-style: none;
+  color: #000;
+}
+/*configuraciones de negocio general inputs*/
+/*btn row positive*/
+.btn.positive {
+  color: #fff !important;
+}
+/*//btn row positive*/
+/*btn navbar*/
+.navbarbutton.btn.positive:hover {
+  background-color: #30e2c2 !important;
+  color: rgb(255, 255, 255) !important;
+}
+.navbarbutton.btn.negative:hover {
+  background-color: #253449 !important;
+  color: rgb(255, 255, 255) !important;
+}
+/*//btn navbar*/
+/*navbar links hovers*/
+.navbar-dark .navbar-nav .link .nav-link:hover {
+  color: rgb(255, 255, 255) !important;
+  font-weight: bold;
+}
+/*navbar links hovers*/
+/*form control border weight*/
+.form-control {
+  border: 3px solid #c3dee5;
+}
+/*//form control border weight
+.btn{
+  border: 0px!important;
+}
+*/
+
+/*icon perfil initial letter */
+.iconletter {
+  font-size: 1rem;
+}
+.iconlettermodal {
+  font-size: 1.5rem;
+}
+/*icon perfil initial letter */
+
+/*navbar links hovers*/
+.navbar-pills .nav-item .nav-link:hover {
+  color: rgb(255, 255, 255) !important;
+  font-weight: bold;
+}
+/*navbar links hovers*/
+
+/*sub navbar hover active*/
+.nav-pills .nav-link.active {
+  background-color: #24c4a6;
+  border-radius: 0px;
+  color: #ffffff !important;
+  font-weight: bold;
+}
+.nav-pills .nav-link {
+  padding: 10px;
+  color: white;
+}
+.nav-pills .nav-link:hover {
+  font-weight: bold;
+}
+/*//sub navbar hover active*/
+/*navbar  collapse link*/
+.navbar-collapse .navbar-nav .nav-item:hover {
+  font-weight: bold;
+}
+/*//navbar  collapse link*/
+
+a.text-light:hover {
+  color: white !important;
+}

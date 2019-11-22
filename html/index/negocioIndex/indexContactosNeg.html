@@ -13,78 +13,110 @@
     <link rel="stylesheet" href="../../../css/modals.css">
     <link rel="stylesheet" href="../../../css/detalles.css">
 
-    <title>Principal Usuarios</title>
+    <title>Contactos</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-xl bg-printalo-nav navbar-dark py-2">
+    <!--navbar-->
+    <nav class="navbar navbar-expand-xl bg-printalo-nav navbar-dark py-1">
+        <!--container-->
         <div class="container">
             <div class="navbar-header">
+                <!--collapse button-->
                 <button class="navbar-toggler mx-1" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span></button>
-                <!--Link ir a index Neg-->
+                <!--//collapse button-->
+                <!--principal link-->
                 <a class="navbar-brand mx-1" href="indexNeg.html">
+                    <!--logo image-->
                     <img width="60" height="60" src="../../../img/printer.png" alt="">
+                    <!--//logo image-->
+                    <!--logo title-->
                     <h5 class="d-inline align-middle mx-1">Printalo Negocios</h5>
+                    <!--//logo title-->
                 </a>
+                <!--//principal link-->
             </div>
-            <div class="collapse navbar-collapse " id="navbarNav">
+            <!--collaspe-->
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <!--Link Servicios-->
-                    <li class="nav-item">
-                        <a href="servNeg.html" class="nav-link text-light center">Servicios</a>
+                    <li class="nav-item link my-auto">
+                        <a href="servNeg.html" class="nav-link text-light ">Servicios</a>
                     </li>
+                    <!--//Link Servicios-->
                     <!--Link Negocios Asociados-->
-                    <li class="nav-item">
-                        <a href="negoAsocNeg.html" class="nav-link text-light center">Negocios asociados</a>
+                    <li class="nav-item link my-auto">
+                        <a href="negoAsocNeg.html" class="nav-link text-light ">Negocios asociados</a>
                     </li>
+                    <!--//Link Negocios Asociados-->
                     <!--Link Contactos-->
-                    <li class="nav-item">
-                        <a href="indexContactosNeg.html" class="nav-link text-light center active">Contactos</a>
+                    <li class="nav-item link my-auto">
+                        <a href="indexContactosNeg.html" class="nav-link text-light active">Contactos</a>
                     </li>
+                    <!--//Link Contactos-->
                     <!--Btn Iniciar Sesion-->
                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-button modal-neg"  href="../../acrosspages/modalloginNeg.html">Iniciar Sesion</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-greenDetail navbarbutton positive modal-neg"
+                            href="../../acrosspages/modalloginNeg.html">Iniciar Sesion</a>
                     </li>
                     <!--//btn iniciar sesion-->
                     <!--Btn Registrarse-->
                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button modal-register-neg" href="../../acrosspages/modalRegisterNeg.html">Registrarse</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-greenDetail navbarbutton positive modal-register-neg"
+                            href="../../acrosspages/modalRegisterNeg.html">Registrarse</a>
                     </li>
                     <!--//btn registrarse-->
                     <!--Btn Ir a seccion de Usuarios-->
                     <li class="nav-item">
-                        <a class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button"
-                            href="../usuarioIndex/indexUser.html">Usuarios</a>
+                        <a class="btn btn-outline-light nav-link m-1 text-light  bg-printalo-greenDetail navbarbutton positive"
+                            href="../usuarioIndex/indexUser.html">Ir a Usuarios</a>
                     </li>
+                    <!--//Btn Ir a seccion de Usuarios-->
                 </ul>
             </div>
+            <!--//collaspe-->
         </div>
+        <!--//container-->
     </nav>
+    <!--//navbar-->
+    <!--container-->
     <div class="container">
         <!--section 1-->
         <section id="formsection" class="my-4 py-4">
-            <div class="text-center">
+            <!--title-->
+            <div class="text-center px-5">
                 <h2>Contactanos</h2>
                 <h4>Si tiene alguna duda,llene el formualrio y con gusto lo atenderemos</h4>
             </div>
-            <div class="row">
-                <div class="col d-none d-sm-block"></div>
-                <div class="col-md-5">
+            <!--title-->
+            <!--row-->
+            <div class="row px-5 my-3">
+                <!--column icon-->
+                <div class="col  d-none d-md-block">
                     <div class="center">
                         <div class="text-center">
+                            <!--icon-->
                             <i class="far fa-clipboard fa-8x circlebase"></i>
+                            <!--//icon-->
                         </div>
-
                     </div>
                 </div>
-                <div class="col-md-5">
+                <!--//column icon-->
+                <!--form icon-->
+                <div class="col-md-7">
+                    <!--card form-->
                     <div class="card bg-printalo-greenDetail text-center card-form m-1 text-light">
+                        <!--card body-->
                         <div class="card-body p-4">
                             <h3>Contactanos</h3>
+                            <!--form-->
                             <form action="" class="form-group">
+                                <!--email box-->
                                 <label class="float-left" for="name">E-mail:</label>
                                 <input type="text" class="form-control">
+                                <!--//email box-->
+                                <!--text area-->
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
@@ -93,20 +125,26 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!--//text area-->
+                                <!--btn enviar-->
                                 <div class="modalbutton"><a
-                                        class="btn btn-outline-light nav-link m-1 text-light bg-printalo-button "
+                                        class="btn btn-outline-light nav-link m-1 text-light bg-printalo-greenDetail positive"
                                         href="#">Enviar</a></div>
+                                <!--//btn enviar-->
                             </form>
+                            <!--//form-->
                         </div>
+                        <!--//card body-->
                     </div>
+                    <!--//card form-->
                 </div>
-                <div class="col d-none d-sm-block"></div>
+                <!--//form icon-->
             </div>
+            <!--row-->
         </section>
         <!--section 1-->
-
     </div>
-
+    <!--//container-->
     <footer id="main-footer" class="bg-printalo-greenDetail text-white py-3">
         <div class="container text-white">
             <div class="row text-center">
@@ -160,12 +198,14 @@
     <!--ingresar Modal neg-->
     <div class="modal fade text-dark" id="modalNegocio">
         <div class="modal-dialog modal-lg">
+            <!--insertar aqui row-->
         </div>
     </div>
     <!--//ingresar modal neg-->
     <!--Registrarse Modal neg-->
     <div class="modal fade text-dark" id="modalRegisterNegocio">
         <div class="modal-dialog modal-lg">
+            <!--insertar aqui row-->
         </div>
     </div>
     <!--registrarse modal neg-->
@@ -193,14 +233,14 @@
     <!-- Para Authentication y Firestore -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
-    
+
     <!-- Configuracion de Proyecto en Firebase -->
     <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
-    
+
     <!-- Script clase Negocios  -->
     <script type="text/javascript" src="../../../js//Negocio/Negocios.js"></script>
     <!-- Script clase Auth para con firebase -->
-    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>  
+    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
 </body>
 
 </html>

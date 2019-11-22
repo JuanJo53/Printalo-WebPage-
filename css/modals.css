@@ -1,135 +1,159 @@
-
 .close-icon {
-    float: right;
-    cursor: pointer;
-    display: block;
-    box-sizing: border-box;
-    width: 30px;
-    height: 30px;
-    border-style: solid;
-    border-radius: 100%;
-    border-color: #24c4a6;
-    background-color: #24c4a6;
-    color: white;
-  }
-  .close-icon::before {
-    content: "x";
-  }
-  .close-icon:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    color: #24c4a6;
-    cursor: pointer;
-    border-color: #24c4a6;
-  }
-  .nopadding {
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  .center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  a {
-    text-decoration: none !important;
-  }
-  .modal-dialog {
-    padding-top: 2%;
-  }
-  li {
-    text-align: center;
-  }
-  input[type="text"],input[type="password"], textarea{
-    background: #c3dee5;
-  }
-  .tarjeta-modal input[type="text"],input[type="password"], textarea{
-    background: #ffffff!important;
-  }
+  float: right;
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border-style: solid;
+  border-radius: 100%;
+  border-color: #24c4a6;
+  background-color: #24c4a6;
+  color: white;
+}
+.close-icon::before {
+  content: "x";
+}
+.close-icon:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #24c4a6;
+  cursor: pointer;
+  border-color: #24c4a6;
+}
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+a {
+  text-decoration: none !important;
+}
+.modal-dialog {
+  padding-top: 2%;
+}
+li {
+  text-align: center;
+}
 
-  .form-control{
-    background: #c3dee5;
-  }
-  label{
-    font-weight: bold;
-    padding-top:7px;
-  }
-  .modal-content {
-    height: 100%;
-    border-radius: 0px !important;
-    border: 0px !important;
-  }
-  .modalbutton a:hover {
-    color: #24c4a6 !important;
-  }
-  .modalbutton a u:hover {
-    color: #24c4a6 !important;
-  }
+.tarjeta-modal input[type="text"],
+input[type="password"],
+textarea {
+  background: #ffffff !important;
+}
 
-  .modalbuttonalert .btn.positive:hover {
-    background-color: #30e2c2 !important;
-    color: rgb(255, 255, 255) !important;
-  }
-  .modalbuttonalert .btn.negative:hover {
-    background-color: #253449 !important;
-    color: rgb(255, 255, 255) !important;
-  }
-
-  .modal-content .container a.btn.negative:hover {
-    background-color: #253449 !important;
-    color: rgb(255, 255, 255) !important;
-  }
-  .modal-content .container a.btn.positive:hover {
-    background-color: #30e2c2 !important;
-    color: rgb(255, 255, 255) !important;
-  }
+label {
+  font-weight: bold;
+  padding-top: 7px;
+}
+.modal-content {
+  height: 100%;
+  border-radius: 0px !important;
+  border: 0px !important;
+}
+/*sub links hover*/
+.modalbutton a u:hover {
+  color: #24c4a6 !important;
+}
+/*//sub links hover*/
+/*modal buttons hover*/
+.modalbuttonalert,
+.modalbutton .btn.positive:hover {
+  background-color: #30e2c2 !important;
+  color: rgb(255, 255, 255) !important;
+}
+.modalbuttonalert,
+.modalbutton .btn.negative:hover {
+  background-color: #253449 !important;
+  color: rgb(255, 255, 255) !important;
+}
+/*//modal buttons hover*/
+.modal-content .container a.btn.negative:hover {
+  background-color: #253449 !important;
+  color: rgb(255, 255, 255) !important;
+}
+.modal-content .container a.btn.positive:hover {
+  background-color: #30e2c2 !important;
+  color: rgb(255, 255, 255) !important;
+}
 /*SPINNER LOEADER JUNK*/
-.spinner{
+.spinner {
   border-radius: 50%;
   /*background-color:#eee;*/
   width: 70px;
-  height:70px;
-  border:5px solid lightgray;
-  border-top-color:#24c4a6;
+  height: 70px;
+  border: 5px solid lightgray;
+  border-top-color: #24c4a6;
   animation: spinner 0.7s linear infinite;
 }
-@keyframes spinner{
-  to{
+@keyframes spinner {
+  to {
     transform: rotate(360deg);
   }
 }
 
-
-.modal-content{
-  border-radius: 1rem!important;
+.modal-content {
+  border-radius: 1rem !important;
 }
-.modal-header{
-  border-top-left-radius: 1rem!important;
-  border-top-right-radius: 1rem!important;
+.modal-content.left {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.modal-content.right {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+.modal-header {
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
 }
 .modal-dialog {
   padding-top: 1%;
 }
 /*SPINNER LOEADER JUNK*/
-.spinner{
+.spinner {
   border-radius: 50%;
   /*background-color:#eee;*/
   width: 70px;
-  height:70px;
-  border:5px solid lightgray;
-  border-top-color:#24c4a6;
+  height: 70px;
+  border: 5px solid lightgray;
+  border-top-color: #24c4a6;
   animation: spinner 0.7s linear infinite;
 }
-@keyframes spinner{
-  to{
+@keyframes spinner {
+  to {
     transform: rotate(360deg);
   }
 }
 .modal-dialog.mini {
-  padding-top: 13rem;/*margin top of small modals*/
+  padding-top: 13rem; /*margin top of small modals*/
 }
-.square-icon{
+.square-icon {
   /*background-color:#eee;*/
   width: 80px;
-  height:70px;
+  height: 70px;
 }
+/*detalles de pedidos inputs*/
+.detallesPedido .input-group-text {
+  width: 100%;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  display: block;
+  background-color: #c3dee5;
+  border-style: none;
+  color: #000;
+}
+.detallesPedido .form-control {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background-color: #fff;
+  border: 1.5px solid #c3dee5;
+}
+.detallesPedido .box {
+  margin: 15px 0px 15px 0;
+}
+/*detalles de pedidos inputs*/

@@ -1,43 +1,77 @@
 <html>
 <body>
+    <!--row-->
     <div class="row py-3">
+        <!--left side-->
         <div class="col-lg-6 nopadding d-none d-lg-block ">
-            <div class="modal-content bg-printalo-blueDetail">
-                <div class="container center">
+            <!--modal content left side-->
+            <div class="modal-content left bg-printalo-blueDetail">
+                <!--container in the middle-->
+                <div class="container my-auto">
+                    <!--modal body-->
                     <div class="modal-body">
                         <div class="text-center">
-                            <img width="100" height="100" src="../../../img/printer.png" alt=""
-                                class="img-fluid ">
+                            <!--logo image-->
+                            <img width="100" height="100" src="../../../img/printer.png" alt="" class="img-fluid ">
+                            <!--//logo image-->
                         </div>
+                        <!--logo title-->
                         <h3 class="text-center text-light">Printalo</h3>
+                        <!--//logo title-->
                     </div>
+                    <!--//modal body-->
                 </div>
+                <!--//container in the middle-->
             </div>
+            <!--modal content left side-->
         </div>
+        <!--left side-->
+        <!--right side-->
         <div class="col-lg-6 nopadding">
-            <div class="modal-content">
+            <!--modal content right side-->
+            <div class="modal-content right">
+                <!--close icon-->
                 <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
+                <!--//close icon-->
+                <!--container-->
                 <div class="container">
+                    <!--title-->
                     <h2 class="text-center">Ingreso</h2>
-                    <form action="" class="p-5">
+                    <!--//title-->
+                    <div class="px-5 py-4">
                         <div class="form-group">
+                            <!--email box-->
                             <label for="name">E-mail:</label>
                             <input type="text" class="form-control" id="txtEmailUser">
+                            <!--//email box-->
+                            <!--password box-->
                             <label for="name">Constraseña:</label>
                             <input type="password" class="form-control" id="txtPassUser">
+                            <!--//password box-->
                         </div>
-                    </form>
-                    <div class="modalbutton text-center py-3">
+                    </div>
+                    <div class="modalbutton text-center pb-3">
                         <!--btn ingresar usuario normal-->
-                        <button id="btbIngresarUser" class="btn btn-outline-light bg-printalo-button text-light">Ingresar</button>
-                        <!--//-->
+                        <button onclick="IngCli()" id="btbIngresarUser"
+                            class="btn bg-printalo-greenDetail positive text-light my-2">Ingresar</button>
+                        <!--//-btn ingresar usuario normal-->
                         <br>
-                        <br>
-                        <a href="" class="text-center"><u class="color-printalo-blueDetail">Registrarse</u></a>
+                        <!--sub link registrarse-->
+                        <div class="my-2">
+                            <a href="" class="text-center "><u class="color-printalo-blueDetail">Registrarse</u></a>
+                        </div>
+                        <!--//sub link registrarse-->
                     </div>
                 </div>
+                <!--//container-->
             </div>
+            <!--modal content right side-->
         </div>
+        <!--//right side-->
     </div>
+    <!--//row-->
+    <!--Script de la actual pagina-->
+    <script type="text/javascript" src="../../../js/Cliente/IndexCli.js"></script>
 </body>
+
 </html>

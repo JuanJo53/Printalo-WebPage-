@@ -95,7 +95,10 @@ function setData(type,name){
         icon.className='far fa-file-pdf fa-3x';
         tipo.appendChild(icon);
     }
+    tipo.className="text-center";
     nombArch.className="text-center";
+    solic.className="text-center";
+    elim.className="text-center";
     nombArch.innerHTML=name;
     solic.innerHTML='<a id="btnSolicitar" class="btn positive bg-printalo-greenDetail text-light" data-toggle="modal" data-target="#escogerLocal">Solicitar</a>';
     elim.innerHTML='<a class="btn negative bg-printalo-blueDetail text-light" data-toggle="modal" data-target="#checkAlert">Eliminar</a>'

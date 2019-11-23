@@ -113,7 +113,7 @@ function GuardarCambPrecios(){
         cambiarTipoHoja(norm,reu);
     }
 }
-
+//Esta funcion verifica la validez de los cambios en el precio Blanco y Negro y los guarda luego de validarlos.
 function cambiarBN(){
     var bd = firebase.firestore();
     var user = firebase.auth().currentUser;
@@ -130,7 +130,7 @@ function cambiarBN(){
         alert("Valor invalido");
     }
 }
-
+//Esta funcion verifica la validez de los cambios en el precio a Color y los guarda luego de validarlos.
 function cambiarColor(){
     var bd = firebase.firestore();
     var user = firebase.auth().currentUser;
@@ -147,7 +147,7 @@ function cambiarColor(){
         alert("Valor invalido");
     }
 }
-
+//Esta funcion verifica la validez de los cambios en el precio por tamaño de hoja y los guarda luego de validarlos.
 function cambiarTamHoja(cambA4,cambOf,cambCart){
     if(cambA4===true && cambOf===true && cambCart===true){
         var bd = firebase.firestore();
@@ -270,7 +270,7 @@ function cambiarTamHoja(cambA4,cambOf,cambCart){
         alert("No existen cambios por tamaño de hoja");
     }
 }
-
+//Esta funcion verifica la validez de los cambios en el preciopor tipo de hoja y los guarda luego de validarlos.
 function cambiarTipoHoja(normal,reuti){    
     if(normal===true && reuti===true){
         var bd = firebase.firestore();

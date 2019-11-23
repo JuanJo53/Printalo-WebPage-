@@ -83,14 +83,17 @@ function setData(type,name){
     console.log('HOLA: '+storageRef.name);
 
     var table=document.getElementsByTagName('table')[0];
-    var newRow=table.insertRow(table.rows.length);
-    
+    var newRow=table.insertRow(1);
+    console.log(table.rows.length);
     var tipo=newRow.insertCell(0);
     var nombArch=newRow.insertCell(1);
     var solic=newRow.insertCell(2);
     var elim=newRow.insertCell(3);
+    var icon=document.createElement('i');
     if(type==='pdf'){
-        tipo.innerHTML='<a><i class="far fa-file-pdf fa-3x"></i></a>';
+        // TODO: Configurar para multiples iconos
+        icon.className='far fa-file-pdf fa-3x';
+        tipo.appendChild(icon);
     }
     nombArch.className="text-center";
     nombArch.innerHTML=name;

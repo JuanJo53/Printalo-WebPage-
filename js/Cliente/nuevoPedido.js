@@ -65,7 +65,6 @@ function getDocData(){
     .get()
     .then(function(querySnapshot){
         querySnapshot.forEach(function(doc){
-            console.log(doc.id, " => ", doc.data());
             setData(doc.data().tipoDoc,doc.data().nombreDoc);
         })
     })
@@ -80,8 +79,6 @@ function setData(type,name){
     var user=firebase.auth().currentUser;
     var userid=user.uid;
     var storageRef = storage.ref('docsPedidos/'+user.uid);
-    console.log('HOLA: '+storageRef.name);
-
     var table=document.getElementsByTagName('table')[0];
     var newRow=table.insertRow(1);
     console.log(table.rows.length);
@@ -97,10 +94,23 @@ function setData(type,name){
     }
     nombArch.className="text-center";
     nombArch.innerHTML=name;
-    solic.innerHTML='<a id="btnSolicitar" class="btn positive bg-printalo-greenDetail text-light" data-toggle="modal" data-target="#escogerLocal">Solicitar</a>';
+    solic.innerHTML='<a onclick="solicitar(event)" class="btn positive bg-printalo-greenDetail text-light" data-toggle="modal" data-target="#escogerLocal">Solicitar</a>';
     elim.innerHTML='<a class="btn negative bg-printalo-blueDetail text-light" data-toggle="modal" data-target="#checkAlert">Eliminar</a>'
     
 }
+
+function solicitar(e){
+    var table=document.getElementsByTagName('table')[0];
+    console.log(e.target.innerText);
+    console.log(table.rows.length);
+}
+
+$("#table").click(function(){
+    $(this).addClass('selected').siblings().removeClass('selected');    
+    var value=$(this).find('td:first+td').html();
+    alert(value);    
+ });
+ 
 
 // Esta funcion ejecuta el observador de firebase
 function ValidarCli(){

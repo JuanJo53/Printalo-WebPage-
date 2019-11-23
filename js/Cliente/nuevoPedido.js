@@ -1,5 +1,5 @@
 window.onload=ValidarCli();
-
+//Esta funcion optiene la extension del documento.
 function getFileExtension(filename){
     return filename.split('.').pop();
 }
@@ -11,7 +11,7 @@ fileButton.addEventListener('change',function (e){
     var bd = firebase.firestore();
     //Get file
     var file=e.target.files[0];
-
+    //Agrega metadata al documento por subir
     var metadata={
         name: file.name,
         contentType: getFileExtension(file.name)
@@ -45,30 +45,33 @@ fileButton.addEventListener('change',function (e){
                     ladosImpre: "",
                     metodoPago: "",
                     negocioID: "",
+                    nombreDoc: file.name, 
                     paginas: true,
                     tamañoHoja: "",
+                    tipoDoc: getFileExtension(file.name),
                     tipoHoja: ""
                 })
             })
-            getDocData(file)
-        });
-
+            
+        })
+        setData(getFileExtension(file.name),file.name);
 });
 
-function getDocData(file){
-    var storage = firebase.storage();
+
+function getDocData(){
     var user = firebase.auth().currentUser;
-    var storageRef = storage.ref();
-    var docData=storageRef.child('docsPedidos/'+user.uid+'/'+file.name);
-    docData.getMetadata()
-    .then(function(metadata){
-        console.log('name: '+metadata.name);
-        console.log('Type: '+metadata.contentType);
-        setData(metadata.contentType,metadata.name);
+    var bd = firebase.firestore();
+    bd.collection('Pedido').where('clienteID','==',user.uid)
+    .get()
+    .then(function(querySnapshot){
+        querySnapshot.forEach(function(doc){
+            console.log(doc.id, " => ", doc.data());
+            setData(doc.data().tipoDoc,doc.data().nombreDoc);
+        })
     })
     .catch(function(error){
-      console.log('Error al obtener la data: '+error);
-    })
+        console.log("Error obteniendo los documentos: ", error);
+    });
 }
 
 function setData(type,name){
@@ -86,10 +89,14 @@ function setData(type,name){
     var nombArch=newRow.insertCell(1);
     var solic=newRow.insertCell(2);
     var elim=newRow.insertCell(3);
-
-    tipo.innerHTML=type;
+    if(type==='pdf'){
+        tipo.innerHTML='<a><i class="far fa-file-pdf fa-3x"></i></a>';
+    }
+    nombArch.className="text-center";
     nombArch.innerHTML=name;
-
+    solic.innerHTML='<a id="btnSolicitar" class="btn positive bg-printalo-greenDetail text-light" data-toggle="modal" data-target="#escogerLocal">Solicitar</a>';
+    elim.innerHTML='<a class="btn negative bg-printalo-blueDetail text-light" data-toggle="modal" data-target="#checkAlert">Eliminar</a>'
+    
 }
 
 // Esta funcion ejecuta el observador de firebase
@@ -97,7 +104,7 @@ function ValidarCli(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
-            //setData();
+            getDocData();
             console.log("Logeado");
         }else{
             // User is not signed in.

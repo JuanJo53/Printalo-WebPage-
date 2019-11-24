@@ -3,7 +3,7 @@ window.onload=ValidarCli();
 function getFileExtension(filename){
     return filename.split('.').pop();
 }
-
+//Evento al añadir nuevo documento.
 var fileButton = document.getElementById('my-file');
 fileButton.addEventListener('change',function (e){
     var storage = firebase.storage();
@@ -56,7 +56,36 @@ fileButton.addEventListener('change',function (e){
         })
         setData(getFileExtension(file.name),file.name);
 });
-
+//Coloca la imagen y nombre de los negocios disponibles.
+function setNegocios(){
+    var user = firebase.auth().currentUser;
+    var bd = firebase.firestore();
+    bd.collection('Negocios').get()
+    .then(function(querySnapshot){
+        querySnapshot.forEach(function(doc){
+            console.log(doc.data().nombreNeg);
+            var negocios=document.getElementById('Negocios');
+            negocios.innerHTML=`<div class="pb-3 text-center puesto" data-dismiss="modal" data-toggle="modal"
+                                    data-target="#configurarPedido">
+                                    <div onclick="getNeg()" class="card negocioIcon mx-auto">
+                                        <div class="img-puesto">
+                                            <!--img del negocio-->
+                                            <img src="../../../img/pcs.jpg" alt="" class="card-img-top">
+                                        </div>
+                                        <!--//img del negocio-->
+                                        <div class="card-footer">
+                                        <!--nombre del negocio-->
+                                            <h5 id="nombNeg" class="my-auto text-light">`+doc.data().nombreNeg+`</h5>
+                                        <!--//nombre del negocio-->
+                                        </div>
+                                    </div>
+                                </div>`;
+        })
+    })
+    .catch(function(error){
+        console.log("Error obteniendo los negocios: ", error);
+    });    
+}
 
 function getDocData(){
     var user = firebase.auth().currentUser;
@@ -79,48 +108,64 @@ function setData(type,name){
     var user=firebase.auth().currentUser;
     var userid=user.uid;
     var storageRef = storage.ref('docsPedidos/'+user.uid);
+
     var table=document.getElementsByTagName('table')[0];
     var newRow=table.insertRow(1);
-    console.log(table.rows.length);
+    //console.log(table.rows.length);
+
     var tipo=newRow.insertCell(0);
     var nombArch=newRow.insertCell(1);
     var solic=newRow.insertCell(2);
     var elim=newRow.insertCell(3);
+
     var icon=document.createElement('i');
+
     if(type==='pdf'){
         // TODO: Configurar para multiples iconos
         icon.className='far fa-file-pdf fa-3x';
         tipo.appendChild(icon);
     }
     tipo.className="text-center";
+    
     nombArch.className="text-center";
-    solic.className="text-center";
-    elim.className="text-center";
     nombArch.innerHTML=name;
-    solic.innerHTML='<a onclick="solicitar(event)" class="btn positive bg-printalo-greenDetail text-light" data-toggle="modal" data-target="#escogerLocal">Solicitar</a>';
-    elim.innerHTML='<a class="btn negative bg-printalo-blueDetail text-light" data-toggle="modal" data-target="#checkAlert">Eliminar</a>'
+
+    solic.className="text-center";
+    solic.innerHTML=`<button id="btnSol/`+(table.rows.length-1)+`" onclick="solicitar(this)" 
+                        class="btn positive bg-printalo-greenDetail text-light" data-toggle="modal" data-target="#escogerLocal">
+                        Solicitar
+                    </button>`;
+    elim.className="text-center";
+    elim.innerHTML=`<button class="btn negative bg-printalo-blueDetail text-light" data-toggle="modal" data-target="#checkAlert">
+                        Eliminar
+                    </button>`;
     
 }
+var negocioID;
+//Al apretar alguno de los documentos para solicitar.
+function solicitar(_this){
+    var nomb=getRowSelected(_this);
+    console.log(nomb);
 
-function solicitar(e){
-    var table=document.getElementsByTagName('table')[0];
-    console.log(e.target.innerText);
-    console.log(table.rows.length);
 }
-
-$("#table").click(function(){
-    $(this).addClass('selected').siblings().removeClass('selected');    
-    var value=$(this).find('td:first+td').html();
-    alert(value);    
- });
- 
-
+//Obtiene el nombre de la fila seleccionada.
+function getRowSelected(objectPressed){
+    var a=objectPressed.parentNode.parentNode;
+    var nomb=a.getElementsByTagName("td")[1].innerHTML;
+    return nomb;
+}
+//Obtiene el Negocio elegido.
+function getNeg(){
+    var negocioID=document.getElementById('nombNeg').innerHTML;
+    console.log(negocioID);
+}
 // Esta funcion ejecuta el observador de firebase
 function ValidarCli(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
             getDocData();
+            setNegocios();
             console.log("Logeado");
         }else{
             // User is not signed in.

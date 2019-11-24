@@ -115,13 +115,6 @@
                         <!--//row-->
                     </thead>
                     <!--//column's titles-->
-                    <tbody>
-                        <!--Row-->
-                        <tr>
-                            
-                        </tr>
-                        <!--//Row-->
-                    </tbody>
                 </table>
                 <!--//start table-->
             </div>
@@ -271,10 +264,10 @@
                         <!--Btn Imagen de local-->
                         <!--pcs button-->
                         <!--modal target-->
-                        <div class="pb-3 text-center puesto" data-dismiss="modal" data-toggle="modal"
+                        <div id="Negocios" class="pb-3 text-center puesto" data-dismiss="modal" data-toggle="modal"
                             data-target="#configurarPedido">
                             <!--//modal target-->
-                            <div class="card negocioIcon mx-auto">
+                            <div onclick="getNeg()" class="card negocioIcon mx-auto">
                                 <div class="img-puesto">
                                     <!--img del negocio-->
                                     <img src="../../../img/pcs.jpg" alt="" class="card-img-top">
@@ -282,11 +275,11 @@
                                 <!--//img del negocio-->
                                 <div class="card-footer">
                                     <!--nombre del negocio-->
-                                    <h5 class="my-auto text-light">PCS</h5>
+                                    <h5 id="nombNeg" class="my-auto text-light">PCS</h5>
                                     <!--//nombre del negocio-->
-                                </div>
-                            </div>
-                        </div>
+                                </div>                                
+                            </div>       
+                        </div>                        
                         <!--//pcs button-->
                         <!--//Btn Imagen de local-->
                     </div>
@@ -406,7 +399,7 @@
                                     <!-- rbt b/n-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Blanco/Negro
-                                            <input type="radio" checked="checked" name="radioColor">
+                                            <input id="BN" type="radio" checked="checked" name="radioColor">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -416,7 +409,7 @@
                                     <!-- rbt color-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Color
-                                            <input type="radio" name="radioColor">
+                                            <input id="color" type="radio" name="radioColor">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -1490,7 +1483,7 @@
                                                 </div>
                                                 <!--//decrement-->
                                                 <!--input number-->
-                                                <div class='ctrl__counter'>
+                                                <div  class='ctrl__counter'>
                                                     <input class='ctrl__counter-input' maxlength='10' type='text'
                                                         value='0' disabled>
                                                     <div class='ctrl__counter-num'>0</div>
@@ -1859,7 +1852,7 @@
     <!--DESIGN JS-->
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
-
+    
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-storage.js"></script>
 
     <!-- Para uso de Analytics -->
@@ -1882,7 +1875,7 @@
     <!--Para realizar nuevo pedido-->
     <script type="text/javascript" src="../../../js/Cliente/nuevoPedido.js"></script>
 
-
+    
 </body>
 
 </html>

@@ -143,6 +143,18 @@ function setData(type,name){
     
 }
 var negocioID;
+var color;
+var tamanio;
+var impresion;
+var paginas;
+var rangoInf, rangoSup;
+var acabado;
+var tipo;
+var cantidad;
+var fecha_hora;
+var pago;
+var nombTarjeta, numTarjeta, mes, anio, cvv;
+
 //Al apretar alguno de los documentos para solicitar.
 function getDocNomb(_this){
     var nomb=getRowSelected(_this);
@@ -159,47 +171,163 @@ function getNeg(objectPressed){
     negocioID=objectPressed.id;
     console.log(negocioID);
 }
-
+//Setea los valores para los detalles del pedido.
+function setDetPed(){
+    color=getColor();
+    tamanio=getTamaño();
+    impresion=getImpresion();
+    paginas=getCantHojas();
+    if(paginas==='personalizado'){
+        rangoInf=getRangoInf();
+        rangoSup=getRangoSup();
+    }
+    acabado=getAcabado();
+    tipo= getTipoHoja();
+    cantidad=getCantCopias();
+    console.log(color);
+    console.log(tamanio);
+    console.log(impresion);
+    console.log(paginas);
+    console.log(rangoInf);
+    console.log(rangoSup);
+    console.log(acabado);
+    console.log(tipo);
+    console.log(cantidad);
+    setPreview();
+}
+//Obtiene el valor del color de impresion.
 function getColor(){
     if(document.getElementById("color").checked){
-        console.log('a color');
+        return false;
     }else{
-        console.log('blanco y negro');
+        return true;
     }    
 }
-
+//Obtiene el valor del tamanio de hoja.
 function getTamaño(){
     if(document.getElementById("carta").checked){
-        console.log('carta');
+        return 'carta';
     }else if(document.getElementById("oficio").checked){
-        console.log('oficio');
+        return 'oficio';
     }else{
-        console.log('A4');
+        return 'A4';
     }    
 }
-
+//Obtiene el tipo de impresion.
 function getImpresion(){
     if(document.getElementById("impresion").checked){
-        console.log('intercalado');
+        return 'intercalado';
     }else{
-        console.log('anv');
+        return 'anv/rev';
     }    
 }
-
+//Obtiene el detalle de las paginas.
+function getCantHojas(){
+    if(document.getElementById("todo").checked){
+        return 'todo';
+    }else{
+        return 'personalizado';
+    }
+}
+//Obtiene el rango inferior de las hojas.
+function getRangoInf(){
+    var inf=document.getElementById('rangoInf').value;
+    return parseInt(inf);
+}
+//Obtiene el rango superior de las hojas.
+function getRangoSup(){
+    var sup=document.getElementById('rangoSup').value;
+    return parseInt(sup);
+}
+//Obtiene el acabado de la impresion.
 function getAcabado(){
     if(document.getElementById("acabado").checked){
-        console.log('engrampado');
+         return 'engrampado';
     }else{
-        console.log('nomal');
+        return 'normal';
+    }    
+}
+//Obtiene el tipo de hoja.
+function getTipoHoja(){
+    if(document.getElementById("TipoHoja").checked){
+        return 'normal';
+    }else{
+        return 'reutilizado';
+    }    
+}
+//Obtener la cantidad de copias.
+function getCantCopias(){
+    var cant=document.getElementById('cantidad').value;
+    return parseInt(cant);
+}
+//Obtiene la fecha y hora deseada para su entrega.
+function getFechaHora(){
+    var fecha=document.getElementById('datepicker').value;
+    var hora=document.getElementById('timepicker').value;
+    fecha_hora=fecha+'_'+hora;
+    console.log(fecha_hora);
+}
+
+function getTipoPago(){
+    if(document.getElementById("tipoPago").checked){
+        pago='personal';
+        console.log('personal');
+    }else{
+        pag='tarjeta';
+        getDatosTarjeta();
+        console.log('tarjeta');
     }    
 }
 
-function getTipoHoja(){
-    if(document.getElementById("TipoHoja").checked){
-        console.log('normal');
+function getDatosTarjeta(){
+    var nombre=document.getElementById('nombTarjeta').value;
+    var numero=document.getElementById('numTarjeta').value;
+    var mes=document.getElementById('mes').value;
+    var anio=document.getElementById('anio').value;
+    var cvv=document.getElementById('CVV').value;
+    console.log('nombre: '+nombre+'\nNumero: '+numero+'\nMes: '+mes+'\nAnio: '+anio+'\nCVV: '+cvv);
+}
+//Muestra la pre vista de todos lo parametros seleccionados.
+function setPreview(){
+    if(color===true){
+        document.getElementById("colorP").checked=true;
     }else{
-        console.log('reutilizado');
-    }    
+        document.getElementById("BNP").checked=true;
+    }
+    if(tamanio==='carta'){
+        document.getElementById("cartaP").checked=true;
+    }else if(tamanio==='oficio'){
+        document.getElementById("oficioP").checked=true;
+    }else{
+        document.getElementById("a4P").checked=true;
+    }
+    if(impresion==='intercalado'){
+        document.getElementById("intercaladoP").checked=true;
+    }else{
+        document.getElementById("anvP").checked=true;
+    }
+    if(paginas==='todo'){
+        document.getElementById("todoP").checked=true;
+    }else{
+        document.getElementById("personalizadoP").checked=true;
+        //TODO: Valores de rango
+    }
+    if(acabado==='normal'){
+        document.getElementById("normalP").checked=true;
+    }else{
+        document.getElementById("engrampadoP").checked=true;
+    }
+    if(tipo==='normal'){
+        document.getElementById("TnormalP").checked=true;
+    }else{
+        document.getElementById("TreutilizadoP").checked=true;
+    }
+    document.getElementById("cantP").value=cantidad;
+    var sp=fecha_hora.split("_");
+    var fecha=sp[1];
+    var hora=sp[2];
+    document.getElementById("fechaP").value=fecha;
+    document.getElementById("horaP").value=hora;
 }
 // Esta funcion ejecuta el observador de firebase
 function ValidarCli(){

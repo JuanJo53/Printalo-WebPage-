@@ -60,26 +60,27 @@ fileButton.addEventListener('change',function (e){
 function setNegocios(){
     var user = firebase.auth().currentUser;
     var bd = firebase.firestore();
+    var string="";
     bd.collection('Negocios').get()
     .then(function(querySnapshot){
         querySnapshot.forEach(function(doc){
-            console.log(doc.data().nombreNeg);
+            string+=`<div class="pb-3 text-center puesto" data-dismiss="modal" data-toggle="modal"
+                        data-target="#configurarPedido">
+                        <div id="`+doc.data().nombreNeg+`" onclick="getNeg(this)" class="card negocioIcon mx-auto">
+                            <div class="img-puesto">
+                                <!--img del negocio-->
+                                <img src="../../../img/pcs.jpg" alt="" class="card-img-top">
+                                <!--//img del negocio-->
+                            </div>
+                            <div class="card-footer">
+                                <!--nombre del negocio-->
+                                <h5  class="my-auto text-light">`+doc.data().nombreNeg+`</h5>
+                                <!--//nombre del negocio-->
+                            </div>
+                        </div>
+                    </div>`
             var negocios=document.getElementById('Negocios');
-            negocios.innerHTML=`<div class="pb-3 text-center puesto" data-dismiss="modal" data-toggle="modal"
-                                    data-target="#configurarPedido">
-                                    <div onclick="getNeg()" class="card negocioIcon mx-auto">
-                                        <div class="img-puesto">
-                                            <!--img del negocio-->
-                                            <img src="../../../img/pcs.jpg" alt="" class="card-img-top">
-                                        </div>
-                                        <!--//img del negocio-->
-                                        <div class="card-footer">
-                                        <!--nombre del negocio-->
-                                            <h5 id="nombNeg" class="my-auto text-light">`+doc.data().nombreNeg+`</h5>
-                                        <!--//nombre del negocio-->
-                                        </div>
-                                    </div>
-                                </div>`;
+            negocios.innerHTML=string;
         })
     })
     .catch(function(error){
@@ -131,7 +132,7 @@ function setData(type,name){
     nombArch.innerHTML=name;
 
     solic.className="text-center";
-    solic.innerHTML=`<button id="btnSol/`+(table.rows.length-1)+`" onclick="solicitar(this)" 
+    solic.innerHTML=`<button id="btnSol/`+(table.rows.length-1)+`" onclick="getDocNomb(this)" 
                         class="btn positive bg-printalo-greenDetail text-light" data-toggle="modal" data-target="#escogerLocal">
                         Solicitar
                     </button>`;
@@ -143,10 +144,9 @@ function setData(type,name){
 }
 var negocioID;
 //Al apretar alguno de los documentos para solicitar.
-function solicitar(_this){
+function getDocNomb(_this){
     var nomb=getRowSelected(_this);
     console.log(nomb);
-
 }
 //Obtiene el nombre de la fila seleccionada.
 function getRowSelected(objectPressed){
@@ -155,9 +155,51 @@ function getRowSelected(objectPressed){
     return nomb;
 }
 //Obtiene el Negocio elegido.
-function getNeg(){
-    var negocioID=document.getElementById('nombNeg').innerHTML;
+function getNeg(objectPressed){
+    negocioID=objectPressed.id;
     console.log(negocioID);
+}
+
+function getColor(){
+    if(document.getElementById("color").checked){
+        console.log('a color');
+    }else{
+        console.log('blanco y negro');
+    }    
+}
+
+function getTamaño(){
+    if(document.getElementById("carta").checked){
+        console.log('carta');
+    }else if(document.getElementById("oficio").checked){
+        console.log('oficio');
+    }else{
+        console.log('A4');
+    }    
+}
+
+function getImpresion(){
+    if(document.getElementById("impresion").checked){
+        console.log('intercalado');
+    }else{
+        console.log('anv');
+    }    
+}
+
+function getAcabado(){
+    if(document.getElementById("acabado").checked){
+        console.log('engrampado');
+    }else{
+        console.log('nomal');
+    }    
+}
+
+function getTipoHoja(){
+    if(document.getElementById("TipoHoja").checked){
+        console.log('normal');
+    }else{
+        console.log('reutilizado');
+    }    
 }
 // Esta funcion ejecuta el observador de firebase
 function ValidarCli(){

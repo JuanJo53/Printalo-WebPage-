@@ -98,7 +98,7 @@
             <!--//title page-->
             <div class="responsiveTbl">
                 <!--start table-->
-                <table id="table">
+                <table >
                     <!--column's titles-->
                     <thead>
                         <!--row-->
@@ -115,6 +115,10 @@
                         <!--//row-->
                     </thead>
                     <!--//column's titles-->
+                    <tbody>
+                        <tr id="table">
+                        </tr>
+                    </tbody>
                 </table>
                 <!--//start table-->
             </div>
@@ -260,28 +264,7 @@
                     <div class="container px-5">
                         <!--modal title-->
                         <h5 class="text-center p-3">Escoja un negocio</h5>
-                        <!--modal title-->
-                        <!--Btn Imagen de local-->
-                        <!--pcs button-->
-                        <!--modal target-->
-                        <div id="Negocios" class="pb-3 text-center puesto" data-dismiss="modal" data-toggle="modal"
-                            data-target="#configurarPedido">
-                            <!--//modal target-->
-                            <div onclick="getNeg()" class="card negocioIcon mx-auto">
-                                <div class="img-puesto">
-                                    <!--img del negocio-->
-                                    <img src="../../../img/pcs.jpg" alt="" class="card-img-top">
-                                </div>
-                                <!--//img del negocio-->
-                                <div class="card-footer">
-                                    <!--nombre del negocio-->
-                                    <h5 id="nombNeg" class="my-auto text-light">PCS</h5>
-                                    <!--//nombre del negocio-->
-                                </div>                                
-                            </div>       
-                        </div>                        
-                        <!--//pcs button-->
-                        <!--//Btn Imagen de local-->
+                        <div id="Negocios"></div> 
                     </div>
                 </div>
             </div>
@@ -434,7 +417,7 @@
                                     <!-- rbt carta-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Carta
-                                            <input type="radio" checked="checked" name="radioTamanio">
+                                            <input id="carta" type="radio" checked="checked" name="radioTamanio">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -444,7 +427,7 @@
                                     <!-- rbt oficio-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Oficio
-                                            <input type="radio" name="radioTamanio">
+                                            <input id="oficio" type="radio" name="radioTamanio">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -479,7 +462,7 @@
                                     <!-- rbt intercalado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Intercalado
-                                            <input type="radio" checked="checked" name="radioLados">
+                                            <input id="impresion" type="radio" checked="checked" name="radioLados">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -584,7 +567,7 @@
                                     <!-- rbt engrampado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Engrampado
-                                            <input type="radio" checked="checked" name="radioAcabado">
+                                            <input id="acabado" type="radio" checked="checked" name="radioAcabado">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -618,7 +601,7 @@
                                     <!-- rbt normal-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Normal
-                                            <input type="radio" checked="checked" name="radioTipHoja">
+                                            <input id="TipoHoja" type="radio" checked="checked" name="radioTipHoja">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -697,7 +680,7 @@
                             <div class="col">
                                 <div class="py-3">
                                     <!--Btn siguiente-->
-                                    <a class="btn btn-block positive bg-printalo-greenDetail text-light "
+                                    <a onclick="getTipoHoja()" class="btn btn-block positive bg-printalo-greenDetail text-light "
                                         data-dismiss="modal" data-toggle="modal"
                                         data-target="#configurarTiempo">Siguiente</a>
                                     <!--//Btn siguiente-->

@@ -51,9 +51,12 @@ label {
   padding-top: 7px;
 }
 .modal-content {
-  height: 100%;
+  /*height: 100%;*/
   border-radius: 0px !important;
   border: 0px !important;
+}
+.modal-content.login {
+  height: 100%!important;
 }
 /*sub links hover*/
 .modalbutton a u:hover {

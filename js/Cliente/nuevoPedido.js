@@ -91,7 +91,7 @@ function setNegocios(){
 function getDocData(){
     var user = firebase.auth().currentUser;
     var bd = firebase.firestore();
-    bd.collection('Pedido').where('clienteID','==',user.uid)
+    bd.collection('Pedido').where('clienteID','==',user.uid).orderBy('fecha')
     .get()
     .then(function(querySnapshot){
         querySnapshot.forEach(function(doc){
@@ -137,11 +137,16 @@ function setData(type,name){
                         Solicitar
                     </button>`;
     elim.className="text-center";
-    elim.innerHTML=`<button class="btn negative bg-printalo-blueDetail text-light" data-toggle="modal" data-target="#checkAlert">
+    elim.innerHTML=`<button onclick="delPedido()" class="btn negative bg-printalo-blueDetail text-light" data-toggle="modal" data-target="#checkAlert">
                         Eliminar
                     </button>`;
     
 }
+//TODO: Borrar el pedido seleccionado.
+function delPedido(){
+
+}
+
 var negocioID;
 var color;
 var tamanio;
@@ -183,14 +188,12 @@ function setDetPed(){
     }
     acabado=getAcabado();
     tipo= getTipoHoja();
-    cantidad=getCantCopias();
+    cantidad=parseInt(getCantCopias());
     fecha_hora=getFechaHora();
     pago=getTipoPago();
     if(pago==='tarjeta'){
         getDatosTarjeta();
     }
-
-    console.log(cantidad);
     setPreview();
 }
 //Obtiene el valor del color de impresion.
@@ -339,27 +342,115 @@ function setPreview(){
         document.getElementById("personalP").checked=true;
     }else{
         document.getElementById("tarjetaP").checked=true;
+        document.getElementById("nombTarjetaP").value=nombTarjeta;
+        document.getElementById("numTarjetaP").value=numTarjeta;
+        document.getElementById("mesP").value=mes;
+        document.getElementById("anioP").value=anio;
+        document.getElementById("cvvP").value=cvv;
     }
-
+    //TODO: Set el calculo del costo total.
+    calculoCosto();
 }
-
+//Calcula el costo total por el pedido dependiendo de sus parametros.
 function calculoCosto(){
-    var costoColor;
+    var costoTotal=0.0;
+    var costoColor=0.0;
+    var costoTam=0.0;
+    var costoTipo=0.0;
+    //Obtiene el costo por impresio (color/bn) del negocio que se eligio.
     if(color===true){
         var bd = firebase.firestore();
         bd.collection('Negocios').where('nombreNeg','==',negocioID)
         .get()
         .then(function(querySnapshot){
-            querySnapshot.forEach(function(doc){
-                costoColor=doc.data().costoBN;
-            })
+            querySnapshot.forEach(function(doc) {
+                costoColor=doc.data().costoBN;                
+                console.log(costoColor);
+            });
+        })
+        .catch(function(error){
+            console.log("Error obteniendo los documentos: ", error);
+        });
+    }else{var bd = firebase.firestore();
+        bd.collection('Negocios').where('nombreNeg','==',negocioID)
+        .get()
+        .then(function(querySnapshot){
+            querySnapshot.forEach(function(doc) {
+                costoColor=doc.data().costoColor;
+                console.log(costoColor);
+            });
+        })
+        .catch(function(error){
+            console.log("Error obteniendo los documentos: ", error);
+        });
+    }
+    //Obtiene el costo por tamaño de hoja del negocio que se eligio.
+    if(tamanio==='carta'){
+        bd.collection('Negocios').where('nombreNeg','==',negocioID)
+        .get()
+        .then(function(querySnapshot){
+            querySnapshot.forEach(function(doc) {
+                costoTam=doc.data().costoTamHoja.Carta;                
+                console.log(costoTam);
+            });
+        })
+        .catch(function(error){
+            console.log("Error obteniendo los documentos: ", error);
+        });
+    }else if(tamanio==='oficio'){
+        bd.collection('Negocios').where('nombreNeg','==',negocioID)
+        .get()
+        .then(function(querySnapshot){
+            querySnapshot.forEach(function(doc) {
+                costoTam=doc.data().costoTamHoja.Oficio;
+                console.log(costoTam);
+            });
         })
         .catch(function(error){
             console.log("Error obteniendo los documentos: ", error);
         });
     }else{
-        //COLOR
+        bd.collection('Negocios').where('nombreNeg','==',negocioID)
+        .get()
+        .then(function(querySnapshot){
+            querySnapshot.forEach(function(doc) {
+                costoTam=doc.data().costoTamHoja.A4;
+                console.log(costoTam);
+            });
+        })
+        .catch(function(error){
+            console.log("Error obteniendo los documentos: ", error);
+        });
+
+    } 
+    //Obtiene el costo por tipo de hoja del negocio que se eligio.
+    if(tipo==='normal'){
+        bd.collection('Negocios').where('nombreNeg','==',negocioID)
+        .get()
+        .then(function(querySnapshot){
+            querySnapshot.forEach(function(doc) {
+                costoTipo=doc.data().costoTipoHoja.normal;
+                console.log(costoTipo);
+            });
+        })
+        .catch(function(error){
+            console.log("Error obteniendo los documentos: ", error);
+        });
+    }else{
+        bd.collection('Negocios').where('nombreNeg','==',negocioID)
+        .get()
+        .then(function(querySnapshot){
+            querySnapshot.forEach(function(doc) {
+                costoTipo=doc.data().costoTipoHoja.reutilizable;                
+                console.log(costoTipo);
+            });
+        })
+        .catch(function(error){
+            console.log("Error obteniendo los documentos: ", error);
+        });
     }
+    costoTotal=(costoColor+costoTam+costoTipo)*cantidad;
+
 }
 // Esta funcion ejecuta el observador de firebase
 function ValidarCli(){

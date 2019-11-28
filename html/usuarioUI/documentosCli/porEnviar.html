@@ -647,7 +647,7 @@
                                                 <!--//decrement-->
                                                 <!--input number-->
                                                 <div class='ctrl__counter on'>
-                                                    <input id="cantidad" class='ctrl__counter-input on' maxlength='10' type='text'
+                                                    <input id="cantidad" class='ctrl__counter-input on' maxlength='10' type='number'
                                                         value='0'>
                                                     <div class='ctrl__counter-num on'>0</div>
                                                 </div>
@@ -1462,28 +1462,18 @@
                                 <!--//subrow-->
                                 <div class="py-2 text-center">
                                     <!-- btn mas menos-->
-                                    <div class="my-auto radiobuttons">Numero :
-                                        <div class="block-typenumber">
-                                            <div class='ctrl'>                                                
-                                                <!--decrement-->
-                                                <div class='ctrl__button ctrl__button--decrement disabledButton on'>
-                                                    &ndash;
-                                                </div>
-                                                <!--//decrement-->
+                                    <div class="my-auto radiobuttons">Numero:</div>  
+                                    <div class="block-typenumber">
+                                            <div class='ctrl'>          
                                                 <!--input number-->
-                                                <div class='ctrl__counter'>
-                                                    <input id="cantidadP" class='ctrl__counter-input' maxlength='10' type='text'
-                                                        disabled>
+                                                <div class='ctrl__counter'>                                                                                   
+                                                    <input id="cantidadP" class='form-control' maxlength='10' type='number'
+                                                    disabled>
                                                     <div class='ctrl__counter-num'></div>
                                                 </div>
                                                 <!--//input number-->
-                                                <!--increment-->
-                                                <div class='ctrl__button ctrl__button--increment disabledButton on'>+
-                                                </div>
-                                                <!--//increment-->
                                             </div>
-                                        </div>
-                                    </div>
+                                        </div>   
                                     <!-- //btn mas menos-->
                                 </div>
                                 <!-- //2 Radio buttons rango o unico-->
@@ -1606,7 +1596,7 @@
                                                 <label for="username"
                                                     class="color-printalo-blueDetail font-weight-bold">Nombre</label>
                                                 <!--Input de nombre-->
-                                                <input type="text" name="username" placeholder="Ingrese el nombre"
+                                                <input id="nombTarjetaP" type="text" name="username" placeholder="Ingrese el nombre"
                                                     required class="form-control" disabled>
                                                 <!--//Input de nombre-->
                                             </div>
@@ -1618,7 +1608,7 @@
                                                     de tarjeta</label>
                                                 <div class="input-group">
                                                     <!--Input de numero de cuenta-->
-                                                    <input type="number" name="" placeholder="Numero de tarjeta"
+                                                    <input id="numTarjetaP" type="number" name="" placeholder="Numero de tarjeta"
                                                         class="form-control" required disabled>
                                                     <!--//Input de numero de cuenta-->
                                                     <!--Grupo de Iconos-->
@@ -1643,11 +1633,11 @@
                                                             class="color-printalo-blueDetail font-weight-bold">Expiracion</label>
                                                         <div class="input-group">
                                                             <!--input mes-->
-                                                            <input type="number" placeholder="Mes" name=""
+                                                            <input id="mesP" type="number" placeholder="Mes" name=""
                                                                 class="form-control" disabled>
                                                             <!--//input mes-->
                                                             <!--input anio-->
-                                                            <input type="number" placeholder="Año" name=""
+                                                            <input id="anioP" type="number" placeholder="Año" name=""
                                                                 class="form-control" disabled>
                                                             <!--//input anio-->
                                                         </div>
@@ -1661,7 +1651,7 @@
                                                             <i class="fa fa-question-circle"></i>
                                                         </label>
                                                         <!--Input cvv-->
-                                                        <input type="text" required class="form-control"
+                                                        <input id="cvvP" type="text" required class="form-control"
                                                             placeholder="Cvv" disabled>
                                                         <!--//Input cvv-->
                                                     </div>

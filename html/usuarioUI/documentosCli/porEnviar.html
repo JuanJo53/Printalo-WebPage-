@@ -98,7 +98,7 @@
             <!--//title page-->
             <div class="responsiveTbl">
                 <!--start table-->
-                <table >
+                <table>
                     <!--column's titles-->
                     <thead>
                         <!--row-->
@@ -116,7 +116,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            
+
                         </tr>
                     </tbody>
                     <!--//column's titles-->
@@ -269,7 +269,7 @@
                     <div class="container px-5">
                         <!--modal title-->
                         <h5 class="text-center p-3">Escoja un negocio</h5>
-                        <div id="Negocios"></div> 
+                        <div id="Negocios"></div>
                     </div>
                 </div>
             </div>
@@ -647,8 +647,8 @@
                                                 <!--//decrement-->
                                                 <!--input number-->
                                                 <div class='ctrl__counter on'>
-                                                    <input id="cantidad" class='ctrl__counter-input on' maxlength='10' type='number'
-                                                        value='0'>
+                                                    <input id="cantidad" class='ctrl__counter-input on' maxlength='10'
+                                                        type='number' value='0'>
                                                     <div class='ctrl__counter-num on'>0</div>
                                                 </div>
                                                 <!--//input number-->
@@ -1009,8 +1009,8 @@
                                                 <label for="username"
                                                     class="color-printalo-blueDetail font-weight-bold">Nombre</label>
                                                 <!--Input de nombre-->
-                                                <input id="nombTarjeta" type="text" name="username" placeholder="Ingrese el nombre"
-                                                    required class="form-control">
+                                                <input id="nombTarjeta" type="text" name="username"
+                                                    placeholder="Ingrese el nombre" required class="form-control">
                                                 <!--//Input de nombre-->
                                             </div>
                                             <!--//Block Nombre-->
@@ -1021,8 +1021,8 @@
                                                     de tarjeta</label>
                                                 <div class="input-group">
                                                     <!--Input de numero de cuenta-->
-                                                    <input id="numTarjeta" type="number" name="" placeholder="Numero de tarjeta"
-                                                        class="form-control" required>
+                                                    <input id="numTarjeta" type="number" name=""
+                                                        placeholder="Numero de tarjeta" class="form-control" required>
                                                     <!--//Input de numero de cuenta-->
                                                     <!--Grupo de Iconos-->
                                                     <div class="input-group-append">
@@ -1101,7 +1101,8 @@
                             <div class="col">
                                 <div class="py-3">
                                     <!--Btn siguiente-->
-                                    <a  onclick="setDetPed()" class="btn btn-block positive bg-printalo-greenDetail text-light "
+                                    <a onclick="setDetPed()"
+                                        class="btn btn-block positive bg-printalo-greenDetail text-light "
                                         data-dismiss="modal" data-toggle="modal"
                                         data-target="#revisarPedido">Siguiente</a>
                                     <!--//Btn siguiente-->
@@ -1245,7 +1246,8 @@
                                     <!-- rbt carta-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Carta
-                                            <input id="cartaP" type="radio" checked="checked" name="radioTamanioR" disabled>
+                                            <input id="cartaP" type="radio" checked="checked" name="radioTamanioR"
+                                                disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -1289,7 +1291,8 @@
                                     <!-- rbt intercalado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Intercalado
-                                            <input id="intercaladoP" type="radio" checked="checked" name="radioLadosR" disabled>
+                                            <input id="intercaladoP" type="radio" checked="checked" name="radioLadosR"
+                                                disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -1320,31 +1323,30 @@
                                 </div>
                                 <!--//subrow-->
                                 <div class="py-1 ml-auto row">
-                                    <!-- rbt todo-->
-                                    <div class="col">
-                                        <label class="radiobuttons my-auto">Todo
-                                            <input id="todoP" type="radio" checked="checked" name="radioNumPagR" 
-                                                >
-                                            <!--for customed purposes-->
-                                            <span class="checkmark"></span>
-                                            <!--//for customed purposes-->
-                                        </label>
-                                    </div>
-                                    <!-- //rbt todo-->
-                                    <!-- rbt personalizado-->
-                                    <div class="col">
-                                        <label class="radiobuttons my-auto">Personalizado
-                                            <input id="personalizadoP" type="radio" name="radioNumPagR">
-                                            <!--for customed purposes-->
-                                            <span class="checkmark"></span>
-                                            <!--//for customed purposes-->
-                                        </label>
-                                    </div>
+                                        <!-- rbt todo-->
+                                        <div class="col">
+                                            <label class="radiobuttons my-auto">Todo
+                                                <input id="todoP" type="radio" checked="checked" name="radioNumPagR">
+                                                <!--for customed purposes-->
+                                                <span class="checkmark"></span>
+                                                <!--//for customed purposes-->
+                                            </label>
+                                        </div>
+                                        <!-- //rbt todo-->
+                                        <!-- rbt personalizado-->
+                                        <div class="col">
+                                            <label class="radiobuttons my-auto">Personalizado
+                                                <input id="personalizadoP" type="radio" name="radioNumPagR">
+                                                <!--for customed purposes-->
+                                                <span class="checkmark"></span>
+                                                <!--//for customed purposes-->
+                                            </label>
+                                        </div>
                                     <!-- //rbt personalizado-->
                                 </div>
                                 <!-- //2 Radio buttons rango o unico-->
                                 <!--rbt todo response-->
-                                <div id="todopdiv">
+                                <div id="todopdiv" style='display:none'>
                                     <h5></h5>
                                 </div>
                                 <!--//rbt personal response-->
@@ -1361,7 +1363,7 @@
                                             </div>
                                             <!--//row-->
                                             <!--input pag inicial-->
-                                            <input id="rangoInfP"  type="text" class="form-control my-2" disabled>
+                                            <input id="rangoInfP" type="text" class="form-control my-2" disabled>
                                             <!--//input pag inicial-->
                                         </div>
                                         <div class="col">
@@ -1395,7 +1397,8 @@
                                     <!-- rbt engrampado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Engrampado
-                                            <input id="engrampadoP" type="radio" checked="checked" name="radioAcabadoR" disabled>
+                                            <input id="engrampadoP" type="radio" checked="checked" name="radioAcabadoR"
+                                                disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -1429,7 +1432,8 @@
                                     <!-- rbt normal-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Normal
-                                            <input id="TnormalP" type="radio" checked="checked" name="radioTipHojaR" disabled>
+                                            <input id="TnormalP" type="radio" checked="checked" name="radioTipHojaR"
+                                                disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -1451,6 +1455,43 @@
                             </div>
                             <!--//Configuration block tipo de hoja-->
 
+
+                            <!--Configuration Block cantidad impresiones off!!!-->
+                            <div class="config-block py-2">
+                                <!--subtitle-->
+                                <p class="color-printalo-blueDetail font-weight-bold">Nro Copias</p>
+                                <!--//subtitle-->
+                                <!--subrow-->
+                                <div class="row-sub">
+                                </div>
+                                <!--//subrow-->
+                                <div class="py-2 text-center">
+                                    <!-- btn mas menos-->
+                                    <div class="my-auto radiobuttons">Numero :
+                                        <div class="block-typenumber">
+                                            <div class='ctrl'>
+                                                <!--decrement-->
+                                                <div class='ctrl__button ctrl__button--decrement disabledButton'>&ndash;
+                                                </div>
+                                                <!--//decrement-->
+                                                <!--input number-->
+                                                <div class='ctrl__counter on'>
+                                                    <input id="cantidadP" maxlength='10' type='number' value='5'>
+                                                    <div class='ctrl__counter-num on'>0</div>
+                                                </div>
+                                                <!--//input number-->
+                                                <!--increment-->
+                                                <div class='ctrl__button ctrl__button--increment disabledButton'>+</div>
+                                                <!--//increment-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- //btn mas menos-->
+                                </div>
+                                <!-- //2 Radio buttons rango o unico-->
+                            </div>
+                            <!--//Configuration block cantidad impresiones off-->
+
                             <!--Configuration Block cantidad impresiones-->
                             <div class="config-block py-2">
                                 <!--subtitle-->
@@ -1464,11 +1505,11 @@
                                     <!-- btn mas menos-->
                                     <div class="my-auto radiobuttons">Numero :
                                         <div class="block-typenumber">
-                                            <div class='ctrl'>                                                
+                                            <div class='ctrl'>
                                                 <!--input number-->
                                                 <div class='ctrl__counter'>
-                                                    <input id="cantidadP" class='ctrl__counter-input' maxlength='10' type='text'
-                                                    disabled></input>                                                    
+                                                    <input id="cantidadP" class='ctrl__counter-input' maxlength='10'
+                                                        type='text'></input>
                                                     <div class='ctrl__counter-num on'></div>
                                                 </div>
                                                 <!--//input number-->
@@ -1557,7 +1598,7 @@
                                 <div class="col ">
                                     <label class="radiobuttons my-auto">Personal
                                         <!--input-->
-                                        <input type="radio" checked="checked" name="radioPagoR" id="personalP" >
+                                        <input type="radio" checked="checked" name="radioPagoR" id="personalP">
                                         <!--//input-->
                                         <!--for customed purposes-->
                                         <span class="checkmark"></span>
@@ -1569,7 +1610,7 @@
                                 <div class="col ">
                                     <label class="radiobuttons my-auto">Tarjeta
                                         <!--input-->
-                                        <input type="radio" name="radioPagoR" id="tarjetaP" >
+                                        <input type="radio" name="radioPagoR" id="tarjetaP">
                                         <!--//input-->
                                         <!--for customed purposes-->
                                         <span class="checkmark"></span>
@@ -1579,7 +1620,7 @@
                                 <!-- //rbt tarjeta-->
                             </div>
                             <!--rbt personal response-->
-                            <div id="personalpdiv">
+                            <div id="personalpdiv" style='display:none'>
                                 <h5></h5>
                             </div>
                             <!--//rbt personal response-->
@@ -1831,7 +1872,7 @@
     <!--DESIGN JS-->
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
-    
+
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-storage.js"></script>
 
     <!-- Para uso de Analytics -->
@@ -1854,7 +1895,7 @@
     <!--Para realizar nuevo pedido-->
     <script type="text/javascript" src="../../../js/Cliente/nuevoPedido.js"></script>
 
-    
+
 </body>
 
 </html>

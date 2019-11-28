@@ -305,8 +305,12 @@ function setPreview(){
 
     if(paginas==='todo'){
         document.getElementById("todoP").checked=true;
+        document.getElementById("todopdiv").style.display = "block";
+        document.getElementById("personalizadopdiv").style.display = "none";
     }else{
         document.getElementById("personalizadoP").checked=true;
+        document.getElementById("personalizadopdiv").style.display = "block";
+        document.getElementById("todopdiv").style.display = "none";
         document.getElementById("rangoInfP").value=rangoInf;
         document.getElementById("rangoSupP").value=rangoSup;
     }
@@ -337,11 +341,13 @@ function setPreview(){
 
     if(pago==='personal'){
         document.getElementById("personalP").checked=true;
+        document.getElementById("personalpdiv").style.display = "block";
+        document.getElementById("tarjetapdiv").style.display = "none";
     }else{
         document.getElementById("tarjetaP").checked=true;
+        document.getElementById("tarjetapdiv").style.display = "block";
+        document.getElementById("personalpdiv").style.display = "none";
     }
-
-
 }
 
 function calculoCosto(){

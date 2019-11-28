@@ -38,8 +38,8 @@ $(document).ready(function () {
         }
     });
 });
-//radio button's choice tarjeta o personal
-$(document).ready(function () {
+//radio button's choice tarjeta o personal revisado!!!!!!!!!!!!
+/*$(document).ready(function () {
     $("#personalP").click(function () {
         $("#personalpdiv:hidden").show('slow');
         $("#tarjetapdiv").hide();
@@ -58,8 +58,7 @@ $(document).ready(function () {
             $("#tarjetapdiv").hide();
         }
     });
-});
-
+});*/
 //radio button's choice tarjeta o personal
 $(document).ready(function () {
     $("#rangos").click(function () {
@@ -128,25 +127,57 @@ $(document).ready(function () {
 
 //radio button's choice todo-personalizado revisar
 $(document).ready(function () {
-    $("#todoP").click(function () {
+    /*$("#todoP").change(function () {
         $("#todopdiv:hidden").show('slow');
         $("#personalizadopdiv").hide();
-    });
-    $("#todoP").click(function () {
-        if ($("#todoP").prop('checked') === false) {
+    });*/
+    /*$("#todoP").change(function () {
+        if ($("#todoP").prop('checked') === false && $("#personalizadoP").prop('checked') === true) {
             $("#todopdiv").hide();
         }
-    });
-    $("#personalizadoP").click(function () {
+    });*/
+    /*$("#personalizadoP").change(function () {
         $("#personalizadopdiv:hidden").show('slow');
         $("#todopdiv").hide();
-    });
-    $("#personalizadoP").click(function () {
-        if ($("#personalizadoP").prop('checked') === false) {
+    });*/
+    /*$("#personalizadoP").change(function () {
+        if ($("#personalizadoP").prop('checked') === false && $("#todoP").prop('checked') === true) {
             $("#personalizadopdiv").hide();
         }
-    });
+    });*/
+    /*$('#personalizadoP').change(function() {
+        $('#personalizadopdiv').toggle();
+    });*/
+        
+     /*   $('#form-id').change(function() {
+            if ($('#personalizadoP').attr('checked')) {
+                $('#personalizadopdiv').show();
+                alert("here");
+            } else {
+                $('#personalizadopdiv').hide();
+            }
+            if ($('#todoP').attr('checked')) {
+                $('#todopdiv').show();
+            } else {
+                $('#todopdiv').hide();
+            }
+        });*/
 });
+/*
+$('#personalizadoP').change(function(){
+                if($(this).prop("checked")===true) {
+                $("#todopdiv").hide();
+                $("#personalizadopdiv:hidden").show('slow');
+             }
+          });
+          $('#todoP').change(function(){
+            if($(this).prop("checked")===true) {
+            $("#personalizadopdiv").hide();
+            $("#todopdiv:hidden").show('slow');
+         }
+      });
+
+*/
 //radio button's choice todo-personalizado revisar
 
 //radio button's choice todo-personalizado en seccion enviados

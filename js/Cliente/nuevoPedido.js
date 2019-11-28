@@ -356,10 +356,11 @@ function setPreview(){
         document.getElementById("mesP").value=mes;
         document.getElementById("anioP").value=anio;
         document.getElementById("cvvP").value=cvv;
+        calculoCosto();
     }
     //TODO: Set el calculo del costo total.
-    calculoCosto();
-}
+    
+
 //Calcula el costo total por el pedido dependiendo de sus parametros.
 function calculoCosto(){
     var costoTotal=0.0;

@@ -43,7 +43,7 @@ li {
 .tarjeta-modal input[type="text"],
 input[type="password"],
 textarea {
-  background: #ffffff !important;
+  background: #ffffff ;
 }
 
 label {

@@ -154,8 +154,9 @@
                                         <td><a href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
                                                 data-target="#modalVerDetalles" data-toggle="modal">Detalles</a>
                                         </td>
-                                        <td><a href="" class="btn bg-printalo-blueDetail negative">Rechazar</a></td>
-                                    </tr>
+                                        <td><a href="" class="btn bg-printalo-blueDetail negative" data-dismiss="modal"
+                                            data-target="#eliminarPedido" data-toggle="modal">Rechazar</a></td>
+                                    </tr> 
                                 </tbody>
                                 <!--tbody-->
                             </table>
@@ -367,6 +368,51 @@
     </div>
     <!--//See details modal-->
 
+    <!--Modal alerts!-->
+    <!--Modal rechazar pedidos-->
+    <div class="modal fade text-dark" id="eliminarPedido">
+        <div class="modal-dialog mini modal-md">
+            <div class="modal-content">
+                <!--title modal header-->
+                <div class="modal-header bg-printalo-blueDetail  px-5">
+                    <h5 class="modal-title text-light">Eliminar pedido</h5>
+                </div>
+                <!--//title modal header-->
+                <!--modal body-->
+                <div class="container  px-5  my-4">
+                    <div class="row my-2">
+                        <!--Question-->
+                        <div class="col my-auto">
+                            <h5>Esta seguro de querer eliminar un pedido?</h5>
+                        </div>
+                        <!--//Question-->
+                        <div class="col-xs-4 ">
+                            <div class="square-icon text-center color-printalo-blueDetail">
+                                <div class="center">
+                                    <!--icono de pedido-->
+                                    <i class="fas fa-exclamation-circle fa-3x"></i>
+                                    <!--//icono de pedido-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//modal body-->
+                <!--modal footer-->
+                <div class="modal-footer  px-5">
+                    <div class="text-center">
+                        <!--btn eliminar-->
+                        <a class="btn negative bg-printalo-blueDetail text-light" data-dismiss="modal">Eliminar</a>
+                        <!--btn eliminar-->
+                    </div>
+                </div>
+                <!--//modal footer-->
+            </div>
+        </div>
+    </div>
+    <!--//Modal alert factura-->
+    <!--modals alerts!!!-->
+
     <!--boostrap jquery popper libraries-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -376,10 +422,10 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <!--//boostrap jquery popper libraries-->
-    <!--iconuserpefil script-->
+    <!--DESIGN JS-->
     <script src="../../../js/designjs/perfiliconuser.js"></script>
-    <!--//iconuserpefil script-->
-    
+    <script src="../../../js/designjs/toggle.js"></script>
+    <!--//DESIGN JS-->
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 
@@ -399,7 +445,8 @@
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
     <script type="text/javascript" src="../../../js/designjs/datatables.js"></script>
-    <!--//DESIGN JS-->
+    
+    
 </body>
 
 </html>

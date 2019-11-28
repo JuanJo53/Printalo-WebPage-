@@ -341,17 +341,17 @@ function setPreview(){
         document.getElementById("tarjetaP").checked=true;
     }
 
-
 }
 
 function calculoCosto(){
+    var costoColor;
     if(color===true){
         var bd = firebase.firestore();
         bd.collection('Negocios').where('nombreNeg','==',negocioID)
         .get()
         .then(function(querySnapshot){
             querySnapshot.forEach(function(doc){
-                console.log(doc.data().costoBN);
+                costoColor=doc.data().costoBN;
             })
         })
         .catch(function(error){

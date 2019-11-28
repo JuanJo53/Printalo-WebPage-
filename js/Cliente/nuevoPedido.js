@@ -137,15 +137,39 @@ function setData(type,name){
                         Solicitar
                     </button>`;
     elim.className="text-center";
-    elim.innerHTML=`<button onclick="delPedido()" class="btn negative bg-printalo-blueDetail text-light" data-toggle="modal" data-target="#checkAlert">
+    elim.innerHTML=`<button onclick="delPedido(this)" class="btn negative bg-printalo-blueDetail text-light" data-toggle="modal" data-target="#checkAlert">
                         Eliminar
                     </button>`;
     
 }
 //TODO: Borrar el pedido seleccionado.
-function delPedido(){
+function delPedido(_this){    
+    var bd=firebase.firestore();
+    var storage = firebase.storage();
+    var storageRef = storage.ref();
+    var nomb=getRowSelected(_this);
+    console.log(nomb);
+    var user=firebase.auth().currentUser;
 
-}
+    var query = bd.collection('Pedido').where('nombreDoc','==',nomb);
+    query.get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            doc.ref.delete();
+            console.log('Documento se borro correctamente');
+        });
+    }).catch(function(error){
+        console.log('Documento no se borro correctamente');
+    });
+
+    var docRef = storageRef.child('docsPedidos/'+user.uid+'/'+nomb);
+    docRef.delete().then(function() {
+        alert('El documento se borro exitosamente!');
+        location.reload();
+    }).catch(function(error) {
+        alert('Hubo un error en borrar el documento!');
+    });
+    
+}    
 
 var negocioID;
 var color;
@@ -195,6 +219,7 @@ function setDetPed(){
         getDatosTarjeta();
     }
     setPreview();
+    
 }
 //Obtiene el valor del color de impresion.
 function getColor(){
@@ -350,15 +375,17 @@ function setPreview(){
         document.getElementById("tarjetaP").checked=true;
         document.getElementById("tarjetapdiv").style.display = "block";
         document.getElementById("personalpdiv").style.display = "none";
-    }
+
         document.getElementById("nombTarjetaP").value=nombTarjeta;
         document.getElementById("numTarjetaP").value=numTarjeta;
         document.getElementById("mesP").value=mes;
         document.getElementById("anioP").value=anio;
         document.getElementById("cvvP").value=cvv;
-        calculoCosto();
     }
+    calculoCosto();
     //TODO: Set el calculo del costo total.
+}
+    
     
 
 //Calcula el costo total por el pedido dependiendo de sus parametros.
@@ -459,8 +486,23 @@ function calculoCosto(){
             console.log("Error obteniendo los documentos: ", error);
         });
     }
-    costoTotal=(costoColor+costoTam+costoTipo)*cantidad;
+    
+    if(document.getElementById("todo").checked){
+        costoTotal=((costoColor+costoTam+costoTipo)*(rangoSup-rangoInf))*cantidad;
+    }else{
+        costoTotal=(costoColor+costoTam+costoTipo)*cantidad;
+    }
+    console.log(costoTotal);
+}
 
+function getNumPagDoc(){
+    var input = document.getElementById('CAPITULO 9.pdf');
+    var reader = new FileReader();
+    reader.readAsBinaryString(input.files[0]);
+    reader.onloadend = function(){
+        var count = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
+        console.log('Number of Pages:',count );
+    }
 }
 // Esta funcion ejecuta el observador de firebase
 function ValidarCli(){

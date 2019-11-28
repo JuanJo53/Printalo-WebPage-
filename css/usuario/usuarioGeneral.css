@@ -412,3 +412,19 @@ increment-next {  from {
 .notification .title.denied{
   color:#364c68;
 }
+
+/*contador vista*/
+.input-group.contadorVista .input-group-text.left{
+  border-top-left-radius: 0.5rem!important;
+  border-bottom-left-radius: 0.5rem!important;
+}
+
+.input-group.contadorVista .input-group-text.right{
+  border-top-right-radius: 0.5rem!important;
+  border-bottom-right-radius: 0.5rem!important;
+  border-top-left-radius: 0rem!important;
+  border-bottom-left-radius: 0rem!important;
+}
+.input-group.contadorVista{
+  width: 70%;
+}

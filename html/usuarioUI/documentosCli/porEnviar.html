@@ -1326,7 +1326,8 @@
                                     <!-- rbt todo-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Todo
-                                            <input id="todoP" type="radio" checked="checked" name="radioNumPagR" disabled>
+                                            <input id="todoP" type="radio" checked="checked" name="radioNumPagR"
+                                                disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -1467,25 +1468,42 @@
                                 <!--//subrow-->
                                 <div class="py-2 text-center">
                                     <!-- btn mas menos-->
-                                    <div class="my-auto radiobuttons">Numero :
-                                    </div>
-                                    <div class="block-typenumber">
-                                        <div class='ctrl'>
-                                            <!--decrement-->
-                                            <div class='ctrl__button ctrl__button--decrement disabledButton'>&ndash;
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="center">
+                                                <div class="radiobuttons">Numero :
+                                                </div>
                                             </div>
-                                            <!--//decrement-->
-                                            <!--input number-->
-                                            <div class='ctrl__counter on'>
-                                                <input id="cantidadP" maxlength='10' type='number' value='5'>
-                                                <div class='ctrl__counter-num on'></div>
+                                        </div>
+                                        <div class="col-6">
+                                            <!--contador revisar-->
+                                            <div class="input-group contadorVista">
+                                                <!--menos-->
+                                                <div class="input-group-append">
+                                                    <!--Detalle - -->
+                                                    <span
+                                                        class="input-group-text left disabledButton text-light">-</span>
+                                                    <!--Detalle - -->
+                                                </div>
+                                                <!--//menos-->
+                                                <!--Input salida-->
+                                                <input id="cantidadP" type="text" class="form-control text-center"
+                                                    disabled>
+                                                <!--Input salida-->
+                                                <!--mas-->
+                                                <div class="input-group-append">
+                                                    <!--Detalle - -->
+                                                    <span
+                                                        class="input-group-text right disabledButton text-light">+</span>
+                                                    <!--Detalle - -->
+                                                </div>
+                                                <!--//mas-->
                                             </div>
-                                            <!--//input number-->
-                                            <!--increment-->
-                                            <div class='ctrl__button ctrl__button--increment disabledButton'>+</div>
-                                            <!--//increment-->
+                                            <!--//contador revisar-->
                                         </div>
                                     </div>
+
+
 
                                     <!-- //btn mas menos-->
                                 </div>

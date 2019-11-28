@@ -58,6 +58,9 @@ label {
 .modal-content.login {
   height: 100%!important;
 }
+.modal-content.modalDetails {
+  height: 100%!important;
+}
 /*sub links hover*/
 .modalbutton a u:hover {
   color: #24c4a6 !important;

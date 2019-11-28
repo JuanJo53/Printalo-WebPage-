@@ -7,9 +7,6 @@ class Negocio{
         this.telef = telef;
         this.nombreNeg = nombreNeg;
         this.direccion = direccion;
-
-        //Instancia para valores de firestore
-        this.bd = firebase.firestore();
     }
     // Esta funcion pasa el email y su password a la clase Auth para registrar un nuevo usuario en firebase
     RegistrarNeg(d,e,t,nn,a,n){

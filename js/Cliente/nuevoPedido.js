@@ -184,14 +184,12 @@ function setDetPed(){
     acabado=getAcabado();
     tipo= getTipoHoja();
     cantidad=getCantCopias();
-    console.log(color);
-    console.log(tamanio);
-    console.log(impresion);
-    console.log(paginas);
-    console.log(rangoInf);
-    console.log(rangoSup);
-    console.log(acabado);
-    console.log(tipo);
+    fecha_hora=getFechaHora();
+    pago=getTipoPago();
+    if(pago==='tarjeta'){
+        getDatosTarjeta();
+    }
+
     console.log(cantidad);
     setPreview();
 }
@@ -258,42 +256,39 @@ function getTipoHoja(){
 //Obtener la cantidad de copias.
 function getCantCopias(){
     var cant=document.getElementById('cantidad').value;
-    return parseInt(cant);
+    return cant;
 }
 //Obtiene la fecha y hora deseada para su entrega.
 function getFechaHora(){
     var fecha=document.getElementById('datepicker').value;
     var hora=document.getElementById('timepicker').value;
-    fecha_hora=fecha+'_'+hora;
-    console.log(fecha_hora);
+    return fecha+' '+hora;
 }
-
+//Obtiene el tipo de pago elegido.
 function getTipoPago(){
-    if(document.getElementById("tipoPago").checked){
-        pago='personal';
-        console.log('personal');
-    }else{
-        pag='tarjeta';
+    if(document.getElementById("personal").checked){
+        return 'personal';
+    }else{        
         getDatosTarjeta();
-        console.log('tarjeta');
+        return 'tarjeta';
     }    
 }
-
+//Obtiene los daos de la tarjeta en caso de ser elegida como metodo de pago.
 function getDatosTarjeta(){
-    var nombre=document.getElementById('nombTarjeta').value;
-    var numero=document.getElementById('numTarjeta').value;
-    var mes=document.getElementById('mes').value;
-    var anio=document.getElementById('anio').value;
-    var cvv=document.getElementById('CVV').value;
-    console.log('nombre: '+nombre+'\nNumero: '+numero+'\nMes: '+mes+'\nAnio: '+anio+'\nCVV: '+cvv);
+    nombTarjeta=document.getElementById('nombTarjeta').value;
+    numTarjeta=document.getElementById('numTarjeta').value;
+    mes=document.getElementById('mes').value;
+    anio=document.getElementById('anio').value;
+    cvv=document.getElementById('CVV').value;
 }
 //Muestra la pre vista de todos lo parametros seleccionados.
 function setPreview(){
-    if(color===true){
+    if(color===false){
         document.getElementById("colorP").checked=true;
     }else{
         document.getElementById("BNP").checked=true;
     }
+
     if(tamanio==='carta'){
         document.getElementById("cartaP").checked=true;
     }else if(tamanio==='oficio'){
@@ -301,33 +296,70 @@ function setPreview(){
     }else{
         document.getElementById("a4P").checked=true;
     }
+
     if(impresion==='intercalado'){
         document.getElementById("intercaladoP").checked=true;
     }else{
         document.getElementById("anvP").checked=true;
     }
+
     if(paginas==='todo'){
         document.getElementById("todoP").checked=true;
     }else{
         document.getElementById("personalizadoP").checked=true;
-        //TODO: Valores de rango
+        document.getElementById("rangoInfP").value=rangoInf;
+        document.getElementById("rangoSupP").value=rangoSup;
     }
+
     if(acabado==='normal'){
         document.getElementById("normalP").checked=true;
     }else{
         document.getElementById("engrampadoP").checked=true;
     }
+
     if(tipo==='normal'){
         document.getElementById("TnormalP").checked=true;
     }else{
         document.getElementById("TreutilizadoP").checked=true;
     }
-    document.getElementById("cantP").value=cantidad;
-    var sp=fecha_hora.split("_");
-    var fecha=sp[1];
-    var hora=sp[2];
+    
+    if(cantidad!=0){
+        document.getElementById("cantidadP").value=cantidad;
+    }else{
+        alert("La cantidad debe ser mayor a 0");
+    }    
+
+    var sp=fecha_hora.split(" ");
+    var fecha=sp[0];
+    var hora=sp[1];
     document.getElementById("fechaP").value=fecha;
     document.getElementById("horaP").value=hora;
+
+    if(pago==='personal'){
+        document.getElementById("personalP").checked=true;
+    }else{
+        document.getElementById("tarjetaP").checked=true;
+    }
+
+
+}
+
+function calculoCosto(){
+    if(color===true){
+        var bd = firebase.firestore();
+        bd.collection('Negocios').where('nombreNeg','==',negocioID)
+        .get()
+        .then(function(querySnapshot){
+            querySnapshot.forEach(function(doc){
+                console.log(doc.data().costoBN);
+            })
+        })
+        .catch(function(error){
+            console.log("Error obteniendo los documentos: ", error);
+        });
+    }else{
+        //COLOR
+    }
 }
 // Esta funcion ejecuta el observador de firebase
 function ValidarCli(){

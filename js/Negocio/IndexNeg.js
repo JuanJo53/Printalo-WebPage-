@@ -14,18 +14,8 @@ function Registrar(){
 function Ingresar(){
     var email = document.getElementById("txtEmailIng").value;
     var pass = document.getElementById("txtPasswordIng").value;
-<<<<<<< HEAD
-<<<<<<< HEAD:js/Negocios.js
-    var auth = new Auth();
-    auth.LoginEmailPass(email,pass);
-=======
-    const negocio = new Negocio();
-    negocio.IngresarNeg(email,pass);
->>>>>>> 99bd30ef7ec1d7550c6602461bde55f11982f0d2:js/Negocio/IndexNeg.js
-=======
     const negocio = new Negocio(email,pass,"","","","","");
     negocio.IngresarNeg();
->>>>>>> b0870a63748b1c2939c3a45d2841b003d3d62323
     ValidarNeg();
 }
 

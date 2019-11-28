@@ -38,7 +38,29 @@ $(document).ready(function () {
         }
     });
 });
+//radio button's choice tarjeta o personal
+$(document).ready(function () {
+    $("#personalP").click(function () {
+        $("#personalpdiv:hidden").show('slow');
+        $("#tarjetapdiv").hide();
+    });
+    $("#personalP").click(function () {
+        if ($("#personalP").prop('checked') === false) {
+            $("#personalpdiv").hide();
+        }
+    });
+    $("#tarjetaP").click(function () {
+        $("#tarjetapdiv:hidden").show('slow');
+        $("#personalpdiv").hide();
+    });
+    $("#tarjetaP").click(function () {
+        if ($("#tarjetaP").prop('checked') === false) {
+            $("#tarjetapdiv").hide();
+        }
+    });
+});
 
+//radio button's choice tarjeta o personal
 $(document).ready(function () {
     $("#rangos").click(function () {
         $("#rangodiv").show('slow');
@@ -103,6 +125,29 @@ $(document).ready(function () {
     });
 });
 //radio button's choice todo-personalizado
+
+//radio button's choice todo-personalizado revisar
+$(document).ready(function () {
+    $("#todoP").click(function () {
+        $("#todopdiv:hidden").show('slow');
+        $("#personalizadopdiv").hide();
+    });
+    $("#todoP").click(function () {
+        if ($("#todoP").prop('checked') === false) {
+            $("#todopdiv").hide();
+        }
+    });
+    $("#personalizadoP").click(function () {
+        $("#personalizadopdiv:hidden").show('slow');
+        $("#todopdiv").hide();
+    });
+    $("#personalizadoP").click(function () {
+        if ($("#personalizadoP").prop('checked') === false) {
+            $("#personalizadopdiv").hide();
+        }
+    });
+});
+//radio button's choice todo-personalizado revisar
 
 //radio button's choice todo-personalizado en seccion enviados
 $(document).ready(function () {

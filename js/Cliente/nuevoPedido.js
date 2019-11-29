@@ -179,13 +179,15 @@ var color;
 var tamanio;
 var impresion;
 var paginas;
+var numPag=0;
 var rangoInf, rangoSup;
 var acabado;
 var tipo;
 var cantidad;
 var fecha_hora;
 var pago;
-var nombTarjeta, numTarjeta, mes, anio, cvv;
+var nombTarjeta, numTarjeta, mes, anio, cvv;    
+var costoTotal=0.0;
 
 //Al apretar alguno de los documentos para solicitar.
 function getDocNomb(_this){
@@ -314,6 +316,8 @@ function getDatosTarjeta(){
 }
 //Muestra la pre vista de todos lo parametros seleccionados.
 function setPreview(){
+    var bd = firebase.firestore();
+    var user=firebase.auth().currentUser;
     if(color===false){
         document.getElementById("colorP").checked=true;
     }else{
@@ -386,15 +390,52 @@ function setPreview(){
         document.getElementById("cvvP").value=cvv;
     }
     getCosto();
-    //TODO: Set el calculo del costo total.
+    
 }   
+
+function sumitPedido(){
+    var bd=firebase.firestore();
+    var user=firebase.auth().currentUser;
+    var neg
+    var negQuery=bd.collection('Negocios').where('nombreNeg','==',negocioID);
+        negQuery.get()
+        .then(function(querySnapshot){
+            querySnapshot.forEach(function(doc){
+                neg=doc.id;
+                var query= bd.collection('Pedido').where('nombreDoc','==',nombreDoc).where('clienteID','==',user.uid);
+                query.get()
+                .then(function(querySnapshot){
+                querySnapshot.forEach(function(doc) {
+                bd.collection('Pedido').doc(doc.id).update({
+                    blancoYnegro: color,
+                    cantidad: cantidad,
+                    engrampado: acabado,
+                    estado: "solicitado",
+                    fechaEntrega: fecha_hora, 
+                    ladosImpre: impresion,
+                    metodoPago: pago,                    
+                    negocioID: neg,
+                    numPaginas: numPag,
+                    paginas: paginas,
+                    tamañoHoja: tamanio,
+                    tipoHoja: tipo
+                });              
+            });
+        })
+        .catch(function(error){
+            console.log("Error obteniendo los documentos: ", error);
+        });
+            })        
+        }).catch(function(error){
+            console.log(error);
+        });
+}
 
 //Calcula el costo total por el pedido dependiendo de sus parametros.
 function getCosto(){
     var costoColor=0.0;
     var costoTam=0.0;
     var costoTipo=0.0;
-    var numPag=0;
     //Obtiene el costo por impresio (color/bn) del negocio que se eligio.
     if(color===true){
         var bd = firebase.firestore();
@@ -519,10 +560,10 @@ function getCosto(){
     }
 }
 
-function calculoCosto(pag,ctam,ctip,cCol){    
-    var costoTotal=0.0;
-    costoTotal=((ctam+ctip+cCol)*pag)*cantidad;
+function calculoCosto(pag,ctam,ctip,cCol){
+    costoTotal=Math.round((((ctam+ctip+cCol)*pag)*cantidad)*100,-1)/100;
     console.log(costoTotal); 
+    document.getElementById('total').value=costoTotal+"Bs."
 }
 // Esta funcion ejecuta el observador de firebase
 function ValidarCli(){

@@ -101,7 +101,7 @@ function setNegocios(){
 function getDocData(){
     var user = firebase.auth().currentUser;
     var bd = firebase.firestore();
-    bd.collection('Pedido').where('clienteID','==',user.uid).orderBy('fecha')
+    bd.collection('Pedido').where('clienteID','==',user.uid).where('estado','==','porEnviar').orderBy('fecha')
     .get()
     .then(function(querySnapshot){
         querySnapshot.forEach(function(doc){
@@ -145,7 +145,7 @@ function setData(type,name){
                     </button>`;
     
 }
-//TODO: Borrar el pedido seleccionado.
+//Borra el pedido seleccionado.
 function delPedido(_this){    
     var bd=firebase.firestore();
     var storage = firebase.storage();
@@ -405,26 +405,26 @@ function sumitPedido(){
                 var query= bd.collection('Pedido').where('nombreDoc','==',nombreDoc).where('clienteID','==',user.uid);
                 query.get()
                 .then(function(querySnapshot){
-                querySnapshot.forEach(function(doc) {
-                bd.collection('Pedido').doc(doc.id).update({
-                    blancoYnegro: color,
-                    cantidad: cantidad,
-                    engrampado: acabado,
-                    estado: "solicitado",
-                    fechaEntrega: fecha_hora, 
-                    ladosImpre: impresion,
-                    metodoPago: pago,                    
-                    negocioID: neg,
-                    numPaginas: numPag,
-                    paginas: paginas,
-                    tamañoHoja: tamanio,
-                    tipoHoja: tipo
-                });              
-            });
-        })
-        .catch(function(error){
-            console.log("Error obteniendo los documentos: ", error);
-        });
+                    querySnapshot.forEach(function(doc) {
+                        bd.collection('Pedido').doc(doc.id).update({
+                            blancoYnegro: color,
+                            cantidad: cantidad,
+                            engrampado: acabado,
+                            estado: "solicitado",
+                            fechaEntrega: fecha_hora, 
+                            ladosImpre: impresion,
+                            metodoPago: pago,                    
+                            negocioID: neg,
+                            numPaginas: numPag,
+                            paginas: paginas,
+                            tamañoHoja: tamanio,
+                            tipoHoja: tipo
+                        });     
+                        location.reload();
+                    });
+                }).catch(function(error){
+                console.log("Error obteniendo los documentos: ", error);
+                });
             })        
         }).catch(function(error){
             console.log(error);
@@ -563,7 +563,7 @@ function getCosto(){
 function calculoCosto(pag,ctam,ctip,cCol){
     costoTotal=Math.round((((ctam+ctip+cCol)*pag)*cantidad)*100,-1)/100;
     console.log(costoTotal); 
-    document.getElementById('total').value=costoTotal+"Bs."
+    document.getElementById('total').value=costoTotal+"Bs.";
 }
 // Esta funcion ejecuta el observador de firebase
 function ValidarCli(){

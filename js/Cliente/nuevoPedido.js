@@ -10,7 +10,16 @@ fileButton.addEventListener('change',function (e){
     var user = firebase.auth().currentUser;
     var bd = firebase.firestore();
     //Get file
-    var file=e.target.files[0];
+    var file=e.target.files[0];    
+    //Obtiene la cantidad de paginas del documento que se esta por enviar.
+    var input = document.getElementById('my-file');
+    var reader = new FileReader();
+    var count=0;
+    reader.readAsBinaryString(input.files[0]);
+    reader.onloadend = function(){
+        count = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
+        console.log('Number of Pages:',count );
+    }
     //Agrega metadata al documento por subir
     var metadata={
         name: file.name,
@@ -20,6 +29,7 @@ fileButton.addEventListener('change',function (e){
     var storageRef = storage.ref();
     //Upload file
     var task=storageRef.child('docsPedidos/'+user.uid+'/'+file.name).put(file,metadata);
+    
     var perc;
     task.on('state_changed', 
         function progress(snapshot){
@@ -45,20 +55,20 @@ fileButton.addEventListener('change',function (e){
                     ladosImpre: "",
                     metodoPago: "",
                     negocioID: "",
-                    nombreDoc: file.name, 
+                    nombreDoc: file.name,
+                    numPaginas: count, 
                     paginas: true,
                     tamañoHoja: "",
                     tipoDoc: getFileExtension(file.name),
                     tipoHoja: ""
                 })
-            })
-            
+            })            
         })
+        
         setData(getFileExtension(file.name),file.name);
 });
 //Coloca la imagen y nombre de los negocios disponibles.
 function setNegocios(){
-    var user = firebase.auth().currentUser;
     var bd = firebase.firestore();
     var string="";
     bd.collection('Negocios').get()
@@ -104,15 +114,8 @@ function getDocData(){
 }
 
 function setData(type,name){
-    var bd=firebase.firestore();
-    var storage=firebase.storage();
-    var user=firebase.auth().currentUser;
-    var userid=user.uid;
-    var storageRef = storage.ref('docsPedidos/'+user.uid);
-
     var table=document.getElementsByTagName('table')[0];
     var newRow=table.insertRow(1);
-    //console.log(table.rows.length);
 
     var tipo=newRow.insertCell(0);
     var nombArch=newRow.insertCell(1);
@@ -156,22 +159,22 @@ function delPedido(_this){
         querySnapshot.forEach(function(doc) {
             doc.ref.delete();
             console.log('Documento se borro correctamente');
+            var docRef = storageRef.child('docsPedidos/'+user.uid+'/'+nomb);
+            docRef.delete().then(function() {
+                alert('El documento se borro exitosamente!');
+                location.reload();
+            }).catch(function(error) {
+                alert('Hubo un error en borrar el documento!');
+            });
         });
     }).catch(function(error){
         console.log('Documento no se borro correctamente');
-    });
-
-    var docRef = storageRef.child('docsPedidos/'+user.uid+'/'+nomb);
-    docRef.delete().then(function() {
-        alert('El documento se borro exitosamente!');
-        location.reload();
-    }).catch(function(error) {
-        alert('Hubo un error en borrar el documento!');
     });
     
 }    
 
 var negocioID;
+var nombreDoc;
 var color;
 var tamanio;
 var impresion;
@@ -186,8 +189,8 @@ var nombTarjeta, numTarjeta, mes, anio, cvv;
 
 //Al apretar alguno de los documentos para solicitar.
 function getDocNomb(_this){
-    var nomb=getRowSelected(_this);
-    console.log(nomb);
+    nombreDoc=getRowSelected(_this);
+    console.log(nombreDoc);
 }
 //Obtiene el nombre de la fila seleccionada.
 function getRowSelected(objectPressed){
@@ -382,18 +385,16 @@ function setPreview(){
         document.getElementById("anioP").value=anio;
         document.getElementById("cvvP").value=cvv;
     }
-    calculoCosto();
+    getCosto();
     //TODO: Set el calculo del costo total.
-}
-    
-    
+}   
 
 //Calcula el costo total por el pedido dependiendo de sus parametros.
-function calculoCosto(){
-    var costoTotal=0.0;
+function getCosto(){
     var costoColor=0.0;
     var costoTam=0.0;
     var costoTipo=0.0;
+    var numPag=0;
     //Obtiene el costo por impresio (color/bn) del negocio que se eligio.
     if(color===true){
         var bd = firebase.firestore();
@@ -488,21 +489,40 @@ function calculoCosto(){
     }
     
     if(document.getElementById("todo").checked){
-        costoTotal=((costoColor+costoTam+costoTipo)*(rangoSup-rangoInf))*cantidad;
-    }else{
-        costoTotal=(costoColor+costoTam+costoTipo)*cantidad;
+        bd.collection('Pedido').where('nombreDoc','==',nombreDoc)
+        .get()
+        .then(function(querySnapshot){
+            querySnapshot.forEach(function(doc) {
+                numPag=doc.data().numPaginas;                
+                calculoCosto(numPag,costoTam,costoTipo,costoColor);
+            });
+        })
+        .catch(function(error){
+            console.log("Error obteniendo los documentos: ", error);
+        });              
+    }else{           
+        numPag=rangoSup-rangoInf+1;
+        var user=firebase.auth().currentUser;
+        var query= bd.collection('Pedido').where('nombreDoc','==',nombreDoc).where('clienteID','==',user.uid);
+        query.get()
+        .then(function(querySnapshot){
+            querySnapshot.forEach(function(doc) {
+                bd.collection('Pedido').doc(doc.id).update({
+                    numPaginas: numPag
+                });              
+                calculoCosto(numPag,costoTam,costoTipo,costoColor);
+            });
+        })
+        .catch(function(error){
+            console.log("Error obteniendo los documentos: ", error);
+        });
     }
-    console.log(costoTotal);
 }
 
-function getNumPagDoc(){
-    var input = document.getElementById('CAPITULO 9.pdf');
-    var reader = new FileReader();
-    reader.readAsBinaryString(input.files[0]);
-    reader.onloadend = function(){
-        var count = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
-        console.log('Number of Pages:',count );
-    }
+function calculoCosto(pag,ctam,ctip,cCol){    
+    var costoTotal=0.0;
+    costoTotal=((ctam+ctip+cCol)*pag)*cantidad;
+    console.log(costoTotal); 
 }
 // Esta funcion ejecuta el observador de firebase
 function ValidarCli(){

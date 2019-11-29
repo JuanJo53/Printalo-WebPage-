@@ -233,7 +233,7 @@ button.icon-editar:disabled:hover {
 /*configuraciones de negocio general inputs*/
 /*btn row positive*/
 .btn.positive {
-  color: #fff !important;
+  color: #fff;
 }
 /*//btn row positive*/
 /*btn navbar*/

@@ -25,9 +25,9 @@ fileButton.addEventListener('change',function (e){
         name: file.name,
         contentType: getFileExtension(file.name)
     };
-    //Create a storage ref
+    //Crea la referencia a un storage especifico.
     var storageRef = storage.ref();
-    //Upload file
+
     var task=storageRef.child('docsPedidos/'+user.uid+'/'+file.name).put(file,metadata);
     
     var perc;
@@ -97,7 +97,7 @@ function setNegocios(){
         console.log("Error obteniendo los negocios: ", error);
     });    
 }
-
+//Obtiene de la base de datos el nombre del documento en el pedido registrado previamente.
 function getDocData(){
     var user = firebase.auth().currentUser;
     var bd = firebase.firestore();
@@ -105,6 +105,7 @@ function getDocData(){
     .get()
     .then(function(querySnapshot){
         querySnapshot.forEach(function(doc){
+            //Pasa el nombre a la funcion setData que lo adiciona a la tabla para la vista facil del usuario.
             setData(doc.data().tipoDoc,doc.data().nombreDoc);
         })
     })
@@ -112,7 +113,7 @@ function getDocData(){
         console.log("Error obteniendo los documentos: ", error);
     });
 }
-
+//ESta funcion es la que adiciona los datos necesarios para llenar la tabla de pedidos adicionados.
 function setData(type,name){
     var table=document.getElementsByTagName('table')[0];
     var newRow=table.insertRow(1);
@@ -392,7 +393,7 @@ function setPreview(){
     getCosto();
     
 }   
-
+//Esta es la funcion que cambia el estado del pedido y sube datos adicionales a la base de datos.
 function sumitPedido(){
     var bd=firebase.firestore();
     var user=firebase.auth().currentUser;
@@ -528,7 +529,7 @@ function getCosto(){
             console.log("Error obteniendo los documentos: ", error);
         });
     }
-    
+    //Verifica el tipo 
     if(document.getElementById("todo").checked){
         bd.collection('Pedido').where('nombreDoc','==',nombreDoc)
         .get()
@@ -559,7 +560,7 @@ function getCosto(){
         });
     }
 }
-
+//Calculo del costo total respecto de los parametros adicionales.
 function calculoCosto(pag,ctam,ctip,cCol){
     costoTotal=Math.round((((ctam+ctip+cCol)*pag)*cantidad)*100,-1)/100;
     console.log(costoTotal); 

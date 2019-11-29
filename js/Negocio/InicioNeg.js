@@ -11,7 +11,7 @@ function SetInicialNeg(){
         if (doc.exists){
             nombre=doc.data().nombreNeg;
             var inicial=nombre.charAt(0);
-            document.getElementById('avtInicialNeg').innerHTML = inicial;
+            document.getElementById('InicialNeg').innerHTML = inicial;
         }else{
             console.log("No such document!");
         }

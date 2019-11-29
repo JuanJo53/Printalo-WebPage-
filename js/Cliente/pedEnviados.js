@@ -37,7 +37,7 @@ function setData(type,name){
     nombArch.innerHTML=name;
 
     solic.className="text-center";
-    solic.innerHTML=`<button id="btnSol/`+(table.rows.length-1)+`" onclick="getDocNomb(this)" 
+    solic.innerHTML=`<button id="btnSol/`+(table.rows.length-1)+`" onclick="getDocDet(this)" 
                         class="btn positive bg-printalo-greenDetail text-light" data-toggle="modal" data-target="#escogerLocal">
                         Detalles
                     </button>`;
@@ -45,6 +45,10 @@ function setData(type,name){
     elim.innerHTML=`<button onclick="delPedido(this)" class="btn negative bg-printalo-blueDetail text-light" data-toggle="modal" data-target="#checkAlert">
                         Eliminar
                     </button>`;
+    
+}
+
+function getDocDet(){
     
 }
 //Borra el pedido seleccionado.

@@ -1,4 +1,5 @@
 <html>
+
 <body>
     <!--row-->
     <div class="row py-3">
@@ -53,7 +54,7 @@
                     <div class="modalbutton text-center pb-3">
                         <!--btn ingresar usuario normal-->
                         <button onclick="IngCli()" id="btbIngresarUser"
-                            class="btn bg-printalo-greenDetail positive text-light my-2">Ingresar</button>
+                            class="btn bg-printalo-greenDetail positive text-light my-2" autofocus>Ingresar</button>
                         <!--//-btn ingresar usuario normal-->
                         <br>
                         <!--sub link registrarse-->
@@ -72,6 +73,24 @@
     <!--//row-->
     <!--Script de la actual pagina-->
     <script type="text/javascript" src="../../../js/Cliente/IndexCli.js"></script>
+    <script>
+        //document.getElementById('btbIngresarUser').focus();
+        //$('#btbIngresarUser').focus();
+    </script>
+    <!-- <script>
+        window.addEventListener("keypress",checkKeyPress,false);
+        function checkKeyPress(key){
+            if(key.keyCode=="13"){
+                alert("tecla enter");
+                IngCli();
+            }
+        }
+    </script> -->
+    <!-- <script>
+        $(document).ready(function(){
+            $('#btbIngresarUser').focus();
+        })
+    </script> -->
 </body>
 
 </html>

@@ -22,7 +22,6 @@ class Negocio {
 		this.telef = telef;
 		this.nombreNeg = nombreNeg;
 		this.direccion = direccion;
-		this.precioBN = precioBN;
 	}
 	// Esta funcion pasa el email y su password a la clase Auth para registrar un nuevo usuario en firebase
 	RegistrarNeg(d, e, t, nn, a, n) {
@@ -115,6 +114,16 @@ class Negocio {
 			.catch(function(error) {
 				console.log("Error al obtener los datos:", error);
 			});
+	}
+	precios(precioBN, precioColor, precioOficio, precioA4, precioCarta, precioNorm, precioReu) {
+		this.precioBN = precioBN;
+		this.precioColor = precioColor;
+		this.precioOficio = precioOficio;
+		this.precioA4 = precioA4;
+		this.precioCarta = precioCarta;
+		this.precioNorm = precioNorm;
+		this.precioReu = precioReu;
+		console.log(this.precioBN);
 	}
 	//Esta funcion verifica si existen cambios en los campos, para luego almacenarlos
 	GuardarCambPrecios() {

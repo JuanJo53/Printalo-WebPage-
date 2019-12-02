@@ -45,7 +45,7 @@ function ValidarNeg() {
 	firebase.auth().onAuthStateChanged(function(user) {
 		if (user) {
 			// User is signed in.
-			var neg = new Negocio("", "", "", "", "", "", "", "", "", "", "", "", "", "");
+			var neg = new Negocio(" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ");
 			neg.setPreciosAct();
 			console.log("Logeado");
 		} else {

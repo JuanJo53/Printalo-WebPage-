@@ -1,92 +1,114 @@
 <html>
-
-<body>
-    <!--row-->
-    <div class="row py-3">
-        <!--left side-->
-        <div class="col-lg-6 nopadding">
-            <!--modal content left side-->
-            <div class="modal-content  left">
-                <div class="container">
-                    <!--close icon-->
-                    <a href="" class="close-icon text-center ml-auto m-3 d-none d-block d-sm-block d-md-block d-lg-none"
-                        data-dismiss="modal"></a>
-                    <!--//close icon-->
-                    <!--title-->
-                    <h2 class="text-center pt-5">Registrarse</h2>
-                    <!--//title-->
-                    <div class="px-5 py-4">
-                        <div class="form-group">
-                            <!--nombre box-->
-                            <label for="username">Nombre:</label>
-                            <input type="text" class="form-control" id="txtName">
-                            <!--//nombre box-->
-                            <!--apellido box-->
-                            <label for="username">Apellido:</label>
-                            <input type="text" class="form-control" id="txtLastName">
-                            <!--//apellido box-->
-                            <!--numero de telefono-->
-                            <label for="username">Numero de telefono:</label>
-                            <input type="text" class="form-control" id="txtNum">
-                            <!--//numero de telefono-->
-                            <!--email-->
-                            <label for="name">E-mail:</label>
-                            <input type="text" class="form-control" id="txtEmail">
-                            <!--//email-->
-                            <!--contrasenia-->
-                            <label for="password">Constraseña:</label>
-                            <input type="password" class="form-control" id="txtPass">
-                            <!--//contrasenia-->
-                        </div>
-                    </div>
-                    <div class="modalbutton text-center pb-3">
-                        <!--btn ingresar usuario normal-->
-                        <button onclick="RegCli()" id="btnRegistrarUser"
-                            class="btn btn-outline-light bg-printalo-greenDetail positive text-light my-2">Registrar</button>
-                        <!--//-->
-                        <br>
-                        <!--sublink-->
-                        <div class="my-2">
-                            <a href="" class="text-center"><u class="color-printalo-blueDetail">Ingresar</u></a>
-                        </div>
-                        <!--//sublink-->
-                    </div>
-                </div>
-            </div>
-            <!--//modal content left side-->
-        </div>
-        <!--//left side-->
-        <!--right side-->
-        <div class="col-lg-6 nopadding d-none d-lg-block ">
-            <!--modal content right side-->
-            <div class="modal-content login right bg-printalo-blueDetail">
-                <!--close icon-->
-                <a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
-                <!--//close icon-->
-                <!--container in the middle-->
-                <div class="container my-auto">
-                    <!--modal body-->
-                    <div class="modal-body">
-                        <div class="text-center">
-                            <!--logo image-->
-                            <img width="100" height="100" src="../../../img/printer.png" alt="" class="img-fluid ">
-                            <!--//logo image-->
-                        </div>
-                        <!--logo title-->
-                        <h3 class="text-center text-light">Printalo</h3>
-                        <!--//logo title-->
-                    </div>
-                    <!--//modal body-->
-                </div>
-                <!--//container in the middle-->
-            </div>
-            <!--//modal content right side-->
-        </div>
-        <!--//right side-->
-    </div>
-    <!--//row-->
-    <!--Script de la actual pagina-->
-    <script type="text/javascript" src="../../../js/Cliente/IndexCli.js"></script>
-</body>
-
+	<body>
+		<!--row-->
+		<div class="row py-3">
+			<!--left side-->
+			<div class="col-lg-6 nopadding">
+				<!--modal content left side-->
+				<div class="modal-content  left">
+					<div class="container">
+						<!--close icon-->
+						<a
+							href=""
+							class="close-icon text-center ml-auto m-3 d-none d-block d-sm-block d-md-block d-lg-none"
+							data-dismiss="modal"
+						></a>
+						<!--//close icon-->
+						<!--title-->
+						<h2 class="text-center pt-5">Registrarse</h2>
+						<!--//title-->
+						<div class="px-5 py-4">
+							<div class="form-group">
+								<!--nombre box-->
+								<label for="username">Nombre:</label>
+								<input type="text" class="form-control" id="txtName" />
+								<!--//nombre box-->
+								<!--apellido box-->
+								<label for="username">Apellido:</label>
+								<input type="text" class="form-control" id="txtLastName" />
+								<!--//apellido box-->
+								<!--numero de telefono-->
+								<label for="username">Numero de telefono:</label>
+								<input type="text" class="form-control" id="txtNum" />
+								<!--//numero de telefono-->
+								<!--email-->
+								<label for="name">E-mail:</label>
+								<input type="text" class="form-control" id="txtEmail" />
+								<!--//email-->
+								<!--contrasenia-->
+								<label for="password">Constraseña:</label>
+								<input type="password" class="form-control" id="txtPass" />
+								<!--//contrasenia-->
+							</div>
+						</div>
+						<div class="modalbutton text-center pb-3">
+							<!--btn ingresar usuario normal-->
+							<button
+								onclick="RegCli()"
+								id="btnRegistrarUser"
+								autofocus
+								class="btn btn-outline-light bg-printalo-greenDetail positive text-light my-2"
+							>
+								Registrar
+							</button>
+							<!--//-->
+							<br />
+							<!--sublink-->
+							<div class="my-2">
+								<a href="" class="text-center"
+									><u class="color-printalo-blueDetail">Ingresar</u></a
+								>
+							</div>
+							<!--//sublink-->
+						</div>
+					</div>
+				</div>
+				<!--//modal content left side-->
+			</div>
+			<!--//left side-->
+			<!--right side-->
+			<div class="col-lg-6 nopadding d-none d-lg-block ">
+				<!--modal content right side-->
+				<div class="modal-content login right bg-printalo-blueDetail">
+					<!--close icon-->
+					<a
+						href=""
+						class="close-icon text-center ml-auto m-3"
+						data-dismiss="modal"
+					></a>
+					<!--//close icon-->
+					<!--container in the middle-->
+					<div class="container my-auto">
+						<!--modal body-->
+						<div class="modal-body">
+							<div class="text-center">
+								<!--logo image-->
+								<img
+									width="100"
+									height="100"
+									src="../../../img/printer.png"
+									alt=""
+									class="img-fluid "
+								/>
+								<!--//logo image-->
+							</div>
+							<!--logo title-->
+							<h3 class="text-center text-light">Printalo</h3>
+							<!--//logo title-->
+						</div>
+						<!--//modal body-->
+					</div>
+					<!--//container in the middle-->
+				</div>
+				<!--//modal content right side-->
+			</div>
+			<!--//right side-->
+		</div>
+		<!--//row-->
+		<!--Script de la actual pagina-->
+		<script
+			type="text/javascript"
+			src="../../../js/Cliente/IndexCli.js"
+		></script>
+	</body>
 </html>

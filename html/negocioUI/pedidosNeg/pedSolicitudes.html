@@ -41,8 +41,7 @@
                 class="navbar-item  order-lg-last   order-xs-last  mx-1 icon-user">
                 <div class="d-inline circle bg-printalo-greenDetail">
                     <!--Initial letter-->
-                    <div class="center">
-                        J
+                    <div id="InicialNeg" class="center">                        
                     </div>
                     <!--Initial letter-->
                 </div>
@@ -143,7 +142,7 @@
                                 <!--//head-->
                                 <!--tbody-->
                                 <tbody>
-                                    <tr>
+                                    <tr id="table">
                                         <td>1</td>
                                         <td>Ariel</td>
                                         <td>3Bs</td>
@@ -347,7 +346,7 @@
                                         <a href="" class="btn bg-printalo-greenDetail text-light  positive">Aceptar</a>
                                         <!--//Btn aceptar pedido-->
                                         <!--Btn rechaza pedido-->
-                                        <a href="" class="btn bg-printalo-blueDetail text-light negative ">Rechazar</a>
+                                        <a onclick="rechazar()" href="" class="btn bg-printalo-blueDetail text-light negative ">Rechazar</a>
                                         <!--//Btn rechazar pedido-->
                                     </div>
                                     <!--//btn block-->
@@ -441,7 +440,10 @@
 
     <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
     <!--DESIGN JS-->
-    <script type="text/javascript" src="../../../js/Negocios.js"></script>
+    <script type="text/javascript" src="../../../js/Negocio/Negocios.js"></script>
+    <script type="text/javascript" src="../../../js/Negocio/InicioNeg.js"></script>
+    <script type="text/javascript" src="../../../js/Negocio/pedSolicitados.js"></script>
+
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
     <script type="text/javascript" src="../../../js/designjs/datatables.js"></script>

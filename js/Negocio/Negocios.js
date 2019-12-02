@@ -12,7 +12,7 @@ class Negocio {
 		precioOficio,
 		precioA4,
 		precioCarta,
-		precioNorm,
+        precioNorm,
 		precioReu
 	) {
 		this.email = email;
@@ -21,8 +21,15 @@ class Negocio {
 		this.apellido = apellido;
 		this.telef = telef;
 		this.nombreNeg = nombreNeg;
-		this.direccion = direccion;
-	}
+        this.direccion = direccion;
+        this._precioBN=precioBN;
+    }
+    get precioBN(){
+        return this._precioBN;
+    }
+    set precioBN(newPrecio){
+        this._precioBN=newPrecio;
+    }
 	// Esta funcion pasa el email y su password a la clase Auth para registrar un nuevo usuario en firebase
 	RegistrarNeg(d, e, t, nn, a, n) {
 		var auth = new Auth();
@@ -80,56 +87,49 @@ class Negocio {
 	CerrarSecion() {
 		var auth = new Auth();
 		auth.Logout();
-	}
-	//Setea los precios actuales de la base de datos
-	setPreciosAct() {
-		var precioBN, precioColor, precioOficio, precioA4, precioCarta, precioNorm, precioReu;
-		var user = firebase.auth().currentUser;
-		var bd = firebase.firestore();
-		var userid = user.uid;
-		var docRef = bd.collection("Negocios").doc(userid);
-		docRef
-			.get()
-			.then(function(doc) {
-				if (doc.exists) {
-					console.log("Datos de Admin:", doc.data());
-					precioBN = doc.data().costoBN;
-					precioColor = doc.data().costoColor;
-					precioOficio = doc.data().costoTamHoja.Oficio;
-					precioCarta = doc.data().costoTamHoja.Carta;
-					precioA4 = doc.data().costoTamHoja.A4;
-					precioNorm = doc.data().costoTipoHoja.normal;
-					precioReu = doc.data().costoTipoHoja.reutilizable;
-					document.getElementById("txtPrecioBN").value = precioBN;
-					document.getElementById("txtPrecioColor").value = precioColor;
-					document.getElementById("txtPrecioOficio").value = precioOficio;
-					document.getElementById("txtPrecioCarta").value = precioCarta;
-					document.getElementById("txtPrecioA4").value = precioA4;
-					document.getElementById("txtHojaNorm").value = precioNorm;
-					document.getElementById("txtHojaReu").value = precioReu;
-				} else {
-					console.log("No existe el documento!");
-				}
-			})
-			.catch(function(error) {
-				console.log("Error al obtener los datos:", error);
-			});
-	}
-	precios(precioBN, precioColor, precioOficio, precioA4, precioCarta, precioNorm, precioReu) {
-		this.precioBN = precioBN;
-		this.precioColor = precioColor;
-		this.precioOficio = precioOficio;
-		this.precioA4 = precioA4;
-		this.precioCarta = precioCarta;
-		this.precioNorm = precioNorm;
-		this.precioReu = precioReu;
-		console.log(this.precioBN);
-	}
+    }
+    //Setea los precios actuales de la base de datos
+    setPreciosAct() {
+        var precioBN, precioColor, precioOficio, precioA4, precioCarta, precioNorm, precioReu;   
+        var user = firebase.auth().currentUser;
+        var bd = firebase.firestore();
+        var userid = user.uid;
+        var docRef = bd.collection("Negocios").doc(userid);
+        docRef
+            .get()
+            .then(function(doc) {
+                if (doc.exists) {                   
+                    precioBN = doc.data().costoBN;
+                    precioColor = doc.data().costoColor;
+                    precioOficio = doc.data().costoTamHoja.Oficio;
+                    precioCarta = doc.data().costoTamHoja.Carta;
+                    precioA4 = doc.data().costoTamHoja.A4;
+                    precioNorm = doc.data().costoTipoHoja.normal;
+                    precioReu = doc.data().costoTipoHoja.reutilizable;
+                    document.getElementById("txtPrecioBN").value = precioBN;
+                    document.getElementById("txtPrecioColor").value = precioColor;
+                    document.getElementById("txtPrecioOficio").value = precioOficio;
+                    document.getElementById("txtPrecioCarta").value = precioCarta;
+                    document.getElementById("txtPrecioA4").value = precioA4;
+                    document.getElementById("txtHojaNorm").value = precioNorm;
+                    document.getElementById("txtHojaReu").value = precioReu;
+                } else {
+                    console.log("No existe el documento!");
+                }
+            })
+            .catch(function(error) {
+                console.log("Error al obtener los datos:", error);
+            });
+            
+    }
+    
 	//Esta funcion verifica si existen cambios en los campos, para luego almacenarlos
-	GuardarCambPrecios() {
-		//Verifica si estan habilitados los cambpos de impresion Blanco y Negro
+	GuardarCambPrecios(){
+        
+        var precioBN, precioColor, precioOficio, precioA4, precioCarta, precioNorm, precioReu;
+        //Verifica si estan habilitados los cambpos de impresion Blanco y Negro
 		if (document.getElementById("txtPrecioBN").disabled === false) {
-			if (this.precioBN != document.getElementById("txtPrecioBN").value) {
+			if (precioBN != document.getElementById("txtPrecioBN").value) {
 				this.cambiarBN();
 			} else {
 				alert("El campo de impresiones a blanco y nego no sufrio cambios");

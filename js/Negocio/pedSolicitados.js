@@ -81,7 +81,7 @@ function setData(nomb, prec, cant, pag, f, h) {
 	fecha.innerHTML = f;
 	hora.innerHTML = h;
 
-	detalles.innerHTML = `<button href="" class="btn bg-printalo-greenDetail positive" 
+	detalles.innerHTML = `<button onclick="getPedDet(this)" href="" class="btn bg-printalo-greenDetail positive" 
 							data-dismiss="modal" data-target="#modalVerDetalles" 
 							data-toggle="modal">Detalles
 						</button>`;
@@ -90,11 +90,16 @@ function setData(nomb, prec, cant, pag, f, h) {
 							data-toggle="modal">Rechazar
 						</button>`;
 }
-
+function getPedDet(_this){
+	var color,tam,imp,paginas,acabado,tipo,cant,usuario,fecha,hora,fechaE,horaE,pago,precio;
+	usuario=getRowSelected(_this,1);
+	precio=getRowSelected(_this,2);
+	console.log(usuario,precio);
+}
 //Obtiene el nombre de la fila seleccionada.
-function getRowSelected(objectPressed) {
+function getRowSelected(objectPressed,col) {
 	var a = objectPressed.parentNode.parentNode;
-	var nomb = a.getElementsByTagName("td")[1].innerHTML;
+	var nomb = a.getElementsByTagName("td")[col].innerHTML;
 	return nomb;
 }
 // Esta funcion ejecuta el observador de firebase

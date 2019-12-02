@@ -137,7 +137,7 @@ function setData(type,name){
                         Solicitar
                     </button>`;
     elim.className="text-center";
-    elim.innerHTML=`<button onclick="delPedido(this)" class="btn negative bg-printalo-blueDetail text-light" data-toggle="modal" data-target="#checkAlert">
+    elim.innerHTML=`<button onclick="delPedido(this)" class="btn negative bg-printalo-blueDetail text-light" data-toggle="modal" data-target="#eliminateAlert">
                         Eliminar
                     </button>`;
     

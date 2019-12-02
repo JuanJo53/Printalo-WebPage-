@@ -120,7 +120,6 @@ class Negocio {
             .catch(function(error) {
                 console.log("Error al obtener los datos:", error);
             });
-            
     }
     
 	//Esta funcion verifica si existen cambios en los campos, para luego almacenarlos
@@ -430,4 +429,30 @@ class Negocio {
 			alert("No hay cambios en los precios por tipo de hoja");
 		}
 	}
+	/*------------------------CONFIGURACIONES GENERALES---------------------------- */
+	//Setea los precios actuales de la base de datos
+    setDatosGeneralesAct() {
+        var nombreNegocio, dirNegocio;   
+        var user = firebase.auth().currentUser;
+        var bd = firebase.firestore();
+        var userid = user.uid;
+        var docRef = bd.collection("Negocios").doc(userid);
+        docRef
+            .get()
+            .then(function(doc) {
+                if (doc.exists) {                   
+                    nombreNegocio = doc.data().nombreNeg;
+                    dirNegocio = doc.data().dir;
+                    document.getElementById("nombreNegocio").value = nombreNegocio;
+                    document.getElementById("direccionNegocio").value = dirNegocio;
+                } else {
+                    console.log("No existe el documento!");
+                }
+            })
+            .catch(function(error) {
+                console.log("Error al obtener los datos:", error);
+            });
+    }
+
+	
 }

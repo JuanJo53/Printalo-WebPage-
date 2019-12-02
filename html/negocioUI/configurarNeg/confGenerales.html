@@ -34,8 +34,7 @@
                 class="navbar-item  order-lg-last   order-xs-last  mx-1 icon-user">
                 <div class="d-inline circle bg-printalo-greenDetail">
                     <!--Initial letter-->
-                    <div class="center">
-                        J
+                    <div id="InicialNeg" class="center">
                     </div>
                     <!--Initial letter-->
                 </div>
@@ -113,15 +112,24 @@
                                             <!--Nombre del negocio box-->
                                             <div class="input-group-prepend box">
                                                 <span class="input-group-text">Nombre</span>
-                                                <input type="text" class="form-control text-center" disabled>
+                                                <input type="text" class="form-control text-center" id="nombreNegocio"
+                                                    disabled>
                                             </div>
                                             <!--//Nombre del negocio box-->
                                             <!--Direccion box-->
                                             <div class="input-group-prepend box">
                                                 <span class="input-group-text">Direccion</span>
-                                                <input type="text" class="form-control text-center" disabled>
+                                                <input type="text" class="form-control text-center"
+                                                    id="direccionNegocio" disabled>
                                             </div>
                                             <!--//Direccion box-->
+                                            <!--Telefono box-->
+                                            <div class="input-group-prepend box">
+                                                <span class="input-group-text">Telefono</span>
+                                                <input type="text" class="form-control text-center"
+                                                    id="telefonoDireccion" disabled>
+                                            </div>
+                                            <!--//Telefono box-->
                                             <!--btns-->
                                             <div class="row pb-3 px-3">
                                                 <!--btn block-->
@@ -172,59 +180,62 @@
                                 </div>
                             </section>
                             <!--//Imagen del negocio-->
+                            
                             <!--Descripcion de servicios-->
-                            <section class="my-4 section-border">
-                                <div class="container p-3">
+                            <!-- <section class="my-4 section-border"> -->
+                                <!-- <div class="container p-3"> -->
                                     <!--title-->
-                                    <div class="text-center py-3">
+                                    <!-- <div class="text-center py-3">
                                         <h3>Descripcion de Servicios</h3>
-                                    </div>
+                                    </div> -->
                                     <!--//title-->
-                                    <div class="row my-3">
+                                    <!-- <div class="row my-3"> -->
                                         <!-- mas/menos Radio buttons-->
-                                        <div class="col">
+                                        <!-- <div class="col"> -->
                                             <!--Btn Mas-->
-                                            <div class="fab-icon-holder ml-auto">
+                                            <!-- <div class="fab-icon-holder ml-auto">
                                                 <a data-toggle="modal" data-target="#ingresarModal"><i
                                                         class="fas fa-plus "></i></a>
                                                 </i>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <!--//Btn Mas-->
-                                        <div class="col">
+                                        <!-- <div class="col"> -->
                                             <!--Btn Menos-->
-                                            <div class="fab-icon-holder mr-auto">
+                                            <!-- <div class="fab-icon-holder mr-auto">
                                                 <a data-toggle="modal" data-target="#ingresarModal"><i
                                                         class="fas fa-minus "></i></a>
                                                 </i>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <!--//Btn Menos-->
-                                    </div><!-- //mas/menos Radio buttons-->
+                                    <!-- </div> -->
+                                     <!-- //mas/menos Radio buttons-->
                                     <!--container-->
-                                    <div class="container configuraciones horario">
+                                    <!-- <div class="container configuraciones horario"> -->
                                         <!--block boxes-->
-                                        <div class="block-boxes px-3">
+                                        <!-- <div class="block-boxes px-3"> -->
                                             <!--input box-->
-                                            <input type="text" class="form-control text-center" disabled>
+                                            <!-- <input type="text" class="form-control text-center" disabled> -->
                                             <!--//input box-->
                                             <!--btns-->
-                                            <div class="row pb-3 px-3">
+                                            <!-- <div class="row pb-3 px-3"> -->
                                                 <!--btn block-->
-                                                <div class="ml-auto mt-3">
-                                                    <!--icono editar--><button class="btn icon-editar"><i
-                                                            class="fas fa-edit"></i></button>
+                                                <!-- <div class="ml-auto mt-3"> -->
+                                                    <!--icono editar-->
+                                                    <!-- <button class="btn icon-editar"><i
+                                                            class="fas fa-edit"></i></button> -->
                                                     <!--//icono editar-->
-                                                </div>
+                                                <!-- </div> -->
                                                 <!--//btn block-->
-                                            </div>
+                                            <!-- </div> -->
                                             <!--//btns-->
-                                        </div>
+                                        <!-- </div> -->
                                         <!--//block boxes-->
-                                    </div>
+                                    <!-- </div> -->
                                     <!--//container-->
-                                </div>
-                            </section>
+                                <!-- </div>
+                            </section> -->
                             <!--//Descripcion de servicios-->
                         </div>
                         <!--//primera columna-->
@@ -549,6 +560,30 @@
             $("#wrapper").toggleClass("toggled");
         });
     </script>
+
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+    <!-- Para uso de Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+
+    <!-- Para Authentication y Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+
+    <!-- Configuracion de Proyecto en Firebase -->
+    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
+
+    <!--Script de la clase Negocios-->
+    <script type="text/javascript" src="../../../js//Negocio/Negocios.js"></script>
+    <!-- Clase Auth para la autenticacion con firebase -->
+    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
+    <!--Script para la pagina actual-->
+    <script type="text/javascript" src="../../../js//Negocio/confGeneral.js"></script>
+    <!--Script para general-->
+    <script type="text/javascript" src="../../../js//Negocio/InicioNeg.js"></script>
 </body>
 
 </html>

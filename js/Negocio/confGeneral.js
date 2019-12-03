@@ -19,6 +19,7 @@ function enableDatosNegocio() {
 		document.getElementById("telefonoNegocio").disabled = false;
 		document.getElementById("emailNegocio").disabled = false;
 	}
+	habilitarBtnGuardarCambios();
 }
 /*
 //Esta funcion habilita el input para editar Impresiones a Color
@@ -67,4 +68,14 @@ function ValidarNeg() {
 			location.href = "/html/index/negocioIndex/indexNeg.html";
 		}
 	});
+}
+function GuardarCambiosNegocioGeneral() {
+	var btnGuardarCambios=document.getElementById("btnGuardarCambios").disabled;
+	if(btnGuardarCambios===false){
+		console.log("click");
+		document.getElementById("btnGuardarCambios").disabled=true;
+	}
+}
+function habilitarBtnGuardarCambios() {
+	document.getElementById("btnGuardarCambios").disabled=false;
 }

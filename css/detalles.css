@@ -188,17 +188,22 @@ button.icon-editar:disabled:hover {
   padding: none;
 }
 /*btn save changes in hole system*/
-.btnsavechanges.active:hover {
+button.btnsavechanges:hover {
   background-color: #30e2c2;
+  color: #fff;
 }
-.btnsavechanges.active {
+button.btnsavechanges {
   background-color: #24c4a6;
   font-weight: normal;
   cursor: pointer;
+  color: #fff;
 }
-.btnsavechanges.inactive {
+button.btnsavechanges:disabled {
   background-color: #ccc;
   font-weight: normal;
+  color: black;
+  cursor: default;
+  
 }
 /*//btn save changes in hole system*/
 

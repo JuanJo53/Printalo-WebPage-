@@ -47,6 +47,7 @@ function ValidarNeg() {
 			// User is signed in.
 			var neg=new Negocio("","","","","","","","precioBN");
 			neg.setDatosGeneralesAct();
+			neg.setDatosGeneralesAdministradorAct();
 			console.log("Logeado");
 		} else {
 			// User is not signed in.

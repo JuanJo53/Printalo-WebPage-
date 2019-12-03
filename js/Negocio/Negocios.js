@@ -432,7 +432,7 @@ class Negocio {
 	/*------------------------CONFIGURACIONES GENERALES---------------------------- */
 	//Setea los precios actuales de la base de datos
     setDatosGeneralesAct() {
-        var nombreNegocio, dirNegocio;   
+        var nombreNegocio, dirNegocio,fonoNegocio,emailNegocio,contraseniaNegocio;   
         var user = firebase.auth().currentUser;
         var bd = firebase.firestore();
         var userid = user.uid;
@@ -442,9 +442,14 @@ class Negocio {
             .then(function(doc) {
                 if (doc.exists) {                   
                     nombreNegocio = doc.data().nombreNeg;
-                    dirNegocio = doc.data().dir;
+					dirNegocio = doc.data().dir;
+					fonoNegocio = doc.data().fono;
+					emailNegocio = doc.data().email;
+					//contraseniaNegocio = doc.data().fono;
                     document.getElementById("nombreNegocio").value = nombreNegocio;
-                    document.getElementById("direccionNegocio").value = dirNegocio;
+					document.getElementById("direccionNegocio").value = dirNegocio;
+					document.getElementById("telefonoNegocio").value = fonoNegocio;
+					document.getElementById("emailNegocio").value = emailNegocio;
                 } else {
                     console.log("No existe el documento!");
                 }
@@ -452,7 +457,30 @@ class Negocio {
             .catch(function(error) {
                 console.log("Error al obtener los datos:", error);
             });
-    }
+	}
+	//configuracion de administrador
+	setDatosGeneralesAdministradorAct() {
+        var nombreAdm, apellidoAdm;   
+        var user = firebase.auth().currentUser;
+        var bd = firebase.firestore();
+        var userid = user.uid;
+        var docRef = bd.collection("Administrador").doc(userid);
+        docRef
+            .get()
+            .then(function(doc) {
+                if (doc.exists) {                   
+                    nombreAdm = doc.data().nombre;
+					apellidoAdm = doc.data().apellido;
+                    document.getElementById("nombreAdm").value = nombreAdm;
+					document.getElementById("apellidoAdm").value = apellidoAdm;
+                } else {
+                    console.log("No existe el documento!");
+                }
+            })
+            .catch(function(error) {
+                console.log("Error al obtener los datos:", error);
+            });
+	}
 
 	
 }

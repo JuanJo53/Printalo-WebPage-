@@ -1,14 +1,26 @@
 //Apenas cargue la pagina
 window.onload = ValidarNeg();
-/*
+
 //Esta funcion habilita el input para editar Impresiones a Blanco y Negro
-function enableBN() {
-	if (document.getElementById("txtPrecioBN").disabled === false) {
-		document.getElementById("txtPrecioBN").disabled = true;
+function enableDatosNegocio() {
+	//console.log("here");
+	var auxNombre=document.getElementById("nombreNegocio").disabled;
+	var auxDireccion=document.getElementById("direccionNegocio").disabled;
+	var auxTelefono=document.getElementById("telefonoNegocio").disabled;
+	var auxEmail=document.getElementById("emailNegocio").disabled;
+	if  (auxNombre=== false && auxDireccion===false) {
+		document.getElementById("nombreNegocio").disabled = true;
+		document.getElementById("direccionNegocio").disabled = true;
+		document.getElementById("telefonoNegocio").disabled = true;
+		document.getElementById("emailNegocio").disabled = true;
 	} else {
-		document.getElementById("txtPrecioBN").disabled = false;
+		document.getElementById("nombreNegocio").disabled = false;
+		document.getElementById("direccionNegocio").disabled = false;
+		document.getElementById("telefonoNegocio").disabled = false;
+		document.getElementById("emailNegocio").disabled = false;
 	}
 }
+/*
 //Esta funcion habilita el input para editar Impresiones a Color
 function enableColor() {
 	if (document.getElementById("txtPrecioColor").disabled === false) {

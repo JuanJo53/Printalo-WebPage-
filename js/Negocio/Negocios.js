@@ -458,29 +458,28 @@ class Negocio {
                 console.log("Error al obtener los datos:", error);
             });
 	}
-	//configuracion de administrador
+	//configuracion de datos del administrador
 	setDatosGeneralesAdministradorAct() {
         var nombreAdm, apellidoAdm;   
         var user = firebase.auth().currentUser;
         var bd = firebase.firestore();
         var userid = user.uid;
-        var docRef = bd.collection("Administrador").doc(userid);
-        docRef
-            .get()
-            .then(function(doc) {
-                if (doc.exists) {                   
-                    nombreAdm = doc.data().nombre;
-					apellidoAdm = doc.data().apellido;
-                    document.getElementById("nombreAdm").value = nombreAdm;
-					document.getElementById("apellidoAdm").value = apellidoAdm;
-                } else {
-                    console.log("No existe el documento!");
-                }
-            })
+        var docRef = bd.collection("Negocios").doc(userid).get().then(function(doc) {
+				// doc.data() is never undefined for query doc snapshots
+				var administradorId= doc.data().adminID;
+				var docref2=bd.collection("Administrador").doc(administradorId).get().then(
+					function(doc){						
+						nombreAdm = doc.data().nombre;
+						apellidoAdm = doc.data().apellido;
+						document.getElementById("nombreAdm").value = nombreAdm;
+						document.getElementById("apellidoAdm").value = apellidoAdm;
+					}
+				);
+			})
             .catch(function(error) {
                 console.log("Error al obtener los datos:", error);
             });
 	}
 
-	
+	//
 }

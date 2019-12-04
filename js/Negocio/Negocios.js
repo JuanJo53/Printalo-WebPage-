@@ -548,16 +548,16 @@ class Negocio {
           fonoNegocio = doc.data().fono;
           emailNegocio = doc.data().email;
           if (
-            telNeg !== fonoNegocio ||
-            dirNeg !== dirNegocio ||
-            nomNeg !== fonoNegocio ||
-            emailNeg !== emailNegocio
+            telNeg === fonoNegocio &&
+            dirNeg === dirNegocio &&
+            nomNeg === nombreNegocio &&
+            emailNeg === emailNegocio
           ) {
+            console.log("los datos son lso mismos");
+          } else {
             //console.log("son distintos");
             actualizarDatosGeneralesNegocio();
             console.log("Se guardo cambios");
-          } else {
-            console.log("son iguales");
           }
         } else {
           console.log("No existe el documento!");
@@ -573,8 +573,8 @@ class Negocio {
     //console.log("click");
     var apelAdm, nomAdm;
     var nombreAdm, apellidoAdm;
-    apelAdm = document.getElementById("nombreAdm").value;
-    nomAdm = document.getElementById("apellidoAdm").value;
+    apelAdm = document.getElementById("apellidoAdm").value;
+    nomAdm = document.getElementById("nombreAdm").value;
     var user = firebase.auth().currentUser;
     var bd = firebase.firestore();
     var userid = user.uid;
@@ -592,12 +592,13 @@ class Negocio {
           .then(function(doc) {
             nombreAdm = doc.data().nombre;
             apellidoAdm = doc.data().apellido;
-            if (nombreAdm !== nomAdm || apellidoAdm !== apelAdm) {
+            
+            if (nombreAdm === nomAdm && apellidoAdm === apelAdm) {
+              console.log("los datos son lso mismos");
+            } else {
               //console.log("son distintos");
               actualizarDatosAdministrador();
               console.log("Se guardo cambios");
-            } else {
-              console.log("son iguales");
             }
           });
       })

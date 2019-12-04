@@ -2,7 +2,7 @@
 window.onload = ValidarNeg();
 
 //Esta funcion habilita el input para editar Impresiones a Blanco y Negro
-function enableDatosNegocio() {
+function habilitarCamposDatosNegocio() {
 	//console.log("here");
 	var auxNombre=document.getElementById("nombreNegocio").disabled;
 	var auxDireccion=document.getElementById("direccionNegocio").disabled;
@@ -21,38 +21,21 @@ function enableDatosNegocio() {
 	}
 	habilitarBtnGuardarCambios();
 }
-/*
-//Esta funcion habilita el input para editar Impresiones a Color
-function enableColor() {
-	if (document.getElementById("txtPrecioColor").disabled === false) {
-		document.getElementById("txtPrecioColor").disabled = true;
+
+function habilitarCamposAdministrador() {
+	//console.log("here");
+	var auxNombre=document.getElementById("nombreAdm").disabled;
+	var auxApellido=document.getElementById("apellidoAdm").disabled;
+	if  (auxNombre=== false && auxApellido===false) {
+		document.getElementById("nombreAdm").disabled = true;
+		document.getElementById("apellidoAdm").disabled = true;
 	} else {
-		document.getElementById("txtPrecioColor").disabled = false;
+		document.getElementById("nombreAdm").disabled = false;
+		document.getElementById("apellidoAdm").disabled = false;
 	}
+	habilitarBtnGuardarCambios();
 }
-//Esta funcion habilita los inputs para editar Tamaños de Hoja
-function enableTamHoja() {
-	if (document.getElementById("txtPrecioOficio").disabled === false) {
-		document.getElementById("txtPrecioOficio").disabled = true;
-		document.getElementById("txtPrecioCarta").disabled = true;
-		document.getElementById("txtPrecioA4").disabled = true;
-	} else {
-		document.getElementById("txtPrecioOficio").disabled = false;
-		document.getElementById("txtPrecioCarta").disabled = false;
-		document.getElementById("txtPrecioA4").disabled = false;
-	}
-}
-//Esta funcion habilita los inputs para editar Tipos de Hoja
-function enableTipHoja() {
-	if (document.getElementById("txtHojaNorm").disabled === false) {
-		document.getElementById("txtHojaNorm").disabled = true;
-		document.getElementById("txtHojaReu").disabled = true;
-	} else {
-		document.getElementById("txtHojaNorm").disabled = false;
-		document.getElementById("txtHojaReu").disabled = false;
-	}
-}
-*/
+
 // Esta funcion ejecuta el observador de firebase
 function ValidarNeg() {
 	firebase.auth().onAuthStateChanged(function(user) {
@@ -74,8 +57,10 @@ function GuardarCambiosNegocioGeneral() {
 	if(btnGuardarCambios===false){
 		console.log("click");
 		new Negocio().GuardarCambiosNegocioGenerales();
+		new Negocio().GuardarCambiosAdministrador();
 		document.getElementById("btnGuardarCambios").disabled=true;
 		bloquearDatosGenerales();
+		bloquearDatosAdministrador();
 	}
 }
 function habilitarBtnGuardarCambios() {
@@ -87,4 +72,8 @@ function bloquearDatosGenerales(){
 	document.getElementById("direccionNegocio").disabled = true;
 	document.getElementById("telefonoNegocio").disabled = true;
 	document.getElementById("emailNegocio").disabled = true;
+}
+function bloquearDatosAdministrador(){
+	document.getElementById("nombreAdm").disabled = true;
+	document.getElementById("apellidoAdm").disabled = true;
 }

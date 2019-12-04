@@ -480,6 +480,7 @@ class Negocio {
           dirNegocio = doc.data().dir;
           fonoNegocio = doc.data().fono;
           emailNegocio = doc.data().email;
+          //console.log("muestra datos negocio");
           //contraseniaNegocio = doc.data().fono;
           document.getElementById("nombreNegocio").value = nombreNegocio;
           document.getElementById("direccionNegocio").value = dirNegocio;
@@ -521,46 +522,14 @@ class Negocio {
         console.log("Error al obtener los datos:", error);
       });
   }
-  //
-  cambiarDatosNegocio() {
-    console.log("entro a cambiar datos de negocio");
-    var nombreNegocio,
-      dirNegocio,
-      fonoNegocio,
-      emailNegocio,
-      contraseniaNegocio;
-    var bd = firebase.firestore();
-    var user = firebase.auth().currentUser;
-    var fonoNegocio = document.getElementById("telefonoNegocio").value;
-    if (fonoNegocio !== "") {
-      console.log("no esta vacio");
-      bd.collection("Negocios")
-        .doc(user.uid)
-        .update({
-          fono: fonoNegocio
-        })
-        .then(e => {
-          alert("Datos Guardados Exitosamente");
-        })
-        .catch(e => {
-          alert(`Error Guardando Datos: ${error}`);
-        });
-    } else {
-      alert("Valor invalido");
-    }
-  }
-
-  //Esta funcion guarda los cambio de los datos generales
+  //Esta funcion guarda los cambio de los datos generales del objeto
   GuardarCambiosNegocioGenerales() {
-    console.log("click");
-    var telNeg,
-      precioColor,
-      precioOficio,
-      precioA4,
-      precioCarta,
-      precioNorm,
-      precioReu;
+    //console.log("click");
+    var telNeg, dirNeg, nomNeg, emailNeg;
     telNeg = document.getElementById("telefonoNegocio").value;
+    dirNeg = document.getElementById("direccionNegocio").value;
+    nomNeg = document.getElementById("nombreNegocio").value;
+    emailNeg = document.getElementById("emailNegocio").value;
     var nombreNegocio,
       dirNegocio,
       fonoNegocio,
@@ -578,6 +547,18 @@ class Negocio {
           dirNegocio = doc.data().dir;
           fonoNegocio = doc.data().fono;
           emailNegocio = doc.data().email;
+          if (
+            telNeg !== fonoNegocio ||
+            dirNeg !== dirNegocio ||
+            nomNeg !== fonoNegocio ||
+            emailNeg !== emailNegocio
+          ) {
+            //console.log("son distintos");
+            actualizarDatosGeneralesNegocio();
+            console.log("Se guardo cambios");
+          } else {
+            console.log("son iguales");
+          }
         } else {
           console.log("No existe el documento!");
         }
@@ -585,12 +566,119 @@ class Negocio {
       .catch(function(error) {
         console.log("Error al obtener los datos:", error);
       });
-    if (telNeg !== fonoNegocio) {
-      console.log("son distintos");
-      this.cambiarDatosNegocio();
-      console.log("Se guardo cambios");
-    } else {
-      alert("El campo de numero de negocio no sufrio cambios");
-    }
+  }
+
+  //guarda datos generales de admnistrador
+  GuardarCambiosAdministrador() {
+    //console.log("click");
+    var apelAdm, nomAdm;
+    var nombreAdm, apellidoAdm;
+    apelAdm = document.getElementById("nombreAdm").value;
+    nomAdm = document.getElementById("apellidoAdm").value;
+    var user = firebase.auth().currentUser;
+    var bd = firebase.firestore();
+    var userid = user.uid;
+    var docRef = bd
+      .collection("Negocios")
+      .doc(userid)
+      .get()
+      .then(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+        var administradorId = doc.data().adminID;
+        var docref2 = bd
+          .collection("Administrador")
+          .doc(administradorId)
+          .get()
+          .then(function(doc) {
+            nombreAdm = doc.data().nombre;
+            apellidoAdm = doc.data().apellido;
+            if (nombreAdm !== nomAdm || apellidoAdm !== apelAdm) {
+              //console.log("son distintos");
+              actualizarDatosAdministrador();
+              console.log("Se guardo cambios");
+            } else {
+              console.log("son iguales");
+            }
+          });
+      })
+      .catch(function(error) {
+        console.log("Error al obtener los datos:", error);
+      });
+  }
+}
+//esta funcion actualiza los datos de datos generales
+function actualizarDatosGeneralesNegocio() {
+  //console.log("entro a cambiar datos de negocio");
+  var nombreNegocio, dirNegocio, fonoNegocio, emailNegocio, contraseniaNegocio;
+  var user = firebase.auth().currentUser;
+  var bd = firebase.firestore();
+  var userid = user.uid;
+  fonoNegocio = document.getElementById("telefonoNegocio").value;
+  nomNegocio = document.getElementById("nombreNegocio").value;
+  dirNegocio = document.getElementById("direccionNegocio").value;
+  emailNegocio = document.getElementById("emailNegocio").value;
+  if (
+    fonoNegocio !== "" &&
+    nomNegocio !== "" &&
+    dirNegocio !== "" &&
+    emailNegocio !== ""
+  ) {
+    //console.log("no estan vacios");
+    bd.collection("Negocios")
+      .doc(user.uid)
+      .update({
+        fono: fonoNegocio,
+        dir: dirNegocio,
+        nombreNeg: nomNegocio,
+        email: emailNegocio
+      })
+      .then(e => {
+        console.log("Datos Guardados Exitosamente datos generales");
+      })
+      .catch(e => {
+        alert(`Error Guardando Datos: ${error}`);
+      });
+  } else {
+    console.log("los campos estan vacios");
+  }
+}
+
+//esta funcion actualiza los datos de administrador
+function actualizarDatosAdministrador() {
+  //console.log("entro a cambiar datos de negocio");
+  var nomAdm, apelAdm;
+  var user = firebase.auth().currentUser;
+  var bd = firebase.firestore();
+  var userid = user.uid;
+  nomAdm = document.getElementById("nombreAdm").value;
+  apelAdm = document.getElementById("apellidoAdm").value;
+  if (nomAdm !== "" && apelAdm !== "") {
+    //console.log("no estan vacios");
+    var docRef = bd
+      .collection("Negocios")
+      .doc(userid)
+      .get()
+      .then(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+        var administradorId = doc.data().adminID;
+        var docref2 = bd
+          .collection("Administrador")
+          .doc(administradorId)
+          .update({
+            nombre: nomAdm,
+            apellido: apelAdm
+          })
+          .then(e => {
+            console.log("Datos Guardados Exitosamente de administrador");
+          })
+          .catch(e => {
+            alert(`Error Guardando Datos: ${error}`);
+          });
+      })
+      .catch(function(error) {
+        console.log("Error al obtener los datos:", error);
+      });
+  } else {
+    console.log("los campos estan vacios");
   }
 }

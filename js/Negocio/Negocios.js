@@ -523,11 +523,13 @@ class Negocio {
   }
   //
   cambiarDatosNegocio() {
+    console.log("entro a cambiar datos de negocio");
     var nombreNegocio,
       dirNegocio,
       fonoNegocio,
       emailNegocio,
       contraseniaNegocio;
+    var bd = firebase.firestore();
     var user = firebase.auth().currentUser;
     var fonoNegocio = document.getElementById("telefonoNegocio").value;
     if (fonoNegocio !== "") {
@@ -548,10 +550,10 @@ class Negocio {
     }
   }
 
-  //Esta funcion verifica si existen cambios en los campos en la seccion de datos de negocio general
-  GuardarCambiosNegocioGeneral() {
+  //Esta funcion guarda los cambio de los datos generales
+  GuardarCambiosNegocioGenerales() {
     console.log("click");
-    /*var telNeg,
+    var telNeg,
       precioColor,
       precioOficio,
       precioA4,
@@ -559,7 +561,6 @@ class Negocio {
       precioNorm,
       precioReu;
     telNeg = document.getElementById("telefonoNegocio").value;
-    //Verifica si estan habilitados los cambpos de impresion Blanco y Negro
     var nombreNegocio,
       dirNegocio,
       fonoNegocio,
@@ -577,21 +578,19 @@ class Negocio {
           dirNegocio = doc.data().dir;
           fonoNegocio = doc.data().fono;
           emailNegocio = doc.data().email;
-          if (document.getElementById("telefonoNegocio").disabled === false) {
-            if (telNeg != fonoNegocio) {
-              this.cambiarDatosNegocio();
-              console.log("Se guardo cambios");
-            } else {
-              alert("El campo de numero de negocio no sufrio cambios");
-            }
-          }
         } else {
           console.log("No existe el documento!");
         }
       })
       .catch(function(error) {
         console.log("Error al obtener los datos:", error);
-      });*/
+      });
+    if (telNeg !== fonoNegocio) {
+      console.log("son distintos");
+      this.cambiarDatosNegocio();
+      console.log("Se guardo cambios");
+    } else {
+      alert("El campo de numero de negocio no sufrio cambios");
+    }
   }
-  habilitarGuardarBtn() {}
 }

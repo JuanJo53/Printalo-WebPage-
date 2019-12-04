@@ -73,9 +73,18 @@ function GuardarCambiosNegocioGeneral() {
 	var btnGuardarCambios=document.getElementById("btnGuardarCambios").disabled;
 	if(btnGuardarCambios===false){
 		console.log("click");
+		new Negocio().GuardarCambiosNegocioGenerales();
 		document.getElementById("btnGuardarCambios").disabled=true;
+		bloquearDatosGenerales();
 	}
 }
 function habilitarBtnGuardarCambios() {
 	document.getElementById("btnGuardarCambios").disabled=false;
+	
+}
+function bloquearDatosGenerales(){
+	document.getElementById("nombreNegocio").disabled = true;
+	document.getElementById("direccionNegocio").disabled = true;
+	document.getElementById("telefonoNegocio").disabled = true;
+	document.getElementById("emailNegocio").disabled = true;
 }

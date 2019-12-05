@@ -290,7 +290,7 @@ function getFechaHora() {
 }
 /*Esta funcion convierte la fecha en un objeto date para luego poder subirla correctamente a 
 firebase como objeto timestamp*/
-function setTimestamp() {
+function getTimestamp() {
 	var fecha = document.getElementById("datepicker").value;
 	var hora = document.getElementById("timepicker").value;
 	var f = fecha.split("/");

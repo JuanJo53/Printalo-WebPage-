@@ -33,7 +33,7 @@ function GuardarCambiosPerfilUsuario() {
 	var btnGuardarCambios=document.getElementById("btnGuardarCambios").disabled;
 	if(btnGuardarCambios===false){
 		console.log("click");
-		//new Negocio().GuardarCambiosNegocioGenerales();
+		new Cliente().GuardarCambiosPerfilUsuario();
 		//new Negocio().GuardarCambiosAdministrador();
 		//document.getElementById("btnGuardarCambios").disabled=true;
         bloquearCamposPefilUsuario();
@@ -50,6 +50,7 @@ function ValidarCli(){
         }else{
             // User is not signed in.
             console.log("No Logeado");
+            location.href="/html/index/usuarioIndex/indexUser.html"
         }
     });
 }

@@ -63,8 +63,6 @@ class Cliente {
           apellidoUsuario = doc.data().Apellido;
           fonoUsuario = doc.data().telefono;
           emailUsuario = doc.data().email;
-          //console.log("muestra datos negocio");
-          //contraseniaNegocio = doc.data().fono;
           document.getElementById("nombreUsuario").value = nombreUsuario;
           document.getElementById("apellidoUsuario").value = apellidoUsuario;
           document.getElementById("telefonoUsuario").value = fonoUsuario;
@@ -76,5 +74,84 @@ class Cliente {
       .catch(function(error) {
         console.log("Error al obtener los datos:", error);
       });
+  }
+
+  //guarda datos generales de admnistrador
+  GuardarCambiosPerfilUsuario() {
+    //console.log("click");
+    var apelUsu, nomUsu, telUsu, corUsu;
+    var nombreUsuario, apellidoUsuario, telefonoUsuario, correoUsuario;
+    nomUsu = document.getElementById("nombreUsuario").value;
+    apelUsu = document.getElementById("apellidoUsuario").value;
+    telUsu = document.getElementById("telefonoUsuario").value;
+    corUsu = document.getElementById("emailUsuario").value;
+    var user = firebase.auth().currentUser;
+    var bd = firebase.firestore();
+    var userid = user.uid;
+    var docRef = bd.collection("Clientes").doc(userid);
+    docRef
+      .get()
+      .then(function(doc) {
+        if (doc.exists) {
+          nombreUsuario = doc.data().Nombre;
+          apellidoUsuario = doc.data().Apellido;
+          telefonoUsuario = doc.data().telefono;
+          correoUsuario = doc.data().email;
+          if (
+            nombreUsuario === nomUsu &&
+            apellidoUsuario === apelUsu &&
+            telefonoUsuario === telUsu &&
+            correoUsuario === corUsu
+          ) {
+            console.log("los datos son los mismos");
+          } else {
+            //console.log("son distintos");
+            actualizarDatosPerfilUsuario();
+            console.log("Se guardo cambios");
+          }
+        } else {
+          console.log("No existe el documento!");
+        }
+      })
+      .catch(function(error) {
+        console.log("Error al obtener los datos:", error);
+      });
+  }
+}
+//esta funcion actualiza los datos de datos generales
+function actualizarDatosPerfilUsuario() {
+  //console.log("entro a cambiar datos de negocio");
+  var nombreUsuario, apellidoUsuario, fonoUsuario, emailUsuario;
+  var user = firebase.auth().currentUser;
+  var bd = firebase.firestore();
+  var userid = user.uid;
+  nombreUsuario = document.getElementById("nombreUsuario").value;
+  apellidoUsuario = document.getElementById("apellidoUsuario").value;
+  fonoUsuario = document.getElementById("telefonoUsuario").value;
+  emailUsuario = document.getElementById("emailUsuario").value;
+  //verifica que no este vacios los campos
+  if (
+    nombreUsuario !== "" &&
+    apellidoUsuario !== "" &&
+    fonoUsuario !== "" &&
+    emailUsuario !== ""
+  ) {
+    //console.log("no estan vacios");
+    bd.collection("Clientes")
+      .doc(user.uid)
+      .update({
+        Nombre: nombreUsuario,
+        Apellido: apellidoUsuario,
+        email: fonoUsuario,
+        telefono: emailUsuario
+      })
+      .then(e => {
+        console.log("Datos Guardados Exitosamente datos generales");
+      })
+      .catch(e => {
+        alert(`Error Guardando Datos: ${error}`);
+      });
+  } else {
+    console.log("los campos estan vacios");
   }
 }

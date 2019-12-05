@@ -619,6 +619,7 @@ function actualizarDatosGeneralesNegocio() {
   dirNegocio = document.getElementById("direccionNegocio").value;
   emailNegocio = document.getElementById("emailNegocio").value;
   if (
+    //verifica que no esten vacios los campos
     fonoNegocio !== "" &&
     nomNegocio !== "" &&
     dirNegocio !== "" &&

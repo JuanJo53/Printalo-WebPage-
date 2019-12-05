@@ -660,7 +660,6 @@ function actualizarDatosAdministrador() {
       .doc(userid)
       .get()
       .then(function(doc) {
-        // doc.data() is never undefined for query doc snapshots
         var administradorId = doc.data().adminID;
         var docref2 = bd
           .collection("Administrador")

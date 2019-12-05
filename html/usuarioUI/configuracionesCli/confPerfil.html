@@ -111,7 +111,7 @@
                         </div>
                         <!--//subrow-->
                         <!--input-->
-                        <input type="text" class="form-control my-1" disabled>
+                        <input type="text" class="form-control my-1" id="nombreUsuario" disabled>
                         <!--//input-->
                     </div>
                     <!--//campo nombre-->
@@ -125,7 +125,7 @@
                         </div>
                         <!--//subrow-->
                         <!--input-->
-                        <input type="text" class="form-control my-1" disabled>
+                        <input type="text" class="form-control my-1" id="apellidoUsuario" disabled>
                         <!--//input-->
                     </div>
                     <!--//campo apellido-->
@@ -139,7 +139,7 @@
                         </div>
                         <!--//subrow-->
                         <!--input-->
-                        <input type="text" class="form-control my-1" disabled>
+                        <input type="text" class="form-control my-1" id="telefonoUsuario" disabled>
                         <!--//input-->
                     </div>
                     <!--//campo numero-->
@@ -153,27 +153,28 @@
                         </div>
                         <!--//subrow-->
                         <!--input-->
-                        <input type="text" class="form-control my-1" disabled>
+                        <input type="text" class="form-control my-1" id="emailUsuario" disabled>
                         <!--//input-->
                     </div>
                     <!--//campo correo-->
                     <!--campo contrasenia-->
-                    <div class="field my-1">
-                        <!--subtitle-->
-                        <p class="color-printalo-blueDetail font-weight-bold">Contraseña</p>
-                        <!--//subtitle-->
-                        <!--subrow-->
-                        <div class="row-sub">
-                        </div>
-                        <!--//subrow-->
-                        <!--input-->
-                        <input type="text" class="form-control my-1" disabled>
-                        <!--//input-->
-                    </div>
+                    <!-- <div class="field my-1"> -->
+                    <!--subtitle-->
+                    <!-- <p class="color-printalo-blueDetail font-weight-bold">Contraseña</p> -->
+                    <!--//subtitle-->
+                    <!--subrow-->
+                    <!-- <div class="row-sub"> -->
+                    <!-- </div> -->
+                    <!--//subrow-->
+                    <!--input-->
+                    <!-- <input type="text" class="form-control my-1" disabled> -->
+                    <!--//input-->
+                    <!-- </div> -->
                     <!--//campo contrasenia-->
                     <!--btn editar-->
                     <div class="row text-light px-3 mt-3">
-                        <button class="btn icon-editar ml-auto"><i class="fas fa-edit"></i></button>
+                        <button onclick="habilitarCamposPerfilUsuario()" class="btn icon-editar ml-auto"><i
+                                class="fas fa-edit"></i></button>
                     </div>
                     <!--//btn editar-->
                 </section>
@@ -183,8 +184,10 @@
         </div>
         <!--Boton guardar cambios-->
         <div class="row text-light p-4">
-            <a class="btn positive bg-printalo-greenDetail ml-auto btnsavechanges active">Guardar Cambios</a>
+            <button id="btnGuardarCambios" onclick="GuardarCambiosPerfilUsuario()" class="btn btnsavechanges ml-auto"
+                disabled>Guardar Cambios</button>
         </div>
+        <!--//Boton guardar cambios-->
     </div>
     <!--//Contenido de la pagina-->
 
@@ -304,11 +307,12 @@
     <script type="text/javascript" src="../../../js/Cliente/Clientes.js"></script>
     <!-- Clase Auth para la autenticacion con firebase -->
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
+    <!--icon configuraciones-->
+    <script type="text/javascript" src="../../../js/Cliente/confUsuario.js"></script>
+    <!--//icon configuraciones-->
     <!--icon perfil user JS-->
-    <script type="text/javascript" src="../../../js/Cliente/porEnviar.js"></script>
+    <script type="text/javascript" src="../../../js/Cliente/InicioCli.js"></script>
     <!--//icon perfil user JS-->
-    <!--Para realizar nuevo pedido-->
-    <script type="text/javascript" src="../../../js/Cliente/nuevoPedido.js"></script>
 </body>
 
 </html>

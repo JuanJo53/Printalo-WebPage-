@@ -524,7 +524,7 @@ class Negocio {
   }
   // set datos de horario
   setHorarioNegocio() {
-    var lunEnt,lunSal;
+    var lunEnt, lunSal;
     var user = firebase.auth().currentUser;
     var bd = firebase.firestore();
     var userid = user.uid;
@@ -576,7 +576,7 @@ class Negocio {
             nomNeg === nombreNegocio &&
             emailNeg === emailNegocio
           ) {
-            console.log("los datos son lso mismos");
+            console.log("los datos son los mismos en datos generales");
           } else {
             //console.log("son distintos");
             actualizarDatosGeneralesNegocio();
@@ -615,15 +615,53 @@ class Negocio {
           .then(function(doc) {
             nombreAdm = doc.data().nombre;
             apellidoAdm = doc.data().apellido;
-            
+
             if (nombreAdm === nomAdm && apellidoAdm === apelAdm) {
-              console.log("los datos son lso mismos");
+              console.log("los datos son lso mismos en admin");
             } else {
               //console.log("son distintos");
               actualizarDatosAdministrador();
               console.log("Se guardo cambios");
             }
           });
+      })
+      .catch(function(error) {
+        console.log("Error al obtener los datos:", error);
+      });
+  }
+
+  //guarda datos horarios
+  GuardarCambiosHorario() {
+    //console.log("click");
+    var lunEntNew, lunSalNew;
+    var lunEntDb, lunSalDb;
+    lunEntNew = document.getElementById("lunesEntrada").value;
+    lunSalNew = document.getElementById("lunesSalida").value;
+    var user = firebase.auth().currentUser;
+    var bd = firebase.firestore();
+    var userid = user.uid;
+    var docRef = bd.collection("Negocios").doc(userid);
+    docRef
+      .get()
+      .then(function(doc) {
+        if (doc.exists) {
+          lunEntDb = doc.data().horario.lunes.horaEntrada;
+          lunSalDb = doc.data().horario.lunes.horaSalida;
+          console.log(lunEntNew);
+          console.log(lunEntDb);
+          if (
+            lunEntDb === lunEntNew &&
+            lunSalDb === lunSalNew
+          ) {
+            console.log("los datos son los mismos en horarios");
+          } else {
+            //console.log("son distintos");
+            actualizarDatosHorario();
+            console.log("Se guardo cambios");
+          }
+        } else {
+          console.log("No existe el documento!");
+        }
       })
       .catch(function(error) {
         console.log("Error al obtener los datos:", error);
@@ -657,6 +695,7 @@ function actualizarDatosGeneralesNegocio() {
         nombreNeg: nomNegocio,
         email: emailNegocio
       })
+
       .then(e => {
         console.log("Datos Guardados Exitosamente datos generales");
       })
@@ -701,6 +740,37 @@ function actualizarDatosAdministrador() {
       })
       .catch(function(error) {
         console.log("Error al obtener los datos:", error);
+      });
+  } else {
+    console.log("los campos estan vacios");
+  }
+}
+//esta funcion actualiza los datos del horario
+function actualizarDatosHorario() {
+  //console.log("entro a cambiar datos de negocio");
+  var lunEnt, lunSal;
+  var user = firebase.auth().currentUser;
+  var bd = firebase.firestore();
+  var userid = user.uid;
+  lunEnt = document.getElementById("lunesEntrada").value;
+  lunSal = document.getElementById("lunesSalida").value;
+  //verifica que no esten vacios
+  if (lunEnt !== "" && lunSal !== "") {
+    //console.log("no estan vacios");
+    var docRef = bd
+      .collection("Negocios")
+      .doc(user.uid)
+      .update({
+        luens: {
+          horaEntrada: lunEnt,
+          horaSalida: lunSal
+        }
+      })
+      .then(e => {
+        console.log("Datos Guardados Exitosamente datos generales");
+      })
+      .catch(e => {
+        alert(`Error Guardando Datos: ${error}`);
       });
   } else {
     console.log("los campos estan vacios");

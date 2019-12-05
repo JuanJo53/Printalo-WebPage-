@@ -67,6 +67,7 @@ function GuardarCambiosNegocioGeneral() {
 		//console.log("click");
 		new Negocio().GuardarCambiosNegocioGenerales();
 		new Negocio().GuardarCambiosAdministrador();
+		new Negocio().GuardarCambiosHorario();
 		document.getElementById("btnGuardarCambios").disabled=true;
 		bloquearDatosGenerales();
 		bloquearDatosAdministrador();

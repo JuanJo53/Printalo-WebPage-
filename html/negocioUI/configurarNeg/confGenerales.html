@@ -277,7 +277,7 @@
                                                 <div class="input-group ">
                                                     <!--Input entrada-->
                                                     <input type="text" class="form-control text-center clock"
-                                                        placeholder="Entrada" disabled>
+                                                        placeholder="Entrada" id="lunesEntrada" disabled>
                                                     <!--//Input entrada-->
                                                     <!--divisor-->
                                                     <div class="input-group-append ">
@@ -289,7 +289,7 @@
                                                     <!--//divisor-->
                                                     <!--Input salida-->
                                                     <input type="text" class="form-control text-center clock"
-                                                        placeholder="Salida" disabled>
+                                                        placeholder="Salida" id="lunesSalida" disabled>
                                                     <!--Input salida-->
                                                 </div>
                                                 <!--//horarios entreda-salida-->
@@ -461,7 +461,7 @@
                                             <div class="row pb-3 px-3">
                                                 <!--btn block-->
                                                 <div class="ml-auto">
-                                                    <!--icono editar--><button class="btn icon-editar"><i
+                                                    <!--icono editar--><button onclick="habilitarCamposHorario()" class="btn icon-editar"><i
                                                             class="fas fa-edit"></i></button>
                                                     <!--//icono editar-->
                                                 </div>

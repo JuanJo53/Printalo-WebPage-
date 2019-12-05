@@ -107,7 +107,7 @@ class Cliente {
           } else {
             //console.log("son distintos");
             actualizarDatosPerfilUsuario();
-            console.log("Se guardo cambios");
+            alert("Se guardo cambios");
           }
         } else {
           console.log("No existe el documento!");

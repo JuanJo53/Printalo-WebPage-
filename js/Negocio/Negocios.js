@@ -522,6 +522,29 @@ class Negocio {
         console.log("Error al obtener los datos:", error);
       });
   }
+  // set datos de horario
+  setHorarioNegocio() {
+    var lunEnt,lunSal;
+    var user = firebase.auth().currentUser;
+    var bd = firebase.firestore();
+    var userid = user.uid;
+    var docRef = bd.collection("Negocios").doc(userid);
+    docRef
+      .get()
+      .then(function(doc) {
+        if (doc.exists) {
+          lunEnt = doc.data().horario.lunes.horaEntrada;
+          lunSal = doc.data().horario.lunes.horaSalida;
+          document.getElementById("lunesEntrada").value = lunEnt;
+          document.getElementById("lunesSalida").value = lunSal;
+        } else {
+          console.log("No existe el documento!");
+        }
+      })
+      .catch(function(error) {
+        console.log("Error al obtener los datos:", error);
+      });
+  }
   //Esta funcion guarda los cambio de los datos generales del objeto
   GuardarCambiosNegocioGenerales() {
     //console.log("click");

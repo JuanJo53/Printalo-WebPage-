@@ -9,10 +9,7 @@ function habilitarCamposDatosNegocio() {
 	var auxTelefono=document.getElementById("telefonoNegocio").disabled;
 	var auxEmail=document.getElementById("emailNegocio").disabled;
 	if  (auxNombre=== false && auxDireccion===false) {
-		document.getElementById("nombreNegocio").disabled = true;
-		document.getElementById("direccionNegocio").disabled = true;
-		document.getElementById("telefonoNegocio").disabled = true;
-		document.getElementById("emailNegocio").disabled = true;
+		bloquearDatosGenerales();
 	} else {
 		document.getElementById("nombreNegocio").disabled = false;
 		document.getElementById("direccionNegocio").disabled = false;
@@ -27,15 +24,25 @@ function habilitarCamposAdministrador() {
 	var auxNombre=document.getElementById("nombreAdm").disabled;
 	var auxApellido=document.getElementById("apellidoAdm").disabled;
 	if  (auxNombre=== false && auxApellido===false) {
-		document.getElementById("nombreAdm").disabled = true;
-		document.getElementById("apellidoAdm").disabled = true;
+		bloquearDatosAdministrador();
 	} else {
 		document.getElementById("nombreAdm").disabled = false;
 		document.getElementById("apellidoAdm").disabled = false;
 	}
 	habilitarBtnGuardarCambios();
 }
-
+function habilitarCamposHorario() {
+	//console.log("here");
+	var auxNombre=document.getElementById("lunesEntrada").disabled;
+	var auxApellido=document.getElementById("lunesSalida").disabled;
+	if  (auxNombre=== false && auxApellido===false) {
+		bloquearDatosHorario();
+	} else {
+		document.getElementById("lunesEntrada").disabled = false;
+		document.getElementById("lunesSalida").disabled = false;
+	}
+	habilitarBtnGuardarCambios();
+}
 // Esta funcion ejecuta el observador de firebase
 function ValidarNeg() {
 	firebase.auth().onAuthStateChanged(function(user) {
@@ -44,6 +51,7 @@ function ValidarNeg() {
 			var neg=new Negocio("","","","","","","","precioBN");
 			neg.setDatosGeneralesAct();
 			neg.setDatosGeneralesAdministradorAct();
+			neg.setHorarioNegocio();
 			console.log("Logeado");
 		} else {
 			// User is not signed in.
@@ -52,28 +60,37 @@ function ValidarNeg() {
 		}
 	});
 }
+//btn de guarda los cambios
 function GuardarCambiosNegocioGeneral() {
 	var btnGuardarCambios=document.getElementById("btnGuardarCambios").disabled;
 	if(btnGuardarCambios===false){
-		console.log("click");
+		//console.log("click");
 		new Negocio().GuardarCambiosNegocioGenerales();
 		new Negocio().GuardarCambiosAdministrador();
 		document.getElementById("btnGuardarCambios").disabled=true;
 		bloquearDatosGenerales();
 		bloquearDatosAdministrador();
+		bloquearDatosHorario();
 	}
 }
 function habilitarBtnGuardarCambios() {
 	document.getElementById("btnGuardarCambios").disabled=false;
 	
 }
+//bloquea los input de campos generales
 function bloquearDatosGenerales(){
 	document.getElementById("nombreNegocio").disabled = true;
 	document.getElementById("direccionNegocio").disabled = true;
 	document.getElementById("telefonoNegocio").disabled = true;
 	document.getElementById("emailNegocio").disabled = true;
 }
+//bloquea los input de administrador
 function bloquearDatosAdministrador(){
 	document.getElementById("nombreAdm").disabled = true;
 	document.getElementById("apellidoAdm").disabled = true;
+}
+//bloquea los input de horario
+function bloquearDatosHorario(){
+	document.getElementById("lunesEntrada").disabled = true;
+	document.getElementById("lunesSalida").disabled = true;
 }

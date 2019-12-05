@@ -43,6 +43,7 @@
   text-align: center;
   line-height: 50px;
   position: relative;
+  font-weight: bold;
 }
 .circle:hover {
   background-color: #30e2c2;

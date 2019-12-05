@@ -525,6 +525,11 @@ class Negocio {
   // set datos de horario
   setHorarioNegocio() {
     var lunEnt, lunSal;
+    var marEnt, marSal;
+    var mieEnt, mieSal;
+    var jueEnt, jueSal;
+    var vieEnt, vieSal;
+    var sabEnt, sabSal;
     var user = firebase.auth().currentUser;
     var bd = firebase.firestore();
     var userid = user.uid;
@@ -535,8 +540,28 @@ class Negocio {
         if (doc.exists) {
           lunEnt = doc.data().horario.lunes.horaEntrada;
           lunSal = doc.data().horario.lunes.horaSalida;
+          marEnt = doc.data().horario.martes.horaEntrada;
+          marSal = doc.data().horario.martes.horaSalida;
+          mieEnt = doc.data().horario.miercoles.horaEntrada;
+          mieSal = doc.data().horario.lunes.horaSalida;
+          jueEnt = doc.data().horario.miercoles.horaEntrada;
+          jueSal = doc.data().horario.jueves.horaSalida;
+          vieEnt = doc.data().horario.viernes.horaEntrada;
+          vieSal = doc.data().horario.viernes.horaSalida;
+          sabEnt = doc.data().horario.sabado.horaEntrada;
+          sabSal = doc.data().horario.sabado.horaSalida;
           document.getElementById("lunesEntrada").value = lunEnt;
           document.getElementById("lunesSalida").value = lunSal;
+          document.getElementById("martesEntrada").value = marEnt;
+          document.getElementById("martesSalida").value = marSal;
+          document.getElementById("miercolesEntrada").value = mieEnt;
+          document.getElementById("miercolesSalida").value = mieSal;
+          document.getElementById("juevesEntrada").value = jueEnt;
+          document.getElementById("juevesSalida").value = jueSal;
+          document.getElementById("viernesEntrada").value = vieEnt;
+          document.getElementById("viernesSalida").value = vieSal;
+          document.getElementById("sabadoEntrada").value = sabEnt;
+          document.getElementById("sabadoSalida").value = sabSal;
         } else {
           console.log("No existe el documento!");
         }
@@ -633,10 +658,42 @@ class Negocio {
   //guarda datos horarios
   GuardarCambiosHorario() {
     //console.log("click");
-    var lunEntNew, lunSalNew;
-    var lunEntDb, lunSalDb;
+    var lunEntNew,
+      lunSalNew,
+      marEntNew,
+      marSalNew,
+      mieEntNew,
+      mieSalNew,
+      jueEntNew,
+      jueSalNew,
+      vieEntNew,
+      vieSalNew,
+      sabEntNew,
+      sabSalNew;
+    var lunEntDb,
+      lunSalDb,
+      marEntDb,
+      marSalDb,
+      mieEntDb,
+      mieSalDb,
+      jueEntDb,
+      jueSalDb,
+      vieEntDb,
+      vieSalDb,
+      sabEntDb,
+      sabSalDb;
     lunEntNew = document.getElementById("lunesEntrada").value;
     lunSalNew = document.getElementById("lunesSalida").value;
+    marEntNew = document.getElementById("martesEntrada").value;
+    marSalNew = document.getElementById("martesSalida").value;
+    mieEntNew = document.getElementById("miercolesEntrada").value;
+    mieSalNew = document.getElementById("miercolesSalida").value;
+    jueEntNew = document.getElementById("juevesEntrada").value;
+    jueSalNew = document.getElementById("juevesSalida").value;
+    vieEntNew = document.getElementById("viernesEntrada").value;
+    vieSalNew = document.getElementById("viernesSalida").value;
+    sabEntNew = document.getElementById("sabadoEntrada").value;
+    sabSalNew = document.getElementById("sabadoSalida").value;
     var user = firebase.auth().currentUser;
     var bd = firebase.firestore();
     var userid = user.uid;
@@ -647,12 +704,20 @@ class Negocio {
         if (doc.exists) {
           lunEntDb = doc.data().horario.lunes.horaEntrada;
           lunSalDb = doc.data().horario.lunes.horaSalida;
-          console.log(lunEntNew);
-          console.log(lunEntDb);
-          if (
-            lunEntDb === lunEntNew &&
-            lunSalDb === lunSalNew
-          ) {
+          marEntDb = doc.data().horario.martes.horaEntrada;
+          marSalDb = doc.data().horario.martes.horaSalida;
+          mieEntDb = doc.data().horario.miercoles.horaEntrada;
+          mieSalDb = doc.data().horario.miercoles.horaSalida;
+          jueEntDb = doc.data().horario.jueves.horaEntrada;
+          jueSalDb = doc.data().horario.jueves.horaSalida;
+          vieEntDb = doc.data().horario.viernes.horaEntrada;
+          vieSalDb = doc.data().horario.viernes.horaSalida;
+          sabEntDb = doc.data().horario.sabado.horaEntrada;
+          sabSalDb = doc.data().horario.sabado.horaSalida;
+         
+          //console.log(lunEntNew);
+          //console.log(lunEntDb);
+          if (lunEntDb === lunEntNew && lunSalDb === lunSalNew && marEntDb === marEntNew && marSalDb === marSalNew && mieEntDb === mieEntNew && mieSalDb === mieSalNew && jueEntDb === jueEntNew && jueSalDb === jueSalNew && vieEntDb === vieEntNew && vieSalDb === vieSalNew && sabEntDb === sabEntNew && sabSalDb === sabSalNew ) {
             console.log("los datos son los mismos en horarios");
           } else {
             //console.log("son distintos");
@@ -749,22 +814,73 @@ function actualizarDatosAdministrador() {
 function actualizarDatosHorario() {
   //console.log("entro a cambiar datos de negocio");
   var lunEnt, lunSal;
+  var marEnt, marSal;
+  var mieEnt, mieSal;
+  var jueEnt, jueSal;
+  var vieEnt, vieSal;
+  var sabEnt, sabSal;
   var user = firebase.auth().currentUser;
   var bd = firebase.firestore();
   var userid = user.uid;
   lunEnt = document.getElementById("lunesEntrada").value;
   lunSal = document.getElementById("lunesSalida").value;
+  marEnt = document.getElementById("martesEntrada").value;
+  marSal = document.getElementById("martesSalida").value;
+  mieEnt = document.getElementById("miercolesEntrada").value;
+  mieSal = document.getElementById("miercolesSalida").value;
+  jueEnt = document.getElementById("juevesEntrada").value;
+  jueSal = document.getElementById("juevesSalida").value;
+  vieEnt = document.getElementById("viernesEntrada").value;
+  vieSal = document.getElementById("viernesSalida").value;
+  sabEnt = document.getElementById("sabadoEntrada").value;
+  sabSal = document.getElementById("sabadoSalida").value;
   //verifica que no esten vacios
-  if (lunEnt !== "" && lunSal !== "") {
+  if (
+    lunEnt !== "" &&
+    lunSal !== "" &&
+    marEnt !== "" &&
+    marSal !== "" &&
+    mieEnt !== "" &&
+    mieSal !== "" &&
+    jueEnt !== "" &&
+    jueSal !== "" &&
+    vieEnt !== "" &&
+    vieSal !== "" &&
+    sabEnt !== "" &&
+    sabSal !== ""
+  ) {
     //console.log("no estan vacios");
     var docRef = bd
       .collection("Negocios")
       .doc(user.uid)
       .update({
-        luens: {
-          horaEntrada: lunEnt,
-          horaSalida: lunSal
+        horario:{
+          lunes: {
+            horaEntrada: lunEnt,
+            horaSalida: lunSal
+          },
+          martes: {
+            horaEntrada: marEnt,
+            horaSalida: marSal
+          },
+          miercoles: {
+            horaEntrada: mieEnt,
+            horaSalida: mieSal
+          },
+          jueves: {
+            horaEntrada: jueEnt,
+            horaSalida: jueSal
+          },
+          viernes: {
+            horaEntrada: vieEnt,
+            horaSalida: vieSal
+          },
+          sabado: {
+            horaEntrada: sabEnt,
+            horaSalida: sabSal
+          }
         }
+        
       })
       .then(e => {
         console.log("Datos Guardados Exitosamente datos generales");

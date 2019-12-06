@@ -281,7 +281,8 @@
                                                 </div>
                                                 <!--//col-->
                                                 <!--col-->
-                                                <div class="col nopadding"><input id="txtPrecioColor" type="number"
+                                                <div class="col nopadding">
+                                                    <input id="txtPrecioColor" type="number"
                                                         class="form-control text-center" placeholder="Bs" disabled>
                                                 </div>
                                                 <!--//col-->
@@ -530,7 +531,8 @@
                     <!--//row-->
                     <!--Boton guardar cambios-->
                     <div class="row text-light p-4">
-                        <button onclick="new Negocio().GuardarCambPrecios()" class="btn btnsavechanges inactive ml-auto">Guardar
+                        <button onclick="GuardarCambiosPrecios()" class="btn btnsavechanges inactive ml-auto" disabled
+                            id="btnGuardarCambios">Guardar
                             Cambios</b>
                     </div>
                     <!--//Boton guardar cambios-->
@@ -564,7 +566,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <!--//boostrap jquery popper libraries-->
-     <!--JS DESIGN-->
+    <!--JS DESIGN-->
     <!--iconuserpefil script-->
     <script src="../../../js/designjs/perfiliconuser.js"></script>
     <script type="text/javascript" src="../../../js/designjs/toggle.js"></script>
@@ -595,7 +597,7 @@
     <script type="text/javascript" src="../../../js//Negocio/confPrecios.js"></script>
     <!--Script para general-->
     <script type="text/javascript" src="../../../js//Negocio/InicioNeg.js"></script>
-   
+
 </body>
 
 </html>

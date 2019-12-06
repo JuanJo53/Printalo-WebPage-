@@ -23,6 +23,7 @@ function getDocsData() {
 					.get()
 					.then(function(docu) {
 						if (docu.exists) {
+							arch = doc.data().nombreDoc;
 							nomb = docu.data().Nombre;
 							precio = doc.data().costoTotal;
 							cant = doc.data().cantidad;
@@ -35,7 +36,7 @@ function getDocsData() {
 								"/" +
 								timestamp.getFullYear();
 							hora = timestamp.getHours() + ":" + timestamp.getMinutes();
-							setData(nomb, precio, cant, pago, fecha, hora);
+							setData(arch, nomb, precio, cant, pago, fecha, hora);
 						} else {
 							console.log("No such document!");
 						}
@@ -49,7 +50,8 @@ function getDocsData() {
 			console.log("Error obteniendo los documentos: ", error);
 		});
 }
-function setData(nomb, prec, cant, pag, f, h) {
+
+function setData(doc, nomb, prec, cant, pag, f, h) {
 	var table = document.getElementsByTagName("table")[0];
 	var newRow = table.insertRow(1);
 
@@ -73,31 +75,50 @@ function setData(nomb, prec, cant, pag, f, h) {
 	detalles.className = "text-center";
 	rechazar.className = "text-center";
 
-	nro.innerHTML = table.rows.length - 1;
-	nombUser.innerHTML = nomb;
-	precio.innerHTML = prec + "Bs";
-	cantidad.innerHTML = cant;
-	pago.innerHTML = pag;
-	fecha.innerHTML = f;
-	hora.innerHTML = h;
-
-	detalles.innerHTML = `<button onclick="getPedDet(this)" href="" class="btn bg-printalo-greenDetail positive" 
-							data-dismiss="modal" data-target="#modalVerDetalles" 
-							data-toggle="modal">Detalles
-						</button>`;
-	rechazar.innerHTML = `<button onclick="new Pedido().rechazar()" href="" class="btn bg-printalo-blueDetail negative" 
-							data-dismiss="modal" data-target="#eliminarPedido" 
-							data-toggle="modal">Rechazar
-						</button>`;
+	$(document).ready(function() {
+		var t = $("#example").DataTable();
+		t.row
+			.add([
+				doc,
+				nomb,
+				prec,
+				cant,
+				pag,
+				f,
+				h,
+				`<button onclick="getPedDet(this)" href="" class="btn bg-printalo-greenDetail positive" 
+					data-dismiss="modal" data-target="#modalVerDetalles" 
+					data-toggle="modal">Detalles
+				</button>`,
+				`<button onclick="rechazar()" href="" class="btn bg-printalo-blueDetail negative" 
+					data-dismiss="modal" data-target="#eliminarPedido" 
+					data-toggle="modal">Rechazar
+				</button>`
+			])
+			.draw(false);
+	});
 }
-function getPedDet(_this){
-	var color,tam,imp,paginas,acabado,tipo,cant,usuario,fecha,hora,fechaE,horaE,pago,precio;
-	usuario=getRowSelected(_this,1);
-	precio=getRowSelected(_this,2);
-	console.log(usuario,precio);
+function getPedDet(_this) {
+	var color,
+		tam,
+		imp,
+		paginas,
+		acabado,
+		tipo,
+		cant,
+		usuario,
+		fecha,
+		hora,
+		fechaE,
+		horaE,
+		pago,
+		precio;
+	usuario = getRowSelected(_this, 1);
+	precio = getRowSelected(_this, 2);
+	console.log(usuario, precio);
 }
 //Obtiene el nombre de la fila seleccionada.
-function getRowSelected(objectPressed,col) {
+function getRowSelected(objectPressed, col) {
 	var a = objectPressed.parentNode.parentNode;
 	var nomb = a.getElementsByTagName("td")[col].innerHTML;
 	return nomb;

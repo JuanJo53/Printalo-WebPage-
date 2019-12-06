@@ -28,9 +28,7 @@ fileButton.addEventListener("change", function(e) {
 	//Crea la referencia a un storage especifico.
 	var storageRef = storage.ref();
 
-	var task = storageRef
-		.child("docsPedidos/" + user.uid + "/" + file.name)
-		.put(file, metadata);
+	var task = storageRef.child("docsPedidos/" + user.uid + "/" + file.name).put(file, metadata);
 
 	var perc;
 	task.on(
@@ -138,26 +136,29 @@ function setData(type, name) {
 
 	var icon = document.createElement("i");
 
+	tipo.className = "text-center";
+	nombArch.className = "text-center";
+	solic.className = "text-center";
+	elim.className = "text-center";
+
 	if (type === "pdf") {
 		// TODO: Configurar para multiples iconos
 		icon.className = "far fa-file-pdf fa-3x";
 		tipo.appendChild(icon);
 	}
-	tipo.className = "text-center";
 
-	nombArch.className = "text-center";
 	nombArch.innerHTML = name;
-
-	solic.className = "text-center";
 	solic.innerHTML =
 		`<button id="btnSol/` +
 		(table.rows.length - 1) +
 		`" onclick="getDocNomb(this)"  
-                        class="btn positive bg-printalo-greenDetail text-light" data-toggle="modal" data-target="#escogerLocal">
+						class="btn positive bg-printalo-greenDetail text-light" 
+						data-toggle="modal" data-target="#escogerLocal">
                         Solicitar
                     </button>`;
-	elim.className = "text-center";
-	elim.innerHTML = `<button onclick="new Pedido().cancelarPedido(this)" class="btn negative bg-printalo-blueDetail text-light" data-toggle="modal" data-target="#checkAlert">
+	elim.innerHTML = `<button onclick="new Pedido().cancelarPedido(this)" 
+						class="btn negative bg-printalo-blueDetail text-light" 
+						data-toggle="modal" data-target="#checkAlert">
                         Eliminar
                     </button>`;
 }
@@ -585,8 +586,7 @@ function getCosto() {
 }
 //Calculo del costo total respecto de los parametros adicionales.
 function calculoCosto(pag, ctam, ctip, cCol) {
-	costoTotal =
-		Math.round((ctam + ctip + cCol) * pag * cantidad * 100, -1) / 100;
+	costoTotal = Math.round((ctam + ctip + cCol) * pag * cantidad * 100, -1) / 100;
 	console.log(costoTotal);
 	document.getElementById("total").value = costoTotal + "Bs.";
 }

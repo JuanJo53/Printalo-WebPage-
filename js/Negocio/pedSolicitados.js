@@ -86,11 +86,11 @@ function setData(doc, nomb, prec, cant, pag, f, h) {
 				pag,
 				f,
 				h,
-				`<button onclick="getPedDet(this)" href="" class="btn bg-printalo-greenDetail positive" 
+				`<button id="detalles" onclick="getPedDet(this)" href="" class="btn bg-printalo-greenDetail positive" 
 					data-dismiss="modal" data-target="#modalVerDetalles" 
 					data-toggle="modal">Detalles
 				</button>`,
-				`<button onclick="rechazar()" href="" class="btn bg-printalo-blueDetail negative" 
+				`<button href="" class="btn bg-printalo-blueDetail negative" 
 					data-dismiss="modal" data-target="#eliminarPedido" 
 					data-toggle="modal">Rechazar
 				</button>`
@@ -98,8 +98,9 @@ function setData(doc, nomb, prec, cant, pag, f, h) {
 			.draw(false);
 	});
 }
+
 function getPedDet(_this) {
-	var color,
+	var doc,color,
 		tam,
 		imp,
 		paginas,
@@ -113,9 +114,19 @@ function getPedDet(_this) {
 		horaE,
 		pago,
 		precio;
+	doc = getRowSelected(_this, 0);
 	usuario = getRowSelected(_this, 1);
 	precio = getRowSelected(_this, 2);
-	console.log(usuario, precio);
+	cant = getRowSelected(_this, 3);
+	pago = getRowSelected(_this, 4);
+	fechaE= getRowSelected(_this, 5);
+	horaE= getRowSelected(_this, 6);
+	var pedido=new Pedido();
+	console.log(_this.id);
+	if(_this.id==='detalles'){
+		pedido.rechazarPedido(doc,usuario,precio,cant,pago,fechaE,horaE);
+	}	
+	
 }
 //Obtiene el nombre de la fila seleccionada.
 function getRowSelected(objectPressed, col) {

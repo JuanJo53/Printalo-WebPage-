@@ -35,18 +35,17 @@ class Pedido {
 				console.log("Documento no se borro correctamente");
 			});
 	}
-	rechazarPedido(_this) {
+	rechazarPedido(doc, user, precio, cant, pago, fecha, hora) {
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();
 		var storage = firebase.storage();
 		var storageRef = storage.ref();
-		var nomb = getRowSelected(_this);
-		console.log(nomb);
+		console.log(doc,user,precio,cant,pago,fecha,hora);
 		var user = firebase.auth().currentUser;
 
 		var query = bd
 			.collection("Pedido")
-			.where("nombreDoc", "==", nomb)
+			.where("nombreDoc", "==", doc)
 			.where("negocioID", "==", user.uid);
 		query
 			.get()
@@ -54,7 +53,7 @@ class Pedido {
 				querySnapshot.forEach(function(doc) {});
 			})
 			.catch(function(error) {
-				console.log("Documento no se borro correctamente");
+				console.log("Documento no se rechazo correctamente");
 			});
 	}
 }

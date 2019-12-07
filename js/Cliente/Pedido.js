@@ -40,7 +40,7 @@ class Pedido {
 		var bd = firebase.firestore();
 		var storage = firebase.storage();
 		var storageRef = storage.ref();
-		console.log(doc,user,precio,cant,pago,fecha,hora);
+		console.log(doc, user, precio, cant, pago, fecha, hora);
 		var user = firebase.auth().currentUser;
 
 		var query = bd

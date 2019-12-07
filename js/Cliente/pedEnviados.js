@@ -48,8 +48,8 @@ function setData(type, name) {
                         Detalles
                     </button>`;
 	elim.className = "text-center";
-	elim.innerHTML = `<button class="btn negative bg-printalo-blueDetail text-light" data-toggle="modal" data-target="#checkAlert">
-                        Eliminar
+	elim.innerHTML = `<button onclick="new Pedido().cancelarPedido(this)" class="btn negative bg-printalo-blueDetail text-light" data-toggle="modal" data-target="#checkAlert">
+                        Cancelar
                     </button>`;
 }
 

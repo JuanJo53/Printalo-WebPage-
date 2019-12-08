@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -157,7 +158,8 @@
                                         <td><a href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
                                                 data-target="#modalVerDetalles" data-toggle="modal">Detalles</a></td>
                                         <td><a href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
-                                                data-target="#entregarPedido" data-toggle="modal">Entregar</a></td>
+                                                data-target="#prevFactura" data-toggle="modal">Entregar</a></td>
+                                        <!--#entregarPedido-->
                                     </tr>
                                 </tbody>
                                 <!--tbody-->
@@ -399,14 +401,13 @@
                 <!--//modal body-->
                 <!--modal footer-->
                 <div class="modal-footer  px-5">
-                    <div class="modalbuttonalert text-center">
+                    <div class="text-center">
                         <!--btn Cancelar-->
                         <a class="btn negative bg-printalo-blueDetail text-light" data-dismiss="modal">Cerrar</a>
                         <!--btn Cancelar-->
                         <!--btn Aceptar-->
                         <a class="btn positive bg-printalo-greenDetail text-light" data-dismiss="modal"
-                            data-target="#datosFactura" data-toggle="modal">Imprimir
-                            Factura</a>
+                            data-target="#datosFactura" data-toggle="modal">Insertar Datos Factura</a>
                         <!--//btn Aceptar-->
                     </div>
                 </div>
@@ -446,14 +447,14 @@
                 </div>
                 <!--//modal body-->
                 <!--modal footer-->
-                <div class="modal-footer  px-5">
-                    <div class="modalbuttonalert text-center">
+                <div class="modal-footer px-5">
+                    <div class="text-center">
                         <!--btn Cancelar-->
                         <a class="btn negative bg-printalo-blueDetail text-light" data-dismiss="modal">Cancelar</a>
                         <!--btn Cancelar-->
                         <!--btn Aceptar-->
-                        <a class="btn positive bg-printalo-greenDetail text-light" data-target=""
-                            data-toggle="">Aceptar</a>
+                        <a class="btn positive bg-printalo-greenDetail text-light" data-target="#prevFactura"
+                            data-toggle="modal" data-dismiss="modal">Aceptar</a>
                         <!--//btn Aceptar-->
                     </div>
                 </div>
@@ -462,6 +463,86 @@
         </div>
     </div>
     <!--//Modal alert factura-->
+    <!--Modal prev factura-->
+    <div class="modal fade text-dark" id="prevFactura">
+        <div class="modal-dialog mini modal-md">
+            <div class="modal-content">
+                <!--modal body-->
+                <div id="invoice">
+                    <div class="container  px-5 my-4 text-center">
+                        <label class="font-weight-bold">Printalo</label><br>
+                        <label class="font-weight-bold">Nombre de Negocio</label><br>
+                        <label class="">Direccion de Negocio</label><br>
+                        <label class="">Numero de Negocio</label><br>
+                        <label class="">La Paz - Bolivia</label><br>
+                        <label class="font-weight-bold">FACTURA</label><br>
+                        <label class="">ORIGINAL</label><br>
+                        <label
+                            class="font-weight-bold">-----------------------------------------------------</label><br>
+                        <label class="">NIT : </label><label class=""> Numero de Empresa</label><br>
+                        <label class="">Factura No : </label><label class=""> Numero de Factura</label><br>
+                        <label
+                            class="font-weight-bold">-----------------------------------------------------</label><br>
+                        <label class="">Fecha :</label><label class="">Ingresar Fecha actual</label><br>
+                        <label
+                            class="font-weight-bold">-----------------------------------------------------</label><br>
+                        <label class="">NIT : </label><label class=""> Numero de Cliente</label><br>
+                        <label class="">NOMBRE : </label><label class=""> Nombre de Cliente</label><br>
+                        <label
+                            class="font-weight-bold">-----------------------------------------------------</label><br>
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Concepto</th>
+                                    <th>Unidades</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>
+                                    Pedido
+                                </td>
+                                <td>
+                                    #Unidades
+                                </td>
+                                <td>
+                                    Bs
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Total :
+                                </td>
+                                <td>
+                                    #TotalBs
+                                </td>
+                            </tr>
+                        </table>
+                        <label class="">Cantidad en literal</label><br>
+                        <label class="font-weight-bold">CODIGO DE CONTROL</label><br>
+                        <label class="font-weight-bold">FECHA LIMITE DE EMISION</label><br>
+                    </div>
+                </div>
+                <!--//modal body-->
+                <!--modal footer-->
+                <div class="modal-footer px-5">
+                    <div class="text-center">
+                        <!--btn Cancelar-->
+                        <a class="btn negative bg-printalo-blueDetail text-light" data-dismiss="modal">Cancelar</a>
+                        <!--btn Cancelar-->
+                        <!--btn Aceptar-->
+                        <a class="btn positive bg-printalo-greenDetail text-light" id="btnImprimir">Imprimir</a>
+                        <!--//btn Aceptar-->
+                    </div>
+                </div>
+                <!--//modal footer-->
+            </div>
+        </div>
+    </div>
+    <!--//Modal prevFactura factura-->
     <!--modals alerts!!!-->
     <!--boostrap jquery popper libraries-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -475,6 +556,13 @@
     <!--DESIGN JS-->
     <script src="../../../js/designjs/perfiliconuser.js"></script>
     <script src="../../../js/designjs/toggle.js"></script>
+    <script src="../../../js/designjs/printThis.js"></script>
+    <script type="text/javascript" src="../../../js/designjs/datatables.js"></script>
+    <script>
+        $('#btnImprimir').click(function () {
+            $('#invoice').printThis();
+        })
+    </script>
     <!--//DESIGN JS-->
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
@@ -493,7 +581,7 @@
     <script type="text/javascript" src="../../../js/Negocios.js"></script>
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
-    <script type="text/javascript" src="../../../js/designjs/datatables.js"></script>
+
 </body>
 
 </html>

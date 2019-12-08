@@ -2,6 +2,10 @@
     background-color: #364c68!important;
     color: #fff!important;
 }
+.table.table-borderless th{
+    background-color: #fff!important;
+    color: #000!important;
+}
 .table td{
     vertical-align: middle !important;
 }

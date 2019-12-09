@@ -172,7 +172,7 @@ class Pedido {
 				});
 			})
 			.catch(function(error) {
-				console.log("Documento no se rechazo correctamente");
+				console.log("No se obtubo los datos del documento correctamente");
 			});
 	}
 	aceptarPedido(){
@@ -196,7 +196,12 @@ class Pedido {
 			.get()
 			.then(function(querySnapshot) {
 				querySnapshot.forEach(function(doc) {
-					console.log(docN);
+					bd.collection('Pedido').doc(doc.id).update({
+						estado: "pendiente"
+					}).then(function(){
+						location.reload();
+						console.log("Documento se rechazo correctamente");		
+					});
 				});
 		
 			});

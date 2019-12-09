@@ -71,8 +71,8 @@ class Pedido {
 		var bd = firebase.firestore();
 		console.log(doc, user, precio, cant, pago, fecha, hora);
 		var f=fecha.split('/');
-		var d=f[0];
-		var m=f[1];
+		var m=f[0];
+		var d=f[1];
 		var a=f[2];
 		var timestamp=new Date(a+'-'+m+'-'+d+' '+hora);
 		var query = bd
@@ -110,8 +110,8 @@ class Pedido {
 		fecha,
 		hora;
 		var f=fechaE.split('/');
-		var d=f[0];
-		var m=f[1];
+		var m=f[0];
+		var d=f[1];
 		var a=f[2];
 		var timestamp=new Date(a+'-'+m+'-'+d+' '+horaE);
 		var query = bd
@@ -182,8 +182,8 @@ class Pedido {
 		var fechaE=document.getElementById('fEntregaD').value;
 		var horaE=document.getElementById('hEntregaD').value;
 		var f=fechaE.split('/');
-		var d=f[0];
-		var m=f[1];
+		var m=f[0];
+		var d=f[1];
 		var a=f[2];
 		var timestamp=new Date(a+'-'+m+'-'+d+' '+horaE);
 		

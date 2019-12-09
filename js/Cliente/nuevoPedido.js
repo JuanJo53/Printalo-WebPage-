@@ -428,8 +428,10 @@ function sumitPedido() {
 									paginas: paginas,
 									tamañoHoja: tamanio,
 									tipoHoja: tipo
+								})
+								.then(function() {
+									location.reload();
 								});
-							location.reload();
 						});
 					})
 					.catch(function(error) {

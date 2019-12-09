@@ -100,7 +100,8 @@ function setData(doc, nomb, prec, cant, pag, f, h) {
 }
 
 function getPedDet(_this) {
-	var doc,color,
+	var doc,
+		color,
 		tam,
 		imp,
 		paginas,
@@ -119,14 +120,13 @@ function getPedDet(_this) {
 	precio = getRowSelected(_this, 2);
 	cant = getRowSelected(_this, 3);
 	pago = getRowSelected(_this, 4);
-	fechaE= getRowSelected(_this, 5);
-	horaE= getRowSelected(_this, 6);
-	var pedido=new Pedido();
+	fechaE = getRowSelected(_this, 5);
+	horaE = getRowSelected(_this, 6);
+	var pedido = new Pedido();
 	console.log(_this.id);
-	if(_this.id==='detalles'){
-		pedido.rechazarPedido(doc,usuario,precio,cant,pago,fechaE,horaE);
-	}	
-	
+	if (_this.id === "detalles") {
+		pedido.rechazarPedido(doc, usuario, precio, cant, pago, fechaE, horaE);
+	}
 }
 //Obtiene el nombre de la fila seleccionada.
 function getRowSelected(objectPressed, col) {

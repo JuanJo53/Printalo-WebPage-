@@ -1,6 +1,6 @@
 class Pedido {
 	//Borra el pedido seleccionado.
-	cancelarPedido(_this) {
+	eliminarPedido(_this) {
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();
 		var storage = firebase.storage();
@@ -28,6 +28,36 @@ class Pedido {
 						})
 						.catch(function(error) {
 							alert("Hubo un error en borrar el documento!");
+						});
+				});
+			})
+			.catch(function(error) {
+				console.log("Documento no se borro correctamente");
+			});
+	}
+	//Cancela el pedido seleccionado que ya se envio.
+	cancelarPedido(_this) {
+		var user = firebase.auth().currentUser;
+		var bd = firebase.firestore();
+		var nomb = getRowSelected(_this);
+		console.log(nomb);
+		var user = firebase.auth().currentUser;
+
+		var query = bd
+			.collection("Pedido")
+			.where("nombreDoc", "==", nomb)
+			.where("clienteID", "==", user.uid);
+		query
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					bd.collection("Pedido")
+						.doc(doc.id)
+						.update({
+							estado: "porEnviar"
+						})
+						.then(function() {
+							location.reload();
 						});
 				});
 			})

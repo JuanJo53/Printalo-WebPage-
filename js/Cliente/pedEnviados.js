@@ -44,11 +44,14 @@ function setData(type, name) {
 		`<button id="btnSol/` +
 		(table.rows.length - 1) +
 		`" onclick="getDocDet(this)" 
-                        class="btn positive bg-printalo-greenDetail text-light" data-toggle="modal" data-target="#escogerLocal">
+						class="btn positive bg-printalo-greenDetail text-light" 
+						data-toggle="modal" data-target="#escogerLocal">
                         Detalles
                     </button>`;
 	elim.className = "text-center";
-	elim.innerHTML = `<button onclick="new Pedido().cancelarPedido(this)" class="btn negative bg-printalo-blueDetail text-light" data-toggle="modal" data-target="#checkAlert">
+	elim.innerHTML = `<button onclick="new Pedido().cancelarPedido(this)" 
+						class="btn negative bg-printalo-blueDetail text-light" 
+						data-toggle="modal" data-target="#checkAlert">
                         Cancelar
                     </button>`;
 }

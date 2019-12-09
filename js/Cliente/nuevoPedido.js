@@ -156,7 +156,7 @@ function setData(type, name) {
 						data-toggle="modal" data-target="#escogerLocal">
                         Solicitar
                     </button>`;
-	elim.innerHTML = `<button onclick="new Pedido().cancelarPedido(this)" 
+	elim.innerHTML = `<button onclick="new Pedido().eliminarPedido(this)" 
 						class="btn negative bg-printalo-blueDetail text-light" 
 						data-toggle="modal" data-target="#checkAlert">
                         Eliminar

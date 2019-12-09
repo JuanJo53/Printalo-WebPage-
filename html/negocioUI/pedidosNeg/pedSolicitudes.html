@@ -193,7 +193,7 @@
                                 </div>
                                 <!--text-->
                                 <div class="col my-auto text-light">
-                                    <p class="my-auto text-center">nombreArchivo.pdf</p>
+                                    <p id="nombreDocD" class="my-auto text-center"></p>
                                 </div>
                                 <!--//text-->
                             </div>
@@ -326,7 +326,7 @@
                                     <!--btn block-->
                                     <div class="ml-auto">
                                         <!--Btn aceptar pedido-->
-                                        <a href="" class="btn bg-printalo-greenDetail text-light  positive">Aceptar</a>
+                                        <a onclick="new Pedido().aceptarPedido()"  class="btn bg-printalo-greenDetail text-light  positive">Aceptar</a>
                                         <!--//Btn aceptar pedido-->
                                         <!--Btn rechaza pedido-->
                                         <a onclick="getPedDet(this)" href="" class="btn bg-printalo-blueDetail text-light negative ">Rechazar</a>

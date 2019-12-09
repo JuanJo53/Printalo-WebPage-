@@ -123,6 +123,7 @@ class Pedido {
 			.get()
 			.then(function(querySnapshot) {
 				querySnapshot.forEach(function(doc) {
+					document.getElementById('nombreDocD').innerHTML=doc.data().nombreDoc;
 					if (doc.data().blancoYnegro === false) {
 						document.getElementById("colorD").value = 'a Color';
 					} else {
@@ -172,6 +173,32 @@ class Pedido {
 			})
 			.catch(function(error) {
 				console.log("Documento no se rechazo correctamente");
+			});
+	}
+	aceptarPedido(){
+		var user = firebase.auth().currentUser;
+		var bd = firebase.firestore();
+		var docN=document.getElementById('nombreDocD').innerHTML;
+		var fechaE=document.getElementById('fEntregaD').value;
+		var horaE=document.getElementById('hEntregaD').value;
+		var f=fechaE.split('/');
+		var d=f[0];
+		var m=f[1];
+		var a=f[2];
+		var timestamp=new Date(a+'-'+m+'-'+d+' '+horaE);
+		
+		var query = bd
+			.collection("Pedido")
+			.where("nombreDoc", "==", docN)
+			.where("negocioID", "==", user.uid)
+			.where('fechaEntrega','==',timestamp);
+		query
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					console.log(docN);
+				});
+		
 			});
 	}
 	

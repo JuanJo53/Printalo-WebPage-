@@ -115,13 +115,13 @@ function getPedDet(_this) {
 		horaE,
 		pago,
 		precio;
-	doc = getRowSelected(_this, 0);
-	usuario = getRowSelected(_this, 1);
-	precio = getRowSelected(_this, 2);
-	cant = getRowSelected(_this, 3);
-	pago = getRowSelected(_this, 4);
-	fechaE = getRowSelected(_this, 5);
-	horaE = getRowSelected(_this, 6);
+		doc = getRowSelected(_this, 0);
+		usuario = getRowSelected(_this, 1);
+		precio = getRowSelected(_this, 2);
+		cant = getRowSelected(_this, 3);
+		pago = getRowSelected(_this, 4);
+		fechaE = getRowSelected(_this, 5);
+		horaE = getRowSelected(_this, 6);
 
 	var pedido = new Pedido();
 	console.log(_this.id);
@@ -131,8 +131,7 @@ function getPedDet(_this) {
 		var btnEliminar=document.getElementById('eliminar');
 		btnEliminar.addEventListener('click',function(){
 			pedido.rechazarPedido(doc, usuario, precio, cant, pago, fechaE, horaE);
-		})
-		
+		})		
 	}
 }
 //Obtiene el nombre de la fila seleccionada.

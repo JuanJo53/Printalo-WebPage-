@@ -298,7 +298,7 @@ function getTimestamp() {
 	var d = f[0];
 	var m = f[1];
 	var a = f[2];
-	let timestamp = new Date(a + "-" + m + "-" + d + " " + hora);
+	let timestamp = new Date(a + "-" + m + "-" + d + "T" + hora);
 	return timestamp;
 }
 //Obtiene el tipo de pago elegido.

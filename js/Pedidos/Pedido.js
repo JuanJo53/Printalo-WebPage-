@@ -74,7 +74,7 @@ class Pedido {
 		var d=f[0];
 		var m=f[1];
 		var a=f[2];
-		var timestamp=new Date(a+'-'+m+'-'+d+' '+hora);
+		var timestamp=new Date(a+'-'+m+'-'+d+'T'+hora);
 		var query = bd
 			.collection("Pedido")
 			.where("nombreDoc", "==", doc)
@@ -113,7 +113,7 @@ class Pedido {
 		var d=f[0];
 		var m=f[1];
 		var a=f[2];
-		var timestamp=new Date(a+'-'+m+'-'+d+' '+horaE);
+		var timestamp=new Date(a+'-'+m+'-'+d+'T'+horaE);
 		var query = bd
 			.collection("Pedido")
 			.where("nombreDoc", "==", doc)
@@ -185,7 +185,7 @@ class Pedido {
 		var d=f[0];
 		var m=f[1];
 		var a=f[2];
-		var timestamp=new Date(a+'-'+m+'-'+d+' '+horaE);
+		var timestamp=new Date(a+'-'+m+'-'+d+'T'+horaE);
 		
 		var query = bd
 			.collection("Pedido")

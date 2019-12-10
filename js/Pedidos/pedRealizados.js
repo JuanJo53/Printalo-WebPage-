@@ -43,7 +43,7 @@ function setData(type, name) {
 	solic.innerHTML =
 		`<button id="btnSol/` +
 		(table.rows.length - 1) +
-		`" onclick="getDocDet(this)" 
+		`"  
 		class="btn positive bg-printalo-greenDetail text-light"
 		data-toggle="modal" data-target="#detallesPedido">
                         Detalles

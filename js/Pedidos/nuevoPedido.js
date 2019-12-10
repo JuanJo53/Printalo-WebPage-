@@ -587,11 +587,41 @@ function getCosto() {
 			});
 	}
 }
+//Muestra el costo toal en las 3 partes respectivas.
+//TODO: Controlar reseteo de cantidad de paginas.
+function previewCosto() {
+	paginas = getCantHojas();
+	if (paginas === "personalizado") {
+		rangoInf = getRangoInf();
+		rangoSup = getRangoSup();
+		numPag = rangoSup - rangoInf + 1;
+	} else {
+		var bd = firebase.firestore();
+		bd.collection("Negocios")
+			.where("nombreNeg", "==", negocioID)
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					costoColor = doc.data().numPaginas;
+				});
+			})
+			.catch(function(error) {
+				console.log("Error obteniendo los documentos: ", error);
+			});
+	}
+	cantidad = parseInt(getCantCopias());
+	getCosto();
+}
 //Calculo del costo total respecto de los parametros adicionales.
 function calculoCosto(pag, ctam, ctip, cCol) {
 	costoTotal = Math.round((ctam + ctip + cCol) * pag * cantidad * 100, -1) / 100;
-	console.log(costoTotal);
-	document.getElementById("total").value = costoTotal + "Bs.";
+	console.log("hola", costoTotal);
+	document.getElementById("total").innerHTML =
+		`<span class="font-weight-bold">Costo total:  </span>` + costoTotal + "Bs.";
+	document.getElementById("total1").innerHTML =
+		`<span class="font-weight-bold">Costo total:  </span>` + costoTotal + "Bs.";
+	document.getElementById("total2").innerHTML =
+		`<span class="font-weight-bold">Costo total:  </span>` + costoTotal + "Bs.";
 }
 // Esta funcion ejecuta el observador de firebase
 function ValidarCli() {

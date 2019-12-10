@@ -70,26 +70,29 @@ class Pedido {
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();
 		console.log(doc, user, precio, cant, pago, fecha, hora);
-		var f=fecha.split('/');
-		var m=f[0];
-		var d=f[1];
-		var a=f[2];
-		var timestamp=new Date(a+'-'+m+'-'+d+' '+hora);
+		var f = fecha.split("/");
+		var m = f[0];
+		var d = f[1];
+		var a = f[2];
+		var timestamp = new Date(a + "-" + m + "-" + d + " " + hora);
 		var query = bd
 			.collection("Pedido")
 			.where("nombreDoc", "==", doc)
 			.where("negocioID", "==", user.uid)
-			.where('fechaEntrega','==',timestamp);
+			.where("fechaEntrega", "==", timestamp);
 		query
 			.get()
 			.then(function(querySnapshot) {
 				querySnapshot.forEach(function(doc) {
-					bd.collection('Pedido').doc(doc.id).update({
-						estado: "porEnviar"
-					}).then(function(){
-						location.reload();
-						console.log("Documento se rechazo correctamente");		
-					});
+					bd.collection("Pedido")
+						.doc(doc.id)
+						.update({
+							estado: "porEnviar"
+						})
+						.then(function() {
+							location.reload();
+							console.log("Documento se rechazo correctamente");
+						});
 				});
 			})
 			.catch(function(error) {
@@ -97,66 +100,58 @@ class Pedido {
 			});
 	}
 	//Setea los detalles del pedido para visualizacion antes de aceptarlo.
-	setPedDet(doc, usuario, precio, cant, pago, fechaE, horaE){
+	setPedDet(docN, usuario, precio, cant, pago, fechaE, horaE) {
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();
-		var 
-		color,
-		tam,
-		imp,
-		paginas,
-		acabado,
-		tipo,
-		fecha,
-		hora;
-		var f=fechaE.split('/');
-		var m=f[0];
-		var d=f[1];
-		var a=f[2];
-		var timestamp=new Date(a+'-'+m+'-'+d+' '+horaE);
+		var color, tam, imp, paginas, acabado, tipo, fecha, hora;
+		var f = fechaE.split("/");
+		var d = f[0];
+		var m = f[1];
+		var a = f[2];
+		var timestamp = new Date(a + "-" + m + "-" + d + " " + horaE);
 		var query = bd
 			.collection("Pedido")
-			.where("nombreDoc", "==", doc)
+			.where("nombreDoc", "==", docN)
 			.where("negocioID", "==", user.uid)
-			.where('fechaEntrega','==',timestamp);
+			.where("fechaEntrega", "==", timestamp);
 		query
 			.get()
 			.then(function(querySnapshot) {
 				querySnapshot.forEach(function(doc) {
-					document.getElementById('nombreDocD').innerHTML=doc.data().nombreDoc;
+					document.getElementById("nombreDocD").innerHTML = doc.data().nombreDoc;
 					if (doc.data().blancoYnegro === false) {
-						document.getElementById("colorD").value = 'a Color';
+						document.getElementById("colorD").value = "a Color";
 					} else {
-						document.getElementById("colorD").value = 'Blanco y Negro';
+						document.getElementById("colorD").value = "Blanco y Negro";
 					}
 					if (doc.data().tamañoHoja === "carta") {
-						document.getElementById("tamanioD").value = 'carta';
+						document.getElementById("tamanioD").value = "carta";
 					} else if (doc.data().tamañoHoja === "oficio") {
-						document.getElementById("tamanioD").value = 'oficio';
+						document.getElementById("tamanioD").value = "oficio";
 					} else {
-						document.getElementById("tamanioD").value = 'A4';
+						document.getElementById("tamanioD").value = "A4";
 					}
 					if (doc.data().ladosImpre === "intercalado") {
-						document.getElementById("impresionD").value ='intercalado';
+						document.getElementById("impresionD").value = "intercalado";
 					} else {
-						document.getElementById("impresionD").value ='anv/rev';
+						document.getElementById("impresionD").value = "anv/rev";
 					}
 					document.getElementById("numPagD").value = doc.data().numPaginas;
 					if (doc.data().engrampado === true) {
-						document.getElementById("acabadoD").value = 'Si';
+						document.getElementById("acabadoD").value = "Si";
 					} else {
-						document.getElementById("acabadoD").value = 'No';
+						document.getElementById("acabadoD").value = "No";
 					}
 					if (doc.data().tipo === "normal") {
-						document.getElementById("tipoHojaD").value = 'Hoja Normal';
+						document.getElementById("tipoHojaD").value = "Hoja Normal";
 					} else {
-						document.getElementById("tipoHojaD").value = 'Hoja Normal';
+						document.getElementById("tipoHojaD").value = "Hoja Normal";
 					}
 					document.getElementById("cantD").value = doc.data().cantidad;
 					if (doc.data().metodoPago === "personal") {
-						document.getElementById("pagoD").value = 'Personal';
+						document.getElementById("pagoD").value = "Personal";
 					} else {
-						document.getElementById("pagoD").value = 'Tarjeta de Credito';
+						document.getElementById("pagoD").value = "Tarjeta de Credito";
 					}
 					document.getElementById("clienteD").value = usuario;
 					timestamp = new Date(doc.data().fecha.toDate());
@@ -175,36 +170,35 @@ class Pedido {
 				console.log("No se obtubo los datos del documento correctamente");
 			});
 	}
-	aceptarPedido(){
+	aceptarPedido() {
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();
-		var docN=document.getElementById('nombreDocD').innerHTML;
-		var fechaE=document.getElementById('fEntregaD').value;
-		var horaE=document.getElementById('hEntregaD').value;
-		var f=fechaE.split('/');
-		var m=f[0];
-		var d=f[1];
-		var a=f[2];
-		var timestamp=new Date(a+'-'+m+'-'+d+' '+horaE);
-		
+		var docN = document.getElementById("nombreDocD").innerHTML;
+		var fechaE = document.getElementById("fEntregaD").value;
+		var horaE = document.getElementById("hEntregaD").value;
+		var f = fechaE.split("/");
+		var m = f[0];
+		var d = f[1];
+		var a = f[2];
+		var timestamp = new Date(a + "-" + m + "-" + d + " " + horaE);
+
 		var query = bd
 			.collection("Pedido")
 			.where("nombreDoc", "==", docN)
 			.where("negocioID", "==", user.uid)
-			.where('fechaEntrega','==',timestamp);
-		query
-			.get()
-			.then(function(querySnapshot) {
-				querySnapshot.forEach(function(doc) {
-					bd.collection('Pedido').doc(doc.id).update({
+			.where("fechaEntrega", "==", timestamp);
+		query.get().then(function(querySnapshot) {
+			querySnapshot.forEach(function(doc) {
+				bd.collection("Pedido")
+					.doc(doc.id)
+					.update({
 						estado: "pendiente"
-					}).then(function(){
+					})
+					.then(function() {
 						location.reload();
-						console.log("Documento se rechazo correctamente");		
+						console.log("Documento se rechazo correctamente");
 					});
-				});
-		
 			});
+		});
 	}
-	
 }

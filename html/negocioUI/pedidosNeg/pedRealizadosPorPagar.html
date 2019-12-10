@@ -196,7 +196,7 @@
                 <!--left side-->
                 <div class="col-lg-6 nopadding">
                     <!--modal content-->
-                    <div class="modal-content left  modalDetails bg-printalo-blueDetail">
+                    <div class="modal-content modalDetails left bg-printalo-blueDetail">
                         <!--container left side-->
                         <div class="container detallesPedido">
                             <!--title left side-->
@@ -215,7 +215,7 @@
                                 </div>
                                 <!--text-->
                                 <div class="col my-auto text-light">
-                                    <p class="my-auto text-center">nombreArchivo.pdf</p>
+                                    <p id="nombreDocD" class="my-auto text-center"></p>
                                 </div>
                                 <!--//text-->
                             </div>
@@ -225,49 +225,43 @@
                                 <!--Color box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Color</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="colorD" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//Color box-->
                                 <!--Tamaño box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Tamaño</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="tamanioD" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//Tamaño box-->
                                 <!--Impresion box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Impresion</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="impresionD" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//Impresion box-->
-                                <!--Orientacion box-->
-                                <div class="input-group-prepend box">
-                                    <span class="input-group-text">Orientacion</span>
-                                    <input type="text" class="form-control" disabled>
-                                </div>
-                                <!--//Orientacion box-->
                                 <!--Numero de Paginas box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Numero de Paginas</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="numPagD" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//Numero de Paginas box-->
                                 <!--Acabado box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Acabado</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="acabadoD" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//Acabado box-->
                                 <!--Tipo de hoja box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Tipo de hoja</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="tipoHojaD" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//Tipo de hoja box-->
                                 <!--Cantidad box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Cantidad</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="cantD" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//Cantidad box-->
                             </div>
@@ -292,65 +286,63 @@
                                 <!--user box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Usuario</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="clienteD" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//user box-->
-                                <!--Orden box-->
-                                <div class="input-group-prepend box">
-                                    <span class="input-group-text">#Orden</span>
-                                    <input type="text" class="form-control" disabled>
-                                </div>
-                                <!--//Orden box-->
                                 <!--Fecha Pedido box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Fecha Pedido</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="fechaD" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//Fecha Pedido box-->
                                 <!--Hora Pedido box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Hora Pedido</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="horaD" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//Hora Pedido box-->
                                 <!--Fecha Entrega box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Fecha Entrega</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="fEntregaD" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//Fecha Entrega box-->
                                 <!--Hora Entrega box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Hora Entrega</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="hEntregaD" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//Hora Entrega box-->
                                 <!--Tipo Pago box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Tipo Pago</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="pagoD" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//Tipo Pago box-->
                                 <!--Precio Bs box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Precio Bs</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="costoD" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//Precio Bs box-->
                                 <!--Estado box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Estado</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="estadoD" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//Estado box-->
                                 <!--btns-->
                                 <div class="row pb-3 px-3">
                                     <!--btn block-->
                                     <div class="ml-auto">
-                                        <!--Btn Imprimir otra vez pedido-->
-                                        <a href="" class="btn bg-printalo-greenDetail text-light  positive">Imprimir
-                                            otra vez</a>
-                                        <!--//Btn Imprimir otra vez pedido-->
+                                        <!--Btn aceptar pedido-->
+                                        <a onclick="new Pedido().aceptarPedido()"
+                                            class="btn bg-printalo-greenDetail text-light  positive">Aceptar</a>
+                                        <!--//Btn aceptar pedido-->
+                                        <!--Btn rechaza pedido-->
+                                        <a onclick="getPedDet(this)" href=""
+                                            class="btn bg-printalo-blueDetail text-light negative ">Rechazar</a>
+                                        <!--//Btn rechazar pedido-->
                                     </div>
                                     <!--//btn block-->
                                 </div>
@@ -371,6 +363,53 @@
     <!--//See details modal-->
 
     <!--modals alerts!!!-->
+    <!--Modal alert factura-->
+    <div class="modal fade text-dark" id="datosFactura">
+        <div class="modal-dialog mini modal-md">
+            <div class="modal-content">
+                <!--title modal header-->
+                <div class="modal-header bg-printalo-blueDetail  px-5">
+                    <h5 class="modal-title text-light">Datos para la Factura</h5>
+                </div>
+                <!--//title modal header-->
+                <!--modal body-->
+                <div class="container  px-5  my-4">
+                    <!--group nombre-->
+                    <div class="form-group row">
+                        <label class="col-3 text-center color-printalo-blueDetail font-weight-bold">Nombre :</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <!--//group nombre-->
+                    <!--group nit-->
+                    <div class="form-group row">
+                        <label class="col-3 text-center  color-printalo-blueDetail font-weight-bold">Nit :</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <!--//group nit-->
+
+                </div>
+                <!--//modal body-->
+                <!--modal footer-->
+                <div class="modal-footer px-5">
+                    <div class="text-center">
+                        <!--btn Cancelar-->
+                        <a class="btn negative bg-printalo-blueDetail text-light" data-dismiss="modal">Cancelar</a>
+                        <!--btn Cancelar-->
+                        <!--btn Aceptar-->
+                        <a class="btn positive bg-printalo-greenDetail text-light" data-target="#prevFactura"
+                            data-toggle="modal" data-dismiss="modal">Aceptar</a>
+                        <!--//btn Aceptar-->
+                    </div>
+                </div>
+                <!--//modal footer-->
+            </div>
+        </div>
+    </div>
+    <!--//Modal alert factura-->
     <!--Modal alert entregar-->
     <div class="modal fade text-dark" id="entregarPedido">
         <div class="modal-dialog mini modal-md">
@@ -402,7 +441,7 @@
                 <!--//modal body-->
                 <!--modal footer-->
                 <div class="modal-footer  px-5">
-                    <div class="modalbuttonalert text-center">
+                    <div class="text-center">
                         <!--btn Cancelar-->
                         <a class="btn negative bg-printalo-blueDetail text-light" data-dismiss="modal">Cerrar</a>
                         <!--btn Cancelar-->
@@ -418,45 +457,78 @@
         </div>
     </div>
     <!--//Modal alert entregar-->
-    <!--Modal alert factura-->
-    <div class="modal fade text-dark" id="datosFactura">
+    <!--Modal prev factura-->
+    <div class="modal fade text-dark" id="prevFactura">
         <div class="modal-dialog mini modal-md">
-            <div class="modal-content ">
-                <!--title modal header-->
-                <div class="modal-header bg-printalo-blueDetail  px-5">
-                    <h5 class="modal-title text-light">Datos para la Factura</h5>
-                </div>
-                <!--//title modal header-->
+            <div class="modal-content">
                 <!--modal body-->
-                <div class="container  px-5  my-4">
-                    <!--group nombre-->
-                    <div class="form-group row">
-                        <label class="col-3 text-center color-printalo-blueDetail font-weight-bold">Nombre :</label>
-                        <div class="col-9">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <!--//group nombre-->
-                    <!--group nit-->
-                    <div class="form-group row">
-                        <label class="col-3 text-center  color-printalo-blueDetail font-weight-bold">Nit :</label>
-                        <div class="col-9">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <!--//group nit-->
+                <div id="invoice">
+                    <div class="container  px-5 my-4 text-center">
+                        <label class="font-weight-bold">Printalo</label><br>
+                        <label class="font-weight-bold">Nombre de Negocio</label><br>
+                        <label class="">Direccion de Negocio</label><br>
+                        <label class="">Numero de Negocio</label><br>
+                        <label class="">La Paz - Bolivia</label><br>
+                        <label class="font-weight-bold">FACTURA</label><br>
+                        <label class="">ORIGINAL</label><br>
+                        <label
+                            class="font-weight-bold">-----------------------------------------------------</label><br>
+                        <label class="">NIT : </label><label class=""> Numero de Empresa</label><br>
+                        <label class="">Factura No : </label><label class=""> Numero de Factura</label><br>
+                        <label
+                            class="font-weight-bold">-----------------------------------------------------</label><br>
+                        <label class="">Fecha :</label><label class="">Ingresar Fecha actual</label><br>
+                        <label
+                            class="font-weight-bold">-----------------------------------------------------</label><br>
+                        <label class="">NIT : </label><label class=""> Numero de Cliente</label><br>
+                        <label class="">NOMBRE : </label><label class=""> Nombre de Cliente</label><br>
+                        <label
+                            class="font-weight-bold">-----------------------------------------------------</label><br>
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Concepto</th>
+                                    <th>Unidades</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>
+                                    Pedido
+                                </td>
+                                <td>
+                                    #Unidades
+                                </td>
+                                <td>
+                                    Bs
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
 
+                                </td>
+                                <td>
+                                    Total :
+                                </td>
+                                <td>
+                                    #TotalBs
+                                </td>
+                            </tr>
+                        </table>
+                        <label class="">Cantidad en literal</label><br>
+                        <label class="font-weight-bold">CODIGO DE CONTROL</label><br>
+                        <label class="font-weight-bold">FECHA LIMITE DE EMISION</label><br>
+                    </div>
                 </div>
                 <!--//modal body-->
                 <!--modal footer-->
-                <div class="modal-footer  px-5">
-                    <div class="modalbuttonalert text-center">
+                <div class="modal-footer px-5">
+                    <div class="text-center">
                         <!--btn Cancelar-->
                         <a class="btn negative bg-printalo-blueDetail text-light" data-dismiss="modal">Cancelar</a>
                         <!--btn Cancelar-->
                         <!--btn Aceptar-->
-                        <a class="btn positive bg-printalo-greenDetail text-light" data-target=""
-                            data-toggle="">Aceptar</a>
+                        <a class="btn positive bg-printalo-greenDetail text-light" id="btnImprimir">Imprimir</a>
                         <!--//btn Aceptar-->
                     </div>
                 </div>
@@ -464,7 +536,7 @@
             </div>
         </div>
     </div>
-    <!--//Modal alert factura-->
+    <!--//Modal prevFactura factura-->
     <!--modals alerts!!!-->
     <!--boostrap jquery popper libraries-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -493,7 +565,7 @@
     <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
 
     <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
-    <script type="text/javascript" src="../../../js/Negocios.js"></script>
+    <script type="text/javascript" src="../../../js/Negocio/Negocios.js"></script>
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
     <script type="text/javascript" src="../../../js/designjs/datatables.js"></script>

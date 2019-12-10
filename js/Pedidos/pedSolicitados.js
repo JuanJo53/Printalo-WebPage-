@@ -1,5 +1,5 @@
 window.onload = ValidarNeg();
-
+//Obtiene los datos de los pedidos respectivos de la base de datos.
 function getDocsData() {
 	var user = firebase.auth().currentUser;
 	var bd = firebase.firestore();
@@ -50,7 +50,7 @@ function getDocsData() {
 			console.log("Error obteniendo los documentos: ", error);
 		});
 }
-
+//Setea los datos de los pedidos en la tabla respectiva.
 function setData(doc, nomb, prec, cant, pag, f, h) {
 	var table = document.getElementsByTagName("table")[0];
 	var newRow = table.insertRow(1);
@@ -90,7 +90,7 @@ function setData(doc, nomb, prec, cant, pag, f, h) {
 					data-dismiss="modal" data-target="#modalVerDetalles" 
 					data-toggle="modal">Detalles
 				</button>`,
-				`<button href="" class="btn bg-printalo-blueDetail negative" 
+				`<button onclick="getPedDet(this)" id="rechazar" href="" class="btn bg-printalo-blueDetail negative" 
 					data-dismiss="modal" data-target="#eliminarPedido" 
 					data-toggle="modal">Rechazar
 				</button>`
@@ -98,7 +98,7 @@ function setData(doc, nomb, prec, cant, pag, f, h) {
 			.draw(false);
 	});
 }
-
+//Detalles del pedido seleccionado para rechazar o aceptar el pedido.
 function getPedDet(_this) {
 	var doc,
 		color,
@@ -115,17 +115,23 @@ function getPedDet(_this) {
 		horaE,
 		pago,
 		precio;
-	doc = getRowSelected(_this, 0);
-	usuario = getRowSelected(_this, 1);
-	precio = getRowSelected(_this, 2);
-	cant = getRowSelected(_this, 3);
-	pago = getRowSelected(_this, 4);
-	fechaE = getRowSelected(_this, 5);
-	horaE = getRowSelected(_this, 6);
+		doc = getRowSelected(_this, 0);
+		usuario = getRowSelected(_this, 1);
+		precio = getRowSelected(_this, 2);
+		cant = getRowSelected(_this, 3);
+		pago = getRowSelected(_this, 4);
+		fechaE = getRowSelected(_this, 5);
+		horaE = getRowSelected(_this, 6);
+
 	var pedido = new Pedido();
 	console.log(_this.id);
 	if (_this.id === "detalles") {
-		pedido.rechazarPedido(doc, usuario, precio, cant, pago, fechaE, horaE);
+		pedido.setPedDet(doc, usuario, precio, cant, pago, fechaE, horaE);
+	}else if(_this.id === "rechazar"){
+		var btnEliminar=document.getElementById('eliminar');
+		btnEliminar.addEventListener('click',function(){
+			pedido.rechazarPedido(doc, usuario, precio, cant, pago, fechaE, horaE);
+		})		
 	}
 }
 //Obtiene el nombre de la fila seleccionada.

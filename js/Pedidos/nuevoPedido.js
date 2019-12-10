@@ -295,10 +295,11 @@ function getTimestamp() {
 	var fecha = document.getElementById("datepicker").value;
 	var hora = document.getElementById("timepicker").value;
 	var f = fecha.split("/");
-	var d = f[0];
-	var m = f[1];
+	var m = f[0];
+	var d = f[1];
 	var a = f[2];
 	let timestamp = new Date(a + "-" + m + "-" + d + "T" + hora);
+	console.log(timestamp);
 	return timestamp;
 }
 //Obtiene el tipo de pago elegido.

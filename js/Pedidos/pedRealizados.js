@@ -53,12 +53,12 @@ function setData(doc, nomb, prec, cant, pag, f, h) {
         pag,
         f,
         h,
-        `<div class="color-printalo-greenDetail"><i class="far fa-square fa-2x"></i>
-                </div>`,
-        `<button id="detalles" onclick="getPedDet(this)" href="" class="btn bg-printalo-greenDetail positive" 
-					data-dismiss="modal" data-target="#modalVerDetalles" 
-					data-toggle="modal">Detalles
-				</button>`
+        `<div class="color-printalo-greenDetail"><i
+        class="far fa-check-square fa-2x"></i></div>`,
+        `<button href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
+        data-target="#modalVerDetalles" data-toggle="modal">Detalles</button>`,
+        `<button href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
+        data-target="#entregarPedido" data-toggle="modal">Entregar</button>`
       ])
       .draw(false);
   });

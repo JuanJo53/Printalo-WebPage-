@@ -208,4 +208,35 @@ class Pedido {
       });
     });
   }
+  imprPedido() {
+    var user = firebase.auth().currentUser;
+    var bd = firebase.firestore();
+    var docN = document.getElementById('nombreDocD').innerHTML;
+    var fechaE = document.getElementById('fEntregaD').value;
+    var horaE = document.getElementById('hEntregaD').value;
+    var f = fechaE.split('/');
+    var d = f[0];
+    var m = f[1];
+    var a = f[2];
+    var timestamp = new Date(a + '-' + m + '-' + d + ' ' + horaE);
+
+    var query = bd
+      .collection('Pedido')
+      .where('nombreDoc', '==', docN)
+      .where('negocioID', '==', user.uid)
+      .where('fechaEntrega', '==', timestamp);
+    query.get().then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+        bd.collection('Pedido')
+          .doc(doc.id)
+          .update({
+            estado: 'realizado'
+          })
+          .then(function() {
+            location.reload();
+            console.log('Documento se rechazo correctamente');
+          });
+      });
+    });
+  }
 }

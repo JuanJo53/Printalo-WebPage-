@@ -22,8 +22,7 @@ fileButton.addEventListener("change", function(e) {
 	};
 	//Agrega metadata al documento por subir
 	var metadata = {
-		name: file.name,
-		contentType: getFileExtension(file.name)
+		name: file.name
 	};
 	//Crea la referencia a un storage especifico.
 	var storageRef = storage.ref();

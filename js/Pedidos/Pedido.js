@@ -202,6 +202,34 @@ class Pedido {
 			});
 		});
 	}
+	realizarPedido(docN, fechaE, horaE) {
+		var user = firebase.auth().currentUser;
+		var bd = firebase.firestore();
+		var f = fechaE.split("/");
+		var d = f[0];
+		var m = f[1];
+		var a = f[2];
+		var timestamp = new Date(a + "-" + m + "-" + d + " " + horaE);
+
+		var query = bd
+			.collection("Pedido")
+			.where("nombreDoc", "==", docN)
+			.where("negocioID", "==", user.uid)
+			.where("fechaEntrega", "==", timestamp);
+		query.get().then(function(querySnapshot) {
+			querySnapshot.forEach(function(doc) {
+				bd.collection("Pedido")
+					.doc(doc.id)
+					.update({
+						estado: "realizado"
+					})
+					.then(function() {
+						location.reload();
+						console.log("Documento se rechazo correctamente");
+					});
+			});
+		});
+	}
 	imprPedido() {
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();
@@ -240,7 +268,6 @@ class Pedido {
 								.catch(function(error) {
 									console.log("No se obtuvo el link correctamente");
 								});
-							//location.reload();
 							console.log("Documento se descargo correctamente");
 						} else {
 							console.log("Documento no existe");

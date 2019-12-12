@@ -85,10 +85,12 @@ function setData(doc, nomb, prec, cant, pag, f, h) {
 				cant,
 				pag,
 				f,
-                h,
-                `<div class="color-printalo-greenDetail"><i class="far fa-square fa-2x"></i>
+				h,
+				`<div class="color-printalo-greenDetail"><i id="change" onclick="getPedDet(this)" 
+					class="far fa-square fa-2x"></i>
                 </div>`,
-				`<button id="detalles" onclick="getPedDet(this)" href="" class="btn bg-printalo-greenDetail positive" 
+				`<button id="detalles" onclick="getPedDet(this)" href="" 
+					class="btn bg-printalo-greenDetail positive" 
 					data-dismiss="modal" data-target="#modalVerDetalles" 
 					data-toggle="modal">Detalles
 				</button>`
@@ -98,21 +100,11 @@ function setData(doc, nomb, prec, cant, pag, f, h) {
 }
 //Detalles del pedido seleccionado para rechazar o aceptar el pedido.
 function getPedDet(_this) {
-	var doc,
-		color,
-		tam,
-		imp,
-		paginas,
-		acabado,
-		tipo,
-		cant,
-		usuario,
-		fecha,
-		hora,
-		fechaE,
-		horaE,
-		pago,
-		precio;
+	var doc, cant, usuario, fechaE, horaE, pago, precio;
+
+	var pedido = new Pedido();
+	console.log(_this.id);
+	if (_this.id === "detalles") {
 		doc = getRowSelected(_this, 0);
 		usuario = getRowSelected(_this, 1);
 		precio = getRowSelected(_this, 2);
@@ -120,11 +112,14 @@ function getPedDet(_this) {
 		pago = getRowSelected(_this, 4);
 		fechaE = getRowSelected(_this, 5);
 		horaE = getRowSelected(_this, 6);
-
-	var pedido = new Pedido();
-	console.log(_this.id);
-	if (_this.id === "detalles") {
 		pedido.setPedDet(doc, usuario, precio, cant, pago, fechaE, horaE);
+	} else if (_this.id === "change") {
+		doc = getRowSelected(_this.parentNode, 0);
+		fechaE = getRowSelected(_this.parentNode, 5);
+		horaE = getRowSelected(_this.parentNode, 6);
+		pedido.realizarPedido(doc, fechaE, horaE);
+	} else {
+		pedido.imprPedido();
 	}
 }
 //Obtiene el nombre de la fila seleccionada.

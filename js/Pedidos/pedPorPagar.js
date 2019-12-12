@@ -3,14 +3,49 @@ window.onload = ValidarCli();
 function getDocData() {
   var user = firebase.auth().currentUser;
   var bd = firebase.firestore();
+  var nomb,
+    arch,
+    precio,
+    cant = 0,
+    pago = '',
+    fecha = '',
+    hora = '',
+    timestamp;
   bd.collection('Pedido')
-    .where('clienteID', '==', user.uid)
+    .where('negocioID', '==', user.uid)
     .where('estado', '==', 'realizado')
+    .where('metodoPago', '==', 'personal')
     .orderBy('fecha')
     .get()
     .then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
-        setData(doc.data().tipoDoc, doc.data().nombreDoc);
+        var clienteID = doc.data().clienteID;
+        var docRef = bd.collection('Clientes').doc(clienteID);
+        docRef
+          .get()
+          .then(function(docu) {
+            if (docu.exists) {
+              arch = doc.data().nombreDoc;
+              nomb = docu.data().Nombre;
+              precio = doc.data().costoTotal;
+              cant = doc.data().cantidad;
+              pago = doc.data().metodoPago;
+              timestamp = new Date(doc.data().fechaEntrega.toDate());
+              fecha =
+                timestamp.getDate() +
+                '/' +
+                (timestamp.getMonth() + 1) +
+                '/' +
+                timestamp.getFullYear();
+              hora = timestamp.getHours() + ':' + timestamp.getMinutes();
+              setData(arch, nomb, precio, cant, pago, fecha, hora);
+            } else {
+              console.log('No such document!');
+            }
+          })
+          .catch(function(error) {
+            console.log('Error getting document:', error);
+          });
       });
     })
     .catch(function(error) {
@@ -55,7 +90,7 @@ function setData(doc, nomb, prec, cant, pag, f, h) {
         h,
         `<div class="color-printalo-greenDetail"><i
         class="far fa-check-square fa-2x"></i></div>`,
-        `<button href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
+        `<button id="detalles" href="" onclick="getPedDet(this)" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
         data-target="#modalVerDetalles" data-toggle="modal">Detalles</button>`,
         `<button href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
         data-target="#entregarPedido" data-toggle="modal">Entregar</button>`
@@ -124,10 +159,26 @@ function getDocDet(_this) {
       });
     });
 }
+//Detalles del pedido seleccionado para rechazar o aceptar el pedido.
+function getPedDet(_this) {
+  var doc, cant, usuario, fechaE, horaE, pago, precio;
+
+  var pedido = new Pedido();
+  console.log(_this.id);
+
+  doc = getRowSelected(_this, 0);
+  usuario = getRowSelected(_this, 1);
+  precio = getRowSelected(_this, 2);
+  cant = getRowSelected(_this, 3);
+  pago = getRowSelected(_this, 4);
+  fechaE = getRowSelected(_this, 5);
+  horaE = getRowSelected(_this, 6);
+  pedido.setPedDet(doc, usuario, precio, cant, pago, fechaE, horaE);
+}
 //Obtiene el nombre de la fila seleccionada.
-function getRowSelected(objectPressed) {
+function getRowSelected(objectPressed, col) {
   var a = objectPressed.parentNode.parentNode;
-  var nomb = a.getElementsByTagName('td')[1].innerHTML;
+  var nomb = a.getElementsByTagName('td')[col].innerHTML;
   return nomb;
 }
 //Esta funcion ejecuta el observador de firebase

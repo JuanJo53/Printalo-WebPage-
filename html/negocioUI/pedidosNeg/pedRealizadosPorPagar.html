@@ -42,8 +42,7 @@
                 class="navbar-item  order-lg-last   order-xs-last  mx-1 icon-user">
                 <div class="d-inline circle bg-printalo-greenDetail">
                     <!--Initial letter-->
-                    <div class="center">
-                        J
+                    <div id="InicialNeg" class="center">
                     </div>
                     <!--Initial letter-->
                 </div>
@@ -143,27 +142,6 @@
                                     </tr>
                                 </thead>
                                 <!--//head-->
-                                <!--tbody-->
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Ariel</td>
-                                        <td>3Bs</td>
-                                        <td>1</td>
-                                        <td>Online</td>
-                                        <td>10/10/2019</td>
-                                        <td>20:30</td>
-                                        <td>
-                                            <div class="color-printalo-greenDetail"><i
-                                                    class="far fa-check-square fa-2x"></i></div>
-                                        </td>
-                                        <td><a href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
-                                                data-target="#modalVerDetalles" data-toggle="modal">Detalles</a></td>
-                                        <td><a href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
-                                                data-target="#entregarPedido" data-toggle="modal">Entregar</a></td>
-                                    </tr>
-                                </tbody>
-                                <!--tbody-->
                             </table>
                         </div>
                         <!--table-->
@@ -564,9 +542,15 @@
     <!-- Configuracion de Proyecto en Firebase -->
     <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
 
+    <!--Script para la pagina actual-->
+    <script type="text/javascript" src="../../../js//Negocio/InicioNeg.js"></script>  
+    <script type="text/javascript" src="../../../js//Pedidos/pedPorPagar.js"></script>
+    <script type="text/javascript" src="../../../js//Pedidos/Pedido.js"></script>
+
     <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
     <script type="text/javascript" src="../../../js/Negocio/Negocios.js"></script>
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
+
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
     <script type="text/javascript" src="../../../js/designjs/datatables.js"></script>
 </body>

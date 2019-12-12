@@ -5,7 +5,7 @@ function getDocData() {
 	var bd = firebase.firestore();
 	bd.collection("Pedido")
 		.where("clienteID", "==", user.uid)
-		.where("estado", "==", "solicitado")
+		.where("estado", "in", ["solicitado", "pendiente"])
 		.orderBy("fecha")
 		.get()
 		.then(function(querySnapshot) {

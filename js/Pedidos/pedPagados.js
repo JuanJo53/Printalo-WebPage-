@@ -1,9 +1,10 @@
-window.onload = ValidarNeg();
-//Obtiene los datos de los pedidos respectivos de la base de datos.
-function getDocsData() {
+window.onload = ValidarCli();
+//Esta funcion obtiene los datos del pedido de la base de datos.
+function getDocData() {
   var user = firebase.auth().currentUser;
   var bd = firebase.firestore();
   var nomb,
+    arch,
     precio,
     cant = 0,
     pago = '',
@@ -12,7 +13,8 @@ function getDocsData() {
     timestamp;
   bd.collection('Pedido')
     .where('negocioID', '==', user.uid)
-    .where('estado', '==', 'solicitado')
+    .where('estado', '==', 'realizado')
+    .where('metodoPago', '==', 'tarjeta')
     .orderBy('fecha')
     .get()
     .then(function(querySnapshot) {
@@ -86,35 +88,84 @@ function setData(doc, nomb, prec, cant, pag, f, h) {
         pag,
         f,
         h,
-        `<button id="detalles" onclick="getPedDet(this)" href="" class="btn bg-printalo-greenDetail positive" 
-					data-dismiss="modal" data-target="#modalVerDetalles" 
-					data-toggle="modal">Detalles
-				</button>`,
-        `<button onclick="getPedDet(this)" id="rechazar" href="" class="btn bg-printalo-blueDetail negative" 
-					data-dismiss="modal" data-target="#eliminarPedido" 
-					data-toggle="modal">Rechazar
-				</button>`
+        `<div class="color-printalo-greenDetail"><i
+        class="far fa-check-square fa-2x"></i></div>`,
+        `<button id="detalles" href="" onclick="getPedDet(this)" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
+        data-target="#modalVerDetalles" data-toggle="modal">Detalles</button>`,
+        `<button href="" class="btn bg-printalo-greenDetail positive" data-dismiss="modal"
+        data-target="#entregarPedido" data-toggle="modal">Entregar</button>`
       ])
       .draw(false);
   });
 }
+//Obtiene los detalles del documento seleccionado en los pedidos enviados.
+function getDocDet(_this) {
+  var user = firebase.auth().currentUser;
+  var bd = firebase.firestore();
+  var docNomb = getRowSelected(_this);
+  var timestamp, fecha, hora;
+  bd.collection('Pedido')
+    .where('clienteID', '==', user.uid)
+    .where('estado', '==', 'realizado')
+    .where('nombreDoc', '==', docNomb)
+    .get()
+    .then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+        if (doc.data().blancoYnegro === false) {
+          document.getElementById('colorP').checked = true;
+        } else {
+          document.getElementById('BNP').checked = true;
+        }
+        if (doc.data().tamañoHoja === 'carta') {
+          document.getElementById('cartaP').checked = true;
+        } else if (doc.data().tamañoHoja === 'oficio') {
+          document.getElementById('oficioP').checked = true;
+        } else {
+          document.getElementById('a4P').checked = true;
+        }
+        if (doc.data().ladosImpre === 'intercalado') {
+          document.getElementById('intercaladoP').checked = true;
+        } else {
+          document.getElementById('anvP').checked = true;
+        }
+        document.getElementById('paginas').value = doc.data().numPaginas;
+        if (doc.data().engrampado === 'normal') {
+          document.getElementById('normalP').checked = true;
+        } else {
+          document.getElementById('engrampadoP').checked = true;
+        }
+        if (doc.data().tipo === 'normal') {
+          document.getElementById('TnormalP').checked = true;
+        } else {
+          document.getElementById('TreutilizadoP').checked = true;
+        }
+        document.getElementById('cantidadP').value = doc.data().cantidad;
+        if (doc.data().metodoPago === 'personal') {
+          document.getElementById('personalP').checked = true;
+        } else {
+          document.getElementById('tarjetaP').checked = true;
+        }
+        timestamp = new Date(doc.data().fechaEntrega.toDate());
+        fecha =
+          timestamp.getDate() +
+          '/' +
+          (timestamp.getMonth() + 1) +
+          '/' +
+          timestamp.getFullYear();
+        hora = timestamp.getHours() + ':' + timestamp.getMinutes();
+        document.getElementById('fechaP').value = fecha;
+        document.getElementById('horaP').value = hora;
+        document.getElementById('costo').value = doc.data().costoTotal;
+      });
+    });
+}
 //Detalles del pedido seleccionado para rechazar o aceptar el pedido.
 function getPedDet(_this) {
-  var doc,
-    color,
-    tam,
-    imp,
-    paginas,
-    acabado,
-    tipo,
-    cant,
-    usuario,
-    fecha,
-    hora,
-    fechaE,
-    horaE,
-    pago,
-    precio;
+  var doc, cant, usuario, fechaE, horaE, pago, precio;
+
+  var pedido = new Pedido();
+  console.log(_this.id);
+
   doc = getRowSelected(_this, 0);
   usuario = getRowSelected(_this, 1);
   precio = getRowSelected(_this, 2);
@@ -122,30 +173,7 @@ function getPedDet(_this) {
   pago = getRowSelected(_this, 4);
   fechaE = getRowSelected(_this, 5);
   horaE = getRowSelected(_this, 6);
-
-  var pedido = new Pedido();
-  console.log(_this.id);
-  if (_this.id === 'detalles') {
-    pedido.setPedDet(doc, usuario, precio, cant, pago, fechaE, horaE);
-  } else if (_this.id === 'rechazar') {
-    var btnEliminar = document.getElementById('eliminar');
-    btnEliminar.addEventListener('click', function() {
-      pedido.rechazarPedido(doc, precio, cant, pago, fechaE, horaE);
-    });
-  }
-}
-//Detalles del pedido seleccionado para rechazar o aceptar el pedido.
-function rechPed() {
-  var doc, cant, fechaE, horaE, pago, precio;
-
-  doc = document.getElementById('nombreDocD').innerHTML;
-  precio = document.getElementById('costoD').value;
-  cant = document.getElementById('cantD').value;
-  pago = document.getElementById('pagoD').value;
-  fechaE = document.getElementById('fEntregaD').value;
-  horaE = document.getElementById('hEntregaD').value;
-  var pedido = new Pedido();
-  pedido.rechazarPedido(doc, precio, cant, pago, fechaE, horaE);
+  pedido.setPedDet(doc, usuario, precio, cant, pago, fechaE, horaE);
 }
 //Obtiene el nombre de la fila seleccionada.
 function getRowSelected(objectPressed, col) {
@@ -153,12 +181,12 @@ function getRowSelected(objectPressed, col) {
   var nomb = a.getElementsByTagName('td')[col].innerHTML;
   return nomb;
 }
-// Esta funcion ejecuta el observador de firebase
-function ValidarNeg() {
+//Esta funcion ejecuta el observador de firebase
+function ValidarCli() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      getDocsData();
+      getDocData();
       console.log('Logeado');
     } else {
       // User is not signed in.

@@ -40,10 +40,7 @@ function setData(type, name) {
 	nombArch.innerHTML = name;
 
 	solic.className = "text-center";
-	solic.innerHTML =
-		`<button id="btnSol/` +
-		(table.rows.length - 1) +
-		`" onclick="getDocDet(this)" 
+	solic.innerHTML = `<button onclick="getDocDet(this)" 
 		class="btn positive bg-printalo-greenDetail text-light"
 		data-toggle="modal" data-target="#detallesPedido">
                         Detalles

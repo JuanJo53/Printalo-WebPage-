@@ -108,7 +108,8 @@ function getDocDet(_this) {
 				hora = timestamp.getHours() + ":" + timestamp.getMinutes();
 				document.getElementById("fechaP").value = fecha;
 				document.getElementById("horaP").value = hora;
-				document.getElementById("costo").value = doc.data().costoTotal;
+				document.getElementById("costo").innerHTML =
+					`<span class="font-weight-bold">Costo total:  </span>` + doc.data().costoTotal + "Bs.";
 			});
 		});
 }

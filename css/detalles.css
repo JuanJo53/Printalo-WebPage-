@@ -241,6 +241,7 @@ button.btnsavechanges:disabled {
   color: #fff;
 }
 /*//btn row positive*/
+
 /*btn navbar*/
 .navbarbutton.btn.positive:hover {
   background-color: #30e2c2 !important;
@@ -251,6 +252,12 @@ button.btnsavechanges:disabled {
   color: rgb(255, 255, 255) !important;
 }
 /*//btn navbar*/
+/*icon hover*/
+.icon-positive:hover {
+  color: #30e2c2 ;
+  cursor: pointer;
+}
+
 /*navbar links hovers*/
 .navbar-dark .navbar-nav .link .nav-link:hover {
   color: rgb(255, 255, 255) !important;

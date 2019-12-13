@@ -1,22 +1,22 @@
 window.onload = ValidarCli();
 //Esta funcion obtiene los datos del pedido de la base de datos.
 function getDocData() {
-	var user = firebase.auth().currentUser;
+	let user = firebase.auth().currentUser;
 	var bd = firebase.firestore();
 	bd.collection("Pedido")
 		.where("clienteID", "==", user.uid)
 		.where("estado", "in", ["solicitado", "pendiente"])
 		.orderBy("fecha")
-		.get()
-		.then(function(querySnapshot) {
-			querySnapshot.forEach(function(doc) {
-				setData(doc.data().tipoDoc, doc.data().nombreDoc);
+		.onSnapshot(snapshot => {
+			let changes = snapshot.docChanges();
+			changes.forEach(change => {
+				if (change.type == "added") {
+					setData(change.doc.data().tipoDoc, change.doc.data().nombreDoc);
+				}
 			});
-		})
-		.catch(function(error) {
-			console.log("Error obteniendo los documentos: ", error);
 		});
 }
+
 //Esta funcion pone los datos dentro la tabla especificada.
 function setData(type, name) {
 	var table = document.getElementsByTagName("table")[0];

@@ -34,6 +34,12 @@ fileButton.addEventListener("change", function(e) {
 		"state_changed",
 		function progress(snapshot) {
 			perc = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+
+			var progreso = document.getElementsByClassName("progress-bar")[0];
+
+			setInterval(() => {
+				progreso.style.setProperty("--width", perc + 0.1);
+			}, 5);
 			console.log(perc);
 		},
 		function error(err) {
@@ -64,7 +70,6 @@ fileButton.addEventListener("change", function(e) {
 			});
 		}
 	);
-
 	setData(getFileExtension(file.name), file.name);
 });
 //Coloca la imagen y nombre de los negocios disponibles.

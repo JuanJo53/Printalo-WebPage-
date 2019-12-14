@@ -147,10 +147,7 @@ function setData(type, name) {
 	}
 
 	nombArch.innerHTML = name;
-	solic.innerHTML =
-		`<button id="btnSol/` +
-		(table.rows.length - 1) +
-		`" onclick="getDocNomb(this)"  
+	solic.innerHTML = `<button onclick="getDocNomb(this)"  
 						class="btn positive bg-printalo-greenDetail text-light" 
 						data-toggle="modal" data-target="#escogerLocal">
                         Solicitar

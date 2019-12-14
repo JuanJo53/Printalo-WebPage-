@@ -5,7 +5,7 @@ function getDocData() {
 	var bd = firebase.firestore();
 	bd.collection("Pedido")
 		.where("clienteID", "==", user.uid)
-		.where("estado", "in", ["solicitado", "pendiente"])
+		.where("estado", "==", "realizado")
 		.orderBy("fecha")
 		.onSnapshot(snapshot => {
 			let changes = snapshot.docChanges();
@@ -25,7 +25,6 @@ function setData(type, name) {
 	var tipo = newRow.insertCell(0);
 	var nombArch = newRow.insertCell(1);
 	var solic = newRow.insertCell(2);
-	var elim = newRow.insertCell(3);
 
 	var icon = document.createElement("i");
 
@@ -41,15 +40,9 @@ function setData(type, name) {
 
 	solic.className = "text-center";
 	solic.innerHTML = `<button onclick="getDocDet(this)" 
-		class="btn positive bg-printalo-greenDetail text-light"
-		data-toggle="modal" data-target="#detallesPedido">
+    class="btn positive bg-printalo-greenDetail text-light"
+    data-toggle="modal" data-target="#detallespedido">
                         Detalles
-                    </button>`;
-	elim.className = "text-center";
-	elim.innerHTML = `<button onclick="new Pedido().cancelarPedido(this)" 
-						class="btn negative bg-printalo-blueDetail text-light" 
-						data-toggle="modal" data-target="#checkAlert">
-                        Cancelar
                     </button>`;
 }
 //Obtiene los detalles del documento seleccionado en los pedidos enviados.
@@ -60,7 +53,7 @@ function getDocDet(_this) {
 	var timestamp, fecha, hora;
 	bd.collection("Pedido")
 		.where("clienteID", "==", user.uid)
-		.where("estado", "==", "solicitado")
+		.where("estado", "==", "realizado")
 		.where("nombreDoc", "==", docNomb)
 		.get()
 		.then(function(querySnapshot) {

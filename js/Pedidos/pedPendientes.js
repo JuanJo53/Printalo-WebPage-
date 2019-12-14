@@ -86,8 +86,8 @@ function setData(doc, nomb, prec, cant, pag, f, h) {
 				pag,
 				f,
 				h,
-				`<div class="color-printalo-greenDetail"><i id="change" onclick="getPedDet(this)" 
-					class="far fa-square fa-2x"></i>
+				`<div class="color-printalo-greenDetail "><i id="change" onclick="getPedDet(this)" 
+					class="far fa-square fa-2x icon-positive"></i>
                 </div>`,
 				`<button id="detalles" onclick="getPedDet(this)" href="" 
 					class="btn bg-printalo-greenDetail positive" 

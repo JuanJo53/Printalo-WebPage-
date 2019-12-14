@@ -93,7 +93,9 @@
         <!--//title page-->
         <!--Contenido de la pagina-->
         <div class="row ">
-            <div class="col-lg-6 mx-auto">
+            <!--primera columna-->
+            <!--configuraciones de perfil-->
+            <div class="col-lg-6">
                 <!--contacto section-->
                 <section class="my-3 py-4 section-border px-5">
                     <!--title wrapper-->
@@ -181,7 +183,99 @@
                 <!--contacto section-->
             </div>
             <!--//primera columna-->
+            <!--segunda columna-->
+            <!--configuraciones de tarjeta-->
+            <div class="col-lg-6">
+                <!--contacto section-->
+                <section class="my-3 py-4 section-border px-5">
+                    <!--title wrapper-->
+                    <div class="text-center">
+                        <h4>Datos de Tarjeta de Credito</h4>
+                    </div>
+                    <!--//title wrapper-->
+                    <!-- Formulario de Tarjeta-->
+                    <form role="form">
+                        <!--Block Nombre-->
+                        <div class="form-group">
+                            <label for="username"
+                                class="color-printalo-blueDetail font-weight-bold">Nombre</label>
+                            <!--Input de nombre-->
+                            <input type="text" name="username" placeholder="Ingrese el nombre"
+                                required class="form-control">
+                            <!--//Input de nombre-->
+                        </div>
+                        <!--//Block Nombre-->
+                        <!--Block Numero de tarjeta-->
+                        <div class="form-group">
+                            <label for="cardNumber"
+                                class="color-printalo-blueDetail font-weight-bold">Numero
+                                de tarjeta</label>
+                            <div class="input-group">
+                                <!--Input de numero de cuenta-->
+                                <input type="number" name="" placeholder="Numero de tarjeta"
+                                    class="form-control" required>
+                                <!--//Input de numero de cuenta-->
+                                <!--Grupo de Iconos-->
+                                <div class="input-group-append">
+                                    <span
+                                        class="input-group-text text-light bg-printalo-greenDetail">
+                                        <i class="fab fa-cc-visa mx-1"></i>
+                                        <i class="fab fa-cc-amex mx-1"></i>
+                                        <i class="fab fa-cc-mastercard mx-1"></i>
+                                    </span>
+                                </div>
+                                <!--//Grupo de Iconos-->
+                            </div>
+                        </div>
+                        <!--//Block Numero de tarjeta-->
+                        <!--Block Expiracion-->
+                        <div class="row">
+                            <div class="col">
+                                <!--Block mes y anio-->
+                                <div class="form-group">
+                                    <label
+                                        class="color-printalo-blueDetail font-weight-bold">Expiracion</label>
+                                    <div class="input-group">
+                                        <!--input mes-->
+                                        <input type="number" placeholder="Mes" name=""
+                                            class="form-control">
+                                        <!--//input mes-->
+                                        <!--input anio-->
+                                        <input type="number" placeholder="Año" name=""
+                                            class="form-control">
+                                        <!--//input anio-->
+                                    </div>
+                                </div>
+                                <!--//Block mes y anio-->
+                            </div>
+                            <div class="col">
+                                <!--Block cvv-->
+                                <div class="form-group mb-4">
+                                    <label class="color-printalo-blueDetail font-weight-bold">CVV
+                                        <i class="fa fa-question-circle"></i>
+                                    </label>
+                                    <!--Input cvv-->
+                                    <input type="text" required class="form-control"
+                                        placeholder="Cvv">
+                                    <!--//Input cvv-->
+                                </div>
+                                <!--//Block cvv-->
+                            </div>
+                        </div>
+                        <!--//Block Expiracion-->
+                    </form>
+                    <!-- //Formulario de Tarjeta-->
+                    <div class="row text-light px-3 mt-3">
+                        <button onclick="habilitarCamposPerfilUsuario()" class="btn icon-editar ml-auto"><i
+                                class="fas fa-edit"></i></button>
+                    </div>
+                    <!--//btn editar-->
+                </section>
+                <!--contacto section-->
+            </div>
+            <!--//primera columna-->
         </div>
+        
         <!--Boton guardar cambios-->
         <div class="row text-light p-4">
             <button id="btnGuardarCambios" onclick="GuardarCambiosPerfilUsuario()" class="btn btnsavechanges ml-auto"

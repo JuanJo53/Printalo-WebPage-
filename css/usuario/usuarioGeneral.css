@@ -379,8 +379,7 @@ increment-next {  from {
   display: inline-block;
 }
 
-/*Allows modals to go from one to another*/
-.modal { overflow-y: auto }
+
 
 .fab-icon-holder-square {
   width: 40px;

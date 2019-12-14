@@ -163,3 +163,6 @@ label {
   margin: 15px 0px 15px 0;
 }
 /*detalles de pedidos inputs*/
+
+/*Allows modals to go from one to another*/
+.modal { overflow-y: auto }

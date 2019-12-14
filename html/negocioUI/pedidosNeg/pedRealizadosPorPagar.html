@@ -315,7 +315,8 @@
                                     <div class="ml-auto">
                                         <!--Btn aceptar pedido-->
                                         <a href="#" id="imprimirD" onclick="new Pedido().imprPedido()"
-                                            class="btn bg-printalo-greenDetail text-light  positive">Volver a Imprimir</a>
+                                            class="btn bg-printalo-greenDetail text-light  positive">Volver a
+                                            Imprimir</a>
                                         <!--//Btn aceptar pedido-->
                                     </div>
                                     <!--//btn block-->
@@ -433,80 +434,82 @@
     <!--//Modal alert entregar-->
     <!--Modal prev factura-->
     <div class="modal fade text-dark" id="prevFactura">
-        <div class="modal-dialog mini modal-md">
-            <div class="modal-content">
-                <!--modal body-->
-                <div id="invoice">
-                    <div class="container  px-5 my-4 text-center">
-                        <label class="font-weight-bold">Printalo</label><br>
-                        <label class="font-weight-bold">Nombre de Negocio</label><br>
-                        <label class="">Direccion de Negocio</label><br>
-                        <label class="">Numero de Negocio</label><br>
-                        <label class="">La Paz - Bolivia</label><br>
-                        <label class="font-weight-bold">FACTURA</label><br>
-                        <label class="">ORIGINAL</label><br>
-                        <label
-                            class="font-weight-bold">-----------------------------------------------------</label><br>
-                        <label class="">NIT : </label><label class=""> Numero de Empresa</label><br>
-                        <label class="">Factura No : </label><label class=""> Numero de Factura</label><br>
-                        <label
-                            class="font-weight-bold">-----------------------------------------------------</label><br>
-                        <label class="">Fecha :</label><label class="">Ingresar Fecha actual</label><br>
-                        <label
-                            class="font-weight-bold">-----------------------------------------------------</label><br>
-                        <label class="">NIT : </label><label class=""> Numero de Cliente</label><br>
-                        <label class="">NOMBRE : </label><label class=""> Nombre de Cliente</label><br>
-                        <label
-                            class="font-weight-bold">-----------------------------------------------------</label><br>
-                        <table class="table table-borderless">
-                            <thead>
+        <div class="modal-dialog modal-md">
+            <div class="col">
+                <div class="modal-content">
+                    <!--modal body-->
+                    <div id="invoice">
+                        <div class="container px-5 my-4 text-center">
+                            <label class="font-weight-bold">Printalo</label><br>
+                            <label class="font-weight-bold">Nombre de Negocio</label><br>
+                            <label class="">Direccion de Negocio</label><br>
+                            <label class="">Numero de Negocio</label><br>
+                            <label class="">La Paz - Bolivia</label><br>
+                            <label class="font-weight-bold">FACTURA</label><br>
+                            <label class="">ORIGINAL</label><br>
+                            <label
+                                class="font-weight-bold">-----------------------------------------------------</label><br>
+                            <label class="">NIT : </label><label class=""> Numero de Empresa</label><br>
+                            <label class="">Factura No : </label><label class=""> Numero de Factura</label><br>
+                            <label
+                                class="font-weight-bold">-----------------------------------------------------</label><br>
+                            <label class="">Fecha :</label><label class="">Ingresar Fecha actual</label><br>
+                            <label
+                                class="font-weight-bold">-----------------------------------------------------</label><br>
+                            <label class="">NIT : </label><label class=""> Numero de Cliente</label><br>
+                            <label class="">NOMBRE : </label><label class=""> Nombre de Cliente</label><br>
+                            <label
+                                class="font-weight-bold">-----------------------------------------------------</label><br>
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th>Concepto</th>
+                                        <th>Unidades</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
                                 <tr>
-                                    <th>Concepto</th>
-                                    <th>Unidades</th>
-                                    <th>Total</th>
+                                    <td>
+                                        Pedido
+                                    </td>
+                                    <td>
+                                        #Unidades
+                                    </td>
+                                    <td>
+                                        Bs
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tr>
-                                <td>
-                                    Pedido
-                                </td>
-                                <td>
-                                    #Unidades
-                                </td>
-                                <td>
-                                    Bs
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
+                                <tr>
+                                    <td>
 
-                                </td>
-                                <td>
-                                    Total :
-                                </td>
-                                <td>
-                                    #TotalBs
-                                </td>
-                            </tr>
-                        </table>
-                        <label class="">Cantidad en literal</label><br>
-                        <label class="font-weight-bold">CODIGO DE CONTROL</label><br>
-                        <label class="font-weight-bold">FECHA LIMITE DE EMISION</label><br>
+                                    </td>
+                                    <td>
+                                        Total :
+                                    </td>
+                                    <td>
+                                        #TotalBs
+                                    </td>
+                                </tr>
+                            </table>
+                            <label class="">Cantidad en literal</label><br>
+                            <label class="font-weight-bold">CODIGO DE CONTROL</label><br>
+                            <label class="font-weight-bold">FECHA LIMITE DE EMISION</label><br>
+                        </div>
                     </div>
-                </div>
-                <!--//modal body-->
-                <!--modal footer-->
-                <div class="modal-footer px-5">
-                    <div class="text-center">
-                        <!--btn Cancelar-->
-                        <a class="btn negative bg-printalo-blueDetail text-light" data-dismiss="modal">Cancelar</a>
-                        <!--btn Cancelar-->
-                        <!--btn Aceptar-->
-                        <a class="btn positive bg-printalo-greenDetail text-light" id="btnImprimir">Imprimir</a>
-                        <!--//btn Aceptar-->
+                    <!--//modal body-->
+                    <!--modal footer-->
+                    <div class="modal-footer px-5">
+                        <div class="text-center">
+                            <!--btn Cancelar-->
+                            <a class="btn negative bg-printalo-blueDetail text-light" data-dismiss="modal">Cancelar</a>
+                            <!--btn Cancelar-->
+                            <!--btn Aceptar-->
+                            <a class="btn positive bg-printalo-greenDetail text-light" id="btnImprimir">Imprimir</a>
+                            <!--//btn Aceptar-->
+                        </div>
                     </div>
+                    <!--//modal footer-->
                 </div>
-                <!--//modal footer-->
             </div>
         </div>
     </div>
@@ -539,7 +542,7 @@
     <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
 
     <!--Script para la pagina actual-->
-    <script type="text/javascript" src="../../../js//Negocio/InicioNeg.js"></script>  
+    <script type="text/javascript" src="../../../js//Negocio/InicioNeg.js"></script>
     <script type="text/javascript" src="../../../js//Pedidos/pedPorPagar.js"></script>
     <script type="text/javascript" src="../../../js//Pedidos/Pedido.js"></script>
 

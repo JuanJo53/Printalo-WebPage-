@@ -125,7 +125,6 @@
         </div>
         <div class="btn btn-primary my-5" data-dismiss="modal" data-toggle="modal"
         data-target="#progressBarLoading">btn auxiliar progressbar</div>
-        <div class="progress-bar" data-label="Cargando Archivo"></div>
         <!-- // -->
         <!--float action button (+)-->
         <div class="input-file-container">
@@ -1860,21 +1859,19 @@
         <!--Content Modal-->
     </div>
     <!--//perfiliconUsuario-->
-    <!--Modal Subir Documento (+)-->
+    <!--Progress Bar-->
     <div class="modal fade text-dark" id="progressBarLoading">
         <div class="modal-dialog mini modal-md">
             <!--model content-->
             <div class="modal-content">
                 <!--modal body-->
-                
-                    <div class="progress-bar" data-label="Cargando Archivo"></div>
-                
+                    <div class="progress-bar" style="--width : 20 " data-label="Cargando Archivo"></div>
                 <!--//modal body-->
             </div>
             <!--//model content-->
         </div>
     </div>
-    <!--//Modal Subir Documento (btn +)-->
+    <!--//Progress Bar-->
 
     
     <!--//SPINNERS LOADERS JUNK CHECK-->
@@ -1889,6 +1886,7 @@
     <script src="../../../js/designjs/spinner.js"></script>
     <script src="../../../js/designjs/perfiliconuser.js"></script>
     <script src="../../../js/designjs/timeanddate.js"></script>
+    <script src="../../../js/designjs/progressBar.js"></script>
     <script>
         document.querySelector("html").classList.add('js');
 

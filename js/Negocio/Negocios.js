@@ -500,22 +500,16 @@ class Negocio {
     var bd = firebase.firestore();
     var userid = user.uid;
     var docRef = bd
-      .collection("Negocios")
-      .doc(userid)
+      .collection("Administrador")
+      .where('negocioID','==',userid)
       .get()
-      .then(function(doc) {
-        // doc.data() is never undefined for query doc snapshots
-        var administradorId = doc.data().adminID;
-        var docref2 = bd
-          .collection("Administrador")
-          .doc(administradorId)
-          .get()
-          .then(function(doc) {
-            nombreAdm = doc.data().nombre;
-            apellidoAdm = doc.data().apellido;
-            document.getElementById("nombreAdm").value = nombreAdm;
-            document.getElementById("apellidoAdm").value = apellidoAdm;
-          });
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc){
+          nombreAdm = doc.data().nombre;
+        apellidoAdm = doc.data().apellido;
+        document.getElementById("nombreAdm").value = nombreAdm;
+        document.getElementById("apellidoAdm").value = apellidoAdm;
+        });
       })
       .catch(function(error) {
         console.log("Error al obtener los datos:", error);

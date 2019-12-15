@@ -44,16 +44,15 @@ class Negocio {
           .collection("Administrador")
           .add({
             apellido: a,
-            nombre: n
+            nombre: n,
+            negocioID: user.uid
           })
-          .then(refDoc => {
-            var adminID = refDoc.id;
+          .then(function(){
             firebase
               .firestore()
               .collection("Negocios")
               .doc(user.uid)
               .set({
-                adminID: adminID,
                 costoUni: 0,
                 dir: d,
                 email: e,
@@ -82,8 +81,8 @@ class Negocio {
   IngresarNeg() {
     var auth = new Auth();
     auth.LoginEmailPass(this.email, this.password);
-  }
-
+  }  
+  // Esta funcion pasa el email y su password a la clase Auth para logout con firebase
   CerrarSecion() {
     var auth = new Auth();
     auth.Logout();

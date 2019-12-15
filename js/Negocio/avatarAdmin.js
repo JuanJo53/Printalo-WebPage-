@@ -9,7 +9,6 @@ docRef
 	.get()
 	.then(function(doc) {
 		if (doc.exists) {
-			console.log("Datos de Admin:", doc.data().adminID);
 			nombre = doc.data().nombreNeg;
 			telef = doc.data().fono;
 			mail = doc.data().email;

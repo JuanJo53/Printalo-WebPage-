@@ -35,11 +35,7 @@
 				<!--right side modal content-->
 				<div class="modal-content  right">
 					<!--close icon-->
-					<a
-						href=""
-						class="close-icon text-center ml-auto m-3"
-						data-dismiss="modal"
-					></a>
+					<a href="" class="close-icon text-center ml-auto m-3" data-dismiss="modal"></a>
 					<!--//close icon-->
 					<!--container-->
 					<div class="container">
@@ -50,7 +46,7 @@
 							<div class="form-group">
 								<!--nombre del negocio-->
 								<label for="name">Nombre del Negocio:</label>
-								<input type="text" class="form-control" id="txtNameIng" />
+								<input id="txtNombre" type="text" class="form-control" id="txtNameIng" />
 								<!--//nombre del negocio-->
 								<!--email box-->
 								<label for="name">E-mail:</label>
@@ -58,11 +54,7 @@
 								<!--//email box-->
 								<!--contrasenia box-->
 								<label for="name">Constraseña:</label>
-								<input
-									type="password"
-									class="form-control"
-									id="txtPasswordIng"
-								/>
+								<input type="password" class="form-control" id="txtPasswordIng" />
 								<!--//contrasenia box-->
 							</div>
 						</div>
@@ -95,9 +87,10 @@
 		</div>
 		<!--//row-->
 		<!--Script de la actual pagina-->
-		<script
-			type="text/javascript"
-			src="../../../js//Negocio/IndexNeg.js"
-		></script>
+		<script type="text/javascript" src="../../../js//Negocio/IndexNeg.js"></script>
+
+		<!-- Para Authentication y Firestore -->
+		<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
 	</body>
 </html>

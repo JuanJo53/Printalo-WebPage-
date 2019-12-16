@@ -98,7 +98,6 @@ class Cliente {
 				console.log("Error al obtener los datos:", error);
 			});
 	}
-
 	//guarda datos generales de admnistrador
 	GuardarCambiosPerfilUsuario() {
 		//console.log("click");

@@ -114,9 +114,28 @@ class Negocio {
     //TODO: Guardar los datos de registro extra en firebase
   }
   // Esta funcion pasa el email y su password a la clase Auth para login con firebase
-  IngresarNeg() {
-    var auth = new Auth();
-    auth.LoginEmailPass(this.email, this.password);
+  IngresarNeg() {   
+    var nomb=this.nombre;  
+    var email=this.email; 
+    var password=this.password; 
+    var bd=firebase.firestore();
+    bd.collection("Negocios")
+        .where("nombreNeg","==",nomb)
+        .get()
+        .then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc){
+            if(doc.data().nombreNeg===nomb){
+              console.log(nomb,email,password);              
+              var auth = new Auth();  
+              auth.LoginEmailPass(email, password);
+            }else{
+              alert("Nombre de Negocio Incorrecto");
+            }  
+          });     
+        })
+        .catch(function(error){
+          console.log(`Error al Ingresar: ${error}`);
+        });  
   }  
   // Esta funcion pasa el email y su password a la clase Auth para logout con firebase
   CerrarSecion() {

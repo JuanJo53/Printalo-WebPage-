@@ -200,8 +200,8 @@
                             <label for="username"
                                 class="color-printalo-blueDetail font-weight-bold">Nombre</label>
                             <!--Input de nombre-->
-                            <input type="text" name="username" placeholder="Ingrese el nombre"
-                                required class="form-control">
+                            <input id="Tnombre" type="text" name="username" placeholder="Ingrese el nombre"
+                                required class="form-control" disabled>
                             <!--//Input de nombre-->
                         </div>
                         <!--//Block Nombre-->
@@ -212,8 +212,8 @@
                                 de tarjeta</label>
                             <div class="input-group">
                                 <!--Input de numero de cuenta-->
-                                <input type="number" name="" placeholder="Numero de tarjeta"
-                                    class="form-control" required>
+                                <input id="Tnumero" type="number" name="" placeholder="Numero de tarjeta"
+                                    class="form-control" required disabled>
                                 <!--//Input de numero de cuenta-->
                                 <!--Grupo de Iconos-->
                                 <div class="input-group-append">
@@ -237,12 +237,12 @@
                                         class="color-printalo-blueDetail font-weight-bold">Expiracion</label>
                                     <div class="input-group">
                                         <!--input mes-->
-                                        <input type="number" placeholder="Mes" name=""
-                                            class="form-control">
+                                        <input id="Tmes" type="number" placeholder="Mes" name=""
+                                            class="form-control" disabled>
                                         <!--//input mes-->
                                         <!--input anio-->
-                                        <input type="number" placeholder="Año" name=""
-                                            class="form-control">
+                                        <input id="Tanio" type="number" placeholder="Año" name=""
+                                            class="form-control" disabled>
                                         <!--//input anio-->
                                     </div>
                                 </div>
@@ -255,8 +255,8 @@
                                         <i class="fa fa-question-circle"></i>
                                     </label>
                                     <!--Input cvv-->
-                                    <input type="text" required class="form-control"
-                                        placeholder="Cvv">
+                                    <input id="Tcvv" type="text" required class="form-control"
+                                        placeholder="Cvv" disabled>
                                     <!--//Input cvv-->
                                 </div>
                                 <!--//Block cvv-->
@@ -266,7 +266,7 @@
                     </form>
                     <!-- //Formulario de Tarjeta-->
                     <div class="row text-light px-3 mt-3">
-                        <button onclick="habilitarCamposPerfilUsuario()" class="btn icon-editar ml-auto"><i
+                        <button onclick="habilitarCamposTarjeta()" class="btn icon-editar ml-auto"><i
                                 class="fas fa-edit"></i></button>
                     </div>
                     <!--//btn editar-->

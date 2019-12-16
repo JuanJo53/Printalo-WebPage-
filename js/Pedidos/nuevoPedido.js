@@ -14,7 +14,8 @@ fileButton.addEventListener("change", function(e) {
 	//Obtiene la cantidad de paginas del documento que se esta por enviar.
 	var input = document.getElementById("my-file");
 	var reader = new FileReader();
-	var count = 0;
+	var count = 0,
+		perc = 0.0;
 	reader.readAsBinaryString(input.files[0]);
 	reader.onloadend = function() {
 		count = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
@@ -28,19 +29,19 @@ fileButton.addEventListener("change", function(e) {
 	var storageRef = storage.ref();
 
 	var task = storageRef.child("docsPedidos/" + user.uid + "/" + file.name).put(file, metadata);
-
-	var perc;
+	$("#progress").click();
 	task.on(
 		"state_changed",
 		function progress(snapshot) {
 			perc = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-
 			var progreso = document.getElementsByClassName("progress-bar")[0];
-
 			setInterval(() => {
 				progreso.style.setProperty("--width", perc + 0.1);
 			}, 5);
 			console.log(perc);
+			if (perc === 100) {
+				$("#progress").click();
+			}
 		},
 		function error(err) {
 			console.log("Error: " + err);

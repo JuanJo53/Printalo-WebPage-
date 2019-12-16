@@ -353,7 +353,7 @@
                     <div class="form-group row">
                         <label class="col-3 text-center color-printalo-blueDetail font-weight-bold">Nombre :</label>
                         <div class="col-9">
-                            <input type="text" class="form-control">
+                            <input id="facNombCli" type="text" class="form-control">
                         </div>
                     </div>
                     <!--//group nombre-->
@@ -361,7 +361,7 @@
                     <div class="form-group row">
                         <label class="col-3 text-center  color-printalo-blueDetail font-weight-bold">Nit :</label>
                         <div class="col-9">
-                            <input type="text" class="form-control">
+                            <input id="facNitCli" type="text" class="form-control">
                         </div>
                     </div>
                     <!--//group nit-->
@@ -441,16 +441,16 @@
                     <div id="invoice">
                         <div class="container px-5 my-4 text-center">
                             <label class="font-weight-bold">Printalo</label><br>
-                            <label class="font-weight-bold">Nombre de Negocio</label><br>
-                            <label class="">Direccion de Negocio</label><br>
-                            <label class="">Numero de Negocio</label><br>
+                            <label id="facNombNeg" class="font-weight-bold">Nombre de Negocio</label><br>
+                            <label id="facDirNeg" class="">Direccion de Negocio</label><br>
+                            <label id="facNumNeg" class="">Numero de Negocio</label><br>
                             <label class="">La Paz - Bolivia</label><br>
                             <label class="font-weight-bold">FACTURA</label><br>
                             <label class="">ORIGINAL</label><br>
                             <label
                                 class="font-weight-bold">-----------------------------------------------------</label><br>
-                            <label class="">NIT : </label><label class=""> Numero de Empresa</label><br>
-                            <label class="">Factura No : </label><label class=""> Numero de Factura</label><br>
+                            <label class="">NIT : </label><label id="nitNeg" class=""> Numero de Empresa</label><br>
+                            <label class="">Factura No : </label><label id="numFac" class=""> Numero de Factura</label><br>
                             <label
                                 class="font-weight-bold">-----------------------------------------------------</label><br>
                             <label class="">Fecha :</label><label class="">Ingresar Fecha actual</label><br>
@@ -537,6 +537,7 @@
     <!-- Para Authentication y Firestore -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-storage.js"></script>
 
     <!-- Configuracion de Proyecto en Firebase -->
     <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>

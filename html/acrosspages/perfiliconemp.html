@@ -1,48 +1,59 @@
 <html>
-    <body>
-        <div class="container px-5 my-4">
-            <div class="row my-3">
-                <!--circle icon-->
-                <div class="circle max bg-printalo-greenDetail mx-auto">
-                    <div class="center">
-                        E
-                    </div>
-                </div>
-                <!--//circle icon-->
-            </div>
-            <!--nombre de usuario-->
-            <div class="row my-4">
-                <h4 class="font-weight-bold mx-auto">Empleado</h4>
-            </div>
-            <!--//nombre de usuario-->
-            <!--telefono-->
-            <div class="text-center">
-                <p><span class="font-weight-bold">Telefono :</span>
-                    7777777</p>
-            </div>
-            <!--//telefono-->
-            <!--correo-->
-            <div class="text-center">
-                <p><span class="font-weight-bold">Correo :</span>
-                    juanjofer@gmail.com</p>
-            </div>
-            <!--//correo-->
-            <!--btn editar-->
-            <div class="row mx-auto my-2">
-                <a class="btn btn-block positive bg-printalo-greenDetail text-light" data-toggle="modal"
-                    data-target="#escogerLocal">Editar</a>
-            </div>
-            <!--//btn editar-->
-            <!--btn cerrar sesion-->
-            <div class="row mx-auto my-2">
-                <button onclick="Salir()" id="btnLogout" class="btn btn-block negative bg-printalo-blueDetail text-light " data-dismiss="modal"
-                    data-target="#escogerLocal">Cerrar Sesion</button>
-            </div>
-            <!--//btn cerrar sesion-->
-        </div>    
-     <!--Script para que funcione con los clinetes-->
-     <script type="text/javascript" src="../../../js/Cliente/porEnviar.js"></script>
-    <!--Script para que funcione con los negocios-->
-     <script type="text/javascript" src="../../../js/Negocio/InicioNeg.js"></script>
-    </body>        
+	<body>
+		<div class="container px-5 my-4">
+			<div class="row my-3">
+				<!--circle icon-->
+				<div class="circle max bg-printalo-greenDetail mx-auto">
+					<div class="center">
+						E
+					</div>
+				</div>
+				<!--//circle icon-->
+			</div>
+			<!--nombre de usuario-->
+			<div class="row my-4">
+				<h4 class="font-weight-bold mx-auto">Empleado</h4>
+			</div>
+			<!--//nombre de usuario-->
+			<!--telefono-->
+			<div class="text-center">
+				<p><span class="font-weight-bold">Telefono :</span> 7777777</p>
+			</div>
+			<!--//telefono-->
+			<!--correo-->
+			<div class="text-center">
+				<p><span class="font-weight-bold">Correo :</span> juanjofer@gmail.com</p>
+			</div>
+			<!--//correo-->
+			<!--btn editar-->
+			<div class="row mx-auto my-2">
+				<button
+					href="../configurarNeg/confGenerales.html"
+					class="btn btn-block positive bg-printalo-greenDetail text-light"
+					data-toggle="modal"
+					data-target="#escogerLocal"
+				>
+					Editar
+				</button>
+			</div>
+			<!--//btn editar-->
+			<!--btn cerrar sesion-->
+			<div class="row mx-auto my-2">
+				<button
+					onclick="Salir()"
+					id="btnLogout"
+					class="btn btn-block negative bg-printalo-blueDetail text-light "
+					data-dismiss="modal"
+					data-target="#escogerLocal"
+				>
+					Cerrar Sesion
+				</button>
+			</div>
+			<!--//btn cerrar sesion-->
+		</div>
+		<!--Script para que funcione con los clinetes-->
+		<script type="text/javascript" src="../../../js/Cliente/porEnviar.js"></script>
+		<!--Script para que funcione con los negocios-->
+		<script type="text/javascript" src="../../../js/Negocio/InicioNeg.js"></script>
+	</body>
 </html>

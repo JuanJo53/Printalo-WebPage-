@@ -132,13 +132,13 @@ class Negocio {
           }else{
             conf=false;
           } 
-        });   
-        if(conf===false)
-          alert("Nombre de Negocio Incorrecto");  
+        });       
       })
       .catch(function(error){
         console.log(`Error al Ingresar: ${error}`);
       }); 
+      if(conf===false)
+          alert("Nombre de Negocio Incorrecto");  
     }else{
       alert("Porfavor Ingrese el Nombre de Negocio");
     }     

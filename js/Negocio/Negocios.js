@@ -451,6 +451,7 @@ class Negocio {
     if (normal === true && reuti === true) {
       var bd = firebase.firestore();
       var user = firebase.auth().currentUser;
+      
       const pNorm = parseFloat(document.getElementById("txtHojaNorm").value);
       const pReu = parseFloat(document.getElementById("txtHojaReu").value);
       if (pNorm > 0 && pReu > 0) {
@@ -520,6 +521,28 @@ class Negocio {
       alert("No hay cambios en los precios por tipo de hoja");
     }
   }
+  contarDatosTipoNormal() {
+    console.log("here inside");
+    var pedNormal=0;
+    var user = firebase.auth().currentUser;
+    var bd = firebase.firestore();
+    var userid = user.uid;
+    var docRef = bd
+      .collection("Pedido")
+      .where('negocioID','==',userid)
+      where("metodoPago", "==", "personal")
+      .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc){
+          pedNormal=querySnapshot.size;
+          console.log("here"+pedNormal);
+          //return pedNormal;
+        });
+      })
+      .catch(function(error) {
+        console.log("Error al obtener los datos:", error);
+      });   
+  }
   /*------------------------CONFIGURACIONES GENERALES---------------------------- */
   //Setea los precios actuales de la base de datos
   setDatosGeneralesAct() {
@@ -585,6 +608,7 @@ class Negocio {
     var vieEnt, vieSal;
     var sabEnt, sabSal;
     var user = firebase.auth().currentUser;
+    //console.log(user);
     var bd = firebase.firestore();
     var userid = user.uid;
     var docRef = bd.collection("Negocios").doc(userid);

@@ -624,6 +624,7 @@ class Negocio {
         console.log("Error al obtener los datos:", error);
       });
   }
+  
   //Esta funcion guarda los cambio de los datos generales del objeto
   GuardarCambiosNegocioGenerales() {
     //console.log("click");

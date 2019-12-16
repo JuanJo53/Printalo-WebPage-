@@ -1,6 +1,31 @@
+//contarDatos de tipo de pedidos
+/*function contarDatosTipoNormal() {
+  console.log("here");
+  var pedNormal=0;
+  var user = firebase.auth().currentUser;
+  var bd = firebase.firestore();
+  var userid = user.uid;
+  var docRef = bd
+    .collection("Pedido")
+    .where('negocioID','==',userid)
+    where("metodoPago", "==", "personal")
+    .get()
+    .then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc){
+        pedNormal=querySnapshot.size;
+        console.log("here"+pedNormal);
+        //return pedNormal;
+      });
+    })
+    .catch(function(error) {
+      console.log("Error al obtener los datos:", error);
+    });   
+}*/
+
 function read() {
     var x1=12;
     var x2=25;
+    //contarDatosTipoNormal();
   document.getElementById(
     "chart"
   ).innerHTML = `<canvas id="myChart"></canvas>`;
@@ -14,10 +39,10 @@ function read() {
           label: "Normales vs Online",
           data: [x1,x2],
           backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)"
+            "#24c4a6",
+            "#364c68"
           ],
-          borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
+          borderColor: ["#30e2c2", "#253449"],
           borderWidth: 1
         }
       ]

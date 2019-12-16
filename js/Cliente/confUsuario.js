@@ -70,6 +70,7 @@ function GuardarCambiosPerfilUsuario() {
 		//new Negocio().GuardarCambiosAdministrador();
 		//document.getElementById("btnGuardarCambios").disabled=true;
 		bloquearCamposPefilUsuario();
+		bloquearCamposTarjeta();
 	}
 }
 //

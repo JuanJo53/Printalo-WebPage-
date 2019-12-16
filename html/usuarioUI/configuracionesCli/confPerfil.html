@@ -113,7 +113,7 @@
                         </div>
                         <!--//subrow-->
                         <!--input-->
-                        <input type="text" class="form-control my-1" id="nombreUsuario" disabled>
+                        <input type="text" class="form-control my-1 text-center" id="nombreUsuario" disabled>
                         <!--//input-->
                     </div>
                     <!--//campo nombre-->
@@ -127,7 +127,7 @@
                         </div>
                         <!--//subrow-->
                         <!--input-->
-                        <input type="text" class="form-control my-1" id="apellidoUsuario" disabled>
+                        <input type="text" class="form-control my-1 text-center" id="apellidoUsuario" disabled>
                         <!--//input-->
                     </div>
                     <!--//campo apellido-->
@@ -141,7 +141,7 @@
                         </div>
                         <!--//subrow-->
                         <!--input-->
-                        <input type="text" class="form-control my-1" id="telefonoUsuario" disabled>
+                        <input type="text" class="form-control my-1 text-center" id="telefonoUsuario" disabled>
                         <!--//input-->
                     </div>
                     <!--//campo numero-->
@@ -155,7 +155,7 @@
                         </div>
                         <!--//subrow-->
                         <!--input-->
-                        <input type="text" class="form-control my-1" id="emailUsuario" disabled>
+                        <input type="text" class="form-control my-1 text-center" id="emailUsuario" disabled>
                         <!--//input-->
                     </div>
                     <!--//campo correo-->
@@ -197,23 +197,25 @@
                     <form role="form">
                         <!--Block Nombre-->
                         <div class="form-group">
-                            <label for="username"
-                                class="color-printalo-blueDetail font-weight-bold">Nombre</label>
+                            <p for="username"
+                                class="color-printalo-blueDetail font-weight-bold">Nombre</p>
+                                <div class="row-sub"></div>
                             <!--Input de nombre-->
                             <input id="Tnombre" type="text" name="username" placeholder="Ingrese el nombre"
-                                required class="form-control" disabled>
+                                required class="form-control my-1 text-center" disabled>
                             <!--//Input de nombre-->
                         </div>
                         <!--//Block Nombre-->
                         <!--Block Numero de tarjeta-->
                         <div class="form-group">
-                            <label for="cardNumber"
+                            <p for="cardNumber"
                                 class="color-printalo-blueDetail font-weight-bold">Numero
-                                de tarjeta</label>
+                                de tarjeta</p>
+                                <div class="row-sub"></div>
                             <div class="input-group">
                                 <!--Input de numero de cuenta-->
                                 <input id="Tnumero" type="number" name="" placeholder="Numero de tarjeta"
-                                    class="form-control" required disabled>
+                                    class="form-control my-1 text-center" required disabled>
                                 <!--//Input de numero de cuenta-->
                                 <!--Grupo de Iconos-->
                                 <div class="input-group-append">
@@ -233,16 +235,17 @@
                             <div class="col">
                                 <!--Block mes y anio-->
                                 <div class="form-group">
-                                    <label
-                                        class="color-printalo-blueDetail font-weight-bold">Expiracion</label>
+                                    <p
+                                        class="color-printalo-blueDetail font-weight-bold">Expiracion</p>
+                                        <div class="row-sub"></div>
                                     <div class="input-group">
                                         <!--input mes-->
                                         <input id="Tmes" type="number" placeholder="Mes" name=""
-                                            class="form-control" disabled>
+                                            class="form-control my-1 text-center" disabled>
                                         <!--//input mes-->
                                         <!--input anio-->
                                         <input id="Tanio" type="number" placeholder="Año" name=""
-                                            class="form-control" disabled>
+                                            class="form-control my-1 text-center" disabled>
                                         <!--//input anio-->
                                     </div>
                                 </div>
@@ -251,11 +254,12 @@
                             <div class="col">
                                 <!--Block cvv-->
                                 <div class="form-group mb-4">
-                                    <label class="color-printalo-blueDetail font-weight-bold">CVV
+                                    <p class="color-printalo-blueDetail font-weight-bold">CVV
                                         <i class="fa fa-question-circle"></i>
-                                    </label>
+                                    </p>
+                                    <div class="row-sub"></div>
                                     <!--Input cvv-->
-                                    <input id="Tcvv" type="text" required class="form-control"
+                                    <input id="Tcvv" type="text" required class="form-control my-1 text-center"
                                         placeholder="Cvv" disabled>
                                     <!--//Input cvv-->
                                 </div>

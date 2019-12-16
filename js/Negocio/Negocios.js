@@ -53,11 +53,47 @@ class Negocio {
               .collection("Negocios")
               .doc(user.uid)
               .set({
-                costoUni: 0,
                 dir: d,
                 email: e,
                 fono: t,
-                nombreNeg: nn
+                nombreNeg: nn,
+                costoBN: 0,
+                costoColor: 0,
+                costoTamHoja:{
+                  A4: 0,
+                  Carta: 0,
+                  Oficio: 0
+                },
+                costoTipoHoja:{
+                  normal: 0,
+                  reutilizable: 0
+                },
+                horario:{
+                  jueves: {
+                    horaEntrada: 0,
+                    horaSalida: 0
+                  },
+                  lunes: {
+                    horaEntrada: 0,
+                    horaSalida: 0
+                  },
+                  martes: {
+                    horaEntrada: 0,
+                    horaSalida: 0
+                  },
+                  miercoles: {
+                    horaEntrada: 0,
+                    horaSalida: 0
+                  },
+                  sabado: {
+                    horaEntrada: 0,
+                    horaSalida: 0
+                  },
+                  viernes: {
+                    horaEntrada: 0,
+                    horaSalida: 0
+                  }
+                }
               })
               .then(e => {
                 alert("Logeado");

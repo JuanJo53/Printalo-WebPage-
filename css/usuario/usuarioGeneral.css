@@ -377,11 +377,6 @@ tbody tr:hover {
 	display: inline-block;
 }
 
-/*Allows modals to go from one to another*/
-.modal {
-	overflow-y: auto;
-}
-
 .fab-icon-holder-square {
 	width: 40px;
 	height: 38px;

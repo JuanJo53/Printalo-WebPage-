@@ -160,7 +160,7 @@ function setData(type, name) {
                     </button>`;
 	elim.innerHTML = `<button onclick="new Pedido().eliminarPedido(this)" 
 						class="btn negative bg-printalo-blueDetail text-light" 
-						data-toggle="modal" data-target="#checkAlert">
+						data-toggle="modal" data-target="#eliminateAlert">
                         Eliminar
                     </button>`;
 }

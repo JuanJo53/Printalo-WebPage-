@@ -8,6 +8,7 @@ function habilitarCamposDatosNegocio() {
   var auxDireccion = document.getElementById("direccionNegocio").disabled;
   var auxTelefono = document.getElementById("telefonoNegocio").disabled;
   var auxEmail = document.getElementById("emailNegocio").disabled;
+  var auxNit=document.getElementById("nitNegocio").disabled;
   if (auxNombre === false && auxDireccion === false) {
     bloquearDatosGenerales();
   } else {
@@ -15,6 +16,7 @@ function habilitarCamposDatosNegocio() {
     document.getElementById("direccionNegocio").disabled = false;
     document.getElementById("telefonoNegocio").disabled = false;
     document.getElementById("emailNegocio").disabled = false;
+    document.getElementById("nitNegocio").disabled = false;
   }
   habilitarBtnGuardarCambios();
 }
@@ -93,6 +95,7 @@ function bloquearDatosGenerales() {
   document.getElementById("direccionNegocio").disabled = true;
   document.getElementById("telefonoNegocio").disabled = true;
   document.getElementById("emailNegocio").disabled = true;
+  document.getElementById("nitNegocio").disabled = true;
 }
 //bloquea los input de administrador
 function bloquearDatosAdministrador() {

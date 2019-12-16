@@ -550,7 +550,8 @@ class Negocio {
       dirNegocio,
       fonoNegocio,
       emailNegocio,
-      contraseniaNegocio;
+      contraseniaNegocio,
+      nitNegocio;
     var user = firebase.auth().currentUser;
     var bd = firebase.firestore();
     var userid = user.uid;
@@ -563,12 +564,14 @@ class Negocio {
           dirNegocio = doc.data().dir;
           fonoNegocio = doc.data().fono;
           emailNegocio = doc.data().email;
+          nitNegocio=doc.data().NIT;
           //console.log("muestra datos negocio");
           //contraseniaNegocio = doc.data().fono;
           document.getElementById("nombreNegocio").value = nombreNegocio;
           document.getElementById("direccionNegocio").value = dirNegocio;
           document.getElementById("telefonoNegocio").value = fonoNegocio;
           document.getElementById("emailNegocio").value = emailNegocio;
+          document.getElementById("nitNegocio").value = nitNegocio;
         } else {
           console.log("No existe el documento!");
         }
@@ -652,16 +655,18 @@ class Negocio {
   //Esta funcion guarda los cambio de los datos generales del objeto
   GuardarCambiosNegocioGenerales() {
     //console.log("click");
-    var telNeg, dirNeg, nomNeg, emailNeg;
+    var telNeg, dirNeg, nomNeg, emailNeg,nitNeg;
     telNeg = document.getElementById("telefonoNegocio").value;
     dirNeg = document.getElementById("direccionNegocio").value;
     nomNeg = document.getElementById("nombreNegocio").value;
     emailNeg = document.getElementById("emailNegocio").value;
+    nitNeg = document.getElementById("nitNegocio").value;
     var nombreNegocio,
       dirNegocio,
       fonoNegocio,
       emailNegocio,
-      contraseniaNegocio;
+      contraseniaNegocio,
+      nitNegocio;
     var user = firebase.auth().currentUser;
     var bd = firebase.firestore();
     var userid = user.uid;
@@ -674,11 +679,13 @@ class Negocio {
           dirNegocio = doc.data().dir;
           fonoNegocio = doc.data().fono;
           emailNegocio = doc.data().email;
+          nitNegocio = doc.data().NIT;
           if (
             telNeg === fonoNegocio &&
             dirNeg === dirNegocio &&
             nomNeg === nombreNegocio &&
-            emailNeg === emailNegocio
+            emailNeg === emailNegocio &&
+            nitNeg === nitNegocio
           ) {
             console.log("los datos son los mismos en datos generales");
           } else {
@@ -808,7 +815,7 @@ class Negocio {
 //esta funcion actualiza los datos de datos generales
 function actualizarDatosGeneralesNegocio() {
   //console.log("entro a cambiar datos de negocio");
-  var nombreNegocio, dirNegocio, fonoNegocio, emailNegocio, contraseniaNegocio;
+  var nombreNegocio, dirNegocio, fonoNegocio, emailNegocio, contraseniaNegocio,nitNegocio;
   var user = firebase.auth().currentUser;
   var bd = firebase.firestore();
   var userid = user.uid;
@@ -816,12 +823,14 @@ function actualizarDatosGeneralesNegocio() {
   nomNegocio = document.getElementById("nombreNegocio").value;
   dirNegocio = document.getElementById("direccionNegocio").value;
   emailNegocio = document.getElementById("emailNegocio").value;
+  nitNegocio = document.getElementById("nitNegocio").value;
   if (
     //verifica que no esten vacios los campos
     fonoNegocio !== "" &&
     nomNegocio !== "" &&
     dirNegocio !== "" &&
-    emailNegocio !== ""
+    emailNegocio !== "" &&
+    nitNegocio!==""
   ) {
     //console.log("no estan vacios");
     bd.collection("Negocios")
@@ -830,7 +839,8 @@ function actualizarDatosGeneralesNegocio() {
         fono: fonoNegocio,
         dir: dirNegocio,
         nombreNeg: nomNegocio,
-        email: emailNegocio
+        email: emailNegocio,
+        NIT:nitNegocio
       })
 
       .then(e => {

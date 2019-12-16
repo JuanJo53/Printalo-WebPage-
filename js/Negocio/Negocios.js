@@ -119,23 +119,29 @@ class Negocio {
     var email=this.email; 
     var password=this.password; 
     var bd=firebase.firestore();
-    bd.collection("Negocios")
-        .where("nombreNeg","==",nomb)
-        .get()
-        .then(function(querySnapshot) {
-          querySnapshot.forEach(function(doc){
-            if(doc.data().nombreNeg===nomb){
-              console.log(nomb,email,password);              
-              var auth = new Auth();  
-              auth.LoginEmailPass(email, password);
-            }else{
-              alert("Nombre de Negocio Incorrecto");
-            }  
-          });     
-        })
-        .catch(function(error){
-          console.log(`Error al Ingresar: ${error}`);
-        });  
+    var conf=false;
+    if(nomb!=""){
+      bd.collection("Negocios")
+      .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc){          
+          if(doc.data().nombreNeg===nomb){            
+            var auth = new Auth();  
+            auth.LoginEmailPass(email, password);
+            conf=true;
+          }else{
+            conf=false;
+          } 
+        });   
+        if(conf===false)
+          alert("Nombre de Negocio Incorrecto");  
+      })
+      .catch(function(error){
+        console.log(`Error al Ingresar: ${error}`);
+      }); 
+    }else{
+      alert("Porfavor Ingrese el Nombre de Negocio");
+    }     
   }  
   // Esta funcion pasa el email y su password a la clase Auth para logout con firebase
   CerrarSecion() {

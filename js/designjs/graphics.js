@@ -1,28 +1,31 @@
 //contarDatos de tipo de pedidos
-function contarDatosTipoPedido() {
-  var pedNormal;
+/*function contarDatosTipoNormal() {
+  console.log("here");
+  var pedNormal=0;
   var user = firebase.auth().currentUser;
   var bd = firebase.firestore();
   var userid = user.uid;
   var docRef = bd
     .collection("Pedido")
     .where('negocioID','==',userid)
-    where('metodoPago', "==", "personal")
+    where("metodoPago", "==", "personal")
     .get()
     .then(function(querySnapshot) {
       querySnapshot.forEach(function(doc){
         pedNormal=querySnapshot.size;
-        console.log(pedNormal);
+        console.log("here"+pedNormal);
+        //return pedNormal;
       });
     })
     .catch(function(error) {
       console.log("Error al obtener los datos:", error);
-    });
-}
+    });   
+}*/
 
 function read() {
     var x1=12;
     var x2=25;
+    //contarDatosTipoNormal();
   document.getElementById(
     "chart"
   ).innerHTML = `<canvas id="myChart"></canvas>`;

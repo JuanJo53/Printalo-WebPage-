@@ -157,15 +157,21 @@ function getDocDet(_this) {
 }
 //Detalles del pedido seleccionado para rechazar o aceptar el pedido.
 function getPedDet(_this) {
-	var doc, cant, usuario, fechaE, horaE, pago, precio;
+	var doc,
+		cant = 0,
+		usuario,
+		fechaE,
+		horaE,
+		pago,
+		precio = 0.0;
 
 	var pedido = new Pedido();
 	console.log(_this.id);
 
 	doc = getRowSelected(_this, 0);
 	usuario = getRowSelected(_this, 1);
-	precio = getRowSelected(_this, 2);
-	cant = getRowSelected(_this, 3);
+	precio = parseFloat(getRowSelected(_this, 2));
+	cant = parseFloat(getRowSelected(_this, 3));
 	pago = getRowSelected(_this, 4);
 	fechaE = getRowSelected(_this, 5);
 	horaE = getRowSelected(_this, 6);

@@ -146,7 +146,7 @@ class Pedido {
 					if (doc.data().tipo === "normal") {
 						document.getElementById("tipoHojaD").value = "Hoja Normal";
 					} else {
-						document.getElementById("tipoHojaD").value = "Hoja Normal";
+						document.getElementById("tipoHojaD").value = "Hoja Reciclada";
 					}
 					document.getElementById("cantD").value = doc.data().cantidad;
 					if (doc.data().metodoPago === "personal") {
@@ -282,7 +282,30 @@ class Pedido {
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();
 		var userid = user.uid;
-		var nitNeg, nombNeg, dirNeg, numNeg, numFac, codControl;
+		var nitNeg,
+			nombNeg,
+			dirNeg,
+			numNeg,
+			numFac,
+			codControl,
+			pedidoID,
+			clienteID,
+			BN,
+			docID,
+			acabado,
+			fechaPed,
+			fechaPedEntrega,
+			lados,
+			pago,
+			paginas,
+			tamaño,
+			tipo,
+			tipoHoja;
+		var f = fechaE.split("/");
+		var d = f[0];
+		var m = f[1];
+		var a = f[2];
+		var fechaEntrega = new Date(a + "-" + m + "-" + d + " " + horaE);
 		var timestamp = firebase.firestore.Timestamp.now().toDate();
 		var fecha =
 			timestamp.getDate() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getFullYear();
@@ -296,8 +319,8 @@ class Pedido {
 					nombNeg = doc.data().nombreNeg;
 					dirNeg = doc.data().dir;
 					numNeg = doc.data().fono;
-					numFac = Math.floor(Math.random() * 100000000000000);
-					codControl = Math.floor(Math.random() * 10000000000000);
+					numFac = Math.floor(Math.random() * 1000000000);
+					codControl = Math.floor(Math.random() * 1000000000000);
 				} else {
 					alert("No existe el documento!");
 				}
@@ -305,6 +328,38 @@ class Pedido {
 			.catch(function(error) {
 				alert("Error al obtener los datos!\n" + error);
 			});
+		await bd
+			.collection("Pedido")
+			.where("negocioID", "==", userid)
+			.where("nombreDoc", "==", docNomb)
+			.where("metodoPago", "==", pago)
+			.where("fechaEntrega", "==", fechaEntrega)
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					if (doc.exists) {
+						pedidoID = doc.id;
+						BN = doc.data().blancoYnegro;
+						docID = doc.data().docID;
+						acabado = doc.data().engrampado;
+						fechaPed = doc.data().fecha;
+						fechaPedEntrega = doc.data().fechaEntrega;
+						clienteID = doc.data().clienteID;
+						lados = doc.data().ladosImpre;
+						pago = doc.data().metodoPago;
+						paginas = doc.data().numPaginas;
+						tamaño = doc.data().tamañoHoja;
+						tipo = doc.data().tipoDoc;
+						tipoHoja = doc.data().tipoHoja;
+					} else {
+						alert("No existe el documento!HOLA");
+					}
+				});
+			})
+			.catch(function(error) {
+				alert("Error al obtener los datos!\n" + error);
+			});
+
 		document.getElementById("facNombNeg").innerHTML = nombNeg;
 		document.getElementById("facDirNeg").innerHTML = dirNeg;
 		document.getElementById("facNumNeg").innerHTML = numNeg;
@@ -320,5 +375,32 @@ class Pedido {
 		document.getElementById("facLitTotal").innerHTML = literal;
 		document.getElementById("facCodControl").innerHTML = " " + codControl;
 		document.getElementById("facFechaLim").innerHTML = " 31/12/2019";
+
+		var btnImprimir = document.getElementById("btnImprimir");
+		btnImprimir.addEventListener("click", f => {
+			var venta = new Venta();
+			venta.nuevaVenta(
+				numFac,
+				timestamp,
+				nitCli,
+				apellido,
+				docNomb,
+				cant,
+				precio,
+				pedidoID,
+				clienteID,
+				BN,
+				docID,
+				acabado,
+				fechaPed,
+				fechaPedEntrega,
+				lados,
+				pago,
+				paginas,
+				tamaño,
+				tipo,
+				tipoHoja
+			);
+		});
 	}
 }

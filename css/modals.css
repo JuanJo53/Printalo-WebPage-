@@ -165,4 +165,5 @@ label {
 /*detalles de pedidos inputs*/
 
 /*Allows modals to go from one to another and to scroll down*/
-.modal { overflow-y: auto }
+.modal { overflow-y: auto !important}
+.modal-dialog { overflow-y: auto }

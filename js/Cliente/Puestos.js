@@ -1,17 +1,19 @@
 window.onload = ValidarCli();
 //Coloca la imagen y nombre de los negocios disponibles.
-function setNegocios() {
+async function setNegocios() {
+	var arrayPuestos = [];
+	var cont=0;
 	var bd = firebase.firestore();
 	var string = "";
-	bd.collection("Negocios")
+	await bd.collection("Negocios")
 		.get()
 		.then(function(querySnapshot) {
 			querySnapshot.forEach(function(doc) {
 				string +=
-					`<div class="pb-3 text-center puesto" data-dismiss="modal" data-toggle="modal"
-                        data-target="#configurarPedido">
+					`<a href="./listasPuesto.html">
+					<div class="pb-3 text-center puesto">
                         <div id="` +
-					doc.data().nombreNeg +
+						doc.data().nombreNeg +
 					`" onclick="getNeg(this)" class="card negocioIcon mx-auto">
                             <div class="img-puesto">
                                 <!--img del negocio-->
@@ -21,19 +23,37 @@ function setNegocios() {
                             <div class="card-footer">
                                 <!--nombre del negocio-->
                                 <h5  class="my-auto text-light">` +
-					doc.data().nombreNeg +
-					`</h5>
+								doc.data().nombreNeg +
+								`</h5>
                                 <!--//nombre del negocio-->
                             </div>
                         </div>
-                    </div>`;
-				var negocios = document.getElementById("Negocios");
-				negocios.innerHTML = string;
+					</div>
+					</a>`;
+				//
+				//
+				//console.log(cont);
+				//
+				arrayPuestos.push(string);
+				//if(cont==3){
+				//	cont=0;
+				//}
 			});
 		})
 		.catch(function(error) {
 			console.log("Error obteniendo los negocios: ", error);
 		});
+		console.log("puestos "+arrayPuestos.length);
+		for(var i=0;i<arrayPuestos.length;i++){
+			cont++;
+			var negocios = document.getElementById("Negocios"+cont);
+			console.log(arrayPuestos[i]);
+			negocios.innerHTML = arrayPuestos[i];
+			if(cont==3){
+				cont=0;
+			}
+		}
+
 }
 //Obtiene el Negocio elegido.
 function getNeg(objectPressed) {

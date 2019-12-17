@@ -104,10 +104,7 @@
                 <!--title page-->
                 <h2 class="my-3">Graficas de Dias</h2>
                 <!--//title page-->
-                <!--body graphs-->
-                <div id="chart" class="col">
-                </div>
-                <!--//body graphs-->
+                
                 <!--row-->
                 <div class="row">
                     <div class="col-lg-12">
@@ -121,7 +118,8 @@
                             <!--//dropdown principal-->
                             <!--drop item-->
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" onclick="mostrarGraficas()" href="#">Ultimos 7 dias</a>
+                                <a class="dropdown-item" onclick="mostrarGraficas()" href="#">Hoy</a>
+                                <a class="dropdown-item" href="#">Ultimos 7 dias</a>
                                 <a class="dropdown-item" href="#">Ultimos 24 dias</a>
                                 <a class="dropdown-item" href="#">Ultimos 30 dias</a>
                             </div>
@@ -131,6 +129,10 @@
                     </div>
                 </div>
                 <!--//row-->
+                <!--body graphs-->
+                <div id="chart" class="col">
+                </div>
+                <!--//body graphs-->
             </div>
         </div>
         <!--page content wrapper-->

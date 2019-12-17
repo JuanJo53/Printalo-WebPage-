@@ -10,7 +10,7 @@ function read() {
   var bd = firebase.firestore();
   var userid = user.uid;
   var docRef = bd
-    .collection("Pedido")
+    .collection("Venta")
     .where("negocioID", "==", userid)
     .where("metodoPago", "==", "personal")
     .get()
@@ -58,9 +58,9 @@ function read() {
 
 
     var docRef2 = bd
-    .collection("Pedido")
+    .collection("Venta")
     .where("negocioID", "==", userid)
-    .where("metodoPago", "==", "personal")
+    .where("metodoPago", "==", "personal")//aqui cambiar
     .get()
     .then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {

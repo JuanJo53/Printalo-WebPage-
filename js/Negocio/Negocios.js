@@ -59,6 +59,7 @@ class Negocio {
                 nombreNeg: nn,
                 costoBN: 0,
                 costoColor: 0,
+                NIT: "",
                 costoTamHoja:{
                   A4: 0,
                   Carta: 0,
@@ -114,34 +115,42 @@ class Negocio {
     //TODO: Guardar los datos de registro extra en firebase
   }
   // Esta funcion pasa el email y su password a la clase Auth para login con firebase
-  IngresarNeg() {   
+  async IngresarNeg() {    
+    var c=0; 
+    var negs= [];  
     var nomb=this.nombre;  
     var email=this.email; 
     var password=this.password; 
     var bd=firebase.firestore();
     var conf=false;
     if(nomb!=""){
-      bd.collection("Negocios")
+      await bd.collection("Negocios")
       .get()
       .then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc){          
-          if(doc.data().nombreNeg===nomb){            
-            var auth = new Auth();  
-            auth.LoginEmailPass(email, password);
-            conf=true;
-          }else{
-            conf=false;
-          } 
+        querySnapshot.forEach(function(doc){  
+          negs.push(doc.data().nombreNeg);
+          c++;          
         });       
       })
       .catch(function(error){
         console.log(`Error al Ingresar: ${error}`);
-      }); 
+      })
+      for(var i=0;i<c-1;i++){
+        if(negs[i]===nomb){            
+            var auth = new Auth();  
+            auth.LoginEmailPass(email, password);
+            conf=true;
+            break;
+          }else{
+            conf=false;
+          }
+      }
       if(conf===false)
-          alert("Nombre de Negocio Incorrecto");  
+        alert("Nombre de Negocio Incorrecto"); 
     }else{
       alert("Porfavor Ingrese el Nombre de Negocio");
-    }     
+    }   
+     
   }  
   // Esta funcion pasa el email y su password a la clase Auth para logout con firebase
   CerrarSecion() {

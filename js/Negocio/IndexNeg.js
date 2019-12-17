@@ -11,7 +11,7 @@ function Registrar() {
 	negocio.RegistrarNeg(dir, email, num, nombreNeg, apellidoDueño, nombreDueño);
 }
 // Evento de Boton Ingresar
-function Ingresar() {
+async function Ingresar() {
 	var nombre = document.getElementById("txtNombre").value;
 	var email = document.getElementById("txtEmailIng").value;
 	var pass = document.getElementById("txtPasswordIng").value;

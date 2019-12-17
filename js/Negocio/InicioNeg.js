@@ -29,7 +29,7 @@ function ValidarNeg() {
 		if (user) {
 			// User is signed in.
 			SetInicialNeg();
-			console.log("Logeado1");
+			console.log("Logeado");
 		} else {
 			// User is not signed in.
 			console.log("No Logeado");

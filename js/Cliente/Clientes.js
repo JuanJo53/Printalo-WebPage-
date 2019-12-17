@@ -47,9 +47,34 @@ class Cliente {
 		});
 	}
 	// Esta funcion pasa el email y su password a la clase Auth para login con firebase
-	IngresarCli() {
+	async IngresarCli() {
 		var auth = new Auth();
-		auth.LoginEmailPass(this.email, this.password);
+		var bd = firebase.firestore();
+		var users = [];
+		var c = 0;
+		var conf = false;
+		await bd
+			.collection("Clientes")
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					users.push(doc.data().email);
+					c++;
+				});
+			})
+			.catch(function(error) {
+				console.error(`Error al obtener los datos:\n ${error}`);
+			});
+		for (var i = 0; i < c - 1; i++) {
+			if (users[i] === this.email) {
+				conf = true;
+				auth.LoginEmailPass(this.email, this.password);
+				break;
+			} else {
+				conf = false;
+			}
+		}
+		if (conf === false) alert("Email Incorrecto");
 	}
 	//funcion de cerrar sesion aqui!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

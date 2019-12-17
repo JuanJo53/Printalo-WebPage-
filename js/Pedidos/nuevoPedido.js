@@ -3,6 +3,7 @@ window.onload = ValidarCli();
 function getFileExtension(filename) {
 	return filename.split(".").pop();
 }
+var count = 0;
 //Evento al añadir nuevo documento.
 var fileButton = document.getElementById("my-file");
 fileButton.addEventListener("change", function(e) {
@@ -14,8 +15,8 @@ fileButton.addEventListener("change", function(e) {
 	//Obtiene la cantidad de paginas del documento que se esta por enviar.
 	var input = document.getElementById("my-file");
 	var reader = new FileReader();
-	var count = 0,
-		perc = 0.0;
+
+	perc = 0.0;
 	reader.readAsBinaryString(input.files[0]);
 	reader.onloadend = function() {
 		count = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
@@ -198,92 +199,6 @@ function getNeg(objectPressed) {
 	negocioID = objectPressed.id;
 	console.log(negocioID);
 }
-//Setea los valores para los detalles del pedido.
-function setDetPed() {
-	color = getColor();
-	tamanio = getTamaño();
-	impresion = getImpresion();
-	paginas = getCantHojas();
-	if (paginas === "personalizado") {
-		rangoInf = getRangoInf();
-		rangoSup = getRangoSup();
-	}
-	acabado = getAcabado();
-	tipo = getTipoHoja();
-	cantidad = parseInt(getCantCopias());
-	fecha_hora = getFechaHora();
-	timestamp = getTimestamp();
-	pago = getTipoPago();
-	if (pago === "tarjeta") {
-		getDatosTarjeta();
-	}
-	setPreview();
-}
-//Obtiene el valor del color de impresion.
-function getColor() {
-	if (document.getElementById("color").checked) {
-		return false;
-	} else {
-		return true;
-	}
-}
-//Obtiene el valor del tamanio de hoja.
-function getTamaño() {
-	if (document.getElementById("carta").checked) {
-		return "carta";
-	} else if (document.getElementById("oficio").checked) {
-		return "oficio";
-	} else {
-		return "A4";
-	}
-}
-//Obtiene el tipo de impresion.
-function getImpresion() {
-	if (document.getElementById("impresion").checked) {
-		return "intercalado";
-	} else {
-		return "anv/rev";
-	}
-}
-//Obtiene el detalle de las paginas.
-function getCantHojas() {
-	if (document.getElementById("todo").checked) {
-		return "todo";
-	} else {
-		return "personalizado";
-	}
-}
-//Obtiene el rango inferior de las hojas.
-function getRangoInf() {
-	var inf = document.getElementById("rangoInf").value;
-	return parseInt(inf);
-}
-//Obtiene el rango superior de las hojas.
-function getRangoSup() {
-	var sup = document.getElementById("rangoSup").value;
-	return parseInt(sup);
-}
-//Obtiene el acabado de la impresion.
-function getAcabado() {
-	if (document.getElementById("acabado").checked) {
-		return "engrampado";
-	} else {
-		return "normal";
-	}
-}
-//Obtiene el tipo de hoja.
-function getTipoHoja() {
-	if (document.getElementById("TipoHoja").checked) {
-		return "normal";
-	} else {
-		return "reutilizado";
-	}
-}
-//Obtener la cantidad de copias.
-function getCantCopias() {
-	var cant = document.getElementById("cantidad").value;
-	return cant;
-}
 //Obtiene la fecha y hora deseada para su entrega.
 function getFechaHora() {
 	var fecha = document.getElementById("datepicker").value;
@@ -304,82 +219,106 @@ function getTimestamp() {
 	console.log(timestamp);
 	return timestamp;
 }
-//Obtiene el tipo de pago elegido.
-function getTipoPago() {
-	if (document.getElementById("personal").checked) {
-		return "personal";
-	} else {
-		getDatosTarjeta();
-		return "tarjeta";
-	}
-}
 //Obtiene los daos de la tarjeta en caso de ser elegida como metodo de pago.
-function getDatosTarjeta() {
-	nombTarjeta = document.getElementById("nombTarjeta").value;
-	numTarjeta = document.getElementById("numTarjeta").value;
-	mes = document.getElementById("mes").value;
-	anio = document.getElementById("anio").value;
-	cvv = document.getElementById("CVV").value;
+async function getDatosTarjeta() {
+	var bd = firebase.firestore();
+	var user = firebase.auth().currentUser;
+	var userid = user.uid;
+	await bd
+		.collection("Clientes")
+		.doc(userid)
+		.get()
+		.then(function(doc) {
+			if (doc.exists) {
+				nombTarjeta = doc.data().nombTarjeta;
+				numTarjeta = doc.data().numTarjeta;
+				mes = doc.data().mesTarjeta;
+				anio = doc.data().anioTarjeta;
+				cvv = doc.data().cvvTarjeta;
+				if (nombTarjeta != "" && numTarjeta != "" && mes != "" && anio != "" && cvv != "") {
+					console.log(nombTarjeta, numTarjeta, mes, anio, cvv);
+					document.getElementById("nombTarjeta").value = nombTarjeta;
+					document.getElementById("numTarjeta").value = numTarjeta;
+					document.getElementById("mes").value = mes;
+					document.getElementById("anio").value = anio;
+					document.getElementById("cvv").value = cvv;
+				} else {
+					alert(
+						"Datos de tarjeta no configurados!\nPor favor procura configurar los datos de tu tarjeta."
+					);
+				}
+			} else {
+				console.error("Datos del cliente no hallados!");
+			}
+		})
+		.catch(function(error) {
+			console.error("Error obteniendo datos!\n" + error);
+		});
 }
 //Muestra la pre vista de todos lo parametros seleccionados.
-function setPreview() {
-	if (color === false) {
+function setConfigs() {
+	//Obtiene el valor del color de impresion.
+	if (document.getElementById("color").checked) {
 		document.getElementById("colorP").checked = true;
 	} else {
 		document.getElementById("BNP").checked = true;
 	}
-
-	if (tamanio === "carta") {
+	//Obtiene el valor del tamanio de hoja.
+	if (document.getElementById("carta").checked) {
 		document.getElementById("cartaP").checked = true;
-	} else if (tamanio === "oficio") {
+	} else if (document.getElementById("oficio").checked) {
 		document.getElementById("oficioP").checked = true;
 	} else {
 		document.getElementById("a4P").checked = true;
 	}
-
-	if (impresion === "intercalado") {
+	//Obtiene el tipo de impresion.
+	if (document.getElementById("intercalado").checked) {
 		document.getElementById("intercaladoP").checked = true;
 	} else {
 		document.getElementById("anvP").checked = true;
 	}
-
-	if (paginas === "todo") {
-		document.getElementById("todoP").checked = true;
-		document.getElementById("todopdiv").style.display = "block";
-		document.getElementById("personalizadopdiv").style.display = "none";
+	//Obtiene el detalle de las paginas.
+	if (document.getElementById("todo").checked) {
+		document.getElementById("todoP").checked;
 	} else {
-		document.getElementById("personalizadoP").checked = true;
+		document.getElementById("personalizadoP").checked;
+		//Obtiene el rango inferior de las hojas.
+		var inf = document.getElementById("rangoInf").value;
+		//Obtiene el rango superior de las hojas.
+		var sup = document.getElementById("rangoSup").value;
 		document.getElementById("personalizadopdiv").style.display = "block";
 		document.getElementById("todopdiv").style.display = "none";
-		document.getElementById("rangoInfP").value = rangoInf;
-		document.getElementById("rangoSupP").value = rangoSup;
+		document.getElementById("rangoInfP").value = parseInt(inf);
+		document.getElementById("rangoSupP").value = parseInt(sup);
 	}
 
-	if (acabado === "normal") {
-		document.getElementById("normalP").checked = true;
-	} else {
+	//Obtiene el acabado de la impresion.
+	if (document.getElementById("acabado").checked) {
 		document.getElementById("engrampadoP").checked = true;
+	} else {
+		document.getElementById("normalP").checked = true;
 	}
 
-	if (tipo === "normal") {
+	//Obtiene el tipo de hoja.
+	if (document.getElementById("TipoHoja").checked) {
 		document.getElementById("TnormalP").checked = true;
 	} else {
 		document.getElementById("TreutilizadoP").checked = true;
 	}
 
-	if (cantidad != 0) {
-		document.getElementById("cantidadP").value = cantidad;
-	} else {
-		alert("La cantidad debe ser mayor a 0");
-	}
-
-	var sp = fecha_hora.split(" ");
+	//Obtener la cantidad de copias.
+	var cant = document.getElementById("cantidad").value;
+	document.getElementById("cantidadP").value = cant;
+}
+function setPreviewFechas() {
+	var sp = getFechaHora().split(" ");
 	var fecha = sp[0];
 	var hora = sp[1];
 	document.getElementById("fechaP").value = fecha;
 	document.getElementById("horaP").value = hora;
-
-	if (pago === "personal") {
+}
+function setPreviewTarjeta() {
+	if (document.getElementById("personal").checked) {
 		document.getElementById("personalP").checked = true;
 		document.getElementById("personalpdiv").style.display = "block";
 		document.getElementById("tarjetapdiv").style.display = "none";
@@ -387,14 +326,242 @@ function setPreview() {
 		document.getElementById("tarjetaP").checked = true;
 		document.getElementById("tarjetapdiv").style.display = "block";
 		document.getElementById("personalpdiv").style.display = "none";
-
-		document.getElementById("nombTarjetaP").value = nombTarjeta;
-		document.getElementById("numTarjetaP").value = numTarjeta;
-		document.getElementById("mesP").value = mes;
-		document.getElementById("anioP").value = anio;
-		document.getElementById("cvvP").value = cvv;
+		getDatosTarjeta();
 	}
+}
+//Muestra el costo toal en las 3 partes respectivas.
+//TODO: Controlar reseteo de cantidad de paginas.
+async function previewCosto() {
+	setConfigs();
+	if (document.getElementById("todo").checked) {
+		var bd = firebase.firestore();
+		await bd
+			.collection("Pedido")
+			.where("nombreDoc", "==", nombreDoc)
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					numPag = doc.data().numPaginas;
+					console.log(numPag);
+					calculoCosto(numPag, costoTam, costoTipo, costoColor);
+				});
+			})
+			.catch(function(error) {
+				console.log("Error obteniendo los documentos: ", error);
+			});
+	} else {
+		rangoInf = document.getElementById("rangoInfP").value;
+		rangoSup = document.getElementById("rangoSupP").value;
+		numPag = rangoSup - rangoInf + 1;
+	}
+	cantidad = parseInt(document.getElementById("cantidadP").value);
 	getCosto();
+}
+var costoColor = 0.0;
+var costoTam = 0.0;
+var costoTipo = 0.0;
+//Calcula el costo total por el pedido dependiendo de sus parametros.
+async function getCosto() {
+	//Obtiene el costo por impresio (color/bn) del negocio que se eligio.
+	if (color === false) {
+		var bd = firebase.firestore();
+		await bd
+			.collection("Negocios")
+			.where("nombreNeg", "==", negocioID)
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					costoColor = doc.data().costoBN;
+					console.log(costoColor);
+				});
+			})
+			.catch(function(error) {
+				console.log("Error obteniendo los documentos: ", error);
+			});
+	} else {
+		var bd = firebase.firestore();
+		await bd
+			.collection("Negocios")
+			.where("nombreNeg", "==", negocioID)
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					costoColor = doc.data().costoColor;
+					console.log(costoColor);
+				});
+			})
+			.catch(function(error) {
+				console.log("Error obteniendo los documentos: ", error);
+			});
+	}
+	//Obtiene el costo por tamaño de hoja del negocio que se eligio.
+	if (tamanio === "carta") {
+		await bd
+			.collection("Negocios")
+			.where("nombreNeg", "==", negocioID)
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					costoTam = doc.data().costoTamHoja.Carta;
+					console.log(costoTam);
+				});
+			})
+			.catch(function(error) {
+				console.log("Error obteniendo los documentos: ", error);
+			});
+	} else if (tamanio === "oficio") {
+		await bd
+			.collection("Negocios")
+			.where("nombreNeg", "==", negocioID)
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					costoTam = doc.data().costoTamHoja.Oficio;
+					console.log(costoTam);
+				});
+			})
+			.catch(function(error) {
+				console.log("Error obteniendo los documentos: ", error);
+			});
+	} else {
+		await bd
+			.collection("Negocios")
+			.where("nombreNeg", "==", negocioID)
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					costoTam = doc.data().costoTamHoja.A4;
+					console.log(costoTam);
+				});
+			})
+			.catch(function(error) {
+				console.log("Error obteniendo los documentos: ", error);
+			});
+	}
+	//Obtiene el costo por tipo de hoja del negocio que se eligio.
+	if (tipo === "normal") {
+		await bd
+			.collection("Negocios")
+			.where("nombreNeg", "==", negocioID)
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					costoTipo = doc.data().costoTipoHoja.normal;
+					console.log(costoTipo);
+				});
+			})
+			.catch(function(error) {
+				console.log("Error obteniendo los documentos: ", error);
+			});
+	} else {
+		await bd
+			.collection("Negocios")
+			.where("nombreNeg", "==", negocioID)
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					costoTipo = doc.data().costoTipoHoja.reutilizable;
+					console.log(costoTipo);
+				});
+			})
+			.catch(function(error) {
+				console.log("Error obteniendo los documentos: ", error);
+			});
+	}
+	//Verifica el tipo
+	if (document.getElementById("todo").checked) {
+		await bd
+			.collection("Pedido")
+			.where("nombreDoc", "==", nombreDoc)
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					numPag = doc.data().numPaginas;
+					calculoCosto(numPag, costoTam, costoTipo, costoColor);
+				});
+			})
+			.catch(function(error) {
+				console.log("Error obteniendo los documentos: ", error);
+			});
+	} else {
+		numPag = rangoSup - rangoInf + 1;
+		var user = firebase.auth().currentUser;
+		var query = await bd
+			.collection("Pedido")
+			.where("nombreDoc", "==", nombreDoc)
+			.where("clienteID", "==", user.uid);
+		query
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					bd.collection("Pedido")
+						.doc(doc.id)
+						.update({
+							numPaginas: numPag
+						});
+					calculoCosto(numPag, costoTam, costoTipo, costoColor);
+				});
+			})
+			.catch(function(error) {
+				console.log("Error obteniendo los documentos: ", error);
+			});
+	}
+}
+//Calculo del costo total respecto de los parametros adicionales.
+function calculoCosto(pag, ctam, ctip, cCol) {
+	costoTotal = Math.round((ctam + ctip + cCol) * pag * cantidad * 100, -1) / 100;
+	console.log("hola", costoTotal);
+	document.getElementById("operacion1").innerHTML =
+		"(" +
+		ctam +
+		"+" +
+		ctip +
+		"+" +
+		cCol +
+		")" +
+		" X " +
+		pag +
+		" X " +
+		cantidad +
+		"= " +
+		costoTotal +
+		"Bs.";
+	document.getElementById("operacion").innerHTML =
+		"(" +
+		ctam +
+		"+" +
+		ctip +
+		"+" +
+		cCol +
+		")" +
+		"X" +
+		pag +
+		"X" +
+		cantidad +
+		"= " +
+		costoTotal +
+		"Bs.";
+	document.getElementById("operacion2").innerHTML =
+		"(" +
+		ctam +
+		"+" +
+		ctip +
+		"+" +
+		cCol +
+		")" +
+		"X" +
+		pag +
+		"X" +
+		cantidad +
+		"= " +
+		costoTotal +
+		"Bs.";
+	document.getElementById("total").innerHTML =
+		`<span class="font-weight-bold">Costo total:  </span>` + costoTotal + "Bs.";
+	document.getElementById("total1").innerHTML =
+		`<span class="font-weight-bold">Costo total:  </span>` + costoTotal + "Bs.";
+	document.getElementById("total2").innerHTML =
+		`<span class="font-weight-bold">Costo total:  </span>` + costoTotal + "Bs.";
 }
 //Esta es la funcion que cambia el estado del pedido y sube datos adicionales a la base de datos.
 function sumitPedido() {
@@ -447,184 +614,6 @@ function sumitPedido() {
 		});
 }
 
-//Calcula el costo total por el pedido dependiendo de sus parametros.
-function getCosto() {
-	var costoColor = 0.0;
-	var costoTam = 0.0;
-	var costoTipo = 0.0;
-	//Obtiene el costo por impresio (color/bn) del negocio que se eligio.
-	if (color === true) {
-		var bd = firebase.firestore();
-		bd.collection("Negocios")
-			.where("nombreNeg", "==", negocioID)
-			.get()
-			.then(function(querySnapshot) {
-				querySnapshot.forEach(function(doc) {
-					costoColor = doc.data().costoBN;
-					console.log(costoColor);
-				});
-			})
-			.catch(function(error) {
-				console.log("Error obteniendo los documentos: ", error);
-			});
-	} else {
-		var bd = firebase.firestore();
-		bd.collection("Negocios")
-			.where("nombreNeg", "==", negocioID)
-			.get()
-			.then(function(querySnapshot) {
-				querySnapshot.forEach(function(doc) {
-					costoColor = doc.data().costoColor;
-					console.log(costoColor);
-				});
-			})
-			.catch(function(error) {
-				console.log("Error obteniendo los documentos: ", error);
-			});
-	}
-	//Obtiene el costo por tamaño de hoja del negocio que se eligio.
-	if (tamanio === "carta") {
-		bd.collection("Negocios")
-			.where("nombreNeg", "==", negocioID)
-			.get()
-			.then(function(querySnapshot) {
-				querySnapshot.forEach(function(doc) {
-					costoTam = doc.data().costoTamHoja.Carta;
-					console.log(costoTam);
-				});
-			})
-			.catch(function(error) {
-				console.log("Error obteniendo los documentos: ", error);
-			});
-	} else if (tamanio === "oficio") {
-		bd.collection("Negocios")
-			.where("nombreNeg", "==", negocioID)
-			.get()
-			.then(function(querySnapshot) {
-				querySnapshot.forEach(function(doc) {
-					costoTam = doc.data().costoTamHoja.Oficio;
-					console.log(costoTam);
-				});
-			})
-			.catch(function(error) {
-				console.log("Error obteniendo los documentos: ", error);
-			});
-	} else {
-		bd.collection("Negocios")
-			.where("nombreNeg", "==", negocioID)
-			.get()
-			.then(function(querySnapshot) {
-				querySnapshot.forEach(function(doc) {
-					costoTam = doc.data().costoTamHoja.A4;
-					console.log(costoTam);
-				});
-			})
-			.catch(function(error) {
-				console.log("Error obteniendo los documentos: ", error);
-			});
-	}
-	//Obtiene el costo por tipo de hoja del negocio que se eligio.
-	if (tipo === "normal") {
-		bd.collection("Negocios")
-			.where("nombreNeg", "==", negocioID)
-			.get()
-			.then(function(querySnapshot) {
-				querySnapshot.forEach(function(doc) {
-					costoTipo = doc.data().costoTipoHoja.normal;
-					console.log(costoTipo);
-				});
-			})
-			.catch(function(error) {
-				console.log("Error obteniendo los documentos: ", error);
-			});
-	} else {
-		bd.collection("Negocios")
-			.where("nombreNeg", "==", negocioID)
-			.get()
-			.then(function(querySnapshot) {
-				querySnapshot.forEach(function(doc) {
-					costoTipo = doc.data().costoTipoHoja.reutilizable;
-					console.log(costoTipo);
-				});
-			})
-			.catch(function(error) {
-				console.log("Error obteniendo los documentos: ", error);
-			});
-	}
-	//Verifica el tipo
-	if (document.getElementById("todo").checked) {
-		bd.collection("Pedido")
-			.where("nombreDoc", "==", nombreDoc)
-			.get()
-			.then(function(querySnapshot) {
-				querySnapshot.forEach(function(doc) {
-					numPag = doc.data().numPaginas;
-					calculoCosto(numPag, costoTam, costoTipo, costoColor);
-				});
-			})
-			.catch(function(error) {
-				console.log("Error obteniendo los documentos: ", error);
-			});
-	} else {
-		numPag = rangoSup - rangoInf + 1;
-		var user = firebase.auth().currentUser;
-		var query = bd
-			.collection("Pedido")
-			.where("nombreDoc", "==", nombreDoc)
-			.where("clienteID", "==", user.uid);
-		query
-			.get()
-			.then(function(querySnapshot) {
-				querySnapshot.forEach(function(doc) {
-					bd.collection("Pedido")
-						.doc(doc.id)
-						.update({
-							numPaginas: numPag
-						});
-					calculoCosto(numPag, costoTam, costoTipo, costoColor);
-				});
-			})
-			.catch(function(error) {
-				console.log("Error obteniendo los documentos: ", error);
-			});
-	}
-}
-//Muestra el costo toal en las 3 partes respectivas.
-//TODO: Controlar reseteo de cantidad de paginas.
-function previewCosto() {
-	paginas = getCantHojas();
-	if (paginas === "personalizado") {
-		rangoInf = getRangoInf();
-		rangoSup = getRangoSup();
-		numPag = rangoSup - rangoInf + 1;
-	} else {
-		var bd = firebase.firestore();
-		bd.collection("Negocios")
-			.where("nombreNeg", "==", negocioID)
-			.get()
-			.then(function(querySnapshot) {
-				querySnapshot.forEach(function(doc) {
-					costoColor = doc.data().numPaginas;
-				});
-			})
-			.catch(function(error) {
-				console.log("Error obteniendo los documentos: ", error);
-			});
-	}
-	cantidad = parseInt(getCantCopias());
-	getCosto();
-}
-//Calculo del costo total respecto de los parametros adicionales.
-function calculoCosto(pag, ctam, ctip, cCol) {
-	costoTotal = Math.round((ctam + ctip + cCol) * pag * cantidad * 100, -1) / 100;
-	console.log("hola", costoTotal);
-	document.getElementById("total").innerHTML =
-		`<span class="font-weight-bold">Costo total:  </span>` + costoTotal + "Bs.";
-	document.getElementById("total1").innerHTML =
-		`<span class="font-weight-bold">Costo total:  </span>` + costoTotal + "Bs.";
-	document.getElementById("total2").innerHTML =
-		`<span class="font-weight-bold">Costo total:  </span>` + costoTotal + "Bs.";
-}
 // Esta funcion ejecuta el observador de firebase
 function ValidarCli() {
 	firebase.auth().onAuthStateChanged(function(user) {

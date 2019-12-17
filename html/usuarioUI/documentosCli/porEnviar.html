@@ -464,7 +464,7 @@
                                     <!-- rbt intercalado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Intercalado
-                                            <input id="impresion" type="radio" checked="checked" name="radioLados">
+                                            <input id="intercalado" type="radio" checked="checked" name="radioLados">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -473,7 +473,7 @@
                                     <!-- //rbt intercalado-->
                                     <!-- rbt anverso/reverso-->
                                     <div class="col">
-                                        <label class="radiobuttons my-auto">Anv/Reverso
+                                        <label id="anv" class="radiobuttons my-auto">Anv/Reverso
                                             <input type="radio" name="radioLados">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
@@ -682,7 +682,7 @@
                             <div class="col">
                                 <div class="py-3">
                                     <!--Btn siguiente-->
-                                    <a onclick="previewCosto()" class="btn btn-block positive bg-printalo-greenDetail text-light "
+                                    <a onclick="previewCosto();" class="btn btn-block positive bg-printalo-greenDetail text-light "
                                         data-dismiss="modal" data-toggle="modal"
                                         data-target="#configurarTiempo">Siguiente</a>
                                     <!--//Btn siguiente-->
@@ -780,7 +780,7 @@
                         <h5 class="text-center p-3">Precio</h5>
                         <!--//modal title-->
                         <!--details-->
-                        <p>400pag * 0.5Bs/pag = 200Bs</p>
+                        <p id="operacion1">400pag * 0.5Bs/pag = 200Bs</p>
                         <p id="total1"><span class="font-weight-bold">Costo total :</span></p>
                         <!--details-->
                     </div>
@@ -839,7 +839,7 @@
                             <div class="col">
                                 <div class="py-3">
                                     <!--Btn siguiente-->
-                                    <a id="btnSgt" class="btn btn-block positive bg-printalo-greenDetail text-light "
+                                    <a id="btnSgt" onclick="setPreviewFechas()" class="btn btn-block positive bg-printalo-greenDetail text-light "
                                         data-dismiss="modal" data-toggle="modal"
                                         data-target="#configurarPago">Siguiente</a>
                                     <!--//Btn siguiente-->
@@ -938,7 +938,7 @@
                         <h5 class="text-center p-3">Precio</h5>
                         <!--//modal title-->
                         <!--details-->
-                        <p>400pag * 0.5Bs/pag = 200Bs</p>
+                        <p id="operacion2">400pag * 0.5Bs/pag = 200Bs</p>
                         <p id="total2"><span class="font-weight-bold">Costo total :</span></p>
                         <!--details-->
                     </div>
@@ -992,89 +992,7 @@
                                 <h5></h5>
                             </div>
                             <!--//rbt personal response-->
-                            <!--rbt tarjeta response Block Credit Card invisible-->
-                            <div id="tarjetadiv" style='display:none' class="py-2 tarjeta-modal">
-                                <p class="color-printalo-blueDetail font-weight-bold">Datos de Tarjeta</p>
-                                <div class="row-sub">
-                                </div>
-                                <div class="row py-2">
-                                    <div class="col">
-                                        <!-- Formulario de Tarjeta-->
-                                        <form role="form">
-                                            <!--Block Nombre-->
-                                            <div class="form-group">
-                                                <label for="username"
-                                                    class="color-printalo-blueDetail font-weight-bold">Nombre</label>
-                                                <!--Input de nombre-->
-                                                <input id="nombTarjeta" type="text" name="username"
-                                                    placeholder="Ingrese el nombre" required class="form-control">
-                                                <!--//Input de nombre-->
-                                            </div>
-                                            <!--//Block Nombre-->
-                                            <!--Block Numero de tarjeta-->
-                                            <div class="form-group">
-                                                <label for="cardNumber"
-                                                    class="color-printalo-blueDetail font-weight-bold">Numero
-                                                    de tarjeta</label>
-                                                <div class="input-group">
-                                                    <!--Input de numero de cuenta-->
-                                                    <input id="numTarjeta" type="number" name=""
-                                                        placeholder="Numero de tarjeta" class="form-control" required>
-                                                    <!--//Input de numero de cuenta-->
-                                                    <!--Grupo de Iconos-->
-                                                    <div class="input-group-append">
-                                                        <span
-                                                            class="input-group-text text-light bg-printalo-greenDetail">
-                                                            <i class="fab fa-cc-visa mx-1"></i>
-                                                            <i class="fab fa-cc-amex mx-1"></i>
-                                                            <i class="fab fa-cc-mastercard mx-1"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!--//Grupo de Iconos-->
-                                                </div>
-                                            </div>
-                                            <!--//Block Numero de tarjeta-->
-                                            <!--Block Expiracion-->
-                                            <div class="row">
-                                                <div class="col">
-                                                    <!--Block mes y anio-->
-                                                    <div class="form-group">
-                                                        <label
-                                                            class="color-printalo-blueDetail font-weight-bold">Expiracion</label>
-                                                        <div class="input-group">
-                                                            <!--input mes-->
-                                                            <input id="mes" type="number" placeholder="Mes" name=""
-                                                                class="form-control">
-                                                            <!--//input mes-->
-                                                            <!--input anio-->
-                                                            <input id="anio" type="number" placeholder="Año" name=""
-                                                                class="form-control">
-                                                            <!--//input anio-->
-                                                        </div>
-                                                    </div>
-                                                    <!--//Block mes y anio-->
-                                                </div>
-                                                <div class="col">
-                                                    <!--Block cvv-->
-                                                    <div class="form-group mb-4">
-                                                        <label class="color-printalo-blueDetail font-weight-bold">CVV
-                                                            <i class="fa fa-question-circle"></i>
-                                                        </label>
-                                                        <!--Input cvv-->
-                                                        <input id="CVV" type="text" required class="form-control"
-                                                            placeholder="Cvv">
-                                                        <!--//Input cvv-->
-                                                    </div>
-                                                    <!--//Block cvv-->
-                                                </div>
-                                            </div>
-                                            <!--//Block Expiracion-->
-                                        </form>
-                                        <!-- //Formulario de Tarjeta-->
-                                    </div>
-                                </div>
-                            </div>
-                            <!--rbt tarjeta response Block Credit Card invisible-->
+                            
                         </div>
                         <!--//Configuration Block tipo pago-->
                     </div>
@@ -1098,7 +1016,7 @@
                             <div class="col">
                                 <div class="py-3">
                                     <!--Btn siguiente-->
-                                    <a  onclick="setDetPed()"
+                                    <a  onclick="setPreviewTarjeta()"
                                         class="btn btn-block positive bg-printalo-greenDetail text-light "
                                         data-dismiss="modal" data-toggle="modal"
                                         data-target="#revisarPedido">Siguiente</a>
@@ -1621,7 +1539,7 @@
                                                 <label for="username"
                                                     class="color-printalo-blueDetail font-weight-bold">Nombre</label>
                                                 <!--Input de nombre-->
-                                                <input type="text" name="username" placeholder="Ingrese el nombre"
+                                                <input id="nombTarjeta" type="text" name="username" placeholder="Ingrese el nombre"
                                                     required class="form-control" disabled>
                                                 <!--//Input de nombre-->
                                             </div>
@@ -1633,7 +1551,7 @@
                                                     de tarjeta</label>
                                                 <div class="input-group">
                                                     <!--Input de numero de cuenta-->
-                                                    <input type="number" name="" placeholder="Numero de tarjeta"
+                                                    <input id="numTarjeta" type="number" name="" placeholder="Numero de tarjeta"
                                                         class="form-control" required disabled>
                                                     <!--//Input de numero de cuenta-->
                                                     <!--Grupo de Iconos-->
@@ -1658,11 +1576,11 @@
                                                             class="color-printalo-blueDetail font-weight-bold">Expiracion</label>
                                                         <div class="input-group">
                                                             <!--input mes-->
-                                                            <input type="number" placeholder="Mes" name=""
+                                                            <input id="mes" type="number" placeholder="Mes" name=""
                                                                 class="form-control" disabled>
                                                             <!--//input mes-->
                                                             <!--input anio-->
-                                                            <input type="number" placeholder="Año" name=""
+                                                            <input id="anio" type="number" placeholder="Año" name=""
                                                                 class="form-control" disabled>
                                                             <!--//input anio-->
                                                         </div>
@@ -1676,7 +1594,7 @@
                                                             <i class="fa fa-question-circle"></i>
                                                         </label>
                                                         <!--Input cvv-->
-                                                        <input type="text" required class="form-control"
+                                                        <input id="cvv" type="text" required class="form-control"
                                                             placeholder="Cvv" disabled>
                                                         <!--//Input cvv-->
                                                     </div>
@@ -1704,7 +1622,7 @@
                         <h5 class="text-center p-3">Precio</h5>
                         <!--//modal title-->
                         <!--details-->
-                        <p id="costoCalc">400pag * 0.5Bs/pag = 200Bs</p>
+                        <p id="operacion">400pag * 0.5Bs/pag = 200Bs</p>
                         <p id="total"><span class="font-weight-bold">Costo total :</span></p>
                         <!--details-->
                     </div>

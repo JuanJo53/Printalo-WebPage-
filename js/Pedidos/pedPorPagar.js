@@ -56,7 +56,6 @@ function getDocData() {
 function setData(doc, nomb, prec, cant, pag, f, h) {
 	var table = document.getElementsByTagName("table")[0];
 	var newRow = table.insertRow(1);
-
 	var nro = newRow.insertCell(0);
 	var nombUser = newRow.insertCell(1);
 	var precio = newRow.insertCell(2);
@@ -66,7 +65,6 @@ function setData(doc, nomb, prec, cant, pag, f, h) {
 	var hora = newRow.insertCell(6);
 	var detalles = newRow.insertCell(7);
 	var rechazar = newRow.insertCell(8);
-
 	nro.className = "text-center";
 	nombUser.className = "text-center";
 	precio.className = "text-center";

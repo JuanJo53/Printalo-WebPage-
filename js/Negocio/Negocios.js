@@ -128,6 +128,7 @@ class Negocio {
       .get()
       .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc){  
+          console.log(doc.data().nombreNeg)
           negs.push(doc.data().nombreNeg);
           c++;          
         });       
@@ -135,11 +136,11 @@ class Negocio {
       .catch(function(error){
         console.log(`Error al Ingresar: ${error}`);
       })
-      for(var i=0;i<c-1;i++){
+      for(var i=0;i<c;i++){
         if(negs[i]===nomb){            
-            var auth = new Auth();  
-            auth.LoginEmailPass(email, password);
+            var auth = new Auth();              
             conf=true;
+            auth.LoginEmailPass(email, password);
             break;
           }else{
             conf=false;

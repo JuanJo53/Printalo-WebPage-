@@ -251,6 +251,7 @@ async function getDatosTarjeta() {
 					alert(
 						"Datos de tarjeta no configurados!\nPor favor procura configurar los datos de tu tarjeta."
 					);
+					location.reload();
 				}
 			} else {
 				console.error("Datos del cliente no hallados!");

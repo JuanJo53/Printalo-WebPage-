@@ -394,9 +394,9 @@
                 <div class="container  px-5  my-4">
                     <!--group nombre-->
                     <div class="form-group row">
-                        <label class="col-3 text-center color-printalo-blueDetail font-weight-bold">Nombre :</label>
+                        <label class="col-3 text-center color-printalo-blueDetail font-weight-bold">Apellido :</label>
                         <div class="col-9">
-                            <input type="text" class="form-control">
+                            <input id="apllCli" type="text" class="form-control">
                         </div>
                     </div>
                     <!--//group nombre-->
@@ -404,7 +404,7 @@
                     <div class="form-group row">
                         <label class="col-3 text-center  color-printalo-blueDetail font-weight-bold">Nit :</label>
                         <div class="col-9">
-                            <input type="text" class="form-control">
+                            <input id="nitCli" type="text" class="form-control">
                         </div>
                     </div>
                     <!--//group nit-->
@@ -418,7 +418,7 @@
                         <a class="btn negative bg-printalo-blueDetail text-light" data-dismiss="modal">Cancelar</a>
                         <!--btn Cancelar-->
                         <!--btn Aceptar-->
-                        <a class="btn positive bg-printalo-greenDetail text-light" data-target="#prevFactura"
+                        <a id="imprimirFac" class="btn positive bg-printalo-greenDetail text-light" data-target="#prevFactura"
                             data-toggle="modal" data-dismiss="modal">Aceptar</a>
                         <!--//btn Aceptar-->
                     </div>
@@ -436,23 +436,23 @@
                 <div id="invoice">
                     <div class="container  px-5 my-4 text-center">
                         <label class="font-weight-bold">Printalo</label><br>
-                        <label class="font-weight-bold">Nombre de Negocio</label><br>
-                        <label class="">Direccion de Negocio</label><br>
-                        <label class="">Numero de Negocio</label><br>
+                        <label id="facNombNeg" class="font-weight-bold">Nombre de Negocio</label><br>
+                        <label id="facDirNeg" class="">Numero de Negocio</label><br>
+                        <label id="facNumNeg" class="">Direccion de Negocio</label><br>
                         <label class="">La Paz - Bolivia</label><br>
                         <label class="font-weight-bold">FACTURA</label><br>
                         <label class="">ORIGINAL</label><br>
                         <label
                             class="font-weight-bold">-----------------------------------------------------</label><br>
-                        <label class="">NIT : </label><label class=""> Numero de Empresa</label><br>
-                        <label class="">Factura No : </label><label class=""> Numero de Factura</label><br>
+                        <label class="">NIT : </label><label id="nitNeg" class=""> Numero de Empresa</label><br>
+                        <label class="">Factura No : </label><label id="numFac" class=""> Numero de Factura</label><br>
                         <label
                             class="font-weight-bold">-----------------------------------------------------</label><br>
-                        <label class="">Fecha :</label><label class="">Ingresar Fecha actual</label><br>
+                        <label class="">Fecha :</label><label id="facFecha" class="">Ingresar Fecha actual</label><br>
                         <label
                             class="font-weight-bold">-----------------------------------------------------</label><br>
-                        <label class="">NIT : </label><label class=""> Numero de Cliente</label><br>
-                        <label class="">NOMBRE : </label><label class=""> Nombre de Cliente</label><br>
+                        <label class="">NIT : </label><label id="facNitCli"  class=""> Numero de Cliente</label><br>
+                        <label class="">NOMBRE : </label><label id="facApllCli" class=""> Nombre de Cliente</label><br>
                         <label
                             class="font-weight-bold">-----------------------------------------------------</label><br>
                         <table class="table table-borderless">
@@ -464,13 +464,13 @@
                                 </tr>
                             </thead>
                             <tr>
-                                <td>
+                                <td id="facDoc">
                                     Pedido
                                 </td>
-                                <td>
+                                <td id="facCant">
                                     #Unidades
                                 </td>
-                                <td>
+                                <td id="facCosto">
                                     Bs
                                 </td>
                             </tr>
@@ -481,14 +481,14 @@
                                 <td>
                                     Total :
                                 </td>
-                                <td>
+                                <td id="facTotal">
                                     #TotalBs
                                 </td>
                             </tr>
                         </table>
-                        <label class="">Cantidad en literal</label><br>
-                        <label class="font-weight-bold">CODIGO DE CONTROL</label><br>
-                        <label class="font-weight-bold">FECHA LIMITE DE EMISION</label><br>
+                        <label id="facLitTotal" class=""></label><br>
+                        <label class="font-weight-bold">CODIGO DE CONTROL:</label><label id="facCodControl" class=""></label><br>
+                        <label class="font-weight-bold">FECHA LIMITE DE EMISION:</label><label id="facFechaLim" class=""></label><br>
                     </div>
                 </div>
                 <!--//modal body-->
@@ -549,7 +549,8 @@
     <!--Script para la pagina actual-->
     <script type="text/javascript" src="../../../js//Negocio/InicioNeg.js"></script>  
     <script type="text/javascript" src="../../../js//Pedidos/pedPagados.js"></script>
-    <script type="text/javascript" src="../../../js//Pedidos/Pedido.js"></script>  
+    <script type="text/javascript" src="../../../js//Pedidos/Pedido.js"></script>
+    <script type="text/javascript" src="../../../js/Ventas/Venta.js"></script>  
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
 

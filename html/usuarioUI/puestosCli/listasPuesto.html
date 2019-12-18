@@ -76,10 +76,10 @@
     <!--Sub Navbar usuarios-->
     <ul class="nav nav-pills nav-justified bg-printalo-greenDetail">
         <!--Navbar Link listas-->
-        <li class="nav-item"><a class="nav-link active" href="listasPuesto.html">Listas</a></li>
+        <li class="nav-item"><a class="nav-link active">Listas</a></li>
         <!--//-->
         <!--Navbar Link informacion-->
-        <li class="nav-item"><a class="nav-link" href="informacionPuesto.html">Informacion</a></li>
+        <li class="nav-item"><a id="info" class="nav-link" >Informacion</a></li>
         <!--//-->
     </ul>
     <!--//Sub Navbar usuarios-->
@@ -202,7 +202,7 @@
                                     <!-- rbt b/n-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Blanco/Negro
-                                            <input type="radio" checked="checked" name="radioColor" disabled>
+                                            <input id="bn" type="radio" checked="checked" name="radioColor" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -212,7 +212,7 @@
                                     <!-- rbt color-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Color
-                                            <input type="radio" name="radioColor" disabled>
+                                            <input id="color" type="radio" name="radioColor" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -236,7 +236,7 @@
                                     <!-- rbt carta-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Carta
-                                            <input type="radio" checked="checked" name="radioTamanio" disabled>
+                                            <input id="carta" type="radio" checked="checked" name="radioTamanio" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -246,7 +246,7 @@
                                     <!-- rbt oficio-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Oficio
-                                            <input type="radio" name="radioTamanio" disabled>
+                                            <input id="oficio" type="radio" name="radioTamanio" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -256,7 +256,7 @@
                                     <!-- rbt a4-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">A4
-                                            <input type="radio" name="radioTamanio" disabled>
+                                            <input id="a4" type="radio" name="radioTamanio" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -280,7 +280,7 @@
                                     <!-- rbt intercalado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Intercalado
-                                            <input type="radio" checked="checked" name="radioLados" disabled>
+                                            <input id="intercalado" type="radio" checked="checked" name="radioLados" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -290,7 +290,7 @@
                                     <!-- rbt anverso/reverso-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Anv/Reverso
-                                            <input type="radio" name="radioLados" disabled>
+                                            <input id="anv/rev" type="radio" name="radioLados" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -314,7 +314,7 @@
                                     <!-- rbt engrampado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Engrampado
-                                            <input type="radio" checked="checked" name="radioAcabado" disabled>
+                                            <input id="engrampado" type="radio" checked="checked" name="radioAcabado" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -324,7 +324,7 @@
                                     <!-- rbt normal-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Normal
-                                            <input type="radio" name="radioAcabado" disabled>
+                                            <input id="normal" type="radio" name="radioAcabado" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -348,7 +348,7 @@
                                     <!-- rbt normal-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Normal
-                                            <input type="radio" checked="checked" name="radioTipHoja" disabled>
+                                            <input id="hojaNormal" type="radio" checked="checked" name="radioTipHoja" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -358,7 +358,7 @@
                                     <!-- rbt reutilizado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Reutilizado
-                                            <input type="radio" name="radioTipHoja" disabled>
+                                            <input id="hojaReutilizada" type="radio" name="radioTipHoja" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -390,9 +390,9 @@
                                                 <!--//decrement-->
                                                 <!--input number-->
                                                 <div class='ctrl__counter on'>
-                                                    <input class='ctrl__counter-input on' maxlength='10' type='text'
+                                                    <input  class='ctrl__counter-input on' maxlength='10' type='text'
                                                         value='0'>
-                                                    <div class='ctrl__counter-num on'>0</div>
+                                                    <div id="numero" class='ctrl__counter-num on'>0</div>
                                                 </div>
                                                 <!--//input number-->
                                                 <!--increment-->
@@ -425,9 +425,9 @@
                         <div class="row-sub">
                         </div>
                         <!--details-->
-                        <p><span class="font-weight-bold">Nombre :</span>Andres Mejia</p>
-                        <p><span class="font-weight-bold">Fecha de recepcion :</span> 10/10/2019</p>
-                        <p><span class="font-weight-bold">Hora de recepcion :</span> 10:00 am</p>
+                        <p id="dueño"><span class="font-weight-bold">Nombre :</span></p>
+                        <p id="fecha"><span class="font-weight-bold">Fecha de recepcion :</span></p>
+                        <p id="hora"><span class="font-weight-bold">Hora de recepcion :</span></p>
                         <!--details-->
                     </div>
                 </div>
@@ -734,89 +734,6 @@
                                 <h5></h5>
                             </div>
                             <!--//rbt personal response-->
-                            <!--rbt tarjeta response Block Credit Card invisible-->
-                            <div id="tarjetadiv" style='display:none' class="py-2 tarjeta-modal">
-                                <p class="color-printalo-blueDetail font-weight-bold">Datos de Tarjeta</p>
-                                <div class="row-sub">
-                                </div>
-                                <div class="row py-2">
-                                    <div class="col">
-                                        <!-- Formulario de Tarjeta-->
-                                        <form role="form">
-                                            <!--Block Nombre-->
-                                            <div class="form-group">
-                                                <label for="username"
-                                                    class="color-printalo-blueDetail font-weight-bold">Nombre</label>
-                                                <!--Input de nombre-->
-                                                <input type="text" name="username" placeholder="Ingrese el nombre"
-                                                    required class="form-control">
-                                                <!--//Input de nombre-->
-                                            </div>
-                                            <!--//Block Nombre-->
-                                            <!--Block Numero de tarjeta-->
-                                            <div class="form-group">
-                                                <label for="cardNumber"
-                                                    class="color-printalo-blueDetail font-weight-bold">Numero
-                                                    de tarjeta</label>
-                                                <div class="input-group">
-                                                    <!--Input de numero de cuenta-->
-                                                    <input type="number" name="" placeholder="Numero de tarjeta"
-                                                        class="form-control" required>
-                                                    <!--//Input de numero de cuenta-->
-                                                    <!--Grupo de Iconos-->
-                                                    <div class="input-group-append">
-                                                        <span
-                                                            class="input-group-text text-light bg-printalo-greenDetail">
-                                                            <i class="fab fa-cc-visa mx-1"></i>
-                                                            <i class="fab fa-cc-amex mx-1"></i>
-                                                            <i class="fab fa-cc-mastercard mx-1"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!--//Grupo de Iconos-->
-                                                </div>
-                                            </div>
-                                            <!--//Block Numero de tarjeta-->
-                                            <!--Block Expiracion-->
-                                            <div class="row">
-                                                <div class="col">
-                                                    <!--Block mes y anio-->
-                                                    <div class="form-group">
-                                                        <label
-                                                            class="color-printalo-blueDetail font-weight-bold">Expiracion</label>
-                                                        <div class="input-group">
-                                                            <!--input mes-->
-                                                            <input type="number" placeholder="Mes" name=""
-                                                                class="form-control">
-                                                            <!--//input mes-->
-                                                            <!--input anio-->
-                                                            <input type="number" placeholder="Año" name=""
-                                                                class="form-control">
-                                                            <!--//input anio-->
-                                                        </div>
-                                                    </div>
-                                                    <!--//Block mes y anio-->
-                                                </div>
-                                                <div class="col">
-                                                    <!--Block cvv-->
-                                                    <div class="form-group mb-4">
-                                                        <label class="color-printalo-blueDetail font-weight-bold">CVV
-                                                            <i class="fa fa-question-circle"></i>
-                                                        </label>
-                                                        <!--Input cvv-->
-                                                        <input type="text" required class="form-control"
-                                                            placeholder="Cvv">
-                                                        <!--//Input cvv-->
-                                                    </div>
-                                                    <!--//Block cvv-->
-                                                </div>
-                                            </div>
-                                            <!--//Block Expiracion-->
-                                        </form>
-                                        <!-- //Formulario de Tarjeta-->
-                                    </div>
-                                </div>
-                            </div>
-                            <!--rbt tarjeta response Block Credit Card invisible-->
                         </div>
                         <!--//Configuration Block tipo pago-->
                     </div>
@@ -1552,7 +1469,8 @@
     <!--//icon perfil user JS-->
     <script type="text/javascript" src="../../../js/Cliente/InicioCli.js"></script>
     
-    <script type="text/javascript" src="../../../js/Listas/registroListaCli.js"></script>
+    <script type="text/javascript" src="../../../js/Listas/registroListaCli.js"></script>    
+    <script type="text/javascript" src="../../../js/Listas/Listas.js"></script>
 </body>
 
 </html>

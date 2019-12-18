@@ -1,4 +1,12 @@
 window.onload = ValidarNeg();
+var btnInfo = document.getElementById("info");
+btnInfo.addEventListener("click", function() {
+	var title = document.getElementById("titleLista").innerHTML;
+	var sp = title.split(" ");
+	var negocioID = sp[4];
+	console.log(negocioID);
+	window.location = "./informacionPuesto.html?negocio=" + negocioID;
+});
 //Obtiene los datos de los pedidos respectivos de la base de datos.
 async function getDocsData() {
 	var user = firebase.auth().currentUser;
@@ -15,6 +23,9 @@ async function getDocsData() {
 			querySnapshot.forEach(function(doc) {
 				negocioID = doc.id;
 			});
+		})
+		.catch(function(error) {
+			console.error("No se obtubieron los datos!\n" + error);
 		});
 	console.log(negocioID);
 	bd.collection("Listas")
@@ -65,13 +76,11 @@ function getDocDet(_this) {
 	console.log(_this.id);
 
 	titulo = getRowSelected(_this, 0);
-	dueño = getRowSelected(_this, 1);
-	materia = getRowSelected(_this, 2);
-	nroHojas = getRowSelected(_this, 3);
-	precio = getRowSelected(_this, 4);
-	fecha = getRowSelected(_this, 5);
+	dueño = getRowSelected(_this, 2);
+	materia = getRowSelected(_this, 1);
 
-	var lista = new Lista(dueño, fecha, materia, titulo, nroHojas, precio);
+	var lista = new Lista();
+	lista.setDetDoc(dueño, titulo, materia);
 }
 //Obtiene el nombre de la fila seleccionada.
 function getRowSelected(objectPressed, col) {
@@ -82,6 +91,7 @@ function getRowSelected(objectPressed, col) {
 var nombre;
 function getNeg() {
 	var ref = window.location.search;
+	console.log(ref);
 	var neg = ref.split("=");
 	nombre = neg[1];
 	document.getElementById("titleLista").innerHTML = "Lista de Negocio de " + nombre;

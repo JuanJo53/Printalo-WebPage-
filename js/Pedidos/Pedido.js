@@ -446,28 +446,34 @@ class Pedido {
 		var btnImprimir = document.getElementById("btnImprimir");
 		btnImprimir.addEventListener("click", f => {
 			var venta = new Venta();
-			venta.nuevaVenta(
-				numFac,
-				timestamp,
-				nitCli,
-				apellido,
-				docNomb,
-				cant,
-				precio,
-				pedidoID,
-				clienteID,
-				BN,
-				docID,
-				acabado,
-				fechaPed,
-				fechaPedEntrega,
-				lados,
-				pago,
-				paginas,
-				tamaño,
-				tipo,
-				tipoHoja
-			);
+			if (nitNeg != "" && nombNeg != "") {
+				venta.nuevaVenta(
+					numFac,
+					timestamp,
+					nitCli,
+					apellido,
+					docNomb,
+					cant,
+					precio,
+					pedidoID,
+					clienteID,
+					BN,
+					docID,
+					acabado,
+					fechaPed,
+					fechaPedEntrega,
+					lados,
+					pago,
+					paginas,
+					tamaño,
+					tipo,
+					tipoHoja
+				);
+			} else {
+				alert(
+					"Datos del negocio para emitir factura no configurados!\nPorfavor asegurese de configurarlos antes de imitr una factura!"
+				);
+			}
 		});
 	}
 }

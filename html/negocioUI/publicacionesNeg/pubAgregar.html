@@ -43,7 +43,7 @@
                 class="navbar-item  order-lg-last   order-xs-last  mx-1 icon-user">
                 <div class="d-inline circle bg-printalo-greenDetail">
                     <!--Initial letter-->
-                    <div id="InicialNeg" class="center">                    
+                    <div id="InicialNeg" class="center">
                     </div>
                     <!--Initial letter-->
                 </div>
@@ -154,7 +154,7 @@
                                         <input type="radio" name="radiobn" id="fotocopia" checked="checked">
                                         <span class="checkmark"></span>
                                     </label>
-                                </div> 
+                                </div>
                                 <!-- <div class="mr-auto">
                                     <label class="radiobuttons text-light ml-1">Documento
                                         <input type="radio" name="radiobn" id="documento">
@@ -240,13 +240,13 @@
                                 <!--Nro Hojas box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Nro Hojas</span>
-                                    <input id="numHojas" type="number" class="form-control">
+                                    <input id="numHojas" type="number" class="form-control text-center">
                                 </div>
                                 <!--//Nro Hojas box-->
                                 <!--Precio Bs box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Precio Bs</span>
-                                    <input id="precio" type="number" class="form-control">
+                                    <input id="precio" type="number" class="form-control text-center">
                                 </div>
                                 <!--//Precio Bs box-->
                                 <!--btns-->
@@ -283,31 +283,31 @@
                                 <!--Dueño box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Dueño</span>
-                                    <input id="dueño" type="text" class="form-control">
+                                    <input id="dueño" type="text" class="form-control text-center">
                                 </div>
                                 <!--//Dueño box-->
                                 <!--Fecha Recepcion box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Fecha Recepcion</span>
-                                    <input id="fecha" type="text" class="form-control" disabled>
+                                    <input id="fecha" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//Fecha Recepcion box-->
                                 <!--Hora Recepcion box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Hora Recepcion</span>
-                                    <input id="hora" type="text" class="form-control" disabled>
+                                    <input id="hora" type="text" class="form-control text-center" disabled>
                                 </div>
                                 <!--//Hora Recepcion box-->
                                 <!--Materia box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Materia </span>
-                                    <input id="materia" type="text" class="form-control">
+                                    <input id="materia" type="text" class="form-control text-center">
                                 </div>
                                 <!--//Materia box-->
                                 <!--Titulo box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Titulo </span>
-                                    <input id="tituloDoc" type="text" class="form-control">
+                                    <input id="tituloDoc" type="text" class="form-control text-center">
                                 </div>
                                 <!--//Titulo box-->
                                 <!--btns-->
@@ -329,7 +329,8 @@
                                         <a href="" class="btn bg-printalo-blueDetail text-light negative">Cancelar</a>
                                         <!--//Btn cancelar pedido-->
                                         <!--Btn Subir documento a lista-->
-                                        <button id="subir" onclick="getListaDat()" class="btn bg-printalo-greenDetail  text-light positive  ">Subir a
+                                        <button id="subir" onclick="getListaDat()"
+                                            class="btn bg-printalo-greenDetail  text-light positive  ">Subir a
                                             lista</button>
                                         <!--//Btn Subir documento a lista-->
                                     </div>
@@ -474,7 +475,7 @@
                                 <!--//2 Radio buttons intercalado o anv/rev-->
                             </div>
                             <!--//Configuration impresion lados-->
-                            
+
                             <!--Configuration Block tipo acabado-->
                             <div class="config-block py-2">
                                 <!--subtitle-->
@@ -600,24 +601,22 @@
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
 
     <!-- Configuracion de Proyecto en Firebase -->
-    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>    
+    <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
 
     <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
-
-    <script type="text/javascript" src="../../../js/Negocio/Negocios.js"></script>    
-    <script type="text/javascript" src="../../../js/Negocio/InicioNeg.js"></script> 
-    <script type="text/javascript" src="../../../js/Listas/nuevoDoc.js"></script>      
-    <script type="text/javascript" src="../../../js/Listas/Listas.js"></script>  
+    <script type="text/javascript" src="../../../js/Negocio/Negocios.js"></script>
+    <script type="text/javascript" src="../../../js/Negocio/InicioNeg.js"></script>
+    <script type="text/javascript" src="../../../js/Listas/nuevoDoc.js"></script>
+    <script type="text/javascript" src="../../../js/Listas/Listas.js"></script>
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
     <script type="text/javascript" src="../../../js/designjs/datatables.js"></script>
     <script type="text/javascript" src="../../../js/designjs/dropdown.js"></script>
 
     <!--DESIGN JS-->
-    <!--iconuserpefil script-->
     <script src="../../../js/designjs/perfiliconuser.js"></script>
-    <script type="text/javascript" src="../../../js/designjs/toggle.js"></script>
+    <script src="../../../js/designjs/toggle.js"></script>
     <script src="../../../js/designjs/radiobtn.js"></script>
     <!--//iconuserpefil script-->
     <!--//DESIGN JS-->

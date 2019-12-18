@@ -244,13 +244,13 @@
                                 <!--Nro Hojas box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Nro Hojas</span>
-                                    <input type="number" class="form-control">
+                                    <input id="numHojas" type="number" class="form-control">
                                 </div>
                                 <!--//Nro Hojas box-->
                                 <!--Precio Bs box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Precio Bs</span>
-                                    <input type="number" class="form-control">
+                                    <input id="precio" type="number" class="form-control">
                                 </div>
                                 <!--//Precio Bs box-->
                                 <!--btns-->
@@ -287,37 +287,37 @@
                                 <!--Nro Lista box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Nro Lista</span>
-                                    <input type="number" class="form-control" disabled>
+                                    <input id="nroLista" type="number" class="form-control" disabled>
                                 </div>
                                 <!--//Nro Lista box-->
                                 <!--Dueño box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Dueño</span>
-                                    <input type="text" class="form-control">
+                                    <input id="dueño" type="text" class="form-control">
                                 </div>
                                 <!--//Dueño box-->
                                 <!--Fecha Recepcion box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Fecha Recepcion</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="fecha" type="text" class="form-control" disabled>
                                 </div>
                                 <!--//Fecha Recepcion box-->
                                 <!--Hora Recepcion box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Hora Recepcion</span>
-                                    <input type="text" class="form-control" disabled>
+                                    <input id="hora" type="text" class="form-control" disabled>
                                 </div>
                                 <!--//Hora Recepcion box-->
                                 <!--Materia box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Materia </span>
-                                    <input type="text" class="form-control">
+                                    <input id="materia" type="text" class="form-control">
                                 </div>
                                 <!--//Materia box-->
                                 <!--Titulo box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Titulo </span>
-                                    <input type="text" class="form-control">
+                                    <input id="tituloDoc" type="text" class="form-control">
                                 </div>
                                 <!--//Titulo box-->
                                 <!--btns-->
@@ -383,7 +383,7 @@
                                     <!-- rbt b/n-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Blanco/Negro
-                                            <input type="radio" checked="checked" name="radioColor">
+                                            <input id="BN" type="radio" checked="checked" name="radioColor">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -393,7 +393,7 @@
                                     <!-- rbt color-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Color
-                                            <input type="radio" name="radioColor">
+                                            <input id="color" type="radio" name="radioColor">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -418,7 +418,7 @@
                                     <!-- rbt carta-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Carta
-                                            <input type="radio" checked="checked" name="radioTamanio">
+                                            <input id="carta" type="radio" checked="checked" name="radioTamanio">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -428,7 +428,7 @@
                                     <!-- rbt oficio-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Oficio
-                                            <input type="radio" name="radioTamanio">
+                                            <input id="oficio" type="radio" name="radioTamanio">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -438,7 +438,7 @@
                                     <!-- rbt a4-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">A4
-                                            <input type="radio" name="radioTamanio">
+                                            <input id="a4" type="radio" name="radioTamanio">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -463,7 +463,7 @@
                                     <!-- rbt intercalado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Intercalado
-                                            <input type="radio" checked="checked" name="radioLados">
+                                            <input id="intercalado" type="radio" checked="checked" name="radioLados">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -473,7 +473,7 @@
                                     <!-- rbt anverso/reverso-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Anv/Reverso
-                                            <input type="radio" name="radioLados">
+                                            <input id="anv/rev" type="radio" name="radioLados">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -497,7 +497,7 @@
                                     <!-- rbt todo-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Todo
-                                            <input type="radio" checked="checked" name="radioNumPag" id="todo">
+                                            <input id="todo" type="radio" checked="checked" name="radioNumPag" id="todo">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -507,7 +507,7 @@
                                     <!-- rbt personalizado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Personalizado
-                                            <input type="radio" name="radioNumPag" id="personalizado">
+                                            <input id="personalizado" type="radio" name="radioNumPag" id="personalizado">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -568,7 +568,7 @@
                                     <!-- rbt engrampado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Engrampado
-                                            <input type="radio" checked="checked" name="radioAcabado">
+                                            <input id="engrampado" type="radio" checked="checked" name="radioAcabado">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -578,7 +578,7 @@
                                     <!-- rbt normal-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Normal
-                                            <input type="radio" name="radioAcabado">
+                                            <input id="normal" type="radio" name="radioAcabado">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -602,7 +602,7 @@
                                     <!-- rbt normal-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Normal
-                                            <input type="radio" checked="checked" name="radioTipHoja">
+                                            <input id="hojaNormal" type="radio" checked="checked" name="radioTipHoja">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -612,7 +612,7 @@
                                     <!-- rbt reutilizado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Reutilizado
-                                            <input type="radio" name="radioTipHoja">
+                                            <input id="hojaReutilizada" type="radio" name="radioTipHoja">
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -687,7 +687,8 @@
     <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
 
     <script type="text/javascript" src="../../../js/Negocio/Negocios.js"></script>    
-    <script type="text/javascript" src="../../../js/Negocio/InicioNeg.js"></script>  
+    <script type="text/javascript" src="../../../js/Negocio/InicioNeg.js"></script> 
+    <script type="text/javascript" src="../../../js/Listas/nuevoDoc.js"></script>   
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
     <script type="text/javascript" src="../../../js/designjs/datatables.js"></script>

@@ -90,4 +90,59 @@ class Lista {
 				alert("Documento no se borro correctamente!\n" + error);
 			});
 	}
+	setDetDoc(dueño, titulo, materia) {
+		var user = firebase.auth().currentUser;
+		var bd = firebase.firestore();
+		var timestamp;
+		bd.collection("Listas")
+			.where("dueño", "==", dueño)
+			.where("nombreDoc", "==", titulo)
+			.where("materia", "==", materia)
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					if (doc.exists) {
+						if (doc.data().color === "color") {
+							document.getElementById("color").checked = true;
+						} else {
+							document.getElementById("bn").checked = true;
+						}
+						if (doc.data().tamañoHoja === "carta") {
+							document.getElementById("carta").checked = true;
+						} else if (doc.data().tamañoHoja === "oficio") {
+							document.getElementById("oficio").checked = true;
+						} else {
+							document.getElementById("a4").checked = true;
+						}
+						if (doc.data().impresion === "intercalado") {
+							document.getElementById("intercalado").checked = true;
+						} else {
+							document.getElementById("anv/rev").checked = true;
+						}
+						if (doc.data().acabado === "normal") {
+							document.getElementById("normal").checked = true;
+						} else {
+							document.getElementById("engrampado").checked = true;
+						}
+						if (doc.data().tipoHoja === "normal") {
+							document.getElementById("hojaNormal").checked = true;
+						} else {
+							document.getElementById("hojaReutilizada").checked = true;
+						}
+						document.getElementById("numero").innerHTML = doc.data().numHojas;
+						document.getElementById("dueño").innerHTML = `<span class="font-weight-bold">Nombre:  </span>` + doc.data().dueño;
+						timestamp = new Date(doc.data().fecha.toDate());
+						var fecha = timestamp.getDate() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getFullYear();
+						var hora = timestamp.getHours() + ":" + timestamp.getMinutes();
+						document.getElementById("fecha").innerHTML = `<span class="font-weight-bold">Fecha de Recepcion:  </span>` + fecha;
+						document.getElementById("hora").innerHTML = `<span class="font-weight-bold">Hora de Recepcion:  </span>` + hora;
+					} else {
+						alert("Documento no encontrado!");
+					}
+				});
+			})
+			.catch(function(error) {
+				alert("Documento no se borro correctamente!\n" + error);
+			});
+	}
 }

@@ -73,16 +73,16 @@
     <!--Sub Navbar usuarios-->
     <ul class="nav nav-pills nav-justified bg-printalo-greenDetail">
         <!--Navbar Link listas-->
-        <li class="nav-item"><a class="nav-link " href="listasPuesto.html">Listas</a></li>
+        <li class="nav-item"><a id="listas" class="nav-link ">Listas</a></li>
         <!--//Navbar Link listas-->
         <!--Navbar Link informacion-->
-        <li class="nav-item"><a class="nav-link active" href="informacionPuesto.html">Informacion</a></li>
+        <li class="nav-item"><a class="nav-link active">Informacion</a></li>
         <!--//Navbar Link informacion-->
     </ul>
     <!--//Sub Navbar usuarios-->
     <div class="container">
         <!--title page-->
-        <h2 class="my-3">Informacion de PCS</h2>
+        <h2 id="titleInfo" class="my-3">Informacion de PCS</h2>
         <!--//title page-->
         <!--row-->
         <div class="row">
@@ -105,8 +105,8 @@
                                 <!--//subrow-->
                                 <div class="text-center">
                                     <!--details-->
-                                    <p><span class="font-weight-bold">Calle : </span>Calle 2 de obrajes</p>
-                                    <p><span class="font-weight-bold">Telefono : </span> 2222222</p>
+                                    <p id="direccion"><span class="font-weight-bold">Calle : </span></p>
+                                    <p id="telefono"><span class="font-weight-bold">Telefono : </span></p>
                                     <!--details-->
                                 </div>
                             </div>
@@ -190,7 +190,7 @@
                                 <!--//subrow-->
                                 <div class="text-center">
                                     <!--details-->
-                                    <p><span class="font-weight-bold">E-mail : </span>pcs@gmail.com</p>
+                                    <p id="correo"><span class="font-weight-bold">E-mail : </span>pcs@gmail.com</p>
                                     <!--details-->
                                 </div>
                             </div>
@@ -347,6 +347,8 @@
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
     <!--//icon perfil user JS-->
     <script type="text/javascript" src="../../../js/Cliente/InicioCli.js"></script>
+    <script type="text/javascript" src="../../../js/Listas/infoPuesto.js"></script>
+    <script type="text/javascript" src="../../../js/Listas/Listas.js"></script>
 </body>
 
 </html>

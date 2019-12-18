@@ -70,10 +70,10 @@
     <!--Sub Navbar usuarios-->
     <ul class="nav nav-pills nav-justified bg-printalo-greenDetail">
         <!--Navbar Link listas-->
-        <li class="nav-item"><a class="nav-link active" href="listasPuesto.html">Listas</a></li>
+        <li class="nav-item"><a class="nav-link active">Listas</a></li>
         <!--//-->
         <!--Navbar Link informacion-->
-        <li class="nav-item"><a class="nav-link" href="informacionPuesto.html">Informacion</a></li>
+        <li class="nav-item"><a id="info" class="nav-link" >Informacion</a></li>
         <!--//-->
     </ul>
     <!--//Sub Navbar usuarios-->
@@ -82,20 +82,20 @@
         <!-- responsive table -->
         <div class="holder">
             <!--title page-->
-            <h2 class="my-3">Lista de Negocio de PCS</h2>
+            <h2 id="titleLista" class="my-3"  method="POST">Lista de Negocio de PCS</h2>
             <!--//title page-->
             <div class="responsiveTbl">
                 <!--start table-->
-                <table>
+                <table >
                     <!--column's titles-->
                     <thead>
                         <tr>
                             <!--th 1-->
-                            <th class="text-center">#Lista</th>
+                            <th class="text-center">Titulo</th>
                             <!--th 2-->
                             <th class="text-center">Materia</th>
                             <!--th 3-->
-                            <th class="text-center">Titulo</th>
+                            <th class="text-center">Dueño</th>
                             <!--th 4-->
                             <th class="text-center">Solicitar</th>
                         </tr>
@@ -103,19 +103,7 @@
                     <!--//column's titles-->
                     <tbody>
                         <!--Row-->
-                        <tr>
-                            <!--Nro lista-->
-                            <td class="text-center">000001</td>
-                            <!--//-->
-                            <!--Materia-->
-                            <td class="text-center">Calculo 1</td>
-                            <!--titulo-->
-                            <td class="text-center">Practica 1</td>
-                            <!--//-->
-                            <!--Btn Solicitar-->
-                            <td class="text-center"><a class="btn positive bg-printalo-greenDetail text-light"
-                                    data-toggle="modal" data-target="#solicitardelista">Solicitar</a></td>
-                            <!--//-->
+                        <tr id="table">                            
                         </tr>
                         <!--//Row-->
                     </tbody>
@@ -208,7 +196,7 @@
                                     <!-- rbt b/n-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Blanco/Negro
-                                            <input type="radio" checked="checked" name="radioColor" disabled>
+                                            <input id="bn" type="radio" checked="checked" name="radioColor" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -218,7 +206,7 @@
                                     <!-- rbt color-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Color
-                                            <input type="radio" name="radioColor" disabled>
+                                            <input id="color" type="radio" name="radioColor" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -242,7 +230,7 @@
                                     <!-- rbt carta-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Carta
-                                            <input type="radio" checked="checked" name="radioTamanio" disabled>
+                                            <input id="carta" type="radio" checked="checked" name="radioTamanio" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -252,7 +240,7 @@
                                     <!-- rbt oficio-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Oficio
-                                            <input type="radio" name="radioTamanio" disabled>
+                                            <input id="oficio" type="radio" name="radioTamanio" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -262,7 +250,7 @@
                                     <!-- rbt a4-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">A4
-                                            <input type="radio" name="radioTamanio" disabled>
+                                            <input id="a4" type="radio" name="radioTamanio" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -286,7 +274,7 @@
                                     <!-- rbt intercalado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Intercalado
-                                            <input type="radio" checked="checked" name="radioLados" disabled>
+                                            <input id="intercalado" type="radio" checked="checked" name="radioLados" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -296,7 +284,7 @@
                                     <!-- rbt anverso/reverso-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Anv/Reverso
-                                            <input type="radio" name="radioLados" disabled>
+                                            <input id="anv/rev" type="radio" name="radioLados" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -307,40 +295,6 @@
                                 <!-- //2 Radio buttons rango o unico-->
                             </div>
                             <!--//Configuration impresion lados-->
-                            <!--Configuration Block numero de hojas-->
-                            <div class="config-block py-2">
-                                <!--subtitle-->
-                                <p class="color-printalo-blueDetail font-weight-bold">Numero de paginas</p>
-                                <!--//subtitle-->
-                                <!--subrow-->
-                                <div class="row-sub">
-                                </div>
-                                <!--//subrow-->
-                                <div class="py-1 ml-auto row">
-                                    <!-- rbt todo-->
-                                    <div class="col">
-                                        <label class="radiobuttons my-auto">Todo
-                                            <input type="radio" checked="checked" name="radioNumPag" disabled>
-                                            <!--for customed purposes-->
-                                            <span class="checkmark"></span>
-                                            <!--//for customed purposes-->
-                                        </label>
-                                    </div>
-                                    <!-- //rbt todo-->
-                                    <!-- rbt personalizado-->
-                                    <div class="col">
-                                        <label class="radiobuttons my-auto">Personalizado
-                                            <input type="radio" name="radioNumPag" disabled>
-                                            <!--for customed purposes-->
-                                            <span class="checkmark"></span>
-                                            <!--//for customed purposes-->
-                                        </label>
-                                    </div>
-                                    <!-- //rbt personalizado-->
-                                </div>
-                                <!-- //2 Radio buttons rango o unico-->
-                            </div>
-                            <!--//Configuration block numero de hojas-->
                             <!--Configuration Block tipo acabado-->
                             <div class="config-block py-2">
                                 <!--subtitle-->
@@ -354,7 +308,7 @@
                                     <!-- rbt engrampado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Engrampado
-                                            <input type="radio" checked="checked" name="radioAcabado" disabled>
+                                            <input id="engrampado" type="radio" checked="checked" name="radioAcabado" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -364,7 +318,7 @@
                                     <!-- rbt normal-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Normal
-                                            <input type="radio" name="radioAcabado" disabled>
+                                            <input id="normal" type="radio" name="radioAcabado" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -388,7 +342,7 @@
                                     <!-- rbt normal-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Normal
-                                            <input type="radio" checked="checked" name="radioTipHoja" disabled>
+                                            <input id="hojaNormal" type="radio" checked="checked" name="radioTipHoja" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -398,7 +352,7 @@
                                     <!-- rbt reutilizado-->
                                     <div class="col">
                                         <label class="radiobuttons my-auto">Reutilizado
-                                            <input type="radio" name="radioTipHoja" disabled>
+                                            <input id="hojaReutilizada" type="radio" name="radioTipHoja" disabled>
                                             <!--for customed purposes-->
                                             <span class="checkmark"></span>
                                             <!--//for customed purposes-->
@@ -430,9 +384,9 @@
                                                 <!--//decrement-->
                                                 <!--input number-->
                                                 <div class='ctrl__counter on'>
-                                                    <input class='ctrl__counter-input on' maxlength='10' type='text'
+                                                    <input  class='ctrl__counter-input on' maxlength='10' type='text'
                                                         value='0'>
-                                                    <div class='ctrl__counter-num on'>0</div>
+                                                    <div id="numero" class='ctrl__counter-num on'>0</div>
                                                 </div>
                                                 <!--//input number-->
                                                 <!--increment-->
@@ -465,9 +419,9 @@
                         <div class="row-sub">
                         </div>
                         <!--details-->
-                        <p><span class="font-weight-bold">Nombre :</span>Andres Mejia</p>
-                        <p><span class="font-weight-bold">Fecha de recepcion :</span> 10/10/2019</p>
-                        <p><span class="font-weight-bold">Hora de recepcion :</span> 10:00 am</p>
+                        <p id="dueño"><span class="font-weight-bold">Nombre :</span></p>
+                        <p id="fecha"><span class="font-weight-bold">Fecha de recepcion :</span></p>
+                        <p id="hora"><span class="font-weight-bold">Hora de recepcion :</span></p>
                         <!--details-->
                     </div>
                 </div>
@@ -774,89 +728,6 @@
                                 <h5></h5>
                             </div>
                             <!--//rbt personal response-->
-                            <!--rbt tarjeta response Block Credit Card invisible-->
-                            <div id="tarjetadiv" style='display:none' class="py-2 tarjeta-modal">
-                                <p class="color-printalo-blueDetail font-weight-bold">Datos de Tarjeta</p>
-                                <div class="row-sub">
-                                </div>
-                                <div class="row py-2">
-                                    <div class="col">
-                                        <!-- Formulario de Tarjeta-->
-                                        <form role="form">
-                                            <!--Block Nombre-->
-                                            <div class="form-group">
-                                                <label for="username"
-                                                    class="color-printalo-blueDetail font-weight-bold">Nombre</label>
-                                                <!--Input de nombre-->
-                                                <input type="text" name="username" placeholder="Ingrese el nombre"
-                                                    required class="form-control">
-                                                <!--//Input de nombre-->
-                                            </div>
-                                            <!--//Block Nombre-->
-                                            <!--Block Numero de tarjeta-->
-                                            <div class="form-group">
-                                                <label for="cardNumber"
-                                                    class="color-printalo-blueDetail font-weight-bold">Numero
-                                                    de tarjeta</label>
-                                                <div class="input-group">
-                                                    <!--Input de numero de cuenta-->
-                                                    <input type="number" name="" placeholder="Numero de tarjeta"
-                                                        class="form-control" required>
-                                                    <!--//Input de numero de cuenta-->
-                                                    <!--Grupo de Iconos-->
-                                                    <div class="input-group-append">
-                                                        <span
-                                                            class="input-group-text text-light bg-printalo-greenDetail">
-                                                            <i class="fab fa-cc-visa mx-1"></i>
-                                                            <i class="fab fa-cc-amex mx-1"></i>
-                                                            <i class="fab fa-cc-mastercard mx-1"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!--//Grupo de Iconos-->
-                                                </div>
-                                            </div>
-                                            <!--//Block Numero de tarjeta-->
-                                            <!--Block Expiracion-->
-                                            <div class="row">
-                                                <div class="col">
-                                                    <!--Block mes y anio-->
-                                                    <div class="form-group">
-                                                        <label
-                                                            class="color-printalo-blueDetail font-weight-bold">Expiracion</label>
-                                                        <div class="input-group">
-                                                            <!--input mes-->
-                                                            <input type="number" placeholder="Mes" name=""
-                                                                class="form-control">
-                                                            <!--//input mes-->
-                                                            <!--input anio-->
-                                                            <input type="number" placeholder="Año" name=""
-                                                                class="form-control">
-                                                            <!--//input anio-->
-                                                        </div>
-                                                    </div>
-                                                    <!--//Block mes y anio-->
-                                                </div>
-                                                <div class="col">
-                                                    <!--Block cvv-->
-                                                    <div class="form-group mb-4">
-                                                        <label class="color-printalo-blueDetail font-weight-bold">CVV
-                                                            <i class="fa fa-question-circle"></i>
-                                                        </label>
-                                                        <!--Input cvv-->
-                                                        <input type="text" required class="form-control"
-                                                            placeholder="Cvv">
-                                                        <!--//Input cvv-->
-                                                    </div>
-                                                    <!--//Block cvv-->
-                                                </div>
-                                            </div>
-                                            <!--//Block Expiracion-->
-                                        </form>
-                                        <!-- //Formulario de Tarjeta-->
-                                    </div>
-                                </div>
-                            </div>
-                            <!--rbt tarjeta response Block Credit Card invisible-->
                         </div>
                         <!--//Configuration Block tipo pago-->
                     </div>
@@ -1591,6 +1462,9 @@
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
     <!--//icon perfil user JS-->
     <script type="text/javascript" src="../../../js/Cliente/InicioCli.js"></script>
+    
+    <script type="text/javascript" src="../../../js/Listas/registroListaCli.js"></script>    
+    <script type="text/javascript" src="../../../js/Listas/Listas.js"></script>
 </body>
 
 </html>

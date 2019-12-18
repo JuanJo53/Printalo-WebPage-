@@ -83,7 +83,7 @@ function read() {
     var docRef2 = bd
     .collection("Venta")
     .where("negocioID", "==", userid)
-    .where("metodoPago", "==", "online")//aqui cambiar
+    .where("metodoPago", "==", "tarjeta")//aqui cambiar
     .get()
     .then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
@@ -230,7 +230,7 @@ function ultimos14dias() {
     var docRef2 = bd
     .collection("Venta")
     .where("negocioID", "==", userid)
-    .where("metodoPago", "==", "online")//aqui cambiar
+    .where("metodoPago", "==", "tarjeta")//aqui cambiar
     .get()
     .then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
@@ -379,7 +379,7 @@ function ultimos7dias() {
     var docRef2 = bd
     .collection("Venta")
     .where("negocioID", "==", userid)
-    .where("metodoPago", "==", "online")//aqui cambiar
+    .where("metodoPago", "==", "tarjeta")//aqui cambiar
     .get()
     .then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {

@@ -83,7 +83,7 @@ function read() {
     var docRef2 = bd
     .collection("Venta")
     .where("negocioID", "==", userid)
-    .where("metodoPago", "==", "personal")//aqui cambiar
+    .where("metodoPago", "==", "online")//aqui cambiar
     .get()
     .then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
@@ -230,26 +230,27 @@ function ultimos14dias() {
     var docRef2 = bd
     .collection("Venta")
     .where("negocioID", "==", userid)
-    .where("metodoPago", "==", "personal")//aqui cambiar
+    .where("metodoPago", "==", "online")//aqui cambiar
     .get()
     .then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
         if (doc.exists) {
           timestamp = new Date(doc.data().fecha.toDate());
-          
           timestampPedido =
             timestamp.getDate() +
             "/" +
-            (timestamp.getMonth() + 1) +
-            "/" +
-            timestamp.getFullYear();
-            //console.log(timestampPedido+"-"+timestampSistema);
-            if(timestampPedido===timestampSistema){
+          (timestamp.getMonth() + 1) +
+          "/" +
+          timestamp.getFullYear();
+          console.log(timestampPedido+"-"+timestampSistema);
+          if(fechaActual.getFullYear()===timestamp.getFullYear() && (timestamp.getMonth() + 1)===((timestamp.getMonth() + 1))){
+            if((dd-14)<=timestamp.getDate()  && dd>=timestamp.getDate()){
               //tamanio de query
-              //console.log("entro al contador");
+              console.log("entro al contador");
               cont2++;
               //pedNormal = querySnapshot.size;
             }
+          }
         } else {
           console.log("No such document!");
         }
@@ -378,26 +379,27 @@ function ultimos7dias() {
     var docRef2 = bd
     .collection("Venta")
     .where("negocioID", "==", userid)
-    .where("metodoPago", "==", "personal")//aqui cambiar
+    .where("metodoPago", "==", "online")//aqui cambiar
     .get()
     .then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
         if (doc.exists) {
           timestamp = new Date(doc.data().fecha.toDate());
-          
           timestampPedido =
             timestamp.getDate() +
             "/" +
-            (timestamp.getMonth() + 1) +
-            "/" +
-            timestamp.getFullYear();
-            //console.log(timestampPedido+"-"+timestampSistema);
-            if(timestampPedido===timestampSistema){
+          (timestamp.getMonth() + 1) +
+          "/" +
+          timestamp.getFullYear();
+          console.log(timestampPedido+"-"+timestampSistema);
+          if(fechaActual.getFullYear()===timestamp.getFullYear() && (timestamp.getMonth() + 1)===((timestamp.getMonth() + 1))){
+            if((dd-7)<=timestamp.getDate()  && dd>=timestamp.getDate()){
               //tamanio de query
-              //console.log("entro al contador");
+              console.log("entro al contador");
               cont2++;
               //pedNormal = querySnapshot.size;
             }
+          }
         } else {
           console.log("No such document!");
         }

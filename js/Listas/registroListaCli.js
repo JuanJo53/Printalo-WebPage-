@@ -86,7 +86,7 @@ function getDocDet(_this) {
 	if (_this.id === "eliminar") {
 		lista.eliminarDoc(dueño, titulo);
 	} else if (_this.id === "editar") {
-		lista.editarDoc();
+		lista.editarDoc(dueño, titulo);
 	}
 }
 //Obtiene el nombre de la fila seleccionada.

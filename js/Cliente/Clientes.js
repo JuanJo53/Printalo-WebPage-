@@ -65,7 +65,7 @@ class Cliente {
 			.catch(function(error) {
 				console.error(`Error al obtener los datos:\n ${error}`);
 			});
-		for (var i = 0; i < c - 1; i++) {
+		for (var i = 0; i < c; i++) {
 			if (users[i] === this.email) {
 				conf = true;
 				auth.LoginEmailPass(this.email, this.password);
@@ -80,15 +80,7 @@ class Cliente {
 
 	//Setea los datos actuales del usuario
 	setDatosPerfilUsuarioAct() {
-		var nombreUsuario,
-			apellidoUsuario,
-			fonoUsuario,
-			emailUsuario,
-			nombTarjeta,
-			numTarjeta,
-			mesTarjeta,
-			anioTarjeta,
-			cvvTarjeta;
+		var nombreUsuario, apellidoUsuario, fonoUsuario, emailUsuario, nombTarjeta, numTarjeta, mesTarjeta, anioTarjeta, cvvTarjeta;
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();
 		var userid = user.uid;
@@ -191,15 +183,7 @@ class Cliente {
 //esta funcion actualiza los datos de datos generales
 function actualizarDatosPerfilUsuario() {
 	//console.log("entro a cambiar datos de negocio");
-	var nombreUsuario,
-		apellidoUsuario,
-		fonoUsuario,
-		emailUsuario,
-		nombTarjeta,
-		numTarjeta,
-		mesTarjeta,
-		anioTarjeta,
-		cvvTarjeta;
+	var nombreUsuario, apellidoUsuario, fonoUsuario, emailUsuario, nombTarjeta, numTarjeta, mesTarjeta, anioTarjeta, cvvTarjeta;
 	var user = firebase.auth().currentUser;
 	var bd = firebase.firestore();
 	var userid = user.uid;

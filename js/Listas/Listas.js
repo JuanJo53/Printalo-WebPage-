@@ -68,8 +68,24 @@ class Lista {
 				alert("Documento no se borro correctamente!\n" + error);
 			});
 	}
-	editarDoc() {
+	editarDoc(dueño, titulo) {
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();
+		bd.collection("Listas")
+			.where("negocioID", "==", userid)
+			.where("dueño", "==", dueño)
+			.where("nombreDoc", "==", titulo)
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					if (doc.exists) {
+					} else {
+						alert("Documento no encontrado!");
+					}
+				});
+			})
+			.catch(function(error) {
+				alert("Documento no se borro correctamente!\n" + error);
+			});
 	}
 }

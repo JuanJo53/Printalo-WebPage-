@@ -88,20 +88,20 @@
         <!-- responsive table -->
         <div class="holder">
             <!--title page-->
-            <h2 class="my-3">Lista de Negocio de PCS</h2>
+            <h2 id="titleLista" class="my-3"  method="POST">Lista de Negocio de PCS</h2>
             <!--//title page-->
             <div class="responsiveTbl">
                 <!--start table-->
-                <table>
+                <table >
                     <!--column's titles-->
                     <thead>
                         <tr>
                             <!--th 1-->
-                            <th class="text-center">#Lista</th>
+                            <th class="text-center">Titulo</th>
                             <!--th 2-->
                             <th class="text-center">Materia</th>
                             <!--th 3-->
-                            <th class="text-center">Titulo</th>
+                            <th class="text-center">Dueño</th>
                             <!--th 4-->
                             <th class="text-center">Solicitar</th>
                         </tr>
@@ -109,19 +109,7 @@
                     <!--//column's titles-->
                     <tbody>
                         <!--Row-->
-                        <tr>
-                            <!--Nro lista-->
-                            <td class="text-center">000001</td>
-                            <!--//-->
-                            <!--Materia-->
-                            <td class="text-center">Calculo 1</td>
-                            <!--titulo-->
-                            <td class="text-center">Practica 1</td>
-                            <!--//-->
-                            <!--Btn Solicitar-->
-                            <td class="text-center"><a class="btn positive bg-printalo-greenDetail text-light"
-                                    data-toggle="modal" data-target="#solicitardelista">Solicitar</a></td>
-                            <!--//-->
+                        <tr id="table">                            
                         </tr>
                         <!--//Row-->
                     </tbody>
@@ -313,40 +301,6 @@
                                 <!-- //2 Radio buttons rango o unico-->
                             </div>
                             <!--//Configuration impresion lados-->
-                            <!--Configuration Block numero de hojas-->
-                            <div class="config-block py-2">
-                                <!--subtitle-->
-                                <p class="color-printalo-blueDetail font-weight-bold">Numero de paginas</p>
-                                <!--//subtitle-->
-                                <!--subrow-->
-                                <div class="row-sub">
-                                </div>
-                                <!--//subrow-->
-                                <div class="py-1 ml-auto row">
-                                    <!-- rbt todo-->
-                                    <div class="col">
-                                        <label class="radiobuttons my-auto">Todo
-                                            <input type="radio" checked="checked" name="radioNumPag" disabled>
-                                            <!--for customed purposes-->
-                                            <span class="checkmark"></span>
-                                            <!--//for customed purposes-->
-                                        </label>
-                                    </div>
-                                    <!-- //rbt todo-->
-                                    <!-- rbt personalizado-->
-                                    <div class="col">
-                                        <label class="radiobuttons my-auto">Personalizado
-                                            <input type="radio" name="radioNumPag" disabled>
-                                            <!--for customed purposes-->
-                                            <span class="checkmark"></span>
-                                            <!--//for customed purposes-->
-                                        </label>
-                                    </div>
-                                    <!-- //rbt personalizado-->
-                                </div>
-                                <!-- //2 Radio buttons rango o unico-->
-                            </div>
-                            <!--//Configuration block numero de hojas-->
                             <!--Configuration Block tipo acabado-->
                             <div class="config-block py-2">
                                 <!--subtitle-->
@@ -1597,6 +1551,8 @@
     <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
     <!--//icon perfil user JS-->
     <script type="text/javascript" src="../../../js/Cliente/InicioCli.js"></script>
+    
+    <script type="text/javascript" src="../../../js/Listas/registroListaCli.js"></script>
 </body>
 
 </html>

@@ -74,7 +74,6 @@ class Pedido {
 		var storageRef = storage.ref();
 		var nomb = getRowSelected(_this);
 		console.log(nomb);
-		var user = firebase.auth().currentUser;
 
 		var query = bd
 			.collection("Pedido")
@@ -223,8 +222,7 @@ class Pedido {
 					}
 					document.getElementById("clienteD").value = usuario;
 					timestamp = new Date(doc.data().fecha.toDate());
-					fecha =
-						timestamp.getDate() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getFullYear();
+					fecha = timestamp.getDate() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getFullYear();
 					hora = timestamp.getHours() + ":" + timestamp.getMinutes();
 					document.getElementById("fechaD").value = fecha;
 					document.getElementById("horaD").value = hora;
@@ -324,9 +322,7 @@ class Pedido {
 					.get()
 					.then(function() {
 						if (doc.exists) {
-							var docRef = storage.ref(
-								"docsPedidos/" + doc.data().clienteID + "/" + doc.data().nombreDoc
-							);
+							var docRef = storage.ref("docsPedidos/" + doc.data().clienteID + "/" + doc.data().nombreDoc);
 							docRef
 								.getDownloadURL()
 								.then(function(url) {
@@ -374,8 +370,7 @@ class Pedido {
 		var a = f[2];
 		var fechaEntrega = new Date(a + "-" + m + "-" + d + " " + horaE);
 		var timestamp = firebase.firestore.Timestamp.now().toDate();
-		var fecha =
-			timestamp.getDate() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getFullYear();
+		var fecha = timestamp.getDate() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getFullYear();
 		await bd
 			.collection("Negocios")
 			.doc(userid)

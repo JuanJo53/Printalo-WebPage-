@@ -284,12 +284,6 @@
                             <!--//right side title-->
                             <!--block boxes-->
                             <div class="block-boxes px-3">
-                                <!--Nro Lista box-->
-                                <div class="input-group-prepend box">
-                                    <span class="input-group-text">Nro Lista</span>
-                                    <input id="nroLista" type="number" class="form-control" disabled>
-                                </div>
-                                <!--//Nro Lista box-->
                                 <!--Dueño box-->
                                 <div class="input-group-prepend box">
                                     <span class="input-group-text">Dueño</span>
@@ -339,8 +333,8 @@
                                         <a href="" class="btn bg-printalo-blueDetail text-light negative">Cancelar</a>
                                         <!--//Btn cancelar pedido-->
                                         <!--Btn Subir documento a lista-->
-                                        <a href="" class="btn bg-printalo-greenDetail  text-light positive  ">Subir a
-                                            lista</a>
+                                        <button id="subir" onclick="getListaDat()" class="btn bg-printalo-greenDetail  text-light positive  ">Subir a
+                                            lista</button>
                                         <!--//Btn Subir documento a lista-->
                                     </div>
                                     <!--//btn block-->
@@ -484,77 +478,7 @@
                                 <!--//2 Radio buttons intercalado o anv/rev-->
                             </div>
                             <!--//Configuration impresion lados-->
-                            <!--Configuration Block numero de hojas-->
-                            <div class="config-block py-2">
-                                <!--subtitle-->
-                                <p class="color-printalo-blueDetail font-weight-bold">Numero de paginas</p>
-                                <!--//subtitle-->
-                                <!--subrow-->
-                                <div class="row-sub">
-                                </div>
-                                <!--//subrow-->
-                                <div class="py-1 ml-auto row">
-                                    <!-- rbt todo-->
-                                    <div class="col">
-                                        <label class="radiobuttons my-auto">Todo
-                                            <input id="todo" type="radio" checked="checked" name="radioNumPag" id="todo">
-                                            <!--for customed purposes-->
-                                            <span class="checkmark"></span>
-                                            <!--//for customed purposes-->
-                                        </label>
-                                    </div>
-                                    <!-- //rbt todo-->
-                                    <!-- rbt personalizado-->
-                                    <div class="col">
-                                        <label class="radiobuttons my-auto">Personalizado
-                                            <input id="personalizado" type="radio" name="radioNumPag" id="personalizado">
-                                            <!--for customed purposes-->
-                                            <span class="checkmark"></span>
-                                            <!--//for customed purposes-->
-                                        </label>
-                                    </div>
-                                    <!-- //rbt personalizado-->
-                                </div>
-                                <!-- //2 Radio buttons rango o unico-->
-                                <!--rbt todo response-->
-                                <div id="tododiv">
-                                    <h5></h5>
-                                </div>
-                                <!--//rbt personal response-->
-                                <!--rbt personalizado response Block inputs invisible-->
-                                <div id="personalizadodiv" style='display:none' class="pt-2 tarjeta-modal">
-                                    <!--row-->
-                                    <div class="row pt-2">
-                                        <div class="col">
-                                            <!--subtitle-->
-                                            <p class="color-printalo-blueDetail font-weight-bold">Pagina Inicial</p>
-                                            <!--//subtitle-->
-                                            <!--row-->
-                                            <div class="row-sub">
-                                            </div>
-                                            <!--//row-->
-                                            <!--input pag inicial-->
-                                            <input type="text" class="form-control my-2">
-                                            <!--//input pag inicial-->
-                                        </div>
-                                        <div class="col">
-                                            <!--subtitle-->
-                                            <p class="color-printalo-blueDetail font-weight-bold">Pagina Final</p>
-                                            <!--//subtitle-->
-                                            <!--row-->
-                                            <div class="row-sub">
-                                            </div>
-                                            <!--//row-->
-                                            <!--input pag final-->
-                                            <input type="text" class="form-control my-2">
-                                            <!--//input pag final-->
-                                        </div>
-                                    </div>
-                                    <!--//row-->
-                                </div>
-                                <!--//rbt personalizado response Block inputs invisible-->
-                            </div>
-                            <!--//Configuration block numero de hojas-->
+                            
                             <!--Configuration Block tipo acabado-->
                             <div class="config-block py-2">
                                 <!--subtitle-->
@@ -688,7 +612,8 @@
 
     <script type="text/javascript" src="../../../js/Negocio/Negocios.js"></script>    
     <script type="text/javascript" src="../../../js/Negocio/InicioNeg.js"></script> 
-    <script type="text/javascript" src="../../../js/Listas/nuevoDoc.js"></script>   
+    <script type="text/javascript" src="../../../js/Listas/nuevoDoc.js"></script>      
+    <script type="text/javascript" src="../../../js/Listas/Listas.js"></script>  
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
     <script type="text/javascript" src="../../../js/designjs/datatables.js"></script>

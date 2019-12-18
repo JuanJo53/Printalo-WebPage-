@@ -91,7 +91,6 @@ function setData(doc, nomb, prec, cant, pag, f, h) {
 //Detalles del pedido seleccionado para rechazar o aceptar el pedido.
 function getPedDet(_this) {
 	var doc, cant, usuario, fechaE, horaE, pago, precio;
-
 	var pedido = new Pedido();
 	console.log(_this.id);
 	if (_this.id === "detalles") {

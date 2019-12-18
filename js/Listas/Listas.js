@@ -71,6 +71,7 @@ class Lista {
 	editarDoc(dueño, titulo) {
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();
+		var userid = user.uid;
 		bd.collection("Listas")
 			.where("negocioID", "==", userid)
 			.where("dueño", "==", dueño)
@@ -79,6 +80,7 @@ class Lista {
 			.then(function(querySnapshot) {
 				querySnapshot.forEach(function(doc) {
 					if (doc.exists) {
+						console.log("positive");
 					} else {
 						alert("Documento no encontrado!");
 					}

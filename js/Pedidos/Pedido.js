@@ -1,4 +1,71 @@
 class Pedido {
+	nuevoPedido(
+		color,
+		neg,
+		tamanio,
+		impresion,
+		numPag,
+		paginas,
+		acabado,
+		tipo,
+		cantidad,
+		timestamp,
+		numTarjeta,
+		nombTarjeta,
+		mes,
+		pago,
+		anio,
+		cvv,
+		costoTotal
+	) {
+		var bd = firebase.firestore();
+		var user = firebase.auth().currentUser;
+		var neg;
+		var negQuery = bd.collection("Negocios").where("nombreNeg", "==", neg);
+		negQuery
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					negocioID = doc.id;
+					var query = bd
+						.collection("Pedido")
+						.where("nombreDoc", "==", nombreDoc)
+						.where("clienteID", "==", user.uid);
+					query
+						.get()
+						.then(function(querySnapshot) {
+							querySnapshot.forEach(function(doc) {
+								bd.collection("Pedido")
+									.doc(doc.id)
+									.update({
+										blancoYnegro: color,
+										cantidad: cantidad,
+										costoTotal: costoTotal,
+										engrampado: acabado,
+										estado: "solicitado",
+										fechaEntrega: timestamp,
+										ladosImpre: impresion,
+										metodoPago: pago,
+										negocioID: negocioID,
+										numPaginas: numPag,
+										paginas: paginas,
+										tamañoHoja: tamanio,
+										tipoHoja: tipo
+									})
+									.then(function() {
+										location.reload();
+									});
+							});
+						})
+						.catch(function(error) {
+							console.log("Error obteniendo los documentos: ", error);
+						});
+				});
+			})
+			.catch(function(error) {
+				console.log(error);
+			});
+	}
 	//Borra el pedido seleccionado.
 	eliminarPedido(_this) {
 		var user = firebase.auth().currentUser;

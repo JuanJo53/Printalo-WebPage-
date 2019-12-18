@@ -16,40 +16,30 @@ function getDocData() {
 		.where("estado", "==", "realizado")
 		.where("metodoPago", "==", "personal")
 		.orderBy("fecha")
-		.get()
-		.then(function(querySnapshot) {
-			querySnapshot.forEach(function(doc) {
-				var clienteID = doc.data().clienteID;
-				var docRef = bd.collection("Clientes").doc(clienteID);
-				docRef
-					.get()
-					.then(function(docu) {
-						if (docu.exists) {
-							arch = doc.data().nombreDoc;
+		.onSnapshot(snapshot => {
+			let changes = snapshot.docChanges();
+			changes.forEach(async function(change) {
+				if (change.type == "added") {
+					var clienteID = change.doc.data().clienteID;
+					await bd
+						.collection("Clientes")
+						.doc(clienteID)
+						.get()
+						.then(function(docu) {
 							nomb = docu.data().Nombre;
-							precio = doc.data().costoTotal;
-							cant = doc.data().cantidad;
-							pago = doc.data().metodoPago;
-							timestamp = new Date(doc.data().fechaEntrega.toDate());
-							fecha =
-								timestamp.getDate() +
-								"/" +
-								(timestamp.getMonth() + 1) +
-								"/" +
-								timestamp.getFullYear();
-							hora = timestamp.getHours() + ":" + timestamp.getMinutes();
-							setData(arch, nomb, precio, cant, pago, fecha, hora);
-						} else {
-							console.log("No such document!");
-						}
-					})
-					.catch(function(error) {
-						console.log("Error getting document:", error);
-					});
+						});
+					arch = change.doc.data().nombreDoc;
+					console.log(arch);
+					precio = change.doc.data().costoTotal;
+					cant = change.doc.data().cantidad;
+					pago = change.doc.data().metodoPago;
+					timestamp = new Date(change.doc.data().fechaEntrega.toDate());
+					fecha =
+						timestamp.getDate() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getFullYear();
+					hora = timestamp.getHours() + ":" + timestamp.getMinutes();
+					setData(arch, nomb, precio, cant, pago, fecha, hora);
+				}
 			});
-		})
-		.catch(function(error) {
-			console.log("Error obteniendo los documentos: ", error);
 		});
 }
 //Setea los datos de los pedidos en la tabla respectiva.

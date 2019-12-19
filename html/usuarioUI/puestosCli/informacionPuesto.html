@@ -87,7 +87,7 @@
         <!--row-->
         <div class="row">
             <!--column 1-->
-            <div class="col-md-4 col-sm-6">
+            <div class="col-md-6">
                 <!--contactos section-->
                 <section class="my-3 py-3 section-border">
                     <!--title wrapper-->
@@ -115,94 +115,6 @@
                     <!--//Content info-->
                 </section>
                 <!--contactos section-->
-                <!--horarios section-->
-                <section class="my-3 py-3 section-border">
-                    <!--title wrapper-->
-                    <div class="text-center">
-                        <h4>Horarios de Atencion</h4>
-                    </div>
-                    <!--//title wrapper-->
-                    <!--Content info-->
-                    <div class="col pb-3">
-                        <div class="modal-content">
-                            <div class="container px-3">
-                                <!--subrow-->
-                                <div class="row-sub my-2">
-                                </div>
-                                <!--//subrow-->
-                                <div class="responsiveTbl">
-                                    <!--start table-->
-                                    <table>
-                                        <!--column's titles-->
-                                        <thead>
-                                            <!--row-->
-                                            <tr>
-                                                <!--th 1-->
-                                                <th class="text-center">Dia</th>
-                                                <!--th 2-->
-                                                <th class="text-center">Entrada</th>
-                                                <!--th 3-->
-                                                <th class="text-center">Salida</th>
-                                            </tr>
-                                            <!--//row-->
-                                        </thead>
-                                        <!--//column's titles-->
-                                        <tbody>
-                                            <!--Row-->
-                                            <tr>
-                                                <!--Icono-->
-                                                <td class="text-center">Lunes</td>
-                                                <!--//-->
-                                                <td class="text-center">8:00</td>
-                                                <!--Btn Solicitar-->
-                                                <td class="text-center">21:00</td>
-                                                <!--//-->
-                                            </tr>
-                                            <!--//Row-->
-                                        </tbody>
-                                    </table>
-                                    <!--//start table-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--//Content info-->
-                </section>
-                <!--horarios section-->
-            </div>
-            <!--//column 1-->
-            <!--column 2-->
-            <div class="col-md-4 col-sm-6">
-                <!--correo section-->
-                <section class="my-3 py-3 section-border">
-                    <!--title wrapper-->
-                    <div class="text-center">
-                        <h4>Correo</h4>
-                    </div>
-                    <!--//title wrapper-->
-                    <!--Content info-->
-                    <div class="col pb-3">
-                        <div class="modal-content">
-                            <div class="container px-3">
-                                <!--subrow-->
-                                <div class="row-sub my-2">
-                                </div>
-                                <!--//subrow-->
-                                <div class="text-center">
-                                    <!--details-->
-                                    <p id="correo"><span class="font-weight-bold">E-mail : </span>pcs@gmail.com</p>
-                                    <!--details-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--//Content info-->
-                </section>
-                <!--//correo section-->
-            </div>
-            <!--//column 2-->
-            <!--column 3-->
-            <div class="col-md-4 col-sm-6">
                 <!--Servicios section-->
                 <section class="my-3 py-3 section-border">
                     <!--title wrapper-->
@@ -229,8 +141,226 @@
                     <!--//Content info-->
                 </section>
                 <!--//Servicios section-->
+                
             </div>
-            <!--//column 3-->
+            <!--//column 1-->
+            <!--column 2-->
+            <div class="col-md-6">
+                <!--correo section-->
+                <section class="my-3 py-3 section-border">
+                    <!--title wrapper-->
+                    <div class="text-center">
+                        <h4>Correo</h4>
+                    </div>
+                    <!--//title wrapper-->
+                    <!--Content info-->
+                    <div class="col pb-3">
+                        <div class="modal-content">
+                            <div class="container px-3">
+                                <!--subrow-->
+                                <div class="row-sub my-2">
+                                </div>
+                                <!--//subrow-->
+                                <div class="text-center">
+                                    <!--details-->
+                                    <p id="correo"><span class="font-weight-bold">E-mail : </span>pcs@gmail.com</p>
+                                    <!--details-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//Content info-->
+                </section>
+                <!--//correo section-->
+                <!--horarios section-->
+                <section class="my-3 py-3 section-border">
+                    <div class="container p-3">
+                        <!--title-->
+                        <div class="text-center py-3">
+                            <h3>Horario de Atencion</h3>
+                        </div>
+                        <!--//title-->
+                        <!--container-->
+                        <div class="configuraciones horario">
+                            <!--block boxes-->
+                            <div class="block-boxes px-3">
+                                <!--Lunes box-->
+                                <div class="input-group-prepend box">
+                                    <!--dia-->
+                                    <span class="input-group-text dia">Lunes</span>
+                                    <!--//dia-->
+                                    <!--horarios entreda-salida-->
+                                    <div class="input-group ">
+                                        <!--Input entrada-->
+                                        <input type="text" class="form-control text-center clock"
+                                            placeholder="Entrada" id="lunesEntrada" disabled>
+                                        <!--//Input entrada-->
+                                        <!--divisor-->
+                                        <div class="input-group-append ">
+                                            <!--Detalle - -->
+                                            <span
+                                                class="input-group-text bg-printalo-blueDetail bcero">-</span>
+                                            <!--Detalle - -->
+                                        </div>
+                                        <!--//divisor-->
+                                        <!--Input salida-->
+                                        <input type="text" class="form-control text-center clock"
+                                            placeholder="Salida" id="lunesSalida" disabled>
+                                        <!--Input salida-->
+                                    </div>
+                                    <!--//horarios entreda-salida-->
+                                </div>
+                                <!--//Lunes box-->
+                                <!--Martes box-->
+                                <div class="input-group-prepend box">
+                                    <!--dia-->
+                                    <span class="input-group-text dia">Martes</span>
+                                    <!--//dia-->
+                                    <!--horarios entreda-salida-->
+                                    <div class="input-group ">
+                                        <!--Input entrada-->
+                                        <input type="text" class="form-control text-center clock"
+                                            placeholder="Entrada" id="martesEntrada" disabled>
+                                        <!--//Input entrada-->
+                                        <!--divisor-->
+                                        <div class="input-group-append ">
+                                            <!--Detalle - -->
+                                            <span
+                                                class="input-group-text bg-printalo-blueDetail bcero">-</span>
+                                            <!--Detalle - -->
+                                        </div>
+                                        <!--//divisor-->
+                                        <!--Input salida-->
+                                        <input type="text" class="form-control text-center clock"
+                                            placeholder="Salida" id="martesSalida" disabled>
+                                        <!--Input salida-->
+                                    </div>
+                                    <!--//horarios entreda-salida-->
+                                </div>
+                                <!--//Martes box-->
+                                <!--Miercoles box-->
+                                <div class="input-group-prepend box">
+                                    <!--dia-->
+                                    <span class="input-group-text dia">Miercoles</span>
+                                    <!--//dia-->
+                                    <!--horarios entreda-salida-->
+                                    <div class="input-group ">
+                                        <!--Input entrada-->
+                                        <input type="text" class="form-control text-center clock"
+                                            placeholder="Entrada" id="miercolesEntrada" disabled>
+                                        <!--//Input entrada-->
+                                        <!--divisor-->
+                                        <div class="input-group-append ">
+                                            <!--Detalle - -->
+                                            <span
+                                                class="input-group-text bg-printalo-blueDetail bcero">-</span>
+                                            <!--Detalle - -->
+                                        </div>
+                                        <!--//divisor-->
+                                        <!--Input salida-->
+                                        <input type="text" class="form-control text-center clock"
+                                            placeholder="Salida" id="miercolesSalida" disabled>
+                                        <!--Input salida-->
+                                    </div>
+                                    <!--//horarios entreda-salida-->
+                                </div>
+                                <!--//Miercoles box-->
+                                <!--Jueves box-->
+                                <div class="input-group-prepend box">
+                                    <!--dia-->
+                                    <span class="input-group-text dia">Jueves</span>
+                                    <!--//dia-->
+                                    <!--horarios entreda-salida-->
+                                    <div class="input-group ">
+                                        <!--Input entrada-->
+                                        <input type="text" class="form-control text-center clock"
+                                            placeholder="Entrada" id="juevesEntrada" disabled>
+                                        <!--//Input entrada-->
+                                        <!--divisor-->
+                                        <div class="input-group-append ">
+                                            <!--Detalle - -->
+                                            <span
+                                                class="input-group-text bg-printalo-blueDetail bcero">-</span>
+                                            <!--Detalle - -->
+                                        </div>
+                                        <!--//divisor-->
+                                        <!--Input salida-->
+                                        <input type="text" class="form-control text-center clock"
+                                            placeholder="Salida" id="juevesSalida" disabled>
+                                        <!--Input salida-->
+                                    </div>
+                                    <!--//horarios entreda-salida-->
+                                </div>
+                                <!--//Jueves box-->
+                                <!--Viernes box-->
+                                <div class="input-group-prepend box">
+                                    <!--dia-->
+                                    <span class="input-group-text dia">Viernes</span>
+                                    <!--//dia-->
+                                    <!--horarios entreda-salida-->
+                                    <div class="input-group ">
+                                        <!--Input entrada-->
+                                        <input type="text" class="form-control text-center clock"
+                                            placeholder="Entrada" id="viernesEntrada" disabled>
+                                        <!--//Input entrada-->
+                                        <!--divisor-->
+                                        <div class="input-group-append ">
+                                            <!--Detalle - -->
+                                            <span
+                                                class="input-group-text bg-printalo-blueDetail bcero">-</span>
+                                            <!--Detalle - -->
+                                        </div>
+                                        <!--//divisor-->
+                                        <!--Input salida-->
+                                        <input type="text" class="form-control text-center clock"
+                                            placeholder="Salida" id="viernesSalida" disabled>
+                                        <!--Input salida-->
+                                    </div>
+                                    <!--//horarios entreda-salida-->
+                                </div>
+                                <!--//Viernes box-->
+                                <!--Sabado box-->
+                                <div class="input-group-prepend box">
+                                    <!--dia-->
+                                    <span class="input-group-text dia">Sabado</span>
+                                    <!--//dia-->
+                                    <!--horarios entreda-salida-->
+                                    <div class="input-group ">
+                                        <!--Input entrada-->
+                                        <input type="text" class="form-control text-center clock"
+                                            placeholder="Entrada" id="sabadoEntrada" disabled>
+                                        <!--//Input entrada-->
+                                        <!--divisor-->
+                                        <div class="input-group-append ">
+                                            <!--Detalle - -->
+                                            <span
+                                                class="input-group-text bg-printalo-blueDetail bcero">-</span>
+                                            <!--Detalle - -->
+                                        </div>
+                                        <!--//divisor-->
+                                        <!--Input salida-->
+                                        <input type="text" class="form-control text-center clock"
+                                            placeholder="Salida" id="sabadoSalida" disabled>
+                                        <!--Input salida-->
+                                    </div>
+                                    <!--//horarios entreda-salida-->
+                                </div>
+                                <!--//Sabado box-->
+                            </div>
+                            <!--//block boxes-->
+                        </div>
+                        <!--//container-->
+                    </div>
+                </section>
+                <!--horarios section-->
+                
+            </div>
+            <!--//column 2-->
+
+            
+                
+
+
         </div>
         <!--//row-->
     </div>

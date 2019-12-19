@@ -80,7 +80,6 @@ function getDocDet(_this) {
   
   var titulo, dueño, materia, nroHojas, precio, fecha;
   console.log("id : " + _this.id);
-  if (_this.id === "editar") {
 	console.log("in");
     titulo = getRowSelected(_this, 0);
     dueño = getRowSelected(_this, 1);
@@ -89,7 +88,7 @@ function getDocDet(_this) {
     precio = getRowSelected(_this, 4);
 	fecha = getRowSelected(_this, 5);
 	//lista.editarDoc(titulo, dueño);
-  }
+
   var lista = new Lista(dueño, fecha, materia, titulo, nroHojas, precio);
   if (_this.id === "eliminar") {
     lista.eliminarDoc(dueño, titulo);

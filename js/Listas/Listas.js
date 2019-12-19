@@ -230,4 +230,148 @@ class Lista {
 				alert("Documento no se borro correctamente!\n" + error);
 			});
 	}
+	GuardarCambiosArchivo() {
+		//console.log("click");
+		var nhojas, prec;
+		nhojas = document.getElementById("numHojas").value;
+		prec = document.getElementById("precio").value;
+		var auxNumHojas,
+		  auxPrecio;
+		var user = firebase.auth().currentUser;
+		var bd = firebase.firestore();
+		var userid = user.uid;
+		console.log("userid : "+userid);
+		var docRef = bd.collection("Listas").where('negocioID','==',userid)
+		  .get()
+		  .then(function(querySnapshot) {
+			querySnapshot.forEach(function(doc){
+				auxNumHojas = doc.data().numHojas;
+				auxPrecio = doc.data().precio;
+			  if (auxNumHojas === nhojas && auxPrecio=== prec) {
+				console.log("los datos son lso mismos en admin");
+			  } else {
+				//console.log("son distintos");
+				actualizarDatosArchivo();
+				console.log("Se guardo cambios");
+			  }
+			});
+		  })   
+		  .catch(function(error) {
+			console.log("Error al obtener los datos:", error);
+		  });
+	  }
+
+	  GuardarCambiosFormulario() {
+		//console.log("click");
+		var duenio, materia,titulo;
+		duenio = document.getElementById("dueño").value;
+		materia = document.getElementById("materia").value;
+		titulo = document.getElementById("tituloDoc").value;
+		var auxDuenio,
+		  auxMateria,
+		  auxTitulo;
+		var user = firebase.auth().currentUser;
+		var bd = firebase.firestore();
+		var userid = user.uid;
+		console.log("userid : "+userid);
+		var docRef = bd.collection("Listas").where('negocioID','==',userid)
+		  .get()
+		  .then(function(querySnapshot) {
+			querySnapshot.forEach(function(doc){
+				auxDuenio = doc.data().dueño;
+				auxMateria = doc.data().materia;
+				auxTitulo=doc.data().nombreDoc;
+			  if (auxDuenio === duenio && auxMateria=== materia  && auxTitulo=== titulo) {
+				console.log("los datos son lso mismos en admin");
+			  } else {
+				//console.log("son distintos");
+				actualizarDatosFormulario();
+				console.log("Se guardo cambios");
+			  }
+			});
+		  })   
+		  .catch(function(error) {
+			console.log("Error al obtener los datos:", error);
+		  });
+	  }
+}
+function actualizarDatosArchivo() {
+	//console.log("entro a cambiar datos de negocio");
+	var nroHojas,precio,duenio,titulo;
+	var user = firebase.auth().currentUser;
+	var bd = firebase.firestore();
+	var userid = user.uid;
+	nroHojas = document.getElementById("numHojas").value;
+	precio = document.getElementById("precio").value;
+	duenio=document.getElementById("dueño").value;
+	titulo=document.getElementById("tituloDoc").value;
+	if (
+	  //verifica que no esten vacios los campos
+	  nroHojas !== "" &&
+	  precio !== ""
+	) {
+	  //console.log("no estan vacios");
+	  bd.collection("Listas")
+	  .where('negocioID','==', userid)
+	  .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          var listaId = doc.id;
+          var docref2 = bd
+		  .collection("Listas")
+          .doc(listaId)
+          .update({
+            precio: precio,
+            numHojas: nroHojas
+          })
+          .then(e => {
+            console.log("Datos Guardados Exitosamente de administrador");
+          })
+          .catch(e => {
+            alert(`Error Guardando Datos: ${error}`);
+          });
+        })
+      })
+  }
+}
+
+function actualizarDatosFormulario() {
+	//console.log("entro a cambiar datos de negocio");
+	var duenio, materia,titulo;
+	var user = firebase.auth().currentUser;
+	var bd = firebase.firestore();
+	var userid = user.uid;
+	duenio = document.getElementById("dueño").value;
+	materia = document.getElementById("materia").value;
+	titulo = document.getElementById("tituloDoc").value;
+	if (
+	  //verifica que no esten vacios los campos
+	  duenio !== "" &&
+	  materia !== "" &&
+	  titulo!==""
+	) {
+	  //console.log("no estan vacios");
+	  bd.collection("Listas")
+	  .where('negocioID','==', userid)
+	  .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          var listaId = doc.id;
+          var docref2 = bd
+          .collection("Listas")
+          .doc(listaId)
+          .update({
+            dueño: duenio,
+			materia: materia,
+			tituloDoc : titulo
+          })
+          .then(e => {
+            console.log("Datos Guardados Exitosamente de administrador");
+          })
+          .catch(e => {
+            alert(`Error Guardando Datos: ${error}`);
+          });
+        })
+      })
+  }
 }

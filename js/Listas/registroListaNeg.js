@@ -150,8 +150,8 @@ function habilitarBtnGuardarCambios() {
 	var btnGuardarCambios = document.getElementById("btnGuardarCambios").disabled;
 	if (btnGuardarCambios === false) {
 	  //console.log("click");
-	  //new Negocio().GuardarCambiosNegocioGenerales();
-	  //new Negocio().GuardarCambiosAdministrador();
+	  new Lista().GuardarCambiosArchivo();
+	  //new Lista().GuardarCambiosFormulario();
 	  //new Negocio().GuardarCambiosHorario();
 	  document.getElementById("btnGuardarCambios").disabled = true;
 	  bloquearDatosFormulario();

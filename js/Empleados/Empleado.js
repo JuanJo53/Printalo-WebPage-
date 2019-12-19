@@ -305,7 +305,7 @@ class Empleado extends Usuario {
 		});
 	}
 	//Setea los detalles del pedido para visualizacion antes de aceptarlo.
-	setPedDetEmp(negocioID, docN, usuario, precio, cant, pago, fechaE, horaE) {
+	setPedDetEmp(negocioID, docN, usuario, fechaE, horaE) {
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();
 		var color, tam, imp, paginas, acabado, tipo, fecha, hora;

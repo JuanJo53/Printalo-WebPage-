@@ -1,5 +1,6 @@
-class Cliente {
+class Cliente extends Usuario {
 	constructor(email, password, nombre, apellido, telefono) {
+		super(apellido, nombre, email);
 		this.email = email;
 		this.password = password;
 		this.nombre = nombre;

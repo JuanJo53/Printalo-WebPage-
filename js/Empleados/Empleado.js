@@ -482,52 +482,7 @@ class Empleado extends Usuario {
 			document.getElementById("hojaReutilizada").checked = true;
 		}
 	}
-	actualizarDatosArchivo() {
-		//console.log("entro a cambiar datos de negocio");
-		var nroHojas, precio, duenio, titulo, materia;
-		var user = firebase.auth().currentUser;
-		var bd = firebase.firestore();
-		var userid = user.uid;
-		nroHojas = document.getElementById("numHojas").value;
-		precio = document.getElementById("precio").value;
-		duenio = document.getElementById("dueño").value;
-		titulo = document.getElementById("tituloDoc").value;
-		materia = document.getElementById("materia").value;
-		if (
-			//verifica que no esten vacios los campos
-			nroHojas !== "" &&
-			precio !== ""
-		) {
-			//console.log("no estan vacios");
-			bd.collection("Listas")
-				.where("negocioID", "==", userid)
-				.get()
-				.then(function(querySnapshot) {
-					querySnapshot.forEach(function(doc) {
-						var listaId = doc.id;
-						var auxDuenio = doc.data().dueño;
-						var auxTitulo = doc.data().nombreDoc;
-						var auxMateria = doc.data().materia;
-						if (duenio === auxDuenio && titulo === auxTitulo && materia == auxMateria) {
-							console.log("duenio : " + duenio);
-							var docref2 = bd
-								.collection("Listas")
-								.doc(listaId)
-								.update({
-									precio: precio,
-									numHojas: nroHojas
-								})
-								.then(e => {
-									console.log("Datos Guardados Exitosamente de administrador");
-								})
-								.catch(e => {
-									alert(`Error Guardando Datos: ${error}`);
-								});
-						}
-					});
-				});
-		}
-	}
+
 	editarDoc(negocioID, dueño, titulo) {
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();
@@ -610,7 +565,7 @@ class Empleado extends Usuario {
 				alert("Documento no se borro correctamente!\n" + error);
 			});
 	}
-	GuardarCambiosArchivo() {
+	GuardarCambiosArchivo(negocioID) {
 		//console.log("click");
 		var nhojas, prec;
 		nhojas = document.getElementById("numHojas").value;
@@ -622,7 +577,7 @@ class Empleado extends Usuario {
 		console.log("userid : " + userid);
 		var docRef = bd
 			.collection("Listas")
-			.where("negocioID", "==", userid)
+			.where("negocioID", "==", negocioID)
 			.get()
 			.then(function(querySnapshot) {
 				querySnapshot.forEach(function(doc) {
@@ -632,7 +587,7 @@ class Empleado extends Usuario {
 						console.log("los datos son lso mismos en admin");
 					} else {
 						//console.log("son distintos");
-						actualizarDatosArchivo();
+						actualizarDatosArchivo(negocioID);
 						console.log("Se guardo cambios");
 					}
 				});
@@ -642,7 +597,7 @@ class Empleado extends Usuario {
 			});
 	}
 
-	GuardarCambiosFormulario() {
+	GuardarCambiosFormulario(negocioID) {
 		//console.log("click");
 		var duenio, materia, titulo;
 		duenio = document.getElementById("dueño").value;
@@ -655,7 +610,7 @@ class Empleado extends Usuario {
 		console.log("userid : " + userid);
 		var docRef = bd
 			.collection("Listas")
-			.where("negocioID", "==", userid)
+			.where("negocioID", "==", negocioID)
 			.get()
 			.then(function(querySnapshot) {
 				querySnapshot.forEach(function(doc) {
@@ -666,7 +621,7 @@ class Empleado extends Usuario {
 						console.log("los datos son lso mismos en admin");
 					} else {
 						//console.log("son distintos");
-						actualizarDatosFormulario();
+						actualizarDatosFormulario(negocioID);
 						console.log("Se guardo cambios");
 					}
 				});
@@ -675,7 +630,7 @@ class Empleado extends Usuario {
 				console.log("Error al obtener los datos:", error);
 			});
 	}
-	GuardarCambiosDetallesRB() {
+	GuardarCambiosDetallesRB(negocioID) {
 		var duenio, materia, titulo;
 		duenio = document.getElementById("dueño").value;
 		materia = document.getElementById("materia").value;
@@ -684,10 +639,9 @@ class Empleado extends Usuario {
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();
 		var userid = user.uid;
-		console.log("userid : " + userid);
-		var docRef = bd
-			.collection("Listas")
-			.where("negocioID", "==", userid)
+		console.log("userid : " + negocioID);
+		bd.collection("Listas")
+			.where("negocioID", "==", negocioID)
 			.get()
 			.then(function(querySnapshot) {
 				querySnapshot.forEach(function(doc) {
@@ -695,7 +649,7 @@ class Empleado extends Usuario {
 					auxMateria = doc.data().materia;
 					auxTitulo = doc.data().nombreDoc;
 					//console.log("son distintos");
-					actualizarDatosDetallesRB();
+					actualizarDatosDetallesRB(negocioID);
 					console.log("Se guardo cambios");
 				});
 			})
@@ -703,123 +657,7 @@ class Empleado extends Usuario {
 				console.log("Error al obtener los datos:", error);
 			});
 	}
-	actualizarDatosFormulario() {
-		//console.log("entro a cambiar datos de negocio");
-		var duenio, materia, titulo;
-		var user = firebase.auth().currentUser;
-		var bd = firebase.firestore();
-		var userid = user.uid;
-		duenio = document.getElementById("dueño").value;
-		materia = document.getElementById("materia").value;
-		titulo = document.getElementById("tituloDoc").value;
-		if (
-			//verifica que no esten vacios los campos
-			duenio !== "" &&
-			materia !== "" &&
-			titulo !== ""
-		) {
-			//console.log("no estan vacios");
-			bd.collection("Listas")
-				.where("negocioID", "==", userid)
-				.get()
-				.then(function(querySnapshot) {
-					querySnapshot.forEach(function(doc) {
-						var listaId = doc.id;
-						var docref2 = bd
-							.collection("Listas")
-							.doc(listaId)
-							.update({
-								dueño: duenio,
-								materia: materia,
-								tituloDoc: titulo
-							})
-							.then(e => {
-								console.log("Datos Guardados Exitosamente de administrador");
-							})
-							.catch(e => {
-								alert(`Error Guardando Datos: ${error}`);
-							});
-					});
-				});
-		}
-	}
-	actualizarDatosDetallesRB(negocioID) {
-		var rbColor, rbLado, duenio, titulo, materia, rbEng, rbTipHojNor, rbTamCar, rbTamOfi, rbTamA4;
-		var user = firebase.auth().currentUser;
-		var bd = firebase.firestore();
-		var userid = user.uid;
-		var auxColor, auxLado, auxAcabado, auxTipHoj, auxTam;
-		rbColor = document.getElementById("color").checked;
-		rbLado = document.getElementById("intercalado").checked;
-		rbEng = document.getElementById("engrampado").checked;
-		rbTipHojNor = document.getElementById("hojaNormal").checked;
-		duenio = document.getElementById("dueño").value;
-		titulo = document.getElementById("tituloDoc").value;
-		materia = document.getElementById("materia").value;
-		rbTamCar = document.getElementById("carta").checked;
-		rbTamOfi = document.getElementById("oficio").checked;
-		rbTamA4 = document.getElementById("a4").checked;
-		//console.log("no estan vacios");
-		bd.collection("Listas")
-			.where("negocioID", "==", negociID)
-			.get()
-			.then(function(querySnapshot) {
-				querySnapshot.forEach(function(doc) {
-					var listaId = doc.id;
-					var auxDuenio = doc.data().dueño;
-					var auxTitulo = doc.data().nombreDoc;
-					var auxMateria = doc.data().materia;
-					if (duenio === auxDuenio && titulo === auxTitulo && materia == auxMateria) {
-						if (rbColor === true) {
-							auxColor = "color";
-						} else {
-							auxColor = "Blanco/Negro";
-						}
-						if (rbLado === true) {
-							auxLado = "intercalado";
-						} else {
-							auxLado = "anv/rev";
-						}
-						if (rbEng === true) {
-							auxAcabado = "engrampado";
-						} else {
-							auxAcabado = "normal";
-						}
-						if (rbTipHojNor === true) {
-							auxTipHoj = "normal";
-						} else {
-							auxTipHoj = "reutilizado";
-						}
-						if (rbTamCar === true) {
-							auxTam = "carta";
-						}
-						if (rbTamOfi === true) {
-							auxTam = "oficio";
-						}
-						if (rbTamA4 === true) {
-							auxTam = "a4";
-						}
-						console.log("duenio : " + duenio);
-						var docref2 = bd
-							.collection("Listas")
-							.doc(listaId)
-							.update({
-								color: auxColor,
-								impresion: auxLado,
-								acabado: auxAcabado,
-								tipoHoja: auxTipHoj,
-								tamañoHoja: auxTam
-							})
-							.then(e => {
-								console.log("Datos Guardados Exitosamente de administrador");
-							})
-							.catch(e => {
-								alert(`Error Guardando Datos: ${error}`);
-							});
-					}
-				});
-			});
-	}
+
 	nuevoDocEmp(negocioID, dueño, timestamp, materia, titulo, nroHojas, precio, acabado, tipoHoja, impresion, tamaño, color) {
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();
@@ -949,4 +787,172 @@ class Empleado extends Usuario {
 			});
 		});
 	}
+}
+function actualizarDatosArchivo(negocioID) {
+	//console.log("entro a cambiar datos de negocio");
+	var nroHojas, precio, duenio, titulo, materia;
+	var user = firebase.auth().currentUser;
+	var bd = firebase.firestore();
+	var userid = user.uid;
+	nroHojas = document.getElementById("numHojas").value;
+	precio = document.getElementById("precio").value;
+	duenio = document.getElementById("dueño").value;
+	titulo = document.getElementById("tituloDoc").value;
+	materia = document.getElementById("materia").value;
+	if (
+		//verifica que no esten vacios los campos
+		nroHojas !== "" &&
+		precio !== ""
+	) {
+		//console.log("no estan vacios");
+		bd.collection("Listas")
+			.where("negocioID", "==", negocioID)
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					var listaId = doc.id;
+					var auxDuenio = doc.data().dueño;
+					var auxTitulo = doc.data().nombreDoc;
+					var auxMateria = doc.data().materia;
+					if (duenio === auxDuenio && titulo === auxTitulo && materia === auxMateria) {
+						console.log("duenio : " + duenio);
+						var docref2 = bd
+							.collection("Listas")
+							.doc(listaId)
+							.update({
+								precio: precio,
+								numHojas: nroHojas
+							})
+							.then(e => {
+								console.log("Datos Guardados Exitosamente de administrador");
+							})
+							.catch(e => {
+								alert(`Error Guardando Datos: ${error}`);
+							});
+					}
+				});
+			});
+	}
+}
+function actualizarDatosFormulario(negocioID) {
+	//console.log("entro a cambiar datos de negocio");
+	var duenio, materia, titulo;
+	var user = firebase.auth().currentUser;
+	var bd = firebase.firestore();
+	var userid = user.uid;
+	duenio = document.getElementById("dueño").value;
+	materia = document.getElementById("materia").value;
+	titulo = document.getElementById("tituloDoc").value;
+	if (
+		//verifica que no esten vacios los campos
+		duenio !== "" &&
+		materia !== "" &&
+		titulo !== ""
+	) {
+		bd.collection("Listas")
+			.where("negocioID", "==", negocioID)
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					var listaId = doc.id;
+					var auxDuenio = doc.data().dueño;
+					var auxTitulo = doc.data().nombreDoc;
+					var auxMateria = doc.data().materia;
+					console.log("duenio : " + duenio);
+					var docref2 = bd
+						.collection("Listas")
+						.doc(listaId)
+						.update({
+							dueño: duenio,
+							materia: materia,
+							nombreDoc: titulo
+						})
+						.then(e => {
+							console.log("Datos Guardados Exitosamente de administrador");
+							location.reload();
+						})
+						.catch(e => {
+							alert(`Error Guardando Datos: ${error}`);
+						});
+				});
+			});
+	}
+}
+async function actualizarDatosDetallesRB(negocioID) {
+	var rbColor, rbLado, duenio, titulo, materia, rbEng, rbTipHojNor, rbTamCar, rbTamOfi, rbTamA4;
+	var user = firebase.auth().currentUser;
+	var bd = firebase.firestore();
+	var auxColor, auxLado, auxAcabado, auxTipHoj, auxTam;
+	rbColor = document.getElementById("color").checked;
+	rbLado = document.getElementById("intercalado").checked;
+	rbEng = document.getElementById("engrampado").checked;
+	rbTipHojNor = document.getElementById("hojaNormal").checked;
+	duenio = document.getElementById("dueño").value;
+	titulo = document.getElementById("tituloDoc").value;
+	materia = document.getElementById("materia").value;
+	rbTamCar = document.getElementById("carta").checked;
+	rbTamOfi = document.getElementById("oficio").checked;
+	rbTamA4 = document.getElementById("a4").checked;
+	//console.log("no estan vacios");
+	await bd
+		.collection("Listas")
+		.where("negocioID", "==", negocioID)
+		.get()
+		.then(function(querySnapshot) {
+			querySnapshot.forEach(function(doc) {
+				var listaId = doc.id;
+				var auxDuenio = doc.data().dueño;
+				var auxTitulo = doc.data().nombreDoc;
+				var auxMateria = doc.data().materia;
+				if (duenio === auxDuenio && titulo === auxTitulo && materia == auxMateria) {
+					if (rbColor === true) {
+						auxColor = "color";
+					} else {
+						auxColor = "Blanco/Negro";
+					}
+					if (rbLado === true) {
+						auxLado = "intercalado";
+					} else {
+						auxLado = "anv/rev";
+					}
+					if (rbEng === true) {
+						auxAcabado = "engrampado";
+					} else {
+						auxAcabado = "normal";
+					}
+					if (rbTipHojNor === true) {
+						auxTipHoj = "normal";
+					} else {
+						auxTipHoj = "reutilizado";
+					}
+					if (rbTamCar === true) {
+						auxTam = "carta";
+					}
+					if (rbTamOfi === true) {
+						auxTam = "oficio";
+					}
+					if (rbTamA4 === true) {
+						auxTam = "a4";
+					}
+					console.log("duenio : " + duenio);
+					var docref2 = bd
+						.collection("Listas")
+						.doc(listaId)
+						.update({
+							color: auxColor,
+							impresion: auxLado,
+							acabado: auxAcabado,
+							tipoHoja: auxTipHoj,
+							tamañoHoja: auxTam
+						})
+						.then(e => {
+							console.log("Datos Guardados Exitosamente de administrador");
+							location.reload();
+						})
+						.catch(e => {
+							alert(`Error Guardando Datos: ${error}`);
+						});
+				}
+			});
+		});
 }

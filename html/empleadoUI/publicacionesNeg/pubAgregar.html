@@ -39,7 +39,7 @@
                 <!--//navbar brand-->
             </div>
             <!--Profile Icon-->
-            <a id="btnUser" href="../../acrosspages/perfiliconadmi.html"
+            <a id="btnUser" href="../../acrosspages/perfiliconemp.html"
                 class="navbar-item  order-lg-last   order-xs-last  mx-1 icon-user">
                 <div class="d-inline circle bg-printalo-greenDetail">
                     <!--Initial letter-->
@@ -62,22 +62,12 @@
                         <a href="../registrosNeg/regBusqueda.html" class="nav-link text-light">Registros</a>
                     </li>
                     <!--//link registros-->
-                    <!--link graficos-->
-                    <li class="nav-item">
-                        <a href="../graficosNeg/grfDias.html" class="nav-link text-light ">Graficos</a>
-                    </li>
-                    <!--//link graficos-->
                     <!--link publicaciones-->
                     <li class="nav-item">
                         <a href="../publicacionesNeg/pubAgregar.html"
                             class="nav-link text-light active">Publicaciones</a>
                     </li>
                     <!--//link publicaciones-->
-                    <!--link configuraciones-->
-                    <li class="nav-item">
-                        <a href="../configurarNeg/confGenerales.html" class="nav-link text-light">Configuraciones</a>
-                    </li>
-                    <!--//link configuraciones-->
                 </ul>
             </div>
             <!--collapse-->
@@ -95,7 +85,7 @@
                 <a href="pubAgregar.html" class="list-group-item bg-printalo-greenDetail link active">Agregar</a>
                 <!--//link Agregar-->
                 <!--link Ver lista-->
-                <a href="pubLista.html" class="list-group-item link bg-printalo-greenDetail">Ver lista</a>
+                <a href="/html/empleadoUI/publicacionesNeg/pubLista.html" class="list-group-item link bg-printalo-greenDetail">Ver lista</a>
                 <!--//link Ver lista-->
             </div>
             <!--//list sidebar-->
@@ -120,7 +110,7 @@
     </div>
     <!--flex-->
     <!--perfiliconadmi-->
-    <div class="modal fade text-dark" id="perfiliconadmi">
+    <div class="modal fade text-dark" id="perfiliconemp">
         <div class="modal-dialog">
             <!--Content Modal-->
             <div class="col pb-3">
@@ -602,13 +592,14 @@
 
     <!-- Configuracion de Proyecto en Firebase -->
     <script type="text/javascript" src="../../../js/FirebaseServices/ConfigFirebase.js"></script>
-    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
-
     <!--Scripts de archivos javascript (funciones para captura de datos etc)-->
+    <script type="text/javascript" src="../../../js/Usuario.js"></script>
     <script type="text/javascript" src="../../../js/Negocio/Negocios.js"></script>
-    <script type="text/javascript" src="../../../js/Negocio/InicioNeg.js"></script>
-    <script type="text/javascript" src="../../../js/Listas/nuevoDoc.js"></script>
     <script type="text/javascript" src="../../../js/Listas/Listas.js"></script>
+    <script type="text/javascript" src="../../../js/Empleados/Empleado.js"></script>
+    <script type="text/javascript" src="../../../js/FirebaseServices/Auth.js"></script>
+    <script type="text/javascript" src="../../../js/Empleados/inicioEmp.js"></script>
+    <script type="text/javascript" src="../../../js/Empleados/newLista.js"></script>
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
     <script type="text/javascript" src="../../../js/designjs/datatables.js"></script>

@@ -32,8 +32,7 @@ function getDocsData() {
 					cant = change.doc.data().cantidad;
 					pago = change.doc.data().metodoPago;
 					timestamp = new Date(change.doc.data().fechaEntrega.toDate());
-					fecha =
-						timestamp.getDate() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getFullYear();
+					fecha = timestamp.getDate() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getFullYear();
 					hora = timestamp.getHours() + ":" + timestamp.getMinutes();
 					setData(arch, nomb, precio, cant, pago, fecha, hora);
 				}
@@ -102,7 +101,7 @@ function getPedDet(_this) {
 		fechaE = getRowSelected(_this, 5);
 		horaE = getRowSelected(_this, 6);
 		pedido.setPedDet(doc, usuario, precio, cant, pago, fechaE, horaE);
-	} else if (_this.id === "change") {
+	} else if (_this.id != "imprimirD") {
 		doc = getRowSelected(_this.parentNode, 0);
 		fechaE = getRowSelected(_this.parentNode, 5);
 		horaE = getRowSelected(_this.parentNode, 6);

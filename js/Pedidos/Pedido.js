@@ -346,7 +346,7 @@ class Pedido {
 		var m = f[1];
 		var a = f[2];
 		var timestamp = new Date(a + "-" + m + "-" + d + " " + horaE);
-
+		console.log(timestamp);
 		var storage = firebase.storage();
 
 		var query = bd

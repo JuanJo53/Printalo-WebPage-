@@ -93,11 +93,11 @@ function getDocDet(_this) {
 	precio = getRowSelected(_this, 4);
 	fecha = getRowSelected(_this, 5);
 
-	var lista = new Lista(dueño, fecha, materia, titulo, nroHojas, precio);
+	var lista = new Empleado();
 	if (_this.id === "eliminar") {
-		lista.eliminarDoc(dueño, titulo);
+		lista.eliminarDoc(negocioID, dueño, titulo);
 	} else if (_this.id === "editar") {
-		lista.getDocData(dueño, titulo);
+		lista.getDocData(negocioID, dueño, titulo);
 	}
 }
 //Obtiene el nombre de la fila seleccionada.

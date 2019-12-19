@@ -1,5 +1,9 @@
 window.onload = ValidarEmp();
 var negocioID;
+var btnImprimir = document.getElementById("imprimirD");
+btnImprimir.addEventListener("click", function() {
+	new Empleado().imprPedidoEmp(negocioID);
+});
 //Obtiene los datos de los pedidos respectivos de la base de datos.
 async function getDocsData() {
 	var user = firebase.auth().currentUser;

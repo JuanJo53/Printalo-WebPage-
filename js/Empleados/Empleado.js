@@ -130,6 +130,50 @@ class Empleado extends Usuario {
 			});
 		});
 	}
+	//Hace el cambio de estado de un pedido para representar el hecho de que el pedido YA fue realizado.
+	imprPedidoEmp(negocioID) {
+		var bd = firebase.firestore();
+		var docN = document.getElementById("nombreDocD").innerHTML;
+		var fechaE = document.getElementById("fEntregaD").value;
+		var horaE = document.getElementById("hEntregaD").value;
+		var f = fechaE.split("/");
+		var d = f[0];
+		var m = f[1];
+		var a = f[2];
+		var timestamp = new Date(a + "-" + m + "-" + d + " " + horaE);
+
+		var storage = firebase.storage();
+
+		var query = bd
+			.collection("Pedido")
+			.where("nombreDoc", "==", docN)
+			.where("negocioID", "==", negocioID)
+			.where("fechaEntrega", "==", timestamp);
+		query.get().then(function(querySnapshot) {
+			querySnapshot.forEach(function(doc) {
+				bd.collection("Pedido")
+					.doc(doc.id)
+					.get()
+					.then(function() {
+						if (doc.exists) {
+							var docRef = storage.ref("docsPedidos/" + doc.data().clienteID + "/" + doc.data().nombreDoc);
+							docRef
+								.getDownloadURL()
+								.then(function(url) {
+									console.log(url);
+									window.open(url);
+								})
+								.catch(function(error) {
+									console.log("No se obtuvo el link correctamente");
+								});
+							console.log("Documento se descargo correctamente");
+						} else {
+							console.log("Documento no existe");
+						}
+					});
+			});
+		});
+	}
 	async setDatFacturaEmp(negocioID, nitCli, apellido, docNomb, precio, literal, cant, pago, fechaE, horaE) {
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();

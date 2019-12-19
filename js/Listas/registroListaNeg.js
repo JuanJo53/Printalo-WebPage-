@@ -59,13 +59,12 @@ function setData(titulo, dueño, materia, nroHojas, precio, fecha) {
 				precio,
 				fecha,
 				`<button id="editar" onclick="getDocDet(this)"
-                href=""
                 class="btn bg-printalo-greenDetail positive"
                 data-dismiss="modal"
                 data-target="#agregaraLista"
                 data-toggle="modal"
                 >Editar</button>`,
-				`<button id="eliminar" onclick="getDocDet(this)" href="" class="btn bg-printalo-blueDetail negative">Eliminar</button>`
+				`<button id="eliminar" onclick="getDocDet(this)"  class="btn bg-printalo-blueDetail negative">Eliminar</button>`
 			])
 			.draw(false);
 	});
@@ -86,7 +85,7 @@ function getDocDet(_this) {
 	if (_this.id === "eliminar") {
 		lista.eliminarDoc(dueño, titulo);
 	} else if (_this.id === "editar") {
-		lista.getDocDet(dueño, titulo);
+		lista.getDocData(dueño, titulo);
 	}
 }
 //Obtiene el nombre de la fila seleccionada.

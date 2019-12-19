@@ -68,7 +68,7 @@ class Lista {
 				alert("Documento no se borro correctamente!\n" + error);
 			});
 	}
-	async getDocDet(dueño, titulo) {
+	async getDocData(dueño, titulo) {
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();
 		var userid = user.uid;
@@ -77,6 +77,11 @@ class Lista {
 			fecha,
 			hora,
 			timestamp,
+			color,
+			tamaño,
+			impresion,
+			acabado,
+			tipoHoja,
 			materia;
 		await bd
 			.collection("Listas")
@@ -95,13 +100,18 @@ class Lista {
 						timestamp = new Date(doc.data().fecha.toDate());
 						fecha = timestamp.getDate() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getFullYear();
 						hora = timestamp.getHours() + ":" + timestamp.getMinutes();
+						color = doc.data().color;
+						tamaño = doc.data().tamañoHoja;
+						impresion = doc.data().impresion;
+						acabado = doc.data().acabado;
+						tipoHoja = doc.data().tipoHoja;
 					} else {
 						alert("Documento no encontrado!");
 					}
 				});
 			})
 			.catch(function(error) {
-				alert("Documento no se borro correctamente!\n" + error);
+				alert("Documento no se obtuvo correctamente!\n" + error);
 			});
 		document.getElementById("numHojas").value = nroHojas;
 		document.getElementById("precio").value = precio;
@@ -110,6 +120,33 @@ class Lista {
 		document.getElementById("hora").value = hora;
 		document.getElementById("materia").value = materia;
 		document.getElementById("tituloDoc").value = titulo;
+		if (color === "color") {
+			document.getElementById("color").checked = true;
+		} else {
+			document.getElementById("BN").checked = true;
+		}
+		if (tamaño === "carta") {
+			document.getElementById("carta").checked = true;
+		} else if (tamaño === "oficio") {
+			document.getElementById("oficio").checked = true;
+		} else {
+			document.getElementById("a4").checked = true;
+		}
+		if (impresion === "intercalado") {
+			document.getElementById("intercalado").checked = true;
+		} else {
+			document.getElementById("anv/rev").checked = true;
+		}
+		if (acabado === "engrampado") {
+			document.getElementById("intercalado").checked = true;
+		} else {
+			document.getElementById("normal").checked = true;
+		}
+		if (tipoHoja === "normal") {
+			document.getElementById("hojaNormal").checked = true;
+		} else {
+			document.getElementById("hojaReutilizada").checked = true;
+		}
 	}
 	editarDoc(dueño, titulo) {
 		var user = firebase.auth().currentUser;

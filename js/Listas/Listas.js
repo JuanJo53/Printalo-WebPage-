@@ -68,6 +68,49 @@ class Lista {
 				alert("Documento no se borro correctamente!\n" + error);
 			});
 	}
+	async getDocDet(dueño, titulo) {
+		var user = firebase.auth().currentUser;
+		var bd = firebase.firestore();
+		var userid = user.uid;
+		var nroHojas = 0,
+			precio = 0.0,
+			fecha,
+			hora,
+			timestamp,
+			materia;
+		await bd
+			.collection("Listas")
+			.where("negocioID", "==", userid)
+			.where("dueño", "==", dueño)
+			.where("nombreDoc", "==", titulo)
+			.get()
+			.then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					if (doc.exists) {
+						nroHojas = doc.data().numHojas;
+						precio = doc.data().precio;
+						dueño = doc.data().dueño;
+						materia = doc.data().materia;
+						titulo = doc.data().nombreDoc;
+						timestamp = new Date(doc.data().fecha.toDate());
+						fecha = timestamp.getDate() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getFullYear();
+						hora = timestamp.getHours() + ":" + timestamp.getMinutes();
+					} else {
+						alert("Documento no encontrado!");
+					}
+				});
+			})
+			.catch(function(error) {
+				alert("Documento no se borro correctamente!\n" + error);
+			});
+		document.getElementById("numHojas").value = nroHojas;
+		document.getElementById("precio").value = precio;
+		document.getElementById("dueño").value = dueño;
+		document.getElementById("fecha").value = fecha;
+		document.getElementById("hora").value = hora;
+		document.getElementById("materia").value = materia;
+		document.getElementById("tituloDoc").value = titulo;
+	}
 	editarDoc(dueño, titulo) {
 		var user = firebase.auth().currentUser;
 		var bd = firebase.firestore();
@@ -80,7 +123,12 @@ class Lista {
 			.then(function(querySnapshot) {
 				querySnapshot.forEach(function(doc) {
 					if (doc.exists) {
-						console.log("positive");
+						document.getElementById("numHojas").value = nroHojas;
+						document.getElementById("precio").value = precio;
+						document.getElementById("dueño").value = dueño;
+						document.getElementById("fecha").value = fecha;
+						document.getElementById("materia").value = materia;
+						document.getElementById("tituloDoc").value = titulo;
 					} else {
 						alert("Documento no encontrado!");
 					}

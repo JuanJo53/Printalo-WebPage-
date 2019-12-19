@@ -786,6 +786,9 @@ class Negocio {
       .catch(function(error) {
         console.log("Error al obtener los datos:", error);
       });
+  }  
+  eliminarEmpleado(){
+    
   }
 }
 //esta funcion actualiza los datos de datos generales
@@ -869,6 +872,7 @@ function actualizarDatosAdministrador() {
   } else {
     console.log("los campos estan vacios");
   }
+  
 }
 //esta funcion actualiza los datos del horario
 function actualizarDatosHorario() {

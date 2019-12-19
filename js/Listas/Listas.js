@@ -129,7 +129,7 @@ class Lista {
 						} else {
 							document.getElementById("hojaReutilizada").checked = true;
 						}
-						document.getElementById("numero").innerHTML = doc.data().numHojas;
+						document.getElementById("paginas").value = doc.data().numHojas;
 						document.getElementById("dueño").innerHTML = `<span class="font-weight-bold">Nombre:  </span>` + doc.data().dueño;
 						timestamp = new Date(doc.data().fecha.toDate());
 						var fecha = timestamp.getDate() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getFullYear();

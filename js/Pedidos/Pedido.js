@@ -471,4 +471,53 @@ class Pedido {
 			}
 		});
 	}
+	nuevaFot(
+		color,
+		negocioID,
+		tamanio,
+		impresion,
+		numPag,
+		paginas,
+		acabado,
+		tipo,
+		cantidad,
+		timestampEntrega,
+		titulo,
+		materia,
+		dueño,
+		pago,
+		precio
+	) {
+		var bd = firebase.firestore();
+		var user = firebase.auth().currentUser;
+		var timestamp = firebase.firestore.Timestamp.now().toDate();
+		bd.collection("Pedido")
+			.add({
+				clienteID: user.uid,
+				blancoYnegro: color,
+				cantidad: cantidad,
+				costoTotal: precio,
+				engrampado: acabado,
+				estado: "solicitado",
+				fecha: timestamp,
+				fechaEntrega: timestampEntrega,
+				ladosImpre: impresion,
+				metodoPago: pago,
+				negocioID: negocioID,
+				numPaginas: numPag,
+				paginas: paginas,
+				tamañoHoja: tamanio,
+				tipoHoja: tipo,
+				materia: materia,
+				dueño: dueño,
+				nombreDoc: titulo
+			})
+			.then(function(docRef) {
+				alert("Pedido Solicitado!");
+				console.log(docRef.id);
+			})
+			.catch(function(error) {
+				alert("Hubo un error y su perdido no se realizo! ", error);
+			});
+	}
 }

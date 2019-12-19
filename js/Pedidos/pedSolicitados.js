@@ -1,4 +1,4 @@
-//window.onload = ValidarNeg();
+window.onload = ValidarNeg();
 //Obtiene los datos de los pedidos respectivos de la base de datos.
 function getDocsData() {
 	var user = firebase.auth().currentUser;
@@ -17,6 +17,7 @@ function getDocsData() {
 		.onSnapshot(snapshot => {
 			let changes = snapshot.docChanges();
 			changes.forEach(async function(change) {
+				console.log(change.doc.id);
 				if (change.type == "added") {
 					var clienteID = change.doc.data().clienteID;
 					await bd
@@ -27,13 +28,11 @@ function getDocsData() {
 							nomb = docu.data().Nombre;
 						});
 					arch = change.doc.data().nombreDoc;
-					console.log(arch);
 					precio = change.doc.data().costoTotal;
 					cant = change.doc.data().cantidad;
 					pago = change.doc.data().metodoPago;
 					timestamp = new Date(change.doc.data().fechaEntrega.toDate());
-					fecha =
-						timestamp.getDate() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getFullYear();
+					fecha = timestamp.getDate() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getFullYear();
 					hora = timestamp.getHours() + ":" + timestamp.getMinutes();
 					setData(arch, nomb, precio, cant, pago, fecha, hora);
 				}
@@ -90,21 +89,7 @@ function setData(doc, nomb, prec, cant, pag, f, h) {
 }
 //Detalles del pedido seleccionado para rechazar o aceptar el pedido.
 function getPedDet(_this) {
-	var doc,
-		color,
-		tam,
-		imp,
-		paginas,
-		acabado,
-		tipo,
-		cant,
-		usuario,
-		fecha,
-		hora,
-		fechaE,
-		horaE,
-		pago,
-		precio;
+	var doc, color, tam, imp, paginas, acabado, tipo, cant, usuario, fecha, hora, fechaE, horaE, pago, precio;
 	doc = getRowSelected(_this, 0);
 	usuario = getRowSelected(_this, 1);
 	precio = getRowSelected(_this, 2);

@@ -33,80 +33,68 @@ class Negocio {
   // Esta funcion pasa el email y su password a la clase Auth para registrar un nuevo usuario en firebase
   RegistrarNeg(d, e, t, nn, a, n) {
     var auth = new Auth();
+    var admin=new Administrador(a,n,e);
     auth.crearCuentaEmailPass(this.email, this.password);
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // User is signed in.
+        admin.registrar();
         var user = firebase.auth().currentUser;
+        var bd=firebase.firestore();
         console.log(user);
-        firebase
-          .firestore()
-          .collection("Administrador")
-          .add({
-            apellido: a,
-            nombre: n,
-            negocioID: user.uid
-          })
-          .then(function(){
-            firebase
-              .firestore()
-              .collection("Negocios")
-              .doc(user.uid)
-              .set({
-                dir: d,
-                email: e,
-                fono: t,
-                nombreNeg: nn,
-                costoBN: 0,
-                costoColor: 0,
-                NIT: "",
-                costoTamHoja:{
-                  A4: 0,
-                  Carta: 0,
-                  Oficio: 0
+          bd.collection("Negocios")
+            .doc(user.uid)
+            .set({
+              dir: d,
+              email: e,
+              fono: t,
+              nombreNeg: nn,
+              costoBN: 0,
+              costoColor: 0,
+              NIT: "",
+              costoTamHoja:{
+                A4: 0,
+                Carta: 0,
+                Oficio: 0
+              },
+              costoTipoHoja:{
+                normal: 0,
+                reutilizable: 0
+              },
+              horario:{
+                jueves: {
+                  horaEntrada: 0,
+                  horaSalida: 0
                 },
-                costoTipoHoja:{
-                  normal: 0,
-                  reutilizable: 0
+                lunes: {
+                  horaEntrada: 0,
+                  horaSalida: 0
                 },
-                horario:{
-                  jueves: {
-                    horaEntrada: 0,
-                    horaSalida: 0
-                  },
-                  lunes: {
-                    horaEntrada: 0,
-                    horaSalida: 0
-                  },
-                  martes: {
-                    horaEntrada: 0,
-                    horaSalida: 0
-                  },
-                  miercoles: {
-                    horaEntrada: 0,
-                    horaSalida: 0
-                  },
-                  sabado: {
-                    horaEntrada: 0,
-                    horaSalida: 0
-                  },
-                  viernes: {
-                    horaEntrada: 0,
-                    horaSalida: 0
-                  }
+                martes: {
+                  horaEntrada: 0,
+                  horaSalida: 0
+                },
+                miercoles: {
+                  horaEntrada: 0,
+                  horaSalida: 0
+                },
+                sabado: {
+                  horaEntrada: 0,
+                  horaSalida: 0
+                },
+                viernes: {
+                  horaEntrada: 0,
+                  horaSalida: 0
                 }
-              })
-              .then(e => {
-                alert("Logeado");
-                location.href = "/html/negocioUI/pedidosNeg/pedPendientes.html";
-              })
-              .catch(e => {
-                console.log(`Error creando negocio: ${error}`);
-              });
-          })
-          .catch(e => {
-            console.log(`Error creando cliente: ${error}`);
-          });
+              }
+            })
+            .then(e => {
+              alert("Logeado");
+              location.href = "/html/negocioUI/pedidosNeg/pedPendientes.html";
+            })
+            .catch(e => {
+              console.log(`Error creando negocio: ${error}`);
+            });
       } else {
         // User is not signed in.
         alert("No Logeado");

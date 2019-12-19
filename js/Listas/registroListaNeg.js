@@ -117,7 +117,7 @@ function habilitarCamposArchivo() {
 		document.getElementById("numHojas").disabled = false;
 		document.getElementById("precio").disabled = false;
 	}
-	//habilitarBtnGuardarCambios();
+	habilitarBtnGuardarCambios();
 }
 function bloquearDatosArchivo() {
 	document.getElementById("numHojas").disabled = true;
@@ -145,6 +145,7 @@ function bloquearDatosFormulario() {
 	document.getElementById("tituloDoc").disabled = true;
 }
 function habilitarBtnGuardarCambios() {
+	console.log("here");
 	document.getElementById("btnGuardarCambios").disabled = false;
 }
 

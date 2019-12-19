@@ -1,9 +1,5 @@
 window.onload = ValidarEmp();
 var negocioID;
-var btnAceptarPed = document.getElementById("aceptarPed");
-btnAceptarPed.addEventListener("click", function() {
-	new Empleado().aceptarPedidoEmp(negocioID);
-});
 //Obtiene los datos de los pedidos respectivos de la base de datos.
 async function getDocsData() {
 	var user = firebase.auth().currentUser;
@@ -28,12 +24,11 @@ async function getDocsData() {
 		});
 	bd.collection("Pedido")
 		.where("negocioID", "==", negocioID)
-		.where("estado", "==", "solicitado")
+		.where("estado", "==", "pendiente")
 		.orderBy("fecha")
 		.onSnapshot(snapshot => {
 			let changes = snapshot.docChanges();
 			changes.forEach(async function(change) {
-				console.log(change.doc.id);
 				if (change.type == "added") {
 					var clienteID = change.doc.data().clienteID;
 					await bd
@@ -44,6 +39,7 @@ async function getDocsData() {
 							nomb = docu.data().Nombre;
 						});
 					arch = change.doc.data().nombreDoc;
+					console.log(arch);
 					precio = change.doc.data().costoTotal;
 					cant = change.doc.data().cantidad;
 					pago = change.doc.data().metodoPago;
@@ -91,13 +87,13 @@ function setData(doc, nomb, prec, cant, pag, f, h) {
 				pag,
 				f,
 				h,
-				`<button id="detalles" onclick="getPedDet(this)" href="" class="btn bg-printalo-greenDetail positive" 
+				`<div class="color-printalo-greenDetail "><i id="change" onclick="getPedDet(this)" 
+					class="far fa-square fa-2x icon-positive"></i>
+                </div>`,
+				`<button id="detalles" onclick="getPedDet(this)" href="" 
+					class="btn bg-printalo-greenDetail positive" 
 					data-dismiss="modal" data-target="#modalVerDetalles" 
 					data-toggle="modal">Detalles
-				</button>`,
-				`<button onclick="getPedDet(this)" id="rechazar" href="" class="btn bg-printalo-blueDetail negative" 
-					data-dismiss="modal" data-target="#eliminarPedido" 
-					data-toggle="modal">Rechazar
 				</button>`
 			])
 			.draw(false);
@@ -105,38 +101,26 @@ function setData(doc, nomb, prec, cant, pag, f, h) {
 }
 //Detalles del pedido seleccionado para rechazar o aceptar el pedido.
 function getPedDet(_this) {
-	var doc, color, tam, imp, paginas, acabado, tipo, cant, usuario, fecha, hora, fechaE, horaE, pago, precio;
-	doc = getRowSelected(_this, 0);
-	usuario = getRowSelected(_this, 1);
-	precio = getRowSelected(_this, 2);
-	cant = getRowSelected(_this, 3);
-	pago = getRowSelected(_this, 4);
-	fechaE = getRowSelected(_this, 5);
-	horaE = getRowSelected(_this, 6);
-
+	var doc, cant, usuario, fechaE, horaE, pago, precio;
 	var pedido = new Empleado();
 	console.log(_this.id);
 	if (_this.id === "detalles") {
+		doc = getRowSelected(_this, 0);
+		usuario = getRowSelected(_this, 1);
+		precio = getRowSelected(_this, 2);
+		cant = getRowSelected(_this, 3);
+		pago = getRowSelected(_this, 4);
+		fechaE = getRowSelected(_this, 5);
+		horaE = getRowSelected(_this, 6);
 		pedido.setPedDetEmp(negocioID, doc, usuario, precio, cant, pago, fechaE, horaE);
-	} else if (_this.id === "rechazar") {
-		var btnEliminar = document.getElementById("eliminar");
-		btnEliminar.addEventListener("click", function() {
-			pedido.rechazarPedidoEmp(negocioID, doc, precio, cant, pago, fechaE, horaE);
-		});
+	} else if (_this.id === "change") {
+		doc = getRowSelected(_this.parentNode, 0);
+		fechaE = getRowSelected(_this.parentNode, 5);
+		horaE = getRowSelected(_this.parentNode, 6);
+		pedido.realizarPedidoEmp(negocioID, doc, fechaE, horaE);
+	} else {
+		pedido.imprPedido();
 	}
-}
-//Detalles del pedido seleccionado para rechazar o aceptar el pedido.
-function rechPed() {
-	var doc, cant, fechaE, horaE, pago, precio;
-
-	doc = document.getElementById("nombreDocD").innerHTML;
-	precio = document.getElementById("costoD").value;
-	cant = document.getElementById("cantD").value;
-	pago = document.getElementById("pagoD").value;
-	fechaE = document.getElementById("fEntregaD").value;
-	horaE = document.getElementById("hEntregaD").value;
-	var pedido = new Pedido();
-	pedido.rechazarPedidoEmp(negocioID, doc, precio, cant, pago, fechaE, horaE);
 }
 //Obtiene el nombre de la fila seleccionada.
 function getRowSelected(objectPressed, col) {

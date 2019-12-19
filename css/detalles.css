@@ -344,3 +344,7 @@ a.text-light:hover {
 	padding: 1em;
 }
 /*//Progress bar*/
+/*disabledButton*/
+.radiobuttons input:checked[disabled] ~ .checkmark {
+	background-color: #b8e9e0;
+}

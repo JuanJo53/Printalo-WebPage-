@@ -29,7 +29,6 @@ function getDocsData() {
 function setData(titulo, dueño, materia, nroHojas, precio, fecha) {
 	var table = document.getElementsByTagName("table")[0];
 	var newRow = table.insertRow(1);
-
 	var title = newRow.insertCell(0);
 	var dueñ = newRow.insertCell(1);
 	var mat = newRow.insertCell(2);
@@ -38,7 +37,6 @@ function setData(titulo, dueño, materia, nroHojas, precio, fecha) {
 	var f = newRow.insertCell(5);
 	var editar = newRow.insertCell(6);
 	var eliminar = newRow.insertCell(7);
-
 	title.className = "text-center";
 	dueñ.className = "text-center";
 	mat.className = "text-center";
@@ -108,3 +106,62 @@ function ValidarNeg() {
 		}
 	});
 }
+//funciones de botones par ala edicion
+function habilitarCamposArchivo() {
+	//console.log("here");
+	var auxNumHojas= document.getElementById("numHojas").disabled;
+	var auxPrecio= document.getElementById("precio").disabled;
+	if (auxNumHojas === false && auxPrecio === false) {
+	  bloquearDatosArchivo();
+	} else {
+	  document.getElementById("numHojas").disabled = false;
+	  document.getElementById("precio").disabled = false;
+	}
+	habilitarBtnGuardarCambios();
+  }
+function bloquearDatosArchivo(){
+	document.getElementById("numHojas").disabled = true;
+	document.getElementById("precio").disabled = true;
+}
+
+function habilitarCamposFormulario() {
+	//console.log("here");
+	var auxNumHojas = document.getElementById("dueño").disabled;
+	var auxMat = document.getElementById("materia").disabled;
+	var auxTitulo = document.getElementById("tituloDoc").disabled;	
+	if (auxNumHojas === false && auxMat === false && auxTitulo === false) {
+		bloquearDatosFormulario();
+	} else {
+	  document.getElementById("dueño").disabled = false;
+	  document.getElementById("materia").disabled = false;
+	  document.getElementById("tituloDoc").disabled = false;
+	}
+	habilitarBtnGuardarCambios();
+  }
+function bloquearDatosFormulario(){
+	document.getElementById("dueño").disabled = true;
+	document.getElementById("materia").disabled = true;
+	document.getElementById("tituloDoc").disabled = true;
+}
+function habilitarBtnGuardarCambios() {
+	document.getElementById("btnGuardarCambios").disabled = false;
+  }
+  function GuardarCambiosEditLista() {
+	var btnGuardarCambios = document.getElementById("btnGuardarCambios").disabled;
+	if (btnGuardarCambios === false) {
+	  //console.log("click");
+	  //new Negocio().GuardarCambiosNegocioGenerales();
+	  //new Negocio().GuardarCambiosAdministrador();
+	  //new Negocio().GuardarCambiosHorario();
+	  document.getElementById("btnGuardarCambios").disabled = true;
+	  bloquearDatosFormulario();
+	  bloquearDatosArchivo();
+	  //bloquearDatosGenerales();
+	  //bloquearDatosAdministrador();
+	  //bloquearDatosHorario();
+	}
+  }
+
+
+
+

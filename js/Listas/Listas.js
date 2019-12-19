@@ -327,6 +327,35 @@ class Lista {
         console.log("Error al obtener los datos:", error);
       });
   }
+  GuardarCambiosDetallesRB(){
+	var duenio, materia, titulo;
+    duenio = document.getElementById("dueño").value;
+    materia = document.getElementById("materia").value;
+    titulo = document.getElementById("tituloDoc").value;
+    var auxDuenio, auxMateria, auxTitulo;
+    var user = firebase.auth().currentUser;
+    var bd = firebase.firestore();
+    var userid = user.uid;
+    console.log("userid : " + userid);
+    var docRef = bd
+      .collection("Listas")
+      .where("negocioID", "==", userid)
+      .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+          auxDuenio = doc.data().dueño;
+          auxMateria = doc.data().materia;
+          auxTitulo = doc.data().nombreDoc;
+            //console.log("son distintos");
+            actualizarDatosDetallesRB();
+            console.log("Se guardo cambios");
+          
+        });
+      })
+      .catch(function(error) {
+        console.log("Error al obtener los datos:", error);
+      });
+  }
 }
 function actualizarDatosArchivo() {
   //console.log("entro a cambiar datos de negocio");
@@ -374,7 +403,6 @@ function actualizarDatosArchivo() {
       });
   }
 }
-
 function actualizarDatosFormulario() {
   //console.log("entro a cambiar datos de negocio");
   var duenio, materia, titulo;
@@ -414,4 +442,86 @@ function actualizarDatosFormulario() {
         });
       });
   }
+}
+function actualizarDatosDetallesRB(){
+	var rbColor, rbLado, duenio, titulo,materia,rbEng,rbTipHojNor,rbTamCar,rbTamOfi,rbTamA4;
+	var user = firebase.auth().currentUser;
+	var bd = firebase.firestore();
+	var userid = user.uid;
+	var auxColor,auxLado,auxAcabado,auxTipHoj,auxTam;
+	rbColor = document.getElementById("color").checked;
+	rbLado = document.getElementById("intercalado").checked;
+	rbEng = document.getElementById("engrampado").checked;
+	rbTipHojNor = document.getElementById("hojaNormal").checked;
+	duenio = document.getElementById("dueño").value;
+	titulo = document.getElementById("tituloDoc").value;
+	materia = document.getElementById("materia").value;
+	rbTamCar= document.getElementById("carta").checked;
+	rbTamOfi= document.getElementById("oficio").checked;
+	rbTamA4= document.getElementById("a4").checked;
+	  //console.log("no estan vacios");
+	  bd.collection("Listas")
+		.where("negocioID", "==", userid)
+		.get()
+		.then(function(querySnapshot) {
+		  querySnapshot.forEach(function(doc) {
+			var listaId = doc.id;
+			var auxDuenio = doc.data().dueño;
+			var auxTitulo = doc.data().nombreDoc;
+			var auxMateria = doc.data().materia;
+			if (duenio === auxDuenio && titulo===auxTitulo && materia==auxMateria) {
+				
+				if(rbColor===true){
+					auxColor="color";
+					
+				}else{
+					auxColor="Blanco/Negro";
+				}
+				if(rbLado===true){
+					auxLado="intercalado";
+					
+				}else{
+					auxLado="anv/rev";
+				}
+				if(rbEng===true){
+					auxAcabado="engrampado";
+					
+				}else{
+					auxAcabado="normal";
+				}
+				if(rbTipHojNor===true){
+					auxTipHoj="normal";
+				}else{
+					auxTipHoj="reutilizado";
+				}
+				if(rbTamCar===true){
+					auxTam="carta";
+				}
+				if(rbTamOfi===true){
+					auxTam="oficio";
+				}
+				if(rbTamA4===true){
+					auxTam="a4";
+				}
+			  console.log("duenio : " + duenio);
+			  var docref2 = bd
+				.collection("Listas")
+				.doc(listaId)
+				.update({
+				  color: auxColor,
+				  impresion : auxLado,
+				  acabado : auxAcabado,
+				  tipoHoja :auxTipHoj,
+				  tamañoHoja : auxTam
+				})
+				.then(e => {
+				  console.log("Datos Guardados Exitosamente de administrador");
+				})
+				.catch(e => {
+				  alert(`Error Guardando Datos: ${error}`);
+				});
+			}
+		  });
+		});
+	
 }

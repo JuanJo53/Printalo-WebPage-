@@ -562,7 +562,7 @@
                             <div class="row py-3 px-3">
                                 <!--btn block-->
                                 <div class="ml-auto">
-                                    <!--icono editar--><button class="btn icon-editar"><i
+                                    <!--icono editar--><button onclick="habilitarRadioButtonsLista()" class="btn icon-editar"><i
                                             class="fas fa-edit"></i></button>
                                     <!--//icono editar-->
                                 </div>
@@ -591,8 +591,9 @@
                             <div class="col">
                                 <div class="py-3">
                                     <!--Btn siguiente-->
-                                    <a class="btn btn-block positive bg-printalo-greenDetail text-light "
-                                        data-dismiss="modal" data-toggle="modal">Guardar</a>
+                                    <button onclick="GuardarCambiosEditListaRB()" class="btn btn-block positive bg-printalo-greenDetail text-light "
+                                        data-dismiss="modal" data-toggle="modal"
+                                        id="btnGuardarCambiosRB" disabled>Guardar</button>
                                     <!--//Btn siguiente-->
                                 </div>
                             </div>

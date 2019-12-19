@@ -4,7 +4,7 @@ class Empleado extends Usuario {
 		this.negocioID = negocioID;
 		this.telefono = telefono;
 	}
-	registrar(password) {
+	async registrar(password) {
 		console.log(this.nombre, this.apellido, this.telefono, this.correo, password, this.negocioID);
 		var auth = new Auth();
 		var bd = firebase.firestore();
@@ -12,7 +12,21 @@ class Empleado extends Usuario {
 			correo = this.correo,
 			nombre = this.nombre,
 			telefono = this.telefono,
-			negocioID = this.negocioID;
+			negocioID = this.negocioID,
+			nombreNeg;
+		var empleadoID;
+
+		await bd
+			.collection("Negocios")
+			.doc(negocioID)
+			.get()
+			.then(function(doc) {
+				if (doc.exists) {
+					nombreNeg = doc.data().nombreNeg;
+				} else {
+					console.error("Error al obtener el nombre del negocio!");
+				}
+			});
 		var firebaseConfig = {
 			apiKey: "AIzaSyAEFS51wASyzXFPRgosvru8FHm-zvaMzAI",
 			authDomain: "printalo-ef2bc.firebaseapp.com",
@@ -23,20 +37,28 @@ class Empleado extends Usuario {
 			appId: "1:917705384239:web:c7bb0ff68990454d84c1da"
 		};
 		var secondaryApp = firebase.initializeApp(firebaseConfig, "Secondary");
-		secondaryApp
+		await secondaryApp
 			.auth()
 			.createUserWithEmailAndPassword(this.correo, password)
 			.then(function(firebaseUser) {
-				console.log("User " + firebaseUser.uid + " created successfully!");
+				secondaryApp.auth().onAuthStateChanged(function(firebaseUser) {
+					if (firebaseUser) {
+						// User is signed in.
+						console.log("User " + firebaseUser.uid + " created successfully!");
+						empleadoID = firebaseUser.uid;
+					}
+				});
 			});
 		bd.collection("Empleados")
-			.add({
+			.doc(empleadoID)
+			.set({
 				Apellido: apellido,
 				email: correo,
 				Nombre: nombre,
 				telefono: telefono,
 				negocioID: negocioID,
-				contraseña: password
+				contraseña: password,
+				nombreNeg: nombreNeg
 			})
 			.then(e => {
 				location.reload();

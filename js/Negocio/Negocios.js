@@ -104,13 +104,13 @@ class Negocio {
   }
   // Esta funcion pasa el email y su password a la clase Auth para login con firebase
   async IngresarNeg() {    
-    var c=0; 
-    var negs= [];  
+    var c=0,c1=0; 
+    var negs= [],emp=[],adminEmails=[],empEmails=[];  
     var nomb=this.nombre;  
     var email=this.email; 
     var password=this.password; 
     var bd=firebase.firestore();
-    var conf=false;
+    var conf=false,conf1=false;
     if(nomb!=""){
       await bd.collection("Negocios")
       .get()
@@ -118,29 +118,82 @@ class Negocio {
         querySnapshot.forEach(function(doc){  
           console.log(doc.data().nombreNeg)
           negs.push(doc.data().nombreNeg);
+          adminEmails.push(doc.data().email);
           c++;          
         });       
       })
       .catch(function(error){
         console.log(`Error al Ingresar: ${error}`);
       })
+      await bd.collection("Empleados")
+      .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc){  
+          console.log(doc.data().nombreNeg)
+          emp.push(doc.data().nombreNeg);           
+          empEmails.push(doc.data().email);         
+          c1++;          
+        });       
+      })
+      .catch(function(error){
+        console.log(`Error al Ingresar: ${error}`);
+      })
       for(var i=0;i<c;i++){
-        if(negs[i]===nomb){            
-            var auth = new Auth();              
-            conf=true;
-            auth.LoginEmailPass(email, password);
+        if(negs[i]===nomb && adminEmails[i]===email){                 
+            conf=true;  
+            var auth = new Auth();           
+            auth.LoginEmailPass(email, password);            
             break;
           }else{
-            conf=false;
+            conf=false;            
           }
       }
-      if(conf===false)
+      for(var j=0;j<c1;j++){
+        if(emp[j]===nomb&&empEmails[j]===email){                
+            conf1=true;
+            var auth = new Auth();       
+            auth.LoginEmailPass(email, password);  
+            break;
+          }else{
+            conf1=false;
+          }
+      }
+      console.log(conf,conf1);
+      if(conf===false && conf1===false){
         alert("Nombre de Negocio Incorrecto"); 
+      }else if(conf===false && conf1===true) {  
+        this.ValidarEmp();
+      }else if(conf===true && conf1===false){
+        this.ValidarNeg();
+      }     
     }else{
       alert("Porfavor Ingrese el Nombre de Negocio");
-    }   
-     
+    }  
   }  
+  ValidarEmp() {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        alert("Logeado");
+        location.href = "/html/empleadoUI/pedidosNeg/pedSolicitudes.html";
+      } else {
+        // User is not signed in.
+        alert("No Logeado");
+      }
+    });
+  }
+  ValidarNeg() {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        alert("Logeado");
+        location.href = "/html/negocioUI/pedidosNeg/pedSolicitudes.html";
+      } else {
+        // User is not signed in.
+        alert("No Logeado");
+      }
+    });
+  }
   // Esta funcion pasa el email y su password a la clase Auth para logout con firebase
   CerrarSecion() {
     var auth = new Auth();
@@ -787,8 +840,33 @@ class Negocio {
         console.log("Error al obtener los datos:", error);
       });
   }  
-  eliminarEmpleado(){
-    
+  eliminarEmpleado(apellido, nombre, correo, telefono){
+    var user = firebase.auth().currentUser;
+    var bd = firebase.firestore();
+    var userid = user.uid;
+    var empleadoID;
+    bd.collection('Empleados')
+      .where('negocioID','==',userid)
+      .where('email','==',correo)
+      .where('telefono','==',telefono)
+      .get()
+      .then(function(querySnapshot){
+        querySnapshot.forEach(function(doc){
+          if(doc.exists){
+            empleadoID=doc.id;
+            bd.collection("Empleados")
+							.doc(doc.id)
+							.delete()
+							.then(function() {
+								alert("Documento se borro correctamente");
+								location.reload();
+							});
+          }else{
+            alert('Los datos no se encontraron!');
+          }
+        })
+      })
+      //TODO: Borrar cuenta, no solo de la base de datos.
   }
 }
 //esta funcion actualiza los datos de datos generales

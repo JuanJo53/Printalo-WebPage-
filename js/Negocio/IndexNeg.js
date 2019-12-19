@@ -17,7 +17,6 @@ async function Ingresar() {
 	var pass = document.getElementById("txtPasswordIng").value;
 	const negocio = new Negocio(email, pass, nombre, "", "", "", "");
 	negocio.IngresarNeg();
-	ValidarNeg();
 }
 
 // Esta funcion ejecuta el observador de firebase
@@ -27,6 +26,18 @@ function ValidarNeg() {
 			// User is signed in.
 			alert("Logeado");
 			location.href = "/html/negocioUI/pedidosNeg/pedSolicitudes.html";
+		} else {
+			// User is not signed in.
+			alert("No Logeado");
+		}
+	});
+}
+function ValidarEmp() {
+	firebase.auth().onAuthStateChanged(function(user) {
+		if (user) {
+			// User is signed in.
+			alert("Logeado");
+			location.href = "/html/empleadoUI/pedidosNeg/pedSolicitudes.html";
 		} else {
 			// User is not signed in.
 			alert("No Logeado");

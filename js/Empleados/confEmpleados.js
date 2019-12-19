@@ -60,9 +60,9 @@ function getDocDet(_this) {
 	nombre = getRowSelected(_this, 1);
 	correo = getRowSelected(_this, 2);
 	telefono = getRowSelected(_this, 3);
-
+	var negocio = new Negocio();
 	if (_this.id === "eliminar") {
-		console.log(apellido, nombre, correo, telefono);
+		negocio.eliminarEmpleado(apellido, nombre, correo, telefono);
 	}
 }
 //Obtiene los datos del nuevo empleado.

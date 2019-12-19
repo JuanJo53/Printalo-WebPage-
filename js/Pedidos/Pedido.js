@@ -1,4 +1,43 @@
 class Pedido {
+	constructor(
+		color,
+		neg,
+		tamanio,
+		impresion,
+		numPag,
+		paginas,
+		acabado,
+		tipo,
+		cantidad,
+		timestamp,
+		numTarjeta,
+		nombTarjeta,
+		mes,
+		pago,
+		anio,
+		costoTotal,
+		negocioID,
+		docID
+	) {
+		this.color = color;
+		this.neg = neg;
+		this.tamanio = tamanio;
+		this.impresion = impresion;
+		this.numPag = numPag;
+		this.paginas = paginas;
+		this.acabado = acabado;
+		this.tipo = tipo;
+		this.cantidad = cantidad;
+		this.timestamp = timestamp;
+		this.numTarjeta = numTarjeta;
+		this.nombTarjeta = nombTarjeta;
+		this.pago = pago;
+		this.mes = mes;
+		this.anio = anio;
+		this.costoTotal = costoTotal;
+		this.docID = docID;
+		this.negocioID = negocioID;
+	}
 	nuevoPedido(
 		color,
 		neg,

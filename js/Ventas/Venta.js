@@ -1,4 +1,47 @@
 class Venta {
+	constructor(
+		numFactura,
+		fecha,
+		nitCliente,
+		apellido,
+		docNomb,
+		cantidad,
+		monto,
+		pedidoID,
+		clienteID,
+		color,
+		docID,
+		acabado,
+		fechaPed,
+		fechaPedEntrega,
+		impresion,
+		metodoPago,
+		paginas,
+		tamaño,
+		tipo,
+		tipoHoja
+	) {
+		this.numFactura = numFactura;
+		this.fecha = fecha;
+		this.nitCliente = nitCliente;
+		this.apellido = apellido;
+		this.docNomb = docNomb;
+		this.cantidad = cantidad;
+		this.monto = monto;
+		this.pedidoID = pedidoID;
+		this.clienteID = clienteID;
+		this.color = color;
+		this.docID = docID;
+		this.acabado = acabado;
+		this.fechaPed = fechaPed;
+		this.fechaPedEntrega = fechaPedEntrega;
+		this.metodoPago = metodoPago;
+		this.paginas = paginas;
+		this.tamaño = tamaño;
+		this.tipoHoja = tipoHoja;
+		this.tipo = tipo;
+		this.impresion = impresion;
+	}
 	nuevaVenta(
 		numFac,
 		fecha,
@@ -128,8 +171,7 @@ class Venta {
 					}
 					document.getElementById("clienteD").value = usuario;
 					timestamp = new Date(doc.data().fechaPed.toDate());
-					fechaP =
-						timestamp.getDate() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getFullYear();
+					fechaP = timestamp.getDate() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getFullYear();
 					horaP = timestamp.getHours() + ":" + timestamp.getMinutes();
 					document.getElementById("fechaD").value = fechaP;
 					document.getElementById("horaD").value = horaP;
